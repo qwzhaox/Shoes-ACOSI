@@ -1,7 +1,8 @@
 {
     "review": "When I put this shoe on my foot it fit , it just didn't feel comfortable . It was too narrow , I could feel my foot falling off on the sides .",
     "global_metadata": {
-        "batch_id": 1
+        "batch_id": 1,
+        "review_id": 1
     },
     "annotations": [
         {

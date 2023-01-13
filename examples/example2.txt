@@ -1,0 +1,50 @@
+My ankles tend toward supination, so a well-cushioned heel is crucial . Every other pair of NBs I own give great even support, but the outer heels on this pair collapsed after less than a week ! The shoes now slant outward in a very unsafe and totally unacceptable way that makes my supination way worse . They are completely unusable - huge waste of money . Don't buy this pair unless you have a perfectly even foot strike !####[['IMPLICIT', 'ContextOfUse#Purchase\\_Context', 'Neutral', 'ankles tend toward supination , so a well-cushioned heel is crucial', 'direct'], ['outer', 'Appearance#Shoe Component', 'Negative', 'outer', 'direct'], ['outer', 'ContextOfUse#Usage frequency', 'Negative', 'IMPLICIT', 'direct'], ['shoes', 'Appearance#Form', 'Negative', 'slant outward in a very unsafe and totally unacceptable way', 'direct'], ['shoes', 'Performance#Sizing/Fit', 'Negative', 'makes my supination way worse', 'indirect'], ['IMPLICIT', 'Performance#Use Case Applicability', 'Negative', 'They are completely unusable', 'direct'], ['IMPLICIT', 'Cost/Value', 'Negative', 'huge waste of money', 'indirect'], ['this', 'Cost/Value', 'Negative', "Don't buy this", 'direct'], ['this', 'Performance#Sizing/Fit', 'Negative', 'unless you have a perfectly even foot strike', 'indirect']]
+
+^^ example formatting of two annotations
+
+annotation1:
+['IMPLICIT', 'ContextOfUse#Purchase\\_Context', 'Neutral', 'ankles tend toward supination , so a well-cushioned heel is crucial', 'direct']
+['outer', 'Appearance#Shoe Component', 'Negative', 'outer', 'direct']
+['outer', 'ContextOfUse#Usage frequency', 'Negative', 'IMPLICIT', 'direct']
+['shoes', 'Appearance#Form', 'Negative', 'slant outward in a very unsafe and totally unacceptable way', 'direct'] -> match
+['shoes', 'Performance#Sizing/Fit', 'Negative', 'makes my supination way worse', 'indirect']
+['IMPLICIT', 'Performance#Use Case Applicability', 'Negative', 'completely unusable', 'direct']
+['IMPLICIT', 'Cost/Value', 'Negative', 'huge waste of money', 'indirect']
+['this', 'Cost/Value', 'Negative', "Don't buy this pair", 'direct']
+['this', 'Performance#Sizing/Fit', 'Negative', 'unless you have a perfectly even foot strike', 'indirect'] -> match
+
+annotation2:
+['IMPLICIT', 'ContextOfUse#Purchase\\_Context', 'Neutral', 'My ankles tend toward supination , so a well-cushioned heel is crucial', 'direct']
+['heel', 'ContextOfUse#Usage frequency', 'Negative', 'IMPLICIT', 'direct']
+['shoes', 'Appearance#Form', 'Negative', 'slant outward in a very unsafe and totally unacceptable way', 'direct'] -> match
+['shoes', 'Performance#Comfort', 'Negative', 'supination way worse', 'indirect']
+['IMPLICIT', 'Performance#Use Case Applicability', 'Negative', 'They are completely unusable', 'direct']
+['IMPLICIT', 'Cost/Value', 'Negative', 'waste of money', 'indirect']
+['this', 'Cost/Value', 'Negative', "Don't buy this", 'direct']
+['this', 'Performance#Sizing/Fit', 'Negative', 'unless you have a perfectly even foot strike', 'indirect'] -> match
+
+Exact match IoU: 2/15, 13.33%
+
+Aspect IoU: 3/5, 60%
+
+Category IoU: 6/8, 75%
+
+Opinion IoU: 2/2, 100%
+
+Sentiment IoU: 39/47, 82.98%
+
+same: ['ankles', 'tend', 'toward', 'supination', 'so', 'a', 'well-cushioned', 'heel', 'is', 'crucial', 'IMPLICIT', 'slant', 'outward', 'in', 'a', 'very', 'unsafe', 'and', 'totally', 'unacceptable', 'way', 'supination', 'worse', 'completely', 'unusable', 'waste', 'of', 'money', 'Don't', 'buy', 'this', 'unless', 'you', 'have', 'a', 'perfectly', 'even', 'foot', 'strike']
+
+all: ['ankles', 'tend', 'toward', 'supination', 'so', 'a', 'well-cushioned', 'heel', 'is', 'crucial', 'IMPLICIT', 'slant', 'outward', 'in', 'a', 'very', 'unsafe', 'and', 'totally', 'unacceptable', 'way', 'supination', 'worse', 'completely', 'unusable', 'waste', 'of', 'money', 'Don't', 'buy', 'this', 'unless', 'you', 'have', 'a', 'perfectly', 'even', 'foot', 'strike', 'My', 'outer', 'makes', 'my', 'They', 'are', 'huge', 'pair']
+
+Note: two different uses of the word "way"
+
+Flattened(?) IoU: 52/64, 81.25%
+
+same: ['IMPLICIT', 'shoes', 'this', 'ContextOfUse#Purchase\\_Context', 'ContextOfUse#Usage frequency', 'Appearance#Form', 'Performance#Sizing/Fit', 'Performance#Use Case Applicability', 'Cost/Value', 'Negative', 'Neutral', 'ankles', 'tend', 'toward', 'supination', 'so', 'a', 'well-cushioned', 'heel', 'is', 'crucial', 'IMPLICIT', 'slant', 'outward', 'in', 'a', 'very', 'unsafe', 'and', 'totally', 'unacceptable', 'way', 'supination', 'worse', 'completely', 'unusable', 'waste', 'of', 'money', 'Don't', 'buy', 'this', 'unless', 'you', 'have', 'a', 'perfectly', 'even', 'foot', 'strike', 'indirect', 'direct']
+
+all: ['IMPLICIT', 'shoes', 'this', 'ContextOfUse#Purchase\\_Context', 'ContextOfUse#Usage frequency', 'Appearance#Form', 'Performance#Sizing/Fit', 'Performance#Use Case Applicability', 'Cost/Value', 'Negative', 'Neutral', 'ankles', 'tend', 'toward', 'supination', 'so', 'a', 'well-cushioned', 'heel', 'is', 'crucial', 'IMPLICIT', 'slant', 'outward', 'in', 'a', 'very', 'unsafe', 'and', 'totally', 'unacceptable', 'way', 'supination', 'worse', 'completely', 'unusable', 'waste', 'of', 'money', 'Don't', 'buy', 'this', 'unless', 'you', 'have', 'a', 'perfectly', 'even', 'foot', 'strike', 'indirect', 'direct', 'outer', 'heel', 'Appearance#Shoe Component', 'Performance#Comfort', 'My', 'outer', 'makes', 'my', 'They', 'are', 'huge', 'pair']
+
+Overall Notes:
+- Exact match can be pretty deceptive.
+- What to do about homonyms?

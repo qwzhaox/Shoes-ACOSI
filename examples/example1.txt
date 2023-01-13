@@ -1,0 +1,40 @@
+When I put this shoe on my foot it fit , it just didn't feel comfortable . It was too narrow , I could feel my foot falling off on the sides .####[['shoe', 'Performance#Comfort', 'Negative', "just didn't feel comfortable", 'direct'], ['shoe', 'Performance#Sizing/Fit', 'Positive', 'on my foot it fit', 'direct'], ['IMPLICIT', 'Performance#Sizing/Fit', 'Negative', 'too narrow', 'indirect'], ['IMPLICIT', 'Performance#Sizing/Fit', 'Negative', 'I could feel my foot falling off on the sides', 'direct']]####[['shoe', 'Performance#Comfort', 'Negative', "just didn't feel comfortable", 'direct'], ['shoe', 'Performance#Sizing/Fit', 'Positive', 'on my foot it fit', 'direct'], ['IMPLICIT', 'Performance#Sizing/Fit', 'Negative', 'feel my foot falling off on the sides', 'direct']]
+
+^^ example formatting of two annotations
+
+annotation1:
+['shoe', 'Performance#Comfort', 'Negative', "just didn't feel comfortable", 'direct']
+['shoe', 'Performance#Sizing/Fit', 'Positive', 'on my foot it fit', 'direct']
+['IMPLICIT', 'Performance#Sizing/Fit', 'Negative', 'too narrow', 'indirect']
+['IMPLICIT', 'Performance#Sizing/Fit', 'Negative', 'I could feel my foot falling off on the sides', 'direct']
+
+annotation2:
+['shoe', 'Performance#Comfort', 'Negative', "just didn't feel comfortable", 'direct']
+['shoe', 'Performance#Sizing/Fit', 'Positive', 'on my foot it fit', 'direct']
+['IMPLICIT', 'Performance#Comfort', 'Negative', 'feel my foot falling off on the sides', 'direct']
+
+Exact match IoU: 2/5, 40%
+
+Aspect IoU: 2/2, 100%
+- Note: IMPLICIT occurs twice in annotation1 and only once in annotation2. IoU doesn't really account for frequency differences, should we do so? or can we just rely on exact match IoU for this?
+
+Category IoU: 2/2, 100%
+- Note: how to account for Performance#Comfort (annotation1) vs Performance#Sizing/Fit (annotation2) for a similar text span?
+
+Opinion IoU: 17/21, 80.95%
+
+Sentiment IoU: 2/2, 100%
+- Note: only 3 options--IoU doesn't feel like the best option here. Frequency of - and + for each annotation probably matters.
+
+Direct/Indirect: 1/2, 50%
+- Note: same issue as sentiment.
+
+Flattened(?) IoU: 24/29, 82.76%
+- Here's the process I used:
+same: ['shoe', 'IMPLICIT', 'Performance#Comfort', 'Performance#Sizing/Fit', 'Negative', 'Positive', "just", "didn't", "feel", "comfortable", "on", "my", "foot", "it", "fit", "feel", "my", "foot", "falling", "off", "on", "the", "sides", "direct"]
+
+all: ['shoe', 'IMPLICIT', 'Performance#Comfort', 'Performance#Sizing/Fit', 'Negative', 'Positive', "just", "didn't", "feel", "comfortable", "on", "my", "foot", "it", "fit", "feel", "my", "foot", "falling", "off", "on", "the", "sides", "too", "narrow", "I", "could", "direct", "indirect"]
+
+Overall Notes:
+- In certain areas, IoU does not fully represent the difference between annotations.
+- The original annotation these examples were taken from had a duplicate quad. Got rid of the duplicate for the purposes of this example, but what should we do about them moving forward?

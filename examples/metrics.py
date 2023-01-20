@@ -6,6 +6,8 @@ SENTIMENT = 2
 OPINION = 3
 I = 4
 
+SIMILARITY_THRESHOLD = 0.50
+
 
 def indexify(original, span):
     # TODO: more processing needed?
@@ -56,6 +58,13 @@ def flatten_quad(quad):
     quad.append([idx for idx in opinion])
 
 
+def get_quad_similarity(quad1, quad2):
+    set_flat_quad1 = set(tuple(flatten_quad(list(quad1))))
+    set_flat_quad2 = set(tuple(flatten_quad(list(quad2))))
+    inter, union = get_inter_union(set_flat_quad1, set_flat_quad2)
+    return inter/union
+
+
 f = open("example_format.json")
 review_data = json.load(f)
 
@@ -104,6 +113,23 @@ for idx in range(len(review_data)):
     print_metric("Opinion", inter, union)
 
     # TODO: Adjusted overall match (find a way to link annotations)
+    dif1 = list(set_annotation1 - set_annotation2)
+    dif2 = list(set_annotation2 - set_annotation1)
+
+    set_list = []
+    num = exact_inter
+    denom = exact_union
+
+    for i in range(len(dif1)):
+        for j in range(len(dif2)):
+            if i != j and ({dif1[i], dif2[j]} not in set_list):
+                similarity = get_quad_similarity(dif1[i], dif2[j])
+                if similarity > SIMILARITY_THRESHOLD:
+                    set_list.append({dif1[i], dif2[j]})
+                    num += similarity
+                    denom -= similarity
+
+    print(f"Adjusted match: {num}/{denom}, {(num/denom)*100}%")
 
     print()
 

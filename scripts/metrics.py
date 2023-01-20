@@ -1,3 +1,4 @@
+import argparse
 import json
 
 ASPECT = 0
@@ -84,7 +85,17 @@ def get_quad_similarity(quad1, quad2):
     return (sum_agreements + inter_union_opinion + inter_union_aspect)/NUM_QUAD_ELTS
 
 
-f = open("example_format.json")
+# ...
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "--input_file",
+    help="Input json file",
+    required=True
+)
+
+args = parser.parse_args()
+
+f = open(args.input_file)
 review_data = json.load(f)
 
 for idx in range(len(review_data)):
@@ -148,7 +159,6 @@ for idx in range(len(review_data)):
                 similarity = get_quad_similarity(dif1[i], dif2[j])
                 if similarity > SIMILARITY_THRESHOLD:
                     set_list.append({dif1[i], dif2[j]})
-                    # What is the numerator / denominator?
                     num += similarity
                     denom -= similarity
 

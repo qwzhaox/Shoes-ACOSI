@@ -1,0 +1,220 @@
+[
+    {
+        "review": "When I put this shoe on my foot it fit , it just didn't feel comfortable . It was too narrow , I could feel my foot falling off on the sides .",
+        "global_metadata": {
+            "batch_id": 1,
+            "review_id": 1
+        },
+        "annotations": [
+            {
+                "metadata": {
+                    "name": "name1",
+                    "annotator_experience": "Engineer"
+                },
+                "annotation": [
+                    [
+                        "shoe",
+                        "Performance#Comfort",
+                        "Negative",
+                        "just didn't feel comfortable",
+                        "direct"
+                    ],
+                    [
+                        "shoe",
+                        "Performance#Sizing/Fit",
+                        "Positive",
+                        "on my foot it fit",
+                        "direct"
+                    ],
+                    [
+                        "IMPLICIT",
+                        "Performance#Sizing/Fit",
+                        "Negative",
+                        "too narrow",
+                        "indirect"
+                    ],
+                    [
+                        "IMPLICIT",
+                        "Performance#Sizing/Fit",
+                        "Negative",
+                        "I could feel my foot falling off on the sides",
+                        "direct"
+                    ]
+                ]
+            },
+            {
+                "metadata": {
+                    "name": "name2",
+                    "annotator_experience": "Engineer"
+                },
+                "annotation": [
+                    [
+                        "shoe",
+                        "Performance#Comfort",
+                        "Negative",
+                        "just didn't feel comfortable",
+                        "direct"
+                    ],
+                    [
+                        "shoe",
+                        "Performance#Sizing/Fit",
+                        "Positive",
+                        "on my foot it fit",
+                        "direct"
+                    ],
+                    [
+                        "IMPLICIT",
+                        "Performance#Sizing/Fit",
+                        "Negative",
+                        "feel my foot falling off on the sides",
+                        "direct"
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "review": "My ankles tend toward supination , so a well-cushioned heel is crucial . Every other pair of NBs I own give great even support , but the outer heels on this pair collapsed after less than a week ! The shoes now slant outward in a very unsafe and totally unacceptable way that makes my supination way worse . They are completely unusable - huge waste of money . Don't buy this pair unless you have a perfectly even foot strike !",
+        "global_metadata": {
+            "batch_id": 1,
+            "review_id": 2
+        },
+        "annotations": [
+            {
+                "metadata": {
+                    "name": "name2",
+                    "annotator_experience": "Engineer"
+                },
+                "annotation": [
+                    [
+                        "IMPLICIT",
+                        "ContextOfUse#Purchase\\_Context",
+                        "Neutral",
+                        "ankles tend toward supination , so a well-cushioned heel is crucial",
+                        "direct"
+                    ],
+                    [
+                        "outer",
+                        "Appearance#Shoe Component",
+                        "Negative",
+                        "outer",
+                        "direct"
+                    ],
+                    [
+                        "outer",
+                        "ContextOfUse#Usage frequency",
+                        "Negative",
+                        "IMPLICIT",
+                        "direct"
+                    ],
+                    [
+                        "shoes",
+                        "Appearance#Form",
+                        "Negative",
+                        "slant outward in a very unsafe and totally unacceptable way",
+                        "direct"
+                    ],
+                    [
+                        "shoes",
+                        "Performance#Sizing/Fit",
+                        "Negative",
+                        "makes my supination way worse",
+                        "indirect"
+                    ],
+                    [
+                        "IMPLICIT",
+                        "Performance#Use Case Applicability",
+                        "Negative",
+                        "completely unusable",
+                        "direct"
+                    ],
+                    [
+                        "IMPLICIT",
+                        "Cost/Value",
+                        "Negative",
+                        "huge waste of money",
+                        "indirect"
+                    ],
+                    [
+                        "this",
+                        "Cost/Value",
+                        "Negative",
+                        "Don't buy this pair",
+                        "direct"
+                    ],
+                    [
+                        "this",
+                        "Performance#Sizing/Fit",
+                        "Negative",
+                        "unless you have a perfectly even foot strike",
+                        "indirect"
+                    ]
+                ]
+            },
+            {
+                "metadata": {
+                    "name": "name3",
+                    "annotator_experience": "Student"
+                },
+                "annotation": [
+                    [
+                        "IMPLICIT",
+                        "ContextOfUse#Purchase\\_Context",
+                        "Neutral",
+                        "My ankles tend toward supination , so a well-cushioned heel is crucial",
+                        "direct"
+                    ],
+                    [
+                        "heel",
+                        "ContextOfUse#Usage frequency",
+                        "Negative",
+                        "IMPLICIT",
+                        "direct"
+                    ],
+                    [
+                        "shoes",
+                        "Appearance#Form",
+                        "Negative",
+                        "slant outward in a very unsafe and totally unacceptable way",
+                        "direct"
+                    ],
+                    [
+                        "shoes",
+                        "Performance#Comfort",
+                        "Negative",
+                        "supination way worse",
+                        "indirect"
+                    ],
+                    [
+                        "IMPLICIT",
+                        "Performance#Use Case Applicability",
+                        "Negative",
+                        "They are completely unusable",
+                        "direct"
+                    ],
+                    [
+                        "IMPLICIT",
+                        "Cost/Value",
+                        "Negative",
+                        "waste of money",
+                        "indirect"
+                    ],
+                    [
+                        "this",
+                        "Cost/Value",
+                        "Negative",
+                        "Don't buy this",
+                        "direct"
+                    ],
+                    [
+                        "this",
+                        "Performance#Sizing/Fit",
+                        "Negative",
+                        "unless you have a perfectly even foot strike",
+                        "indirect"
+                    ]
+                ]
+            }
+        ]
+    }
+]

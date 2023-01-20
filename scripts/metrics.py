@@ -84,7 +84,7 @@ def get_quad_similarity(quad1, quad2):
     return (sum_agreements + inter_union_opinion + inter_union_aspect)/NUM_QUAD_ELTS
 
 
-f = open("examples/example_format.json")
+f = open("example_format.json")
 review_data = json.load(f)
 
 for idx in range(len(review_data)):
@@ -148,6 +148,7 @@ for idx in range(len(review_data)):
                 similarity = get_quad_similarity(dif1[i], dif2[j])
                 if similarity > SIMILARITY_THRESHOLD:
                     set_list.append({dif1[i], dif2[j]})
+                    # What is the numerator / denominator?
                     num += similarity
                     denom -= similarity
 

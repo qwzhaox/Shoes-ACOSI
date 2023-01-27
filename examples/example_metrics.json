@@ -1,0 +1,772 @@
+[
+    {
+        "review": "When I put this shoe on my foot it fit , it just didn't feel comfortable . It was too narrow , I could feel my foot falling off on the sides .",
+        "annotator_ids": [
+            "name1",
+            "name2"
+        ],
+        "delta": 1,
+        "aspect": 1.0,
+        "category": 1.0,
+        "sentiment": 1.0,
+        "opinion": 0.55,
+        "impl_expl": 0.5,
+        "exact": 0.4,
+        "adjusted": 0.9718,
+        "exclusions": {
+            "1": [
+                {
+                    "included": [
+                        "category",
+                        "sentiment",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "aspect"
+                    ],
+                    "iou": 0.4
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "sentiment",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "category"
+                    ],
+                    "iou": 0.4
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "category",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "sentiment"
+                    ],
+                    "iou": 0.4
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "category",
+                        "sentiment",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "opinion"
+                    ],
+                    "iou": 0.75
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "category",
+                        "sentiment",
+                        "opinion"
+                    ],
+                    "excluded": [
+                        "impl_expl"
+                    ],
+                    "iou": 0.4
+                }
+            ],
+            "2": [
+                {
+                    "included": [
+                        "sentiment",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "category"
+                    ],
+                    "iou": 0.4
+                },
+                {
+                    "included": [
+                        "category",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "sentiment"
+                    ],
+                    "iou": 0.4
+                },
+                {
+                    "included": [
+                        "category",
+                        "sentiment",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "opinion"
+                    ],
+                    "iou": 0.75
+                },
+                {
+                    "included": [
+                        "category",
+                        "sentiment",
+                        "opinion"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "impl_expl"
+                    ],
+                    "iou": 0.4
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "category",
+                        "sentiment"
+                    ],
+                    "iou": 0.4
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "sentiment",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "category",
+                        "opinion"
+                    ],
+                    "iou": 0.75
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "sentiment",
+                        "opinion"
+                    ],
+                    "excluded": [
+                        "category",
+                        "impl_expl"
+                    ],
+                    "iou": 0.4
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "category",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "sentiment",
+                        "opinion"
+                    ],
+                    "iou": 0.75
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "category",
+                        "opinion"
+                    ],
+                    "excluded": [
+                        "sentiment",
+                        "impl_expl"
+                    ],
+                    "iou": 0.4
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "category",
+                        "sentiment"
+                    ],
+                    "excluded": [
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "iou": 1.0
+                }
+            ],
+            "3": [
+                {
+                    "included": [
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "category",
+                        "sentiment"
+                    ],
+                    "iou": 0.4
+                },
+                {
+                    "included": [
+                        "sentiment",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "category",
+                        "opinion"
+                    ],
+                    "iou": 0.6667
+                },
+                {
+                    "included": [
+                        "sentiment",
+                        "opinion"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "category",
+                        "impl_expl"
+                    ],
+                    "iou": 0.4
+                },
+                {
+                    "included": [
+                        "category",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "sentiment",
+                        "opinion"
+                    ],
+                    "iou": 0.6667
+                },
+                {
+                    "included": [
+                        "category",
+                        "opinion"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "sentiment",
+                        "impl_expl"
+                    ],
+                    "iou": 0.4
+                },
+                {
+                    "included": [
+                        "category",
+                        "sentiment"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "iou": 1.0
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "category",
+                        "sentiment",
+                        "opinion"
+                    ],
+                    "iou": 0.6667
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "opinion"
+                    ],
+                    "excluded": [
+                        "category",
+                        "sentiment",
+                        "impl_expl"
+                    ],
+                    "iou": 0.4
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "sentiment"
+                    ],
+                    "excluded": [
+                        "category",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "iou": 1.0
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "category"
+                    ],
+                    "excluded": [
+                        "sentiment",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "iou": 1.0
+                }
+            ],
+            "4": [
+                {
+                    "included": [
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "category",
+                        "sentiment",
+                        "opinion"
+                    ],
+                    "iou": 0.5
+                },
+                {
+                    "included": [
+                        "opinion"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "category",
+                        "sentiment",
+                        "impl_expl"
+                    ],
+                    "iou": 0.4
+                },
+                {
+                    "included": [
+                        "sentiment"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "category",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "iou": 1.0
+                },
+                {
+                    "included": [
+                        "category"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "sentiment",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "iou": 1.0
+                },
+                {
+                    "included": [
+                        "aspect"
+                    ],
+                    "excluded": [
+                        "category",
+                        "sentiment",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "iou": 1.0
+                }
+            ]
+        }
+    },
+    {
+        "review": "My ankles tend toward supination , so a well-cushioned heel is crucial . Every other pair of NBs I own give great even support , but the outer heels on this pair collapsed after less than a week ! The shoes now slant outward in a very unsafe and totally unacceptable way that makes my supination way worse . They are completely unusable - huge waste of money . Don't buy this pair unless you have a perfectly even foot strike !",
+        "annotator_ids": [
+            "name2",
+            "name3"
+        ],
+        "delta": 1,
+        "aspect": 0.6,
+        "category": 0.75,
+        "sentiment": 1.0,
+        "opinion": 0.7755,
+        "impl_expl": 1.0,
+        "exact": 0.1333,
+        "adjusted": 0.7312,
+        "exclusions": {
+            "1": [
+                {
+                    "included": [
+                        "category",
+                        "sentiment",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "aspect"
+                    ],
+                    "iou": 0.2143
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "sentiment",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "category"
+                    ],
+                    "iou": 0.1333
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "category",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "sentiment"
+                    ],
+                    "iou": 0.1333
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "category",
+                        "sentiment",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "opinion"
+                    ],
+                    "iou": 0.5455
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "category",
+                        "sentiment",
+                        "opinion"
+                    ],
+                    "excluded": [
+                        "impl_expl"
+                    ],
+                    "iou": 0.1333
+                }
+            ],
+            "2": [
+                {
+                    "included": [
+                        "sentiment",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "category"
+                    ],
+                    "iou": 0.2143
+                },
+                {
+                    "included": [
+                        "category",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "sentiment"
+                    ],
+                    "iou": 0.2143
+                },
+                {
+                    "included": [
+                        "category",
+                        "sentiment",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "opinion"
+                    ],
+                    "iou": 0.7778
+                },
+                {
+                    "included": [
+                        "category",
+                        "sentiment",
+                        "opinion"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "impl_expl"
+                    ],
+                    "iou": 0.2143
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "category",
+                        "sentiment"
+                    ],
+                    "iou": 0.1333
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "sentiment",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "category",
+                        "opinion"
+                    ],
+                    "iou": 0.7778
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "sentiment",
+                        "opinion"
+                    ],
+                    "excluded": [
+                        "category",
+                        "impl_expl"
+                    ],
+                    "iou": 0.1333
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "category",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "sentiment",
+                        "opinion"
+                    ],
+                    "iou": 0.5455
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "category",
+                        "opinion"
+                    ],
+                    "excluded": [
+                        "sentiment",
+                        "impl_expl"
+                    ],
+                    "iou": 0.1333
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "category",
+                        "sentiment"
+                    ],
+                    "excluded": [
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "iou": 0.5455
+                }
+            ],
+            "3": [
+                {
+                    "included": [
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "category",
+                        "sentiment"
+                    ],
+                    "iou": 0.2143
+                },
+                {
+                    "included": [
+                        "sentiment",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "category",
+                        "opinion"
+                    ],
+                    "iou": 1.0
+                },
+                {
+                    "included": [
+                        "sentiment",
+                        "opinion"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "category",
+                        "impl_expl"
+                    ],
+                    "iou": 0.2143
+                },
+                {
+                    "included": [
+                        "category",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "sentiment",
+                        "opinion"
+                    ],
+                    "iou": 0.7778
+                },
+                {
+                    "included": [
+                        "category",
+                        "opinion"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "sentiment",
+                        "impl_expl"
+                    ],
+                    "iou": 0.2143
+                },
+                {
+                    "included": [
+                        "category",
+                        "sentiment"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "iou": 0.75
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "category",
+                        "sentiment",
+                        "opinion"
+                    ],
+                    "iou": 0.75
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "opinion"
+                    ],
+                    "excluded": [
+                        "category",
+                        "sentiment",
+                        "impl_expl"
+                    ],
+                    "iou": 0.1333
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "sentiment"
+                    ],
+                    "excluded": [
+                        "category",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "iou": 0.6667
+                },
+                {
+                    "included": [
+                        "aspect",
+                        "category"
+                    ],
+                    "excluded": [
+                        "sentiment",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "iou": 0.5455
+                }
+            ],
+            "4": [
+                {
+                    "included": [
+                        "impl_expl"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "category",
+                        "sentiment",
+                        "opinion"
+                    ],
+                    "iou": 1.0
+                },
+                {
+                    "included": [
+                        "opinion"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "category",
+                        "sentiment",
+                        "impl_expl"
+                    ],
+                    "iou": 0.2143
+                },
+                {
+                    "included": [
+                        "sentiment"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "category",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "iou": 1.0
+                },
+                {
+                    "included": [
+                        "category"
+                    ],
+                    "excluded": [
+                        "aspect",
+                        "sentiment",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "iou": 0.75
+                },
+                {
+                    "included": [
+                        "aspect"
+                    ],
+                    "excluded": [
+                        "category",
+                        "sentiment",
+                        "opinion",
+                        "impl_expl"
+                    ],
+                    "iou": 0.6
+                }
+            ]
+        }
+    }
+]

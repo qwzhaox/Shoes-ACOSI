@@ -9,7 +9,8 @@ SENTIMENT = 2
 OPINION = 3
 IMPL_EXPL = 4
 
-ACOSI = ["Aspect", "Category", "Sentiment", "Opinion", "Implicit/Explict"]
+ACOSI = ["Aspect", "Category", "Sentiment", "Opinion", "Implicit/Explicit"]
+A = ["aspect", "category", "sentiment", "opinion", "impl_expl"]
 ACOSI_IDX = [ASPECT, CATEGORY, SENTIMENT, OPINION, IMPL_EXPL]
 
 COMBOS = []
@@ -51,9 +52,9 @@ def get_inter_union(set1, set2):
     return len(set1 & set2), len(set1 | set2)
 
 
-def print_metric(metric, inter, union):
-    print(
-        f"{metric}: {inter}/{union}, {(inter/union)*100:.2f}%")
+def process_metric(metric, inter, union):
+    output_list.append(f"{metric}: {inter}/{union}, {(inter/union)*100:.2f}%")
+    return round(inter/union, 4)  # Rounded--can remove if needed
 
 
 def get_exact_inter_union(annot1, annot2):
@@ -146,20 +147,44 @@ def exclude(annot1, annot2, exclusions):
     return inter, union
 
 
-def print_exclusions(annot1, annot2):
-    print("\nExact match w/ exclusions:")
-    num_excl = 0
+def process_exclusions(annot1, annot2):
+    output_list.append("\nExact match w/ exclusions:")
+    num_excl = 1
+    output_list.append(f"\nExclude: {num_excl}")
+
+    excl_metrics = {}
+    curr_excl_metrics = []
+
     for exclusions in COMBOS:
+
         if num_excl != len(exclusions):
+            excl_metrics[num_excl] = deepcopy(curr_excl_metrics)
+            curr_excl_metrics.clear()
             num_excl = len(exclusions)
-            print(f"\nExclude: {num_excl}")
-        excl_list = get_excl_elts(ACOSI, exclusions)
-        incl_list = get_incl_elts(ACOSI, exclusions)
-        print(
-            f"{incl_list}\nEXCLUDED: {excl_list}")
+            output_list.append(f"\nExclude: {num_excl}")
+
+        incl_list_print = get_incl_elts(ACOSI, exclusions)
+        excl_list_print = get_excl_elts(ACOSI, exclusions)
+
+        output_list.append(f"{incl_list_print}\nEXCLUDED: {excl_list_print}")
+
+        metric = {}
+
+        incl_list = get_incl_elts(A, exclusions)
+        excl_list = get_excl_elts(A, exclusions)
+
+        metric["included"] = incl_list
+        metric["excluded"] = excl_list
+
         inter, union = exclude(annot1, annot2, exclusions)
-        print_metric(
+        metric["iou"] = process_metric(
             f"\tIoU match", inter, union)
+
+        curr_excl_metrics.append(metric)
+
+    excl_metrics[num_excl] = curr_excl_metrics
+
+    return excl_metrics
 
 
 # ...
@@ -169,16 +194,37 @@ parser.add_argument(
     help="Input json file",
     required=True
 )
+parser.add_argument(
+    "--output_file",
+    help="output json file",
+    required=True,
+)
+parser.add_argument(
+    "--verbose",
+    action="store_true",
+)
 
 args = parser.parse_args()
+verbose = args.verbose
 
-f = open(args.input_file)
-review_data = json.load(f)
+with open(args.input_file) as f:
+    review_data = json.load(f)
+
+metrics_list = []
+output_list = ["MEASURE USED: INTERSECTION / UNION\n"]
 
 for idx in range(len(review_data)):
+    review_metrics = {}
     review = review_data[idx]["review"]
-    print(
+    review_metrics["review"] = review
+
+    output_list.append(
         f"######################################## REVIEW {idx} ###########################################\n")
+
+    name1 = review_data[idx]["annotations"][0]["metadata"]["name"]
+    name2 = review_data[idx]["annotations"][1]["metadata"]["name"]
+    review_metrics["annotator_ids"] = [name1, name2]
+
     annot1 = review_data[idx]["annotations"][0]["annotation"]
     annot2 = review_data[idx]["annotations"][1]["annotation"]
 
@@ -189,44 +235,60 @@ for idx in range(len(review_data)):
     indexify_spans(annot2, review, ASPECT)
 
     # Delta
-    print(f"Delta: {abs(len(annot1) - len(annot2))}\n")
+    delta = abs(len(annot1) - len(annot2))
+    output_list.append(f"Delta: {delta}\n")
+    review_metrics["delta"] = delta
 
     # Aspect
     aspect_inter, aspect_union = get_span_inter_union(
         ASPECT, annot1, annot2)
-    print_metric(ACOSI[ASPECT], aspect_inter, aspect_union)
+    review_metrics[A[ASPECT]] = process_metric(
+        ACOSI[ASPECT], aspect_inter, aspect_union)
 
     # Category
     cat_inter, cat_union = get_elt_inter_union(CATEGORY, annot1, annot2)
-    print_metric(ACOSI[CATEGORY], cat_inter, cat_union)
+    review_metrics[A[CATEGORY]] = process_metric(
+        ACOSI[CATEGORY], cat_inter, cat_union)
 
     # Sentiment
     sent_inter, sent_union = get_elt_inter_union(SENTIMENT, annot1, annot2)
-    print_metric(ACOSI[SENTIMENT], sent_inter, sent_union)
+    review_metrics[A[SENTIMENT]] = process_metric(
+        ACOSI[SENTIMENT], sent_inter, sent_union)
 
     # Opinion
     op_inter, op_union = get_span_inter_union(
         OPINION, annot1, annot2)
-    print_metric(ACOSI[OPINION], op_inter, op_union)
+    review_metrics[A[OPINION]] = process_metric(
+        ACOSI[OPINION], op_inter, op_union)
 
     # Implicit/Explicit
     ie_inter, ie_outer = get_elt_inter_union(IMPL_EXPL, annot1, annot2)
-    print_metric(ACOSI[IMPL_EXPL], ie_inter, ie_outer)
+    review_metrics[A[IMPL_EXPL]] = process_metric(
+        ACOSI[IMPL_EXPL], ie_inter, ie_outer)
 
     # Exact Match
     exact_inter, exact_union, set_annot1, set_annot2 = \
         get_exact_inter_union(annot1, annot2)
-    print_metric("\nExact match", exact_inter, exact_union)
+    review_metrics["exact"] = process_metric(
+        "\nExact", exact_inter, exact_union)
 
     # Adjusted overall match (find a way to link annotations)
     adj_inter, adj_union = get_adj_inter_union(
         set_annot1, set_annot2, exact_inter, exact_union)
-    print_metric("Adjusted match", adj_inter, adj_union)
+    review_metrics["adjusted"] = process_metric(
+        "Adjusted", adj_inter, adj_union)
 
     # Exact match when take away each column
-    print_exclusions(annot1, annot2)
+    review_metrics["exclusions"] = process_exclusions(annot1, annot2)
 
-    print()
+    metrics_list.append(review_metrics)
+    output_list.append("\n")
+
+with open(args.output_file, "w") as f:
+    json.dump(metrics_list, f)
+
+if verbose:
+    print("\n".join(output_list))
 
 
 f.close()

@@ -146,7 +146,7 @@ def exclude(annot1, annot2, exclusions):
     return inter, union
 
 
-def perform_exclusions(annot1, annot2):
+def print_exclusions(annot1, annot2):
     print("\nExact match w/ exclusions:")
     num_excl = 0
     for exclusions in COMBOS:
@@ -156,7 +156,7 @@ def perform_exclusions(annot1, annot2):
         excl_list = get_excl_elts(ACOSI, exclusions)
         incl_list = get_incl_elts(ACOSI, exclusions)
         print(
-            f"{incl_list} ({excl_list} excluded):")
+            f"{incl_list}\nEXCLUDED: {excl_list}")
         inter, union = exclude(annot1, annot2, exclusions)
         print_metric(
             f"\tIoU match", inter, union)
@@ -224,7 +224,7 @@ for idx in range(len(review_data)):
     print_metric("Adjusted match", adj_inter, adj_union)
 
     # Exact match when take away each column
-    perform_exclusions(annot1, annot2)
+    print_exclusions(annot1, annot2)
 
     print()
 

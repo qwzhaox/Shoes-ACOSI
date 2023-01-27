@@ -163,18 +163,16 @@ def process_exclusions(annot1, annot2):
             num_excl = len(exclusions)
             output_list.append(f"\nExclude: {num_excl}")
 
-        incl_list_print = get_incl_elts(ACOSI, exclusions)
-        excl_list_print = get_excl_elts(ACOSI, exclusions)
-
-        output_list.append(f"{incl_list_print}\nEXCLUDED: {excl_list_print}")
-
         metric = {}
 
         incl_list = get_incl_elts(A, exclusions)
         excl_list = get_excl_elts(A, exclusions)
+        incl_list_print = get_incl_elts(ACOSI, exclusions)
+        excl_list_print = get_excl_elts(ACOSI, exclusions)
 
         metric["included"] = incl_list
         metric["excluded"] = excl_list
+        output_list.append(f"{incl_list_print}\nEXCLUDED: {excl_list_print}")
 
         inter, union = exclude(annot1, annot2, exclusions)
         metric["iou"] = process_metric(

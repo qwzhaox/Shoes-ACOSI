@@ -106,16 +106,17 @@ def get_adj_inter_union(set_annot1, set_annot2, exact_inter, exact_union):
     dif1 = list(set_annot1 - set_annot2)
     dif2 = list(set_annot2 - set_annot1)
 
-    set_list = []
+    already_linked_list = []
     inter = exact_inter
     union = exact_union
 
     for i in range(len(dif1)):
         for j in range(len(dif2)):
-            if {dif1[i], dif2[j]} not in set_list:
+            if dif1[i] not in already_linked_list and dif2[j] not in already_linked_list:
                 similarity = get_quad_similarity(dif1[i], dif2[j])
                 if similarity > SIMILARITY_THRESHOLD:
-                    set_list.append({dif1[i], dif2[j]})
+                    already_linked_list.append(dif1[i])
+                    already_linked_list.append(dif2[j])
                     inter += similarity
                     union -= similarity
 
@@ -253,17 +254,23 @@ for idx in range(len(review_data)):
     review_metrics[A[IMPL_EXPL]] = process_metric(
         ACOSI[IMPL_EXPL], ie_inter, ie_outer)
 
+    review_metrics["quad_avg"] = (review_metrics[A[ASPECT]] +
+                                  review_metrics[A[CATEGORY]] +
+                                  review_metrics[A[SENTIMENT]] +
+                                  review_metrics[A[OPINION]] +
+                                  review_metrics[A[IMPL_EXPL]]) / NUM_QUAD_ELTS
+
     # Exact Match
     exact_inter, exact_union, set_annot1, set_annot2 = \
         get_exact_inter_union(annot1, annot2)
     review_metrics["exact"] = process_metric(
         "\nExact", exact_inter, exact_union)
 
-    # Adjusted overall match (find a way to link annotations)
-    adj_inter, adj_union = get_adj_inter_union(
-        set_annot1, set_annot2, exact_inter, exact_union)
-    review_metrics["adjusted"] = process_metric(
-        "Adjusted", adj_inter, adj_union)
+    # # Adjusted overall match (find a way to link annotations)
+    # adj_inter, adj_union = get_adj_inter_union(
+    #     set_annot1, set_annot2, exact_inter, exact_union)
+    # review_metrics["adjusted"] = process_metric(
+    #     "Adjusted", adj_inter, adj_union)
 
     # Exact match when take away each column
     process_exclusions(annot1, annot2)

@@ -149,47 +149,36 @@ def exclude(annot1, annot2, exclusions):
 
 def process_exclusions(annot1, annot2):
     output_list.append("\nExact match w/ exclusions:")
-    num_excl = 1
+    num_excl = 0
     output_list.append(f"\nExclude: {num_excl}")
 
-    excl_metrics = {}
-    curr_excl_metrics = []
+    exclusions_txt = "exclude_"
+    key = exclusions_txt
 
     for exclusions in COMBOS:
-
         if num_excl != len(exclusions):
-            excl_metrics[num_excl] = deepcopy(curr_excl_metrics)
-            curr_excl_metrics.clear()
+            key = f"{exclusions_txt}{num_excl+1}"
             num_excl = len(exclusions)
             output_list.append(f"\nExclude: {num_excl}")
-
-        metric = {}
 
         incl_list = get_incl_elts(A, exclusions)
         excl_list = get_excl_elts(A, exclusions)
         incl_list_print = get_incl_elts(ACOSI, exclusions)
         excl_list_print = get_excl_elts(ACOSI, exclusions)
 
-        metric["included"] = incl_list
-        metric["excluded"] = excl_list
+        curr_key = f"{key}: {excl_list}"
         output_list.append(f"{incl_list_print}\nEXCLUDED: {excl_list_print}")
 
         inter, union = exclude(annot1, annot2, exclusions)
-        metric["iou"] = process_metric(
+        review_metrics[curr_key] = process_metric(
             f"\tIoU match", inter, union)
-
-        curr_excl_metrics.append(metric)
-
-    excl_metrics[num_excl] = curr_excl_metrics
-
-    return excl_metrics
 
 
 # ...
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "--input_file",
-    help="Input json file",
+    help="input json file",
     required=True
 )
 parser.add_argument(
@@ -277,7 +266,7 @@ for idx in range(len(review_data)):
         "Adjusted", adj_inter, adj_union)
 
     # Exact match when take away each column
-    review_metrics["exclusions"] = process_exclusions(annot1, annot2)
+    process_exclusions(annot1, annot2)
 
     metrics_list.append(review_metrics)
     output_list.append("\n")

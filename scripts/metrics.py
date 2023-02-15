@@ -53,8 +53,14 @@ def get_inter_union(set1, set2):
 
 
 def process_metric(metric, inter, union):
-    output_list.append(f"{metric}: {inter}/{union}, {(inter/union)*100:.2f}%")
-    return round(inter/union, 4)  # Rounded--can remove if needed
+    try:
+        output_list.append(
+            f"{metric}: {inter}/{union}, {(inter/union)*100:.2f}%")
+        return round(inter/union, 4)  # Rounded--can remove if needed
+    except:
+        output_list.append(
+            f"{metric}: {0}, {0}%")
+        return round(0, 4)  # Rounded--can remove if needed
 
 
 def get_exact_inter_union(annot1, annot2):

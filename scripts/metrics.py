@@ -211,6 +211,7 @@ for idx in range(len(review_data)):
     review_metrics = {}
     review = review_data[idx]["review"]
     review_metrics["review"] = review
+    review_metrics["p_name"] = review_data[idx]["p_name"]
 
     output_list.append(
         f"######################################## REVIEW {idx} ###########################################\n")

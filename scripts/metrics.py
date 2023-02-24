@@ -182,11 +182,7 @@ def process_exclusions(annot1, annot2):
 
 
 def flatten_annot(annot):
-    flat_string = ""
-    for a in annot:
-        for b in a:
-            flat_string += f"{b}|"
-        flat_string += f"{flat_string},"
+    flat_string = "\n".join([" | ".join(quad) for quad in annot])
     return flat_string
 
 
@@ -311,13 +307,13 @@ for idx in range(len(review_data)):
     metrics_list.append(review_metrics)
     output_list.append("\n")
 
-review_metrics["delta_avg"] = delta_total/len(review_data)
-review_metrics["aspect_avg"] = aspect_total/len(review_data)
-review_metrics["category_avg"] = category_total/len(review_data)
-review_metrics["opinion_avg"] = opinion_total/len(review_data)
-review_metrics["sentiment_avg"] = sentiment_total/len(review_data)
-review_metrics["impl_expl_avg"] = impl_expl_total/len(review_data)
-review_metrics["exact_avg"] = exact_total/len(review_data)
+# review_metrics["delta_avg"] = delta_total/len(review_data)
+# review_metrics["aspect_avg"] = aspect_total/len(review_data)
+# review_metrics["category_avg"] = category_total/len(review_data)
+# review_metrics["opinion_avg"] = opinion_total/len(review_data)
+# review_metrics["sentiment_avg"] = sentiment_total/len(review_data)
+# review_metrics["impl_expl_avg"] = impl_expl_total/len(review_data)
+# review_metrics["exact_avg"] = exact_total/len(review_data)
 
 with open(args.output_file, "w") as f:
     json.dump(metrics_list, f)

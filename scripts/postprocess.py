@@ -15,6 +15,7 @@ import pandas as pd
 DATA_FOLDER = sys.argv[1]
 file_out = sys.argv[2]
 ANNO_TRACKING = sys.argv[3]
+p_names = sys.argv[4]
 DATA_FOLDER_PATH = os.path.abspath(DATA_FOLDER)
 df = pd.read_excel(ANNO_TRACKING)
 anno1_col = df["Annotator1 Name"]
@@ -23,6 +24,19 @@ EOS_STR = 'IMPLICIT'
 designers = df.iloc[1:8, 7].values.tolist() 
 engineers = df.iloc[1:8, 8].values.tolist() 
 review_dict = {}
+
+
+def find_product_name(review_text, file):
+    for line in file:
+        data = json.loads(line)
+        #print(data)
+        data_text_list = re.compile('\w+').findall(data["text"])
+        review_text_list = re.compile('\w+').findall(review_text)
+
+        if review_text_list == data_text_list:
+            print("HERE")
+            #print(data["p_name"])
+            return (data["name"], data["p_name"])
 
 
 def sort_key(s):
@@ -137,6 +151,11 @@ for root, dirs, files in os.walk(DATA_FOLDER_PATH):
                     text_seg = text_seg.replace("IMPLICIT", " ")
                     text_seg = " ".join(text_seg.split())
                     review_dict["review"] = text_seg
+                    product_name = ""
+                    with open(p_names, 'r') as p_names_f:
+                        product_names = find_product_name(review_dict["review"], p_names_f)
+                    review_dict["name"] = product_names[0]
+                    review_dict["p_name"] = product_names[1]
                     review_dict["global_metadata"] = {
                         "batch_id": batch_num,
                         "review_id": review_num
@@ -223,7 +242,8 @@ for root, dirs, files in os.walk(DATA_FOLDER_PATH):
                         tbd2[index2].append(list((word2, mentionType2[type], category2[type], sentimentPolarity2[type], connection2[type])))
                 review_dict["annotations"][1]["annotation"] = process_dict(tbd2)
                 # NOTE: need to use review_dict.copy(), or else out_dicts_list will only contain the very last review repeated a bunch of times
-                out_dicts_list.append(review_dict.copy())
+                if review_dict["annotations"][0]["annotation"] and review_dict["annotations"][1]["annotation"]:
+                    out_dicts_list.append(review_dict.copy())
                 tbd2 = {}
                 typeToIndex2 = {}
             ####################################################################################################
@@ -247,7 +267,8 @@ for root, dirs, files in os.walk(DATA_FOLDER_PATH):
                         tbd2[index2] = []
                     tbd2[index2].append(list((word2, mentionType2, category2, sentimentPolarity2, connection2)))
                     review_dict["annotations"][1]["annotation"] = process_dict(tbd2)
-                    out_dicts_list.append(review_dict.copy())
+                    if review_dict["annotations"][0]["annotation"] and review_dict["annotations"][1]["annotation"]:
+                        out_dicts_list.append(review_dict.copy())
                     tbd2 = {}
                     typeToIndex2 = {}
                 continue

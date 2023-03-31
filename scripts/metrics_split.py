@@ -1,225 +1,9 @@
-import argparse
-import json
-from itertools import combinations
-from copy import deepcopy
-
-ASPECT = 0
-CATEGORY = 1
-SENTIMENT = 2
-OPINION = 3
-IMPL_EXPL = 4
-
-ACOSI = ["Aspect", "Category", "Sentiment", "Opinion", "Implicit/Explicit"]
-A = ["aspect", "category", "sentiment", "opinion", "impl_expl"]
-ACOSI_IDX = [ASPECT, CATEGORY, SENTIMENT, OPINION, IMPL_EXPL]
-
-COMBOS = []
-for i in range(1, len(ACOSI_IDX)):
-    COMBOS += list(combinations(ACOSI_IDX, i))
-
-NUM_QUAD_ELTS = 5
-
-SIMILARITY_THRESHOLD = 0.50
-
-
-def indexify(original, span):
-    # TODO: more processing needed?
-    orig_array = original.split(" ")
-    span_array = span.split(" ")
-    start_idx = -1
-    while (orig_array[start_idx] != span_array[0]):
-        start_idx += 1
-        if start_idx >= len(orig_array):
-            return [-1]
-
-    end_idx = start_idx + len(span_array)
-    num_span_array = [i for i in range(start_idx, end_idx)]
-    return num_span_array
-
-
-def indexify_spans(annotation, review, idx):
-    for quad in annotation:
-        # Needs to be tuple for overall conversion to set
-        quad[idx] = tuple(indexify(review, quad[idx]))
-
-
-def set_tuplify(list):
-    new_set = set([tuple(sub_list) for sub_list in list])
-    return new_set
-
-
-def get_inter_union(set1, set2):
-    return len(set1 & set2), len(set1 | set2)
-
-
-def process_metric(metric, inter, union):
-    try:
-        output_list.append(
-            f"{metric}: {inter}/{union}, {(inter/union)*100:.2f}%")
-        return round(inter/union, 4)  # Rounded--can remove if needed
-    except:
-        output_list.append(
-            f"{metric}: {0}, {0}%")
-        return round(0, 4)  # Rounded--can remove if needed
-
-
-def get_exact_inter_union(annot1, annot2):
-    set_annot1 = set_tuplify(annot1)
-    set_annot2 = set_tuplify(annot2)
-    inter, union = get_inter_union(set_annot1, set_annot2)
-    return inter, union, set_annot1, set_annot2
-
-
-def get_elt_inter_union(idx, annotation1, annotation2):
-    set1 = set([quad[idx] for quad in annotation1])
-    set2 = set([quad[idx] for quad in annotation2])
-
-    return get_inter_union(set1, set2)
-
-
-def get_span_inter_union(idx, annotation1, annotation2):
-    span1 = [quad[idx] for quad in annotation1]
-    span2 = [quad[idx] for quad in annotation2]
-
-    set_span1 = set(
-        [idx for span in span1 for idx in span])
-    set_span2 = set(
-        [idx for span in span2 for idx in span])
-
-    return get_inter_union(set_span1, set_span2)
-
-
-def get_quad_similarity(quad1, quad2):
-    list_quad1 = list(quad1)
-    list_quad2 = list(quad2)
-    opinion1 = list_quad1.pop(OPINION)
-    opinion2 = list_quad2.pop(OPINION)
-    aspect1 = list_quad1.pop(ASPECT)
-    aspect2 = list_quad2.pop(ASPECT)
-
-    num_agreements = [elt[0] == elt[1] for elt in zip(list_quad1, list_quad2)]
-    inter_opinion, union_opinion = get_inter_union(
-        set(opinion1), set(opinion2))
-    inter_aspect, union_aspect = get_inter_union(set(aspect1), set(aspect2))
-    sum_agreements = sum(num_agreements)
-    inter_union_opinion = inter_opinion/union_opinion
-    inter_union_aspect = inter_aspect/union_aspect
-
-    return (sum_agreements + inter_union_opinion + inter_union_aspect)/NUM_QUAD_ELTS
-
-
-def get_adj_inter_union(set_annot1, set_annot2, exact_inter, exact_union):
-    dif1 = list(set_annot1 - set_annot2)
-    dif2 = list(set_annot2 - set_annot1)
-
-    already_linked_list = []
-    inter = exact_inter
-    union = exact_union
-
-    for i in range(len(dif1)):
-        for j in range(len(dif2)):
-            if dif1[i] not in already_linked_list and dif2[j] not in already_linked_list:
-                similarity = get_quad_similarity(dif1[i], dif2[j])
-                if similarity > SIMILARITY_THRESHOLD:
-                    already_linked_list.append(dif1[i])
-                    already_linked_list.append(dif2[j])
-                    inter += similarity
-                    union -= similarity
-
-    return round(inter, 2), round(union, 2)
-
-
-def quad_excl(quad, exclusions):
-    new_quad = [v for i, v in enumerate(quad) if i not in exclusions]
-    quad.clear()
-    quad.extend(new_quad)
-
-
-def get_incl_elts(list1, exclusions):
-    return [v for i, v in enumerate(list1) if i not in exclusions]
-
-
-def get_excl_elts(list1, exclusions):
-    return [v for i, v in enumerate(list1) if i in exclusions]
-
-
-def exclude(annot1, annot2, exclusions):
-    annot1_cp = deepcopy(annot1)
-    annot2_cp = deepcopy(annot2)
-    for quad in annot1_cp:
-        quad_excl(quad, exclusions)
-    for quad in annot2_cp:
-        quad_excl(quad, exclusions)
-    inter, union, _, _ = get_exact_inter_union(annot1_cp, annot2_cp)
-    return inter, union
-
-
-def process_exclusions(annot1, annot2):
-    output_list.append("\nExact match w/ exclusions:")
-    num_excl = 0
-    output_list.append(f"\nExclude: {num_excl}")
-
-    exclusions_txt = "exclude_"
-    key = exclusions_txt
-
-    for exclusions in COMBOS:
-        if num_excl != len(exclusions):
-            key = f"{exclusions_txt}{num_excl+1}"
-            num_excl = len(exclusions)
-            output_list.append(f"\nExclude: {num_excl}")
-
-        incl_list = get_incl_elts(A, exclusions)
-        excl_list = get_excl_elts(A, exclusions)
-        incl_list_print = get_incl_elts(ACOSI, exclusions)
-        excl_list_print = get_excl_elts(ACOSI, exclusions)
-
-        curr_key = f"{key}: {excl_list}"
-        output_list.append(f"{incl_list_print}\nEXCLUDED: {excl_list_print}")
-
-        inter, union = exclude(annot1, annot2, exclusions)
-        review_metrics[curr_key] = process_metric(
-            f"\tIoU match", inter, union)
-
-
-def flatten_annot(annot):
-    flat_string = "\n".join([" | ".join(quad) for quad in annot])
-    return flat_string
-
-
-# ...
-parser = argparse.ArgumentParser()
-parser.add_argument(
-    "--input_file",
-    help="input json file",
-    required=True
-)
-parser.add_argument(
-    "--output_file",
-    help="output json file",
-    required=True,
-)
-parser.add_argument(
-    "--verbose",
-    action="store_true",
-)
-
-args = parser.parse_args()
-verbose = args.verbose
+from metrics import *
 
 with open(args.input_file) as f:
     review_data = json.load(f)
 
 products_dict = {}
-output_list = ["MEASURE USED: INTERSECTION / UNION\n"]
-
-delta_total = 0
-aspect_total = 0
-category_total = 0
-opinion_total = 0
-sentiment_total = 0
-impl_expl_total = 0
-exact_total = 0
-num_reviews = len(review_data)
 
 for idx in range(len(review_data)):
     review_metrics = {}
@@ -235,9 +19,9 @@ for idx in range(len(review_data)):
     review_metrics["annotator_ids"] = [name1, name2]
 
     annot1 = review_data[idx]["annotations"][0]["annotation"]
-    review_metrics["annot1"] = flatten_annot(annot1)
+    review_metrics["annot1"] = deepcopy(annot1)
     annot2 = review_data[idx]["annotations"][1]["annotation"]
-    review_metrics["annot2"] = flatten_annot(annot2)
+    review_metrics["annot2"] = deepcopy(annot2)
 
     # indexify opinions and spans
     indexify_spans(annot1, review, OPINION)
@@ -305,11 +89,8 @@ for idx in range(len(review_data)):
     # Exact match when take away each column
     process_exclusions(annot1, annot2)
 
-    try:
-        products_dict[review_data[idx]["p_name"]].append(review_metrics)
-    except:
-        products_dict[review_data[idx]["p_name"]] = []
-        products_dict[review_data[idx]["p_name"]].append(review_metrics)
+    products_dict.setdefault(
+        review_data[idx]["p_name"], []).append(review_metrics)
 
     output_list.append("\n")
 
@@ -321,9 +102,15 @@ for idx in range(len(review_data)):
 # review_metrics["impl_expl_avg"] = impl_expl_total/len(review_data)
 # review_metrics["exact_avg"] = exact_total/len(review_data)
 
+num_reviews = len(review_data)
+
 TRAIN = "train"
 VALIDATION = "validation"
 TEST = "test"
+
+TRAIN_PERCENT = 0.65
+VALIDATION_PERCENT = 0.20
+TEST_PERCENT = 0.15
 
 GOAL = "goal"
 ACTUAL = "actual"
@@ -338,15 +125,15 @@ split_dict = {
 
 totals = {
     TRAIN: {
-        GOAL: num_reviews * 0.65,
+        GOAL: num_reviews * TRAIN_PERCENT,
         ACTUAL: 0,
     },
     VALIDATION: {
-        GOAL: num_reviews * 0.20,
+        GOAL: num_reviews * VALIDATION_PERCENT,
         ACTUAL: 0,
     },
     TEST: {
-        GOAL: num_reviews * 0.15,
+        GOAL: num_reviews * TEST_PERCENT,
         ACTUAL: 0,
     }
 }

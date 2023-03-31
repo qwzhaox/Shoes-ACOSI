@@ -50,9 +50,9 @@ ACTUAL = "actual"
 ttv = [TRAIN, VALIDATION, TEST]
 
 split_dict = {
-    TRAIN: {},
-    VALIDATION: {},
-    TEST: {}
+    TRAIN: [],
+    VALIDATION: [],
+    TEST: []
 }
 
 totals = {
@@ -73,12 +73,12 @@ totals = {
 ttv_idx = 0
 for product in products_dict.keys():
     if (len(ttv) == 0):
-        split_dict[TRAIN][product] = products_dict[product]
+        split_dict[TRAIN].extend(products_dict[product])
         totals[TRAIN][ACTUAL] += len(products_dict[product])
 
     idx = ttv_idx % len(ttv)
 
-    split_dict[ttv[idx]][product] = products_dict[product]
+    split_dict[ttv[idx]].extend(products_dict[product])
     totals[ttv[idx]][ACTUAL] += len(products_dict[product])
 
     if totals[ttv[idx]][ACTUAL] >= totals[ttv[idx]][GOAL]:

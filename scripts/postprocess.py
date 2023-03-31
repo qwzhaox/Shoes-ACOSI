@@ -1,6 +1,7 @@
 """
-Aggregates annotations from a folder of annotation files
-Dumps to a human-friendly output format
+Aggregates annotations from 1) a folder containing per each batch, 2 annotators' annotation files and 2) a folder of curated annotation files, 1 per batch.
+--> Need to have folders "annotation" and "curated_shoe_reviews" in the same folder as this script in order to run.
+Dumps to a human-friendly output format.
 """
 from cgitb import text
 from collections import defaultdict
@@ -12,10 +13,11 @@ import sys
 import re
 import pandas as pd
 
-DATA_FOLDER = sys.argv[1]
-file_out = sys.argv[2]
-ANNO_TRACKING = sys.argv[3]
-p_names = sys.argv[4]
+DATA_FOLDER = sys.argv[1] # annotation
+file_out = sys.argv[2] # results.json
+ANNO_TRACKING = sys.argv[3] # annotation_tracking.xlsx
+p_names = sys.argv[4] # p_name.jsonl
+CURATED_FOLDER = sys.argv[5] # curated_shoe_reviews
 DATA_FOLDER_PATH = os.path.abspath(DATA_FOLDER)
 df = pd.read_excel(ANNO_TRACKING)
 anno1_col = df["Annotator1 Name"]
@@ -25,6 +27,8 @@ designers = df.iloc[1:8, 7].values.tolist()
 engineers = df.iloc[1:8, 8].values.tolist() 
 review_dict = {}
 
+
+# HELPER FUNCTIONS
 
 def find_product_name(review_text, file):
     for line in file:
@@ -91,12 +95,73 @@ def process_dict(dict):
     return connected
 
 
+def standardize_length(mentionType, category, sentimentPolarity, connection):
+    mentionType = mentionType.split("|")
+    category = category.split("|")
+    sentimentPolarity = sentimentPolarity.split("|")
+    connection = connection.split("|")
+    
+    if len(category) < len(mentionType):
+        category *= len(mentionType)
+        sentimentPolarity *= len(mentionType)
+        connection *= len(mentionType)
+
+    return mentionType, category, sentimentPolarity, connection
+
+
+def detect_and_clean_row_mistakes(connection_first, index_first, category, sentimentPolarity, connection, reader, idx, anno_row):
+    if connection_first != '_' and index_first != connection_first:
+        move_to_next_review_anno = category, sentimentPolarity, connection
+        start_row_arg = find_first_row_of_next_review(reader, idx, index_first)
+        add_to_correct_implicit_row(reader, start_row_arg, move_to_next_review_anno)
+        for col in range(4, 8):
+            anno_row[col] = "_"
+
+
+def process_nondirect_aspect(mentionType, typeToIndex, activeType, reader, idx, tbd, word, index, category, sentimentPolarity, connection):
+    for type in range(len(mentionType)):
+        if mentionType[type] in typeToIndex and mentionType[type] == activeType and mentionType[type] != 'Direct Aspect' and idx != (len(reader) - 1) and reader[idx + 1]:
+            tbd[typeToIndex[mentionType[type]]][type][0] += " " + word
+        else:
+            typeToIndex[mentionType[type]] = index 
+            if index not in tbd:
+                tbd[index] = []
+            tbd[index].append(list((word, mentionType[type], category[type], sentimentPolarity[type], connection[type])))
+            activeType = mentionType[type]
+    return activeType
+
+
+def process_final_token(index, tbd, mentionType, word, category, sentimentPolarity, connection):
+    if index not in tbd:
+        tbd[index] = []
+    for type in range(len(mentionType)):
+        if (list((word, mentionType[type], category[type], sentimentPolarity[type], connection[type])) not in tbd[index]):
+            tbd[index].append(list((word, mentionType[type], category[type], sentimentPolarity[type], connection[type])))
+
+
+def process_blank_mentionType(index, tbd, word, mentionType, category, sentimentPolarity, connection):
+    if index not in tbd:
+        tbd[index] = []
+    tbd[index].append(list((word, mentionType, category, sentimentPolarity, connection)))
+
+
+# PROCESSING ANNOTATION FILES
+
 out_dicts_list = []
 # process 2 specified annotation files in each subdirectory of the 'annotation' folder
 for root, dirs, files in os.walk(DATA_FOLDER_PATH): 
     dirs.sort(key=sort_key)
+    # each dir represents contains annotations from a batch
     for dir in dirs:
+        # TODO: if there is a curated annotation file with the same name (excluding extension) as dir, process that curated file. 
+        # Will need to establish new variables - anno3_file, reader3, tbd3, typeToIndex3, activeType3, etc.
         batch_num = dir[:-4]
+        process_curated = False
+        for filename in os.listdir(CURATED_FOLDER):
+            if filename[:-4] == batch_num:
+                process_curated = True
+                break
+        
         batch_num = int(re.search(r'\d+', dir).group(0))
         anno1_name = anno1_col[batch_num].lower()
         anno2_name = anno2_col[batch_num].lower()
@@ -112,9 +177,23 @@ for root, dirs, files in os.walk(DATA_FOLDER_PATH):
         typeToIndex2 = {}
         activeType1 = ""
         activeType2 = ""
-        next_blank_indices = []
         review_num = 0
-        # Correct mistakes in annotation files
+
+        anno3_file = None
+        anno3_file_lines = None
+        reader3 = None
+        tbd3 = {}
+        typeToIndex3 = {}
+        activeType3 = ""
+
+        if process_curated:
+            anno3_file = open(CURATED_FOLDER+'/'+filename, 'r')
+            anno3_file_lines = anno3_file.read().replace('"', "'").split("\n")
+            reader3 = list(csv.reader(anno3_file_lines, delimiter="\t"))
+            print(anno3_file)
+
+        # detect and clean mistakes in 2 annotators' files. some IMPLICIT tags were not linked to the correct review through the 
+        # annotation GUI. 
         for idx, (anno1_row, anno2_row) in enumerate(zip(reader1, reader2)):
             if len(anno1_row) > 1: # len(anno2_row) would also be > 1 in this case
                 index1, chars1, word1, mentionType1, category1, sentimentPolarity1, connection1 = anno1_row[0:7]
@@ -123,24 +202,16 @@ for root, dirs, files in os.walk(DATA_FOLDER_PATH):
                 connection1_first = connection1.split("-")[0]
                 index2_first = index2.split("-")[0]
                 connection2_first = connection2.split("-")[0]
-                if connection1_first != '_' and index1_first != connection1_first:
-                    move_to_next_review_anno1 = category1, sentimentPolarity1, connection1
-                    start_row_arg = find_first_row_of_next_review(reader1, idx, index1_first)
-                    # find IMPLICIT in next review. append category1 at end of existing category1, and same for sentiment & connection.
-                    add_to_correct_implicit_row(reader1, start_row_arg, move_to_next_review_anno1)
-                    # change values in reader
-                    for col in range(4, 8):
-                        anno1_row[col] = "_"
-                
-                if connection2_first != '_' and index2_first != connection2_first:
-                    move_to_next_review_anno2 = category2, sentimentPolarity2, connection2
-                    start_row_arg = find_first_row_of_next_review(reader2, idx, index2_first)
-                    add_to_correct_implicit_row(reader2, start_row_arg, move_to_next_review_anno2)
-                    for col in range(4, 8):
-                        anno2_row[col] = "_"
+                detect_and_clean_row_mistakes(connection1_first, index1_first, category1, sentimentPolarity1, connection1, reader1, idx, anno1_row)
+                detect_and_clean_row_mistakes(connection2_first, index2_first, category2, sentimentPolarity2, connection2, reader2, idx, anno2_row)
 
+        curated_file_line = -1
         # line-by-line enumeration of the tsv output
         for idx, (anno1_row, anno2_row) in enumerate(zip(reader1, reader2)):
+            curated_file_line += 1 # TODO: is this ok?
+            anno3_row = None
+            if process_curated:
+                anno3_row = reader3[curated_file_line]
             # if we're dealing with an empty row, then ignore
             # if input files contain no errors, then anno1_row and anno2_row, which contain the review, should be the same.
             if len(anno1_row) == 0 or anno2_row[0][0] == "#":
@@ -160,6 +231,8 @@ for root, dirs, files in os.walk(DATA_FOLDER_PATH):
                         "batch_id": batch_num,
                         "review_id": review_num
                     }
+
+                    # initialize review_dict to contain 2 annotators' annotations
                     review_dict["annotations"] = [{}, {}]
 
                     review_dict["annotations"][0]["metadata"] = {}
@@ -171,75 +244,54 @@ for root, dirs, files in os.walk(DATA_FOLDER_PATH):
                     review_dict["annotations"][1]["metadata"]["name"] = anno2_name
                     review_dict["annotations"][1]["metadata"]["annotator_experience"] = "Designer" if anno2_name in designers else "Engineer"
                     review_dict["annotations"][1]["annotation"] = []
+
+                    # if matching curated annotation exists, add an entry onto review_dict.
+                    if process_curated:
+                        review_dict["annotations"].append({})
+                        review_dict["annotations"][2]["metadata"] = {}
+                        review_dict["annotations"][2]["metadata"]["name"] = "Curator"
+                        review_dict["annotations"][2]["metadata"]["annotator_experience"] = "Curator"
+                        review_dict["annotations"][2]["annotation"] = []
+
                 continue
 
             index1, chars1, word1, mentionType1, category1, sentimentPolarity1, connection1 = anno1_row[0:7]
             index2, chars2, word2, mentionType2, category2, sentimentPolarity2, connection2 = anno2_row[0:7]
-
-            ####################################################################################################
-            mentionType1 = mentionType1.split("|")
-            category1 = category1.split("|")
-            sentimentPolarity1 = sentimentPolarity1.split("|")
-            connection1 = connection1.split("|")
-
-            mentionType2 = mentionType2.split("|")
-            category2 = category2.split("|")
-            sentimentPolarity2 = sentimentPolarity2.split("|")
-            connection2 = connection2.split("|")
+            # if matching curated annotation exists, parse its row
+            index3, chars3, word3, mentionType3, category3, sentimentPolarity3, connection3 = (anno3_row[0:7] if process_curated else (None,)*7)
             
-            if len(category1) < len(mentionType1):
-                category1 *= len(mentionType1)
-                sentimentPolarity1 *= len(mentionType1)
-                connection1 *= len(mentionType1)
-
-            if len(category2) < len(mentionType2):
-                category2 *= len(mentionType2)
-                sentimentPolarity2 *= len(mentionType2)
-                connection2 *= len(mentionType2)
+            ####################################################################################################            
+            mentionType1, category1, sentimentPolarity1, connection1 = standardize_length(mentionType1, category1, sentimentPolarity1, connection1)
+            mentionType2, category2, sentimentPolarity2, connection2 = standardize_length(mentionType2, category2, sentimentPolarity2, connection2)
+            mentionType3, category3, sentimentPolarity3, connection3 = (standardize_length(mentionType3, category3, sentimentPolarity3, connection3) if process_curated else (None,)*4)
             ####################################################################################################
         
             ####################################################################################################
-            for type in range(len(mentionType1)):
-                if mentionType1[type] in typeToIndex1 and mentionType1[type] == activeType1 and mentionType1[type] != 'Direct Aspect' and idx != (len(reader1) - 1) and reader1[idx + 1]:
-                    tbd1[typeToIndex1[mentionType1[type]]][type][0] += " " + word1
-                else:
-                    typeToIndex1[mentionType1[type]] = index1
-                    if index1 not in tbd1:
-                        tbd1[index1] = []
-                    tbd1[index1].append(list((word1, mentionType1[type], category1[type], sentimentPolarity1[type], connection1[type])))
-                    activeType1 = mentionType1[type]
-
-            for type in range(len(mentionType2)):
-                if mentionType2[type] in typeToIndex2 and mentionType2[type] == activeType2 and mentionType2[type] != 'Direct Aspect' and idx != (len(reader2) - 1) and reader2[idx + 1]:
-                    tbd2[typeToIndex2[mentionType2[type]]][type][0] += " " + word2
-                else:
-                    typeToIndex2[mentionType2[type]] = index2
-                    if index2 not in tbd2:
-                        tbd2[index2] = []
-                    tbd2[index2].append(list((word2, mentionType2[type], category2[type], sentimentPolarity2[type], connection2[type])))
-                    activeType2 = mentionType2[type]
+            activeType1 = process_nondirect_aspect(mentionType1, typeToIndex1, activeType1, reader1, idx, tbd1, word1, index1, category1, sentimentPolarity1, connection1)
+            activeType2 = process_nondirect_aspect(mentionType2, typeToIndex2, activeType2, reader2, idx, tbd2, word2, index2, category2, sentimentPolarity2, connection2)
+            activeType2 = (process_nondirect_aspect(mentionType3, typeToIndex3, activeType3, reader3, idx, tbd3, word3, index3, category3, sentimentPolarity3, connection3) if process_curated else None)
             ####################################################################################################
 
             #################################################################################################### 
             # if this is the final token in the review  
+            if process_curated:
+                if anno3_row[2] == EOS_STR and not reader3[idx + 1]:
+                    activeType3 = ""
+                    process_final_token(index3, tbd3, mentionType3, word3, category3, sentimentPolarity3, connection3)
+                    review_dict["annotations"][2]["annotation"] = process_dict(tbd3)
+                    tbd3 = {}
+                    typeToIndex3 = {}
+
             if anno1_row[2] == EOS_STR and not reader1[idx + 1]:
                 activeType1 = ""
-                if index1 not in tbd1:
-                    tbd1[index1] = []
-                for type in range(len(mentionType1)):
-                    if (list((word1, mentionType1[type], category1[type], sentimentPolarity1[type], connection1[type])) not in tbd1[index1]):
-                        tbd1[index1].append(list((word1, mentionType1[type], category1[type], sentimentPolarity1[type], connection1[type])))
+                process_final_token(index1, tbd1, mentionType1, word1, category1, sentimentPolarity1, connection1)
                 review_dict["annotations"][0]["annotation"] = process_dict(tbd1)
                 tbd1 = {}
                 typeToIndex1 = {}
             
             if anno2_row[2] == EOS_STR and not reader2[idx + 1]:
                 activeType2 = ""
-                if index2 not in tbd2:
-                    tbd2[index2] = []
-                for type in range(len(mentionType2)):
-                    if (list((word2, mentionType2[type], category2[type], sentimentPolarity2[type], connection2[type])) not in tbd2[index2]):
-                        tbd2[index2].append(list((word2, mentionType2[type], category2[type], sentimentPolarity2[type], connection2[type])))
+                process_final_token(index2, tbd2, mentionType2, word2, category2, sentimentPolarity2, connection2)
                 review_dict["annotations"][1]["annotation"] = process_dict(tbd2)
                 # NOTE: need to use review_dict.copy(), or else out_dicts_list will only contain the very last review repeated a bunch of times
                 if review_dict["annotations"][0]["annotation"] and review_dict["annotations"][1]["annotation"]:
@@ -249,13 +301,20 @@ for root, dirs, files in os.walk(DATA_FOLDER_PATH):
             ####################################################################################################
 
             ####################################################################################################
+            if process_curated:
+                if mentionType3 == "_":
+                    activeType3 = ""
+                    # if this is the final token in the review
+                    if anno3_row[2] == EOS_STR and not reader3[idx + 1]:
+                        process_blank_mentionType(index3, tbd3, word3, mentionType3, category3, sentimentPolarity3, connection3)
+                        review_dict["annotations"][2]["annotation"] = process_dict(tbd3)
+                        tbd3 = {}
+                        typeToIndex3 = {}
+
             if mentionType1 == "_":
                 activeType1 = ""
-                # if this is the final token in the review
                 if anno1_row[2] == EOS_STR and not reader1[idx + 1]:
-                    if index1 not in tbd1:
-                        tbd1[index1] = []
-                    tbd1[index1].append(list((word1, mentionType1, category1, sentimentPolarity1, connection1)))
+                    process_blank_mentionType(index1, tbd1, word1, mentionType1, category1, sentimentPolarity1, connection1)
                     review_dict["annotations"][0]["annotation"] = process_dict(tbd1)
                     tbd1 = {}
                     typeToIndex1 = {}
@@ -263,9 +322,7 @@ for root, dirs, files in os.walk(DATA_FOLDER_PATH):
             if mentionType2 == "_":
                 activeType2 = ""
                 if anno2_row[2] == EOS_STR and not reader2[idx + 1]:
-                    if index2 not in tbd2:
-                        tbd2[index2] = []
-                    tbd2[index2].append(list((word2, mentionType2, category2, sentimentPolarity2, connection2)))
+                    process_blank_mentionType(index2, tbd2, word2, mentionType2, category2, sentimentPolarity2, connection2)
                     review_dict["annotations"][1]["annotation"] = process_dict(tbd2)
                     if review_dict["annotations"][0]["annotation"] and review_dict["annotations"][1]["annotation"]:
                         out_dicts_list.append(review_dict.copy())
@@ -273,8 +330,8 @@ for root, dirs, files in os.walk(DATA_FOLDER_PATH):
                     typeToIndex2 = {}
                 continue
             ####################################################################################################
-        # ENDFOR (finish traversing 1 batch - 2 annotators' files per batch)
-    # ENDFOR (finish traversing all batches)
+        # ENDFOR (traverse 2 annotators' files per batch + 1 curator's file if available)
+    # ENDFOR (traverse 1 dir)
 print(out_dicts_list)
 with open(file_out, 'w') as ofile:
     ofile.write(json.dumps(out_dicts_list))

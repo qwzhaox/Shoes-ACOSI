@@ -3,5 +3,6 @@
 env
 env/
 
+scripts/__pycache__/
 chatGPT/.env
 .env

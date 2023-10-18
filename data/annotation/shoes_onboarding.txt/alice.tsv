@@ -1,0 +1,122 @@
+#FORMAT=WebAnno TSV 3.3
+#T_SP=webanno.custom.Aspect|MentionType
+#T_RL=webanno.custom.Sentiment|Category|Polarity|BT_webanno.custom.Aspect
+
+
+#Text=I needed new walking shoes and saw the support for these and bought them. IMPLICIT_ASPECT They fit my style of walking and it certainly has the support I needed. IMPLICIT_ASPECT I would definitely buy these again when the time comes.
+1-1	0-1	I	_	_	_	_	
+1-2	2-8	needed	Direct Opinion[1]	_	_	_	
+1-3	9-12	new	Direct Opinion[1]	_	_	_	
+1-4	13-20	walking	Direct Aspect[2]	Misc	Neutral	1-2[1_2]	
+1-5	21-26	shoes	Direct Aspect[2]	_	_	_	
+1-6	27-30	and	_	_	_	_	
+1-7	31-34	saw	Indirect Opinion[3]	_	_	_	
+1-8	35-38	the	Indirect Opinion[3]	_	_	_	
+1-9	39-46	support	Indirect Opinion[3]	_	_	_	
+1-10	47-50	for	Indirect Opinion[3]	_	_	_	
+1-11	51-56	these	Indirect Opinion[3]	_	_	_	
+1-12	57-60	and	_	_	_	_	
+1-13	61-67	bought	Direct Aspect[4]	ContextOfUse#Purchase\_Context	Positive	1-7[3_4]	
+1-14	68-72	them	Direct Aspect[4]	_	_	_	
+1-15	72-73	.	_	_	_	_	
+1-16	74-89	IMPLICIT_ASPECT	_	_	_	_	
+1-17	90-94	They	_	_	_	_	
+1-18	95-98	fit	Direct Aspect	_	_	_	
+1-19	99-101	my	Indirect Opinion[5]	Performance#Sizing/Fit	Positive	1-18[0_5]	
+1-20	102-107	style	Indirect Opinion[5]	_	_	_	
+1-21	108-110	of	Indirect Opinion[5]	_	_	_	
+1-22	111-118	walking	Indirect Opinion[5]	_	_	_	
+1-23	119-122	and	_	_	_	_	
+1-24	123-125	it	Direct Aspect	_	_	_	
+1-25	126-135	certainly	_	_	_	_	
+1-26	136-139	has	_	_	_	_	
+1-27	140-143	the	_	_	_	_	
+1-28	144-151	support	Direct Opinion[6]	Performance#Comfort	Positive	1-24[0_6]	
+1-29	152-153	I	Direct Opinion[6]	_	_	_	
+1-30	154-160	needed	Direct Opinion[6]	_	_	_	
+1-31	160-161	.	_	_	_	_	
+1-32	162-177	IMPLICIT_ASPECT	_	_	_	_	
+1-33	178-179	I	_	_	_	_	
+1-34	180-185	would	_	_	_	_	
+1-35	186-196	definitely	Direct Opinion[7]	Cost/Value	Positive	1-37[0_7]	
+1-36	197-200	buy	Direct Opinion[7]	_	_	_	
+1-37	201-206	these	Direct Aspect	_	_	_	
+1-38	207-212	again	_	_	_	_	
+1-39	213-217	when	_	_	_	_	
+1-40	218-221	the	_	_	_	_	
+1-41	222-226	time	_	_	_	_	
+1-42	227-232	comes	_	_	_	_	
+1-43	232-233	.	_	_	_	_	
+
+#Text=I used this shoe for walking and both shoes ripped. IMPLICIT_ASPECT Customer service still has not responded. IMPLICIT_ASPECT Never had adidas go out like that before.
+2-1	234-235	I	_	_	_	_	
+2-2	236-240	used	_	_	_	_	
+2-3	241-245	this	_	_	_	_	
+2-4	246-250	shoe	_	_	_	_	
+2-5	251-254	for	_	_	_	_	
+2-6	255-262	walking	_	_	_	_	
+2-7	263-266	and	_	_	_	_	
+2-8	267-271	both	_	_	_	_	
+2-9	272-277	shoes	_	_	_	_	
+2-10	278-284	ripped	_	_	_	_	
+2-11	284-285	.	_	_	_	_	
+2-12	286-301	IMPLICIT_ASPECT	_	_	_	_	
+2-13	302-310	Customer	_	_	_	_	
+2-14	311-318	service	_	_	_	_	
+2-15	319-324	still	_	_	_	_	
+2-16	325-328	has	_	_	_	_	
+2-17	329-332	not	_	_	_	_	
+2-18	333-342	responded	_	_	_	_	
+2-19	342-343	.	_	_	_	_	
+2-20	344-359	IMPLICIT_ASPECT	_	_	_	_	
+2-21	360-365	Never	_	_	_	_	
+2-22	366-369	had	_	_	_	_	
+2-23	370-376	adidas	_	_	_	_	
+2-24	377-379	go	_	_	_	_	
+2-25	380-383	out	_	_	_	_	
+2-26	384-388	like	_	_	_	_	
+2-27	389-393	that	_	_	_	_	
+2-28	394-400	before	_	_	_	_	
+2-29	400-401	.	_	_	_	_	
+
+#Text=Great shoes. IMPLICIT_ASPECT I'm already looking forward for my next pair in a slightly different style.
+3-1	402-407	Great	_	_	_	_	
+3-2	408-413	shoes	_	_	_	_	
+3-3	413-414	.	_	_	_	_	
+3-4	415-430	IMPLICIT_ASPECT	_	_	_	_	
+3-5	431-434	I'm	_	_	_	_	
+3-6	435-442	already	_	_	_	_	
+3-7	443-450	looking	_	_	_	_	
+3-8	451-458	forward	_	_	_	_	
+3-9	459-462	for	_	_	_	_	
+3-10	463-465	my	_	_	_	_	
+3-11	466-470	next	_	_	_	_	
+3-12	471-475	pair	_	_	_	_	
+3-13	476-478	in	_	_	_	_	
+3-14	479-480	a	_	_	_	_	
+3-15	481-489	slightly	_	_	_	_	
+3-16	490-499	different	_	_	_	_	
+3-17	500-505	style	_	_	_	_	
+3-18	505-506	.	_	_	_	_	
+
+#Text=How do we get our money back??? IMPLICIT_ASPECT These shoes ripped within the first couple weeks.
+4-1	507-510	How	_	_	_	_	
+4-2	511-513	do	_	_	_	_	
+4-3	514-516	we	_	_	_	_	
+4-4	517-520	get	_	_	_	_	
+4-5	521-524	our	_	_	_	_	
+4-6	525-530	money	_	_	_	_	
+4-7	531-535	back	_	_	_	_	
+4-8	535-536	?	_	_	_	_	
+4-9	536-537	?	_	_	_	_	
+4-10	537-538	?	_	_	_	_	
+4-11	539-554	IMPLICIT_ASPECT	_	_	_	_	
+4-12	555-560	These	_	_	_	_	
+4-13	561-566	shoes	_	_	_	_	
+4-14	567-573	ripped	_	_	_	_	
+4-15	574-580	within	_	_	_	_	
+4-16	581-584	the	_	_	_	_	
+4-17	585-590	first	_	_	_	_	
+4-18	591-597	couple	_	_	_	_	
+4-19	598-603	weeks	_	_	_	_	
+4-20	603-604	.	_	_	_	_	

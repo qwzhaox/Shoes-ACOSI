@@ -1,0 +1,122 @@
+#FORMAT=WebAnno TSV 3.3
+#T_SP=webanno.custom.Aspect|MentionType
+#T_RL=webanno.custom.Sentiment|Category|Polarity|BT_webanno.custom.Aspect
+
+
+#Text=I needed new walking shoes and saw the support for these and bought them. IMPLICIT_ASPECT They fit my style of walking and it certainly has the support I needed. IMPLICIT_ASPECT I would definitely buy these again when the time comes.
+1-1	0-1	I	Direct Aspect[1]	_	_	_	
+1-2	2-8	needed	Direct Aspect[1]	_	_	_	
+1-3	9-12	new	Direct Aspect[1]	_	_	_	
+1-4	13-20	walking	Direct Aspect[1]	_	_	_	
+1-5	21-26	shoes	Direct Aspect[1]	_	_	_	
+1-6	27-30	and	Direct Aspect[1]	_	_	_	
+1-7	31-34	saw	Direct Aspect[1]	_	_	_	
+1-8	35-38	the	Direct Aspect[1]	_	_	_	
+1-9	39-46	support	Direct Aspect[1]	_	_	_	
+1-10	47-50	for	Direct Aspect[1]	_	_	_	
+1-11	51-56	these	Direct Aspect[1]	_	_	_	
+1-12	57-60	and	_	_	_	_	
+1-13	61-67	bought	Direct Aspect[2]	ContextOfUse#Purchase\_Context	Neutral	1-1[1_2]	
+1-14	68-72	them	Direct Aspect[2]	_	_	_	
+1-15	72-73	.	_	_	_	_	
+1-16	74-89	IMPLICIT_ASPECT	_	_	_	_	
+1-17	90-94	They	Direct Aspect	Performance#Comfort	Positive	1-18[3_0]	
+1-18	95-98	fit	Indirect Opinion[3]	_	_	_	
+1-19	99-101	my	Indirect Opinion[3]	_	_	_	
+1-20	102-107	style	Indirect Opinion[3]	_	_	_	
+1-21	108-110	of	Indirect Opinion[3]	_	_	_	
+1-22	111-118	walking	Indirect Opinion[3]	_	_	_	
+1-23	119-122	and	_	_	_	_	
+1-24	123-125	it	Direct Aspect	Performance#Support/Stability	Positive	1-25[4_0]	
+1-25	126-135	certainly	Direct Opinion[4]	_	_	_	
+1-26	136-139	has	Direct Opinion[4]	_	_	_	
+1-27	140-143	the	Direct Opinion[4]	_	_	_	
+1-28	144-151	support	Direct Opinion[4]	_	_	_	
+1-29	152-153	I	Direct Opinion[4]	_	_	_	
+1-30	154-160	needed	Direct Opinion[4]	_	_	_	
+1-31	160-161	.	_	_	_	_	
+1-32	162-177	IMPLICIT_ASPECT	_	_	_	_	
+1-33	178-179	I	Indirect Opinion[5]	_	_	_	
+1-34	180-185	would	Indirect Opinion[5]	_	_	_	
+1-35	186-196	definitely	Indirect Opinion[5]	_	_	_	
+1-36	197-200	buy	Indirect Opinion[5]	_	_	_	
+1-37	201-206	these	Indirect Opinion[5]|Direct Aspect[6]	ContextOfUse#Purchase\_Context	Positive	1-33[5_6]	
+1-38	207-212	again	Indirect Opinion[5]	_	_	_	
+1-39	213-217	when	Indirect Opinion[5]	_	_	_	
+1-40	218-221	the	Indirect Opinion[5]	_	_	_	
+1-41	222-226	time	Indirect Opinion[5]	_	_	_	
+1-42	227-232	comes	Indirect Opinion[5]	_	_	_	
+1-43	232-233	.	_	_	_	_	
+
+#Text=I used this shoe for walking and both shoes ripped. IMPLICIT_ASPECT Customer service still has not responded. IMPLICIT_ASPECT Never had adidas go out like that before.
+2-1	234-235	I	_	_	_	_	
+2-2	236-240	used	_	_	_	_	
+2-3	241-245	this	Direct Aspect[7]	_	_	_	
+2-4	246-250	shoe	Direct Aspect[7]	_	_	_	
+2-5	251-254	for	_	_	_	_	
+2-6	255-262	walking	Direct Aspect	_	_	_	
+2-7	263-266	and	_	_	_	_	
+2-8	267-271	both	Direct Opinion[8]	Performance#Durability|ContextOfUse#Use case	Negative|Negative	2-3[7_8]|2-6[0_8]	
+2-9	272-277	shoes	Direct Opinion[8]	_	_	_	
+2-10	278-284	ripped	Direct Opinion[8]	_	_	_	
+2-11	284-285	.	_	_	_	_	
+2-12	286-301	IMPLICIT_ASPECT	_	_	_	_	
+2-13	302-310	Customer	Direct Aspect[9]	_	_	_	
+2-14	311-318	service	Direct Aspect[9]	_	_	_	
+2-15	319-324	still	Indirect Opinion[10]	Misc	Negative	2-13[9_10]	
+2-16	325-328	has	Indirect Opinion[10]	_	_	_	
+2-17	329-332	not	Indirect Opinion[10]	_	_	_	
+2-18	333-342	responded	Indirect Opinion[10]	_	_	_	
+2-19	342-343	.	_	_	_	_	
+2-20	344-359	IMPLICIT_ASPECT	_	_	_	_	
+2-21	360-365	Never	Indirect Opinion[11]	Performance#General	Negative	2-23[12_11]	
+2-22	366-369	had	Indirect Opinion[11]	_	_	_	
+2-23	370-376	adidas	Indirect Opinion[11]|Direct Aspect[12]	_	_	_	
+2-24	377-379	go	Indirect Opinion[11]	_	_	_	
+2-25	380-383	out	Indirect Opinion[11]	_	_	_	
+2-26	384-388	like	Indirect Opinion[11]	_	_	_	
+2-27	389-393	that	Indirect Opinion[11]	_	_	_	
+2-28	394-400	before	Indirect Opinion[11]	_	_	_	
+2-29	400-401	.	_	_	_	_	
+
+#Text=Great shoes. IMPLICIT_ASPECT I'm already looking forward for my next pair in a slightly different style.
+3-1	402-407	Great	Direct Opinion	Performance#General	Positive	3-2	
+3-2	408-413	shoes	Direct Aspect	_	_	_	
+3-3	413-414	.	_	_	_	_	
+3-4	415-430	IMPLICIT_ASPECT	_	_	_	_	
+3-5	431-434	I'm	_	_	_	_	
+3-6	435-442	already	Direct Opinion[13]	ContextOfUse#Purchase\_Context	Positive	3-11[14_13]	
+3-7	443-450	looking	Direct Opinion[13]	_	_	_	
+3-8	451-458	forward	Direct Opinion[13]	_	_	_	
+3-9	459-462	for	Direct Opinion[13]	_	_	_	
+3-10	463-465	my	_	_	_	_	
+3-11	466-470	next	Direct Aspect[14]	_	_	_	
+3-12	471-475	pair	Direct Aspect[14]	_	_	_	
+3-13	476-478	in	_	_	_	_	
+3-14	479-480	a	Direct Aspect[15]	_	_	_	
+3-15	481-489	slightly	Direct Aspect[15]	_	_	_	
+3-16	490-499	different	Direct Aspect[15]	_	_	_	
+3-17	500-505	style	Direct Aspect[15]	_	_	_	
+3-18	505-506	.	_	_	_	_	
+
+#Text=How do we get our money back??? IMPLICIT_ASPECT These shoes ripped within the first couple weeks.
+4-1	507-510	How	Indirect Opinion[16]	Performance#General	Negative	4-11[0_16]	
+4-2	511-513	do	Indirect Opinion[16]	_	_	_	
+4-3	514-516	we	Indirect Opinion[16]	_	_	_	
+4-4	517-520	get	Indirect Opinion[16]	_	_	_	
+4-5	521-524	our	Indirect Opinion[16]	_	_	_	
+4-6	525-530	money	Indirect Opinion[16]	_	_	_	
+4-7	531-535	back	Indirect Opinion[16]	_	_	_	
+4-8	535-536	?	_	_	_	_	
+4-9	536-537	?	_	_	_	_	
+4-10	537-538	?	_	_	_	_	
+4-11	539-554	IMPLICIT_ASPECT	Direct Aspect	_	_	_	
+4-12	555-560	These	Direct Aspect[17]	_	_	_	
+4-13	561-566	shoes	Direct Aspect[17]	_	_	_	
+4-14	567-573	ripped	Indirect Opinion[18]	Performance#Durability	Negative	4-12[17_18]	
+4-15	574-580	within	Indirect Opinion[18]	_	_	_	
+4-16	581-584	the	Indirect Opinion[18]	_	_	_	
+4-17	585-590	first	Indirect Opinion[18]	_	_	_	
+4-18	591-597	couple	Indirect Opinion[18]	_	_	_	
+4-19	598-603	weeks	Indirect Opinion[18]	_	_	_	
+4-20	603-604	.	_	_	_	_	

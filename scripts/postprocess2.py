@@ -254,8 +254,79 @@ def get_annot_dict_starter(review, batch_id, review_id):
     return processed_annotations
 
 
-def process_annotations():
-    pass
+def process_review(
+    line,
+    review_id,
+    review_id_batch,
+    csv_idx,
+    batch_id,
+    cur_annots_dict,
+    proc_annots_list,
+):
+    if REVIEW_TEXT_INDICATOR in line[0]:
+        review_id_batch += 1
+
+        if csv_idx == 0:
+            review_id += 1
+            review = get_review(line)
+            cur_annots_dict = get_annot_dict_starter(review, batch_id, review_id)
+            proc_annots_list.append(cur_annots_dict)
+
+        else:
+            cur_annots_dict = proc_annots_list[review_id_batch]
+            assert get_review(line) == proc_annots_list[review_id_batch]["review"]
+
+    return review_id, review_id_batch
+
+
+def process_exceptions(line, review_id, review_id_batch, **kwargs):
+    if not line:
+        return review_id, review_id_batch, True
+
+    elif len(line) == 1:
+        review_id, review_id_batch = process_review(line, review_id, review_id_batch, **kwargs)
+        return review_id, review_id_batch, True
+
+    return review_id, review_id_batch, False
+
+
+def process_annotations(
+    complete_annotation_tsv_list,
+    annotators,
+    curated_tsv_exists,
+    review_id,
+    batch_id,
+    proc_annots_list,
+):
+    first_annotator_csv_idx = 0 if curated_tsv_exists else 1
+    last_review_id = review_id
+
+    for csv_idx, annotation in enumerate(complete_annotation_tsv_list):
+        review_id_batch = last_review_id
+
+        cur_annots_dict = {}
+
+        for line in annotation:
+            review_id, review_id_batch, is_exception = process_exceptions(
+                line,
+                review_id,
+                review_id_batch,
+                csv_idx=csv_idx,
+                batch_id=batch_id,
+                cur_annots_dict=cur_annots_dict,
+                proc_annots_list=proc_annots_list,
+            )
+            if is_exception:
+                continue
+
+            word = line[ANNOT_WORD_IDX]
+
+    return review_id
+
+
+def close_files(file_list):
+    for file in file_list:
+        file.close()
 
 
 def process_batch(filedir, review_id, proc_annots_list):
@@ -276,44 +347,16 @@ def process_batch(filedir, review_id, proc_annots_list):
         curated_tsv_file, annotator_tsv_file_list
     )
 
-    first_annotator_csv_idx = 0 if curated_tsv is None else 1
+    review_id = process_annotations(
+        complete_annotation_tsv_list,
+        annotators,
+        curated_tsv_exists,
+        review_id,
+        batch_id,
+        proc_annots_list,
+    )
 
-    last_review_id = review_id
-
-    for csv_idx, annotation in enumerate(complete_annotation_tsv_list):
-        batch_review_id = last_review_id
-
-        cur_annots_dict = {}
-
-        for line in annotation:
-            if not line:
-                continue
-            elif len(line) == 1:
-                if not REVIEW_TEXT_INDICATOR in line[0]:
-                    continue
-
-                batch_review_id += 1
-
-                if csv_idx == 0:
-                    review_id += 1
-                    review = get_review(line)
-                    cur_annots_dict = get_annot_dict_starter(
-                        review, batch_id, review_id
-                    )
-                    proc_annots_list.append(cur_annots_dict)
-
-                else:
-                    cur_annots_dict = proc_annots_list[batch_review_id]
-                    assert (
-                        get_review(line) == proc_annots_list[batch_review_id]["review"]
-                    )
-
-                continue
-
-            word = line[ANNOT_WORD_IDX]
-
-    for tsv_file in complete_annotation_tsv_file_list:
-        tsv_file.close()
+    close_files(complete_annotation_tsv_file_list)
 
     return review_id
 
@@ -329,9 +372,7 @@ def main(processed_annotations_list):
 
     for filedir in filedir_names:
         try:
-            review_id = process_batch(
-                filedir, review_id, processed_annotations_list
-            )
+            review_id = process_batch(filedir, review_id, processed_annotations_list)
         except FileNotFoundError:
             print(f"Skipping {filedir}, could not find curated annotation file.")
         except NotADirectoryError:

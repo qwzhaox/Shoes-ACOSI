@@ -54,11 +54,7 @@ parser.add_argument("-r", "--only_curated", action="store_true")
 
 args = parser.parse_args()
 
-ROLE_START_IDX, NUM_ANNOTATORS_PER_ROW = 1, 6
-DESIGNER_COL, ENGINEER_COL = 7, 8
-
-FIRST_REVIEW_IDX = 5
-
+# Process arguments
 DATA_DIR = Path(args.data_dir)
 
 ANNOTATION_FOLDER_PATH = DATA_DIR / Path(args.annotation_folder)
@@ -72,11 +68,15 @@ OUTPUT_FILE_PATH = DATA_DIR / Path(args.output_file)
 # Load tracking file
 TRACKING_FILE_DF = pd.read_excel(TRACKING_FILE_PATH)
 
+# Get engineer and designer names
+ROLE_START_IDX, NUM_ANNOTATORS_PER_ROLE = 1, 6
+DESIGNER_COL, ENGINEER_COL = 7, 8
+
 DESIGNERS = TRACKING_FILE_DF.iloc[
-    ROLE_START_IDX : ROLE_START_IDX + NUM_ANNOTATORS_PER_ROW, DESIGNER_COL
+    ROLE_START_IDX : ROLE_START_IDX + NUM_ANNOTATORS_PER_ROLE, DESIGNER_COL
 ].values.tolist()
 ENGINEERS = TRACKING_FILE_DF.iloc[
-    ROLE_START_IDX : ROLE_START_IDX + NUM_ANNOTATORS_PER_ROW, ENGINEER_COL
+    ROLE_START_IDX : ROLE_START_IDX + NUM_ANNOTATORS_PER_ROLE, ENGINEER_COL
 ].values.tolist()
 
 # Load product names
@@ -84,8 +84,11 @@ PRODUCT_NAMES_DF = pd.read_json(path_or_buf=PRODUCT_NAMES_FILE_PATH, lines=True)
 PRODUCT_NAMES_DF = PRODUCT_NAMES_DF[["text", "name", "p_name"]]
 PRODUCT_NAMES_DF.drop_duplicates(subset="text", inplace=True)
 
+# Constants
+FIRST_REVIEW_IDX = 5
+
 REVIEW_TEXT_INDICATOR = "#Text="
-IMPLICT_INDICATOR = "IMPLICIT"
+IMPLICT = "IMPLICIT"
 
 ANNOT_WORD_IDX = 2
 ANNOT_START = 3
@@ -118,6 +121,21 @@ def get_annotation_tsv(folder_path, batch_name, search_pattern=False):
     return annotation_tsv, annotation_tsv_file
 
 
+def get_curated_tsv_and_file(batch_name):
+    try:
+        curated_tsv, curated_tsv_file = get_annotation_tsv(
+            CURATED_FOLDER_PATH, batch_name
+        )
+    except FileNotFoundError as error:
+        if args.only_curated:
+            raise error
+
+        curated_tsv = None
+        curated_tsv_file = None
+
+    return curated_tsv, curated_tsv_file
+
+
 def get_annotators_and_file_path(batch_name, batch_id):
     cur_annot_folder_path = ANNOTATION_FOLDER_PATH / Path(f"{batch_name}.txt")
 
@@ -147,11 +165,37 @@ def get_annotator_tsv_list(assigned_annotators, cur_annot_folder_path):
     return annotator_tsv_list, annotator_tsv_file_list
 
 
-def process_annot_filedir_err(error, curated_tsv):
-    if curated_tsv is None:
+def process_annot_filedir_err(error, curated_tsv_exists):
+    if not curated_tsv_exists:
         raise error
 
     return [], [], []
+
+
+def get_annotator_tsvs_and_files(batch_name, batch_id, curated_tsv_exists=True):
+    try:
+        (
+            annotators,
+            cur_annot_folder_path,
+        ) = get_annotators_and_file_path(batch_name, batch_id)
+
+        annotator_tsv_list, annotator_tsv_file_list = get_annotator_tsv_list(
+            annotators, cur_annot_folder_path
+        )
+    except FileNotFoundError as error:
+        (
+            annotators,
+            annotator_tsv_list,
+            annotator_tsv_file_list,
+        ) = process_annot_filedir_err(error, curated_tsv_exists)
+    except NotADirectoryError as error:
+        (
+            annotators,
+            annotator_tsv_list,
+            annotator_tsv_file_list,
+        ) = process_annot_filedir_err(error, curated_tsv_exists)
+
+    return annotators, annotator_tsv_list, annotator_tsv_file_list
 
 
 def create_complete_list(curated, annotator_list):
@@ -161,19 +205,21 @@ def create_complete_list(curated, annotator_list):
 
 
 def process_dataset_review(line):
-    annot_str = (
-        line[0].replace(REVIEW_TEXT_INDICATOR, "").replace(IMPLICT_INDICATOR, "")
-    )
+    # remove #Text= and IMPLICIT from the review
+    annot_str = line[0].replace(REVIEW_TEXT_INDICATOR, "").replace(IMPLICT, "")
 
+    # make sure all punctation is separated by spaces
     punc = re.compile(r"([.,!?;:()[\]])")
     annot_str = punc.sub(" \\1 ", annot_str)
 
+    # remove extra spaces
     annot_str = annot_str.strip()
     annot_str = " ".join(annot_str.split())
     return annot_str
 
 
 def process_product_review(review):
+    # remove all punctuation and spaces
     table = str.maketrans("", "", f"{punctuation} ")
     annot_str = review.translate(table).lower()
     return annot_str
@@ -208,43 +254,22 @@ def get_annot_dict_starter(review, batch_id, review_id):
     return processed_annotations
 
 
-def process_annotations(filedir, review_id):
+def process_annotations():
+    pass
+
+
+def process_batch(filedir, review_id, proc_annots_list):
     batch_name = filedir.stem
-
-    try:
-        curated_tsv, curated_tsv_file = get_annotation_tsv(
-            CURATED_FOLDER_PATH, batch_name
-        )
-    except FileNotFoundError as error:
-        if args.only_curated:
-            raise error
-
-        curated_tsv = None
-        curated_tsv_file = None
-
     batch_id = int(batch_name.split("init_shoes_")[1])
 
-    try:
-        (
-            annotators,
-            cur_annot_folder_path,
-        ) = get_annotators_and_file_path(batch_name, batch_id)
+    curated_tsv, curated_tsv_file = get_curated_tsv_and_file(batch_name)
+    curated_tsv_exists = curated_tsv is not None
 
-        annotator_tsv_list, annotator_tsv_file_list = get_annotator_tsv_list(
-            annotators, cur_annot_folder_path
-        )
-    except FileNotFoundError as error:
-        (
-            annotators,
-            annotator_tsv_list,
-            annotator_tsv_file_list,
-        ) = process_annot_filedir_err(error, curated_tsv)
-    except NotADirectoryError as error:
-        (
-            annotators,
-            annotator_tsv_list,
-            annotator_tsv_file_list,
-        ) = process_annot_filedir_err(error, curated_tsv)
+    (
+        annotators,
+        annotator_tsv_list,
+        annotator_tsv_file_list,
+    ) = get_annotator_tsvs_and_files(batch_name, batch_id, curated_tsv_exists)
 
     complete_annotation_tsv_list = create_complete_list(curated_tsv, annotator_tsv_list)
     complete_annotation_tsv_file_list = create_complete_list(
@@ -252,11 +277,11 @@ def process_annotations(filedir, review_id):
     )
 
     first_annotator_csv_idx = 0 if curated_tsv is None else 1
-    batch_processed_annots_list = []
+
+    last_review_id = review_id
 
     for csv_idx, annotation in enumerate(complete_annotation_tsv_list):
-        review_line_idx = FIRST_REVIEW_IDX
-        batch_review_id = -1
+        batch_review_id = last_review_id
 
         cur_annots_dict = {}
 
@@ -270,17 +295,17 @@ def process_annotations(filedir, review_id):
                 batch_review_id += 1
 
                 if csv_idx == 0:
+                    review_id += 1
                     review = get_review(line)
                     cur_annots_dict = get_annot_dict_starter(
                         review, batch_id, review_id
                     )
-                    batch_processed_annots_list.append(cur_annots_dict)
-                    review_id += 1
+                    proc_annots_list.append(cur_annots_dict)
+
                 else:
-                    cur_annots_dict = batch_processed_annots_list[batch_review_id]
+                    cur_annots_dict = proc_annots_list[batch_review_id]
                     assert (
-                        get_review(line)
-                        == batch_processed_annots_list[batch_review_id]["review"]
+                        get_review(line) == proc_annots_list[batch_review_id]["review"]
                     )
 
                 continue
@@ -290,11 +315,11 @@ def process_annotations(filedir, review_id):
     for tsv_file in complete_annotation_tsv_file_list:
         tsv_file.close()
 
-    return batch_processed_annots_list, review_id
+    return review_id
 
 
 def main(processed_annotations_list):
-    review_id = 0
+    review_id = -1
 
     if args.only_curated:
         filedir_names = CURATED_FOLDER_PATH.iterdir()
@@ -304,10 +329,9 @@ def main(processed_annotations_list):
 
     for filedir in filedir_names:
         try:
-            batch_processed_annotations_list, review_id = process_annotations(
-                filedir, review_id
+            review_id = process_batch(
+                filedir, review_id, processed_annotations_list
             )
-            processed_annotations_list.extend(batch_processed_annotations_list)
         except FileNotFoundError:
             print(f"Skipping {filedir}, could not find curated annotation file.")
         except NotADirectoryError:

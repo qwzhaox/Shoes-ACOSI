@@ -75,9 +75,12 @@ DESIGNER_COL, ENGINEER_COL = 7, 8
 DESIGNERS = TRACKING_FILE_DF.iloc[
     ROLE_START_IDX : ROLE_START_IDX + NUM_ANNOTATORS_PER_ROLE, DESIGNER_COL
 ].values.tolist()
+DESIGNERS = [name.strip().lower() for name in DESIGNERS]
+
 ENGINEERS = TRACKING_FILE_DF.iloc[
     ROLE_START_IDX : ROLE_START_IDX + NUM_ANNOTATORS_PER_ROLE, ENGINEER_COL
 ].values.tolist()
+ENGINEERS = [name.strip().lower() for name in ENGINEERS]
 
 # Load product names
 PRODUCT_NAMES_DF = pd.read_json(path_or_buf=PRODUCT_NAMES_FILE_PATH, lines=True)
@@ -90,9 +93,31 @@ FIRST_REVIEW_IDX = 5
 REVIEW_TEXT_INDICATOR = "#Text="
 IMPLICT = "IMPLICIT"
 
+ANNOT_ID_IDX = 0
 ANNOT_WORD_IDX = 2
-ANNOT_START = 3
-ANNOT_END = 7
+ANNOT_MENTION_TYPE_IDX = 3
+ANNOT_CATEGORY_IDX = 4
+ANNOT_POLARITY_IDX = 5
+ANNOT_SRC_REL_ID_IDX = 6
+
+EMPTY = "_"
+
+ASPECT = "aspect"
+OPINION = "opinion"
+CATEGORY = "category"
+SENTIMENT = "sentiment"
+IMPLICT_EXPLICIT = "impl_expl"
+
+MENTION_TYPE = "mention_type"
+WORD_SPAN = "word_span"
+REL_ID = "rel_id"
+ONGOING = "ongoing"
+
+SRC_REL_ID = "src_rel_id"
+SRC_ANNOT_ID = "src_annot_id"
+
+DIRECT_INDIRECT_IDX = 0
+MENTION_TYPE_IDX = 1
 
 
 def get_annotation_filepath(folder_path, filename, search_pattern=False):
@@ -114,28 +139,13 @@ def get_annotation_filepath(folder_path, filename, search_pattern=False):
     return annotation_file_path
 
 
-def get_annotation_tsv(folder_path, batch_name, search_pattern=False):
-    filename = Path(f"{batch_name}.tsv")
+def get_annotation_tsv(folder_path, batch_name_or_annotator, search_pattern=False):
+    filename = Path(f"{batch_name_or_annotator}.tsv")
     annotation_file = get_annotation_filepath(folder_path, filename, search_pattern)
     annotation_tsv_file = open(annotation_file, "r")
     annotation_tsv = csv.reader(annotation_tsv_file, delimiter="\t")
 
     return annotation_tsv, annotation_tsv_file
-
-
-def get_curated_tsv_and_file(batch_name):
-    try:
-        curated_tsv, curated_tsv_file = get_annotation_tsv(
-            CURATED_FOLDER_PATH, batch_name
-        )
-    except FileNotFoundError as error:
-        if args.only_curated:
-            raise error
-
-        curated_tsv = None
-        curated_tsv_file = None
-
-    return curated_tsv, curated_tsv_file
 
 
 def get_annotators_and_file_path(batch_name, batch_id):
@@ -155,7 +165,7 @@ def get_annotators_and_file_path(batch_name, batch_id):
     return assigned_annotators, cur_annot_folder_path
 
 
-def get_annotator_tsv_list(assigned_annotators, cur_annot_folder_path):
+def get_annotator_tsv_and_file_list(assigned_annotators, cur_annot_folder_path):
     annotator_tsv_list = []
     annotator_tsv_file_list = []
     for annotator in assigned_annotators:
@@ -174,6 +184,21 @@ def process_annot_filedir_err(error, curated_tsv_exists):
     return [], [], []
 
 
+def get_curated_tsv_and_file(batch_name):
+    try:
+        curated_tsv, curated_tsv_file = get_annotation_tsv(
+            CURATED_FOLDER_PATH, batch_name
+        )
+    except FileNotFoundError as error:
+        if args.only_curated:
+            raise error
+
+        curated_tsv = None
+        curated_tsv_file = None
+
+    return curated_tsv, curated_tsv_file
+
+
 def get_annotator_tsvs_and_files(batch_name, batch_id, curated_tsv_exists=True):
     try:
         (
@@ -181,7 +206,7 @@ def get_annotator_tsvs_and_files(batch_name, batch_id, curated_tsv_exists=True):
             cur_annot_folder_path,
         ) = get_annotators_and_file_path(batch_name, batch_id)
 
-        annotator_tsv_list, annotator_tsv_file_list = get_annotator_tsv_list(
+        annotator_tsv_list, annotator_tsv_file_list = get_annotator_tsv_and_file_list(
             annotators, cur_annot_folder_path
         )
     except FileNotFoundError as error:
@@ -236,58 +261,279 @@ class AnnotationProcessor:
     def __init__(
         self,
         complete_annotation_tsv_list,
-        annotators,
-        curated_tsv_exists,
+        proc_annots_list,
         review_id,
         batch_id,
-        proc_annots_list,
+        annotators,
+        curated_tsv_exists,
     ):
         self.complete_annotation_tsv_list = complete_annotation_tsv_list
-        self.annotators = annotators
-        self.curated_tsv_exists = curated_tsv_exists
-        self.review_id = review_id
-        self.batch_id = batch_id
+
         self.proc_annots_list = proc_annots_list
 
-        self.first_annotator_csv_idx = 0 if self.curated_tsv_exists else 1
+        self.review_id = review_id
+        self.batch_id = batch_id
         self.LAST_REVIEW_ID = review_id
 
+        self.annotators = annotators
+        self.first_annotator_tsv_idx = 0 if not curated_tsv_exists else 1
+
+        print(batch_id)
+
     def process_annotations(self):
-        for csv_idx, annotation in enumerate(self.complete_annotation_tsv_list):
+        for tsv_idx, annotation in enumerate(self.complete_annotation_tsv_list):
             self.review_id_batch = self.LAST_REVIEW_ID
             self.cur_annots_dict = {}
-            self.is_first = csv_idx == 0
+            self.is_first_annot_line = True
+
+            is_first_tsv = tsv_idx == 0
+            annotator_idx = tsv_idx - self.first_annotator_tsv_idx
 
             for line in annotation:
-                is_not_annotation = self.__process_exceptions(line)
-                if is_not_annotation:
+                is_annotation = self.__is_annotation(line, is_first_tsv)
+                if not is_annotation:
                     continue
 
-                self.__process_annotation(line)
+                print(line)
+
+                self.__process_annotation(line, annotator_idx)
 
         return self.review_id
 
     ########################## ANNOTATION FUNCTIONS ##########################
 
-    def __process_annotation(self, line):
-        annot_word = line[ANNOT_WORD_IDX]
-        pass
+    def __process_annotation(self, line, annotator_idx):
+        if self.is_first_annot_line:
+            self.cur_annot_dict = {}
+            self.cur_annot_dict["metadata"] = self.__get_metadata(annotator_idx)
+            self.cur_annot_dict["annotation"] = []
+            self.cur_annots_dict["annotations"].append(self.cur_annot_dict)
+
+            self.cur_annot_list = []
+
+            self.span_dict = {}
+            self.cur_spans = []
+
+            self.is_first_annot_line = False
+
+        self.__process_annot_line(line)
+
+    def __get_metadata(self, annotator_idx):
+        metadata = {}
+
+        if self.__is_annotator(annotator_idx):
+            metadata["name"] = self.annotators[annotator_idx]
+
+            if metadata["name"] in DESIGNERS:
+                metadata["role"] = "designer"
+            elif metadata["name"] in ENGINEERS:
+                metadata["role"] = "engineer"
+            else:
+                metadata["role"] = "unknown"
+
+        else:
+            print("curator")
+            metadata["name"] = "curator"
+            metadata["role"] = "curator"
+
+        return metadata
+
+    def __is_annotator(self, annotator_idx):
+        return annotator_idx >= 0
+
+    def __process_annot_line(self, line):
+        annot_id = line[ANNOT_ID_IDX]
+        word = line[ANNOT_WORD_IDX]
+        raw_mention_types = line[ANNOT_MENTION_TYPE_IDX]
+
+        if self.__is_relation(line):
+            categories = line[ANNOT_CATEGORY_IDX]
+            polarities = line[ANNOT_POLARITY_IDX]
+            src_rel_ids = line[ANNOT_SRC_REL_ID_IDX]
+            new_annots = self.__process_relation_layer(
+                categories, polarities, src_rel_ids
+            )
+            self.__process_span_layer(raw_mention_types, word, annot_id, new_annots)
+            self.cur_annot_list.extend(new_annots)
+        else:
+            self.__process_span_layer(raw_mention_types, word, annot_id)
+
+    def __process_span_layer(self, raw_mention_types, word, annot_id, new_annots=[]):
+        raw_mention_types = raw_mention_types.split("|")
+
+        for span in self.cur_spans:
+            span[ONGOING] = False
+
+        new_spans = []
+
+        for raw_mention_type in raw_mention_types:
+            rel_id = self.__get_mention_type_rel_id(raw_mention_type)
+            direct_indirect, mention_type = self.__clean_mention_type(raw_mention_type)
+            # direct_indirect, mention_type = self.__clean_mention_type(
+            #     raw_mention_type, rel_id
+            # )
+
+            new_span = {}
+
+            new_span[REL_ID] = rel_id
+            new_span[IMPLICT_EXPLICIT] = direct_indirect
+            new_span[MENTION_TYPE] = mention_type
+            new_span[WORD_SPAN] = [word]
+            new_span[ONGOING] = True
+
+            new_spans.append(new_span)
+
+            for span in self.cur_spans:
+                if self.__is_same_span(span, rel_id, direct_indirect, mention_type):
+                    span[WORD_SPAN].append(word)
+                    new_span[ONGOING] = False
+                    span[ONGOING] = True
+
+        for span in self.cur_spans:
+            if not span[ONGOING]:
+                self.cur_spans.remove(span)
+
+        for span in new_spans:
+            if not span[ONGOING]:
+                continue
+
+            for new_annot in new_annots:
+                new_annot[span[MENTION_TYPE]] = span[WORD_SPAN]
+                new_annot[f"{span[MENTION_TYPE]}_{IMPLICT_EXPLICIT}"] = span[
+                    IMPLICT_EXPLICIT
+                ]
+            self.cur_spans.append(span)
+            self.span_dict[(annot_id, rel_id)] = span
+
+    def __get_mention_type_rel_id(self, raw_mention_type):
+        rel_id = re.findall(r"\[.*?\]", raw_mention_type)
+        if not rel_id:
+            rel_id = 0
+        else:
+            rel_id = int(rel_id[0].replace("[", "").replace("]", ""))
+        return rel_id
+
+    def __clean_mention_type(self, raw_mention_type):
+        # def __clean_mention_type(self, raw_mention_type, rel_id):
+        raw_mention_type = raw_mention_type.split(" ")
+        direct_indirect = raw_mention_type[DIRECT_INDIRECT_IDX].lower()
+
+        if ASPECT in raw_mention_type[MENTION_TYPE_IDX].lower():
+            # if ASPECT in raw_mention_type[MENTION_TYPE_IDX].lower() or rel_id == 0:
+            mention_type = ASPECT
+        elif OPINION in raw_mention_type[MENTION_TYPE_IDX].lower():
+            mention_type = OPINION
+
+        return direct_indirect, mention_type
+
+    def __is_same_span(self, span, rel_id, direct_indirect, mention_type):
+        return (
+            rel_id == span[REL_ID]
+            and direct_indirect == span[IMPLICT_EXPLICIT]
+            and mention_type == span[MENTION_TYPE]
+        )
+
+    def __is_relation(self, line):
+        return (
+            line[ANNOT_CATEGORY_IDX] != EMPTY
+            and line[ANNOT_POLARITY_IDX] != EMPTY
+            and line[ANNOT_SRC_REL_ID_IDX] != EMPTY
+        )
+
+    def __process_relation_layer(self, categories, polarities, src_rel_ids):
+        categories = categories.split("|")
+        polarities = polarities.split("|")
+        src_rel_ids = src_rel_ids.split("|")
+
+        assert len(categories) == len(polarities) == len(src_rel_ids)
+        new_annots = []
+
+        for category, polarity, src_rel_id in zip(categories, polarities, src_rel_ids):
+            src_annot_id, src_rel_id = self.__clean_src_rel_id(src_rel_id)
+            new_annot = self.__get_new_annot(
+                category, polarity, src_annot_id, src_rel_id
+            )
+            new_annots.append(new_annot)
+
+        return new_annots
+
+    def __clean_src_rel_id(self, src_rel_id):
+        src_rel_id = src_rel_id.split("[")
+        src_annot_id = src_rel_id[0]
+        if len(src_rel_id) == 1:
+            src_rel_id = 0
+        else:
+            src_rel_id = src_rel_id[1].replace("]", "")
+            src_rel_id = src_rel_id.split("_")
+            src_rel_id = int(src_rel_id[0])
+        return src_annot_id, src_rel_id
+
+    def __get_new_annot(self, category, polarity, src_annot_id, src_rel_id):
+        new_annot = {}
+        new_annot[CATEGORY] = category
+        new_annot[SENTIMENT] = polarity
+        new_annot[SRC_ANNOT_ID] = src_annot_id
+        new_annot[SRC_REL_ID] = src_rel_id
+        return new_annot
+
+    def __process_cur_annot_list(self):
+        for annot in self.cur_annot_list:
+            try:
+                missing_span = self.__get_missing_span(annot)
+                annot[missing_span[MENTION_TYPE]] = missing_span[WORD_SPAN]
+                annot[
+                    f"{missing_span[MENTION_TYPE]}_{IMPLICT_EXPLICIT}"
+                ] = missing_span[IMPLICT_EXPLICIT]
+
+                if annot[f"{ASPECT}_{IMPLICT_EXPLICIT}"] == "indirect":
+                    annot[ASPECT] = "null"
+
+                annot_list = [
+                    " ".join(annot[ASPECT]),
+                    annot[CATEGORY],
+                    annot[SENTIMENT],
+                    " ".join(annot[OPINION]),
+                    annot[f"{OPINION}_{IMPLICT_EXPLICIT}"],
+                ]
+
+                self.cur_annot_dict["annotation"].append(annot_list)
+            except KeyError:
+                print("INVALID ANNOTATION: SKIPPED")
+                continue
+
+    def __get_missing_span(self, annot):
+        src_annot_id = annot[SRC_ANNOT_ID]
+        src_rel_id = annot[SRC_REL_ID]
+        return self.span_dict[(src_annot_id, src_rel_id)]
 
     ########################## NON-ANNOTATION FUNCTIONS ##########################
 
-    def __process_exceptions(self, line):
+    def __is_annotation(self, line, is_first_tsv):
         if not line:
-            return True
-        elif len(line) == 1:
-            if REVIEW_TEXT_INDICATOR in line[0]:
-                self.__process_review(line[0])
-            return True
-        return False
+            if not self.is_first_annot_line:
+                self.__process_cur_annot_list()
+            return False
 
-    def __process_review(self, review):
+        if len(line) == 1:
+            if REVIEW_TEXT_INDICATOR in line[0]:
+                self.__process_review(line[0], is_first_tsv)
+            return False
+        try:
+            if line[ANNOT_MENTION_TYPE_IDX] == EMPTY:
+                print(f"SKIPPED: {line}")
+                self.cur_spans = []
+                return False
+        except IndexError:
+            print(f"SKIPPED: {line}")
+            return False
+
+        return True
+
+    def __process_review(self, review, is_first_tsv):
+        self.is_first_annot_line = True
         self.review_id_batch += 1
 
-        if self.is_first:
+        if is_first_tsv:
             self.review_id += 1
             review = process_dataset_review(review)
             self.cur_annots_dict = self.__get_annot_dict_starter(review)
@@ -344,11 +590,11 @@ def process_batch(filedir, review_id, proc_annots_list):
 
     annotation_processor = AnnotationProcessor(
         complete_annotation_tsv_list,
-        annotators,
-        curated_tsv_exists,
+        proc_annots_list,
         review_id,
         batch_id,
-        proc_annots_list,
+        annotators,
+        curated_tsv_exists,
     )
 
     review_id = annotation_processor.process_annotations()

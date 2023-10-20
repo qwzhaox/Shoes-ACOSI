@@ -237,12 +237,12 @@ for root, dirs, files in os.walk(DATA_FOLDER_PATH):
 
                     review_dict["annotations"][0]["metadata"] = {}
                     review_dict["annotations"][0]["metadata"]["name"] = anno1_name
-                    review_dict["annotations"][0]["metadata"]["annotator_experience"] = "Designer" if anno1_name in designers else "Engineer"
+                    review_dict["annotations"][0]["metadata"]["role"] = "Designer" if anno1_name in designers else "Engineer"
                     review_dict["annotations"][0]["annotation"] = []
 
                     review_dict["annotations"][1]["metadata"] = {}
                     review_dict["annotations"][1]["metadata"]["name"] = anno2_name
-                    review_dict["annotations"][1]["metadata"]["annotator_experience"] = "Designer" if anno2_name in designers else "Engineer"
+                    review_dict["annotations"][1]["metadata"]["role"] = "Designer" if anno2_name in designers else "Engineer"
                     review_dict["annotations"][1]["annotation"] = []
 
                     # if matching curated annotation exists, add an entry onto review_dict.
@@ -250,7 +250,7 @@ for root, dirs, files in os.walk(DATA_FOLDER_PATH):
                         review_dict["annotations"].append({})
                         review_dict["annotations"][2]["metadata"] = {}
                         review_dict["annotations"][2]["metadata"]["name"] = "Curator"
-                        review_dict["annotations"][2]["metadata"]["annotator_experience"] = "Curator"
+                        review_dict["annotations"][2]["metadata"]["role"] = "Curator"
                         review_dict["annotations"][2]["annotation"] = []
 
                 continue

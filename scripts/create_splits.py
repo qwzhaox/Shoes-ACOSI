@@ -2,12 +2,9 @@ import json
 import argparse
 
 parser = argparse.ArgumentParser()
+parser.add_argument("-i", "--input_file", help="input json file", required=True)
 parser.add_argument(
-    "--input_file",
-    help="input json file",
-    required=True
-)
-parser.add_argument(
+    "-o",
     "--output_file",
     help="output json file",
     required=True,
@@ -30,7 +27,7 @@ for r in review_data:
     # review["annotator_ids"] = [name1, name2]
 
     review_metrics["annot1"] = r["annotations"][0]["annotation"]
-    review_metrics["annot2"] = r["annotations"][1]["annotation"]
+    # review_metrics["annot2"] = r["annotations"][1]["annotation"]
 
     products_dict.setdefault(r["p_name"], []).append(review_metrics)
 
@@ -40,20 +37,16 @@ TRAIN = "train"
 VALIDATION = "validation"
 TEST = "test"
 
-TRAIN_PERCENT = 0.65
-VALIDATION_PERCENT = 0.20
-TEST_PERCENT = 0.15
+TRAIN_PERCENT = 0.85
+VALIDATION_PERCENT = 0.05
+TEST_PERCENT = 0.10
 
 GOAL = "goal"
 ACTUAL = "actual"
 
 ttv = [TRAIN, VALIDATION, TEST]
 
-split_dict = {
-    TRAIN: [],
-    VALIDATION: [],
-    TEST: []
-}
+split_dict = {TRAIN: [], VALIDATION: [], TEST: []}
 
 totals = {
     TRAIN: {
@@ -67,12 +60,12 @@ totals = {
     TEST: {
         GOAL: num_reviews * TEST_PERCENT,
         ACTUAL: 0,
-    }
+    },
 }
 
 ttv_idx = 0
 for product in products_dict.keys():
-    if (len(ttv) == 0):
+    if len(ttv) == 0:
         split_dict[TRAIN].extend(products_dict[product])
         totals[TRAIN][ACTUAL] += len(products_dict[product])
 

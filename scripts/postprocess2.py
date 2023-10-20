@@ -115,6 +115,7 @@ ONGOING = "ongoing"
 
 SRC_REL_ID = "src_rel_id"
 SRC_ANNOT_ID = "src_annot_id"
+TARGET_REL_ID = "target_rel_id"
 
 DIRECT_INDIRECT_IDX = 0
 MENTION_TYPE_IDX = 1
@@ -314,43 +315,48 @@ def is_relation(line):
     )
 
 
-def get_incomplete_annots(categories, polarities, src_rel_ids):
+def get_incomplete_annots(categories, polarities, raw_src_rel_ids):
     categories = categories.split("|")
     polarities = polarities.split("|")
-    src_rel_ids = src_rel_ids.split("|")
+    raw_src_rel_ids = raw_src_rel_ids.split("|")
 
-    assert len(categories) == len(polarities) == len(src_rel_ids)
+    assert len(categories) == len(polarities) == len(raw_src_rel_ids)
 
     incomplete_annots = []
-    for category, polarity, src_rel_id in zip(categories, polarities, src_rel_ids):
-        src_annot_id, src_rel_id = clean_src_rel_id(src_rel_id)
+    for category, polarity, raw_src_rel_id in zip(
+        categories, polarities, raw_src_rel_ids
+    ):
+        src_annot_id, src_rel_id, target_rel_id = clean_src_rel_id(raw_src_rel_id)
         incomplete_annot = get_incomplete_annot(
-            category, polarity, src_annot_id, src_rel_id
+            category, polarity, src_annot_id, src_rel_id, target_rel_id
         )
         incomplete_annots.append(incomplete_annot)
 
     return incomplete_annots
 
 
-def get_incomplete_annot(category, polarity, src_annot_id, src_rel_id):
+def get_incomplete_annot(category, polarity, src_annot_id, src_rel_id, target_rel_id):
     new_annot = {}
     new_annot[CATEGORY] = category
     new_annot[SENTIMENT] = polarity
     new_annot[SRC_ANNOT_ID] = src_annot_id
     new_annot[SRC_REL_ID] = src_rel_id
+    new_annot[TARGET_REL_ID] = target_rel_id
     return new_annot
 
 
-def clean_src_rel_id(src_rel_id):
-    src_rel_id = src_rel_id.split("[")
-    src_annot_id = src_rel_id[0]
-    if len(src_rel_id) == 1:
+def clean_src_rel_id(raw_src_rel_id):
+    raw_src_rel_id = raw_src_rel_id.split("[")
+    src_annot_id = raw_src_rel_id[0]
+    if len(raw_src_rel_id) == 1:
         src_rel_id = 0
+        target_rel_id = 0
     else:
-        src_rel_id = src_rel_id[1].replace("]", "")
-        src_rel_id = src_rel_id.split("_")
-        src_rel_id = int(src_rel_id[0])
-    return src_annot_id, src_rel_id
+        raw_src_rel_id = raw_src_rel_id[1].replace("]", "")
+        raw_src_rel_id = raw_src_rel_id.split("_")
+        src_rel_id = int(raw_src_rel_id[0])
+        target_rel_id = int(raw_src_rel_id[1])
+    return src_annot_id, src_rel_id, target_rel_id
 
 
 def get_missing_span(annot, span_dict):
@@ -478,9 +484,9 @@ class AnnotationProcessor:
         if is_relation(line):
             categories = line[ANNOT_CATEGORY_IDX]
             polarities = line[ANNOT_POLARITY_IDX]
-            src_rel_ids = line[ANNOT_SRC_REL_ID_IDX]
+            raw_src_rel_ids = line[ANNOT_SRC_REL_ID_IDX]
             incomplete_annots = get_incomplete_annots(
-                categories, polarities, src_rel_ids
+                categories, polarities, raw_src_rel_ids
             )
             self.__process_spans(raw_mention_types, word, annot_id, incomplete_annots)
             self.incomplete_annot_list.extend(incomplete_annots)
@@ -518,9 +524,12 @@ class AnnotationProcessor:
             if not span[ONGOING]:
                 continue
 
-            for new_annot in incomplete_annots:
-                new_annot[span[MENTION_TYPE]] = span[WORD_SPAN]
-                new_annot[f"{span[MENTION_TYPE]}_{IMPLICT_EXPLICIT}"] = span[
+            for incomplete_annot in incomplete_annots:
+                if not incomplete_annot[TARGET_REL_ID] == span[REL_ID]:
+                    continue
+
+                incomplete_annot[span[MENTION_TYPE]] = span[WORD_SPAN]
+                incomplete_annot[f"{span[MENTION_TYPE]}_{IMPLICT_EXPLICIT}"] = span[
                     IMPLICT_EXPLICIT
                 ]
 

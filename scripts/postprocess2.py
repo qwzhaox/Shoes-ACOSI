@@ -101,7 +101,9 @@ def get_annotation_filepath(folder_path, filename, search_pattern=False):
     if not annotation_file_path.is_file():
         if search_pattern:
             for annotated_filename in folder_path.iterdir():
-                if re.search(filename.stem, annotated_filename.stem):
+                fn_no_spaces = filename.stem.replace(" ", "")
+                afn_no_spaces = annotated_filename.stem.replace(" ", "")
+                if re.search(fn_no_spaces, afn_no_spaces):
                     annotation_file_path = folder_path / Path(annotated_filename)
                     return annotation_file_path
 
@@ -204,9 +206,14 @@ def create_complete_list(curated, annotator_list):
     return complete_list
 
 
-def process_dataset_review(line):
+def close_files(file_list):
+    for file in file_list:
+        file.close()
+
+
+def process_dataset_review(review):
     # remove #Text= and IMPLICIT from the review
-    annot_str = line[0].replace(REVIEW_TEXT_INDICATOR, "").replace(IMPLICT, "")
+    annot_str = review.replace(REVIEW_TEXT_INDICATOR, "").replace(IMPLICT, "")
 
     # make sure all punctation is separated by spaces
     punc = re.compile(r"([.,!?;:()[\]])")
@@ -225,108 +232,96 @@ def process_product_review(review):
     return annot_str
 
 
-def get_review(line):
-    annot_str = process_dataset_review(line)
-    return annot_str
+class AnnotationProcessor:
+    def __init__(
+        self,
+        complete_annotation_tsv_list,
+        annotators,
+        curated_tsv_exists,
+        review_id,
+        batch_id,
+        proc_annots_list,
+    ):
+        self.complete_annotation_tsv_list = complete_annotation_tsv_list
+        self.annotators = annotators
+        self.curated_tsv_exists = curated_tsv_exists
+        self.review_id = review_id
+        self.batch_id = batch_id
+        self.proc_annots_list = proc_annots_list
 
+        self.first_annotator_csv_idx = 0 if self.curated_tsv_exists else 1
+        self.LAST_REVIEW_ID = review_id
 
-def get_annot_dict_starter(review, batch_id, review_id):
-    processed_annotations = {}
-    product_review = deepcopy(review)
-    product_review = process_product_review(product_review)
+    def process_annotations(self):
+        for csv_idx, annotation in enumerate(self.complete_annotation_tsv_list):
+            self.review_id_batch = self.LAST_REVIEW_ID
+            self.cur_annots_dict = {}
+            self.is_first = csv_idx == 0
 
-    PRODUCT_NAMES_DF["text"] = PRODUCT_NAMES_DF["text"].apply(process_product_review)
+            for line in annotation:
+                is_not_annotation = self.__process_exceptions(line)
+                if is_not_annotation:
+                    continue
 
-    name, p_name = PRODUCT_NAMES_DF.loc[
-        PRODUCT_NAMES_DF["text"] == product_review,
-        ["name", "p_name"],
-    ].values.flatten()
+                self.__process_annotation(line)
 
-    processed_annotations["review"] = review
-    processed_annotations["name"] = name
-    processed_annotations["p_name"] = p_name
-    processed_annotations["global_metadata"] = {
-        "batch_id": batch_id,
-        "review_id": review_id,
-    }
-    processed_annotations["annotations"] = []
+        return self.review_id
 
-    return processed_annotations
+    ########################## ANNOTATION FUNCTIONS ##########################
 
+    def __process_annotation(self, line):
+        annot_word = line[ANNOT_WORD_IDX]
+        pass
 
-def process_review(
-    line,
-    review_id,
-    review_id_batch,
-    csv_idx,
-    batch_id,
-    cur_annots_dict,
-    proc_annots_list,
-):
-    if REVIEW_TEXT_INDICATOR in line[0]:
-        review_id_batch += 1
+    ########################## NON-ANNOTATION FUNCTIONS ##########################
 
-        if csv_idx == 0:
-            review_id += 1
-            review = get_review(line)
-            cur_annots_dict = get_annot_dict_starter(review, batch_id, review_id)
-            proc_annots_list.append(cur_annots_dict)
+    def __process_exceptions(self, line):
+        if not line:
+            return True
+        elif len(line) == 1:
+            if REVIEW_TEXT_INDICATOR in line[0]:
+                self.__process_review(line[0])
+            return True
+        return False
+
+    def __process_review(self, review):
+        self.review_id_batch += 1
+
+        if self.is_first:
+            self.review_id += 1
+            review = process_dataset_review(review)
+            self.cur_annots_dict = self.__get_annot_dict_starter(review)
+            self.proc_annots_list.append(self.cur_annots_dict)
 
         else:
-            cur_annots_dict = proc_annots_list[review_id_batch]
-            assert get_review(line) == proc_annots_list[review_id_batch]["review"]
+            self.cur_annots_dict = self.proc_annots_list[self.review_id_batch]
+            assert process_dataset_review(review) == self.cur_annots_dict["review"]
 
-    return review_id, review_id_batch
+    def __get_annot_dict_starter(self, review):
+        processed_annotations = {}
 
+        product_review = deepcopy(review)
+        product_review = process_product_review(product_review)
 
-def process_exceptions(line, review_id, review_id_batch, **kwargs):
-    if not line:
-        return review_id, review_id_batch, True
+        PRODUCT_NAMES_DF["text"] = PRODUCT_NAMES_DF["text"].apply(
+            process_product_review
+        )
 
-    elif len(line) == 1:
-        review_id, review_id_batch = process_review(line, review_id, review_id_batch, **kwargs)
-        return review_id, review_id_batch, True
+        name, p_name = PRODUCT_NAMES_DF.loc[
+            PRODUCT_NAMES_DF["text"] == product_review,
+            ["name", "p_name"],
+        ].values.flatten()
 
-    return review_id, review_id_batch, False
+        processed_annotations["review"] = review
+        processed_annotations["name"] = name
+        processed_annotations["p_name"] = p_name
+        processed_annotations["global_metadata"] = {
+            "batch_id": self.batch_id,
+            "review_id": self.review_id,
+        }
+        processed_annotations["annotations"] = []
 
-
-def process_annotations(
-    complete_annotation_tsv_list,
-    annotators,
-    curated_tsv_exists,
-    review_id,
-    batch_id,
-    proc_annots_list,
-):
-    first_annotator_csv_idx = 0 if curated_tsv_exists else 1
-    last_review_id = review_id
-
-    for csv_idx, annotation in enumerate(complete_annotation_tsv_list):
-        review_id_batch = last_review_id
-
-        cur_annots_dict = {}
-
-        for line in annotation:
-            review_id, review_id_batch, is_exception = process_exceptions(
-                line,
-                review_id,
-                review_id_batch,
-                csv_idx=csv_idx,
-                batch_id=batch_id,
-                cur_annots_dict=cur_annots_dict,
-                proc_annots_list=proc_annots_list,
-            )
-            if is_exception:
-                continue
-
-            word = line[ANNOT_WORD_IDX]
-
-    return review_id
-
-
-def close_files(file_list):
-    for file in file_list:
-        file.close()
+        return processed_annotations
 
 
 def process_batch(filedir, review_id, proc_annots_list):
@@ -347,7 +342,7 @@ def process_batch(filedir, review_id, proc_annots_list):
         curated_tsv_file, annotator_tsv_file_list
     )
 
-    review_id = process_annotations(
+    annotation_processor = AnnotationProcessor(
         complete_annotation_tsv_list,
         annotators,
         curated_tsv_exists,
@@ -355,6 +350,8 @@ def process_batch(filedir, review_id, proc_annots_list):
         batch_id,
         proc_annots_list,
     )
+
+    review_id = annotation_processor.process_annotations()
 
     close_files(complete_annotation_tsv_file_list)
 

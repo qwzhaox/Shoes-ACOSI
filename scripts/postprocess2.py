@@ -262,6 +262,11 @@ def process_product_review(review):
 ############################################################### ANNOTATION PROCESSING ANNOTATION HELPERS ###############################################################
 
 
+def set_spans_ongoing_false(ongoing_spans):
+    for span in ongoing_spans:
+        span[ONGOING] = False
+
+
 def get_mention_type_rel_id(raw_mention_type):
     rel_id = re.findall(r"\[.*?\]", raw_mention_type)
     if not rel_id:
@@ -304,6 +309,56 @@ def is_same_span(span, new_span):
         and new_span[IMPLICT_EXPLICIT] == span[IMPLICT_EXPLICIT]
         and new_span[MENTION_TYPE] == span[MENTION_TYPE]
     )
+
+
+def update_ongoing_spans_if_necessary(ongoing_spans, new_span, rel_id):
+    if rel_id == 0:
+        return
+
+    for span in ongoing_spans:
+        if is_same_span(span, new_span):
+            span[WORD_SPAN].extend(new_span[WORD_SPAN])
+            new_span[ONGOING] = False
+            span[ONGOING] = True
+
+
+def remove_finished_spans(ongoing_spans):
+    for span in ongoing_spans:
+        if not span[ONGOING]:
+            ongoing_spans.remove(span)
+
+
+def get_span_rel_id_annot_id(span):
+    return span[REL_ID], span[ANNOT_ID]
+
+
+def update_incomplete_annots(incomplete_annots, span):
+    rel_id, annot_id = get_span_rel_id_annot_id(span)
+
+    for incomplete_annot in incomplete_annots:
+        if not incomplete_annot[TARGET_REL_ID] == rel_id:
+            continue
+
+        incomplete_annot[span[MENTION_TYPE]] = span[WORD_SPAN]
+        incomplete_annot[f"{span[MENTION_TYPE]}_{IMPLICT_EXPLICIT}"] = span[
+            IMPLICT_EXPLICIT
+        ]
+        incomplete_annot[TARGET_ANNOT_ID] = annot_id
+
+
+def add_new_spans_to_ongoing_spans(
+    ongoing_spans, new_spans, span_dict, incomplete_annots
+):
+    for span in new_spans:
+        if not span[ONGOING]:
+            continue
+
+        update_incomplete_annots(incomplete_annots, span)
+
+        ongoing_spans.append(span)
+
+        rel_id, annot_id = get_span_rel_id_annot_id(span)
+        span_dict[(annot_id, rel_id)] = span
 
 
 def is_relation(line):
@@ -362,6 +417,24 @@ def get_missing_span(annot, span_dict):
     src_annot_id = annot[SRC_ANNOT_ID]
     src_rel_id = annot[SRC_REL_ID]
     return span_dict[(src_annot_id, src_rel_id)]
+
+
+def process_new_annot(annot, missing_span, m_ie_key):
+    annot[missing_span[MENTION_TYPE]] = missing_span[WORD_SPAN]
+    annot[m_ie_key] = missing_span[IMPLICT_EXPLICIT]
+
+    if annot[f"{ASPECT}_{IMPLICT_EXPLICIT}"] == "indirect":
+        annot[ASPECT] = "null"
+
+    annot_list = [
+        " ".join(annot[ASPECT]),
+        annot[CATEGORY],
+        annot[SENTIMENT],
+        " ".join(annot[OPINION]),
+        annot[f"{OPINION}_{IMPLICT_EXPLICIT}"],
+    ]
+
+    return annot_list
 
 
 ############################################################### ANNOTATION PROCESSING ###############################################################
@@ -480,13 +553,10 @@ class AnnotationProcessor:
             self.__process_spans(raw_mention_types, word, annot_id)
 
     def __process_spans(self, raw_mention_types, word, annot_id, incomplete_annots=[]):
-        raw_mention_types = raw_mention_types.split("|")
-
-        for span in self.ongoing_spans:
-            span[ONGOING] = False
-
+        set_spans_ongoing_false(self.ongoing_spans)
         new_spans = []
 
+        raw_mention_types = raw_mention_types.split("|")
         for raw_mention_type in raw_mention_types:
             rel_id = get_mention_type_rel_id(raw_mention_type)
             direct_indirect, mention_type = clean_mention_type(raw_mention_type)
@@ -498,37 +568,12 @@ class AnnotationProcessor:
             )
             new_spans.append(new_span)
 
-            if rel_id == 0:
-                continue
+            update_ongoing_spans_if_necessary(self.ongoing_spans, new_span, rel_id)
 
-            for span in self.ongoing_spans:
-                if is_same_span(span, new_span):
-                    span[WORD_SPAN].append(word)
-                    new_span[ONGOING] = False
-                    span[ONGOING] = True
-
-        for span in self.ongoing_spans:
-            if not span[ONGOING]:
-                self.ongoing_spans.remove(span)
-
-        for span in new_spans:
-            if not span[ONGOING]:
-                continue
-
-            rel_id = span[REL_ID]
-
-            for incomplete_annot in incomplete_annots:
-                if not incomplete_annot[TARGET_REL_ID] == rel_id:
-                    continue
-
-                incomplete_annot[span[MENTION_TYPE]] = span[WORD_SPAN]
-                incomplete_annot[f"{span[MENTION_TYPE]}_{IMPLICT_EXPLICIT}"] = span[
-                    IMPLICT_EXPLICIT
-                ]
-                incomplete_annot[TARGET_ANNOT_ID] = annot_id
-
-            self.ongoing_spans.append(span)
-            self.span_dict[(annot_id, rel_id)] = span
+        remove_finished_spans(self.ongoing_spans)
+        add_new_spans_to_ongoing_spans(
+            self.ongoing_spans, new_spans, self.span_dict, incomplete_annots
+        )
 
     def __process_new_annots(self):
         for annot in self.incomplete_annot_list:
@@ -541,35 +586,32 @@ class AnnotationProcessor:
                 original_mention_type = missing_span[MENTION_TYPE]
 
             try:
-                annot[missing_span[MENTION_TYPE]] = missing_span[WORD_SPAN]
-                annot[m_ie_key] = missing_span[IMPLICT_EXPLICIT]
-
-                if annot[f"{ASPECT}_{IMPLICT_EXPLICIT}"] == "indirect":
-                    annot[ASPECT] = "null"
-
-                annot_list = [
-                    " ".join(annot[ASPECT]),
-                    annot[CATEGORY],
-                    annot[SENTIMENT],
-                    " ".join(annot[OPINION]),
-                    annot[f"{OPINION}_{IMPLICT_EXPLICIT}"],
-                ]
-
+                annot_list = process_new_annot(annot, missing_span, m_ie_key)
                 self.annot_dict_for_cur_review["annotation"].append(annot_list)
             except KeyError:
-                print("INVALID ANNOTATION: SKIPPED")
-                print(
-                    f"Annotator: {self.annot_dict_for_cur_review['metadata']['name']}\n"
-                    f"Batch: {self.batch_id}\n"
-                    f"Target: [{annot[TARGET_ANNOT_ID]}, {original_ie} {original_mention_type} {annot[TARGET_REL_ID]}, {annot[CATEGORY]}, {annot[SENTIMENT]}]\n"
-                    f"Source: [{annot[SRC_ANNOT_ID]}, {missing_span[IMPLICT_EXPLICIT]} {missing_span[MENTION_TYPE]} {annot[SRC_REL_ID]}]\n"
+                self.__print_invalid_annot(
+                    annot,
+                    original_span,
+                    missing_span,
+                    original_ie,
+                    original_mention_type,
                 )
-
-                print("Target span:", original_span)
-                print("Source span:", missing_span[WORD_SPAN])
-                print("\n")
-
                 continue
+
+    def __print_invalid_annot(
+        self, annot, original_span, missing_span, original_ie, original_mention_type
+    ):
+        print("INVALID ANNOTATION: SKIPPED")
+        print(
+            f"Annotator: {self.annot_dict_for_cur_review['metadata']['name']}\n"
+            f"Batch: {self.batch_id}\n"
+            f"Target: [{annot[TARGET_ANNOT_ID]}, {original_ie} {original_mention_type} {annot[TARGET_REL_ID]}, {annot[CATEGORY]}, {annot[SENTIMENT]}]\n"
+            f"Source: [{annot[SRC_ANNOT_ID]}, {missing_span[IMPLICT_EXPLICIT]} {missing_span[MENTION_TYPE]} {annot[SRC_REL_ID]}]\n"
+        )
+
+        print("Target span:", original_span)
+        print("Source span:", missing_span[WORD_SPAN])
+        print("\n")
 
     ########################## NON-ANNOTATION FUNCTIONS ##########################
 

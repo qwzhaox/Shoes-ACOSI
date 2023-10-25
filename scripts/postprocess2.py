@@ -240,10 +240,12 @@ def create_complete_list(curated, annotator_list):
 
 def process_dataset_review(review):
     # remove #Text= and IMPLICIT from the review
-    annot_str = review.replace(REVIEW_TEXT_INDICATOR, "").replace(IMPLICT, "")
+    annot_str = (
+        review.replace(REVIEW_TEXT_INDICATOR, "").replace(IMPLICT, "").replace("`", "'")
+    )
 
     # make sure all punctation is separated by spaces
-    punc = re.compile(r"([.,!?;:()[\]])")
+    punc = re.compile(r"([.,!?;:()[\]&#@/~])")
     annot_str = punc.sub(" \\1 ", annot_str)
 
     # remove extra spaces

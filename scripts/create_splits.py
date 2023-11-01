@@ -37,14 +37,14 @@ TRAIN = "train"
 VALIDATION = "validation"
 TEST = "test"
 
-TRAIN_PERCENT = 0.85
-VALIDATION_PERCENT = 0.05
-TEST_PERCENT = 0.10
+TRAIN_PERCENT = 0.86
+VALIDATION_PERCENT = 0.07
+TEST_PERCENT = 0.07
 
 GOAL = "goal"
 ACTUAL = "actual"
 
-ttv = [TRAIN, VALIDATION, TEST]
+ttv = [TRAIN, TEST, VALIDATION]
 
 split_dict = {TRAIN: [], VALIDATION: [], TEST: []}
 
@@ -82,7 +82,7 @@ for product in products_dict.keys():
 split_dict["stats"] = totals
 
 with open(args.output_file, "w") as f:
-    json.dump(split_dict, f)
+    json.dump(split_dict, f, indent=4)
 
 
 f.close()

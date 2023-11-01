@@ -238,19 +238,24 @@ def create_complete_list(curated, annotator_list):
 ############################################################### ANNOTATION PROCESSING REVIEW HELPERS ###############################################################
 
 
+def clean_punctuation(words):
+    punc = re.compile(f"[{re.escape(punctuation)}]")
+    words = punc.sub(" \\g<0> ", words)
+
+    # remove extra spaces
+    words = words.strip()
+    words = " ".join(words.split())
+    return words
+
+
 def process_dataset_review(review):
     # remove #Text= and IMPLICIT from the review
     annot_str = (
         review.replace(REVIEW_TEXT_INDICATOR, "").replace(IMPLICT, "").replace("`", "'")
     )
 
-    # make sure all punctation is separated by spaces
-    punc = re.compile(f"[{re.escape(punctuation)}]")
-    annot_str = punc.sub(r" \1 ", annot_str)
+    annot_str = clean_punctuation(annot_str)
 
-    # remove extra spaces
-    annot_str = annot_str.strip()
-    annot_str = " ".join(annot_str.split())
     return annot_str
 
 
@@ -539,7 +544,7 @@ class AnnotationProcessor:
 
     def __process_annot_line(self, line):
         annot_id = line[ANNOT_ID_IDX]
-        word = line[ANNOT_WORD_IDX]
+        word = clean_punctuation(line[ANNOT_WORD_IDX])
         raw_mention_types = line[ANNOT_MENTION_TYPE_IDX]
 
         if is_relation(line):

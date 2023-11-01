@@ -1,3 +1,4 @@
+Processing annotations...
 INVALID ANNOTATION: SKIPPED
 Annotator: curator
 Batch: 37
@@ -25,7 +26,7 @@ Target: [8-37, direct aspect 37, Appearance#Color, Positive]
 Source: [8-27, direct aspect 36]
 
 Target span: ['white', ',', 'black', ',', 'dark', 'brown', ',', 'gray']
-Source span: ["I've", 'been', 'happy', 'with', 'every', 'time', 'I', 'bought', 'these']
+Source span: ["I ' ve", 'been', 'happy', 'with', 'every', 'time', 'I', 'bought', 'these']
 
 
 INVALID ANNOTATION: SKIPPED
@@ -175,7 +176,7 @@ Target: [22-9, direct opinion 0, Appearance#Color, Neutral]
 Source: [22-10, direct opinion 104]
 
 Target span: ['shoes']
-Source span: ["aren't", 'just', 'brown', ',', 'they', 'are', 'more', 'like', 'a', 'crushed', 'velvet', 'the', 'other', 'color', 'coming', 'up', 'as', 'gold']
+Source span: ["aren ' t", 'just', 'brown', ',', 'they', 'are', 'more', 'like', 'a', 'crushed', 'velvet', 'the', 'other', 'color', 'coming', 'up', 'as', 'gold']
 
 
 INVALID ANNOTATION: SKIPPED
@@ -195,7 +196,7 @@ Target: [16-20, direct opinion 0, Misc, Neutral]
 Source: [16-22, indirect opinion 51]
 
 Target span: ['sick']
-Source span: ['had', 'I', 'seen', 'that', 'they', 'have', 'the', 'sizing', 'sizes', 'on', 'the', 'Outside', ',', "I'd", 'have', 'definitely', 'passed', 'on', 'these']
+Source span: ['had', 'I', 'seen', 'that', 'they', 'have', 'the', 'sizing', 'sizes', 'on', 'the', 'Outside', ',', "I ' d", 'have', 'definitely', 'passed', 'on', 'these']
 
 
 INVALID ANNOTATION: SKIPPED
@@ -214,7 +215,7 @@ Batch: 60
 Target: [15-9, indirect opinion 44, Appearance#Form, Negative]
 Source: [15-4, direct opinion 0]
 
-Target span: ['Not', '100%', 'satisfied', 'with', 'the', 'style']
+Target span: ['Not', '100 %', 'satisfied', 'with', 'the', 'style']
 Source span: ['fit']
 
 
@@ -265,7 +266,7 @@ Target: [2-50, direct aspect 10, Appearance#Form, Negative]
 Source: [2-44, direct aspect 9]
 
 Target span: ['shoes']
-Source span: ["It's", 'not', 'an', 'easy', 'slip', 'on', 'shoes']
+Source span: ["It ' s", 'not', 'an', 'easy', 'slip', 'on', 'shoes']
 
 
 INVALID ANNOTATION: SKIPPED
@@ -404,7 +405,7 @@ Batch: 55
 Target: [4-17, indirect opinion 21, Misc, Neutral]
 Source: [4-7, direct opinion 0]
 
-Target span: ['have', 'to', 'look', 'close', 'to', 'notice', "they're", 'not', 'regular', 'Stan', 'Smiths']
+Target span: ['have', 'to', 'look', 'close', 'to', 'notice', "they ' re", 'not', 'regular', 'Stan', 'Smiths']
 Source span: ['shoes']
 
 
@@ -505,7 +506,7 @@ Target: [14-8, direct aspect 0, General, Positive]
 Source: [14-4, direct aspect 56]
 
 Target span: ['IMPLICIT']
-Source span: ["can't", 'go', 'wrong']
+Source span: ["can ' t", 'go', 'wrong']
 
 
 INVALID ANNOTATION: SKIPPED
@@ -535,7 +536,7 @@ Target: [14-8, direct aspect 0, General, Positive]
 Source: [14-4, direct aspect 36]
 
 Target span: ['IMPLICIT']
-Source span: ["can't", 'go', 'wrong']
+Source span: ["can ' t", 'go', 'wrong']
 
 
 INVALID ANNOTATION: SKIPPED
@@ -544,7 +545,7 @@ Batch: 45
 Target: [2-54, direct opinion 11, Appearance#Shoe Component, Negative]
 Source: [2-60, direct opinion 12]
 
-Target span: ["I've", 'patched', 'them', 'up', 'with', 'new', 'insoles']
+Target span: ["I ' ve", 'patched', 'them', 'up', 'with', 'new', 'insoles']
 Source span: ['insoles']
 
 
@@ -584,7 +585,7 @@ Batch: 59
 Target: [17-10, direct aspect 75, Performance#Sizing/Fit, Positive]
 Source: [17-6, direct aspect 0]
 
-Target span: ['I', 'LOVED', ',', 'so', 'I', 'thought', "I'd", 'give', 'it', 'a', 'try']
+Target span: ['I', 'LOVED', ',', 'so', 'I', 'thought', "I ' d", 'give', 'it', 'a', 'try']
 Source span: ['NB']
 
 
@@ -615,7 +616,7 @@ Target: [16-76, direct aspect 55, Performance#Comfort, Negative]
 Source: [16-68, direct aspect 54]
 
 Target span: ['running', 'shoe']
-Source span: ['They', "don't", 'perform', 'well']
+Source span: ['They', "don ' t", 'perform', 'well']
 
 
 INVALID ANNOTATION: SKIPPED
@@ -704,7 +705,7 @@ Batch: 11
 Target: [17-36, direct aspect 87, Performance#Sizing/Fit, Negative]
 Source: [17-27, direct aspect 0]
 
-Target span: ["don't", 'fit']
+Target span: ["don ' t", 'fit']
 Source span: ['IMPLICIT']
 
 
@@ -724,7 +725,7 @@ Batch: 11
 Target: [17-36, direct aspect 69, Performance#Sizing/Fit, Negative]
 Source: [17-27, direct aspect 0]
 
-Target span: ["don't", 'fit']
+Target span: ["don ' t", 'fit']
 Source span: ['IMPLICIT']
 
 
@@ -945,7 +946,7 @@ Target: [2-9, direct aspect 0, Appearance#Form, Negative]
 Source: [2-1, direct aspect 7]
 
 Target span: ['IMPLICIT']
-Source span: ["Don't", 'recommend', 'for', 'anyone', 'with', 'wide', 'feet']
+Source span: ["Don ' t", 'recommend', 'for', 'anyone', 'with', 'wide', 'feet']
 
 
 INVALID ANNOTATION: SKIPPED
@@ -955,7 +956,7 @@ Target: [2-26, direct aspect 0, Performance#Sizing/Fit, Negative]
 Source: [2-14, direct aspect 8]
 
 Target span: ['IMPLICIT']
-Source span: ["couldn't", 'get', 'my', 'foot', 'pass', 'the', 'heel']
+Source span: ["couldn ' t", 'get', 'my', 'foot', 'pass', 'the', 'heel']
 
 
 INVALID ANNOTATION: SKIPPED
@@ -985,7 +986,7 @@ Target: [10-43, direct opinion 52, Performance#General, Negative]
 Source: [10-38, indirect opinion 51]
 
 Target span: ['unisex', 'shoes']
-Source span: ['I', 'am', 'surprised', 'because', "they're", 'unisex', 'shoes']
+Source span: ['I', 'am', 'surprised', 'because', "they ' re", 'unisex', 'shoes']
 
 
 INVALID ANNOTATION: SKIPPED
@@ -995,7 +996,7 @@ Target: [15-12, direct aspect 0, Cost/Value, Positive]
 Source: [15-9, direct aspect 71]
 
 Target span: ['crocs']
-Source span: ["I'm", 'gettin', 'into']
+Source span: ["I ' m", 'gettin', 'into']
 
 
 INVALID ANNOTATION: SKIPPED
@@ -1145,7 +1146,7 @@ Target: [11-1, direct aspect 0, ContextOfUse#Use case, Negative]
 Source: [11-6, direct aspect 38]
 
 Target span: ['Shoe']
-Source span: ["can't", 'wear']
+Source span: ["can ' t", 'wear']
 
 
 INVALID ANNOTATION: SKIPPED
@@ -1204,7 +1205,7 @@ Batch: 63
 Target: [12-20, indirect opinion 53, Performance#Comfort, Positive]
 Source: [12-18, direct opinion 0]
 
-Target span: ["didn't", 'hurt', 'my', 'feet', 'at', 'all']
+Target span: ["didn ' t", 'hurt', 'my', 'feet', 'at', 'all']
 Source span: ['IMPLICIT']
 
 
@@ -1215,7 +1216,7 @@ Target: [18-7, direct opinion 88, Performance#Sizing/Fit, Neutral]
 Source: [18-1, direct opinion 86]
 
 Target span: ['because', 'of', 'the', 'bigger', 'toe', 'box']
-Source span: ["I've", 'always', 'purchased', 'new', 'balance', 'shoes', 'because', 'of', 'the', 'bigger', 'toe', 'box']
+Source span: ["I ' ve", 'always', 'purchased', 'new', 'balance', 'shoes', 'because', 'of', 'the', 'bigger', 'toe', 'box']
 
 
 INVALID ANNOTATION: SKIPPED
@@ -1258,3 +1259,5 @@ Target span: ['cute']
 Source span: ['They']
 
 
+Saving results to /home/zhao/src/nlp/Shoes-ACOSI-models/ECSR-shoes/data/results.json...
+Done.

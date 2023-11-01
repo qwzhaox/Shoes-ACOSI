@@ -1,337 +1,671 @@
-"""
-Aggregates annotations from 1) a folder containing per each batch, 2 annotators' annotation files and 2) a folder of curated annotation files, 1 per batch.
---> Need to have folders "annotation" and "curated_shoe_reviews" in the same folder as this script in order to run.
-Dumps to a human-friendly output format.
-"""
-from cgitb import text
-from collections import defaultdict
-import itertools
-import os
-import csv
-import json
-import sys
-import re
 import pandas as pd
+import argparse
+import csv
+import re
+import json
+from copy import deepcopy
+from pathlib import Path
+from string import punctuation
 
-DATA_FOLDER = sys.argv[1] # annotation
-file_out = sys.argv[2] # results.json
-ANNO_TRACKING = sys.argv[3] # annotation_tracking.xlsx
-p_names = sys.argv[4] # p_name.jsonl
-CURATED_FOLDER = sys.argv[5] # curated_shoe_reviews
-DATA_FOLDER_PATH = os.path.abspath(DATA_FOLDER)
-df = pd.read_excel(ANNO_TRACKING)
-anno1_col = df["Annotator1 Name"]
-anno2_col = df["Annotator2 Name"]
-EOS_STR = 'IMPLICIT'
-designers = df.iloc[1:8, 7].values.tolist() 
-engineers = df.iloc[1:8, 8].values.tolist() 
-review_dict = {}
+parser = argparse.ArgumentParser(
+    description="Aggregate annotations and create a human-friendly output."
+)
+parser.add_argument(
+    "-d", "--data_dir", type=str, default=".", help="Path to the data folder."
+)
+parser.add_argument(
+    "-a",
+    "--annotation_folder",
+    default="annotation",
+    type=str,
+    help="Path to the annotation folder.",
+)
+parser.add_argument(
+    "-c",
+    "--curated_folder",
+    type=str,
+    default="curated_shoe_reviews",
+    help="Path to the folder containing curated annotation files.",
+)
+parser.add_argument(
+    "-t",
+    "--tracking_file",
+    type=str,
+    default="annotation_tracking.xlsx",
+    help="Path to the annotation tracking file (Excel).",
+)
+parser.add_argument(
+    "-p",
+    "--product_names",
+    type=str,
+    default="p_name.jsonl",
+    help="Path to the product names file.",
+)
+
+parser.add_argument(
+    "-o",
+    "--output_file",
+    type=str,
+    default="results.json",
+    help="Path to the output JSON file.",
+)
+
+parser.add_argument("-r", "--only_curated", action="store_true")
+
+args = parser.parse_args()
+
+# Process arguments
+DATA_DIR = Path(args.data_dir)
+
+ANNOTATION_FOLDER_PATH = DATA_DIR / Path(args.annotation_folder)
+CURATED_FOLDER_PATH = DATA_DIR / Path(args.curated_folder)
+
+TRACKING_FILE_PATH = DATA_DIR / Path(args.tracking_file)
+PRODUCT_NAMES_FILE_PATH = DATA_DIR / Path(args.product_names)
+
+OUTPUT_FILE_PATH = DATA_DIR / Path(args.output_file)
+
+# Load tracking file
+TRACKING_FILE_DF = pd.read_excel(TRACKING_FILE_PATH)
+
+# Get engineer and designer names
+ROLE_START_IDX, NUM_ANNOTATORS_PER_ROLE = 1, 6
+DESIGNER_COL, ENGINEER_COL = 7, 8
+
+DESIGNERS = TRACKING_FILE_DF.iloc[
+    ROLE_START_IDX : ROLE_START_IDX + NUM_ANNOTATORS_PER_ROLE, DESIGNER_COL
+].values.tolist()
+DESIGNERS = [name.strip().lower() for name in DESIGNERS]
+
+ENGINEERS = TRACKING_FILE_DF.iloc[
+    ROLE_START_IDX : ROLE_START_IDX + NUM_ANNOTATORS_PER_ROLE, ENGINEER_COL
+].values.tolist()
+ENGINEERS = [name.strip().lower() for name in ENGINEERS]
+
+# Load product names
+PRODUCT_NAMES_DF = pd.read_json(path_or_buf=PRODUCT_NAMES_FILE_PATH, lines=True)
+PRODUCT_NAMES_DF = PRODUCT_NAMES_DF[["text", "name", "p_name"]]
+PRODUCT_NAMES_DF.drop_duplicates(subset="text", inplace=True)
+
+# Constants
+FIRST_REVIEW_IDX = 5
+
+REVIEW_TEXT_INDICATOR = "#Text="
+IMPLICT = "IMPLICIT"
+
+ANNOT_ID_IDX = 0
+ANNOT_WORD_IDX = 2
+ANNOT_MENTION_TYPE_IDX = 3
+ANNOT_CATEGORY_IDX = 4
+ANNOT_POLARITY_IDX = 5
+ANNOT_SRC_REL_ID_IDX = 6
+
+EMPTY = "_"
+
+ASPECT = "aspect"
+OPINION = "opinion"
+CATEGORY = "category"
+SENTIMENT = "sentiment"
+IMPLICT_EXPLICIT = "impl_expl"
+
+MENTION_TYPE = "mention_type"
+WORD_SPAN = "word_span"
+REL_ID = "rel_id"
+ONGOING = "ongoing"
+
+SRC_REL_ID = "src_rel_id"
+SRC_ANNOT_ID = "src_annot_id"
+TARGET_REL_ID = "target_rel_id"
+
+DIRECT_INDIRECT_IDX = 0
+MENTION_TYPE_IDX = 1
 
 
-# HELPER FUNCTIONS
+def get_annotation_filepath(folder_path, filename, search_pattern=False):
+    annotation_file_path = folder_path / filename
 
-def find_product_name(review_text, file):
-    for line in file:
-        data = json.loads(line)
-        #print(data)
-        data_text_list = re.compile('\w+').findall(data["text"])
-        review_text_list = re.compile('\w+').findall(review_text)
+    if not annotation_file_path.is_file():
+        if search_pattern:
+            for annotated_filename in folder_path.iterdir():
+                fn_no_spaces = filename.stem.replace(" ", "")
+                afn_no_spaces = annotated_filename.stem.replace(" ", "")
+                if re.search(fn_no_spaces, afn_no_spaces):
+                    annotation_file_path = folder_path / Path(annotated_filename)
+                    return annotation_file_path
 
-        if review_text_list == data_text_list:
-            print("HERE")
-            #print(data["p_name"])
-            return (data["name"], data["p_name"])
-
-
-def sort_key(s):
-    s = s[:-4]
-    match = re.search(r'\d+$', s)
-    return int(match.group(0)) if match else 0
-
-
-def find_first_row_of_next_review(reader, current_row, current_review_num):
-    for idx, row in enumerate(itertools.islice(reader, current_row, None)):
-        if len(row) > 1:
-            if int(row[0].split("-")[0]) == (int(current_review_num) + 1):
-                # is this correct?
-                return current_row + idx
-
-
-# start_row is the start of the next review.
-# to_append is tuple: (category, sentimentPolarity, connection)
-def add_to_correct_implicit_row(reader, start_row, to_append):
-    for idx, row in enumerate(itertools.islice(reader, start_row, None)):
-        if len(row) > 1:
-            if EOS_STR in row[2]:
-                row[4] += ('|' + to_append[0])
-                row[5] += ('|' + to_append[1])
-                row[6] += ('|' + to_append[2])
-                return
-
-
-# function to prepare to append 'connection' (list of lists) to 'processed' (after function returns). 
-# run at last token of each review.
-def process_dict(dict):
-    connected = []
-    for index in dict.keys():
-        for group in dict[index]:
-            word, type, category, sentimentPolarity, connection = group
-            if connection != "_":
-                thisIsAspect = False
-                if "Aspect" in type:
-                    thisIsAspect = True
-                conn_split = connection.split("[")
-                new_conn = []
-                other_word = dict[conn_split[0]][0][0]  
-
-                if thisIsAspect:
-                    opinion_type =  type.lower().split()[0]
-                    new_conn = [word, category, sentimentPolarity, other_word, opinion_type]
-                else:
-                    opinion_type =  type.lower().split()[0]
-                    new_conn = [other_word, category, sentimentPolarity, word, opinion_type]
-                connected.append(new_conn)   
-                # endif 
-    return connected
-
-
-def standardize_length(mentionType, category, sentimentPolarity, connection):
-    mentionType = mentionType.split("|")
-    category = category.split("|")
-    sentimentPolarity = sentimentPolarity.split("|")
-    connection = connection.split("|")
-    
-    if len(category) < len(mentionType):
-        category *= len(mentionType)
-        sentimentPolarity *= len(mentionType)
-        connection *= len(mentionType)
-
-    return mentionType, category, sentimentPolarity, connection
-
-
-def detect_and_clean_row_mistakes(connection_first, index_first, category, sentimentPolarity, connection, reader, idx, anno_row):
-    if connection_first != '_' and index_first != connection_first:
-        move_to_next_review_anno = category, sentimentPolarity, connection
-        start_row_arg = find_first_row_of_next_review(reader, idx, index_first)
-        add_to_correct_implicit_row(reader, start_row_arg, move_to_next_review_anno)
-        for col in range(4, 8):
-            anno_row[col] = "_"
-
-
-def process_nondirect_aspect(mentionType, typeToIndex, activeType, reader, idx, tbd, word, index, category, sentimentPolarity, connection):
-    for type in range(len(mentionType)):
-        if mentionType[type] in typeToIndex and mentionType[type] == activeType and mentionType[type] != 'Direct Aspect' and idx != (len(reader) - 1) and reader[idx + 1]:
-            tbd[typeToIndex[mentionType[type]]][type][0] += " " + word
+            raise FileNotFoundError(f"File {annotation_file_path} does not exist.")
         else:
-            typeToIndex[mentionType[type]] = index 
-            if index not in tbd:
-                tbd[index] = []
-            tbd[index].append(list((word, mentionType[type], category[type], sentimentPolarity[type], connection[type])))
-            activeType = mentionType[type]
-    return activeType
+            raise FileNotFoundError(f"File {annotation_file_path} does not exist.")
+
+    return annotation_file_path
 
 
-def process_final_token(index, tbd, mentionType, word, category, sentimentPolarity, connection):
-    if index not in tbd:
-        tbd[index] = []
-    for type in range(len(mentionType)):
-        if (list((word, mentionType[type], category[type], sentimentPolarity[type], connection[type])) not in tbd[index]):
-            tbd[index].append(list((word, mentionType[type], category[type], sentimentPolarity[type], connection[type])))
+def get_annotation_tsv(folder_path, batch_name_or_annotator, search_pattern=False):
+    filename = Path(f"{batch_name_or_annotator}.tsv")
+    annotation_file = get_annotation_filepath(folder_path, filename, search_pattern)
+    annotation_tsv_file = open(annotation_file, "r")
+    annotation_tsv = csv.reader(annotation_tsv_file, delimiter="\t")
+
+    return annotation_tsv, annotation_tsv_file
 
 
-def process_blank_mentionType(index, tbd, word, mentionType, category, sentimentPolarity, connection):
-    if index not in tbd:
-        tbd[index] = []
-    tbd[index].append(list((word, mentionType, category, sentimentPolarity, connection)))
+def get_annotators_and_file_path(batch_name, batch_id):
+    cur_annot_folder_path = ANNOTATION_FOLDER_PATH / Path(f"{batch_name}.txt")
+
+    if cur_annot_folder_path.is_dir():
+        assigned_annotators = TRACKING_FILE_DF.loc[
+            TRACKING_FILE_DF["Batch"] == batch_id,
+            ["Annotator1 Name", "Annotator2 Name"],
+        ].values.flatten()
+
+        assigned_annotators = [name.strip().lower() for name in assigned_annotators]
+
+    else:
+        raise NotADirectoryError(f"Folder {cur_annot_folder_path } does not exist.")
+
+    return assigned_annotators, cur_annot_folder_path
 
 
-# PROCESSING ANNOTATION FILES
+def get_annotator_tsv_and_file_list(assigned_annotators, cur_annot_folder_path):
+    annotator_tsv_list = []
+    annotator_tsv_file_list = []
+    for annotator in assigned_annotators:
+        annotator_tsv, annotator_tsv_file = get_annotation_tsv(
+            cur_annot_folder_path, annotator, search_pattern=True
+        )
+        annotator_tsv_list.append(annotator_tsv)
+        annotator_tsv_file_list.append(annotator_tsv_file)
+    return annotator_tsv_list, annotator_tsv_file_list
 
-out_dicts_list = []
-# process 2 specified annotation files in each subdirectory of the 'annotation' folder
-for root, dirs, files in os.walk(DATA_FOLDER_PATH): 
-    dirs.sort(key=sort_key)
-    # each dir represents contains annotations from a batch
-    for dir in dirs:
-        # TODO: if there is a curated annotation file with the same name (excluding extension) as dir, process that curated file. 
-        # Will need to establish new variables - anno3_file, reader3, tbd3, typeToIndex3, activeType3, etc.
-        batch_num = dir[:-4]
-        process_curated = False
-        for filename in os.listdir(CURATED_FOLDER):
-            if filename[:-4] == batch_num:
-                process_curated = True
-                break
-        
-        batch_num = int(re.search(r'\d+', dir).group(0))
-        anno1_name = anno1_col[batch_num].lower()
-        anno2_name = anno2_col[batch_num].lower()
-        anno1_file = open(DATA_FOLDER+'/'+dir+'/'+anno1_name+'.tsv')
-        anno2_file = open(DATA_FOLDER+'/'+dir+'/'+anno2_name+'.tsv')
-        anno1_file_lines = anno1_file.read().replace('"', "'").split("\n")
-        anno2_file_lines = anno2_file.read().replace('"', "'").split("\n")
-        reader1 = list(csv.reader(anno1_file_lines, delimiter="\t"))
-        reader2 = list(csv.reader(anno2_file_lines, delimiter="\t"))
-        tbd1 = {}
-        tbd2 = {}
-        typeToIndex1 = {}
-        typeToIndex2 = {}
-        activeType1 = ""
-        activeType2 = ""
-        review_num = 0
 
-        anno3_file = None
-        anno3_file_lines = None
-        reader3 = None
-        tbd3 = {}
-        typeToIndex3 = {}
-        activeType3 = ""
+def process_annot_filedir_err(error, curated_tsv_exists):
+    if not curated_tsv_exists:
+        raise error
 
-        if process_curated:
-            anno3_file = open(CURATED_FOLDER+'/'+filename, 'r')
-            anno3_file_lines = anno3_file.read().replace('"', "'").split("\n")
-            reader3 = list(csv.reader(anno3_file_lines, delimiter="\t"))
-            print(anno3_file)
+    return [], [], []
 
-        # detect and clean mistakes in 2 annotators' files. some IMPLICIT tags were not linked to the correct review through the 
-        # annotation GUI. 
-        for idx, (anno1_row, anno2_row) in enumerate(zip(reader1, reader2)):
-            if len(anno1_row) > 1: # len(anno2_row) would also be > 1 in this case
-                index1, chars1, word1, mentionType1, category1, sentimentPolarity1, connection1 = anno1_row[0:7]
-                index2, chars2, word2, mentionType2, category2, sentimentPolarity2, connection2 = anno2_row[0:7]
-                index1_first = index1.split("-")[0]
-                connection1_first = connection1.split("-")[0]
-                index2_first = index2.split("-")[0]
-                connection2_first = connection2.split("-")[0]
-                detect_and_clean_row_mistakes(connection1_first, index1_first, category1, sentimentPolarity1, connection1, reader1, idx, anno1_row)
-                detect_and_clean_row_mistakes(connection2_first, index2_first, category2, sentimentPolarity2, connection2, reader2, idx, anno2_row)
 
-        curated_file_line = -1
-        # line-by-line enumeration of the tsv output
-        for idx, (anno1_row, anno2_row) in enumerate(zip(reader1, reader2)):
-            curated_file_line += 1 # TODO: is this ok?
-            anno3_row = None
-            if process_curated:
-                anno3_row = reader3[curated_file_line]
-            # if we're dealing with an empty row, then ignore
-            # if input files contain no errors, then anno1_row and anno2_row, which contain the review, should be the same.
-            if len(anno1_row) == 0 or anno2_row[0][0] == "#":
-                # the original sentence with IMPLICIT removed
-                if len(anno1_row) != 0 and "#Text" in anno2_row[0]:
-                    review_num += 1
-                    text_seg = " ".join(anno1_row)[6:]
-                    text_seg = text_seg.replace("IMPLICIT", " ")
-                    text_seg = " ".join(text_seg.split())
-                    review_dict["review"] = text_seg
-                    product_name = ""
-                    with open(p_names, 'r') as p_names_f:
-                        product_names = find_product_name(review_dict["review"], p_names_f)
-                    review_dict["name"] = product_names[0]
-                    review_dict["p_name"] = product_names[1]
-                    review_dict["global_metadata"] = {
-                        "batch_id": batch_num,
-                        "review_id": review_num
-                    }
+def get_curated_tsv_and_file(batch_name):
+    try:
+        curated_tsv, curated_tsv_file = get_annotation_tsv(
+            CURATED_FOLDER_PATH, batch_name
+        )
+    except FileNotFoundError as error:
+        if args.only_curated:
+            raise error
 
-                    # initialize review_dict to contain 2 annotators' annotations
-                    review_dict["annotations"] = [{}, {}]
+        curated_tsv = None
+        curated_tsv_file = None
 
-                    review_dict["annotations"][0]["metadata"] = {}
-                    review_dict["annotations"][0]["metadata"]["name"] = anno1_name
-                    review_dict["annotations"][0]["metadata"]["role"] = "Designer" if anno1_name in designers else "Engineer"
-                    review_dict["annotations"][0]["annotation"] = []
+    return curated_tsv, curated_tsv_file
 
-                    review_dict["annotations"][1]["metadata"] = {}
-                    review_dict["annotations"][1]["metadata"]["name"] = anno2_name
-                    review_dict["annotations"][1]["metadata"]["role"] = "Designer" if anno2_name in designers else "Engineer"
-                    review_dict["annotations"][1]["annotation"] = []
 
-                    # if matching curated annotation exists, add an entry onto review_dict.
-                    if process_curated:
-                        review_dict["annotations"].append({})
-                        review_dict["annotations"][2]["metadata"] = {}
-                        review_dict["annotations"][2]["metadata"]["name"] = "Curator"
-                        review_dict["annotations"][2]["metadata"]["role"] = "Curator"
-                        review_dict["annotations"][2]["annotation"] = []
+def get_annotator_tsvs_and_files(batch_name, batch_id, curated_tsv_exists=True):
+    try:
+        (
+            annotators,
+            cur_annot_folder_path,
+        ) = get_annotators_and_file_path(batch_name, batch_id)
 
+        annotator_tsv_list, annotator_tsv_file_list = get_annotator_tsv_and_file_list(
+            annotators, cur_annot_folder_path
+        )
+    except FileNotFoundError as error:
+        (
+            annotators,
+            annotator_tsv_list,
+            annotator_tsv_file_list,
+        ) = process_annot_filedir_err(error, curated_tsv_exists)
+    except NotADirectoryError as error:
+        (
+            annotators,
+            annotator_tsv_list,
+            annotator_tsv_file_list,
+        ) = process_annot_filedir_err(error, curated_tsv_exists)
+
+    return annotators, annotator_tsv_list, annotator_tsv_file_list
+
+
+def create_complete_list(curated, annotator_list):
+    complete_list = [curated] if curated is not None else []
+    complete_list.extend(annotator_list)
+    return complete_list
+
+
+def close_files(file_list):
+    for file in file_list:
+        file.close()
+
+
+############################################################### ANNOTATION PROCESSING REVIEW HELPERS ###############################################################
+
+
+def process_dataset_review(review):
+    # remove #Text= and IMPLICIT from the review
+    annot_str = review.replace(REVIEW_TEXT_INDICATOR, "").replace(IMPLICT, "")
+
+    # make sure all punctation is separated by spaces
+    punc = re.compile(r"([.,!?;:()[\]])")
+    annot_str = punc.sub(" \\1 ", annot_str)
+
+    # remove extra spaces
+    annot_str = annot_str.strip()
+    annot_str = " ".join(annot_str.split())
+    return annot_str
+
+
+def process_product_review(review):
+    # remove all punctuation and spaces
+    table = str.maketrans("", "", f"{punctuation} ")
+    annot_str = review.translate(table).lower()
+    return annot_str
+
+
+############################################################### ANNOTATION PROCESSING ANNOTATION HELPERS ###############################################################
+
+
+def get_mention_type_rel_id(raw_mention_type):
+    rel_id = re.findall(r"\[.*?\]", raw_mention_type)
+    if not rel_id:
+        rel_id = 0
+    else:
+        rel_id = int(rel_id[0].replace("[", "").replace("]", ""))
+    return rel_id
+
+
+def clean_mention_type(raw_mention_type):
+    # def __clean_mention_type(self, raw_mention_type, rel_id):
+    raw_mention_type = raw_mention_type.split(" ")
+    direct_indirect = raw_mention_type[DIRECT_INDIRECT_IDX].lower()
+
+    if ASPECT in raw_mention_type[MENTION_TYPE_IDX].lower():
+        # if ASPECT in raw_mention_type[MENTION_TYPE_IDX].lower() or rel_id == 0:
+        mention_type = ASPECT
+    elif OPINION in raw_mention_type[MENTION_TYPE_IDX].lower():
+        mention_type = OPINION
+
+    return direct_indirect, mention_type
+
+
+def get_new_span(rel_id, direct_indirect, mention_type, word):
+    new_span = {}
+
+    new_span[REL_ID] = rel_id
+    new_span[IMPLICT_EXPLICIT] = direct_indirect
+    new_span[MENTION_TYPE] = mention_type
+    new_span[WORD_SPAN] = [word]
+    new_span[ONGOING] = True
+
+    return new_span
+
+
+def is_same_span(span, rel_id, direct_indirect, mention_type):
+    return (
+        rel_id == span[REL_ID]
+        and direct_indirect == span[IMPLICT_EXPLICIT]
+        and mention_type == span[MENTION_TYPE]
+    )
+
+
+def is_relation(line):
+    return (
+        line[ANNOT_CATEGORY_IDX] != EMPTY
+        and line[ANNOT_POLARITY_IDX] != EMPTY
+        and line[ANNOT_SRC_REL_ID_IDX] != EMPTY
+    )
+
+
+def get_incomplete_annots(categories, polarities, raw_src_rel_ids):
+    categories = categories.split("|")
+    polarities = polarities.split("|")
+    raw_src_rel_ids = raw_src_rel_ids.split("|")
+
+    assert len(categories) == len(polarities) == len(raw_src_rel_ids)
+
+    incomplete_annots = []
+    for category, polarity, raw_src_rel_id in zip(
+        categories, polarities, raw_src_rel_ids
+    ):
+        src_annot_id, src_rel_id, target_rel_id = clean_src_rel_id(raw_src_rel_id)
+        incomplete_annot = get_incomplete_annot(
+            category, polarity, src_annot_id, src_rel_id, target_rel_id
+        )
+        incomplete_annots.append(incomplete_annot)
+
+    return incomplete_annots
+
+
+def get_incomplete_annot(category, polarity, src_annot_id, src_rel_id, target_rel_id):
+    new_annot = {}
+    new_annot[CATEGORY] = category
+    new_annot[SENTIMENT] = polarity
+    new_annot[SRC_ANNOT_ID] = src_annot_id
+    new_annot[SRC_REL_ID] = src_rel_id
+    new_annot[TARGET_REL_ID] = target_rel_id
+    return new_annot
+
+
+def clean_src_rel_id(raw_src_rel_id):
+    raw_src_rel_id = raw_src_rel_id.split("[")
+    src_annot_id = raw_src_rel_id[0]
+    if len(raw_src_rel_id) == 1:
+        src_rel_id = 0
+        target_rel_id = 0
+    else:
+        raw_src_rel_id = raw_src_rel_id[1].replace("]", "")
+        raw_src_rel_id = raw_src_rel_id.split("_")
+        src_rel_id = int(raw_src_rel_id[0])
+        target_rel_id = int(raw_src_rel_id[1])
+    return src_annot_id, src_rel_id, target_rel_id
+
+
+def get_missing_span(annot, span_dict):
+    src_annot_id = annot[SRC_ANNOT_ID]
+    src_rel_id = annot[SRC_REL_ID]
+    return span_dict[(src_annot_id, src_rel_id)]
+
+
+############################################################### ANNOTATION PROCESSING ###############################################################
+
+
+class AnnotationProcessor:
+    def __init__(
+        self,
+        complete_annotation_tsv_list,
+        proc_annots_list,
+        review_id,
+        batch_id,
+        annotators,
+        curated_tsv_exists,
+    ):
+        self.complete_annotation_tsv_list = complete_annotation_tsv_list
+
+        self.proc_annots_list = proc_annots_list
+
+        self.review_id = review_id
+        self.batch_id = batch_id
+        self.LAST_REVIEW_ID = review_id
+
+        self.annotators = annotators
+        self.first_annotator_tsv_idx = 0 if not curated_tsv_exists else 1
+
+        print(batch_id)
+
+    ########################## MAIN PROCESSING FUNCTION ##########################
+
+    def process_annotations(self):
+        for tsv_idx, annotation in enumerate(self.complete_annotation_tsv_list):
+            self.review_id_batch = self.LAST_REVIEW_ID
+            self.cur_annots_dict = {}
+            self.is_first_annot_line = True
+
+            is_first_tsv = tsv_idx == 0
+            annotator_idx = tsv_idx - self.first_annotator_tsv_idx
+
+            for line in annotation:
+                is_annotation = self.__is_annotation(line, is_first_tsv)
+                if not is_annotation:
+                    continue
+
+                print(line)
+
+                if self.is_first_annot_line:
+                    self.__init_new_annot(annotator_idx)
+                self.__process_annot_line(line)
+
+        return self.review_id
+
+    ########################## TYPE DETERMINER ##########################
+
+    def __is_annotation(self, line, is_first_tsv):
+        if not line:
+            if not self.is_first_annot_line:
+                self.__process_new_annots()
+            return False
+
+        if len(line) == 1:
+            if REVIEW_TEXT_INDICATOR in line[0]:
+                self.__process_review(line[0], is_first_tsv)
+            return False
+        try:
+            if line[ANNOT_MENTION_TYPE_IDX] == EMPTY:
+                print(f"SKIPPED: {line}")
+                self.ongoing_spans = []
+                return False
+        except IndexError:
+            print(f"SKIPPED: {line}")
+            return False
+
+        return True
+
+    ########################## ANNOTATION FUNCTIONS ##########################
+
+    def __init_new_annot(self, annotator_idx):
+        self.annot_dict_for_cur_review = {}
+        self.annot_dict_for_cur_review["metadata"] = self.__get_metadata(annotator_idx)
+        self.annot_dict_for_cur_review["annotation"] = []
+        self.cur_annots_dict["annotations"].append(self.annot_dict_for_cur_review)
+
+        self.incomplete_annot_list = []
+
+        self.span_dict = {}
+        self.ongoing_spans = []
+
+        self.is_first_annot_line = False
+
+    def __get_metadata(self, annotator_idx):
+        metadata = {}
+
+        if self.__is_annotator(annotator_idx):
+            metadata["name"] = self.annotators[annotator_idx]
+
+            if metadata["name"] in DESIGNERS:
+                metadata["role"] = "designer"
+            elif metadata["name"] in ENGINEERS:
+                metadata["role"] = "engineer"
+            else:
+                metadata["role"] = "unknown"
+
+        else:
+            print("curator")
+            metadata["name"] = "curator"
+            metadata["role"] = "curator"
+
+        return metadata
+
+    def __is_annotator(self, annotator_idx):
+        return annotator_idx >= 0
+
+    def __process_annot_line(self, line):
+        annot_id = line[ANNOT_ID_IDX]
+        word = line[ANNOT_WORD_IDX]
+        raw_mention_types = line[ANNOT_MENTION_TYPE_IDX]
+
+        if is_relation(line):
+            categories = line[ANNOT_CATEGORY_IDX]
+            polarities = line[ANNOT_POLARITY_IDX]
+            raw_src_rel_ids = line[ANNOT_SRC_REL_ID_IDX]
+            incomplete_annots = get_incomplete_annots(
+                categories, polarities, raw_src_rel_ids
+            )
+            self.__process_spans(raw_mention_types, word, annot_id, incomplete_annots)
+            self.incomplete_annot_list.extend(incomplete_annots)
+        else:
+            self.__process_spans(raw_mention_types, word, annot_id)
+
+    def __process_spans(self, raw_mention_types, word, annot_id, incomplete_annots=[]):
+        raw_mention_types = raw_mention_types.split("|")
+
+        for span in self.ongoing_spans:
+            span[ONGOING] = False
+
+        new_spans = []
+
+        for raw_mention_type in raw_mention_types:
+            rel_id = get_mention_type_rel_id(raw_mention_type)
+            direct_indirect, mention_type = clean_mention_type(raw_mention_type)
+            # direct_indirect, mention_type = clean_mention_type(
+            #     raw_mention_type, rel_id
+            # )
+            new_span = get_new_span(rel_id, direct_indirect, mention_type, word)
+            new_spans.append(new_span)
+
+            for span in self.ongoing_spans:
+                if is_same_span(span, rel_id, direct_indirect, mention_type):
+                    span[WORD_SPAN].append(word)
+                    new_span[ONGOING] = False
+                    span[ONGOING] = True
+
+        for span in self.ongoing_spans:
+            if not span[ONGOING]:
+                self.ongoing_spans.remove(span)
+
+        for span in new_spans:
+            if not span[ONGOING]:
                 continue
 
-            index1, chars1, word1, mentionType1, category1, sentimentPolarity1, connection1 = anno1_row[0:7]
-            index2, chars2, word2, mentionType2, category2, sentimentPolarity2, connection2 = anno2_row[0:7]
-            # if matching curated annotation exists, parse its row
-            index3, chars3, word3, mentionType3, category3, sentimentPolarity3, connection3 = (anno3_row[0:7] if process_curated else (None,)*7)
-            
-            ####################################################################################################            
-            mentionType1, category1, sentimentPolarity1, connection1 = standardize_length(mentionType1, category1, sentimentPolarity1, connection1)
-            mentionType2, category2, sentimentPolarity2, connection2 = standardize_length(mentionType2, category2, sentimentPolarity2, connection2)
-            mentionType3, category3, sentimentPolarity3, connection3 = (standardize_length(mentionType3, category3, sentimentPolarity3, connection3) if process_curated else (None,)*4)
-            ####################################################################################################
-        
-            ####################################################################################################
-            activeType1 = process_nondirect_aspect(mentionType1, typeToIndex1, activeType1, reader1, idx, tbd1, word1, index1, category1, sentimentPolarity1, connection1)
-            activeType2 = process_nondirect_aspect(mentionType2, typeToIndex2, activeType2, reader2, idx, tbd2, word2, index2, category2, sentimentPolarity2, connection2)
-            activeType2 = (process_nondirect_aspect(mentionType3, typeToIndex3, activeType3, reader3, idx, tbd3, word3, index3, category3, sentimentPolarity3, connection3) if process_curated else None)
-            ####################################################################################################
+            for incomplete_annot in incomplete_annots:
+                if not incomplete_annot[TARGET_REL_ID] == span[REL_ID]:
+                    continue
 
-            #################################################################################################### 
-            # if this is the final token in the review  
-            if process_curated:
-                if anno3_row[2] == EOS_STR and not reader3[idx + 1]:
-                    activeType3 = ""
-                    process_final_token(index3, tbd3, mentionType3, word3, category3, sentimentPolarity3, connection3)
-                    review_dict["annotations"][2]["annotation"] = process_dict(tbd3)
-                    tbd3 = {}
-                    typeToIndex3 = {}
+                incomplete_annot[span[MENTION_TYPE]] = span[WORD_SPAN]
+                incomplete_annot[f"{span[MENTION_TYPE]}_{IMPLICT_EXPLICIT}"] = span[
+                    IMPLICT_EXPLICIT
+                ]
 
-            if anno1_row[2] == EOS_STR and not reader1[idx + 1]:
-                activeType1 = ""
-                process_final_token(index1, tbd1, mentionType1, word1, category1, sentimentPolarity1, connection1)
-                review_dict["annotations"][0]["annotation"] = process_dict(tbd1)
-                tbd1 = {}
-                typeToIndex1 = {}
-            
-            if anno2_row[2] == EOS_STR and not reader2[idx + 1]:
-                activeType2 = ""
-                process_final_token(index2, tbd2, mentionType2, word2, category2, sentimentPolarity2, connection2)
-                review_dict["annotations"][1]["annotation"] = process_dict(tbd2)
-                # NOTE: need to use review_dict.copy(), or else out_dicts_list will only contain the very last review repeated a bunch of times
-                if review_dict["annotations"][0]["annotation"] and review_dict["annotations"][1]["annotation"]:
-                    out_dicts_list.append(review_dict.copy())
-                tbd2 = {}
-                typeToIndex2 = {}
-            ####################################################################################################
+            self.ongoing_spans.append(span)
+            self.span_dict[(annot_id, rel_id)] = span
 
-            ####################################################################################################
-            if process_curated:
-                if mentionType3 == "_":
-                    activeType3 = ""
-                    # if this is the final token in the review
-                    if anno3_row[2] == EOS_STR and not reader3[idx + 1]:
-                        process_blank_mentionType(index3, tbd3, word3, mentionType3, category3, sentimentPolarity3, connection3)
-                        review_dict["annotations"][2]["annotation"] = process_dict(tbd3)
-                        tbd3 = {}
-                        typeToIndex3 = {}
+    def __process_new_annots(self):
+        for annot in self.incomplete_annot_list:
+            try:
+                missing_span = get_missing_span(annot, self.span_dict)
 
-            if mentionType1 == "_":
-                activeType1 = ""
-                if anno1_row[2] == EOS_STR and not reader1[idx + 1]:
-                    process_blank_mentionType(index1, tbd1, word1, mentionType1, category1, sentimentPolarity1, connection1)
-                    review_dict["annotations"][0]["annotation"] = process_dict(tbd1)
-                    tbd1 = {}
-                    typeToIndex1 = {}
+                annot[missing_span[MENTION_TYPE]] = missing_span[WORD_SPAN]
 
-            if mentionType2 == "_":
-                activeType2 = ""
-                if anno2_row[2] == EOS_STR and not reader2[idx + 1]:
-                    process_blank_mentionType(index2, tbd2, word2, mentionType2, category2, sentimentPolarity2, connection2)
-                    review_dict["annotations"][1]["annotation"] = process_dict(tbd2)
-                    if review_dict["annotations"][0]["annotation"] and review_dict["annotations"][1]["annotation"]:
-                        out_dicts_list.append(review_dict.copy())
-                    tbd2 = {}
-                    typeToIndex2 = {}
+                m_ie_key = f"{missing_span[MENTION_TYPE]}_{IMPLICT_EXPLICIT}"
+                annot[m_ie_key] = missing_span[IMPLICT_EXPLICIT]
+
+                if annot[f"{ASPECT}_{IMPLICT_EXPLICIT}"] == "indirect":
+                    annot[ASPECT] = "null"
+
+                annot_list = [
+                    " ".join(annot[ASPECT]),
+                    annot[CATEGORY],
+                    annot[SENTIMENT],
+                    " ".join(annot[OPINION]),
+                    annot[f"{OPINION}_{IMPLICT_EXPLICIT}"],
+                ]
+
+                self.annot_dict_for_cur_review["annotation"].append(annot_list)
+            except KeyError:
+                print("INVALID ANNOTATION: SKIPPED")
                 continue
-            ####################################################################################################
-        # ENDFOR (traverse 2 annotators' files per batch + 1 curator's file if available)
-    # ENDFOR (traverse 1 dir)
-print(out_dicts_list)
-with open(file_out, 'w') as ofile:
-    ofile.write(json.dumps(out_dicts_list))
+
+    ########################## NON-ANNOTATION FUNCTIONS ##########################
+
+    def __process_review(self, review, is_first_tsv):
+        self.is_first_annot_line = True
+        self.review_id_batch += 1
+
+        if is_first_tsv:
+            self.review_id += 1
+            review = process_dataset_review(review)
+            self.cur_annots_dict = self.__get_annot_dict_starter(review)
+            self.proc_annots_list.append(self.cur_annots_dict)
+
+        else:
+            self.cur_annots_dict = self.proc_annots_list[self.review_id_batch]
+            assert process_dataset_review(review) == self.cur_annots_dict["review"]
+
+    def __get_annot_dict_starter(self, review):
+        processed_annotations = {}
+
+        product_review = deepcopy(review)
+        product_review = process_product_review(product_review)
+
+        PRODUCT_NAMES_DF["text"] = PRODUCT_NAMES_DF["text"].apply(
+            process_product_review
+        )
+
+        name, p_name = PRODUCT_NAMES_DF.loc[
+            PRODUCT_NAMES_DF["text"] == product_review,
+            ["name", "p_name"],
+        ].values.flatten()
+
+        processed_annotations["review"] = review
+        processed_annotations["name"] = name
+        processed_annotations["p_name"] = p_name
+        processed_annotations["global_metadata"] = {
+            "batch_id": self.batch_id,
+            "review_id": self.review_id,
+        }
+        processed_annotations["annotations"] = []
+
+        return processed_annotations
+
+
+############################################################### ANNOTATION PROCESSING ###############################################################
+
+
+def process_batch(filedir, review_id, proc_annots_list):
+    batch_name = filedir.stem
+    batch_id = int(batch_name.split("init_shoes_")[1])
+
+    curated_tsv, curated_tsv_file = get_curated_tsv_and_file(batch_name)
+    curated_tsv_exists = curated_tsv is not None
+
+    (
+        annotators,
+        annotator_tsv_list,
+        annotator_tsv_file_list,
+    ) = get_annotator_tsvs_and_files(batch_name, batch_id, curated_tsv_exists)
+
+    complete_annotation_tsv_list = create_complete_list(curated_tsv, annotator_tsv_list)
+    complete_annotation_tsv_file_list = create_complete_list(
+        curated_tsv_file, annotator_tsv_file_list
+    )
+
+    annotation_processor = AnnotationProcessor(
+        complete_annotation_tsv_list,
+        proc_annots_list,
+        review_id,
+        batch_id,
+        annotators,
+        curated_tsv_exists,
+    )
+
+    review_id = annotation_processor.process_annotations()
+
+    close_files(complete_annotation_tsv_file_list)
+
+    return review_id
+
+
+def main(processed_annotations_list):
+    review_id = -1
+
+    if args.only_curated:
+        filedir_names = CURATED_FOLDER_PATH.iterdir()
+
+    else:
+        filedir_names = ANNOTATION_FOLDER_PATH.iterdir()
+
+    for filedir in filedir_names:
+        try:
+            review_id = process_batch(filedir, review_id, processed_annotations_list)
+        except FileNotFoundError:
+            print(f"Skipping {filedir}, could not find curated annotation file.")
+        except NotADirectoryError:
+            print(f"Skipping {filedir}, could not find annotation batch folder.")
+
+
+if __name__ == "__main__":
+    print("Processing annotations...")
+    processed_annotations_list = []
+    main(processed_annotations_list)
+
+    print(f"Saving results to {OUTPUT_FILE_PATH}...")
+    with open(OUTPUT_FILE_PATH, "w") as f:
+        json.dump(processed_annotations_list, f, indent=4)
+    print("Done.")

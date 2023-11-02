@@ -430,6 +430,8 @@ def process_new_annot(annot, missing_span, m_ie_key):
     annot[missing_span[MENTION_TYPE]] = missing_span[WORD_SPAN]
     annot[m_ie_key] = missing_span[IMPLICT_EXPLICIT]
 
+    if annot[ASPECT].lower() == "it":
+        annot[ASPECT] = "IMPLICIT"
     if annot[f"{ASPECT}_{IMPLICT_EXPLICIT}"] == "indirect":
         annot[ASPECT] = "null"
 

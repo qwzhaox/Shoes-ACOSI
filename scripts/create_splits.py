@@ -1,6 +1,8 @@
 import json
 import argparse
 
+CURATOR_IDX = 0
+
 parser = argparse.ArgumentParser()
 parser.add_argument("-i", "--input_file", help="input json file", required=True)
 parser.add_argument(
@@ -18,16 +20,15 @@ with open(args.input_file) as f:
 products_dict = {}
 
 for r in review_data:
+    if not r["annotations"][CURATOR_IDX]["annotation"]:
+        continue
+
     review_metrics = {}
     review_metrics["review"] = r["review"]
     review_metrics["p_name"] = r["p_name"]
 
-    # name1 = r["annotations"][0]["metadata"]["name"]
-    # name2 = r["annotations"][1]["metadata"]["name"]
-    # review["annotator_ids"] = [name1, name2]
 
-    review_metrics["annot1"] = r["annotations"][0]["annotation"]
-    # review_metrics["annot2"] = r["annotations"][1]["annotation"]
+    review_metrics["annot1"] = r["annotations"][CURATOR_IDX]["annotation"]
 
     products_dict.setdefault(r["p_name"], []).append(review_metrics)
 
@@ -44,7 +45,7 @@ TEST_PERCENT = 0.07
 GOAL = "goal"
 ACTUAL = "actual"
 
-ttv = [TRAIN, TEST, VALIDATION]
+ttv = [TRAIN,  VALIDATION, TEST]
 
 split_dict = {TRAIN: [], VALIDATION: [], TEST: []}
 

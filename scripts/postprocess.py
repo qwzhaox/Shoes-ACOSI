@@ -434,8 +434,6 @@ def process_new_annot(annot, missing_span, m_ie_key):
 
     if aspect.lower() == "it":
         aspect = "IMPLICIT"
-    if annot[f"{ASPECT}_{IMPLICT_EXPLICIT}"] == "indirect":
-        aspect = "NULL"
 
     annot_list = [
         aspect,

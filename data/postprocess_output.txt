@@ -50,56 +50,6 @@ Source span: ['inside']
 
 
 INVALID ANNOTATION: SKIPPED
-Annotator: rafal
-Batch: 37
-Target: [3-11, direct opinion 0, Appearance#General, Positive]
-Source: [3-1, direct opinion 8]
-
-Target span: ['IMPLICIT']
-Source span: ['The', 'design', 'is', 'great']
-
-
-INVALID ANNOTATION: SKIPPED
-Annotator: rafal
-Batch: 37
-Target: [3-11, direct opinion 0, Appearance#Color, Negative]
-Source: [3-5, direct opinion 9]
-
-Target span: ['IMPLICIT']
-Source span: ['poor', 'color', 'choices']
-
-
-INVALID ANNOTATION: SKIPPED
-Annotator: rafal
-Batch: 37
-Target: [5-29, direct opinion 0, Performance#Sizing/Fit, Neutral]
-Source: [5-19, direct opinion 17]
-
-Target span: ['IMPLICIT']
-Source span: ['So', 'I', 'bought', 'size', '6', '.', '5']
-
-
-INVALID ANNOTATION: SKIPPED
-Annotator: rafal
-Batch: 37
-Target: [5-29, direct opinion 0, Appearance#Color, Neutral]
-Source: [5-27, direct opinion 0]
-
-Target span: ['IMPLICIT']
-Source span: ['red']
-
-
-INVALID ANNOTATION: SKIPPED
-Annotator: yash sharma
-Batch: 37
-Target: [4-20, direct opinion 15, Performance#Comfort, Positive]
-Source: [4-14, direct opinion 14]
-
-Target span: ['perfect', 'winter', 'shoes']
-Source span: ['love', 'these', 'shoes']
-
-
-INVALID ANNOTATION: SKIPPED
 Annotator: curator
 Batch: 7
 Target: [13-37, direct aspect 63, Performance#General, Positive]
@@ -307,36 +257,6 @@ Source: [18-1, direct aspect 80]
 
 Target span: ['shoe']
 Source span: ['I', 'really', 'love', 'the', 'look']
-
-
-INVALID ANNOTATION: SKIPPED
-Annotator: yash
-Batch: 65
-Target: [3-3, direct opinion 10, Appearance#Misc, Positive]
-Source: [3-1, direct opinion 9]
-
-Target span: ['look', 'great']
-Source span: ['These', 'sneakers']
-
-
-INVALID ANNOTATION: SKIPPED
-Annotator: yash
-Batch: 65
-Target: [3-6, direct opinion 11, Performance#Comfort, Positive]
-Source: [3-1, direct opinion 9]
-
-Target span: ['feel', 'so', 'comfy']
-Source span: ['These', 'sneakers']
-
-
-INVALID ANNOTATION: SKIPPED
-Annotator: yash
-Batch: 65
-Target: [3-11, direct opinion 12, Performance#Sizing/Fit, Positive]
-Source: [3-1, direct opinion 9]
-
-Target span: ['They', 'fit', 'perfect']
-Source span: ['These', 'sneakers']
 
 
 INVALID ANNOTATION: SKIPPED
@@ -577,16 +497,6 @@ Source: [15-12, direct aspect 76]
 
 Target span: ['lump', 'on', 'top', 'in', 'front']
 Source span: ['top', 'in', 'front']
-
-
-INVALID ANNOTATION: SKIPPED
-Annotator: yash sharma
-Batch: 59
-Target: [17-10, direct aspect 75, Performance#Sizing/Fit, Positive]
-Source: [17-6, direct aspect 0]
-
-Target span: ['I', 'LOVED', ',', 'so', 'I', 'thought', "I ' d", 'give', 'it', 'a', 'try']
-Source span: ['NB']
 
 
 INVALID ANNOTATION: SKIPPED
@@ -1259,5 +1169,5 @@ Target span: ['cute']
 Source span: ['They']
 
 
-Saving results to /home/zhao/src/nlp/Shoes-ACOSI-models/ECSR-shoes/data/results.json...
+Saving results to data/results.json...
 Done.

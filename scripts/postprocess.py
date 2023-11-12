@@ -11,7 +11,11 @@ parser = argparse.ArgumentParser(
     description="Aggregate annotations and create a human-friendly output."
 )
 parser.add_argument(
-    "-d", "--data_dir", type=str, default=".", help="Path to the data folder."
+    "-d",
+    "--data_dir",
+    type=str,
+    default="data/raw_data",
+    help="Path to the data folder.",
 )
 parser.add_argument(
     "-a",
@@ -43,10 +47,18 @@ parser.add_argument(
 )
 
 parser.add_argument(
+    "-f",
+    "--output_path",
+    type=str,
+    default="data/",
+    help="Path to the output folder.",
+)
+
+parser.add_argument(
     "-o",
     "--output_file",
     type=str,
-    default="results.json",
+    default="dataset.json",
     help="Path to the output JSON file.",
 )
 
@@ -56,6 +68,7 @@ args = parser.parse_args()
 
 # Process arguments
 DATA_DIR = Path(args.data_dir)
+OUTPUT_DIR = Path(args.output_path)
 
 ANNOTATION_FOLDER_PATH = DATA_DIR / Path(args.annotation_folder)
 CURATED_FOLDER_PATH = DATA_DIR / Path(args.curated_folder)
@@ -63,7 +76,7 @@ CURATED_FOLDER_PATH = DATA_DIR / Path(args.curated_folder)
 TRACKING_FILE_PATH = DATA_DIR / Path(args.tracking_file)
 PRODUCT_NAMES_FILE_PATH = DATA_DIR / Path(args.product_names)
 
-OUTPUT_FILE_PATH = DATA_DIR / Path(args.output_file)
+OUTPUT_FILE_PATH = OUTPUT_DIR / Path(args.output_file)
 
 # Load tracking file
 TRACKING_FILE_DF = pd.read_excel(TRACKING_FILE_PATH)

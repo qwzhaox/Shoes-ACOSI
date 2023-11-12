@@ -27,7 +27,6 @@ for r in review_data:
     review_metrics["review"] = r["review"]
     review_metrics["p_name"] = r["p_name"]
 
-
     review_metrics["annot1"] = r["annotations"][CURATOR_IDX]["annotation"]
 
     products_dict.setdefault(r["p_name"], []).append(review_metrics)
@@ -45,7 +44,7 @@ TEST_PERCENT = 0.07
 GOAL = "goal"
 ACTUAL = "actual"
 
-ttv = [TRAIN,  VALIDATION, TEST]
+ttv = [TRAIN, VALIDATION, TEST]
 
 split_dict = {TRAIN: [], VALIDATION: [], TEST: []}
 

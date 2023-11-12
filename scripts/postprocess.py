@@ -585,27 +585,31 @@ class AnnotationProcessor:
         )
 
     def __process_new_annots(self):
-        for annot in self.incomplete_annot_list:
-            missing_span = get_missing_span(annot, self.span_dict)
-            m_ie_key = f"{missing_span[MENTION_TYPE]}_{IMPLICT_EXPLICIT}"
+        try:
+            for annot in self.incomplete_annot_list:
+                missing_span = get_missing_span(annot, self.span_dict)
+                m_ie_key = f"{missing_span[MENTION_TYPE]}_{IMPLICT_EXPLICIT}"
 
-            if missing_span[MENTION_TYPE] in annot:
-                original_span = annot[missing_span[MENTION_TYPE]]
-                original_ie = annot[m_ie_key]
-                original_mention_type = missing_span[MENTION_TYPE]
+                if missing_span[MENTION_TYPE] in annot:
+                    original_span = annot[missing_span[MENTION_TYPE]]
+                    original_ie = annot[m_ie_key]
+                    original_mention_type = missing_span[MENTION_TYPE]
 
-            try:
-                annot_list = process_new_annot(annot, missing_span, m_ie_key)
-                self.annot_dict_for_cur_review["annotation"].append(annot_list)
-            except KeyError:
-                self.__print_invalid_annot(
-                    annot,
-                    original_span,
-                    missing_span,
-                    original_ie,
-                    original_mention_type,
-                )
-                continue
+                try:
+                    annot_list = process_new_annot(annot, missing_span, m_ie_key)
+                    self.annot_dict_for_cur_review["annotation"].append(annot_list)
+                except KeyError:
+                    self.__print_invalid_annot(
+                        annot,
+                        original_span,
+                        missing_span,
+                        original_ie,
+                        original_mention_type,
+                    )
+                    raise KeyError
+        except KeyError:
+            self.annot_dict_for_cur_review["annotation"] = []
+            return
 
     def __print_invalid_annot(
         self, annot, original_span, missing_span, original_ie, original_mention_type

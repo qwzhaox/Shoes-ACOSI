@@ -3,6 +3,7 @@ from json import load
 
 ASPECT_IDX = 0
 CATEGORY_IDX = 1
+OPINION_IDX = 3
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-i", "--input_file", help="input json file", required=True)
@@ -44,18 +45,23 @@ def get_str_list(reviews):
     str_list = []
     for rev in reviews:
         for annot in rev["annot1"]:
+            annot[ASPECT_IDX] = annot[ASPECT_IDX].lower()
+            annot[OPINION_IDX] = annot[OPINION_IDX].lower()
             if args.is_mvp:
                 annot[CATEGORY_IDX] = (
-                    annot[CATEGORY_IDX].replace("#", " ").replace("/", "_")
+                    annot[CATEGORY_IDX]
+                    .replace("#", " ")
+                    .replace("/", "_")
+                    .replace("\\_", "_")
                 )
-                if annot[ASPECT_IDX].lower() == "implicit":
+                if annot[ASPECT_IDX] == "implicit":
                     annot[ASPECT_IDX] = "null"
 
         review_str = rev["review"]
         annot_str = str(rev["annot1"])
 
         if args.is_mvp:
-            annot_str = annot_str.replace("\\\\_", "_").lower()
+            annot_str = annot_str.lower()
             review_str = review_str.lower()
 
         rev_str = review_str + "####" + annot_str

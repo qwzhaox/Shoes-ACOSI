@@ -1,8 +1,21 @@
 import numpy as np
 import pickle
+import json
+import re
+from string import punctuation
 from collections import Counter
 
-sentiment_dict = {"great": "positive", "ok": "neutral", "bad": "negative"}
+sentiment_dict = {"great": "Positive", "ok": "Neutral", "bad": "Negative"}
+
+
+def clean_punctuation(words):
+    punc = re.compile(f"[{re.escape(punctuation)}]")
+    words = punc.sub(" \\g<0> ", words)
+
+    # remove extra spaces
+    words = words.strip()
+    words = " ".join(words.split())
+    return words
 
 
 def extract_spans_mvp(seq, seq_type):
@@ -39,10 +52,17 @@ def extract_spans_mvp(seq, seq_type):
 
             # if the aspect term is implicit
             if at.lower() == "it":
-                at = "null"
+                at = "implicit"
 
             sp = sentiment_dict[sp]
+            ac = category_dict[ac]
+            at = clean_punctuation(at)
+            ot = clean_punctuation(ot)
 
+            quints.append((at, ac, sp, ot, ie))
+
+        except KeyError:
+            ac, at, sp, ot, ie = "", "", "", "", ""
         except ValueError:
             try:
                 print(f"In {seq_type} seq, cannot decode: {s}")
@@ -52,14 +72,15 @@ def extract_spans_mvp(seq, seq_type):
                 pass
             ac, at, sp, ot, ie = "", "", "", "", ""
 
-        quints.append((at, ac, sp, ot, ie))
-
     return quints
 
 
-def get_mvp_output(pkl_file, num_path=5):
+def get_mvp_output(pkl_file, category_file, num_path=5):
     with open(pkl_file, "rb") as f:
         (outputs, targets, _) = pickle.load(f)
+    with open(category_file, "rb") as f:
+        global category_dict
+        category_dict = json.load(f)
 
     targets = targets[::num_path]
     _outputs = outputs

@@ -18,6 +18,7 @@ parser.add_argument(
 parser.add_argument(
     "-o", "--output_file", type=str, default="data/mvp_dataset/scores.json"
 )
+parser.add_argument("-mvp", "--mvp_output", action="store_true")
 args = parser.parse_args()
 
 
@@ -85,8 +86,11 @@ class Evaluation:
         return scores
 
 
-evaluate_mvp_outputs = Evaluation(get_mvp_output)
-scores = evaluate_mvp_outputs.get_scores()
+scores = {}
+
+if args.mvp_output:
+    evaluate_mvp_outputs = Evaluation(get_mvp_output)
+    scores = evaluate_mvp_outputs.get_scores()
 
 with open(args.output_file, "w") as file:
     json.dump(scores, file, indent=4)

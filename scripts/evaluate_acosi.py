@@ -23,7 +23,7 @@ args = parser.parse_args()
 
 class Evaluation:
     def __init__(self, process_func):
-        self.pred_outpus = process_func(
+        self.pred_outputs = process_func(
             pkl_file=args.pkl_file, category_file=args.category_file
         )
 
@@ -40,27 +40,30 @@ class Evaluation:
         for output in self.raw_true_outputs:
             self.true_outputs.append([tuple(quint) for quint in output])
 
-    def calc_scores(self):
-        n_tp, n_true, n_pred = 0, 0, 0
+    def calc_exact_scores(self):
+        n_tp, n_fp, n_fn = 0, 0, 0
 
-        for i in range(len(self.pred_outpus)):
-            n_true += len(self.true_outputs[i])
-            n_pred += len(self.pred_outpus[i])
+        for i in range(len(self.pred_outputs)):
+            pred_set = set(self.pred_outputs[i])
+            true_set = set(self.true_outputs[i])
 
-            for t in self.pred_outpus[i]:
-                if t in self.true_outputs[i]:
-                    n_tp += 1
+            n_tp += len(pred_set & true_set)
+            n_fp += len(pred_set - true_set)
+            n_fn += len(true_set - pred_set)
 
-        self.precision = float(n_tp) / float(n_pred) if n_pred != 0 else 0
-        self.recall = float(n_tp) / float(n_true) if n_true != 0 else 0
+        self.precision = float(n_tp) / (n_tp + n_fp) if n_tp + n_fp != 0 else 0
+        self.recall = float(n_tp) / (n_tp + n_fn) if n_tp + n_fn != 0 else 0
         self.f1 = (
             2 * self.precision * self.recall / (self.precision + self.recall)
-            if self.precision != 0 or self.recall != 0
+            if self.precision + self.recall != 0
             else 0
         )
 
+    def calc_partial_scores(self):
+        pass
+
     def get_scores(self):
-        self.calc_scores()
+        self.calc_exact_scores()
         scores = {
             "precision": self.precision * 100,
             "recall": self.recall * 100,
@@ -69,12 +72,12 @@ class Evaluation:
 
         scores["reviews"] = []
 
-        for i in range(len(self.pred_outpus)):
+        for i in range(len(self.pred_outputs)):
             scores["reviews"].append(
                 {
                     "idx": i,
                     "review": self.reviews[i],
-                    "pred": self.pred_outpus[i],
+                    "pred": self.pred_outputs[i],
                     "true": self.true_outputs[i],
                 }
             )

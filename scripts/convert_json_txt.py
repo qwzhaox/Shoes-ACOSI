@@ -45,8 +45,6 @@ def get_str_list(reviews):
     str_list = []
     for rev in reviews:
         for annot in rev["annot1"]:
-            annot[ASPECT_IDX] = annot[ASPECT_IDX].lower()
-            annot[OPINION_IDX] = annot[OPINION_IDX].lower()
             if args.is_mvp:
                 annot[CATEGORY_IDX] = (
                     annot[CATEGORY_IDX]
@@ -59,10 +57,8 @@ def get_str_list(reviews):
 
         review_str = rev["review"]
         annot_str = str(rev["annot1"])
-
-        if args.is_mvp:
-            annot_str = annot_str.lower()
-            review_str = review_str.lower()
+        review_str = review_str.lower()
+        annot_str = annot_str.lower()
 
         rev_str = review_str + "####" + annot_str
         str_list.append(rev_str)

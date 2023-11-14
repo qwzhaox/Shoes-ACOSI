@@ -1,21 +1,21 @@
 {
-    "precision": 17.80821917808219,
-    "recall": 15.057915057915059,
-    "f1": 16.317991631799163,
+    "precision": 19.158878504672895,
+    "recall": 15.83011583011583,
+    "f1": 17.33615221987315,
     "reviews": [
         {
             "idx": 0,
             "review": "the design is great poor color choices too bland . color choices from previous shoes was much better .",
             "pred": [
                 [
-                    "implicit",
+                    "design",
                     "appearance#general",
                     "positive",
-                    "design is great",
+                    "great",
                     "direct"
                 ],
                 [
-                    "implicit",
+                    "color choices",
                     "appearance#color",
                     "negative",
                     "poor color choices too bland",
@@ -24,7 +24,7 @@
                 [
                     "shoes",
                     "appearance#color",
-                    "negative",
+                    "positive",
                     "color choices from previous shoes was much better",
                     "indirect"
                 ]
@@ -60,7 +60,7 @@
                 [
                     "implicit",
                     "performance#sizing/fit",
-                    "neutral",
+                    "negative",
                     "usually wear size 10 on pr1 .",
                     "direct"
                 ],
@@ -69,6 +69,13 @@
                     "performance#comfort",
                     "negative",
                     "should get 1 size bigger for comfort",
+                    "direct"
+                ],
+                [
+                    "implicit",
+                    "contextofuse#purchase\\_context",
+                    "neutral",
+                    "usually wear size 10 on pr1 .",
                     "direct"
                 ]
             ],
@@ -151,32 +158,25 @@
                     "indirect"
                 ],
                 [
-                    "implicit",
+                    "9 1 / 2 4e",
                     "performance#sizing/fit",
                     "negative",
-                    "couldn ' t get my foot into it",
+                    "i couldn ' t get my foot into it",
                     "indirect"
                 ],
                 [
-                    "golf shoe",
-                    "appearance#form",
+                    "implicit",
+                    "contextofuse#purchase\\_context",
                     "negative",
                     "why can ' t you make a golf shoe from the same last as your sneakers",
                     "indirect"
                 ],
                 [
-                    "implicit",
-                    "appearance#misc",
-                    "positive",
-                    "looks well constructed",
-                    "direct"
-                ],
-                [
-                    "pair",
+                    "golf shoe",
                     "performance#sizing/fit",
-                    "positive",
-                    "would love a pair that fits like my sneakers",
-                    "direct"
+                    "negative",
+                    "why can ' t you make a golf shoe from the same last as your sneakers",
+                    "indirect"
                 ]
             ],
             "true": [
@@ -232,7 +232,7 @@
                     "sneakers",
                     "contextofuse#purchase\\_context",
                     "negative",
-                    "ordered an 8 . 5 but seriously could have worn a 7 . 5",
+                    "due to reviews ordered an 8 . 5 but seriously could have worn a 7 . 5 in these",
                     "direct"
                 ],
                 [
@@ -246,7 +246,7 @@
                     "implicit",
                     "appearance#general",
                     "positive",
-                    "cute",
+                    "cute though",
                     "direct"
                 ]
             ],
@@ -281,13 +281,13 @@
                 [
                     "shoe",
                     "appearance#form",
-                    "positive",
+                    "negative",
                     "just roomier all around",
-                    "direct"
+                    "indirect"
                 ],
                 [
                     "implicit",
-                    "cost/value",
+                    "performance#general",
                     "negative",
                     "not sure if i ' ll keep yet",
                     "indirect"
@@ -303,15 +303,15 @@
                     "implicit",
                     "performance#sizing/fit",
                     "negative",
-                    "this just feel so bit",
-                    "direct"
+                    "i have a wider foot than many and this just feel so bit",
+                    "indirect"
                 ],
                 [
                     "implicit",
                     "performance#sizing/fit",
                     "positive",
-                    "half size smaller than usual and length - wise it fits good",
-                    "direct"
+                    "i got a half size smaller than usual and length - wise it fits good",
+                    "indirect"
                 ]
             ],
             "true": [
@@ -365,31 +365,17 @@
                 ],
                 [
                     "implicit",
-                    "performance#comfort",
-                    "positive",
-                    "i like the fit and cimfort",
-                    "direct"
-                ],
-                [
-                    "implicit",
                     "appearance#form",
                     "negative",
                     "not 100 % satisfied with the style",
                     "indirect"
                 ],
                 [
-                    "implicit",
+                    "fabric",
                     "appearance#material",
                     "negative",
-                    "fabric sits loose across the top of the foot",
-                    "indirect"
-                ],
-                [
-                    "implicit",
-                    "performance#comfort",
-                    "negative",
-                    "not 100 % satisfied with the style",
-                    "indirect"
+                    "sits loose across the top of the foot",
+                    "direct"
                 ]
             ],
             "true": [
@@ -442,18 +428,18 @@
                     "direct"
                 ],
                 [
-                    "implicit",
+                    "material",
                     "appearance#material",
                     "negative",
-                    "material felt very cheap",
+                    "felt very cheap",
                     "direct"
                 ],
                 [
                     "shoes",
                     "performance#use case applicability",
                     "positive",
-                    "very light",
-                    "direct"
+                    "were very light",
+                    "indirect"
                 ]
             ],
             "true": [
@@ -500,7 +486,7 @@
                 ],
                 [
                     "adidas",
-                    "contextofuse#purchase\\_context",
+                    "contextofuse#usage frequency",
                     "positive",
                     "i only wear adidas so , perfect as usual",
                     "indirect"
@@ -544,7 +530,7 @@
                 [
                     "laces",
                     "appearance#shoe component",
-                    "positive",
+                    "negative",
                     "will never need laces again",
                     "direct"
                 ],
@@ -565,15 +551,8 @@
                 [
                     "implicit",
                     "performance#comfort",
-                    "positive",
-                    "comfortable",
-                    "direct"
-                ],
-                [
-                    "implicit",
-                    "performance#sizing/fit",
                     "negative",
-                    "huge - like boats",
+                    "comfortable but huge - like boats",
                     "direct"
                 ]
             ],
@@ -642,7 +621,7 @@
                 ],
                 [
                     "opening to the show",
-                    "performance#sizing/fit",
+                    "appearance#shoe component",
                     "negative",
                     "too narrow for a foot to go in",
                     "direct"
@@ -691,39 +670,39 @@
             "review": "needed new shoes so i bought these online , reviews looked fine and i haven ' t had a problem with adidas before . tried them on and felt fine . however . after working a shift , i can confirm that these are the most uncomfortable shoes , i ' ve ever worn . i worked a 7 hour shift and by the 3rd hour , my feet were killing me . do not buy these shoes ! !",
             "pred": [
                 [
-                    "new shoes",
+                    "shoes",
                     "contextofuse#purchase\\_context",
                     "neutral",
                     "needed new shoes so i bought these online",
-                    "direct"
-                ],
-                [
-                    "implicit",
-                    "appearance#general",
-                    "positive",
-                    "reviews looked fine",
-                    "direct"
+                    "indirect"
                 ],
                 [
                     "implicit",
                     "contextofuse#purchase\\_context",
                     "positive",
-                    "i haven ' t had a problem with adidas before",
-                    "direct"
+                    "reviews looked fine",
+                    "indirect"
                 ],
                 [
-                    "shoes",
-                    "performance#comfort",
-                    "negative",
-                    "most uncomfortable shoes , i ' ve ever worn",
-                    "direct"
+                    "implicit",
+                    "contextofuse#purchase\\_context",
+                    "neutral",
+                    "i haven ' t had a problem with adidas before",
+                    "indirect"
                 ],
                 [
                     "implicit",
                     "performance#general",
                     "positive",
-                    "tried them on and felt fine",
-                    "direct"
+                    "tried them on",
+                    "indirect"
+                ],
+                [
+                    "implicit",
+                    "performance#general",
+                    "positive",
+                    "felt fine",
+                    "indirect"
                 ]
             ],
             "true": [
@@ -791,9 +770,23 @@
             "pred": [
                 [
                     "implicit",
+                    "general",
+                    "positive",
+                    "i love",
+                    "direct"
+                ],
+                [
+                    "implicit",
+                    "contextofuse#use case",
+                    "positive",
+                    "i love them im a caregiver",
+                    "direct"
+                ],
+                [
+                    "implicit",
                     "performance#comfort",
                     "positive",
-                    "i love them im a caregiver so i ' m on my feet all day and they are so comfortable",
+                    "they are so comfortable",
                     "direct"
                 ]
             ],
@@ -826,7 +819,7 @@
             "review": "i like adidas products . but , this shoe is difficult for me to put on . takes more time and effort than i would like to get in to . once its on , comfortable , a little more snug than i would like but overall , a sharp functional sneaker .",
             "pred": [
                 [
-                    "adidas",
+                    "adidas products",
                     "general",
                     "positive",
                     "i like",
@@ -840,8 +833,8 @@
                     "direct"
                 ],
                 [
-                    "shoe",
-                    "performance#general",
+                    "implicit",
+                    "performance#sizing/fit",
                     "negative",
                     "takes more time and effort than i would like to get in to",
                     "direct"
@@ -850,21 +843,14 @@
                     "implicit",
                     "performance#comfort",
                     "positive",
-                    "once its on , comfortable",
+                    "once its on",
                     "direct"
                 ],
                 [
                     "implicit",
                     "performance#sizing/fit",
                     "negative",
-                    "a little more snug than i would like",
-                    "direct"
-                ],
-                [
-                    "sneaker",
-                    "appearance#general",
-                    "positive",
-                    "overall , a sharp functional",
+                    "comfortable , a little more snug than i would like",
                     "direct"
                 ]
             ],
@@ -940,9 +926,9 @@
                 ],
                 [
                     "implicit",
-                    "performance#use case applicability",
+                    "appearance#form",
                     "negative",
-                    "looking for something easy to slip on",
+                    "i was looking for something easy to slip on",
                     "indirect"
                 ],
                 [
@@ -950,7 +936,7 @@
                     "appearance#shoe component",
                     "negative",
                     "seems the heel of the shoe is more trouble than shoestrings",
-                    "indirect"
+                    "direct"
                 ]
             ],
             "true": [
@@ -1040,28 +1026,21 @@
             "pred": [
                 [
                     "implicit",
-                    "contextofuse#use case",
-                    "positive",
-                    "good for around the house",
-                    "direct"
+                    "performance#use case applicability",
+                    "negative",
+                    "if your looking to exercise in these , i would recommend something else",
+                    "indirect"
                 ],
                 [
                     "sole",
                     "appearance#shoe component",
-                    "negative",
-                    "thin and flat",
-                    "direct"
-                ],
-                [
-                    "implicit",
-                    "performance#support/stability",
                     "negative",
                     "not too supportive",
                     "direct"
                 ],
                 [
                     "implicit",
-                    "appearance#shoe component",
+                    "appearance#form",
                     "negative",
                     "not much of an arch either",
                     "direct"
@@ -1075,9 +1054,16 @@
                 ],
                 [
                     "implicit",
-                    "performance#use case applicability",
+                    "contextofuse#use case",
+                    "positive",
+                    "good for around the house",
+                    "direct"
+                ],
+                [
+                    "implicit",
+                    "appearance#shoe component",
                     "negative",
-                    "if your looking to exercise in these , i would recommend something else",
+                    "thin and flat",
                     "direct"
                 ]
             ],
@@ -1148,11 +1134,11 @@
                     "shoes",
                     "cost/value",
                     "positive",
-                    "i recommend these",
-                    "indirect"
+                    "i recommend",
+                    "direct"
                 ],
                 [
-                    "velcro",
+                    "velcro on the left and right shoes",
                     "appearance#shoe component",
                     "negative",
                     "the position of the velcro on the left and right shoes is different",
@@ -1182,16 +1168,16 @@
             "pred": [
                 [
                     "shoe",
-                    "contextofuse#usage frequency",
+                    "performance#comfort",
                     "positive",
-                    "great shoe to wear on a regular day basis",
+                    "if you cheer or dance this is a comfortable shoe for those type of activities",
                     "direct"
                 ],
                 [
-                    "implicit",
-                    "performance#use case applicability",
+                    "shoe",
+                    "contextofuse#usage frequency",
                     "positive",
-                    "if you cheer or dance this is a comfortable shoe for those type of activities",
+                    "this is a great shoe to wear on a regular day basis",
                     "direct"
                 ]
             ],
@@ -1218,7 +1204,7 @@
             "pred": [
                 [
                     "shoes",
-                    "appearance#misc",
+                    "appearance#general",
                     "negative",
                     "look and feel cheap",
                     "direct"
@@ -1232,10 +1218,10 @@
                 ],
                 [
                     "implicit",
-                    "appearance#misc",
+                    "appearance#general",
                     "negative",
                     "nothing like the originals",
-                    "direct"
+                    "indirect"
                 ],
                 [
                     "implicit",
@@ -1305,7 +1291,7 @@
                     "shoe",
                     "performance#sizing/fit",
                     "negative",
-                    "i purchased runs small",
+                    "runs small",
                     "direct"
                 ],
                 [
@@ -1313,7 +1299,7 @@
                     "performance#sizing/fit",
                     "negative",
                     "order a size or two bigger than normal size",
-                    "direct"
+                    "indirect"
                 ],
                 [
                     "implicit",
@@ -1325,7 +1311,7 @@
                 [
                     "shoe",
                     "general",
-                    "negative",
+                    "positive",
                     "is a classic",
                     "indirect"
                 ]
@@ -1412,7 +1398,7 @@
                     "order",
                     "contextofuse#purchase\\_context",
                     "positive",
-                    "every thing about my order went accordingly",
+                    "received my order earlier than expected",
                     "direct"
                 ],
                 [
@@ -1420,13 +1406,6 @@
                     "contextofuse#purchase\\_context",
                     "positive",
                     "i will definitely order online again",
-                    "direct"
-                ],
-                [
-                    "order",
-                    "contextofuse#purchase\\_context",
-                    "positive",
-                    "received my order earlier than expected",
                     "direct"
                 ]
             ],
@@ -1455,7 +1434,7 @@
                     "shoes",
                     "performance#comfort",
                     "positive",
-                    "are comfortable",
+                    "comfortable",
                     "direct"
                 ],
                 [
@@ -1467,10 +1446,10 @@
                 ],
                 [
                     "implicit",
-                    "general",
+                    "appearance#general",
                     "negative",
                     "not happy about that at all",
-                    "indirect"
+                    "direct"
                 ]
             ],
             "true": [
@@ -1503,24 +1482,17 @@
             "pred": [
                 [
                     "shoes",
-                    "contextofuse#purchase\\_context",
-                    "negative",
-                    "lie about the sizes",
-                    "direct"
-                ],
-                [
-                    "shoes",
                     "performance#sizing/fit",
                     "negative",
-                    "so tight i gave them to my daughter",
+                    "lie about the sizes i ordered a 9 and them shoes were so tight i gave them to my daughter",
                     "direct"
                 ],
                 [
                     "implicit",
                     "cost/value",
                     "negative",
-                    "i well never never never buy them",
-                    "indirect"
+                    "i well never never buy them",
+                    "direct"
                 ]
             ],
             "true": [
@@ -1563,7 +1535,7 @@
                     "general",
                     "positive",
                     "i ' ve always admired these so i finally got a pair",
-                    "indirect"
+                    "direct"
                 ],
                 [
                     "implicit",
@@ -1576,7 +1548,21 @@
                     "implicit",
                     "performance#sizing/fit",
                     "negative",
-                    "very tight and snugged fitting",
+                    "these are very tight and snugged fitting",
+                    "direct"
+                ],
+                [
+                    "implicit",
+                    "appearance#form",
+                    "negative",
+                    "these are very tight and snugged fitting",
+                    "direct"
+                ],
+                [
+                    "shoe",
+                    "performance#sizing/fit",
+                    "negative",
+                    "if you have a fat foot or anything other than slim , then this is not the shoe for you",
                     "indirect"
                 ]
             ],
@@ -1617,7 +1603,14 @@
             "pred": [
                 [
                     "implicit",
-                    "performance#sizing/fit",
+                    "contextofuse#purchase\\_context",
+                    "negative",
+                    "i gave this rating due to receiving my order almost a month later",
+                    "direct"
+                ],
+                [
+                    "implicit",
+                    "contextofuse#purchase\\_context",
                     "negative",
                     "initially they sent me two different sizes",
                     "direct"
@@ -1628,6 +1621,13 @@
                     "negative",
                     "i was not contacted in regards of the situation",
                     "indirect"
+                ],
+                [
+                    "implicit",
+                    "contextofuse#purchase\\_context",
+                    "neutral",
+                    "it was a christmas gift , so it was a late gift",
+                    "direct"
                 ]
             ],
             "true": [
@@ -1667,13 +1667,13 @@
             "pred": [
                 [
                     "slides",
-                    "appearance#shoe component",
+                    "appearance#form",
                     "negative",
-                    "narrower than other adidas pairs that i own",
+                    "narrower than other adidas pairs",
                     "direct"
                 ],
                 [
-                    "implicit",
+                    "slides",
                     "performance#comfort",
                     "positive",
                     "comfortable and stylish",
@@ -1717,16 +1717,16 @@
             "pred": [
                 [
                     "slides",
-                    "appearance#form",
-                    "negative",
-                    "while these slides are very attractive they are also rather stiff",
+                    "appearance#general",
+                    "positive",
+                    "very attractive",
                     "direct"
                 ],
                 [
                     "slides",
                     "performance#general",
                     "negative",
-                    "while these slides are very attractive they are also rather stiff",
+                    "rather stiff",
                     "direct"
                 ],
                 [
@@ -1737,7 +1737,7 @@
                     "direct"
                 ],
                 [
-                    "top of the slide",
+                    "implicit",
                     "performance#comfort",
                     "negative",
                     "does not have enough suppleness to conform to your foot",
@@ -1802,10 +1802,10 @@
                 ],
                 [
                     "implicit",
-                    "performance#sizing/fit",
+                    "appearance#form",
                     "negative",
-                    "they are a little short and very very narrow",
-                    "indirect"
+                    "they are a little short and very narrow",
+                    "direct"
                 ],
                 [
                     "implicit",
@@ -1815,18 +1815,18 @@
                     "indirect"
                 ],
                 [
-                    "implicit",
-                    "cost/value",
-                    "negative",
-                    "not sure these are winners though",
-                    "indirect"
-                ],
-                [
                     "adidas",
                     "general",
                     "positive",
                     "love",
                     "direct"
+                ],
+                [
+                    "implicit",
+                    "general",
+                    "negative",
+                    "not sure these are winners though",
+                    "indirect"
                 ]
             ],
             "true": [
@@ -1888,9 +1888,9 @@
                 [
                     "implicit",
                     "performance#sizing/fit",
-                    "negative",
+                    "neutral",
                     "go up 1 / 2 size",
-                    "direct"
+                    "indirect"
                 ]
             ],
             "true": [
@@ -1924,15 +1924,15 @@
                 [
                     "shoes",
                     "contextofuse#purchase\\_context",
-                    "positive",
-                    "based on a review that they were very comfortable",
+                    "neutral",
+                    "i purchased the shoes based on a review that they were very comfortable and good for walking",
                     "direct"
                 ],
                 [
                     "shoes",
                     "performance#use case applicability",
                     "positive",
-                    "good for walking",
+                    "they are very comfortable and good for walking",
                     "direct"
                 ],
                 [
@@ -1940,11 +1940,11 @@
                     "performance#sizing/fit",
                     "negative",
                     "not easy to get on without using my fingers as a shoe horn",
-                    "indirect"
+                    "direct"
                 ],
                 [
                     "shoes",
-                    "performance#use case applicability",
+                    "performance#comfort",
                     "positive",
                     "somewhat comfortable for walking",
                     "direct"
@@ -2016,7 +2016,7 @@
                 [
                     "implicit",
                     "contextofuse#review\\_temporality",
-                    "negative",
+                    "positive",
                     "i have owned them for less than a year",
                     "direct"
                 ],
@@ -2139,7 +2139,7 @@
                     "performance#sizing/fit",
                     "negative",
                     "fits completely different than the last pair of adidas running sneakers i purchased",
-                    "indirect"
+                    "direct"
                 ],
                 [
                     "implicit",
@@ -2152,8 +2152,15 @@
                     "implicit",
                     "appearance#color",
                     "positive",
-                    "love the color scheme and style though",
-                    "indirect"
+                    "i do love the color scheme and style though",
+                    "direct"
+                ],
+                [
+                    "implicit",
+                    "appearance#form",
+                    "positive",
+                    "i do love the color scheme and style though",
+                    "direct"
                 ]
             ],
             "true": [
@@ -2215,7 +2222,7 @@
                 [
                     "implicit",
                     "contextofuse#review\\_temporality",
-                    "negative",
+                    "positive",
                     "i have owned them for less than a year",
                     "direct"
                 ],
@@ -2306,17 +2313,17 @@
                 ],
                 [
                     "implicit",
-                    "appearance#form",
+                    "appearance#general",
                     "positive",
                     "i love pairing them with leggings and a tank top or even a sweatshirt and a tennis skirt",
-                    "indirect"
+                    "direct"
                 ],
                 [
                     "implicit",
-                    "appearance#color",
+                    "contextofuse#use case",
                     "positive",
-                    "if you ' re trying to find the perfect white athletic shoe , this is your sign",
-                    "indirect"
+                    "i love pairing them with leggings and a tank top or even a sweatshirt and a tennis skirt",
+                    "direct"
                 ]
             ],
             "true": [
@@ -2370,9 +2377,16 @@
             "pred": [
                 [
                     "shoes",
+                    "general",
+                    "positive",
+                    "i love",
+                    "direct"
+                ],
+                [
+                    "shoes",
                     "performance#comfort",
                     "positive",
-                    "i love the shoes because not only are they comfortable",
+                    "not only are they comfortable",
                     "direct"
                 ],
                 [
@@ -2390,10 +2404,10 @@
                     "indirect"
                 ],
                 [
-                    "pair",
+                    "black and gold pair",
                     "appearance#color",
                     "positive",
-                    "black and gold pair because of how comfortable they are",
+                    "how comfortable they are",
                     "direct"
                 ]
             ],
@@ -2454,7 +2468,7 @@
                     "direct"
                 ],
                 [
-                    "shoe",
+                    "implicit",
                     "performance#sizing/fit",
                     "negative",
                     "the fit is not great either",
@@ -2501,14 +2515,7 @@
                     "performance#use case applicability",
                     "positive",
                     "i was looking for something lightweight and comfortable for work these babies does the job",
-                    "indirect"
-                ],
-                [
-                    "implicit",
-                    "appearance#material",
-                    "positive",
-                    "i was looking for something lightweight and comfortable for work these babies does the job",
-                    "indirect"
+                    "direct"
                 ],
                 [
                     "implicit",
@@ -2582,17 +2589,17 @@
             "review": "color was nice size little loose but ok . but too wide from the front and the worst was the it came with the security tag . my last purchase before this one was like a size smaller so i had to give them away . i will not buy online again to much issues . . . .",
             "pred": [
                 [
-                    "color",
+                    "implicit",
                     "appearance#color",
                     "positive",
-                    "nice size little loose but ok",
+                    "color was nice size little loose but ok",
                     "direct"
                 ],
                 [
-                    "front",
-                    "appearance#shoe component",
+                    "implicit",
+                    "performance#sizing/fit",
                     "negative",
-                    "too wide from the front",
+                    "but too wide from the front",
                     "direct"
                 ],
                 [
@@ -2607,11 +2614,11 @@
                     "contextofuse#purchase\\_context",
                     "negative",
                     "my last purchase before this one was like a size smaller so i had to give them away",
-                    "indirect"
+                    "direct"
                 ],
                 [
                     "implicit",
-                    "contextofuse#purchase\\_context",
+                    "cost/value",
                     "negative",
                     "i will not buy online again to much issues",
                     "indirect"
@@ -2669,30 +2676,23 @@
                 [
                     "shoes",
                     "performance#sizing/fit",
-                    "positive",
-                    "these are the widest shoes",
+                    "negative",
+                    "widest",
                     "direct"
                 ],
                 [
                     "shoes",
-                    "performance#comfort",
+                    "performance#use case applicability",
                     "negative",
                     "make my feet feel like they are swimming without water",
                     "indirect"
                 ],
                 [
-                    "shoe",
-                    "contextofuse#purchase\\_context",
-                    "neutral",
-                    "coworker who purchased these shoe as well",
-                    "indirect"
-                ],
-                [
-                    "shoe",
-                    "appearance#form",
+                    "implicit",
+                    "cost/value",
                     "negative",
-                    "wore them once and retired them bc of the width",
-                    "indirect"
+                    "i returned mine",
+                    "direct"
                 ]
             ],
             "true": [
@@ -2741,14 +2741,14 @@
                     "running shoes",
                     "contextofuse#usage frequency",
                     "positive",
-                    "i own countless running shoes from this company",
+                    "i own countless running shoes from this company and have never had an issue like i did with these",
                     "direct"
                 ],
                 [
                     "laces",
                     "appearance#shoe component",
                     "negative",
-                    "held together by elastics",
+                    "are held together by elastics",
                     "direct"
                 ],
                 [
@@ -2759,10 +2759,10 @@
                     "direct"
                 ],
                 [
-                    "shoe",
-                    "appearance#general",
-                    "positive",
-                    "beautiful",
+                    "sneaker",
+                    "appearance#material",
+                    "negative",
+                    "beautiful sneaker , super disappointing quality",
                     "direct"
                 ]
             ],
@@ -2824,16 +2824,16 @@
             "pred": [
                 [
                     "shoe",
-                    "performance#general",
+                    "general",
                     "positive",
-                    "love the",
+                    "love",
                     "direct"
                 ],
                 [
                     "rc elite",
                     "performance#sizing/fit",
-                    "negative",
-                    "would like to purchase the rc elite except they do not come in wide",
+                    "positive",
+                    "like to purchase the rc elite except they do not come in wide",
                     "indirect"
                 ]
             ],
@@ -2883,7 +2883,7 @@
                     "boot",
                     "performance#comfort",
                     "negative",
-                    "i have wide feet and it is not very comfortable for me",
+                    "not very comfortable for me",
                     "direct"
                 ]
             ],
@@ -2926,19 +2926,19 @@
                     "implicit",
                     "contextofuse#purchase\\_context",
                     "negative",
-                    "i had to exchange my first order and ordered a size up",
+                    "exchange my first order and ordered a size up",
+                    "direct"
+                ],
+                [
+                    "band of the bigger size",
+                    "appearance#shoe component",
+                    "negative",
+                    "cuts into my foot",
                     "direct"
                 ],
                 [
                     "implicit",
                     "performance#sizing/fit",
-                    "negative",
-                    "then the band of the bigger size sort of cuts into my foot",
-                    "direct"
-                ],
-                [
-                    "implicit",
-                    "contextofuse#use case",
                     "neutral",
                     "i am a size 5 women",
                     "direct"
@@ -2947,7 +2947,7 @@
                     "implicit",
                     "performance#sizing/fit",
                     "negative",
-                    "i won ' t return them because i already exchanged for a bigger size but more importantly : it cut into my foot",
+                    "won ' t return them because i already exchanged for a bigger size but more importantly : it cut into my foot",
                     "direct"
                 ]
             ],
@@ -2995,7 +2995,7 @@
                 ],
                 [
                     "sandal",
-                    "appearance#shoe component",
+                    "appearance#material",
                     "negative",
                     "find a softer sandal",
                     "indirect"
@@ -3034,7 +3034,14 @@
                     "performance#sizing/fit",
                     "negative",
                     "i can ' t wear them all the way or my feet feel like they ' re being strangled",
-                    "direct"
+                    "indirect"
+                ],
+                [
+                    "implicit",
+                    "appearance#form",
+                    "negative",
+                    "i can ' t wear them all the way or my feet feel like they ' re being strangled",
+                    "indirect"
                 ],
                 [
                     "implicit",
@@ -3076,12 +3083,12 @@
                     "implicit",
                     "performance#comfort",
                     "negative",
-                    "little bit uncomfortable at first",
+                    "it was a little bit uncomfortable at first",
                     "indirect"
                 ],
                 [
                     "implicit",
-                    "appearance#form",
+                    "performance#sizing/fit",
                     "negative",
                     "maybe because the form was too hard",
                     "indirect"
@@ -3148,7 +3155,7 @@
                     "performance#sizing/fit",
                     "negative",
                     "would be better if offered as an adjustable shoe",
-                    "direct"
+                    "indirect"
                 ],
                 [
                     "shoe",
@@ -3159,9 +3166,16 @@
                 ],
                 [
                     "slides",
+                    "contextofuse#purchase\\_context",
+                    "negative",
+                    "i bought cheaper slides in the past",
+                    "direct"
+                ],
+                [
+                    "slides",
                     "performance#comfort",
                     "negative",
-                    "i bought cheaper slides in the past that were more comfortable",
+                    "were more comfortable",
                     "direct"
                 ]
             ],
@@ -3227,6 +3241,13 @@
                     "positive",
                     "good material for the top strap",
                     "direct"
+                ],
+                [
+                    "top strap",
+                    "appearance#shoe component",
+                    "positive",
+                    "good material for the top strap",
+                    "direct"
                 ]
             ],
             "true": [
@@ -3266,7 +3287,7 @@
                 ],
                 [
                     "implicit",
-                    "performance#general",
+                    "appearance#general",
                     "positive",
                     "just as described",
                     "direct"
@@ -3274,9 +3295,9 @@
                 [
                     "implicit",
                     "performance#sizing/fit",
-                    "negative",
+                    "neutral",
                     "not to big or small",
-                    "indirect"
+                    "direct"
                 ]
             ],
             "true": [
@@ -3311,15 +3332,22 @@
                     "sides of both slides",
                     "appearance#shoe component",
                     "negative",
-                    "appear to be lifting : / poorly glued together",
+                    "appear to be lifting : / poorly glued",
+                    "direct"
+                ],
+                [
+                    "implicit",
+                    "cost/value",
+                    "negative",
+                    "want to return",
                     "direct"
                 ],
                 [
                     "implicit",
                     "contextofuse#purchase\\_context",
                     "negative",
-                    "want to return but worried about the hassle of trying to get a better pair reordered",
-                    "indirect"
+                    "worried about the hassle of trying to get a better pair reordered",
+                    "direct"
                 ]
             ],
             "true": [
@@ -3379,8 +3407,8 @@
                     "direct"
                 ],
                 [
-                    "implicit",
-                    "performance#support/stability",
+                    "trifold",
+                    "appearance#shoe component",
                     "positive",
                     "anything with the trifold i ' m down",
                     "direct"
@@ -3418,11 +3446,11 @@
                     "shoe",
                     "performance#general",
                     "positive",
-                    "met all my needs",
+                    "met all my needs in a shoe",
                     "direct"
                 ],
                 [
-                    "shoe",
+                    "implicit",
                     "performance#durability",
                     "positive",
                     "very durable",
@@ -3500,16 +3528,9 @@
             "review": "i use these shoes just slip on for practical reasons . running to the store or just for general leisure . great quality ! however , run a little small . i wear mine without socks , and that solved the size issue .",
             "pred": [
                 [
-                    "shoes",
-                    "performance#use case applicability",
-                    "positive",
-                    "i use these shoes just slip on for practical reasons",
-                    "indirect"
-                ],
-                [
                     "implicit",
                     "contextofuse#use case",
-                    "positive",
+                    "neutral",
                     "running to the store or just for general leisure",
                     "indirect"
                 ],
@@ -3522,17 +3543,24 @@
                 ],
                 [
                     "implicit",
-                    "performance#sizing/fit",
-                    "negative",
-                    "run a little small",
+                    "contextofuse#use case",
+                    "neutral",
+                    "i wear mine without socks , and that solved the size issue",
+                    "indirect"
+                ],
+                [
+                    "shoes",
+                    "contextofuse#use case",
+                    "neutral",
+                    "i use these shoes just slip on for practical reasons",
                     "direct"
                 ],
                 [
                     "implicit",
-                    "contextofuse#use case",
-                    "positive",
-                    "i wear mine without socks , and that solved the size issue",
-                    "indirect"
+                    "performance#sizing/fit",
+                    "negative",
+                    "run a little small",
+                    "direct"
                 ]
             ],
             "true": [
@@ -3593,7 +3621,7 @@
                 ],
                 [
                     "implicit",
-                    "contextofuse#purchase\\_context",
+                    "contextofuse#usage frequency",
                     "positive",
                     "glad i stay on this website daily",
                     "direct"
@@ -3638,14 +3666,14 @@
                     "color",
                     "appearance#color",
                     "negative",
-                    "on the site has neutral beige / brown tones",
+                    "neutral beige / brown tones",
                     "direct"
                 ],
                 [
                     "color",
                     "appearance#color",
                     "negative",
-                    "in person the color is all gray",
+                    "unfortunately , in person the color is all gray",
                     "direct"
                 ],
                 [
@@ -3709,21 +3737,28 @@
                     "white laces",
                     "appearance#shoe component",
                     "negative",
-                    "have dirt spots on the laces and thread coming out from a lace",
+                    "have dirt spots on the laces and thread coming out of a lace",
+                    "direct"
+                ],
+                [
+                    "white laces",
+                    "appearance#color",
+                    "negative",
+                    "have dirt spots on the laces and thread coming out of a lace",
                     "direct"
                 ],
                 [
                     "laces",
                     "appearance#shoe component",
                     "negative",
-                    "have dirt spots on the laces and thread coming out from a lace",
+                    "out the package like wow the laces are shot",
                     "direct"
                 ],
                 [
                     "shoe",
-                    "contextofuse#purchase\\_context",
+                    "contextofuse#review\\_temporality",
                     "negative",
-                    "out the package like wow the laces are shot and shoe hasn ' t even been worn yet",
+                    "hasn ' t even been worn yet",
                     "direct"
                 ]
             ],
@@ -3787,29 +3822,15 @@
                     "fabric over the toes",
                     "appearance#material",
                     "negative",
-                    "fabric over the toes needs to be reinforced with leather or something",
-                    "direct"
+                    "cmon the fabric over the toes needs to be reinforced with leather or something",
+                    "indirect"
                 ],
                 [
-                    "implicit",
-                    "contextofuse#use case",
-                    "neutral",
-                    "i live in ny i walk a lot",
-                    "direct"
-                ],
-                [
-                    "implicit",
-                    "appearance#material",
-                    "negative",
-                    "fabric over the toes needs to be reinforced with leather or something",
-                    "direct"
-                ],
-                [
-                    "implicit",
-                    "performance#sizing/fit",
+                    "toes",
+                    "performance#durability",
                     "negative",
                     "my toes immediately have made a hole",
-                    "direct"
+                    "indirect"
                 ]
             ],
             "true": [
@@ -3863,23 +3884,16 @@
                 ],
                 [
                     "implicit",
-                    "appearance#color",
-                    "negative",
-                    "from the pictures the top looks white but it ' s actually blue",
-                    "direct"
-                ],
-                [
-                    "implicit",
                     "contextofuse#purchase\\_context",
                     "negative",
-                    "made a difference when i received them",
+                    "from the pictures the top looks white but it ' s actually blue , which made a difference when i received them",
                     "indirect"
                 ],
                 [
                     "implicit",
                     "appearance#color",
                     "negative",
-                    "wasn ' t wanting that color scheme",
+                    "i wasn ' t wanting that color scheme",
                     "indirect"
                 ]
             ],
@@ -3926,24 +3940,17 @@
             "review": "i ' ve been a reebok classic woman for years . i don ' t wear any other brand of athletic shoes . they are comfortable and easy to walk in . i wear a 1 / 2 \" heel lift in my shoe for balance and these shoes have the perfect depth that keeps the heel of the shoe snug to my feet - no slipping off .",
             "pred": [
                 [
-                    "reebok",
-                    "contextofuse#review\\_temporality",
+                    "reebok classic woman",
+                    "contextofuse#usage frequency",
                     "positive",
                     "i ' ve been a reebok classic woman for years",
                     "direct"
                 ],
                 [
-                    "athletic shoes",
-                    "contextofuse#usage frequency",
-                    "neutral",
-                    "i don ' t wear any other brand",
-                    "indirect"
-                ],
-                [
                     "implicit",
                     "performance#comfort",
                     "positive",
-                    "comfortable",
+                    "they are comfortable",
                     "direct"
                 ],
                 [
@@ -3955,7 +3962,7 @@
                 ],
                 [
                     "shoe",
-                    "performance#use case applicability",
+                    "performance#support/stability",
                     "neutral",
                     "i wear a 1 / 2 \" heel lift in my shoe for balance",
                     "direct"
@@ -4012,16 +4019,9 @@
             "pred": [
                 [
                     "implicit",
-                    "performance#sizing/fit",
-                    "negative",
-                    "too tight",
-                    "direct"
-                ],
-                [
-                    "implicit",
                     "performance#comfort",
                     "negative",
-                    "uncomfortable",
+                    "too tight and uncomfortable",
                     "direct"
                 ],
                 [
@@ -4078,7 +4078,7 @@
                     "implicit",
                     "cost/value",
                     "positive",
-                    "highly recommend",
+                    "i highly recommend them",
                     "direct"
                 ]
             ],
@@ -4122,14 +4122,14 @@
                     "performance#support/stability",
                     "neutral",
                     "i need an orthopedic lift in one shoe",
-                    "direct"
+                    "indirect"
                 ],
                 [
                     "reebox",
                     "appearance#misc",
                     "positive",
-                    "reebox still manufactures a fine shoe which can still be modified",
-                    "indirect"
+                    "fine manufactures a fine shoe which can still be modified",
+                    "direct"
                 ]
             ],
             "true": [
@@ -4171,14 +4171,7 @@
                     "implicit",
                     "performance#sizing/fit",
                     "negative",
-                    "look awful in the larger sizes",
-                    "direct"
-                ],
-                [
-                    "implicit",
-                    "performance#sizing/fit",
-                    "negative",
-                    "they are undersized",
+                    "are undersized",
                     "direct"
                 ],
                 [
@@ -4186,7 +4179,7 @@
                     "contextofuse#purchase\\_context",
                     "negative",
                     "order 1 / 2 size up or go easy on yourself and don ' t order",
-                    "direct"
+                    "indirect"
                 ]
             ],
             "true": [
@@ -4229,7 +4222,7 @@
                     "performance#sizing/fit",
                     "negative",
                     "need different size",
-                    "direct"
+                    "indirect"
                 ],
                 [
                     "implicit",
@@ -4271,14 +4264,14 @@
                     "color",
                     "appearance#color",
                     "negative",
-                    "on the site has neutral beige / brown tones",
+                    "neutral beige / brown tones",
                     "direct"
                 ],
                 [
                     "color",
                     "appearance#color",
                     "negative",
-                    "in person the color is all gray",
+                    "unfortunately , in person the color is all gray",
                     "direct"
                 ],
                 [
@@ -4346,15 +4339,8 @@
                     "direct"
                 ],
                 [
-                    "shoes",
-                    "appearance#color",
-                    "positive",
-                    "i would get them in all colors",
-                    "direct"
-                ],
-                [
                     "implicit",
-                    "contextofuse#purchase\\_context",
+                    "appearance#color",
                     "positive",
                     "i would get them in all colors",
                     "direct"
@@ -4384,7 +4370,7 @@
                 [
                     "implicit",
                     "appearance#general",
-                    "negative",
+                    "positive",
                     "still look cool , but not what they used to be",
                     "indirect"
                 ],
@@ -4404,9 +4390,9 @@
                 ],
                 [
                     "implicit",
-                    "performance#sizing/fit",
-                    "neutral",
-                    "i ' ve always been a good snug 7 . 5 in these",
+                    "appearance#form",
+                    "negative",
+                    "plus sizing has changed",
                     "indirect"
                 ],
                 [
@@ -4534,14 +4520,14 @@
                     "color",
                     "appearance#color",
                     "negative",
-                    "on the site has neutral beige / brown tones",
+                    "neutral beige / brown tones",
                     "direct"
                 ],
                 [
                     "color",
                     "appearance#color",
                     "negative",
-                    "in person the color is all gray",
+                    "unfortunately , in person the color is all gray",
                     "direct"
                 ],
                 [
@@ -4652,7 +4638,7 @@
                 ],
                 [
                     "top",
-                    "performance#comfort",
+                    "appearance#shoe component",
                     "negative",
                     "a bit uncomfortable without socks",
                     "direct"
@@ -4716,10 +4702,10 @@
                 ],
                 [
                     "implicit",
-                    "appearance#misc",
+                    "appearance#general",
                     "negative",
                     "sure don ' t make them like you use to",
-                    "indirect"
+                    "direct"
                 ]
             ],
             "true": [
@@ -4754,14 +4740,7 @@
                     "implicit",
                     "appearance#material",
                     "positive",
-                    "i ' d rather have the classic in leather",
-                    "indirect"
-                ],
-                [
-                    "leather",
-                    "appearance#material",
-                    "neutral",
-                    "i ' d rather have the classic in leather",
+                    "but i ' d rather have the classic in leather",
                     "indirect"
                 ],
                 [
@@ -4845,7 +4824,14 @@
                 ],
                 [
                     "implicit",
-                    "performance#comfort",
+                    "performance#use case applicability",
+                    "positive",
+                    "pretty comfortable to wear all day",
+                    "direct"
+                ],
+                [
+                    "implicit",
+                    "contextofuse#usage frequency",
                     "positive",
                     "pretty comfortable to wear all day",
                     "direct"
@@ -4905,7 +4891,7 @@
                     "performance#sizing/fit",
                     "negative",
                     "tried returning my shoes because they were too big",
-                    "direct"
+                    "indirect"
                 ],
                 [
                     "shoes",
@@ -4941,7 +4927,7 @@
                     "performance#sizing/fit",
                     "negative",
                     "the size is a half size smaller then what i wear",
-                    "indirect"
+                    "direct"
                 ],
                 [
                     "implicit",
@@ -4983,7 +4969,7 @@
                     "implicit",
                     "performance#misc",
                     "negative",
-                    "it gets dirty easily",
+                    "gets dirty easily",
                     "direct"
                 ],
                 [
@@ -4997,12 +4983,12 @@
                     "implicit",
                     "performance#comfort",
                     "positive",
-                    "they are comfortable",
+                    "are comfortable",
                     "direct"
                 ],
                 [
                     "implicit",
-                    "appearance#misc",
+                    "appearance#general",
                     "positive",
                     "has a great design",
                     "direct"
@@ -5044,31 +5030,24 @@
             "review": "comfortable and timeless . if you ' re looking for a super comfortable pairs of kicks . , the classic is the way to go .",
             "pred": [
                 [
-                    "implicit",
-                    "performance#comfort",
-                    "positive",
-                    "comfortable",
-                    "direct"
-                ],
-                [
-                    "implicit",
-                    "appearance#general",
-                    "positive",
-                    "timeless",
-                    "direct"
-                ],
-                [
-                    "pairs",
+                    "pairs of kicks",
                     "performance#comfort",
                     "positive",
                     "if you ' re looking for a super comfortable pairs of kicks",
+                    "indirect"
+                ],
+                [
+                    "implicit",
+                    "performance#comfort",
+                    "positive",
+                    "comfortable and timeless",
                     "direct"
                 ],
                 [
-                    "classic",
+                    "implicit",
                     "appearance#general",
                     "positive",
-                    "is the way to go",
+                    "comfortable and timeless",
                     "direct"
                 ]
             ],
@@ -5109,16 +5088,16 @@
             "pred": [
                 [
                     "classics",
-                    "cost/value",
+                    "general",
                     "positive",
                     "this is my 5th pair",
                     "direct"
                 ],
                 [
-                    "implicit",
+                    "pair",
                     "cost/value",
                     "positive",
-                    "i ' ll be buying another pair soon",
+                    "i ' ll be buying another",
                     "direct"
                 ]
             ],
@@ -5148,7 +5127,7 @@
                     "performance#sizing/fit",
                     "negative",
                     "i ordered my size but for me they run small",
-                    "indirect"
+                    "direct"
                 ],
                 [
                     "implicit",
@@ -5165,10 +5144,10 @@
                     "indirect"
                 ],
                 [
-                    "implicit",
+                    "1 / 2",
                     "performance#sizing/fit",
                     "neutral",
-                    "so give yourself some wiggle room and order the 1 / 2 .",
+                    "give yourself some wiggle room and order the 1 / 2",
                     "indirect"
                 ]
             ],
@@ -5215,8 +5194,8 @@
             "review": "way too narrow by the toes . i ' m reliably a size six and these didn ' t fit me . : (",
             "pred": [
                 [
-                    "toes",
-                    "appearance#shoe component",
+                    "implicit",
+                    "performance#sizing/fit",
                     "negative",
                     "way too narrow by the toes",
                     "direct"
@@ -5225,8 +5204,8 @@
                     "implicit",
                     "performance#sizing/fit",
                     "negative",
-                    "didn ' t fit",
-                    "direct"
+                    "didn ' t fit me",
+                    "indirect"
                 ]
             ],
             "true": [
@@ -5262,13 +5241,13 @@
                     "general",
                     "positive",
                     "i like the shoe itself and want to keep it",
-                    "indirect"
+                    "direct"
                 ],
                 [
-                    "shoe",
+                    "implicit",
                     "performance#sizing/fit",
                     "negative",
-                    "but it is too small",
+                    "it is too small",
                     "direct"
                 ],
                 [
@@ -5327,6 +5306,13 @@
                     "negative",
                     "if you have long toe nails they will poke right through the cheap material along your toe",
                     "direct"
+                ],
+                [
+                    "implicit",
+                    "appearance#material",
+                    "negative",
+                    "if you have long toe nails they will poke right through the cheap material along your toe",
+                    "direct"
                 ]
             ],
             "true": [
@@ -5362,20 +5348,13 @@
                     "performance#sizing/fit",
                     "negative",
                     "when i put this shoe on my foot it fit , it just didn ' t feel comfortable",
-                    "indirect"
-                ],
-                [
-                    "implicit",
-                    "performance#sizing/fit",
-                    "negative",
-                    "it was too narrow",
                     "direct"
                 ],
                 [
                     "implicit",
                     "performance#sizing/fit",
                     "negative",
-                    "i could feel my foot falling off on the sides",
+                    "it was too narrow",
                     "direct"
                 ]
             ],
@@ -5418,7 +5397,7 @@
                     "implicit",
                     "performance#sizing/fit",
                     "negative",
-                    "size here was a bit tight",
+                    "i ' m truly a size 8 but that size here was a bit tight",
                     "direct"
                 ],
                 [
@@ -5452,7 +5431,7 @@
             "pred": [
                 [
                     "implicit",
-                    "contextofuse#review\\_temporality",
+                    "contextofuse#usage frequency",
                     "positive",
                     "i have been wearing these for years",
                     "direct"
@@ -5467,7 +5446,7 @@
                 [
                     "implicit",
                     "performance#sizing/fit",
-                    "neutral",
+                    "negative",
                     "so i ' d recommend going up at least a half size",
                     "indirect"
                 ]
@@ -5504,36 +5483,36 @@
                     "shoes",
                     "appearance#general",
                     "positive",
-                    "beautiful , i love them",
+                    "are beautiful",
+                    "direct"
+                ],
+                [
+                    "shoes",
+                    "general",
+                    "positive",
+                    "i love them",
                     "direct"
                 ],
                 [
                     "shoes",
                     "appearance#color",
                     "positive",
-                    "color is amazing",
+                    "the color is amazing",
                     "direct"
                 ],
                 [
-                    "shoes",
+                    "implicit",
                     "appearance#misc",
                     "positive",
-                    "quality is good",
+                    "the quality is good",
                     "direct"
                 ],
                 [
                     "implicit",
                     "performance#sizing/fit",
                     "negative",
-                    "ordered the size according to the length in the sizes and are 1 cm larger than the description",
+                    "i ordered the size according to the length in the sizes and are 1 cm larger than the description",
                     "direct"
-                ],
-                [
-                    "implicit",
-                    "contextofuse#purchase\\_context",
-                    "negative",
-                    "did not return them , because i worn them before realizing that they were that big and i put the box in the garbage",
-                    "indirect"
                 ]
             ],
             "true": [
@@ -5596,14 +5575,7 @@
                     "shoe",
                     "appearance#general",
                     "positive",
-                    "love the look and style",
-                    "direct"
-                ],
-                [
-                    "shoe",
-                    "performance#general",
-                    "positive",
-                    "love the look and style",
+                    "love the look and style of this shoe",
                     "direct"
                 ],
                 [
@@ -5657,32 +5629,25 @@
             "review": "i typically wear a standard to slightly narrow width . this shoe is extremely narrow , making it unwearable for me . i believe the quality is very good , just to narrow .",
             "pred": [
                 [
-                    "shoe",
+                    "implicit",
                     "performance#sizing/fit",
-                    "negative",
-                    "extremely narrow",
-                    "direct"
+                    "neutral",
+                    "i typically wear a standard to slightly narrow width",
+                    "indirect"
                 ],
                 [
                     "shoe",
                     "performance#use case applicability",
                     "negative",
-                    "unwearable",
+                    "extremely narrow , making it unwearable for me",
                     "direct"
                 ],
                 [
                     "implicit",
-                    "appearance#material",
+                    "appearance#misc",
                     "positive",
-                    "quality is very good",
-                    "direct"
-                ],
-                [
-                    "implicit",
-                    "performance#sizing/fit",
-                    "negative",
-                    "just to narrow",
-                    "direct"
+                    "quality is very good , just to narrow",
+                    "indirect"
                 ]
             ],
             "true": [
@@ -5730,13 +5695,6 @@
                 [
                     "shoe",
                     "performance#sizing/fit",
-                    "negative",
-                    "shorter & narrower than stated size",
-                    "direct"
-                ],
-                [
-                    "shoe",
-                    "appearance#form",
                     "negative",
                     "shorter & narrower than stated size",
                     "direct"
@@ -5799,8 +5757,8 @@
                     "direct"
                 ],
                 [
-                    "implicit",
-                    "performance#durability",
+                    "shoes",
+                    "appearance#material",
                     "negative",
                     "after wearing these shoes twice , the upper leather ripped",
                     "direct"
@@ -5863,13 +5821,6 @@
                     "direct"
                 ],
                 [
-                    "shoe",
-                    "appearance#form",
-                    "negative",
-                    "shorter & narrower than stated size",
-                    "direct"
-                ],
-                [
                     "implicit",
                     "performance#sizing/fit",
                     "negative",
@@ -5902,15 +5853,29 @@
                     "implicit",
                     "performance#sizing/fit",
                     "negative",
-                    "if you have even the slightest bit of width to your foot , do not buy these",
+                    "slightest bit of width to your foot , do not buy these",
                     "direct"
+                ],
+                [
+                    "shoes",
+                    "performance#sizing/fit",
+                    "negative",
+                    "consider my foot slightly wide , often not even having to buy the wide version",
+                    "indirect"
                 ],
                 [
                     "shoes",
                     "appearance#form",
                     "negative",
-                    "i would consider my foot slightly wide , often not even having to buy the wide version",
-                    "indirect"
+                    "balls of my feet completely bulged out of the side of the sole",
+                    "direct"
+                ],
+                [
+                    "shoes",
+                    "performance#sizing/fit",
+                    "negative",
+                    "balls of my feet completely bulged out of the side of the sole",
+                    "direct"
                 ]
             ],
             "true": [
@@ -5977,8 +5942,8 @@
                     "direct"
                 ],
                 [
-                    "implicit",
-                    "performance#durability",
+                    "shoes",
+                    "appearance#material",
                     "negative",
                     "after wearing these shoes twice , the upper leather ripped",
                     "direct"
@@ -6049,16 +6014,9 @@
             "pred": [
                 [
                     "implicit",
-                    "performance#sizing/fit",
-                    "negative",
-                    "too tight",
-                    "direct"
-                ],
-                [
-                    "implicit",
                     "performance#comfort",
                     "negative",
-                    "uncomfortable",
+                    "too tight and uncomfortable",
                     "direct"
                 ],
                 [
@@ -6101,7 +6059,7 @@
                     "implicit",
                     "performance#sizing/fit",
                     "negative",
-                    "size here was a bit tight",
+                    "i ' m truly a size 8 but that size here was a bit tight",
                     "direct"
                 ],
                 [
@@ -6137,29 +6095,36 @@
                     "shoe",
                     "performance#sizing/fit",
                     "neutral",
-                    "really wanted this shoe to fit because i love the look",
-                    "direct"
+                    "as someone with a kind of wide foot , i really wanted this shoe to fit",
+                    "indirect"
+                ],
+                [
+                    "shoe",
+                    "appearance#general",
+                    "positive",
+                    "i love the look",
+                    "indirect"
                 ],
                 [
                     "reebok",
-                    "contextofuse#purchase\\_context",
+                    "contextofuse#use case",
                     "positive",
-                    "a go - to brand for me because their shoes often fit my wide feet well in a way other brands don ' t",
-                    "direct"
+                    "a go - to brand for me",
+                    "indirect"
                 ],
                 [
                     "shoes",
                     "performance#sizing/fit",
                     "negative",
                     "a lot narrower than reebok ' s other offerings",
-                    "direct"
+                    "indirect"
                 ],
                 [
                     "shoe",
-                    "contextofuse#use case",
+                    "performance#sizing/fit",
                     "negative",
                     "i wouldn ' t recommend it if you have wide feet",
-                    "direct"
+                    "indirect"
                 ]
             ],
             "true": [
@@ -6222,14 +6187,14 @@
                     "color",
                     "appearance#color",
                     "negative",
-                    "on the site has neutral beige / brown tones",
+                    "neutral beige / brown tones",
                     "direct"
                 ],
                 [
                     "color",
                     "appearance#color",
                     "negative",
-                    "in person the color is all gray",
+                    "unfortunately , in person the color is all gray",
                     "direct"
                 ],
                 [
@@ -6308,7 +6273,7 @@
                     "contextofuse#purchase\\_context",
                     "neutral",
                     "there were a christmas gift to someone",
-                    "indirect"
+                    "direct"
                 ],
                 [
                     "implicit",
@@ -6329,13 +6294,13 @@
                     "performance#use case applicability",
                     "positive",
                     "she ' s on her feet for long stretches for work",
-                    "indirect"
+                    "direct"
                 ],
                 [
                     "implicit",
-                    "contextofuse#use case",
+                    "appearance#color",
                     "negative",
-                    "said there is a bit of break - in period",
+                    "said there is a bit of break - in period , probably because how different the reds are to the others",
                     "indirect"
                 ]
             ],
@@ -6440,6 +6405,13 @@
             "pred": [
                 [
                     "implicit",
+                    "general",
+                    "positive",
+                    "i do love the brand",
+                    "direct"
+                ],
+                [
+                    "implicit",
                     "contextofuse#purchase\\_context",
                     "negative",
                     "i ordered them thinking it was ok not to try them on first because they were reeboks , i was wrong",
@@ -6447,17 +6419,10 @@
                 ],
                 [
                     "implicit",
-                    "contextofuse#purchase\\_context",
-                    "neutral",
+                    "cost/value",
+                    "negative",
                     "i am going to exchange them for another pair though because they are reeboks",
                     "indirect"
-                ],
-                [
-                    "implicit",
-                    "general",
-                    "positive",
-                    "i do love the brand",
-                    "direct"
                 ]
             ],
             "true": [
@@ -6491,13 +6456,6 @@
                 [
                     "shoe",
                     "performance#sizing/fit",
-                    "negative",
-                    "shorter & narrower than stated size",
-                    "direct"
-                ],
-                [
-                    "shoe",
-                    "appearance#form",
                     "negative",
                     "shorter & narrower than stated size",
                     "direct"
@@ -6548,20 +6506,13 @@
                 [
                     "shoe",
                     "appearance#general",
-                    "positive",
+                    "negative",
                     "i honestly wanted super pleased with the overall quality",
-                    "direct"
-                ],
-                [
-                    "shoe",
-                    "general",
-                    "positive",
-                    "i honestly wanted super pleased with the overall quality",
-                    "direct"
+                    "indirect"
                 ],
                 [
                     "implicit",
-                    "performance#support/stability",
+                    "performance#use case applicability",
                     "negative",
                     "sound it makes on the floor is odd",
                     "direct"
@@ -6649,7 +6600,7 @@
                     "appearance#general",
                     "positive",
                     "i have always liked this style",
-                    "direct"
+                    "indirect"
                 ],
                 [
                     "implicit",
@@ -6682,7 +6633,7 @@
             "pred": [
                 [
                     "shoe",
-                    "performance#general",
+                    "general",
                     "negative",
                     "you want go wrong with this shoe try it and u want be disappointed",
                     "direct"
@@ -6704,7 +6655,7 @@
             "pred": [
                 [
                     "shoes",
-                    "contextofuse#purchase\\_context",
+                    "contextofuse#use case",
                     "positive",
                     "definitely going to be some of my most worn shoes of the spring and summer",
                     "direct"
@@ -6713,7 +6664,7 @@
                     "implicit",
                     "appearance#general",
                     "positive",
-                    "so cute",
+                    "they ' re so cute",
                     "direct"
                 ],
                 [
@@ -6724,17 +6675,17 @@
                     "direct"
                 ],
                 [
-                    "shoes",
+                    "pair",
                     "performance#sizing/fit",
                     "negative",
-                    "i don ' t usually have a problem with width with shoes , but i thought this pair was a little small at firet because they were a bit tighter width wise",
+                    "i thought this pair was a little small at firet because they were a bit tighter width wise",
                     "direct"
                 ],
                 [
-                    "pair",
-                    "cost/value",
+                    "implicit",
+                    "contextofuse#purchase\\_context",
                     "negative",
-                    "i probably would not recommend you buy these",
+                    "so if you have wide feet i probably would not recommend you buy these",
                     "direct"
                 ]
             ],
@@ -6788,25 +6739,18 @@
                     "direct"
                 ],
                 [
-                    "implicit",
-                    "contextofuse#usage frequency",
-                    "negative",
-                    "i ' m wearing an old pair",
-                    "indirect"
-                ],
-                [
-                    "reebok",
-                    "contextofuse#review\\_temporality",
-                    "positive",
-                    "i have probably had thirty or forty pairs of this model of reebok through the years",
-                    "indirect"
-                ],
-                [
                     "pair",
-                    "performance#comfort",
+                    "contextofuse#purchase\\_context",
                     "negative",
                     "isn ' t comfortable , so i have given up wearing them",
-                    "indirect"
+                    "direct"
+                ],
+                [
+                    "implicit",
+                    "contextofuse#usage frequency",
+                    "neutral",
+                    "i ' m wearing an old pair",
+                    "direct"
                 ]
             ],
             "true": [
@@ -6835,13 +6779,13 @@
                     "performance#sizing/fit",
                     "negative",
                     "i think i need to go up 1 / 2 a size because it ' s pinching my toes just a bit , or i really need a wide",
-                    "direct"
+                    "indirect"
                 ],
                 [
                     "implicit",
                     "general",
                     "positive",
-                    "with that in mind it really made my feet happy",
+                    "but with that in mind it really made my feet happy",
                     "indirect"
                 ],
                 [
@@ -6849,14 +6793,14 @@
                     "appearance#material",
                     "positive",
                     "love the leather upper for a clean and durable look",
-                    "direct"
+                    "indirect"
                 ],
                 [
-                    "leather upper",
-                    "appearance#shoe component",
+                    "implicit",
+                    "contextofuse#purchase\\_context",
                     "positive",
-                    "love the leather upper for a clean and durable look",
-                    "direct"
+                    "going to keep these and try a different model",
+                    "indirect"
                 ]
             ],
             "true": [
@@ -6897,22 +6841,22 @@
                 [
                     "implicit",
                     "contextofuse#review\\_temporality",
-                    "positive",
+                    "neutral",
                     "i ' ve been wanting them again for a long time",
-                    "direct"
+                    "indirect"
+                ],
+                [
+                    "implicit",
+                    "contextofuse#use case",
+                    "neutral",
+                    "i used to use them at high school and i saw them as a reminder of that time",
+                    "indirect"
                 ],
                 [
                     "implicit",
                     "performance#comfort",
                     "negative",
                     "now that i got them i didn ' t remember how comfortable they were",
-                    "indirect"
-                ],
-                [
-                    "implicit",
-                    "contextofuse#review\\_temporality",
-                    "neutral",
-                    "i used to use them at high school and i saw them as a reminder of that time",
                     "indirect"
                 ],
                 [
@@ -6967,7 +6911,7 @@
                 ],
                 [
                     "shoe",
-                    "performance#support/stability",
+                    "appearance#form",
                     "negative",
                     "pretty stiff for having such a large wedge bottom",
                     "direct"
@@ -6977,13 +6921,6 @@
                     "appearance#color",
                     "positive",
                     "i love the colors",
-                    "direct"
-                ],
-                [
-                    "implicit",
-                    "appearance#misc",
-                    "negative",
-                    "looks and feels a little cheap",
                     "direct"
                 ]
             ],
@@ -7033,14 +6970,7 @@
                     "shoe",
                     "appearance#general",
                     "positive",
-                    "love the look and style",
-                    "direct"
-                ],
-                [
-                    "shoe",
-                    "performance#general",
-                    "positive",
-                    "love the look and style",
+                    "love the look and style of this shoe",
                     "direct"
                 ],
                 [
@@ -7098,7 +7028,7 @@
                     "performance#sizing/fit",
                     "negative",
                     "but if you have wider feet do not buy",
-                    "direct"
+                    "indirect"
                 ],
                 [
                     "implicit",
@@ -7109,16 +7039,23 @@
                 ],
                 [
                     "implicit",
-                    "performance#comfort",
+                    "appearance#shoe component",
                     "negative",
-                    "unbearable",
+                    "burned my toes the entire time walking in them",
                     "direct"
                 ],
                 [
                     "implicit",
                     "contextofuse#purchase\\_context",
                     "negative",
-                    "i had to send back for a refund after wearing",
+                    "had to send back for a refund after wearing",
+                    "direct"
+                ],
+                [
+                    "implicit",
+                    "performance#comfort",
+                    "negative",
+                    "were unbearable",
                     "direct"
                 ]
             ],
@@ -7169,7 +7106,7 @@
                     "performance#sizing/fit",
                     "negative",
                     "the size is a half size smaller then what i wear",
-                    "indirect"
+                    "direct"
                 ],
                 [
                     "implicit",
@@ -7208,29 +7145,36 @@
             "review": "i purchased these shoes bacon they were exactly like my last pair of reebok classics i bought but they are slightly different the stitching is different that sound feel is different and they just didn ' t feel like the classic running shoes that i had before so i sent them back and order me a pair a reebok classic running instead of these reeboks",
             "pred": [
                 [
-                    "reebok classics",
+                    "shoes",
                     "contextofuse#purchase\\_context",
-                    "positive",
-                    "i purchased these shoes bacon they were exactly like my last pair",
+                    "neutral",
+                    "exactly like my last pair of reebok classics",
                     "indirect"
                 ],
                 [
-                    "stitching",
+                    "shoes",
+                    "appearance#form",
+                    "negative",
+                    "slightly different",
+                    "direct"
+                ],
+                [
+                    "implicit",
                     "appearance#material",
                     "negative",
-                    "is different",
-                    "indirect"
+                    "stitching is different",
+                    "direct"
                 ],
                 [
                     "sound feel",
                     "performance#comfort",
                     "negative",
-                    "is different",
-                    "indirect"
+                    "different",
+                    "direct"
                 ],
                 [
-                    "implicit",
-                    "performance#comfort",
+                    "shoes",
+                    "performance#use case applicability",
                     "negative",
                     "didn ' t feel like the classic running shoes that i had before",
                     "indirect"
@@ -7282,19 +7226,19 @@
                     "sneaker",
                     "general",
                     "positive",
-                    "classic",
-                    "direct"
-                ],
-                [
-                    "sneaker",
-                    "cost/value",
-                    "positive",
-                    "must have for the collection",
+                    "classic sneaker a must have for the collection",
                     "direct"
                 ],
                 [
                     "implicit",
                     "appearance#color",
+                    "positive",
+                    "wide array of colors to pick from",
+                    "direct"
+                ],
+                [
+                    "implicit",
+                    "contextofuse#purchase\\_context",
                     "positive",
                     "wide array of colors to pick from",
                     "direct"
@@ -7329,9 +7273,9 @@
             "review": "only 1 pair of wide width shoe in the entire store . i returned my mail order to closest finish line store . i will never order again .",
             "pred": [
                 [
-                    "shoe",
+                    "wide width shoe",
                     "performance#sizing/fit",
-                    "neutral",
+                    "negative",
                     "only 1 pair of wide width shoe in the entire store",
                     "direct"
                 ],
@@ -7340,7 +7284,7 @@
                     "contextofuse#purchase\\_context",
                     "negative",
                     "i returned my mail order to closest finish line store",
-                    "direct"
+                    "indirect"
                 ],
                 [
                     "implicit",
@@ -7426,7 +7370,7 @@
                     "performance#sizing/fit",
                     "negative",
                     "need different size",
-                    "direct"
+                    "indirect"
                 ],
                 [
                     "implicit",
@@ -7472,9 +7416,9 @@
             "review": "only 1 pair of wide width shoe in the entire store . i returned my mail order to closest finish line store . i will never order again .",
             "pred": [
                 [
-                    "shoe",
+                    "wide width shoe",
                     "performance#sizing/fit",
-                    "neutral",
+                    "negative",
                     "only 1 pair of wide width shoe in the entire store",
                     "direct"
                 ],
@@ -7483,7 +7427,7 @@
                     "contextofuse#purchase\\_context",
                     "negative",
                     "i returned my mail order to closest finish line store",
-                    "direct"
+                    "indirect"
                 ],
                 [
                     "implicit",
@@ -7522,15 +7466,8 @@
             "review": "i bought a pair of the red - all leather variety and they are my favs to date . still wear them all the time after over a year of almost daily use .",
             "pred": [
                 [
-                    "pair",
-                    "contextofuse#purchase\\_context",
-                    "positive",
-                    "i bought a pair of the red - all leather variety",
-                    "direct"
-                ],
-                [
-                    "pair",
-                    "general",
+                    "pair of the red - all leather variety",
+                    "cost/value",
                     "positive",
                     "they are my favs to date",
                     "direct"
@@ -7541,13 +7478,6 @@
                     "positive",
                     "wear them all the time",
                     "direct"
-                ],
-                [
-                    "implicit",
-                    "contextofuse#usage frequency",
-                    "positive",
-                    "wear them all the time",
-                    "indirect"
                 ]
             ],
             "true": [
@@ -7597,14 +7527,14 @@
                     "performance#sizing/fit",
                     "negative",
                     "would order a half size bigger",
-                    "indirect"
+                    "direct"
                 ],
                 [
-                    "pair",
+                    "implicit",
                     "cost/value",
                     "positive",
-                    "already purchased another",
-                    "indirect"
+                    "already purchased another pair",
+                    "direct"
                 ]
             ],
             "true": [
@@ -7660,7 +7590,7 @@
                     "implicit",
                     "general",
                     "positive",
-                    "these are my new favorites",
+                    "my new favorites",
                     "direct"
                 ]
             ],

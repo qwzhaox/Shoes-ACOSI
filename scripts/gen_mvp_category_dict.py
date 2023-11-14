@@ -36,7 +36,7 @@ def get_acosi_categories():
                     annotations = literal_eval(parts[1].strip())
                     # Iterate through each annotation and extract the category
                     for annotation in annotations:
-                        category = annotation[1].strip()
+                        category = annotation[1].strip().lower()
                         unique_categories.add(category)
 
     add_categories(train_file)

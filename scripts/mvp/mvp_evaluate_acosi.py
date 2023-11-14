@@ -5,7 +5,7 @@ import re
 from string import punctuation
 from collections import Counter
 
-sentiment_dict = {"great": "Positive", "ok": "Neutral", "bad": "Negative"}
+sentiment_dict = {"great": "positive", "ok": "neutral", "bad": "negative"}
 
 
 def clean_punctuation(words):

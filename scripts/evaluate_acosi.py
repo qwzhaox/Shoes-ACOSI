@@ -22,6 +22,9 @@ parser.add_argument("-mvp", "--mvp_output", action="store_true")
 args = parser.parse_args()
 
 
+# NOTE: Assumes comparison with the main test dataset; if this is not possible, adjust the dataset file correspondingly
+
+
 class Evaluation:
     def __init__(self, process_func):
         self.pred_outputs = process_func(

@@ -45,6 +45,9 @@ def get_str_list(reviews):
     str_list = []
     for rev in reviews:
         for annot in rev["annot1"]:
+            for i, a in enumerate(annot):
+                annot[i] = a.lower()
+
             if args.is_mvp:
                 annot[CATEGORY_IDX] = (
                     annot[CATEGORY_IDX]
@@ -52,13 +55,12 @@ def get_str_list(reviews):
                     .replace("/", "_")
                     .replace("\\_", "_")
                 )
-                if annot[ASPECT_IDX] == "implicit":
-                    annot[ASPECT_IDX] = "null"
+            if annot[ASPECT_IDX] == "implicit":
+                annot[ASPECT_IDX] = "NULL"
 
         review_str = rev["review"]
         annot_str = str(rev["annot1"])
         review_str = review_str.lower()
-        annot_str = annot_str.lower()
 
         rev_str = review_str + "####" + annot_str
         str_list.append(rev_str)

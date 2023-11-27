@@ -179,12 +179,12 @@ class Evaluator:
             scores_for_review_i = {}
             scores_for_review_i["idx"] = i
             scores_for_review_i["exact local IoU"] = self.local_IoU[i]
+            for j, term in enumerate(TERM_LIST[: self.tuple_len]):
+                scores_for_review_i[f"{term} local IoU"] = self.partial_local_IoU[i][j]
+
             scores_for_review_i["review"] = self.reviews[i]
             scores_for_review_i["pred"] = self.pred_outputs[i]
             scores_for_review_i["true"] = self.true_outputs[i]
-
-            for j, term in enumerate(TERM_LIST[: self.tuple_len]):
-                scores_for_review_i[f"{term} local IoU"] = self.partial_local_IoU[i][j]
 
             scores["reviews"].append(scores_for_review_i)
 

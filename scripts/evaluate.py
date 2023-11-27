@@ -163,25 +163,30 @@ class Evaluator:
         scores["exact precision"] = self.precision
         scores["exact recall"] = self.recall
         scores["exact f1-score"] = self.f1
-        scores["exact IoU"] = self.global_IoU
+        scores["exact global IoU"] = self.global_IoU
+        scores["exact avg local IoU"] = self.avg_local_IoU
 
-        for term in TERM_LIST[: self.tuple_len]:
+        for i, term in enumerate(TERM_LIST[: self.tuple_len]):
             scores[f"{term} precision"] = self.partial_precision[IDX_LIST.index(term)]
             scores[f"{term} recall"] = self.partial_recall[IDX_LIST.index(term)]
             scores[f"{term} f1-score"] = self.partial_f1[IDX_LIST.index(term)]
-            scores[f"{term} IoU"] = self.partial_global_IoU[IDX_LIST.index(term)]
+            scores[f"{term} global IoU"] = self.partial_global_IoU[IDX_LIST.index(term)]
+            scores[f"{term} avg local IoU"] = self.partial_avg_local_IoU[i]
 
         scores["reviews"] = []
 
         for i in range(len(self.pred_outputs)):
-            scores["reviews"].append(
-                {
-                    "idx": i,
-                    "review": self.reviews[i],
-                    "pred": self.pred_outputs[i],
-                    "true": self.true_outputs[i],
-                }
-            )
+            scores_for_review_i = {}
+            scores_for_review_i["idx"] = i
+            scores_for_review_i["exact local IoU"] = self.local_IoU[i]
+            scores_for_review_i["review"] = self.reviews[i]
+            scores_for_review_i["pred"] = self.pred_outputs[i]
+            scores_for_review_i["true"] = self.true_outputs[i]
+
+            for j, term in enumerate(TERM_LIST[: self.tuple_len]):
+                scores_for_review_i[f"{term} local IoU"] = self.partial_local_IoU[i][j]
+
+            scores["reviews"].append(scores_for_review_i)
 
         return scores
 

@@ -167,10 +167,10 @@ class Evaluator:
         scores["exact avg local IoU"] = self.avg_local_IoU
 
         for i, term in enumerate(TERM_LIST[: self.tuple_len]):
-            scores[f"{term} precision"] = self.partial_precision[IDX_LIST.index(term)]
-            scores[f"{term} recall"] = self.partial_recall[IDX_LIST.index(term)]
-            scores[f"{term} f1-score"] = self.partial_f1[IDX_LIST.index(term)]
-            scores[f"{term} global IoU"] = self.partial_global_IoU[IDX_LIST.index(term)]
+            scores[f"{term} precision"] = self.partial_precision[i]
+            scores[f"{term} recall"] = self.partial_recall[i]
+            scores[f"{term} f1-score"] = self.partial_f1[i]
+            scores[f"{term} global IoU"] = self.partial_global_IoU[i]
             scores[f"{term} avg local IoU"] = self.partial_avg_local_IoU[i]
 
         scores["reviews"] = []

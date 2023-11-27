@@ -1,7 +1,7 @@
 import json
 import argparse
 from mvp.mvp_evaluate import get_mvp_output
-from EECS595Project.scripts.evaluate.llm_evaluate import get_llm_output
+from llm.llm_evaluate import get_llm_output
 
 parser = argparse.ArgumentParser()
 parser.add_argument(

@@ -121,23 +121,32 @@ class Evaluator:
     def calc_partial_scores(self):
         for idx in IDX_LIST[: self.tuple_len]:
             if idx == ASPECT_IDX or idx == OPINION_IDX:
-                unflattened_pred_outputs = [
-                    indexify(x, y[idx]) for x, y in zip(self.reviews, self.pred_outputs)
-                ]
-                unflattened_true_outputs = [
-                    indexify(x, y[idx]) for x, y in zip(self.reviews, self.true_outputs)
-                ]
-
                 pred_outputs = [
-                    idx for annot in unflattened_pred_outputs for idx in annot
+                    [
+                        word_idx
+                        for quint in annotation
+                        for word_idx in indexify(review, quint[idx])
+                    ]
+                    for review, annotation in zip(self.reviews, self.pred_outputs)
                 ]
                 true_outputs = [
-                    idx for annot in unflattened_true_outputs for idx in annot
+                    [
+                        word_idx
+                        for quint in annotation
+                        for word_idx in indexify(review, quint[idx])
+                    ]
+                    for review, annotation in zip(self.reviews, self.true_outputs)
                 ]
 
             else:
-                pred_outputs = [x[idx] for x in self.pred_outputs]
-                true_outputs = [x[idx] for x in self.true_outputs]
+                pred_outputs = [
+                    [quint[idx] for quint in annotation]
+                    for annotation in self.pred_outputs
+                ]
+                true_outputs = [
+                    [quint[idx] for quint in annotation]
+                    for annotation in self.true_outputs
+                ]
 
             (
                 self.partial_precision[idx],

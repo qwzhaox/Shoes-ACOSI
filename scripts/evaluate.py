@@ -52,20 +52,29 @@ def indexify(review, span):
 
 def get_precision_recall_fl_IoU(pred_outputs, true_outputs):
     n_tp, n_fp, n_fn, n_union = 0, 0, 0, 0
+
+    local_IoU = []
     for i in range(len(pred_outputs)):
         pred_set = set(pred_outputs[i])
         true_set = set(true_outputs[i])
 
-        n_tp += len(pred_set & true_set)
+        num_intersection = len(pred_set & true_set)
+        num_union = len(pred_set | true_set)
+
+        n_tp += num_intersection
+        n_union += num_union
+
         n_fp += len(pred_set - true_set)
         n_fn += len(true_set - pred_set)
-        n_union += len(pred_set | true_set)
+
+        local_IoU.append(float(num_intersection) / num_union if num_union != 0 else 0)
 
     precision = float(n_tp) / (n_tp + n_fp) if n_tp + n_fp != 0 else 0
     recall = float(n_tp) / (n_tp + n_fn) if n_tp + n_fn != 0 else 0
     f1 = 2 * precision * recall / (precision + recall) if precision + recall != 0 else 0
-    IoU = float(n_tp) / n_union if n_union != 0 else 0
-    return precision, recall, f1, IoU
+    global_IoU = float(n_tp) / n_union if n_union != 0 else 0
+    avg_local_IoU = sum(local_IoU) / len(local_IoU)
+    return precision, recall, f1, global_IoU, local_IoU, avg_local_IoU
 
 
 class Evaluator:
@@ -87,25 +96,43 @@ class Evaluator:
         self.precision = 0
         self.recall = 0
         self.f1 = 0
-        self.IoU = 0
+        self.global_IoU = 0
+        self.local_IoU = []
+        self.avg_local_IoU = 0
 
         self.tuple_len = len(self.true_outputs[0][0])
         self.partial_precision = [0] * self.tuple_len
         self.partial_recall = [0] * self.tuple_len
+        self.partial_f1 = [0] * self.tuple_len
+        self.partial_global_IoU = [0] * self.tuple_len
+        self.partial_avg_local_IoU = [[]] * self.tuple_len
+        self.partial_avg_local_IoU = [0] * self.tuple_len
 
     def calc_exact_scores(self):
-        self.precision, self.recall, self.f1, self.IoU = get_precision_recall_fl_IoU(
-            self.pred_outputs, self.true_outputs
-        )
+        (
+            self.precision,
+            self.recall,
+            self.f1,
+            self.global_IoU,
+            self.local_IoU,
+            self.avg_local_IoU,
+        ) = get_precision_recall_fl_IoU(self.pred_outputs, self.true_outputs)
 
     def calc_partial_scores(self):
         for idx in IDX_LIST[: self.tuple_len]:
             if idx == ASPECT_IDX or idx == OPINION_IDX:
-                pred_outputs = [
+                unflattened_pred_outputs = [
                     indexify(x, y[idx]) for x, y in zip(self.reviews, self.pred_outputs)
                 ]
-                true_outputs = [
+                unflattened_true_outputs = [
                     indexify(x, y[idx]) for x, y in zip(self.reviews, self.true_outputs)
+                ]
+
+                pred_outputs = [
+                    idx for annot in unflattened_pred_outputs for idx in annot
+                ]
+                true_outputs = [
+                    idx for annot in unflattened_true_outputs for idx in annot
                 ]
 
             else:
@@ -116,7 +143,9 @@ class Evaluator:
                 self.partial_precision[idx],
                 self.partial_recall[idx],
                 self.partial_f1[idx],
-                self.partial_IoU[idx],
+                self.partial_global_IoU[idx],
+                self.partial_local_IoU[idx],
+                self.partial_avg_local_IoU[idx],
             ) = get_precision_recall_fl_IoU(pred_outputs, true_outputs)
 
     def get_scores(self):
@@ -125,13 +154,13 @@ class Evaluator:
         scores["exact precision"] = self.precision
         scores["exact recall"] = self.recall
         scores["exact f1-score"] = self.f1
-        scores["exact IoU"] = self.IoU
+        scores["exact IoU"] = self.global_IoU
 
         for term in TERM_LIST[: self.tuple_len]:
             scores[f"{term} precision"] = self.partial_precision[IDX_LIST.index(term)]
             scores[f"{term} recall"] = self.partial_recall[IDX_LIST.index(term)]
             scores[f"{term} f1-score"] = self.partial_f1[IDX_LIST.index(term)]
-            scores[f"{term} IoU"] = self.partial_IoU[IDX_LIST.index(term)]
+            scores[f"{term} IoU"] = self.partial_global_IoU[IDX_LIST.index(term)]
 
         scores["reviews"] = []
 

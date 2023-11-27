@@ -33,7 +33,7 @@ OPINION_IDX = 3
 IMPLICIT_IND_IDX = 4
 
 IDX_LIST = [ASPECT_IDX, CATEGORY_IDX, SENTIMENT_IDX, OPINION_IDX, IMPLICIT_IND_IDX]
-TERM_LIST = ["aspect", "category", "sentiment", "opinion", "implicit_indicator"]
+TERM_LIST = ["aspect", "category", "sentiment", "opinion", "implicit indicator"]
 
 
 def indexify(review, span):

@@ -161,18 +161,35 @@ class Evaluator:
         self.calc_exact_scores()
         self.calc_partial_scores()
         scores = {}
-        scores["exact precision"] = self.precision
-        scores["exact recall"] = self.recall
-        scores["exact f1-score"] = self.f1
-        scores["exact global IoU"] = self.global_IoU
-        scores["exact avg local IoU"] = self.avg_local_IoU
+        scores["exact"] = {}
+        scores["exact"]["precision"] = self.precision
+        scores["exact"]["recall"] = self.recall
+        scores["exact"]["f1-score"] = self.f1
+        scores["exact"]["global IoU"] = self.global_IoU
+        scores["exact"]["avg local IoU"] = self.avg_local_IoU
 
         for i, term in enumerate(TERM_LIST[: self.tuple_len]):
-            scores[f"{term} precision"] = self.partial_precision[i]
-            scores[f"{term} recall"] = self.partial_recall[i]
-            scores[f"{term} f1-score"] = self.partial_f1[i]
-            scores[f"{term} global IoU"] = self.partial_global_IoU[i]
-            scores[f"{term} avg local IoU"] = self.partial_avg_local_IoU[i]
+            scores[term] = {}
+            scores[term]["precision"] = self.partial_precision[i]
+            scores[term]["recall"] = self.partial_recall[i]
+            scores[term]["f1-score"] = self.partial_f1[i]
+            scores[term]["global IoU"] = self.partial_global_IoU[i]
+            scores[term]["avg local IoU"] = self.partial_avg_local_IoU[i]
+
+        scores["partial avg"] = {}
+        scores["partial avg"]["precision"] = sum(self.partial_precision) / len(
+            self.partial_precision
+        )
+        scores["partial avg"]["recall"] = sum(self.partial_recall) / len(
+            self.partial_recall
+        )
+        scores["partial avg"]["f1-score"] = sum(self.partial_f1) / len(self.partial_f1)
+        scores["partial avg"]["global IoU"] = sum(self.partial_global_IoU) / len(
+            self.partial_global_IoU
+        )
+        scores["partial avg"]["avg local IoU"] = sum(self.partial_avg_local_IoU) / len(
+            self.partial_avg_local_IoU
+        )
 
         scores["reviews"] = []
 
@@ -180,8 +197,14 @@ class Evaluator:
             scores_for_review_i = {}
             scores_for_review_i["idx"] = i
             scores_for_review_i["exact local IoU"] = self.local_IoU[i]
+            sum_partial_local_IoU = 0
             for j, term in enumerate(TERM_LIST[: self.tuple_len]):
                 scores_for_review_i[f"{term} local IoU"] = self.partial_local_IoU[j][i]
+                sum_partial_local_IoU += self.partial_local_IoU[j][i]
+
+            scores_for_review_i["partial avg local IoU"] = sum_partial_local_IoU / len(
+                self.partial_local_IoU
+            )
 
             scores_for_review_i["review"] = self.reviews[i]
             scores_for_review_i["pred"] = self.pred_outputs[i]

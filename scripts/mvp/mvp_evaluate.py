@@ -50,9 +50,8 @@ def extract_spans_mvp(seq, seq_type):
 
             ac, sp, at, ot, ie = result
 
-            # if the aspect term is implicit
             if at.lower() == "it":
-                at = "implicit"
+                at = "NULL"
 
             sp = sentiment_dict[sp]
             ac = category_dict[ac]

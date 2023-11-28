@@ -176,18 +176,18 @@ class Evaluator:
             scores[term]["global IoU"] = self.partial_global_IoU[i]
             scores[term]["avg local IoU"] = self.partial_avg_local_IoU[i]
 
-        scores["partial avg"] = {}
-        scores["partial avg"]["precision"] = sum(self.partial_precision) / len(
+        scores["avg partial"] = {}
+        scores["avg partial"]["precision"] = sum(self.partial_precision) / len(
             self.partial_precision
         )
-        scores["partial avg"]["recall"] = sum(self.partial_recall) / len(
+        scores["avg partial"]["recall"] = sum(self.partial_recall) / len(
             self.partial_recall
         )
-        scores["partial avg"]["f1-score"] = sum(self.partial_f1) / len(self.partial_f1)
-        scores["partial avg"]["global IoU"] = sum(self.partial_global_IoU) / len(
+        scores["avg partial"]["f1-score"] = sum(self.partial_f1) / len(self.partial_f1)
+        scores["avg partial"]["global IoU"] = sum(self.partial_global_IoU) / len(
             self.partial_global_IoU
         )
-        scores["partial avg"]["avg local IoU"] = sum(self.partial_avg_local_IoU) / len(
+        scores["avg partial"]["avg local IoU"] = sum(self.partial_avg_local_IoU) / len(
             self.partial_avg_local_IoU
         )
 
@@ -202,7 +202,7 @@ class Evaluator:
                 scores_for_review_i[f"{term} local IoU"] = self.partial_local_IoU[j][i]
                 sum_partial_local_IoU += self.partial_local_IoU[j][i]
 
-            scores_for_review_i["partial avg local IoU"] = sum_partial_local_IoU / len(
+            scores_for_review_i["avg partial local IoU"] = sum_partial_local_IoU / len(
                 self.partial_local_IoU
             )
 

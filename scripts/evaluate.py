@@ -2,10 +2,13 @@ import json
 import argparse
 from mvp.mvp_evaluate import get_mvp_output
 from llm.llm_evaluate import get_llm_output
-
+from t5.t5_evaluate import get_t5_output 
+"""
+py evaluate.py -t5 -p '../data/t5_output/predictions.pickle' -o '../data/t5_output/scores.json'
+"""
 parser = argparse.ArgumentParser()
 parser.add_argument(
-    "-d", "--dataset_file", type=str, default="data/main_dataset/test.txt"
+    "-d", "--dataset_file", type=str, default="../data/main_dataset/test.txt"
 )
 parser.add_argument(
     "-p",
@@ -14,13 +17,14 @@ parser.add_argument(
     default="data/mvp_dataset/result_cd_acosi_shoes_path5_beam1.pickle",
 )
 parser.add_argument(
-    "-c", "--category_file", type=str, default="data/mvp_dataset/category_dict.json"
+    "-c", "--category_file", type=str, default="../data/mvp_dataset/category_dict.json"
 )
 parser.add_argument(
-    "-o", "--output_file", type=str, default="data/mvp_dataset/scores.json"
+    "-o", "--output_file", type=str, default="/data/mvp_dataset/scores.json"
 )
 parser.add_argument("-mvp", "--mvp_output", action="store_true")
 parser.add_argument("-llm", "--llm_output", action="store_true")
+parser.add_argument("-t5", "--t5_output", action="store_true")
 args = parser.parse_args()
 
 
@@ -223,6 +227,9 @@ if args.mvp_output:
 elif args.llm_output:
     evaluate_llm_outputs = Evaluator(get_llm_output)
     scores = evaluate_llm_outputs.get_scores()
+elif args.t5_output:
+    evaluate_t5_outputs = Evaluator(get_t5_output)
+    scores = evaluate_t5_outputs.get_scores()
 
 with open(args.output_file, "w") as file:
     json.dump(scores, file, indent=4)

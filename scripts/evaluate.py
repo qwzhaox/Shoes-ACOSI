@@ -3,7 +3,6 @@ import argparse
 from mvp.mvp_evaluate import get_mvp_output
 from llm.llm_evaluate import get_llm_output
 
-
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "-d", "--dataset_file", type=str, default="data/main_dataset/test.txt"
@@ -106,7 +105,7 @@ class Evaluator:
         self.partial_recall = [0] * self.tuple_len
         self.partial_f1 = [0] * self.tuple_len
         self.partial_global_IoU = [0] * self.tuple_len
-        self.partial_avg_local_IoU = [[]] * self.tuple_len
+        self.partial_local_IoU = [[]] * self.tuple_len
         self.partial_avg_local_IoU = [0] * self.tuple_len
 
     def calc_exact_scores(self):
@@ -160,6 +159,7 @@ class Evaluator:
 
     def get_scores(self):
         self.calc_exact_scores()
+        self.calc_partial_scores()
         scores = {}
         scores["exact precision"] = self.precision
         scores["exact recall"] = self.recall
@@ -181,7 +181,7 @@ class Evaluator:
             scores_for_review_i["idx"] = i
             scores_for_review_i["exact local IoU"] = self.local_IoU[i]
             for j, term in enumerate(TERM_LIST[: self.tuple_len]):
-                scores_for_review_i[f"{term} local IoU"] = self.partial_local_IoU[i][j]
+                scores_for_review_i[f"{term} local IoU"] = self.partial_local_IoU[j][i]
 
             scores_for_review_i["review"] = self.reviews[i]
             scores_for_review_i["pred"] = self.pred_outputs[i]

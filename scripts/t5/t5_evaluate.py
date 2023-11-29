@@ -54,7 +54,7 @@ def extract_spans(seq, seq_type):
             at = clean_punctuation(at)
             ot = clean_punctuation(ot)
 
-            quints.append((at, ac, sp, ot, ie))
+            quints.append((at, ac.lower(), sp, ot, ie))
 
         except KeyError:
             ac, at, sp, ot, ie = "", "", "", "", ""

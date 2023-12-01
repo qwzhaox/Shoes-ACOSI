@@ -1,8 +1,18 @@
 import json
 import argparse
-from mvp.mvp_evaluate import get_mvp_output
-from llm.llm_evaluate import get_llm_output
-from t5.t5_evaluate import get_t5_output 
+from utils.evaluate_utils import (
+    ASPECT_IDX,
+    OPINION_IDX,
+    IDX_LIST,
+    TERM_LIST,
+    indexify_outputs,
+    listify_outputs,
+    get_precision_recall_fl_IoU,
+)
+from utils.mvp_evaluate import get_mvp_output
+from utils.llm_evaluate import get_llm_output
+from utils.t5_evaluate import get_t5_output
+
 """
 py evaluate.py -t5 -p '../data/t5_output/predictions.pickle' -o '../data/t5_output/scores.json'
 """
@@ -26,59 +36,6 @@ parser.add_argument("-mvp", "--mvp_output", action="store_true")
 parser.add_argument("-llm", "--llm_output", action="store_true")
 parser.add_argument("-t5", "--t5_output", action="store_true")
 args = parser.parse_args()
-
-
-# NOTE: Assumes comparison with the main test dataset; if this is not possible, adjust the dataset file correspondingly
-
-ASPECT_IDX = 0
-CATEGORY_IDX = 1
-SENTIMENT_IDX = 2
-OPINION_IDX = 3
-IMPLICIT_IND_IDX = 4
-
-IDX_LIST = [ASPECT_IDX, CATEGORY_IDX, SENTIMENT_IDX, OPINION_IDX, IMPLICIT_IND_IDX]
-TERM_LIST = ["aspect", "category", "sentiment", "opinion", "implicit indicator"]
-
-
-def indexify(review, span):
-    orig_array = review.split(" ")
-    span_array = span.split(" ")
-    start_idx = -1
-    while orig_array[start_idx] != span_array[0]:
-        start_idx += 1
-        if start_idx >= len(orig_array):
-            return [-1]
-
-    end_idx = start_idx + len(span_array)
-    num_span_array = [i for i in range(start_idx, end_idx)]
-    return tuple(num_span_array)
-
-
-def get_precision_recall_fl_IoU(pred_outputs, true_outputs):
-    n_tp, n_fp, n_fn, n_union = 0, 0, 0, 0
-
-    local_IoU = []
-    for i in range(len(pred_outputs)):
-        pred_set = set(pred_outputs[i])
-        true_set = set(true_outputs[i])
-
-        num_intersection = len(pred_set & true_set)
-        num_union = len(pred_set | true_set)
-
-        n_tp += num_intersection
-        n_union += num_union
-
-        n_fp += len(pred_set - true_set)
-        n_fn += len(true_set - pred_set)
-
-        local_IoU.append(float(num_intersection) / num_union if num_union != 0 else 0)
-
-    precision = float(n_tp) / (n_tp + n_fp) if n_tp + n_fp != 0 else 0
-    recall = float(n_tp) / (n_tp + n_fn) if n_tp + n_fn != 0 else 0
-    f1 = 2 * precision * recall / (precision + recall) if precision + recall != 0 else 0
-    global_IoU = float(n_tp) / n_union if n_union != 0 else 0
-    avg_local_IoU = sum(local_IoU) / len(local_IoU)
-    return precision, recall, f1, global_IoU, local_IoU, avg_local_IoU
 
 
 class Evaluator:
@@ -125,33 +82,11 @@ class Evaluator:
     def calc_partial_scores(self):
         for idx in IDX_LIST[: self.tuple_len]:
             if idx == ASPECT_IDX or idx == OPINION_IDX:
-                pred_outputs = [
-                    [
-                        word_idx
-                        for quint in annotation
-                        for word_idx in indexify(review, quint[idx])
-                    ]
-                    for review, annotation in zip(self.reviews, self.pred_outputs)
-                ]
-                true_outputs = [
-                    [
-                        word_idx
-                        for quint in annotation
-                        for word_idx in indexify(review, quint[idx])
-                    ]
-                    for review, annotation in zip(self.reviews, self.true_outputs)
-                ]
-
+                pred_outputs = indexify_outputs(self.reviews, self.pred_outputs, idx)
+                true_outputs = indexify_outputs(self.reviews, self.true_outputs, idx)
             else:
-                pred_outputs = [
-                    [quint[idx] for quint in annotation]
-                    for annotation in self.pred_outputs
-                ]
-                true_outputs = [
-                    [quint[idx] for quint in annotation]
-                    for annotation in self.true_outputs
-                ]
-
+                pred_outputs = listify_outputs(self.pred_outputs, idx)
+                true_outputs = listify_outputs(self.true_outputs, idx)
             (
                 self.partial_precision[idx],
                 self.partial_recall[idx],

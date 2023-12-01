@@ -2,6 +2,7 @@ import argparse
 import json
 from itertools import combinations
 from copy import deepcopy
+from utils.metrics_util import indexify, indexify_spanss
 
 ASPECT = 0
 CATEGORY = 1
@@ -22,27 +23,6 @@ NUM_QUAD_ELTS = 5
 SIMILARITY_THRESHOLD = 0.50
 
 
-def indexify(original, span):
-    # TODO: more processing needed?
-    orig_array = original.split(" ")
-    span_array = span.split(" ")
-    start_idx = -1
-    while (orig_array[start_idx] != span_array[0]):
-        start_idx += 1
-        if start_idx >= len(orig_array):
-            return [-1]
-
-    end_idx = start_idx + len(span_array)
-    num_span_array = [i for i in range(start_idx, end_idx)]
-    return num_span_array
-
-
-def indexify_spans(annotation, review, idx):
-    for quad in annotation:
-        # Needs to be tuple for overall conversion to set
-        quad[idx] = tuple(indexify(review, quad[idx]))
-
-
 def set_tuplify(list):
     new_set = set([tuple(sub_list) for sub_list in list])
     return new_set
@@ -54,12 +34,10 @@ def get_inter_union(set1, set2):
 
 def process_metric(metric, inter, union):
     try:
-        output_list.append(
-            f"{metric}: {inter}/{union}, {(inter/union)*100:.2f}%")
-        return round(inter/union, 4)  # Rounded--can remove if needed
+        output_list.append(f"{metric}: {inter}/{union}, {(inter/union)*100:.2f}%")
+        return round(inter / union, 4)  # Rounded--can remove if needed
     except:
-        output_list.append(
-            f"{metric}: {0}, {0}%")
+        output_list.append(f"{metric}: {0}, {0}%")
         return round(0, 4)  # Rounded--can remove if needed
 
 
@@ -81,10 +59,8 @@ def get_span_inter_union(idx, annotation1, annotation2):
     span1 = [quad[idx] for quad in annotation1]
     span2 = [quad[idx] for quad in annotation2]
 
-    set_span1 = set(
-        [idx for span in span1 for idx in span])
-    set_span2 = set(
-        [idx for span in span2 for idx in span])
+    set_span1 = set([idx for span in span1 for idx in span])
+    set_span2 = set([idx for span in span2 for idx in span])
 
     return get_inter_union(set_span1, set_span2)
 
@@ -98,14 +74,13 @@ def get_quad_similarity(quad1, quad2):
     aspect2 = list_quad2.pop(ASPECT)
 
     num_agreements = [elt[0] == elt[1] for elt in zip(list_quad1, list_quad2)]
-    inter_opinion, union_opinion = get_inter_union(
-        set(opinion1), set(opinion2))
+    inter_opinion, union_opinion = get_inter_union(set(opinion1), set(opinion2))
     inter_aspect, union_aspect = get_inter_union(set(aspect1), set(aspect2))
     sum_agreements = sum(num_agreements)
-    inter_union_opinion = inter_opinion/union_opinion
-    inter_union_aspect = inter_aspect/union_aspect
+    inter_union_opinion = inter_opinion / union_opinion
+    inter_union_aspect = inter_aspect / union_aspect
 
-    return (sum_agreements + inter_union_opinion + inter_union_aspect)/NUM_QUAD_ELTS
+    return (sum_agreements + inter_union_opinion + inter_union_aspect) / NUM_QUAD_ELTS
 
 
 def get_adj_inter_union(set_annot1, set_annot2, exact_inter, exact_union):
@@ -118,7 +93,10 @@ def get_adj_inter_union(set_annot1, set_annot2, exact_inter, exact_union):
 
     for i in range(len(dif1)):
         for j in range(len(dif2)):
-            if dif1[i] not in already_linked_list and dif2[j] not in already_linked_list:
+            if (
+                dif1[i] not in already_linked_list
+                and dif2[j] not in already_linked_list
+            ):
                 similarity = get_quad_similarity(dif1[i], dif2[j])
                 if similarity > SIMILARITY_THRESHOLD:
                     already_linked_list.append(dif1[i])
@@ -177,8 +155,7 @@ def process_exclusions(annot1, annot2):
         output_list.append(f"{incl_list_print}\nEXCLUDED: {excl_list_print}")
 
         inter, union = exclude(annot1, annot2, exclusions)
-        review_metrics[curr_key] = process_metric(
-            f"\tIoU match", inter, union)
+        review_metrics[curr_key] = process_metric(f"\tIoU match", inter, union)
 
 
 def flatten_annot(annot):
@@ -188,11 +165,7 @@ def flatten_annot(annot):
 
 # ...
 parser = argparse.ArgumentParser()
-parser.add_argument(
-    "--input_file",
-    help="input json file",
-    required=True
-)
+parser.add_argument("--input_file", help="input json file", required=True)
 parser.add_argument(
     "--output_file",
     help="output json file",
@@ -227,7 +200,8 @@ for idx in range(len(review_data)):
     review_metrics["p_name"] = review_data[idx]["p_name"]
 
     output_list.append(
-        f"######################################## REVIEW {idx} ###########################################\n")
+        f"######################################## REVIEW {idx} ###########################################\n"
+    )
 
     name1 = review_data[idx]["annotations"][0]["metadata"]["name"]
     name2 = review_data[idx]["annotations"][1]["metadata"]["name"]
@@ -251,49 +225,48 @@ for idx in range(len(review_data)):
     delta_total += delta
 
     # Aspect
-    aspect_inter, aspect_union = get_span_inter_union(
-        ASPECT, annot1, annot2)
+    aspect_inter, aspect_union = get_span_inter_union(ASPECT, annot1, annot2)
     review_metrics[A[ASPECT]] = process_metric(
-        ACOSI[ASPECT], aspect_inter, aspect_union)
-    aspect_total += aspect_inter/aspect_union
+        ACOSI[ASPECT], aspect_inter, aspect_union
+    )
+    aspect_total += aspect_inter / aspect_union
 
     # Category
     cat_inter, cat_union = get_elt_inter_union(CATEGORY, annot1, annot2)
-    review_metrics[A[CATEGORY]] = process_metric(
-        ACOSI[CATEGORY], cat_inter, cat_union)
-    category_total += cat_inter/cat_union
+    review_metrics[A[CATEGORY]] = process_metric(ACOSI[CATEGORY], cat_inter, cat_union)
+    category_total += cat_inter / cat_union
 
     # Sentiment
     sent_inter, sent_union = get_elt_inter_union(SENTIMENT, annot1, annot2)
     review_metrics[A[SENTIMENT]] = process_metric(
-        ACOSI[SENTIMENT], sent_inter, sent_union)
-    sentiment_total += sent_inter/sent_union
+        ACOSI[SENTIMENT], sent_inter, sent_union
+    )
+    sentiment_total += sent_inter / sent_union
 
     # Opinion
-    op_inter, op_union = get_span_inter_union(
-        OPINION, annot1, annot2)
-    review_metrics[A[OPINION]] = process_metric(
-        ACOSI[OPINION], op_inter, op_union)
-    opinion_total += op_inter/op_union
+    op_inter, op_union = get_span_inter_union(OPINION, annot1, annot2)
+    review_metrics[A[OPINION]] = process_metric(ACOSI[OPINION], op_inter, op_union)
+    opinion_total += op_inter / op_union
 
     # Implicit/Explicit
     ie_inter, ie_outer = get_elt_inter_union(IMPL_EXPL, annot1, annot2)
-    review_metrics[A[IMPL_EXPL]] = process_metric(
-        ACOSI[IMPL_EXPL], ie_inter, ie_outer)
-    impl_expl_total += ie_inter/ie_outer
+    review_metrics[A[IMPL_EXPL]] = process_metric(ACOSI[IMPL_EXPL], ie_inter, ie_outer)
+    impl_expl_total += ie_inter / ie_outer
 
-    review_metrics["quad_avg"] = (review_metrics[A[ASPECT]] +
-                                  review_metrics[A[CATEGORY]] +
-                                  review_metrics[A[SENTIMENT]] +
-                                  review_metrics[A[OPINION]] +
-                                  review_metrics[A[IMPL_EXPL]]) / NUM_QUAD_ELTS
+    review_metrics["quad_avg"] = (
+        review_metrics[A[ASPECT]]
+        + review_metrics[A[CATEGORY]]
+        + review_metrics[A[SENTIMENT]]
+        + review_metrics[A[OPINION]]
+        + review_metrics[A[IMPL_EXPL]]
+    ) / NUM_QUAD_ELTS
 
     # Exact Match
-    exact_inter, exact_union, set_annot1, set_annot2 = \
-        get_exact_inter_union(annot1, annot2)
-    review_metrics["exact"] = process_metric(
-        "\nExact", exact_inter, exact_union)
-    exact_total += exact_inter/exact_union
+    exact_inter, exact_union, set_annot1, set_annot2 = get_exact_inter_union(
+        annot1, annot2
+    )
+    review_metrics["exact"] = process_metric("\nExact", exact_inter, exact_union)
+    exact_total += exact_inter / exact_union
 
     # # Adjusted overall match (find a way to link annotations)
     # adj_inter, adj_union = get_adj_inter_union(

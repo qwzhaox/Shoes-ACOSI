@@ -10,7 +10,7 @@ output_path = "../EECS595Project/data/eval_output/meta-llama/"
 
 for pkl_file in pkl_files:
     pkl_file = str(pkl_file)
-    fn_list = pkl_file.split('/')
+    fn_list = pkl_file.split("/")
 
     model = fn_list[5]
     task = fn_list[6]
@@ -27,13 +27,21 @@ for pkl_file in pkl_files:
     dataset_file += dataset
     dataset_file += "/toy.txt"
     print("dataset file: " + dataset_file)
-    
+
     output_path = output_path + model + "/" + task + "/" + dataset
     output_file = output_path + "/score.json"
     print("output file: " + output_file)
 
     os.system("mkdir -p " + output_path + " && touch score.json")
-    os.system("python3 scripts/evaluate.py --dataset_file=" + dataset_file + " --pkl_file=" + pkl_file + " --output_file=" + output_file + " -llm")
-   
+    os.system(
+        "python3 scripts/eval/evaluate.py --dataset_file="
+        + dataset_file
+        + " --pkl_file="
+        + pkl_file
+        + " --output_file="
+        + output_file
+        + " -llm"
+    )
+
     dataset_path = "../EECS595Project/data/"
     output_path = "../EECS595Project/data/eval_output/meta-llama/"

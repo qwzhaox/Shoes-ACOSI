@@ -3,8 +3,9 @@ import argparse
 from mvp.mvp_evaluate import get_mvp_output
 from llm.llm_evaluate import get_llm_output
 from t5.t5_evaluate import get_t5_output 
-
-
+"""
+py evaluate.py -t5 -p '../data/t5_output/predictions.pickle' -o '../data/t5_output/scores.json'
+"""
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "-d", "--dataset_file", type=str, default="../data/main_dataset/test.txt"

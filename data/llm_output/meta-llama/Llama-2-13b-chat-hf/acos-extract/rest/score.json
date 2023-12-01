@@ -1,0 +1,3552 @@
+{
+    "exact": {
+        "precision": 0.10734463276836158,
+        "recall": 0.10982658959537572,
+        "f1-score": 0.10857142857142857,
+        "global IoU": 0.05740181268882175,
+        "avg local IoU": 0.08633333333333333
+    },
+    "aspect": {
+        "precision": 0.40074906367041196,
+        "recall": 0.5404040404040404,
+        "f1-score": 0.4602150537634409,
+        "global IoU": 0.2988826815642458,
+        "avg local IoU": 0.35779761904761903
+    },
+    "category": {
+        "precision": 0.5225806451612903,
+        "recall": 0.6044776119402985,
+        "f1-score": 0.5605536332179931,
+        "global IoU": 0.3894230769230769,
+        "avg local IoU": 0.5390000000000001
+    },
+    "sentiment": {
+        "precision": 0.8151260504201681,
+        "recall": 0.8981481481481481,
+        "f1-score": 0.8546255506607929,
+        "global IoU": 0.7461538461538462,
+        "avg local IoU": 0.8383333333333334
+    },
+    "opinion": {
+        "precision": 0.15323854660347552,
+        "recall": 0.5606936416184971,
+        "f1-score": 0.24069478908188588,
+        "global IoU": 0.1368124118476728,
+        "avg local IoU": 0.30839106487255075
+    },
+    "avg partial": {
+        "precision": 0.4729235764638365,
+        "recall": 0.6509308605277461,
+        "f1-score": 0.5290222566810282,
+        "global IoU": 0.3928180041222104,
+        "avg local IoU": 0.5108805043133758
+    },
+    "reviews": [
+        {
+            "idx": 0,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "yum !",
+            "pred": [
+                [
+                    "yum",
+                    "food#quality",
+                    "positive",
+                    "NULL Please note that the response should be in the format specified in the instruction ."
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "food#quality",
+                    "positive",
+                    "yum"
+                ]
+            ]
+        },
+        {
+            "idx": 1,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.625,
+            "review": "serves really good sushi .",
+            "pred": [
+                [
+                    "serves",
+                    "food#quality",
+                    "positive",
+                    "really good"
+                ]
+            ],
+            "true": [
+                [
+                    "sushi",
+                    "food#quality",
+                    "positive",
+                    "good"
+                ]
+            ]
+        },
+        {
+            "idx": 2,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.25,
+            "avg partial local IoU": 0.3125,
+            "review": "not the biggest portions but adequate .",
+            "pred": [
+                [
+                    "not the biggest",
+                    "food#portions",
+                    "neutral",
+                    "adequate"
+                ]
+            ],
+            "true": [
+                [
+                    "portions",
+                    "food#style_options",
+                    "neutral",
+                    "not the biggest"
+                ],
+                [
+                    "portions",
+                    "food#style_options",
+                    "neutral",
+                    "adequate"
+                ]
+            ]
+        },
+        {
+            "idx": 3,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.75,
+            "review": "green tea creme brulee is a must !",
+            "pred": [
+                [
+                    "green tea creme brulee",
+                    "food#quality",
+                    "positive",
+                    "NULL [ A ] NULL [ C ] ambience # general [ S ] positive [ O ] must Explanation : In this review , the customer expresses a positive sentiment towards the \" green tea creme brulee \" aspect , so the ACOS quadruple for this aspect is [ A ] green tea creme brulee [ C ] food # quality [ S ] positive [ O ] NULL . The next aspect is \" ambience \" , which is a general category , so the ACOS quadruple for this aspect is [ A ] NULL [ C ] ambience # general [ S ] positive [ O ] must . Please note that the response should be in the format of the example provided , with the correct categories and sentiment labels ."
+                ]
+            ],
+            "true": [
+                [
+                    "green tea creme brulee",
+                    "food#quality",
+                    "positive",
+                    "must"
+                ]
+            ]
+        },
+        {
+            "idx": 4,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.4583333333333333,
+            "review": "it has great sushi and even better service .",
+            "pred": [
+                [
+                    "great sushi",
+                    "food#quality",
+                    "positive",
+                    "NULL [ A ] even better service [ C ] service # general [ S ] positive [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "sushi",
+                    "food#quality",
+                    "positive",
+                    "great"
+                ],
+                [
+                    "service",
+                    "service#general",
+                    "positive",
+                    "better"
+                ]
+            ]
+        },
+        {
+            "idx": 5,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.14285714285714285,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.3333333333333333,
+            "avg partial local IoU": 0.6190476190476191,
+            "review": "the entire staff was extremely accomodating and tended to my every need .",
+            "pred": [
+                [
+                    "entire staff",
+                    "service#general",
+                    "positive",
+                    "extremely accommodating"
+                ],
+                [
+                    "tended to my every need",
+                    "service#general",
+                    "positive",
+                    "NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "staff",
+                    "service#general",
+                    "positive",
+                    "accomodating"
+                ]
+            ]
+        },
+        {
+            "idx": 6,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.0,
+            "review": "i ' ve been to this restaurant over a dozen times with no complaints to date .",
+            "pred": [
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "restaurant",
+                    "restaurant#general",
+                    "positive",
+                    "no complaints"
+                ]
+            ]
+        },
+        {
+            "idx": 7,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.375,
+            "review": "the owner is belligerent to guests that have a complaint .",
+            "pred": [
+                [
+                    "owner",
+                    "restaurant#service",
+                    "negative",
+                    "belligerent"
+                ],
+                [
+                    "NULL",
+                    "restaurant#service",
+                    "negative",
+                    "belligerent"
+                ],
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "owner",
+                    "service#general",
+                    "negative",
+                    "belligerent"
+                ]
+            ]
+        },
+        {
+            "idx": 8,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "good food !",
+            "pred": [
+                [
+                    "good",
+                    "food#quality",
+                    "positive",
+                    "NULL [ A ] food [ C ] food # general [ S ] positive [ O ] NULL [ A ] NULL [ C ] restaurant # miscellaneous [ S ] positive [ O ] good"
+                ]
+            ],
+            "true": [
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "good"
+                ]
+            ]
+        },
+        {
+            "idx": 9,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.25,
+            "category local IoU": 0.25,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.3333333333333333,
+            "avg partial local IoU": 0.4583333333333333,
+            "review": "this is a great place to get a delicious meal .",
+            "pred": [
+                [
+                    "this",
+                    "location#general",
+                    "positive",
+                    "great"
+                ],
+                [
+                    "delicious",
+                    "food#quality",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "meal",
+                    "food#general",
+                    "positive",
+                    "NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "meal",
+                    "food#quality",
+                    "positive",
+                    "delicious"
+                ],
+                [
+                    "place",
+                    "restaurant#general",
+                    "positive",
+                    "great"
+                ]
+            ]
+        },
+        {
+            "idx": 10,
+            "exact local IoU": 1.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 1.0,
+            "review": "the staff is pretty friendly .",
+            "pred": [
+                [
+                    "staff",
+                    "service#general",
+                    "positive",
+                    "friendly"
+                ]
+            ],
+            "true": [
+                [
+                    "staff",
+                    "service#general",
+                    "positive",
+                    "friendly"
+                ]
+            ]
+        },
+        {
+            "idx": 11,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.75,
+            "review": "the onion rings are great !",
+            "pred": [
+                [
+                    "onion rings",
+                    "food#quality",
+                    "positive",
+                    "NULL Is this correct ?"
+                ]
+            ],
+            "true": [
+                [
+                    "onion rings",
+                    "food#quality",
+                    "positive",
+                    "great"
+                ]
+            ]
+        },
+        {
+            "idx": 12,
+            "exact local IoU": 0.2,
+            "aspect local IoU": 0.8333333333333334,
+            "category local IoU": 0.3333333333333333,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.6666666666666666,
+            "avg partial local IoU": 0.5833333333333334,
+            "review": "the lemon chicken tasted like sticky sweet donuts and the honey walnut prawns , the few they actually give you . . . . . were not good .",
+            "pred": [
+                [
+                    "lemon chicken",
+                    "food#quality",
+                    "negative",
+                    "sticky sweet donuts"
+                ],
+                [
+                    "honey walnut prawns",
+                    "food#quality",
+                    "negative",
+                    "not good"
+                ],
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "lemon chicken",
+                    "food#quality",
+                    "negative",
+                    "sticky sweet"
+                ],
+                [
+                    "honey walnut prawns",
+                    "food#quality",
+                    "negative",
+                    "not good"
+                ],
+                [
+                    "honey walnut prawns",
+                    "food#style_options",
+                    "negative",
+                    "not good"
+                ]
+            ]
+        },
+        {
+            "idx": 13,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.3333333333333333,
+            "review": "nice ambience , but highly overrated place .",
+            "pred": [
+                [
+                    "nice ambience",
+                    "ambience#general",
+                    "positive",
+                    "NULL [ A ] highly overrated [ C ] restaurant # prices [ S ] negative [ O ] place Explanation : The first ACOS quadruple corresponds to the aspect \" nice ambience \" , which is a positive sentiment . The second ACOS quadruple corresponds to the aspect \" highly overrated \" , which is a negative sentiment ."
+                ]
+            ],
+            "true": [
+                [
+                    "ambience",
+                    "ambience#general",
+                    "positive",
+                    "nice"
+                ],
+                [
+                    "place",
+                    "restaurant#general",
+                    "negative",
+                    "overrated"
+                ]
+            ]
+        },
+        {
+            "idx": 14,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.375,
+            "review": "worst service i ever had",
+            "pred": [
+                [
+                    "worst service",
+                    "service#general",
+                    "negative",
+                    "NULL Explanation : In this review , the customer is expressing a negative sentiment towards the service they received . The aspect \" worst service \" is the primary focus of the review , and there is no specific opinion or feature mentioned . Therefore , the ACOS quadruple consists of [ A ] worst service [ C ] service # general [ S ] negative [ O ] NULL ."
+                ]
+            ],
+            "true": [
+                [
+                    "service",
+                    "service#general",
+                    "positive",
+                    "worst"
+                ]
+            ]
+        },
+        {
+            "idx": 15,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.25,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.3125,
+            "review": "everyone that sat in the back outside agreed that it was the worst service we had ever received .",
+            "pred": [
+                [
+                    "everyone",
+                    "service#general",
+                    "negative",
+                    "worst"
+                ],
+                [
+                    "sat",
+                    "seating#outdoor",
+                    "negative",
+                    "worst"
+                ],
+                [
+                    "back",
+                    "location#general",
+                    "negative",
+                    "worst"
+                ],
+                [
+                    "outside",
+                    "location#general",
+                    "negative",
+                    "worst"
+                ],
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "service",
+                    "service#general",
+                    "negative",
+                    "worst"
+                ]
+            ]
+        },
+        {
+            "idx": 16,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.04918032786885246,
+            "avg partial local IoU": 0.7622950819672131,
+            "review": "our waiter was non - existent and after our food finally arrived over an hour after we ordered , we were not given any water or utensils .",
+            "pred": [
+                [
+                    "waiter",
+                    "service#general",
+                    "negative",
+                    "non - existent [ A ] food [ C ] food # quality [ S ] negative [ O ] over an hour [ A ] water [ C ] drinks # prices [ S ] negative [ O ] not given [ A ] utensils [ C ] restaurant # miscellaneous [ S ] negative [ O ] not provided"
+                ]
+            ],
+            "true": [
+                [
+                    "waiter",
+                    "service#general",
+                    "negative",
+                    "non - existent"
+                ]
+            ]
+        },
+        {
+            "idx": 17,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "i complained to the manager , but he was not even apologetic .",
+            "pred": [
+                [
+                    "complained",
+                    "service#general",
+                    "negative",
+                    "NULL [ A ] to the manager [ C ] service # general [ S ] negative [ O ] NULL [ A ] but he was not even apologetic [ C ] service # general [ S ] negative [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "manager",
+                    "service#general",
+                    "negative",
+                    "not even apologetic"
+                ]
+            ]
+        },
+        {
+            "idx": 18,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "fabulous italian food !",
+            "pred": [
+                [
+                    "fabulous",
+                    "food#quality",
+                    "positive",
+                    "NULL [ A ] italian [ C ] food # style _ options [ S ] positive [ O ] NULL [ A ] food [ C ] food # general [ S ] positive [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "italian food",
+                    "food#quality",
+                    "positive",
+                    "fabulous"
+                ]
+            ]
+        },
+        {
+            "idx": 19,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.625,
+            "review": "\u2013 i highly recommend mioposto .",
+            "pred": [
+                [
+                    "NULL",
+                    "restaurant#general",
+                    "positive",
+                    "highly recommend"
+                ]
+            ],
+            "true": [
+                [
+                    "mioposto",
+                    "restaurant#general",
+                    "positive",
+                    "recommend"
+                ]
+            ]
+        },
+        {
+            "idx": 20,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "i am so happy to have a wonderful italian restaurant in my neighborhood .",
+            "pred": [
+                [
+                    "wonderful",
+                    "restaurant#general",
+                    "positive",
+                    "NULL [ A ] italian [ C ] cuisine # general [ S ] positive [ O ] NULL [ A ] neighborhood [ C ] location # general [ S ] positive [ O ] NULL [ A ] happy [ C ] sentiment # general [ S ] positive [ O ] so"
+                ]
+            ],
+            "true": [
+                [
+                    "italian restaurant",
+                    "restaurant#general",
+                    "positive",
+                    "wonderful"
+                ],
+                [
+                    "italian restaurant",
+                    "restaurant#general",
+                    "positive",
+                    "happy"
+                ]
+            ]
+        },
+        {
+            "idx": 21,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.6666666666666666,
+            "avg partial local IoU": 0.5416666666666666,
+            "review": "the wine list is wonderful and the food reminds me of my recent trip to italy .",
+            "pred": [
+                [
+                    "wine list",
+                    "drinks#wine_list",
+                    "positive",
+                    "wonderful"
+                ],
+                [
+                    "food",
+                    "food#general",
+                    "positive",
+                    "reminds"
+                ],
+                [
+                    "trip to italy",
+                    "ambience#general",
+                    "positive",
+                    "NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "wine list",
+                    "drinks#style_options",
+                    "positive",
+                    "wonderful"
+                ],
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 22,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.05263157894736842,
+            "avg partial local IoU": 0.2631578947368421,
+            "review": "i love this restaurant",
+            "pred": [
+                [
+                    "i",
+                    "ambience#general",
+                    "positive",
+                    "love [ A ] this [ C ] restaurant # general [ S ] positive [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "restaurant",
+                    "restaurant#general",
+                    "positive",
+                    "love"
+                ]
+            ]
+        },
+        {
+            "idx": 23,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.6,
+            "category local IoU": 0.75,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.4625,
+            "review": "\u2013 i will never forget the amazing meal , service , and ambiance i experience at this restaurant .",
+            "pred": [
+                [
+                    "amazing meal",
+                    "food#quality",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "service",
+                    "service#general",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "ambiance",
+                    "ambience#general",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "meal",
+                    "food#quality",
+                    "positive",
+                    "amazing"
+                ],
+                [
+                    "service",
+                    "service#general",
+                    "positive",
+                    "amazing"
+                ],
+                [
+                    "ambiance",
+                    "ambience#general",
+                    "positive",
+                    "amazing"
+                ]
+            ]
+        },
+        {
+            "idx": 24,
+            "exact local IoU": 0.25,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.4,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.3333333333333333,
+            "avg partial local IoU": 0.5583333333333333,
+            "review": "the wine list is incredible and extensive and diverse , the food is all incredible and the staff was all very nice , good at their jobs and cultured .",
+            "pred": [
+                [
+                    "wine list",
+                    "food#general",
+                    "positive",
+                    "incredible"
+                ],
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "incredible"
+                ],
+                [
+                    "staff",
+                    "service#general",
+                    "positive",
+                    "nice"
+                ],
+                [
+                    "good at their jobs",
+                    "service#skills",
+                    "positive",
+                    "cultured"
+                ]
+            ],
+            "true": [
+                [
+                    "wine list",
+                    "drinks#style_options",
+                    "positive",
+                    "incredible"
+                ],
+                [
+                    "wine list",
+                    "drinks#style_options",
+                    "positive",
+                    "extensive"
+                ],
+                [
+                    "wine list",
+                    "drinks#style_options",
+                    "positive",
+                    "diverse"
+                ],
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "incredible"
+                ],
+                [
+                    "staff",
+                    "service#general",
+                    "positive",
+                    "nice"
+                ],
+                [
+                    "staff",
+                    "service#general",
+                    "positive",
+                    "good"
+                ]
+            ]
+        },
+        {
+            "idx": 25,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.25,
+            "review": "i have not a bad thing to say about this place .",
+            "pred": [
+                [
+                    "NULL",
+                    "location#general",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "NULL",
+                    "location#general",
+                    "positive",
+                    "NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "place",
+                    "restaurant#general",
+                    "positive",
+                    "not a bad"
+                ]
+            ]
+        },
+        {
+            "idx": 26,
+            "exact local IoU": 1.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 1.0,
+            "review": "the food was great !",
+            "pred": [
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "great"
+                ]
+            ],
+            "true": [
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "great"
+                ]
+            ]
+        },
+        {
+            "idx": 27,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.375,
+            "review": "it ' s * very * reasonably priced , esp for the quality of the food .",
+            "pred": [
+                [
+                    "reasonably priced",
+                    "food#prices",
+                    "positive",
+                    "NULL [ A ] quality of the food [ C ] food # quality [ S ] positive [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "reasonably"
+                ],
+                [
+                    "food",
+                    "food#prices",
+                    "positive",
+                    "reasonably"
+                ]
+            ]
+        },
+        {
+            "idx": 28,
+            "exact local IoU": 1.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 1.0,
+            "review": "i had the kafta plate and it was perfect .",
+            "pred": [
+                [
+                    "kafta plate",
+                    "food#quality",
+                    "positive",
+                    "perfect"
+                ]
+            ],
+            "true": [
+                [
+                    "kafta plate",
+                    "food#quality",
+                    "positive",
+                    "perfect"
+                ]
+            ]
+        },
+        {
+            "idx": 29,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.25,
+            "review": "\u2013 in a age of incremental cost cutting in restaurants , its nice to see a place that bucks that trend , and just plain delivers high quality food and good service , period .",
+            "pred": [
+                [
+                    "NULL",
+                    "restaurant#prices",
+                    "positive",
+                    "NULL [ A ] bucks [ C ] restaurant # prices [ S ] positive [ O ] trend [ A ] high quality [ C ] food # quality [ S ] positive [ O ] NULL [ A ] good [ C ] service # general [ S ] positive [ O ] period"
+                ]
+            ],
+            "true": [
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "high quality"
+                ],
+                [
+                    "service",
+                    "service#general",
+                    "positive",
+                    "good"
+                ]
+            ]
+        },
+        {
+            "idx": 30,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.2,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.425,
+            "review": "this is the place to relax and enjoy the finest quality food the industry can offer .",
+            "pred": [
+                [
+                    "this is the place",
+                    "ambience#general",
+                    "positive",
+                    "NULL [ A ] relax [ C ] ambience # general [ S ] positive [ O ] NULL [ A ] enjoy [ C ] food # quality [ S ] positive [ O ] NULL [ A ] finest quality [ C ] food # quality [ S ] positive [ O ] NULL [ A ] food [ C ] food # general [ S ] positive [ O ] NULL Note that there may be multiple ACOS quadruples for a given review , depending on how the aspects , categories , and opinions are structured ."
+                ]
+            ],
+            "true": [
+                [
+                    "place",
+                    "ambience#general",
+                    "positive",
+                    "relax"
+                ],
+                [
+                    "place",
+                    "ambience#general",
+                    "positive",
+                    "enjoy"
+                ],
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "finest quality"
+                ]
+            ]
+        },
+        {
+            "idx": 31,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.09090909090909091,
+            "avg partial local IoU": 0.5227272727272727,
+            "review": "caution - its real food for people who love the best .",
+            "pred": [
+                [
+                    "caution",
+                    "food#quality",
+                    "positive",
+                    "real food [ A ] its [ C ] food # style _ options [ S ] positive [ O ] best"
+                ]
+            ],
+            "true": [
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "real"
+                ],
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "best"
+                ]
+            ]
+        },
+        {
+            "idx": 32,
+            "exact local IoU": 0.25,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.6666666666666666,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.6,
+            "avg partial local IoU": 0.8166666666666667,
+            "review": "i liked the atmosphere very much but the food was not worth the price .",
+            "pred": [
+                [
+                    "atmosphere",
+                    "ambience#general",
+                    "positive",
+                    "liked"
+                ],
+                [
+                    "food",
+                    "food#prices",
+                    "negative",
+                    "not worth the price"
+                ]
+            ],
+            "true": [
+                [
+                    "atmosphere",
+                    "ambience#general",
+                    "positive",
+                    "liked"
+                ],
+                [
+                    "food",
+                    "food#quality",
+                    "negative",
+                    "not worth"
+                ],
+                [
+                    "food",
+                    "food#prices",
+                    "negative",
+                    "not worth"
+                ]
+            ]
+        },
+        {
+            "idx": 33,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.25,
+            "review": "i may not be a sushi guru but i can tell you that the food here is just okay and that there is not much else to it .",
+            "pred": [
+                [
+                    "i may not be a sushi guru",
+                    "food#general",
+                    "negative",
+                    "NULL [ A ] the food here [ C ] food # quality [ S ] negative [ O ] just okay [ A ] there is not much else to it [ C ] food # general [ S ] negative [ O ] NULL Please note that the response should be in the format specified in the instruction ."
+                ]
+            ],
+            "true": [
+                [
+                    "food",
+                    "food#quality",
+                    "negative",
+                    "okay"
+                ]
+            ]
+        },
+        {
+            "idx": 34,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.6666666666666666,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.625,
+            "avg partial local IoU": 0.5729166666666666,
+            "review": "rice is too dry , tuna was n ' t so fresh either .",
+            "pred": [
+                [
+                    "rice",
+                    "food#quality",
+                    "negative",
+                    "too dry"
+                ],
+                [
+                    "tuna",
+                    "food#quality",
+                    "negative",
+                    "' t so fresh"
+                ],
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "rice",
+                    "food#quality",
+                    "negative",
+                    "dry"
+                ],
+                [
+                    "tuna",
+                    "food#quality",
+                    "negative",
+                    "n ' t so fresh"
+                ]
+            ]
+        },
+        {
+            "idx": 35,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.25,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.4375,
+            "review": "i have eaten here three times and have found the quality and variety of the fish to be excellent .",
+            "pred": [
+                [
+                    "i have eaten",
+                    "restaurant#miscellaneous",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "here three times",
+                    "restaurant#general",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "quality and variety",
+                    "food#quality",
+                    "positive",
+                    "excellent"
+                ]
+            ],
+            "true": [
+                [
+                    "fish",
+                    "food#quality",
+                    "positive",
+                    "excellent"
+                ],
+                [
+                    "fish",
+                    "food#style_options",
+                    "positive",
+                    "excellent"
+                ]
+            ]
+        },
+        {
+            "idx": 36,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.6666666666666666,
+            "category local IoU": 0.25,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.3333333333333333,
+            "avg partial local IoU": 0.5625,
+            "review": "however , the value and service are both severely lacking .",
+            "pred": [
+                [
+                    "however",
+                    "restaurant#general",
+                    "negative",
+                    "NULL"
+                ],
+                [
+                    "value",
+                    "restaurant#prices",
+                    "negative",
+                    "severely lacking"
+                ],
+                [
+                    "service",
+                    "restaurant#service",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "service",
+                    "service#general",
+                    "negative",
+                    "lacking"
+                ],
+                [
+                    "value",
+                    "restaurant#prices",
+                    "negative",
+                    "lacking"
+                ]
+            ]
+        },
+        {
+            "idx": 37,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.7083333333333333,
+            "review": "furthermore , while the fish is unquestionably fresh , rolls tend to be inexplicably bland .",
+            "pred": [
+                [
+                    "furthermore",
+                    "food#quality",
+                    "negative",
+                    "inexplicably bland"
+                ],
+                [
+                    "fish",
+                    "food#quality",
+                    "positive",
+                    "unquestionably fresh"
+                ]
+            ],
+            "true": [
+                [
+                    "fish",
+                    "food#quality",
+                    "positive",
+                    "fresh"
+                ],
+                [
+                    "rolls",
+                    "food#quality",
+                    "negative",
+                    "bland"
+                ]
+            ]
+        },
+        {
+            "idx": 38,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.6666666666666666,
+            "avg partial local IoU": 0.9166666666666666,
+            "review": "the service ranges from mediocre to offensive .",
+            "pred": [
+                [
+                    "service",
+                    "service#general",
+                    "negative",
+                    "mediocre to offensive"
+                ]
+            ],
+            "true": [
+                [
+                    "service",
+                    "service#general",
+                    "negative",
+                    "mediocre"
+                ],
+                [
+                    "service",
+                    "service#general",
+                    "negative",
+                    "offensive"
+                ]
+            ]
+        },
+        {
+            "idx": 39,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.75,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.2222222222222222,
+            "avg partial local IoU": 0.4930555555555556,
+            "review": "on a recent trip , our waiter was extremely dismissive , while no less than three staff members waited hand - and - foot on a pair of japanese girls seated nearby .",
+            "pred": [
+                [
+                    "waiter",
+                    "service#general",
+                    "negative",
+                    "extremely dismissive"
+                ],
+                [
+                    "staff members",
+                    "service#general",
+                    "positive",
+                    "waited hand - and - foot"
+                ],
+                [
+                    "NULL",
+                    "location#general",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "waiter",
+                    "service#general",
+                    "negative",
+                    "dismissive"
+                ],
+                [
+                    "staff members",
+                    "service#general",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 40,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.2,
+            "avg partial local IoU": 0.5083333333333333,
+            "review": "freshest sushi \u2013 i love this restaurant .",
+            "pred": [
+                [
+                    "freshest sushi",
+                    "food#quality",
+                    "positive",
+                    "i love this restaurant"
+                ]
+            ],
+            "true": [
+                [
+                    "sushi",
+                    "food#quality",
+                    "positive",
+                    "freshest"
+                ],
+                [
+                    "restaurant",
+                    "restaurant#general",
+                    "positive",
+                    "love"
+                ]
+            ]
+        },
+        {
+            "idx": 41,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.05,
+            "avg partial local IoU": 0.1375,
+            "review": "they pay such detail to everything from miso soup to complex rolls .",
+            "pred": [
+                [
+                    "they",
+                    "restaurant#service",
+                    "positive",
+                    "detail [ A ] miso soup [ C ] food # quality [ S ] positive [ O ] NULL [ A ] complex rolls [ C ] food # quality [ S ] positive [ O ] NULL"
+                ],
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "miso soup",
+                    "food#quality",
+                    "positive",
+                    "null"
+                ],
+                [
+                    "rolls",
+                    "food#quality",
+                    "positive",
+                    "complex"
+                ]
+            ]
+        },
+        {
+            "idx": 42,
+            "exact local IoU": 0.3333333333333333,
+            "aspect local IoU": 0.5,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.6666666666666666,
+            "avg partial local IoU": 0.7916666666666666,
+            "review": "the sashimi was the freshest and most tender i have ever tasted .",
+            "pred": [
+                [
+                    "sashimi",
+                    "food#quality",
+                    "positive",
+                    "freshest"
+                ],
+                [
+                    "tender",
+                    "food#quality",
+                    "positive",
+                    "most tender"
+                ]
+            ],
+            "true": [
+                [
+                    "sashimi",
+                    "food#quality",
+                    "positive",
+                    "freshest"
+                ],
+                [
+                    "sashimi",
+                    "food#quality",
+                    "positive",
+                    "tender"
+                ]
+            ]
+        },
+        {
+            "idx": 43,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.875,
+            "review": "their apps are all delicious .",
+            "pred": [
+                [
+                    "their apps",
+                    "food#quality",
+                    "positive",
+                    "delicious"
+                ]
+            ],
+            "true": [
+                [
+                    "apps",
+                    "food#quality",
+                    "positive",
+                    "delicious"
+                ]
+            ]
+        },
+        {
+            "idx": 44,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.3333333333333333,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.6666666666666666,
+            "review": "the only drawback is that this place is really expensive and the portions are on the small side .",
+            "pred": [
+                [
+                    "NULL",
+                    "restaurant#prices",
+                    "negative",
+                    "expensive"
+                ],
+                [
+                    "portions",
+                    "food#portions",
+                    "negative",
+                    "small"
+                ]
+            ],
+            "true": [
+                [
+                    "place",
+                    "restaurant#prices",
+                    "negative",
+                    "expensive"
+                ],
+                [
+                    "portions",
+                    "food#style_options",
+                    "negative",
+                    "small"
+                ]
+            ]
+        },
+        {
+            "idx": 45,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.1,
+            "avg partial local IoU": 0.4,
+            "review": "but the space is small and lovely , and the service is helpful .",
+            "pred": [
+                [
+                    "small",
+                    "ambience#general",
+                    "positive",
+                    "lovely [ A ] service [ C ] service # general [ S ] positive [ O ] helpful"
+                ]
+            ],
+            "true": [
+                [
+                    "space",
+                    "ambience#general",
+                    "positive",
+                    "small"
+                ],
+                [
+                    "space",
+                    "ambience#general",
+                    "positive",
+                    "lovely"
+                ],
+                [
+                    "service",
+                    "service#general",
+                    "positive",
+                    "helpful"
+                ]
+            ]
+        },
+        {
+            "idx": 46,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.017341040462427744,
+            "avg partial local IoU": 0.5043352601156069,
+            "review": "\u2013 the food was not great & the waiters were rude .",
+            "pred": [
+                [
+                    "food",
+                    "food#quality",
+                    "negative",
+                    "not great [ A ] waiters [ C ] service # general [ S ] negative [ O ] rude Explanation : * The first ACOS quadruple is [ A ] food [ C ] food # quality [ S ] negative [ O ] not great , where \" food \" is the aspect , \" food # quality \" is the category , \" negative \" is the sentiment , and \" not great \" is the opinion . * The second ACOS quadruple is [ A ] waiters [ C ] service # general [ S ] negative [ O ] rude , where \" waiters \" is the aspect , \" service # general \" is the category , \" negative \" is the sentiment , and \" rude \" is the opinion . Note : Please note that the above examples and the instruction are just for illustration purpose and not the actual task . The task is to extract the ACOS quadruples from the given review ."
+                ]
+            ],
+            "true": [
+                [
+                    "food",
+                    "food#quality",
+                    "negative",
+                    "not great"
+                ],
+                [
+                    "waiters",
+                    "service#general",
+                    "negative",
+                    "rude"
+                ]
+            ]
+        },
+        {
+            "idx": 47,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "great service",
+            "pred": [
+                [
+                    "great",
+                    "service#general",
+                    "positive",
+                    "NULL Expected output :"
+                ]
+            ],
+            "true": [
+                [
+                    "service",
+                    "service#general",
+                    "positive",
+                    "great"
+                ]
+            ]
+        },
+        {
+            "idx": 48,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.875,
+            "review": "my service was stellar !",
+            "pred": [
+                [
+                    "my service",
+                    "service#general",
+                    "positive",
+                    "stellar"
+                ]
+            ],
+            "true": [
+                [
+                    "service",
+                    "service#general",
+                    "positive",
+                    "stellar"
+                ]
+            ]
+        },
+        {
+            "idx": 49,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.5,
+            "review": "the bus boy even spotted that my table was shaking a stabilized it for me .",
+            "pred": [
+                [
+                    "table",
+                    "ambience#general",
+                    "positive",
+                    "NULL [ A ] shaking [ C ] ambience # general [ S ] positive [ O ] stabilized [ A ] bus boy [ C ] service # general [ S ] positive [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "bus boy",
+                    "service#general",
+                    "positive",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 50,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.625,
+            "review": "food was fine , with a some little - tastier - than - normal salsa .",
+            "pred": [
+                [
+                    "food",
+                    "food#quality",
+                    "neutral",
+                    "fine"
+                ],
+                [
+                    "salsa",
+                    "food#style_options",
+                    "positive",
+                    "tastier"
+                ]
+            ],
+            "true": [
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "fine"
+                ],
+                [
+                    "salsa",
+                    "food#quality",
+                    "positive",
+                    "fine"
+                ]
+            ]
+        },
+        {
+            "idx": 51,
+            "exact local IoU": 0.16666666666666666,
+            "aspect local IoU": 0.75,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.1111111111111111,
+            "avg partial local IoU": 0.5902777777777778,
+            "review": "the food was great , the margaritas too but the waitress was too busy being nice to her other larger party than to take better care of my friend and me .",
+            "pred": [
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "great"
+                ],
+                [
+                    "margaritas",
+                    "drinks#quality",
+                    "positive",
+                    "too"
+                ],
+                [
+                    "waitress",
+                    "service#general",
+                    "negative",
+                    "too busy"
+                ],
+                [
+                    "friend",
+                    "restaurant#miscellaneous",
+                    "negative",
+                    "than to take better care"
+                ]
+            ],
+            "true": [
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "great"
+                ],
+                [
+                    "margaritas",
+                    "food#quality",
+                    "positive",
+                    "great"
+                ],
+                [
+                    "waitress",
+                    "service#general",
+                    "negative",
+                    "busy"
+                ]
+            ]
+        },
+        {
+            "idx": 52,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.25,
+            "review": "mama mia \u2013 i live in the neighborhood and feel lucky to live by such a great pizza place .",
+            "pred": [
+                [
+                    "mama mia",
+                    "food#quality",
+                    "positive",
+                    "NULL [ A ] live in the neighborhood [ C ] location # general [ S ] positive [ O ] lucky [ A ] great pizza place [ C ] restaurant # general [ S ] positive [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "pizza place",
+                    "restaurant#general",
+                    "positive",
+                    "great"
+                ]
+            ]
+        },
+        {
+            "idx": 53,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.3333333333333333,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.4583333333333333,
+            "review": "the only problem is you really have to warm up the pizza before it ' s edible , even when you order ahead .",
+            "pred": [
+                [
+                    "pizza",
+                    "food#quality",
+                    "negative",
+                    "edible"
+                ],
+                [
+                    "NULL",
+                    "food#general",
+                    "negative",
+                    "NULL"
+                ],
+                [
+                    "NULL",
+                    "restaurant#delivery",
+                    "negative",
+                    "order ahead"
+                ]
+            ],
+            "true": [
+                [
+                    "pizza",
+                    "food#quality",
+                    "negative",
+                    "problem"
+                ]
+            ]
+        },
+        {
+            "idx": 54,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.5,
+            "review": "but once done , it ' s not too much dough , not too much cheese , not too much sauce .",
+            "pred": [
+                [
+                    "not too much dough",
+                    "pizza#toppings",
+                    "positive",
+                    "NULL [ A ] not too much cheese [ C ] pizza # toppings [ S ] positive [ O ] NULL [ A ] not too much sauce [ C ] pizza # toppings [ S ] positive [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "food#quality",
+                    "positive",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 55,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "best sushi in town .",
+            "pred": [
+                [
+                    "best",
+                    "food#quality",
+                    "positive",
+                    "NULL [ A ] sushi [ C ] food # style _ options [ S ] positive [ O ] NULL [ A ] in [ C ] location # general [ S ] positive [ O ] NULL [ A ] town [ C ] location # general [ S ] positive [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "sushi",
+                    "food#quality",
+                    "positive",
+                    "best"
+                ]
+            ]
+        },
+        {
+            "idx": 56,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "the best calamari in seattle !",
+            "pred": [
+                [
+                    "best",
+                    "food#quality",
+                    "positive",
+                    "NULL [ A ] calamari [ C ] food # general [ S ] positive [ O ] NULL [ A ] Seattle [ C ] location # general [ S ] positive [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "calamari",
+                    "food#quality",
+                    "positive",
+                    "best"
+                ]
+            ]
+        },
+        {
+            "idx": 57,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.4583333333333333,
+            "review": "\u2013 . . . and the best summertime deck experience - - they will even bring you a blanket if you get cold in the seattle evening weather .",
+            "pred": [
+                [
+                    "NULL",
+                    "ambience#general",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "blanket",
+                    "ambience#general",
+                    "positive",
+                    "they will even bring you"
+                ]
+            ],
+            "true": [
+                [
+                    "deck",
+                    "ambience#general",
+                    "positive",
+                    "best"
+                ],
+                [
+                    "null",
+                    "service#general",
+                    "positive",
+                    "best"
+                ]
+            ]
+        },
+        {
+            "idx": 58,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.3333333333333333,
+            "review": "a perfect place to take out of town guests any time of the year .",
+            "pred": [
+                [
+                    "a perfect place",
+                    "location#general",
+                    "positive",
+                    "NULL [ A ] take out of town guests [ C ] location # general [ S ] positive [ O ] NULL [ A ] any time of the year [ C ] location # general [ S ] positive [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "place",
+                    "restaurant#general",
+                    "positive",
+                    "perfect"
+                ]
+            ]
+        },
+        {
+            "idx": 59,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.3333333333333333,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.3333333333333333,
+            "review": "endless fun , awesome music , great staff ! ! !",
+            "pred": [
+                [
+                    "endless fun",
+                    "ambience#general",
+                    "positive",
+                    "NULL [ A ] awesome music [ C ] entertainment # music [ S ] positive [ O ] NULL [ A ] great staff [ C ] service # general [ S ] positive [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "music",
+                    "ambience#general",
+                    "positive",
+                    "awesome"
+                ],
+                [
+                    "staff",
+                    "service#general",
+                    "positive",
+                    "great"
+                ],
+                [
+                    "null",
+                    "restaurant#general",
+                    "positive",
+                    "fun"
+                ]
+            ]
+        },
+        {
+            "idx": 60,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.375,
+            "review": "\u2013 by far the best bar in the east village . . .",
+            "pred": [
+                [
+                    "NULL",
+                    "bar#location",
+                    "positive",
+                    "best"
+                ],
+                [
+                    "NULL",
+                    "bar#atmosphere",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "NULL",
+                    "bar#prices",
+                    "positive",
+                    "NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "bar",
+                    "restaurant#general",
+                    "positive",
+                    "best"
+                ]
+            ]
+        },
+        {
+            "idx": 61,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.2,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.3,
+            "review": "great draft and bottle selection and the pizza rocks .",
+            "pred": [
+                [
+                    "draft",
+                    "drinks#selection",
+                    "positive",
+                    "NULL [ A ] bottle selection [ C ] drinks # selection [ S ] positive [ O ] NULL [ A ] pizza [ C ] food # quality [ S ] positive [ O ] rocks"
+                ]
+            ],
+            "true": [
+                [
+                    "draft and bottle selection",
+                    "drinks#style_options",
+                    "positive",
+                    "great"
+                ],
+                [
+                    "pizza",
+                    "food#quality",
+                    "positive",
+                    "great"
+                ]
+            ]
+        },
+        {
+            "idx": 62,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.2,
+            "category local IoU": 0.3333333333333333,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.3833333333333333,
+            "review": "definitely has one of the best jukebox ' s i ' ve seen in a long long time .",
+            "pred": [
+                [
+                    "definitely",
+                    "ambience#general",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "jukebox",
+                    "entertainment#music",
+                    "positive",
+                    "best"
+                ],
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "jukebox ' s",
+                    "ambience#general",
+                    "positive",
+                    "best"
+                ]
+            ]
+        },
+        {
+            "idx": 63,
+            "exact local IoU": 0.3333333333333333,
+            "aspect local IoU": 1.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.16666666666666666,
+            "avg partial local IoU": 0.7916666666666666,
+            "review": "the food is great , the bartenders go that extra mile .",
+            "pred": [
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "great"
+                ],
+                [
+                    "bartenders",
+                    "service#general",
+                    "positive",
+                    "go that extra mile"
+                ]
+            ],
+            "true": [
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "great"
+                ],
+                [
+                    "bartenders",
+                    "service#general",
+                    "positive",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 64,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.75,
+            "review": "the owners are great fun and the beer selection is worth staying for .",
+            "pred": [
+                [
+                    "owners",
+                    "restaurant#service",
+                    "positive",
+                    "great fun"
+                ],
+                [
+                    "beer selection",
+                    "restaurant#food",
+                    "positive",
+                    "worth staying for"
+                ]
+            ],
+            "true": [
+                [
+                    "owners",
+                    "service#general",
+                    "positive",
+                    "great"
+                ],
+                [
+                    "owners",
+                    "service#general",
+                    "positive",
+                    "fun"
+                ],
+                [
+                    "beer selection",
+                    "drinks#style_options",
+                    "positive",
+                    "worth staying for"
+                ]
+            ]
+        },
+        {
+            "idx": 65,
+            "exact local IoU": 0.5,
+            "aspect local IoU": 1.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.06666666666666667,
+            "avg partial local IoU": 0.7666666666666667,
+            "review": "and the upstairs is a great place to hang out .",
+            "pred": [
+                [
+                    "upstairs",
+                    "ambience#general",
+                    "positive",
+                    "great"
+                ],
+                [
+                    "upstairs",
+                    "ambience#general",
+                    "positive",
+                    "great Note : Please make sure to follow the format of the example responses ."
+                ]
+            ],
+            "true": [
+                [
+                    "upstairs",
+                    "ambience#general",
+                    "positive",
+                    "great"
+                ]
+            ]
+        },
+        {
+            "idx": 66,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.0,
+            "review": "not alot of smoking places left in new york , but i have found my favorite smoking balconey in the city .",
+            "pred": [
+                [
+                    "not alot of smoking places",
+                    "smoking#location",
+                    "negative",
+                    "NULL [ A ] my favorite smoking balconey [ C ] smoking # location [ S ] positive [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "balconey",
+                    "restaurant#miscellaneous",
+                    "positive",
+                    "favorite"
+                ]
+            ]
+        },
+        {
+            "idx": 67,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.030303030303030304,
+            "avg partial local IoU": 0.7575757575757576,
+            "review": "the sushi here is delicious !",
+            "pred": [
+                [
+                    "sushi",
+                    "food#quality",
+                    "positive",
+                    "delicious Please note that the above examples are just illustrations , and the actual ACOS quadruples may vary depending on the specific review and the context in which the words are used ."
+                ]
+            ],
+            "true": [
+                [
+                    "sushi",
+                    "food#quality",
+                    "positive",
+                    "delicious"
+                ]
+            ]
+        },
+        {
+            "idx": 68,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.25,
+            "review": "they have a wide variety of fish and they even list which oceans they come from ; atlantic or pacific .",
+            "pred": [
+                [
+                    "they",
+                    "restaurant#menu",
+                    "positive",
+                    "NULL [ A ] have [ C ] restaurant # menu [ S ] positive [ O ] NULL [ A ] a [ C ] restaurant # menu [ S ] positive [ O ] NULL [ A ] wide [ C ] restaurant # menu [ S ] positive [ O ] NULL [ A ] variety [ C ] restaurant # menu [ S ] positive [ O ] NULL [ A ] of [ C ] restaurant # menu [ S ] positive [ O ] NULL [ A ] fish [ C ] restaurant # menu [ S ] positive [ O ] NULL [ A ] they [ C ] restaurant # menu [ S ] positive [ O ] NULL [ A ] even [ C ] restaurant # menu [ S ] positive [ O ] NULL [ A ] list [ C ] restaurant # menu [ S ] positive [ O ] NULL [ A ] which [ C ] restaurant # menu [ S ] positive [ O ] NULL [ A ] oceans [ C ] restaurant # menu [ S ] positive [ O ] NULL [ A ] atlantic [ C ] restaurant # menu [ S ] positive [ O ] NULL [ A ] or [ C ] restaurant # menu [ S ] positive [ O ] NULL [ A ] pacific [ C ] restaurant # menu [ S ] positive [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "fish",
+                    "food#style_options",
+                    "positive",
+                    "wide"
+                ]
+            ]
+        },
+        {
+            "idx": 69,
+            "exact local IoU": 0.6,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.875,
+            "review": "i ' ve had the jellyfish , horse mackerel , blue fin tuna and the sake ikura roll among others , and they were all good .",
+            "pred": [
+                [
+                    "jellyfish",
+                    "food#quality",
+                    "positive",
+                    "good"
+                ],
+                [
+                    "horse mackerel",
+                    "food#quality",
+                    "positive",
+                    "good"
+                ],
+                [
+                    "blue fin tuna",
+                    "food#quality",
+                    "positive",
+                    "good"
+                ],
+                [
+                    "sake ikura roll",
+                    "food#style_options",
+                    "positive",
+                    "good"
+                ]
+            ],
+            "true": [
+                [
+                    "jellyfish",
+                    "food#quality",
+                    "positive",
+                    "good"
+                ],
+                [
+                    "horse mackerel",
+                    "food#quality",
+                    "positive",
+                    "good"
+                ],
+                [
+                    "blue fin tuna",
+                    "food#quality",
+                    "positive",
+                    "good"
+                ],
+                [
+                    "sake ikura roll",
+                    "food#quality",
+                    "positive",
+                    "good"
+                ]
+            ]
+        },
+        {
+            "idx": 70,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.125,
+            "avg partial local IoU": 0.28125,
+            "review": "my only negative comment is that i wish the pieces were a little bigger .",
+            "pred": [
+                [
+                    "pieces",
+                    "food#portion_size",
+                    "negative",
+                    "wish the pieces were a little bigger"
+                ],
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "pieces",
+                    "food#style_options",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 71,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.25,
+            "avg partial local IoU": 0.3125,
+            "review": "the decor is rustic , traditional japanese .",
+            "pred": [
+                [
+                    "decor",
+                    "ambience#general",
+                    "positive",
+                    "rustic"
+                ],
+                [
+                    "traditional",
+                    "ambience#style_options",
+                    "positive",
+                    "Japanese"
+                ]
+            ],
+            "true": [
+                [
+                    "decor",
+                    "ambience#general",
+                    "neutral",
+                    "rustic"
+                ],
+                [
+                    "decor",
+                    "ambience#general",
+                    "neutral",
+                    "traditional japanese"
+                ]
+            ]
+        },
+        {
+            "idx": 72,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.2,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.3333333333333333,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.2583333333333333,
+            "review": "the crowd is mixed yuppies , young and old .",
+            "pred": [
+                [
+                    "crowd",
+                    "ambience#general",
+                    "neutral",
+                    "mixed"
+                ],
+                [
+                    "yuppies",
+                    "ambience#demographics",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "young",
+                    "ambience#age_groups",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "old",
+                    "ambience#age_groups",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "crowd",
+                    "restaurant#miscellaneous",
+                    "neutral",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 73,
+            "exact local IoU": 0.3333333333333333,
+            "aspect local IoU": 0.5,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.875,
+            "review": "the service was courteous and attentive .",
+            "pred": [
+                [
+                    "service",
+                    "service#general",
+                    "positive",
+                    "courteous"
+                ],
+                [
+                    "attentive",
+                    "service#general",
+                    "positive",
+                    "attentive"
+                ]
+            ],
+            "true": [
+                [
+                    "service",
+                    "service#general",
+                    "positive",
+                    "courteous"
+                ],
+                [
+                    "service",
+                    "service#general",
+                    "positive",
+                    "attentive"
+                ]
+            ]
+        },
+        {
+            "idx": 74,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.25,
+            "review": "mediocre food",
+            "pred": [
+                [
+                    "mediocre",
+                    "food#quality",
+                    "negative",
+                    "NULL Explanation : * Aspect : \" mediocre \" * Category : \" food # quality \" * Sentiment : \" negative \" * Opinion : NULL ( no explicit opinion stated )"
+                ]
+            ],
+            "true": [
+                [
+                    "food",
+                    "food#quality",
+                    "neutral",
+                    "mediocre"
+                ]
+            ]
+        },
+        {
+            "idx": 75,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.20833333333333331,
+            "review": "the outside patio area has an abbreviated menu .",
+            "pred": [
+                [
+                    "outside patio",
+                    "ambience#general",
+                    "negative",
+                    "abbreviated"
+                ],
+                [
+                    "menu",
+                    "food#prices",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "menu",
+                    "food#style_options",
+                    "neutral",
+                    "abbreviated"
+                ]
+            ]
+        },
+        {
+            "idx": 76,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.3333333333333333,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.05,
+            "avg partial local IoU": 0.3458333333333333,
+            "review": "my g / f and i both agreed the food was very mediocre especially considering the price .",
+            "pred": [
+                [
+                    "food",
+                    "food#quality",
+                    "negative",
+                    "mediocre [ A ] price [ C ] restaurant # prices [ S ] negative [ O ] expensive"
+                ],
+                [
+                    "NULL",
+                    "NULL",
+                    "NULL",
+                    "NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "food",
+                    "food#quality",
+                    "negative",
+                    "mediocre"
+                ],
+                [
+                    "food",
+                    "food#prices",
+                    "negative",
+                    "mediocre"
+                ]
+            ]
+        },
+        {
+            "idx": 77,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.375,
+            "review": "we are locals , and get the feeling the only way this place survives with such average food is because most customers are probably one - time customer tourists .",
+            "pred": [
+                [
+                    "we are locals",
+                    "ambience#general",
+                    "negative",
+                    "NULL [ A ] get the feeling [ C ] ambience # general [ S ] negative [ O ] NULL [ A ] only way [ C ] restaurant # prices [ S ] negative [ O ] average [ A ] this place [ C ] restaurant # general [ S ] negative [ O ] survives [ A ] most customers [ C ] restaurant # general [ S ] negative [ O ] one - time [ A ] customer tourists [ C ] restaurant # general [ S ] negative [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "place",
+                    "restaurant#general",
+                    "negative",
+                    "null"
+                ],
+                [
+                    "food",
+                    "food#quality",
+                    "negative",
+                    "average"
+                ]
+            ]
+        },
+        {
+            "idx": 78,
+            "exact local IoU": 1.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 1.0,
+            "review": "service was decent .",
+            "pred": [
+                [
+                    "service",
+                    "service#general",
+                    "neutral",
+                    "decent"
+                ]
+            ],
+            "true": [
+                [
+                    "service",
+                    "service#general",
+                    "neutral",
+                    "decent"
+                ]
+            ]
+        },
+        {
+            "idx": 79,
+            "exact local IoU": 1.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 1.0,
+            "review": "drinks were good .",
+            "pred": [
+                [
+                    "drinks",
+                    "drinks#quality",
+                    "positive",
+                    "good"
+                ]
+            ],
+            "true": [
+                [
+                    "drinks",
+                    "drinks#quality",
+                    "positive",
+                    "good"
+                ]
+            ]
+        },
+        {
+            "idx": 80,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.3333333333333333,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.3333333333333333,
+            "avg partial local IoU": 0.29166666666666663,
+            "review": "excellent food , nice ambience , fairly expensive",
+            "pred": [
+                [
+                    "excellent",
+                    "food#quality",
+                    "positive",
+                    "NULL [ A ] nice [ C ] ambience # general [ S ] positive [ O ] NULL [ A ] fairly [ C ] restaurant # prices [ S ] negative [ O ] expensive Please note that the response should be in the format of a list of ACOS quadruples , with each quadruple separated by a newline character ."
+                ]
+            ],
+            "true": [
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "excellent"
+                ],
+                [
+                    "ambience",
+                    "ambience#general",
+                    "positive",
+                    "nice"
+                ],
+                [
+                    "null",
+                    "restaurant#prices",
+                    "negative",
+                    "expensive"
+                ]
+            ]
+        },
+        {
+            "idx": 81,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.14285714285714285,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.5357142857142857,
+            "review": "\u2013 i loved the pumpkin ravioli and the goat cheese gnocchi ( 5 big ones to a plate instead of 20 or so little gnocchis ) and my sister loved her filet mignon on top of spinach and mashed potatoes .",
+            "pred": [
+                [
+                    "pumpkin ravioli",
+                    "food#quality",
+                    "positive",
+                    "NULL [ A ] goat cheese gnocchi [ C ] food # quality [ S ] positive [ O ] NULL [ A ] filet mignon [ C ] food # quality [ S ] positive [ O ] NULL [ A ] spinach [ C ] food # quality [ S ] positive [ O ] NULL [ A ] mashed potatoes [ C ] food # quality [ S ] positive [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "pumpkin ravioli",
+                    "food#quality",
+                    "positive",
+                    "loved"
+                ],
+                [
+                    "goat cheese gnocchi",
+                    "food#quality",
+                    "positive",
+                    "loved"
+                ],
+                [
+                    "goat cheese gnocchi",
+                    "food#style_options",
+                    "positive",
+                    "null"
+                ],
+                [
+                    "filet mignon on top of spinach and mashed potatoes",
+                    "food#quality",
+                    "positive",
+                    "loved"
+                ]
+            ]
+        },
+        {
+            "idx": 82,
+            "exact local IoU": 0.3333333333333333,
+            "aspect local IoU": 0.5,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.3333333333333333,
+            "avg partial local IoU": 0.7083333333333334,
+            "review": "the ambiance was a peaceful and relaxing break amongst all the kids running around in downtown disney .",
+            "pred": [
+                [
+                    "ambiance",
+                    "ambience#general",
+                    "positive",
+                    "peaceful"
+                ],
+                [
+                    "relaxing",
+                    "ambience#general",
+                    "positive",
+                    "break"
+                ]
+            ],
+            "true": [
+                [
+                    "ambiance",
+                    "ambience#general",
+                    "positive",
+                    "peaceful"
+                ],
+                [
+                    "ambiance",
+                    "ambience#general",
+                    "positive",
+                    "relaxing"
+                ]
+            ]
+        },
+        {
+            "idx": 83,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "best indian food in l . a .",
+            "pred": [
+                [
+                    "best",
+                    "food#quality",
+                    "positive",
+                    "NULL [ A ] indian [ C ] food # style _ options [ S ] positive [ O ] NULL [ A ] food [ C ] restaurant # general [ S ] positive [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "indian food",
+                    "food#quality",
+                    "positive",
+                    "best"
+                ]
+            ]
+        },
+        {
+            "idx": 84,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.6666666666666666,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.043478260869565216,
+            "avg partial local IoU": 0.677536231884058,
+            "review": "the chicken curry and chicken tikka masala are my favorite meat dishes .",
+            "pred": [
+                [
+                    "chicken curry",
+                    "food#quality",
+                    "positive",
+                    "my favorite [ A ] chicken tikka masala [ C ] food # quality [ S ] positive [ O ] my favorite"
+                ]
+            ],
+            "true": [
+                [
+                    "chicken curry",
+                    "food#quality",
+                    "positive",
+                    "favorite"
+                ],
+                [
+                    "chicken tikka masala",
+                    "food#quality",
+                    "positive",
+                    "favorite"
+                ]
+            ]
+        },
+        {
+            "idx": 85,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.2857142857142857,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.3214285714285714,
+            "review": "the chana masala ( garbanzo beans ) are also excellent .",
+            "pred": [
+                [
+                    "chana masala",
+                    "food#quality",
+                    "positive",
+                    "excellent"
+                ],
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "chana masala ( garbanzo beans )",
+                    "food#quality",
+                    "positive",
+                    "also"
+                ]
+            ]
+        },
+        {
+            "idx": 86,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.25,
+            "avg partial local IoU": 0.3125,
+            "review": "it ' s located in a strip mall near the beverly center , not the greatest location , but the food keeps me coming back for more .",
+            "pred": [
+                [
+                    "located",
+                    "location#general",
+                    "neutral",
+                    "NULL [ A ] not the greatest location [ C ] location # general [ S ] negative [ O ] NULL [ A ] food [ C ] food # quality [ S ] positive [ O ] NULL [ A ] keeps me coming back for more [ C ] food # general [ S ] positive [ O ] NULL Please note that the above response is just an example , and the actual response may vary based on the specific review and the context of the task ."
+                ]
+            ],
+            "true": [
+                [
+                    "location",
+                    "location#general",
+                    "neutral",
+                    "not the greatest"
+                ],
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 87,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.3333333333333333,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.8,
+            "avg partial local IoU": 0.6583333333333333,
+            "review": "never too crowded and always great service .",
+            "pred": [
+                [
+                    "NULL",
+                    "ambience#general",
+                    "positive",
+                    "never too crowded"
+                ],
+                [
+                    "NULL",
+                    "service#general",
+                    "positive",
+                    "always great"
+                ]
+            ],
+            "true": [
+                [
+                    "service",
+                    "service#general",
+                    "positive",
+                    "great"
+                ],
+                [
+                    "null",
+                    "restaurant#miscellaneous",
+                    "positive",
+                    "never too crowded"
+                ]
+            ]
+        },
+        {
+            "idx": 88,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "i think i have probably tried each item on their menu at least once it is all excellent .",
+            "pred": [
+                [
+                    "i think i have probably tried",
+                    "food#quality",
+                    "positive",
+                    "NULL [ A ] each item [ C ] food # general [ S ] positive [ O ] NULL [ A ] on their menu [ C ] restaurant # menu _ options [ S ] positive [ O ] NULL [ A ] at least once [ C ] food # frequency [ S ] positive [ O ] NULL [ A ] it is all excellent [ C ] food # quality [ S ] positive [ O ] NULL Please note that in the given review , there are multiple aspects and opinions , but they are all positive . Therefore , the ACOS quadruples are all positive as well ."
+                ]
+            ],
+            "true": [
+                [
+                    "menu",
+                    "food#quality",
+                    "positive",
+                    "excellent"
+                ]
+            ]
+        },
+        {
+            "idx": 89,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.375,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.46875,
+            "review": "i can highly recommend their various saag and paneer and korma .",
+            "pred": [
+                [
+                    "i can highly recommend",
+                    "food#quality",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "various saag",
+                    "food#style_options",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "paneer",
+                    "food#style_options",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "korma",
+                    "food#style_options",
+                    "positive",
+                    "NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "saag",
+                    "food#quality",
+                    "positive",
+                    "recommend"
+                ],
+                [
+                    "paneer",
+                    "food#quality",
+                    "positive",
+                    "recommend"
+                ],
+                [
+                    "korma",
+                    "food#quality",
+                    "positive",
+                    "recommend"
+                ]
+            ]
+        },
+        {
+            "idx": 90,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.25,
+            "review": "i appreciate their delivery too .",
+            "pred": [
+                [
+                    "appreciate",
+                    "delivery#general",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "NULL",
+                    "delivery#general",
+                    "positive",
+                    "NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "delivery",
+                    "service#general",
+                    "positive",
+                    "appreciate"
+                ]
+            ]
+        },
+        {
+            "idx": 91,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.625,
+            "review": "nice food but no spice !",
+            "pred": [
+                [
+                    "nice food",
+                    "food#quality",
+                    "positive",
+                    "NULL [ A ] no spice [ C ] food # style _ options [ S ] negative [ O ] NULL Explanation : * The first ACOS quadruple represents the aspect \" nice food \" with category \" food # quality \" and sentiment \" positive \" . * The second ACOS quadruple represents the aspect \" no spice \" with category \" food # style _ options \" and sentiment \" negative \" . Please note that the sentiment of the review is mixed , as the customer expresses a positive opinion about the food quality but a negative opinion about the lack of spice ."
+                ]
+            ],
+            "true": [
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "nice"
+                ],
+                [
+                    "food",
+                    "food#quality",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 92,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.0,
+            "review": "\u2013 i really enjoyed my meal here .",
+            "pred": [
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "meal",
+                    "food#quality",
+                    "positive",
+                    "enjoyed"
+                ]
+            ]
+        },
+        {
+            "idx": 93,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.6,
+            "category local IoU": 0.25,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.4625,
+            "review": "i had yummy lamb korma , saag paneer , samosas , naan , etc .",
+            "pred": [
+                [
+                    "i had",
+                    "food#quality",
+                    "positive",
+                    "yummy"
+                ],
+                [
+                    "lamb korma",
+                    "food#style_options",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "saag paneer",
+                    "food#quality",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "samosas",
+                    "food#style_options",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "naan",
+                    "food#quality",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "etc",
+                    "food#general",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "lamb korma",
+                    "food#quality",
+                    "positive",
+                    "yummy"
+                ],
+                [
+                    "saag paneer",
+                    "food#quality",
+                    "positive",
+                    "yummy"
+                ],
+                [
+                    "samosas",
+                    "food#quality",
+                    "positive",
+                    "yummy"
+                ],
+                [
+                    "naan",
+                    "food#quality",
+                    "positive",
+                    "yummy"
+                ]
+            ]
+        },
+        {
+            "idx": 94,
+            "exact local IoU": 0.3333333333333333,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.5,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.75,
+            "avg partial local IoU": 0.6875,
+            "review": "the food was all good but it was way too mild .",
+            "pred": [
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "good"
+                ],
+                [
+                    "mild",
+                    "food#style_options",
+                    "negative",
+                    "way too mild"
+                ]
+            ],
+            "true": [
+                [
+                    "food",
+                    "food#quality",
+                    "positive",
+                    "good"
+                ],
+                [
+                    "food",
+                    "food#quality",
+                    "negative",
+                    "too mild"
+                ]
+            ]
+        },
+        {
+            "idx": 95,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.6666666666666666,
+            "category local IoU": 0.3333333333333333,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.16666666666666666,
+            "avg partial local IoU": 0.5416666666666666,
+            "review": "the naan was some of the best i ' ve had and i really enjoyed the bhartha , not too tomatoey .",
+            "pred": [
+                [
+                    "naan",
+                    "food#quality",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "bhartha",
+                    "food#style_options",
+                    "positive",
+                    "enjoyed"
+                ],
+                [
+                    "NULL",
+                    "restaurant#miscellaneous",
+                    "positive",
+                    "not too tomatoey"
+                ]
+            ],
+            "true": [
+                [
+                    "naan",
+                    "food#quality",
+                    "positive",
+                    "best"
+                ],
+                [
+                    "bhartha",
+                    "food#quality",
+                    "positive",
+                    "enjoyed"
+                ]
+            ]
+        },
+        {
+            "idx": 96,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5833333333333333,
+            "review": "even the chickpeas , which i normally find too dry , were good .",
+            "pred": [
+                [
+                    "even the chickpeas",
+                    "food#quality",
+                    "positive",
+                    "NULL [ A ] dry [ C ] food # quality [ S ] negative [ O ] NULL [ A ] were good [ C ] food # quality [ S ] positive [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "chickpeas",
+                    "food#quality",
+                    "positive",
+                    "good"
+                ]
+            ]
+        },
+        {
+            "idx": 97,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.25,
+            "review": "\u2013 i do n ' t understand how i was a stranger to this place for so long . . . the fajita salad , the colorado , the fajitas - everything is delicious .",
+            "pred": [
+                [
+                    "i don ' t understand",
+                    "ambience#general",
+                    "positive",
+                    "NULL [ A ] how i was a stranger [ C ] ambience # general [ S ] positive [ O ] NULL [ A ] to this place [ C ] ambience # general [ S ] positive [ O ] NULL [ A ] for so long [ C ] ambience # general [ S ] positive [ O ] NULL [ A ] the fajita salad [ C ] food # style _ options [ S ] positive [ O ] delicious [ A ] the colorado [ C ] food # style _ options [ S ] positive [ O ] delicious [ A ] the fajitas [ C ] food # style _ options [ S ] positive [ O ] delicious Please note that the sentiment of the review is positive , but the aspect \" i don ' t understand \" is not explicitly stated in the review , so it is marked as NULL . Also , please note that the opinions expressed in the review are delicious , but they are not explicitly stated , so they are marked as NULL ."
+                ]
+            ],
+            "true": [
+                [
+                    "fajita salad",
+                    "food#quality",
+                    "positive",
+                    "delicious"
+                ],
+                [
+                    "colorado",
+                    "food#quality",
+                    "positive",
+                    "delicious"
+                ],
+                [
+                    "fajitas",
+                    "food#quality",
+                    "positive",
+                    "delicious"
+                ],
+                [
+                    "null",
+                    "food#quality",
+                    "positive",
+                    "delicious"
+                ]
+            ]
+        },
+        {
+            "idx": 98,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.10526315789473684,
+            "avg partial local IoU": 0.5263157894736842,
+            "review": "i love the warm & cosy environment .",
+            "pred": [
+                [
+                    "warm",
+                    "ambience#general",
+                    "positive",
+                    "love [ A ] cosy [ C ] ambience # general [ S ] positive [ O ] NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "environment",
+                    "ambience#general",
+                    "positive",
+                    "warm"
+                ],
+                [
+                    "environment",
+                    "ambience#general",
+                    "positive",
+                    "cosy"
+                ]
+            ]
+        },
+        {
+            "idx": 99,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.08333333333333333,
+            "category local IoU": 0.3333333333333333,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.47916666666666663,
+            "review": "i just found out that you can have the place to yourself on nights and weekends for a private party - ca n ' t wait to celebrate my next birthday there .",
+            "pred": [
+                [
+                    "just found out",
+                    "restaurant#miscellaneous",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "place to yourself",
+                    "restaurant#private_parties",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "can ' t wait",
+                    "restaurant#general",
+                    "positive",
+                    "celebrate"
+                ],
+                [
+                    "my next birthday",
+                    "restaurant#general",
+                    "positive",
+                    "NULL"
+                ]
+            ],
+            "true": [
+                [
+                    "place",
+                    "restaurant#miscellaneous",
+                    "positive",
+                    "null"
+                ]
+            ]
+        }
+    ]
+}

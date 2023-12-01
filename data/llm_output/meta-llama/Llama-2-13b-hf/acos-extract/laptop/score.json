@@ -1,0 +1,3618 @@
+{
+    "exact": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0,
+        "global IoU": 0.0,
+        "avg local IoU": 0.0
+    },
+    "aspect": {
+        "precision": 0.5384615384615384,
+        "recall": 0.5419354838709678,
+        "f1-score": 0.5401929260450161,
+        "global IoU": 0.3700440528634361,
+        "avg local IoU": 0.5589166666666668
+    },
+    "category": {
+        "precision": 0.05504587155963303,
+        "recall": 0.05504587155963303,
+        "f1-score": 0.05504587155963303,
+        "global IoU": 0.02830188679245283,
+        "avg local IoU": 0.06
+    },
+    "sentiment": {
+        "precision": 0.7129629629629629,
+        "recall": 0.7264150943396226,
+        "f1-score": 0.7196261682242991,
+        "global IoU": 0.5620437956204379,
+        "avg local IoU": 0.71
+    },
+    "opinion": {
+        "precision": 0.23282442748091603,
+        "recall": 0.46923076923076923,
+        "f1-score": 0.3112244897959184,
+        "global IoU": 0.18429003021148035,
+        "avg local IoU": 0.3227186147186147
+    },
+    "avg partial": {
+        "precision": 0.38482370011626255,
+        "recall": 0.4481568047502482,
+        "f1-score": 0.4065223639062167,
+        "global IoU": 0.2861699413719518,
+        "avg local IoU": 0.41290882034632037
+    },
+    "reviews": [
+        {
+            "idx": 0,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "the unit cost $ 275 to start with , so it is not worth repairing .",
+            "pred": [
+                [
+                    "unit",
+                    "price",
+                    "negative",
+                    "$ 275"
+                ],
+                [
+                    "unit",
+                    "price",
+                    "negative",
+                    "repairing"
+                ]
+            ],
+            "true": [
+                [
+                    "unit",
+                    "laptop#price",
+                    "negative",
+                    "not worth"
+                ]
+            ]
+        },
+        {
+            "idx": 1,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.5833333333333333,
+            "review": "going from acer 15 to acer 11 was difficult , 11 inches seems too small for me .",
+            "pred": [
+                [
+                    "11",
+                    "laptop#portability",
+                    "negative",
+                    "small"
+                ],
+                [
+                    "15",
+                    "laptop#portability",
+                    "negative",
+                    "difficult"
+                ]
+            ],
+            "true": [
+                [
+                    "acer 11",
+                    "laptop#design_features",
+                    "negative",
+                    "difficult"
+                ],
+                [
+                    "acer 11",
+                    "laptop#design_features",
+                    "negative",
+                    "small"
+                ]
+            ]
+        },
+        {
+            "idx": 2,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.25,
+            "review": "also it ' s not a true ssd drive in there but emmc , which makes a difference .",
+            "pred": [
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "ssd drive",
+                    "hard_disc#operation_performance",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 3,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.375,
+            "review": "the computer has difficulty switching between tablet and computer .",
+            "pred": [
+                [
+                    "computer",
+                    "computer#operation_performance",
+                    "negative",
+                    "difficult"
+                ],
+                [
+                    "computer",
+                    "computer#operation_performance",
+                    "negative",
+                    "switching"
+                ],
+                [
+                    "tablet",
+                    "computer#operation_performance",
+                    "negative",
+                    "between"
+                ]
+            ],
+            "true": [
+                [
+                    "computer",
+                    "laptop#usability",
+                    "negative",
+                    "difficulty"
+                ]
+            ]
+        },
+        {
+            "idx": 4,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.125,
+            "review": "2 / 28 / 18 - a couple days ago i updated the chrome os .",
+            "pred": [
+                [
+                    "chrome",
+                    "chrome#operation_performance",
+                    "positive",
+                    "chrome"
+                ],
+                [
+                    "chrome",
+                    "chrome#operation_performance",
+                    "positive",
+                    "chrome"
+                ]
+            ],
+            "true": [
+                [
+                    "chrome os",
+                    "os#general",
+                    "neutral",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 5,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.125,
+            "review": "it ' s just that chrome doesn ' t work the same with a chromebook as it does with windows .",
+            "pred": [
+                [
+                    "chromebook",
+                    "chromebook#usability",
+                    "positive",
+                    "just"
+                ],
+                [
+                    "chromebook",
+                    "chromebook#usability",
+                    "positive",
+                    "that"
+                ],
+                [
+                    "windows",
+                    "chromebook#usability",
+                    "negative",
+                    "same"
+                ],
+                [
+                    "windows",
+                    "chromebook#usability",
+                    "negative",
+                    "work"
+                ]
+            ],
+            "true": [
+                [
+                    "chrome",
+                    "os#operation_performance",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 6,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.25,
+            "review": "hopefully in 10 years they ' ll have this figured out and it won ' t suck so badly .",
+            "pred": [
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#general",
+                    "negative",
+                    "suck"
+                ],
+                [
+                    "null",
+                    "laptop#general",
+                    "negative",
+                    "badly"
+                ]
+            ]
+        },
+        {
+            "idx": 7,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.5,
+            "review": "bought this last year on july .",
+            "pred": [
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#general",
+                    "neutral",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 8,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.75,
+            "review": "i rarely use the keyboard .",
+            "pred": [
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "rarely"
+                ]
+            ],
+            "true": [
+                [
+                    "keyboard",
+                    "keyboard#general",
+                    "negative",
+                    "rarely"
+                ]
+            ]
+        },
+        {
+            "idx": 9,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.625,
+            "review": "- great price for a touchscreen chromebook",
+            "pred": [
+                [
+                    "touchscreen",
+                    "touchscreen#design_features",
+                    "positive",
+                    "great"
+                ]
+            ],
+            "true": [
+                [
+                    "touchscreen chromebook",
+                    "laptop#price",
+                    "positive",
+                    "great"
+                ]
+            ]
+        },
+        {
+            "idx": 10,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.6666666666666666,
+            "avg partial local IoU": 0.41666666666666663,
+            "review": "it is glitchy , and barely usable .",
+            "pred": [
+                [
+                    "it",
+                    "os#usability",
+                    "negative",
+                    "barely"
+                ],
+                [
+                    "it",
+                    "os#usability",
+                    "negative",
+                    "glitchy"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "hardware#operation_performance",
+                    "negative",
+                    "glitchy"
+                ],
+                [
+                    "null",
+                    "hardware#operation_performance",
+                    "negative",
+                    "barely usable"
+                ]
+            ]
+        },
+        {
+            "idx": 11,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "i ordered one , the touch pad failed to work consistently .",
+            "pred": [
+                [
+                    "touch pad",
+                    "laptop#operation_performance",
+                    "negative",
+                    "touch pad"
+                ]
+            ],
+            "true": [
+                [
+                    "touch pad",
+                    "hardware#operation_performance",
+                    "negative",
+                    "failed"
+                ]
+            ]
+        },
+        {
+            "idx": 12,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.3333333333333333,
+            "review": "i often find i ' ve typed an entire sentence ( or more ) with my fingers on the wrong keys , which is very unproductive when trying to take real - time notes in a meeting !",
+            "pred": [
+                [
+                    "keys",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "wrong"
+                ],
+                [
+                    "keys",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "wrong"
+                ],
+                [
+                    "entire",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "sentence"
+                ],
+                [
+                    "entire",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "sentence"
+                ],
+                [
+                    "meeting",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "real - time"
+                ]
+            ],
+            "true": [
+                [
+                    "keys",
+                    "keyboard#general",
+                    "negative",
+                    "unproductive"
+                ]
+            ]
+        },
+        {
+            "idx": 13,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.0,
+            "review": "i know it only takes a few seconds , but a new device should not be doing this and makes me question if it ' ll get worse in the future .",
+            "pred": [
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "device",
+                    "laptop#general",
+                    "negative",
+                    "worse"
+                ]
+            ]
+        },
+        {
+            "idx": 14,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.125,
+            "review": "i also have to press the trackpad very hard for left click ( not as badly as the first unit , though ) , and i lost right click functionality on the track pad 2 days into my voyage with this thing .",
+            "pred": [
+                [
+                    "trackpad",
+                    "trackpad#operation_performance",
+                    "negative",
+                    "left"
+                ],
+                [
+                    "trackpad",
+                    "trackpad#operation_performance",
+                    "negative",
+                    "right"
+                ],
+                [
+                    "voyage",
+                    "general",
+                    "positive",
+                    "thing"
+                ]
+            ],
+            "true": [
+                [
+                    "track pad",
+                    "keyboard#usability",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 15,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.0,
+            "review": "i tried factory resetting after i updated the os , and it still drained 9 % over 8 hours .",
+            "pred": [
+                [
+                    "phone",
+                    "phone#operation_performance",
+                    "negative",
+                    "drained"
+                ]
+            ],
+            "true": [
+                [
+                    "os",
+                    "os#general",
+                    "neutral",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 16,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.375,
+            "review": "hdmi out doesn ' t work right .",
+            "pred": [
+                [
+                    "hdmi out",
+                    "hdmi#general",
+                    "negative",
+                    "right"
+                ]
+            ],
+            "true": [
+                [
+                    "hdmi",
+                    "ports#quality",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 17,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.25,
+            "review": "they had it over a week and then shipped back .",
+            "pred": [
+                [
+                    "they",
+                    "support#general",
+                    "negative",
+                    "they"
+                ],
+                [
+                    "had",
+                    "support#general",
+                    "negative",
+                    "it"
+                ],
+                [
+                    "week",
+                    "support#general",
+                    "negative",
+                    "over"
+                ],
+                [
+                    "back",
+                    "support#general",
+                    "negative",
+                    "shipped"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "support#general",
+                    "neutral",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 18,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.75,
+            "review": "i was excited to receive this chromebook , only to watch that excitement dissipate within mere hours as i noticed the touchscreen did n ' t work at all on tablet mode .",
+            "pred": [
+                [
+                    "touchscreen",
+                    "touchscreen#operation_performance",
+                    "negative",
+                    "didn ' t work"
+                ]
+            ],
+            "true": [
+                [
+                    "touchscreen",
+                    "hardware#operation_performance",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 19,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.3333333333333333,
+            "avg partial local IoU": 0.3333333333333333,
+            "review": "clearly there is some kind of major defect here that acer has n ' t resolved .",
+            "pred": [
+                [
+                    "clearly",
+                    "general#general",
+                    "negative",
+                    "major"
+                ],
+                [
+                    "defect",
+                    "general#general",
+                    "negative",
+                    "defect"
+                ],
+                [
+                    "here",
+                    "general#general",
+                    "negative",
+                    "resolved"
+                ]
+            ],
+            "true": [
+                [
+                    "acer",
+                    "company#general",
+                    "negative",
+                    "defect"
+                ]
+            ]
+        },
+        {
+            "idx": 20,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.5,
+            "review": "i bought this for my daughter to use to take online classes while she ' s overseas in europe for a year .",
+            "pred": [
+                [
+                    "computer",
+                    "computer#operation_performance",
+                    "positive",
+                    "computer [ C ] computer # operation _ performance [ S ] positive [ O ] online classes"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#general",
+                    "neutral",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 21,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.75,
+            "review": "decent sound quality .",
+            "pred": [
+                [
+                    "sound",
+                    "sound#quality",
+                    "positive",
+                    "decent"
+                ]
+            ],
+            "true": [
+                [
+                    "sound",
+                    "multimedia_devices#quality",
+                    "positive",
+                    "decent"
+                ]
+            ]
+        },
+        {
+            "idx": 22,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.6666666666666666,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.6666666666666666,
+            "review": "flimsy power adapter .",
+            "pred": [
+                [
+                    "power _ adapter",
+                    "power_adapter#quality",
+                    "negative",
+                    "flimsy"
+                ]
+            ],
+            "true": [
+                [
+                    "power adapter",
+                    "power_supply#general",
+                    "negative",
+                    "flimsy"
+                ]
+            ]
+        },
+        {
+            "idx": 23,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.75,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.16666666666666666,
+            "avg partial local IoU": 0.3541666666666667,
+            "review": "wi - fi slows down to crowl and speeds back up intermittently .",
+            "pred": [
+                [
+                    "wi - fi",
+                    "operation_performance#general",
+                    "negative",
+                    "slows down"
+                ],
+                [
+                    "wi - fi",
+                    "operation_performance#general",
+                    "negative",
+                    "speeds back up"
+                ],
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "wi - fi",
+                    "ports#quality",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 24,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.375,
+            "review": "regret buying it at times .",
+            "pred": [
+                [
+                    "it",
+                    "it#design_features",
+                    "negative",
+                    "regret"
+                ],
+                [
+                    "it",
+                    "it#design_features",
+                    "negative",
+                    "buying"
+                ],
+                [
+                    "times",
+                    "it#operation_performance",
+                    "negative",
+                    "regret"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#general",
+                    "negative",
+                    "regret"
+                ]
+            ]
+        },
+        {
+            "idx": 25,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.25,
+            "review": "it just turned off and will not turn back on .",
+            "pred": [
+                [
+                    "it",
+                    "device#general",
+                    "negative",
+                    "just"
+                ],
+                [
+                    "it",
+                    "device#general",
+                    "negative",
+                    "turned off"
+                ],
+                [
+                    "it",
+                    "device#general",
+                    "negative",
+                    "will not"
+                ],
+                [
+                    "back",
+                    "device#general",
+                    "negative",
+                    "turn"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#quality",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 26,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.5833333333333333,
+            "review": "the product is great , but the customer support is horrible .",
+            "pred": [
+                [
+                    "product",
+                    "product#quality",
+                    "positive",
+                    "great"
+                ],
+                [
+                    "product",
+                    "product#quality",
+                    "negative",
+                    "horrible"
+                ]
+            ],
+            "true": [
+                [
+                    "product",
+                    "laptop#general",
+                    "positive",
+                    "great"
+                ],
+                [
+                    "customer support",
+                    "support#general",
+                    "negative",
+                    "horrible"
+                ]
+            ]
+        },
+        {
+            "idx": 27,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.3333333333333333,
+            "review": "called support a second time after 10 minutes of verifying some type of info they told me to call google without even trying to help .",
+            "pred": [
+                [
+                    "info",
+                    "service#general",
+                    "negative",
+                    "verifying"
+                ],
+                [
+                    "support",
+                    "service#general",
+                    "negative",
+                    "google"
+                ],
+                [
+                    "call",
+                    "service#general",
+                    "negative",
+                    "help"
+                ]
+            ],
+            "true": [
+                [
+                    "support",
+                    "support#general",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 28,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.5,
+            "review": "but i ' m getting into photography now , and it ' s terrible for loading , storing , and editing pictures .",
+            "pred": [
+                [
+                    "pictures",
+                    "pictures#general",
+                    "negative",
+                    "terrible"
+                ],
+                [
+                    "pictures",
+                    "pictures#general",
+                    "negative",
+                    "terrible"
+                ],
+                [
+                    "pictures",
+                    "pictures#general",
+                    "negative",
+                    "terrible"
+                ],
+                [
+                    "pictures",
+                    "pictures#general",
+                    "negative",
+                    "terrible"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#operation_performance",
+                    "negative",
+                    "terrible"
+                ]
+            ]
+        },
+        {
+            "idx": 29,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.0,
+            "review": "i have sent it in twice already and waiting for it to come back .",
+            "pred": [
+                [
+                    "it",
+                    "product#general",
+                    "negative",
+                    "it"
+                ],
+                [
+                    "it",
+                    "product#general",
+                    "negative",
+                    "come back"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#general",
+                    "neutral",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 30,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.75,
+            "review": "the screen looked great .",
+            "pred": [
+                [
+                    "screen",
+                    "display#quality",
+                    "positive",
+                    "great"
+                ]
+            ],
+            "true": [
+                [
+                    "screen",
+                    "display#general",
+                    "positive",
+                    "great"
+                ]
+            ]
+        },
+        {
+            "idx": 31,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.09090909090909091,
+            "avg partial local IoU": 0.356060606060606,
+            "review": "no matter how many times i reinserted the charging adapter , i kept getting this message .",
+            "pred": [
+                [
+                    "adapter",
+                    "adapter#quality",
+                    "negative",
+                    "charging"
+                ],
+                [
+                    "adapter",
+                    "adapter#quality",
+                    "negative",
+                    "reinserted"
+                ],
+                [
+                    "message",
+                    "adapter#quality",
+                    "negative",
+                    "no matter how"
+                ],
+                [
+                    "adapter",
+                    "adapter#quality",
+                    "negative",
+                    "times"
+                ],
+                [
+                    "adapter",
+                    "adapter#quality",
+                    "negative",
+                    "many"
+                ],
+                [
+                    "adapter",
+                    "adapter#quality",
+                    "negative",
+                    "i"
+                ],
+                [
+                    "adapter",
+                    "adapter#quality",
+                    "negative",
+                    "get"
+                ],
+                [
+                    "adapter",
+                    "adapter#quality",
+                    "negative",
+                    "this"
+                ],
+                [
+                    "adapter",
+                    "adapter#quality",
+                    "negative",
+                    "message"
+                ]
+            ],
+            "true": [
+                [
+                    "charging adapter",
+                    "power_supply#operation_performance",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 32,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "i had no option but to shut down the computer , unplug it , plug it back in , and then reboot .",
+            "pred": [
+                [
+                    "computer",
+                    "operation_performance",
+                    "negative",
+                    "shut down"
+                ],
+                [
+                    "computer",
+                    "operation_performance",
+                    "negative",
+                    "unplug"
+                ],
+                [
+                    "computer",
+                    "operation_performance",
+                    "negative",
+                    "plug back in"
+                ],
+                [
+                    "computer",
+                    "operation_performance",
+                    "negative",
+                    "reboot"
+                ]
+            ],
+            "true": [
+                [
+                    "computer",
+                    "laptop#operation_performance",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 33,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.3333333333333333,
+            "avg partial local IoU": 0.20833333333333331,
+            "review": "it has worked well except for an initial hiccup on turning it on .",
+            "pred": [
+                [
+                    "it",
+                    "general",
+                    "positive",
+                    "well"
+                ],
+                [
+                    "it",
+                    "general",
+                    "positive",
+                    "worked"
+                ],
+                [
+                    "hiccup",
+                    "general",
+                    "negative",
+                    "initial"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#operation_performance",
+                    "positive",
+                    "well"
+                ]
+            ]
+        },
+        {
+            "idx": 34,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "the screen flashes for a second every 30 seconds or so .",
+            "pred": [
+                [
+                    "screen",
+                    "screen#operation_performance",
+                    "negative",
+                    "flashes"
+                ],
+                [
+                    "screen",
+                    "screen#operation_performance",
+                    "negative",
+                    "second"
+                ],
+                [
+                    "screen",
+                    "screen#operation_performance",
+                    "negative",
+                    "so"
+                ]
+            ],
+            "true": [
+                [
+                    "screen",
+                    "display#operation_performance",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 35,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "i noticed the battery went down to 67 % for no reason .",
+            "pred": [
+                [
+                    "battery",
+                    "battery#quality",
+                    "negative",
+                    "no reason"
+                ]
+            ],
+            "true": [
+                [
+                    "battery",
+                    "battery#operation_performance",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 36,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.25,
+            "avg partial local IoU": 0.2708333333333333,
+            "review": "works good but the fan kicks in pretty often , which is to keep the laptop cool but the sound is annoying .",
+            "pred": [
+                [
+                    "laptop",
+                    "laptop#quality",
+                    "positive",
+                    "good"
+                ],
+                [
+                    "fan",
+                    "laptop#quality",
+                    "negative",
+                    "kicks in"
+                ],
+                [
+                    "laptop",
+                    "laptop#quality",
+                    "negative",
+                    "annoying"
+                ]
+            ],
+            "true": [
+                [
+                    "fan",
+                    "fans&cooling#operation_performance",
+                    "negative",
+                    "annoying"
+                ],
+                [
+                    "sound",
+                    "fans&cooling#operation_performance",
+                    "negative",
+                    "annoying"
+                ]
+            ]
+        },
+        {
+            "idx": 37,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.5833333333333333,
+            "review": "nano edge display is nice .",
+            "pred": [
+                [
+                    "display",
+                    "display#general",
+                    "positive",
+                    "nice"
+                ]
+            ],
+            "true": [
+                [
+                    "nano edge display",
+                    "display#operation_performance",
+                    "positive",
+                    "nice"
+                ]
+            ]
+        },
+        {
+            "idx": 38,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.3333333333333333,
+            "avg partial local IoU": 0.3333333333333333,
+            "review": "everything was fine and i went out for an hour .",
+            "pred": [
+                [
+                    "everything",
+                    "operation_performance",
+                    "positive",
+                    "fine"
+                ],
+                [
+                    "everything",
+                    "operation_performance",
+                    "positive",
+                    "out"
+                ],
+                [
+                    "everything",
+                    "operation_performance",
+                    "positive",
+                    "hour"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#general",
+                    "positive",
+                    "fine"
+                ]
+            ]
+        },
+        {
+            "idx": 39,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "the audio is almost impossible to hear .",
+            "pred": [
+                [
+                    "audio",
+                    "audio#quality",
+                    "negative",
+                    "impossible"
+                ]
+            ],
+            "true": [
+                [
+                    "audio",
+                    "multimedia_devices#operation_performance",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 40,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.5,
+            "review": "it is slow to do everything .",
+            "pred": [
+                [
+                    "everything",
+                    "operation_performance",
+                    "negative",
+                    "slow"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#operation_performance",
+                    "negative",
+                    "slow"
+                ]
+            ]
+        },
+        {
+            "idx": 41,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.25,
+            "review": "here ' s the kicker : it is doing a terrible job running dragon age .",
+            "pred": [
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#operation_performance",
+                    "negative",
+                    "terrible"
+                ]
+            ]
+        },
+        {
+            "idx": 42,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.375,
+            "review": "it doesn ' t has backlit keyboard : ( typing in low light is such a pain .",
+            "pred": [
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "typing"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "low light"
+                ]
+            ],
+            "true": [
+                [
+                    "backlit keyboard",
+                    "keyboard#design_features",
+                    "negative",
+                    "pain"
+                ]
+            ]
+        },
+        {
+            "idx": 43,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.625,
+            "review": "very disappointed in how slow it seems .",
+            "pred": [
+                [
+                    "laptop",
+                    "operation_performance",
+                    "negative",
+                    "slow"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#operation_performance",
+                    "negative",
+                    "disappointed"
+                ],
+                [
+                    "null",
+                    "laptop#operation_performance",
+                    "negative",
+                    "slow"
+                ]
+            ]
+        },
+        {
+            "idx": 44,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.6,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.275,
+            "review": "keyboard and mouse pad seem fine , but overall it seems strangely slow .",
+            "pred": [
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "keyboard"
+                ],
+                [
+                    "mouse pad",
+                    "mouse_pad#operation_performance",
+                    "negative",
+                    "mouse pad"
+                ],
+                [
+                    "mouse pad",
+                    "mouse_pad#operation_performance",
+                    "negative",
+                    "overall"
+                ],
+                [
+                    "it",
+                    "it#general",
+                    "negative",
+                    "it"
+                ]
+            ],
+            "true": [
+                [
+                    "keyboard",
+                    "keyboard#design_features",
+                    "positive",
+                    "fine"
+                ],
+                [
+                    "mouse pad",
+                    "keyboard#design_features",
+                    "positive",
+                    "fine"
+                ],
+                [
+                    "null",
+                    "laptop#general",
+                    "negative",
+                    "slow"
+                ]
+            ]
+        },
+        {
+            "idx": 45,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.5,
+            "review": "i have been using this for just 3 months .",
+            "pred": [
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#general",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 46,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.625,
+            "review": "crazy keypad : this issue is even worse .",
+            "pred": [
+                [
+                    "keypad",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "crazy"
+                ]
+            ],
+            "true": [
+                [
+                    "keypad",
+                    "keyboard#general",
+                    "negative",
+                    "crazy"
+                ],
+                [
+                    "keypad",
+                    "keyboard#general",
+                    "negative",
+                    "worse"
+                ]
+            ]
+        },
+        {
+            "idx": 47,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.625,
+            "review": "overall , the laptop has a solid feel to it .",
+            "pred": [
+                [
+                    "laptop",
+                    "laptop#operation_performance",
+                    "positive",
+                    "solid"
+                ],
+                [
+                    "laptop",
+                    "laptop#operation_performance",
+                    "positive",
+                    "feel"
+                ]
+            ],
+            "true": [
+                [
+                    "laptop",
+                    "laptop#general",
+                    "positive",
+                    "solid"
+                ]
+            ]
+        },
+        {
+            "idx": 48,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "this lead me to believe that although i purchased a \u201c new \u201d product , they sent me a refurbished one instead .",
+            "pred": [
+                [
+                    "product",
+                    "product#general",
+                    "negative",
+                    "new"
+                ],
+                [
+                    "product",
+                    "product#general",
+                    "negative",
+                    "refurbished"
+                ]
+            ],
+            "true": [
+                [
+                    "product",
+                    "laptop#quality",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 49,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.25,
+            "review": "i ' m out from us , i live in colombia , and maybe i can not return these laptop .",
+            "pred": [
+                [
+                    "laptop",
+                    "laptop#design_features",
+                    "negative",
+                    "maybe"
+                ],
+                [
+                    "laptop",
+                    "laptop#design_features",
+                    "negative",
+                    "return"
+                ]
+            ],
+            "true": [
+                [
+                    "laptop",
+                    "laptop#general",
+                    "neutral",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 50,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.25,
+            "avg partial local IoU": 0.0625,
+            "review": "i like the speed , the processor the hybrid storage units ( 128ssd and 1tera ) , but the web cam sucks , really poor resolution and the keyboard doesn ' t have the numerical part and the caps lock or num lock don ' t have any light or guide to help you .",
+            "pred": [
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "processor",
+                    "cpu#operation_performance",
+                    "positive",
+                    "like"
+                ],
+                [
+                    "hybrid storage units",
+                    "memory#general",
+                    "positive",
+                    "like"
+                ],
+                [
+                    "web cam",
+                    "hardware#operation_performance",
+                    "negative",
+                    "sucks"
+                ],
+                [
+                    "web cam",
+                    "hardware#operation_performance",
+                    "negative",
+                    "poor"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#design_features",
+                    "negative",
+                    "null"
+                ],
+                [
+                    "caps lock",
+                    "keyboard#design_features",
+                    "negative",
+                    "null"
+                ],
+                [
+                    "num lock",
+                    "keyboard#design_features",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 51,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 1.0,
+            "review": "lightweight .",
+            "pred": [
+                [
+                    "laptop",
+                    "laptop#design_features",
+                    "positive",
+                    "lightweight"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#design_features",
+                    "positive",
+                    "lightweight"
+                ]
+            ]
+        },
+        {
+            "idx": 52,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "yesterday the backlight went out .",
+            "pred": [
+                [
+                    "backlight",
+                    "laptop#quality",
+                    "negative",
+                    "went out"
+                ]
+            ],
+            "true": [
+                [
+                    "backlight",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 53,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.5,
+            "review": "it was brand new out of the box , i ' ve never dropped it .",
+            "pred": [
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#general",
+                    "neutral",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 54,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.375,
+            "review": "now i have to deal with warranty stuff and sending it back etc .",
+            "pred": [
+                [
+                    "stuff",
+                    "warranty#general",
+                    "negative",
+                    "back"
+                ]
+            ],
+            "true": [
+                [
+                    "warranty stuff",
+                    "warranty#general",
+                    "neutral",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 55,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "ram upgrade available",
+            "pred": [
+                [
+                    "ram",
+                    "hardware#upgrade",
+                    "positive",
+                    "upgrade"
+                ]
+            ],
+            "true": [
+                [
+                    "ram",
+                    "hardware#general",
+                    "positive",
+                    "available"
+                ]
+            ]
+        },
+        {
+            "idx": 56,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "hard drive upgrade available",
+            "pred": [
+                [
+                    "hard drive",
+                    "hardware#quality",
+                    "positive",
+                    "upgrade"
+                ]
+            ],
+            "true": [
+                [
+                    "hard drive",
+                    "memory#operation_performance",
+                    "positive",
+                    "available"
+                ]
+            ]
+        },
+        {
+            "idx": 57,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.375,
+            "review": "i had issues with the touchpad sticking or not responding to click correctly from the start .",
+            "pred": [
+                [
+                    "touchpad",
+                    "touchpad#usability",
+                    "negative",
+                    "click"
+                ],
+                [
+                    "touchpad",
+                    "touchpad#usability",
+                    "negative",
+                    "not responding"
+                ],
+                [
+                    "issues",
+                    "touchpad#quality",
+                    "negative",
+                    "correctly"
+                ]
+            ],
+            "true": [
+                [
+                    "touchpad",
+                    "hardware#operation_performance",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 58,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.25,
+            "review": "it ' s still a mainly functional computer , but using it is just not the greatest .",
+            "pred": [
+                [
+                    "computer",
+                    "hardware#general",
+                    "negative",
+                    "great"
+                ],
+                [
+                    "computer",
+                    "hardware#general",
+                    "negative",
+                    "great"
+                ],
+                [
+                    "computer",
+                    "hardware#general",
+                    "negative",
+                    "great"
+                ],
+                [
+                    "computer",
+                    "hardware#general",
+                    "negative",
+                    "great"
+                ]
+            ],
+            "true": [
+                [
+                    "computer",
+                    "laptop#general",
+                    "neutral",
+                    "functional"
+                ],
+                [
+                    "computer",
+                    "laptop#general",
+                    "neutral",
+                    "not the greatest"
+                ]
+            ]
+        },
+        {
+            "idx": 59,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.25,
+            "review": "we ' ve had the computer for 5 weeks , used it a total of less than 20 hours , and now it will be gone for 3 weeks .",
+            "pred": [
+                [
+                    "computer",
+                    "hardware#quality",
+                    "negative",
+                    "less than 20 hours"
+                ]
+            ],
+            "true": [
+                [
+                    "computer",
+                    "laptop#general",
+                    "neutral",
+                    "null"
+                ],
+                [
+                    "null",
+                    "laptop#general",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 60,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.375,
+            "review": "i send it to asus warranty and now after a week they ' re sending it back stating the no problem was found .",
+            "pred": [
+                [
+                    "warranty",
+                    "warranty#general",
+                    "negative",
+                    "warranty"
+                ],
+                [
+                    "warranty",
+                    "warranty#general",
+                    "negative",
+                    "no problem"
+                ]
+            ],
+            "true": [
+                [
+                    "asus warranty",
+                    "support#general",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 61,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "display stop working within 2 months .",
+            "pred": [
+                [
+                    "display",
+                    "display#quality",
+                    "negative",
+                    "stop working"
+                ],
+                [
+                    "display",
+                    "display#quality",
+                    "negative",
+                    "within 2 months"
+                ]
+            ],
+            "true": [
+                [
+                    "display",
+                    "display#general",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 62,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.375,
+            "review": "since it came with no user manual , i had to call asus customer support and got someone who knew all about windows 10 software but nothing about my asus notebook .",
+            "pred": [
+                [
+                    "notebook",
+                    "notebook#usability",
+                    "negative",
+                    "asus"
+                ],
+                [
+                    "user manual",
+                    "notebook#usability",
+                    "negative",
+                    "none"
+                ]
+            ],
+            "true": [
+                [
+                    "asus customer support",
+                    "support#operation_performance",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 63,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.3333333333333333,
+            "avg partial local IoU": 0.3333333333333333,
+            "review": "after reading all the bad reviews , just sent it back for a refund .",
+            "pred": [
+                [
+                    "product",
+                    "product#quality",
+                    "negative",
+                    "bad"
+                ],
+                [
+                    "product",
+                    "product#quality",
+                    "negative",
+                    "reviews"
+                ],
+                [
+                    "refund",
+                    "product#quality",
+                    "positive",
+                    "back"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#quality",
+                    "negative",
+                    "bad"
+                ]
+            ]
+        },
+        {
+            "idx": 64,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.75,
+            "avg partial local IoU": 0.5208333333333333,
+            "review": "all over this asus laptop which has a non - functioning touchpad .",
+            "pred": [
+                [
+                    "laptop",
+                    "operation_performance#quality",
+                    "negative",
+                    "non - functioning"
+                ]
+            ],
+            "true": [
+                [
+                    "asus laptop",
+                    "laptop#general",
+                    "negative",
+                    "null"
+                ],
+                [
+                    "touchpad",
+                    "hardware#quality",
+                    "negative",
+                    "non - functioning"
+                ]
+            ]
+        },
+        {
+            "idx": 65,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.3333333333333333,
+            "avg partial local IoU": 0.4583333333333333,
+            "review": "my screen broke when just putting a textbook on it .",
+            "pred": [
+                [
+                    "screen",
+                    "laptop#quality",
+                    "negative",
+                    "breaking"
+                ],
+                [
+                    "screen",
+                    "laptop#quality",
+                    "negative",
+                    "broke"
+                ],
+                [
+                    "textbook",
+                    "laptop#quality",
+                    "negative",
+                    "putting"
+                ]
+            ],
+            "true": [
+                [
+                    "screen",
+                    "display#general",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 66,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.6666666666666666,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.41666666666666663,
+            "review": "don ' t even bother calling customer support , in my experience , they do you no good .",
+            "pred": [
+                [
+                    "customer _ support",
+                    "customer_support#operation_performance",
+                    "negative",
+                    "customer _ support"
+                ],
+                [
+                    "customer _ support",
+                    "customer_support#operation_performance",
+                    "negative",
+                    "customer _ support"
+                ]
+            ],
+            "true": [
+                [
+                    "customer support",
+                    "support#general",
+                    "negative",
+                    "no good"
+                ]
+            ]
+        },
+        {
+            "idx": 67,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "keyboard needs to be redesigned entirely .",
+            "pred": [
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "needs"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "redesigned"
+                ]
+            ],
+            "true": [
+                [
+                    "keyboard",
+                    "keyboard#design_features",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 68,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.2,
+            "avg partial local IoU": 0.3833333333333333,
+            "review": "6 ` ` screen is big enough to read with ease , yet the item itself is light enough to tote to meetings .",
+            "pred": [
+                [
+                    "item",
+                    "portability#general",
+                    "positive",
+                    "big"
+                ],
+                [
+                    "item",
+                    "portability#general",
+                    "positive",
+                    "tote"
+                ],
+                [
+                    "screen",
+                    "portability#general",
+                    "positive",
+                    "read"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "display#design_features",
+                    "positive",
+                    "big"
+                ],
+                [
+                    "null",
+                    "display#design_features",
+                    "positive",
+                    "ease"
+                ],
+                [
+                    "item",
+                    "laptop#portability",
+                    "positive",
+                    "light"
+                ]
+            ]
+        },
+        {
+            "idx": 69,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.75,
+            "review": "so far , this looks as if it meets my needs as a good ` ` work machine . ` `",
+            "pred": [
+                [
+                    "work machine",
+                    "work_machine#operation_performance",
+                    "positive",
+                    "good"
+                ],
+                [
+                    "work machine",
+                    "work_machine#operation_performance",
+                    "positive",
+                    "good"
+                ]
+            ],
+            "true": [
+                [
+                    "work machine",
+                    "laptop#general",
+                    "positive",
+                    "good"
+                ]
+            ]
+        },
+        {
+            "idx": 70,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "after exactly one year of useage this computer completely stopped working .",
+            "pred": [
+                [
+                    "computer",
+                    "hardware#quality",
+                    "negative",
+                    "completely"
+                ],
+                [
+                    "computer",
+                    "hardware#quality",
+                    "negative",
+                    "stopped"
+                ],
+                [
+                    "computer",
+                    "hardware#quality",
+                    "negative",
+                    "working"
+                ]
+            ],
+            "true": [
+                [
+                    "computer",
+                    "laptop#operation_performance",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 71,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "it boots up in 10 seconds and shuts down in 2 to 3 seconds .",
+            "pred": [
+                [
+                    "it",
+                    "laptop#operation_performance",
+                    "positive",
+                    "boots"
+                ],
+                [
+                    "it",
+                    "laptop#operation_performance",
+                    "positive",
+                    "up"
+                ],
+                [
+                    "seconds",
+                    "laptop#operation_performance",
+                    "positive",
+                    "10"
+                ]
+            ],
+            "true": [
+                [
+                    "boots up",
+                    "laptop#operation_performance",
+                    "positive",
+                    "null"
+                ],
+                [
+                    "shuts down",
+                    "laptop#operation_performance",
+                    "positive",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 72,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "i like the idea that the keyboard lights up and has a ` ` time out ` ` feature to shut off .",
+            "pred": [
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "positive",
+                    "idea"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "positive",
+                    "lights up"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "positive",
+                    "time out"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "positive",
+                    "shut off"
+                ]
+            ],
+            "true": [
+                [
+                    "keyboard",
+                    "keyboard#design_features",
+                    "positive",
+                    "like"
+                ]
+            ]
+        },
+        {
+            "idx": 73,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.3333333333333333,
+            "avg partial local IoU": 0.3333333333333333,
+            "review": "it seems put together well .",
+            "pred": [
+                [
+                    "it",
+                    "general",
+                    "positive",
+                    "seems"
+                ],
+                [
+                    "it",
+                    "general",
+                    "positive",
+                    "put"
+                ],
+                [
+                    "together",
+                    "general",
+                    "positive",
+                    "well"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#general",
+                    "positive",
+                    "well"
+                ]
+            ]
+        },
+        {
+            "idx": 74,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.0,
+            "review": "what they lack in size , they make up for in raw speed , durability , and energy efficiency .",
+            "pred": [
+                [
+                    "what",
+                    "none",
+                    "none",
+                    "what"
+                ],
+                [
+                    "they",
+                    "none",
+                    "none",
+                    "lack"
+                ],
+                [
+                    "size",
+                    "none",
+                    "none",
+                    "size"
+                ],
+                [
+                    "speed",
+                    "none",
+                    "none",
+                    "speed"
+                ],
+                [
+                    "durability",
+                    "none",
+                    "none",
+                    "durability"
+                ],
+                [
+                    "efficiency",
+                    "none",
+                    "none",
+                    "efficiency"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#design_features",
+                    "negative",
+                    "null"
+                ],
+                [
+                    "null",
+                    "laptop#operation_performance",
+                    "positive",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 75,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.625,
+            "review": "+ decent quantity of available ports",
+            "pred": [
+                [
+                    "ports",
+                    "ports#general",
+                    "positive",
+                    "decent"
+                ]
+            ],
+            "true": [
+                [
+                    "ports",
+                    "ports#quality",
+                    "positive",
+                    "decent"
+                ],
+                [
+                    "ports",
+                    "ports#quality",
+                    "positive",
+                    "available"
+                ]
+            ]
+        },
+        {
+            "idx": 76,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.20833333333333331,
+            "review": "+ it has a dvd drive : o",
+            "pred": [
+                [
+                    "it",
+                    "laptop#general",
+                    "positive",
+                    "o"
+                ],
+                [
+                    "dvd",
+                    "laptop#general",
+                    "positive",
+                    "drive"
+                ]
+            ],
+            "true": [
+                [
+                    "dvd drive",
+                    "optical_drives#general",
+                    "neutral",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 77,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.25,
+            "review": "- it runs hot !",
+            "pred": [
+                [
+                    "it",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "runs hot"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#quality",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 78,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.25,
+            "review": "running grid benchmark , it got to a high 92 / 93 degrees c !",
+            "pred": [
+                [
+                    "review",
+                    "review#general",
+                    "positive",
+                    "running"
+                ],
+                [
+                    "review",
+                    "review#general",
+                    "positive",
+                    "grid benchmark"
+                ],
+                [
+                    "review",
+                    "review#general",
+                    "positive",
+                    "high"
+                ],
+                [
+                    "review",
+                    "review#general",
+                    "positive",
+                    "92 / 93"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#quality",
+                    "negative",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 79,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.08333333333333333,
+            "review": "- new i5 mobile processor .",
+            "pred": [
+                [
+                    "processor",
+                    "processor#quality",
+                    "positive",
+                    "new"
+                ],
+                [
+                    "processor",
+                    "processor#quality",
+                    "positive",
+                    "i5"
+                ],
+                [
+                    "processor",
+                    "processor#quality",
+                    "positive",
+                    "mobile"
+                ]
+            ],
+            "true": [
+                [
+                    "i5 mobile processor",
+                    "cpu#general",
+                    "neutral",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 80,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.5,
+            "review": "- ddr4 ram that is upgradable .",
+            "pred": [
+                [
+                    "ram",
+                    "hardware#operation_performance",
+                    "positive",
+                    "ddr4"
+                ],
+                [
+                    "ram",
+                    "hardware#operation_performance",
+                    "positive",
+                    "upgradable"
+                ]
+            ],
+            "true": [
+                [
+                    "ddr4 ram",
+                    "memory#general",
+                    "positive",
+                    "upgradable"
+                ]
+            ]
+        },
+        {
+            "idx": 81,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.625,
+            "review": "- very decent battery life .",
+            "pred": [
+                [
+                    "battery",
+                    "battery#quality",
+                    "positive",
+                    "decent"
+                ]
+            ],
+            "true": [
+                [
+                    "battery life",
+                    "battery#operation_performance",
+                    "positive",
+                    "decent"
+                ]
+            ]
+        },
+        {
+            "idx": 82,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.25,
+            "avg partial local IoU": 0.5625,
+            "review": "so far i am pleasantly impressed with this unit , however i have not used it a long time or tested many applications to date .",
+            "pred": [
+                [
+                    "unit",
+                    "laptop#operation_performance",
+                    "positive",
+                    "pleasantly"
+                ],
+                [
+                    "unit",
+                    "laptop#operation_performance",
+                    "positive",
+                    "impressed"
+                ],
+                [
+                    "unit",
+                    "laptop#operation_performance",
+                    "positive",
+                    "tested"
+                ],
+                [
+                    "unit",
+                    "laptop#operation_performance",
+                    "positive",
+                    "applications"
+                ]
+            ],
+            "true": [
+                [
+                    "unit",
+                    "laptop#general",
+                    "positive",
+                    "pleasantly"
+                ]
+            ]
+        },
+        {
+            "idx": 83,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.625,
+            "review": "i can certainly say this is the best laptop i ' ve ever had ( but then again i ' ve only had 3 , and you would expect these things to improve over time , right ) .",
+            "pred": [
+                [
+                    "laptop",
+                    "laptop#quality",
+                    "positive",
+                    "best"
+                ],
+                [
+                    "laptop",
+                    "laptop#quality",
+                    "positive",
+                    "laptop"
+                ],
+                [
+                    "laptop",
+                    "laptop#quality",
+                    "positive",
+                    "laptop"
+                ]
+            ],
+            "true": [
+                [
+                    "laptop",
+                    "laptop#general",
+                    "positive",
+                    "best"
+                ]
+            ]
+        },
+        {
+            "idx": 84,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "i ' ve been using it for at least 4 hours since last charged in that 23 % used up .",
+            "pred": [
+                [
+                    "phone",
+                    "phone#performance",
+                    "positive",
+                    "using"
+                ],
+                [
+                    "phone",
+                    "phone#performance",
+                    "positive",
+                    "charged"
+                ],
+                [
+                    "battery",
+                    "phone#performance",
+                    "positive",
+                    "23"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#operation_performance",
+                    "positive",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 85,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.16666666666666666,
+            "avg partial local IoU": 0.6666666666666666,
+            "review": "- as others have mentioned , the keyboard backlight turns off after just a few seconds of not typing , which can be annoying and there doesn ' t seem to be a way to change this .",
+            "pred": [
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "annoying"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "turns _ off"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "turns _ off _ quickly"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "turns _ off _ quickly"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "turns _ off _ quickly"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "turns _ off _ quickly"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "turns _ off _ quickly"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "turns _ off _ quickly"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "turns _ off _ quickly"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "turns _ off _ quickly"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "turns _ off _ quickly"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "turns _ off _ quickly"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "turns _ off _ quickly"
+                ]
+            ],
+            "true": [
+                [
+                    "keyboard backlight",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "annoying"
+                ]
+            ]
+        },
+        {
+            "idx": 86,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.625,
+            "review": "- easily upgradeable ram",
+            "pred": [
+                [
+                    "ram",
+                    "ram#operation_performance",
+                    "positive",
+                    "easily upgradeable"
+                ]
+            ],
+            "true": [
+                [
+                    "ram",
+                    "memory#usability",
+                    "positive",
+                    "upgradeable"
+                ]
+            ]
+        },
+        {
+            "idx": 87,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.3333333333333333,
+            "review": "one feature that i love is the ability to disable the touchpad from the keyboard .",
+            "pred": [
+                [
+                    "feature",
+                    "feature#usability",
+                    "positive",
+                    "touchpad"
+                ],
+                [
+                    "keyboard",
+                    "feature#usability",
+                    "positive",
+                    "disable"
+                ]
+            ],
+            "true": [
+                [
+                    "touchpad",
+                    "keyboard#design_features",
+                    "positive",
+                    "love"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#design_features",
+                    "positive",
+                    "love"
+                ]
+            ]
+        },
+        {
+            "idx": 88,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.7142857142857143,
+            "avg partial local IoU": 0.3035714285714286,
+            "review": "it ' s not fancy , but it ' s good value and fast and trouble - free .",
+            "pred": [
+                [
+                    "value",
+                    "value#price",
+                    "positive",
+                    "good"
+                ],
+                [
+                    "value",
+                    "value#price",
+                    "positive",
+                    "fast"
+                ],
+                [
+                    "value",
+                    "value#price",
+                    "positive",
+                    "trouble - free"
+                ]
+            ],
+            "true": [
+                [
+                    "null",
+                    "laptop#design_features",
+                    "neutral",
+                    "not fancy"
+                ],
+                [
+                    "null",
+                    "laptop#operation_performance",
+                    "positive",
+                    "good"
+                ],
+                [
+                    "null",
+                    "laptop#operation_performance",
+                    "positive",
+                    "fast"
+                ],
+                [
+                    "null",
+                    "laptop#operation_performance",
+                    "positive",
+                    "trouble - free"
+                ]
+            ]
+        },
+        {
+            "idx": 89,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 1.0,
+            "avg partial local IoU": 0.75,
+            "review": "after spending some time with it , the feature can really be useful .",
+            "pred": [
+                [
+                    "feature",
+                    "feature#usability",
+                    "positive",
+                    "useful"
+                ]
+            ],
+            "true": [
+                [
+                    "feature",
+                    "keyboard#design_features",
+                    "positive",
+                    "useful"
+                ]
+            ]
+        },
+        {
+            "idx": 90,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.3333333333333333,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.3333333333333333,
+            "review": "easily upgrade to storage and ram .",
+            "pred": [
+                [
+                    "easily",
+                    "easily#general",
+                    "positive",
+                    "upgrade"
+                ],
+                [
+                    "storage",
+                    "storage#general",
+                    "positive",
+                    "storage"
+                ],
+                [
+                    "ram",
+                    "ram#general",
+                    "positive",
+                    "ram"
+                ]
+            ],
+            "true": [
+                [
+                    "ram",
+                    "memory#usability",
+                    "positive",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 91,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.0,
+            "review": "this does not really matter to me because the mx150 is enough for my needs .",
+            "pred": [
+                [
+                    "needs",
+                    "needs#general",
+                    "positive",
+                    "enough"
+                ],
+                [
+                    "needs",
+                    "needs#general",
+                    "positive",
+                    "my"
+                ]
+            ],
+            "true": [
+                [
+                    "mx150",
+                    "graphics#design_features",
+                    "neutral",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 92,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.125,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.28125,
+            "review": "i love the solid state drive , as reviews or ads say you can boot up and get onto internet in 10 to 15 seconds .",
+            "pred": [
+                [
+                    "drive",
+                    "drive#operation_performance",
+                    "positive",
+                    "solid state"
+                ],
+                [
+                    "drive",
+                    "drive#operation_performance",
+                    "positive",
+                    "solid state"
+                ],
+                [
+                    "boot up",
+                    "drive#operation_performance",
+                    "positive",
+                    "boot up"
+                ],
+                [
+                    "get onto internet",
+                    "drive#operation_performance",
+                    "positive",
+                    "get onto internet"
+                ]
+            ],
+            "true": [
+                [
+                    "solid state drive",
+                    "hard_disc#general",
+                    "positive",
+                    "love"
+                ]
+            ]
+        },
+        {
+            "idx": 93,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 1.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.5,
+            "review": "it ' s not a ` ` gaming ` ` laptop even it can do some more casual gaming .",
+            "pred": [
+                [
+                    "laptop",
+                    "laptop#general",
+                    "negative",
+                    "casual gaming"
+                ],
+                [
+                    "laptop",
+                    "laptop#general",
+                    "negative",
+                    "gaming"
+                ]
+            ],
+            "true": [
+                [
+                    "laptop",
+                    "laptop#general",
+                    "positive",
+                    "null"
+                ]
+            ]
+        },
+        {
+            "idx": 94,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.0,
+            "review": "it ' s super fast , boots up in seconds .",
+            "pred": [
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "boots up",
+                    "laptop#operation_performance",
+                    "positive",
+                    "fast"
+                ]
+            ]
+        },
+        {
+            "idx": 95,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.0,
+            "opinion local IoU": 0.0,
+            "avg partial local IoU": 0.0,
+            "review": "i am very impressed with this system .",
+            "pred": [
+                [
+                    "null",
+                    "null",
+                    "null",
+                    "null"
+                ]
+            ],
+            "true": [
+                [
+                    "system",
+                    "os#operation_performance",
+                    "positive",
+                    "impressed"
+                ]
+            ]
+        },
+        {
+            "idx": 96,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.5,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.3333333333333333,
+            "avg partial local IoU": 0.4583333333333333,
+            "review": "mastercam itself runs pretty good .",
+            "pred": [
+                [
+                    "mastercam",
+                    "mastercam#operation_performance",
+                    "positive",
+                    "mastercam"
+                ],
+                [
+                    "mastercam",
+                    "mastercam#operation_performance",
+                    "positive",
+                    "runs"
+                ],
+                [
+                    "pretty",
+                    "mastercam#quality",
+                    "positive",
+                    "good"
+                ]
+            ],
+            "true": [
+                [
+                    "mastercam",
+                    "multimedia_devices#operation_performance",
+                    "positive",
+                    "good"
+                ]
+            ]
+        },
+        {
+            "idx": 97,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.5,
+            "avg partial local IoU": 0.625,
+            "review": "as usual amazon was great about returning it .",
+            "pred": [
+                [
+                    "amazon",
+                    "amazon#general",
+                    "positive",
+                    "great"
+                ],
+                [
+                    "amazon",
+                    "amazon#general",
+                    "positive",
+                    "returning"
+                ]
+            ],
+            "true": [
+                [
+                    "amazon",
+                    "support#quality",
+                    "positive",
+                    "great"
+                ]
+            ]
+        },
+        {
+            "idx": 98,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 1.0,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 0.5,
+            "opinion local IoU": 0.6,
+            "avg partial local IoU": 0.525,
+            "review": "screen is decent , not great , it is matte finished .",
+            "pred": [
+                [
+                    "screen",
+                    "screen#quality",
+                    "negative",
+                    "decent"
+                ],
+                [
+                    "screen",
+                    "screen#quality",
+                    "negative",
+                    "not great"
+                ],
+                [
+                    "screen",
+                    "screen#quality",
+                    "positive",
+                    "matte finished"
+                ]
+            ],
+            "true": [
+                [
+                    "screen",
+                    "display#design_features",
+                    "positive",
+                    "decent"
+                ],
+                [
+                    "screen",
+                    "display#design_features",
+                    "positive",
+                    "not great"
+                ]
+            ]
+        },
+        {
+            "idx": 99,
+            "exact local IoU": 0.0,
+            "aspect local IoU": 0.25,
+            "category local IoU": 0.0,
+            "sentiment local IoU": 1.0,
+            "opinion local IoU": 0.3333333333333333,
+            "avg partial local IoU": 0.3958333333333333,
+            "review": "i like the back lit keyboard .",
+            "pred": [
+                [
+                    "i",
+                    "keyboard#general",
+                    "positive",
+                    "like"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#general",
+                    "positive",
+                    "backlit"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#general",
+                    "positive",
+                    "lit"
+                ]
+            ],
+            "true": [
+                [
+                    "back lit keyboard",
+                    "keyboard#design_features",
+                    "positive",
+                    "like"
+                ]
+            ]
+        }
+    ]
+}

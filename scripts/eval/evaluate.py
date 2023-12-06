@@ -18,7 +18,7 @@ py evaluate.py -t5 -p '../data/t5_output/predictions.pickle' -o '../data/t5_outp
 """
 parser = argparse.ArgumentParser()
 parser.add_argument(
-    "-d", "--dataset_file", type=str, default="../data/main_dataset/test.txt"
+    "-d", "--dataset_file", type=str, default="data/main_dataset/test.txt"
 )
 parser.add_argument(
     "-p",
@@ -27,10 +27,10 @@ parser.add_argument(
     default="data/mvp_dataset/result_cd_acosi_shoes_path5_beam1.pickle",
 )
 parser.add_argument(
-    "-c", "--category_file", type=str, default="../data/mvp_dataset/category_dict.json"
+    "-c", "--category_file", type=str, default="data/mvp_dataset/category_dict.json"
 )
 parser.add_argument(
-    "-o", "--output_file", type=str, default="/data/mvp_dataset/scores.json"
+    "-o", "--output_file", type=str, default="data/mvp_dataset/scores.json"
 )
 parser.add_argument("-mvp", "--mvp_output", action="store_true")
 parser.add_argument("-llm", "--llm_output", action="store_true")
@@ -39,10 +39,8 @@ args = parser.parse_args()
 
 
 class Evaluator:
-    def __init__(self, process_func):
-        self.pred_outputs = process_func(
-            pkl_file=args.pkl_file, category_file=args.category_file
-        )
+    def __init__(self, process_func, **kwargs):
+        self.pred_outputs = process_func(pkl_file=args.pkl_file, **kwargs)
 
         with open(args.dataset_file, "r") as file:
             dataset = file.readlines()
@@ -62,6 +60,13 @@ class Evaluator:
         self.avg_local_IoU = 0
 
         self.tuple_len = len(self.true_outputs[0][0])
+        if len(self.pred_outputs[0][0]) > self.tuple_len:
+            new_pred_outputs = []
+            for annotation in self.pred_outputs:
+                annotation = [quint[: self.tuple_len] for quint in annotation]
+                new_pred_outputs.append(annotation)
+            self.pred_outputs = new_pred_outputs
+
         self.partial_precision = [0] * self.tuple_len
         self.partial_recall = [0] * self.tuple_len
         self.partial_f1 = [0] * self.tuple_len
@@ -157,7 +162,7 @@ class Evaluator:
 scores = {}
 
 if args.mvp_output:
-    evaluate_mvp_outputs = Evaluator(get_mvp_output)
+    evaluate_mvp_outputs = Evaluator(get_mvp_output, category_file=args.category_file)
     scores = evaluate_mvp_outputs.get_scores()
 elif args.llm_output:
     evaluate_llm_outputs = Evaluator(get_llm_output)

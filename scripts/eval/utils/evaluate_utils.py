@@ -1,7 +1,7 @@
 import re
 import numpy as np
 from string import punctuation
-from metrics_util import indexify_spans
+from utils.metrics_util import indexify_spans
 
 ASPECT_IDX = 0
 CATEGORY_IDX = 1
@@ -57,7 +57,7 @@ def extract_spans(seq, seq_type, output_type, sentiment_dict={}, category_dict={
 
             if output_type == "mvp":
                 if at.lower() == "it":
-                    at = "NULL"
+                    at = "null"
                 sp = sentiment_dict[sp]
                 ac = category_dict[ac]
 

@@ -1,0 +1,15 @@
+{
+    "ambience general": "ambience#general",
+    "drinks prices": "drinks#prices",
+    "drinks quality": "drinks#quality",
+    "drinks style_options": "drinks#style_options",
+    "food general": "food#general",
+    "food prices": "food#prices",
+    "food quality": "food#quality",
+    "food style_options": "food#style_options",
+    "location general": "location#general",
+    "restaurant general": "restaurant#general",
+    "restaurant miscellaneous": "restaurant#miscellaneous",
+    "restaurant prices": "restaurant#prices",
+    "service general": "service#general"
+}

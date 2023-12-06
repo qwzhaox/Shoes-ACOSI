@@ -1,7 +1,7 @@
 import pickle
 import json
 from collections import Counter
-from evaluate_utils import extract_spans
+from utils.evaluate_utils import extract_spans
 
 sentiment_dict = {"great": "positive", "ok": "neutral", "bad": "negative"}
 

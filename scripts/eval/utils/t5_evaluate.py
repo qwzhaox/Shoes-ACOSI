@@ -1,5 +1,5 @@
 import pickle
-from evaluate_utils import extract_spans
+from utils.evaluate_utils import extract_spans
 
 
 def get_t5_output(pkl_file):

@@ -22,7 +22,7 @@ test_file = dataset_dir / "test.txt"
 dev_file = dataset_dir / "dev.txt"
 
 
-def get_acosi_categories():
+def get_categories():
     unique_categories = set()
 
     def add_categories(file_path):
@@ -47,7 +47,7 @@ def get_acosi_categories():
     return category_list
 
 
-acosi_categories = get_acosi_categories()
+acosi_categories = get_categories()
 mvp_category_dict = {}
 
 for category in acosi_categories:

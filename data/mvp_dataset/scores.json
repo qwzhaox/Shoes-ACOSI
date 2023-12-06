@@ -41,7 +41,7 @@
         "global IoU": 0.7110091743119266,
         "avg local IoU": 0.748
     },
-    "partial avg": {
+    "avg partial": {
         "precision": 0.8168691691723678,
         "recall": 0.7673727578446329,
         "f1-score": 0.7906347454647872,
@@ -57,7 +57,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 1.0,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.8666666666666666,
+            "avg partial local IoU": 0.8666666666666666,
             "review": "the design is great poor color choices too bland . color choices from previous shoes was much better .",
             "pred": [
                 [
@@ -114,7 +114,7 @@
             "sentiment local IoU": 0.5,
             "opinion local IoU": 0.7857142857142857,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.6571428571428571,
+            "avg partial local IoU": 0.6571428571428571,
             "review": "usually wear size 10 on pr1 . 11 on pr2 . should get 1 size bigger for comfort",
             "pred": [
                 [
@@ -157,7 +157,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.8571428571428571,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.9714285714285715,
+            "avg partial local IoU": 0.9714285714285715,
             "review": "these shoes are awesome ! ! very comfortable ! and they are true to size !",
             "pred": [
                 [
@@ -214,7 +214,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.47368421052631576,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.6908906882591094,
+            "avg partial local IoU": 0.6908906882591094,
             "review": "i ordered a 9 1 / 2 4e , same size as my 623 and 608 sneakers , which fit perfectly . i couldn ' t get my foot into it ! why can ' t you make a golf shoe from the same last as your sneakers ? ! other than that , it ' s a looks well constructed , would love a pair that fits like my sneakers !",
             "pred": [
                 [
@@ -306,7 +306,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.6129032258064516,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.7225806451612903,
+            "avg partial local IoU": 0.7225806451612903,
             "review": "i usually wear a 9 in sneakers and due to reviews ordered an 8 . 5 but seriously could have worn a 7 . 5 in these . ultimately sent these back . cute though .",
             "pred": [
                 [
@@ -363,7 +363,7 @@
             "sentiment local IoU": 0.6666666666666666,
             "opinion local IoU": 0.34,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.6813333333333332,
+            "avg partial local IoU": 0.6813333333333332,
             "review": "this shoe is just roomier all around . not sure if i ' ll keep yet . . . it slips off a little when i walk . i have a wider foot than many and this just feel so bit . i got a half size smaller than usual and length - wise it fits good . i love the style of it in person !",
             "pred": [
                 [
@@ -448,7 +448,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.9565217391304348,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.7913043478260869,
+            "avg partial local IoU": 0.7913043478260869,
             "review": "i like the fit and cimfort . not 100 % satisfied with the style , ithe fabric sits loose across the top of the foot",
             "pred": [
                 [
@@ -533,7 +533,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.6428571428571429,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.7285714285714285,
+            "avg partial local IoU": 0.7285714285714285,
             "review": "i didn ' t like the shoes at all . the material felt very cheap , but the shoes were very light .",
             "pred": [
                 [
@@ -590,7 +590,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.5,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.7333333333333333,
+            "avg partial local IoU": 0.7333333333333333,
             "review": "amazing shoes , great price . i only wear adidas so , perfect as usual .",
             "pred": [
                 [
@@ -647,7 +647,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.75,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.7433333333333334,
+            "avg partial local IoU": 0.7433333333333334,
             "review": "beautiful kicks and will never need laces again . however , they are not true to size , oddly wide and misshapped . comfortable but huge - like boats .",
             "pred": [
                 [
@@ -746,7 +746,7 @@
             "sentiment local IoU": 0.5,
             "opinion local IoU": 0.6521739130434783,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.7304347826086957,
+            "avg partial local IoU": 0.7304347826086957,
             "review": "both my mother and i bought these shoes in our respectable size , and they didn ' t fit us . the opening to the show is too narrow for a foot to go in . very disappointing !",
             "pred": [
                 [
@@ -817,7 +817,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.425531914893617,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.5628841607565012,
+            "avg partial local IoU": 0.5628841607565012,
             "review": "needed new shoes so i bought these online , reviews looked fine and i haven ' t had a problem with adidas before . tried them on and felt fine . however . after working a shift , i can confirm that these are the most uncomfortable shoes , i ' ve ever worn . i worked a 7 hour shift and by the 3rd hour , my feet were killing me . do not buy these shoes ! !",
             "pred": [
                 [
@@ -923,7 +923,7 @@
             "sentiment local IoU": 0.5,
             "opinion local IoU": 0.95,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.7566666666666666,
+            "avg partial local IoU": 0.7566666666666666,
             "review": "i love them im a caregiver so i ' m on my feet all day and they are so comfortable",
             "pred": [
                 [
@@ -966,7 +966,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.8048780487804879,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.8443089430894309,
+            "avg partial local IoU": 0.8443089430894309,
             "review": "i like adidas products . but , this shoe is difficult for me to put on . takes more time and effort than i would like to get in to . once its on , comfortable , a little more snug than i would like but overall , a sharp functional sneaker .",
             "pred": [
                 [
@@ -1072,7 +1072,7 @@
             "sentiment local IoU": 0.6666666666666666,
             "opinion local IoU": 0.5333333333333333,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.6266666666666667,
+            "avg partial local IoU": 0.6266666666666667,
             "review": "these are comfortable enough but they are difficult to get on . i was looking for something easy to slip on , seems the heel of the shoe is more trouble than shoestrings .",
             "pred": [
                 [
@@ -1143,7 +1143,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.875,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.8416666666666666,
+            "avg partial local IoU": 0.8416666666666666,
             "review": "shoes is comfortable & true to size . glad i purchased one .",
             "pred": [
                 [
@@ -1200,7 +1200,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.5428571428571428,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.5752380952380952,
+            "avg partial local IoU": 0.5752380952380952,
             "review": "good for around the house . if your looking to exercise in these , i would recommend something else . not too supportive and the sole is thin and flat . not much of an arch either . they are not slip on and go , you have to have strong fingers to wrangle on the heel !",
             "pred": [
                 [
@@ -1313,7 +1313,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.875,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.875,
+            "avg partial local IoU": 0.875,
             "review": "i recommend these shoes . however , the position of the velcro on the left and right shoes is different .",
             "pred": [
                 [
@@ -1356,7 +1356,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.7916666666666666,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.8583333333333332,
+            "avg partial local IoU": 0.8583333333333332,
             "review": "this is a great shoe to wear on a regular day basis . also , if you cheer or dance this is a comfortable shoe for those type of activities !",
             "pred": [
                 [
@@ -1399,7 +1399,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 1.0,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.7857142857142858,
+            "avg partial local IoU": 0.7857142857142858,
             "review": "these shoes look and feel cheap . nothing like the originals . sizing is off , returning these .",
             "pred": [
                 [
@@ -1491,7 +1491,7 @@
             "sentiment local IoU": 0.5,
             "opinion local IoU": 0.75,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.73,
+            "avg partial local IoU": 0.73,
             "review": "the shoe i purchased runs small . order a size or two bigger than normal size . they also need to adjust the return and exchange date . otherwise , the shoe is a classic .",
             "pred": [
                 [
@@ -1569,7 +1569,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.29411764705882354,
             "implicit indicator local IoU": 0.0,
-            "partial avg local IoU": 0.5254901960784313,
+            "avg partial local IoU": 0.5254901960784313,
             "review": "gives me the support i was looking for . i have been wearing them for 30 years .",
             "pred": [
                 [
@@ -1612,7 +1612,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 1.0,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.9,
+            "avg partial local IoU": 0.9,
             "review": "every thing about my order went accordingly received my order earlier than expected . i will definitely order online again",
             "pred": [
                 [
@@ -1662,7 +1662,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.9166666666666666,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.9833333333333332,
+            "avg partial local IoU": 0.9833333333333332,
             "review": "shoes are comfortable but have glue all over . not happy about that at all .",
             "pred": [
                 [
@@ -1719,7 +1719,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.6842105263157895,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.9368421052631579,
+            "avg partial local IoU": 0.9368421052631579,
             "review": "the lie about the sizes i ordered a 9 and them shoes were so tight i gave them to my daughter . i well never never never buy them . . .",
             "pred": [
                 [
@@ -1783,7 +1783,7 @@
             "sentiment local IoU": 0.3333333333333333,
             "opinion local IoU": 0.46153846153846156,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.45897435897435895,
+            "avg partial local IoU": 0.45897435897435895,
             "review": "i ' ve always admired these so i finally got a pair . well they didn ' t fit . these are very tight and snugged fitting . if you have a fat foot or anything other than slim , then this is not the shoe for you .",
             "pred": [
                 [
@@ -1847,7 +1847,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.5,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.8,
+            "avg partial local IoU": 0.8,
             "review": "i gave this rating due to receiving my order almost a month later . it was a christmas gift , so it was a late gift . initially they sent me two different sizes . i was not contacted in regards of the situation .",
             "pred": [
                 [
@@ -1904,7 +1904,7 @@
             "sentiment local IoU": 0.3333333333333333,
             "opinion local IoU": 0.6363636363636364,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.693939393939394,
+            "avg partial local IoU": 0.693939393939394,
             "review": "the slides are narrower than other adidas pairs that i own . comfortable and stylish .",
             "pred": [
                 [
@@ -1961,7 +1961,7 @@
             "sentiment local IoU": 0.5,
             "opinion local IoU": 0.47619047619047616,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.5619047619047619,
+            "avg partial local IoU": 0.5619047619047619,
             "review": "while these slides are very attractive they are also rather stiff . the top of the slide does not have enough suppleness to conform to your foot .",
             "pred": [
                 [
@@ -2046,7 +2046,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.5641025641025641,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.8328205128205128,
+            "avg partial local IoU": 0.8328205128205128,
             "review": "i ended up giving these to my gf . they are a little short and very very narrow . i didn ' t want to return them because that ' s a pain . love adidas . not sure these are winners though .",
             "pred": [
                 [
@@ -2131,7 +2131,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.9285714285714286,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.8857142857142858,
+            "avg partial local IoU": 0.8857142857142858,
             "review": "nice looking slides . but they ' re too narrow . go up 1 / 2 size .",
             "pred": [
                 [
@@ -2188,7 +2188,7 @@
             "sentiment local IoU": 0.6666666666666666,
             "opinion local IoU": 0.4482758620689655,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.7429885057471264,
+            "avg partial local IoU": 0.7429885057471264,
             "review": "i purchased the shoes based on a review that they were very comfortable and good for walking . the shoes are not easy to get on without using my fingers as a shoe horn and are somewhat comfortable for walking .",
             "pred": [
                 [
@@ -2266,7 +2266,7 @@
             "sentiment local IoU": 0.6666666666666666,
             "opinion local IoU": 0.35135135135135137,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.7702702702702703,
+            "avg partial local IoU": 0.7702702702702703,
             "review": "i loved these shoes at first . they are super cute shoes and comfortable too . i have owned them for less than a year and there are holes near the toe already . they have mostly been worn to work where i sit or stand in one place for prolonged periods . disappointed that they are falling apart with such little use .",
             "pred": [
                 [
@@ -2365,7 +2365,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.5333333333333333,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.9066666666666666,
+            "avg partial local IoU": 0.9066666666666666,
             "review": "i love the shoe and enjoy how they on my feet . i also like the design .",
             "pred": [
                 [
@@ -2422,7 +2422,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.7333333333333333,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.7466666666666667,
+            "avg partial local IoU": 0.7466666666666667,
             "review": "this shoe fits completely different than the last pair of adidas running sneakers i purchased . they are very long and a bit too narrow . i do love the color scheme and style though .",
             "pred": [
                 [
@@ -2486,7 +2486,7 @@
             "sentiment local IoU": 0.6666666666666666,
             "opinion local IoU": 0.4117647058823529,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.6490196078431372,
+            "avg partial local IoU": 0.6490196078431372,
             "review": "i loved these shoes at first . they are super cute shoes and comfortable too . i have owned them for less than a year and there are holes near the toe already . they have mostly been worn to work where i sit or stand in one place for prolonged periods . disappointed that they are falling apart with such little use .",
             "pred": [
                 [
@@ -2592,7 +2592,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.2765957446808511,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.6457953394123607,
+            "avg partial local IoU": 0.6457953394123607,
             "review": "these shoes are so comfortable ! they look good with every athletic outfit and i love pairing them with leggings and a tank top or even a sweatshirt and a tennis skirt . if you ' re trying to find the perfect white athletic shoe , this is your sign ! here they are !",
             "pred": [
                 [
@@ -2677,7 +2677,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.7272727272727273,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.7854545454545455,
+            "avg partial local IoU": 0.7854545454545455,
             "review": "i love the shoes because not only are they comfortable but they are very stylish , i get tons of compliments . i also have the black and gold pair because of how comfortable they are .",
             "pred": [
                 [
@@ -2762,7 +2762,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.6,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.82,
+            "avg partial local IoU": 0.82,
             "review": "the design of this shoe is terrible . . the fit is not great either . very much dislike this shoe .",
             "pred": [
                 [
@@ -2819,7 +2819,7 @@
             "sentiment local IoU": 0.5,
             "opinion local IoU": 0.9696969696969697,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.5796536796536798,
+            "avg partial local IoU": 0.5796536796536798,
             "review": "i was looking for something lightweight and comfortable for work these babies does the job ! ! ! after 16 hours in them my feet doesn ' t hurt at all and has great arch support !",
             "pred": [
                 [
@@ -2911,7 +2911,7 @@
             "sentiment local IoU": 0.6666666666666666,
             "opinion local IoU": 0.7872340425531915,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.7741134751773049,
+            "avg partial local IoU": 0.7741134751773049,
             "review": "color was nice size little loose but ok . but too wide from the front and the worst was the it came with the security tag . my last purchase before this one was like a size smaller so i had to give them away . i will not buy online again to much issues . . . .",
             "pred": [
                 [
@@ -3003,7 +3003,7 @@
             "sentiment local IoU": 0.3333333333333333,
             "opinion local IoU": 0.7777777777777778,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.6355555555555555,
+            "avg partial local IoU": 0.6355555555555555,
             "review": "these are the widest shoes . i have a fairley wide foot but these shoes make my feet feel like they are swimming without water . i have a coworker who purchased these shoe as well and she wore them once and retired them bc of the width . i returned mine .",
             "pred": [
                 [
@@ -3074,7 +3074,7 @@
             "sentiment local IoU": 0.6666666666666666,
             "opinion local IoU": 0.5853658536585366,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.539692218350755,
+            "avg partial local IoU": 0.539692218350755,
             "review": "as an adidas lover , i was super excited to purchase these . i own countless running shoes from this company and have never had an issue like i did with these . the laces are held together by elastics and after 3 wears the elastic snapped on one shoe making them unwearable . beautiful sneaker , super disappointing quality .",
             "pred": [
                 [
@@ -3173,7 +3173,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.24,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.5980000000000001,
+            "avg partial local IoU": 0.5980000000000001,
             "review": "i race with the nb fuel cell prism and love the shoe , i would like to purchase the rc elite except they do not come in wide",
             "pred": [
                 [
@@ -3223,7 +3223,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.875,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.925,
+            "avg partial local IoU": 0.925,
             "review": "i ordered a 10w and it was definitely not wider than normal . it is a very cute boot but i have wide feet and it is not very comfortable for me .",
             "pred": [
                 [
@@ -3287,7 +3287,7 @@
             "sentiment local IoU": 0.5,
             "opinion local IoU": 0.5882352941176471,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.39098039215686275,
+            "avg partial local IoU": 0.39098039215686275,
             "review": "i had to exchange my first order and ordered a size up . then the band of the bigger size sort of cuts into my foot . i am a size 5 women . . . i won ' t return them because i already exchanged for a bigger size but more importantly : it cut into my foot .",
             "pred": [
                 [
@@ -3358,7 +3358,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.9166666666666666,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.6833333333333333,
+            "avg partial local IoU": 0.6833333333333333,
             "review": "do not buy , these are very hard . find a softer sandal .",
             "pred": [
                 [
@@ -3401,7 +3401,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.8947368421052632,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.6456140350877193,
+            "avg partial local IoU": 0.6456140350877193,
             "review": "i got the pair in my exact shoe size & these are too tight on me . i can ' t wear them all the way or my feet feel like they ' re being strangled . i don ' t understand why you ' d make these almost unwearable for the correct size",
             "pred": [
                 [
@@ -3458,7 +3458,7 @@
             "sentiment local IoU": 0.6666666666666666,
             "opinion local IoU": 0.631578947368421,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.6596491228070175,
+            "avg partial local IoU": 0.6596491228070175,
             "review": "it was a little bit uncomfortable at first , maybe because the form was too hard . a week later , the form became softer so it was good .",
             "pred": [
                 [
@@ -3529,7 +3529,7 @@
             "sentiment local IoU": 0.5,
             "opinion local IoU": 0.9615384615384616,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.7589743589743589,
+            "avg partial local IoU": 0.7589743589743589,
             "review": "had to order a larger size than what i normally wear . shoe would be better if offered as an adjustable shoe . shoe is overpriced for quality . i bought cheaper slides in the past that were more comfortable .",
             "pred": [
                 [
@@ -3614,7 +3614,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.875,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.775,
+            "avg partial local IoU": 0.775,
             "review": "really small you should go up a size or two . good material for the top strap .",
             "pred": [
                 [
@@ -3664,7 +3664,7 @@
             "sentiment local IoU": 0.5,
             "opinion local IoU": 0.9,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.7133333333333333,
+            "avg partial local IoU": 0.7133333333333333,
             "review": "comfortable and just as described . not to big or small .",
             "pred": [
                 [
@@ -3714,7 +3714,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.875,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.7216666666666667,
+            "avg partial local IoU": 0.7216666666666667,
             "review": "i must have gotten a defective pair . sides of both slides appear to be lifting : / poorly glued together . want to return but worried about the hassle of trying to get a better pair reordered .",
             "pred": [
                 [
@@ -3785,7 +3785,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 1.0,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.8,
+            "avg partial local IoU": 0.8,
             "review": "they are so comfortable and i love the red . anything with the trifold i ' m down !",
             "pred": [
                 [
@@ -3842,7 +3842,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.8823529411764706,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.7514705882352941,
+            "avg partial local IoU": 0.7514705882352941,
             "review": "met all my needs in a shoe . very durable and comfy . i wear them all day for work . would recommend",
             "pred": [
                 [
@@ -3934,7 +3934,7 @@
             "sentiment local IoU": 0.6666666666666666,
             "opinion local IoU": 0.9230769230769231,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.7679487179487179,
+            "avg partial local IoU": 0.7679487179487179,
             "review": "i use these shoes just slip on for practical reasons . running to the store or just for general leisure . great quality ! however , run a little small . i wear mine without socks , and that solved the size issue .",
             "pred": [
                 [
@@ -4012,7 +4012,7 @@
             "sentiment local IoU": 0.5,
             "opinion local IoU": 0.8571428571428571,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.7214285714285714,
+            "avg partial local IoU": 0.7214285714285714,
             "review": "this is a really nice shoe . i bought this product for my husband and he really likes the shoe . glad i stay on this website daily\ud83d\ude0a",
             "pred": [
                 [
@@ -4083,7 +4083,7 @@
             "sentiment local IoU": 0.5,
             "opinion local IoU": 0.8918918918918919,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.6117117117117117,
+            "avg partial local IoU": 0.6117117117117117,
             "review": "the color on the site has neutral beige / brown tones , unfortunately , in person the color is all gray . don ' t buy if you ' re expecting anything other than bland gray . will be returning immediately .",
             "pred": [
                 [
@@ -4161,7 +4161,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.26865671641791045,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.5137313432835822,
+            "avg partial local IoU": 0.5137313432835822,
             "review": "my white laces on the nast collab pair have dirt spots on the laces and thread coming out from a lace , out the package like wow the laces are shot and shoe hasn ' t even been worn yet . thought i ' d give reebok a try again because of nast and they threw that out the window . not his fault it ' s reebok and their manufacturer . disappointed they ruined this shoe for me i was looking forward to his collab .",
             "pred": [
                 [
@@ -4246,7 +4246,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.8518518518518519,
             "implicit indicator local IoU": 0.0,
-            "partial avg local IoU": 0.6503703703703703,
+            "avg partial local IoU": 0.6503703703703703,
             "review": "i live in ny i walk a lot but cmon the fabric over the toes needs to be reinforced with leather or something . my toes immediately have made a hole",
             "pred": [
                 [
@@ -4324,7 +4324,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.7428571428571429,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.7152380952380952,
+            "avg partial local IoU": 0.7152380952380952,
             "review": "i was disappointed in the color , from the pictures the top looks white but it ' s actually blue , which made a difference when i received them . i wasn ' t wanting that color scheme .",
             "pred": [
                 [
@@ -4402,7 +4402,7 @@
             "sentiment local IoU": 0.5,
             "opinion local IoU": 0.47058823529411764,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.6131652661064425,
+            "avg partial local IoU": 0.6131652661064425,
             "review": "i ' ve been a reebok classic woman for years . i don ' t wear any other brand of athletic shoes . they are comfortable and easy to walk in . i wear a 1 / 2 \" heel lift in my shoe for balance and these shoes have the perfect depth that keeps the heel of the shoe snug to my feet - no slipping off .",
             "pred": [
                 [
@@ -4494,7 +4494,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 1.0,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.8333333333333333,
+            "avg partial local IoU": 0.8333333333333333,
             "review": "too tight and uncomfortable . tried cushions , still not so good .",
             "pred": [
                 [
@@ -4551,7 +4551,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.45454545454545453,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.6409090909090909,
+            "avg partial local IoU": 0.6409090909090909,
             "review": "these tennis shoes are very comfortable . i own every color they sale . i highly recommend them .",
             "pred": [
                 [
@@ -4615,7 +4615,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 1.0,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.7,
+            "avg partial local IoU": 0.7,
             "review": "i need an orthopedic lift in one shoe . reebox still manufactures a fine shoe which can still be modified .",
             "pred": [
                 [
@@ -4665,7 +4665,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.8888888888888888,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.7777777777777778,
+            "avg partial local IoU": 0.7777777777777778,
             "review": "these look awful in the larger sizes . also , they are undersized , order 1 / 2 size up or go easy on yourself and don ' t order .",
             "pred": [
                 [
@@ -4729,7 +4729,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.75,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.85,
+            "avg partial local IoU": 0.85,
             "review": "it ' s a great shoes but need different size . i recommend it",
             "pred": [
                 [
@@ -4786,7 +4786,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.8717948717948718,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.8076923076923077,
+            "avg partial local IoU": 0.8076923076923077,
             "review": "the color on the site has neutral beige / brown tones , unfortunately , in person the color is all gray . don ' t buy if you ' re expecting anything other than bland gray . will be returning immediately .",
             "pred": [
                 [
@@ -4864,7 +4864,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.38461538461538464,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.8102564102564103,
+            "avg partial local IoU": 0.8102564102564103,
             "review": "i really like how comfortable these shoes are ! ! ! i would get them in all colors .",
             "pred": [
                 [
@@ -4914,7 +4914,7 @@
             "sentiment local IoU": 0.6666666666666666,
             "opinion local IoU": 0.6875,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.4930555555555555,
+            "avg partial local IoU": 0.4930555555555555,
             "review": "still look cool , but not what they used to be . quality has lowered significantly\u2014bummer . plus sizing has changed . i ' ve always been a good snug 7 . 5 in these and now the 7 . 5 is too small and the 8 is too big . these are just built differently now and i ' m so sad : (",
             "pred": [
                 [
@@ -5020,7 +5020,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.8571428571428571,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.838095238095238,
+            "avg partial local IoU": 0.838095238095238,
             "review": "these sneakers look great and feel so comfy . they fit perfect .",
             "pred": [
                 [
@@ -5077,7 +5077,7 @@
             "sentiment local IoU": 0.5,
             "opinion local IoU": 0.9444444444444444,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.6022222222222222,
+            "avg partial local IoU": 0.6022222222222222,
             "review": "the color on the site has neutral beige / brown tones , unfortunately , in person the color is all gray . don ' t buy if you ' re expecting anything other than bland gray . will be returning immediately .",
             "pred": [
                 [
@@ -5169,7 +5169,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.5454545454545454,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.7424242424242424,
+            "avg partial local IoU": 0.7424242424242424,
             "review": "i ' ve worn these shoes so many times ! they ' re true to size , comfortable and fly . perfect fall colors . the top was a bit uncomfortable without socks , but jist wear socks . : )",
             "pred": [
                 [
@@ -5268,7 +5268,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.5,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.7333333333333333,
+            "avg partial local IoU": 0.7333333333333333,
             "review": "am returning them and will not be buying these cheap shoes anymore . sure don ' t make them like you use to ! ! ! !",
             "pred": [
                 [
@@ -5318,7 +5318,7 @@
             "sentiment local IoU": 0.3333333333333333,
             "opinion local IoU": 0.5555555555555556,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.6444444444444445,
+            "avg partial local IoU": 0.6444444444444445,
             "review": "but i ' d rather have the classic in leather . i would buy many pairs .",
             "pred": [
                 [
@@ -5368,7 +5368,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.5217391304347826,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.9043478260869566,
+            "avg partial local IoU": 0.9043478260869566,
             "review": "every time i put them on i feel like i can run a marathon . one of the most best fitting shoes i have true to size",
             "pred": [
                 [
@@ -5418,7 +5418,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 1.0,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 1.0,
+            "avg partial local IoU": 1.0,
             "review": "i really enjoy these shoes . they ' re pretty comfortable to wear all day and i really like the classic style . would recommend",
             "pred": [
                 [
@@ -5489,7 +5489,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.9583333333333334,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.8916666666666668,
+            "avg partial local IoU": 0.8916666666666668,
             "review": "tried returning my shoes because they were too big but i wasn ' t able to because the website didn ' t let me",
             "pred": [
                 [
@@ -5532,7 +5532,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.9310344827586207,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.6862068965517241,
+            "avg partial local IoU": 0.6862068965517241,
             "review": "the size is a half size smaller then what i wear . next time i will need to order a 6 1 / 2 instead of my normal size 6\u2026",
             "pred": [
                 [
@@ -5582,7 +5582,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.6428571428571429,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.8085714285714285,
+            "avg partial local IoU": 0.8085714285714285,
             "review": "it gets dirty easily but quality is good . they are comfortable and has a great design .",
             "pred": [
                 [
@@ -5653,7 +5653,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.42857142857142855,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.569047619047619,
+            "avg partial local IoU": 0.569047619047619,
             "review": "comfortable and timeless . if you ' re looking for a super comfortable pairs of kicks . , the classic is the way to go .",
             "pred": [
                 [
@@ -5724,7 +5724,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.8461538461538461,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.7192307692307692,
+            "avg partial local IoU": 0.7192307692307692,
             "review": "this is my 5th pair of classics . i ' ll be buying another pair soon",
             "pred": [
                 [
@@ -5767,7 +5767,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.6857142857142857,
             "implicit indicator local IoU": 0.0,
-            "partial avg local IoU": 0.5704761904761906,
+            "avg partial local IoU": 0.5704761904761906,
             "review": "i ordered my size but for me they run small . i wore them just to see if i could break them in . . . i wouldn ' t advise that ! so give yourself some wiggle room and order the 1 / 2 .",
             "pred": [
                 [
@@ -5845,7 +5845,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.5,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.6666666666666666,
+            "avg partial local IoU": 0.6666666666666666,
             "review": "way too narrow by the toes . i ' m reliably a size six and these didn ' t fit me . : (",
             "pred": [
                 [
@@ -5895,7 +5895,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.8125,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.8625,
+            "avg partial local IoU": 0.8625,
             "review": "i like the shoe itself and want to keep it . but it is too small and i can ' t find my order number to exchange it",
             "pred": [
                 [
@@ -5952,7 +5952,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.27586206896551724,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.5451724137931034,
+            "avg partial local IoU": 0.5451724137931034,
             "review": "the shoes look amazing but the durability just isn ' t there . if you have long toe nails they will poke right through the cheap material along your toe .",
             "pred": [
                 [
@@ -6009,7 +6009,7 @@
             "sentiment local IoU": 0.5,
             "opinion local IoU": 0.8,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.76,
+            "avg partial local IoU": 0.76,
             "review": "when i put this shoe on my foot it fit , it just didn ' t feel comfortable . it was too narrow , i could feel my foot falling off on the sides .",
             "pred": [
                 [
@@ -6073,7 +6073,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.15,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.73,
+            "avg partial local IoU": 0.73,
             "review": "i ' m truly a size 8 but that size here was a bit tight . i would probably size up next time .",
             "pred": [
                 [
@@ -6116,7 +6116,7 @@
             "sentiment local IoU": 0.6666666666666666,
             "opinion local IoU": 0.3877551020408163,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.8108843537414966,
+            "avg partial local IoU": 0.8108843537414966,
             "review": "i have been wearing these for years ! i use to always get an 8 1 / 2 ( women ' s ) but i got a 9 this time and they were really tight on my feet . so i ' d recommend going up at least a half size",
             "pred": [
                 [
@@ -6173,7 +6173,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.4666666666666667,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.8600000000000001,
+            "avg partial local IoU": 0.8600000000000001,
             "review": "the shoes are beautiful , i love them , the color is amazing , the quality is good , but i ordered the size according to the length in the sizes and are 1 cm larger than the description . i did not return them , because i worn them before realizing that they were that big and i put the box in the garbage .",
             "pred": [
                 [
@@ -6272,7 +6272,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.16666666666666666,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.7533333333333333,
+            "avg partial local IoU": 0.7533333333333333,
             "review": "i love the look and style of this shoe but i think they can do a little better with the quality of it . i also had to buy a half size larger they run small .",
             "pred": [
                 [
@@ -6343,7 +6343,7 @@
             "sentiment local IoU": 0.6666666666666666,
             "opinion local IoU": 0.5263157894736842,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.5719298245614035,
+            "avg partial local IoU": 0.5719298245614035,
             "review": "i typically wear a standard to slightly narrow width . this shoe is extremely narrow , making it unwearable for me . i believe the quality is very good , just to narrow .",
             "pred": [
                 [
@@ -6421,7 +6421,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.8571428571428571,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.6714285714285715,
+            "avg partial local IoU": 0.6714285714285715,
             "review": "shoe is shorter & narrower than stated size . order at least half size larger than usual .",
             "pred": [
                 [
@@ -6478,7 +6478,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.4838709677419355,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.7324884792626729,
+            "avg partial local IoU": 0.7324884792626729,
             "review": "shoes are comfortable and very versatile . the sizing runs small so i had to exchange for a half size up . but after wearing these shoes twice , the upper leather ripped ! i am disappointed in the quality and had high expectations .",
             "pred": [
                 [
@@ -6563,7 +6563,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 1.0,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.9,
+            "avg partial local IoU": 0.9,
             "review": "shoe is shorter & narrower than stated size . order at least half size larger than usual .",
             "pred": [
                 [
@@ -6613,7 +6613,7 @@
             "sentiment local IoU": 0.5,
             "opinion local IoU": 0.5777777777777777,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.606031746031746,
+            "avg partial local IoU": 0.606031746031746,
             "review": "if you have even the slightest bit of width to your foot , do not buy these . i would consider my foot slightly wide , often not even having to buy the wide version of shoes . however , the balls of my feet completely bulged out of the side of the sole on these shoes . these are the most narrow shoes i have ever tried on in my life . also , your \" print label \" button on your return site doesn ' t work .",
             "pred": [
                 [
@@ -6677,7 +6677,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.3142857142857143,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.5295238095238095,
+            "avg partial local IoU": 0.5295238095238095,
             "review": "shoes are comfortable and very versatile . the sizing runs small so i had to exchange for a half size up . but after wearing these shoes twice , the upper leather ripped ! i am disappointed in the quality and had high expectations .",
             "pred": [
                 [
@@ -6776,7 +6776,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.9090909090909091,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.8151515151515152,
+            "avg partial local IoU": 0.8151515151515152,
             "review": "too tight and uncomfortable . tried cushions , still not so good .",
             "pred": [
                 [
@@ -6833,7 +6833,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.26666666666666666,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.6533333333333333,
+            "avg partial local IoU": 0.6533333333333333,
             "review": "i ' m truly a size 8 but that size here was a bit tight . i would probably size up next time .",
             "pred": [
                 [
@@ -6876,7 +6876,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.6857142857142857,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.6371428571428572,
+            "avg partial local IoU": 0.6371428571428572,
             "review": "as someone with a kind of wide foot , i really wanted this shoe to fit because i love the look ! reebok is a go - to brand for me because their shoes often fit my wide feet well in a way other brands don ' t . however , this shoe is a lot narrower than reebok ' s other offerings , so i wouldn ' t recommend it if you have wide feet . but it is a very cute shoe so i recommend it otherwise !",
             "pred": [
                 [
@@ -6968,7 +6968,7 @@
             "sentiment local IoU": 0.5,
             "opinion local IoU": 0.918918918918919,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.642117117117117,
+            "avg partial local IoU": 0.642117117117117,
             "review": "the color on the site has neutral beige / brown tones , unfortunately , in person the color is all gray . don ' t buy if you ' re expecting anything other than bland gray . will be returning immediately .",
             "pred": [
                 [
@@ -7060,7 +7060,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.75,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.725,
+            "avg partial local IoU": 0.725,
             "review": "there were a christmas gift to someone . she loves the color ( red ) . says they fit very nicely . she ' s on her feet for long stretches for work . said there is a bit of break - in period , probably because how different the reds are to the others . she wants more now . of course she does .",
             "pred": [
                 [
@@ -7152,7 +7152,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.8888888888888888,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.9777777777777779,
+            "avg partial local IoU": 0.9777777777777779,
             "review": "great shoes . bought this for my uncle . he love them .",
             "pred": [
                 [
@@ -7209,7 +7209,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.84,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.6679999999999999,
+            "avg partial local IoU": 0.6679999999999999,
             "review": "i ordered them thinking it was ok not to try them on first because they were reeboks , i was wrong . i am going to exchange them for another pair though because they are reeboks ! i do love the brand .",
             "pred": [
                 [
@@ -7266,7 +7266,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.8571428571428571,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.9047619047619048,
+            "avg partial local IoU": 0.9047619047619048,
             "review": "shoe is shorter & narrower than stated size . order at least half size larger than usual .",
             "pred": [
                 [
@@ -7330,7 +7330,7 @@
             "sentiment local IoU": 0.6666666666666666,
             "opinion local IoU": 1.0,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.8,
+            "avg partial local IoU": 0.8,
             "review": "i honestly wanted super pleased with the overall quality of the shoe . the sound it makes on the floor is odd . very noisy . bought these + 1 extra for someone , and these could of been engineer a little better",
             "pred": [
                 [
@@ -7436,7 +7436,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.9130434782608695,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.8826086956521738,
+            "avg partial local IoU": 0.8826086956521738,
             "review": "i have always liked this style but when you said they where leather , i think you should say they are leather and manmade .",
             "pred": [
                 [
@@ -7479,7 +7479,7 @@
             "sentiment local IoU": 0.0,
             "opinion local IoU": 1.0,
             "implicit indicator local IoU": 0.0,
-            "partial avg local IoU": 0.2,
+            "avg partial local IoU": 0.2,
             "review": "you want go wrong with this shoe try it and u want be disappointed",
             "pred": [
                 [
@@ -7508,7 +7508,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.4307692307692308,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.7528205128205128,
+            "avg partial local IoU": 0.7528205128205128,
             "review": "these are definitely going to be some of my most worn shoes of the spring and summer . they ' re so cute and go with so much . i don ' t usually have a problem with width with shoes , but i thought this pair was a little small at firet because they were a bit tighter width wise . so if you have wide feet i probably would not recommend you buy these .",
             "pred": [
                 [
@@ -7593,7 +7593,7 @@
             "sentiment local IoU": 0.3333333333333333,
             "opinion local IoU": 0.6428571428571429,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.5619047619047619,
+            "avg partial local IoU": 0.5619047619047619,
             "review": "i have probably had thirty or forty pairs of this model of reebok through the years . this pair isn ' t comfortable , so i have given up wearing them . i ' m wearing an old pair .",
             "pred": [
                 [
@@ -7650,7 +7650,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.20754716981132076,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.5748427672955975,
+            "avg partial local IoU": 0.5748427672955975,
             "review": "i think i need to go up 1 / 2 a size because it ' s pinching my toes just a bit , or i really need a wide . but with that in mind it really made my feet happy . love the leather upper for a clean and durable look . going to keep these and try a different model",
             "pred": [
                 [
@@ -7721,7 +7721,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 1.0,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.8800000000000001,
+            "avg partial local IoU": 0.8800000000000001,
             "review": "i ' ve been wanting them again for a long time . i used to use them at high school and i saw them as a reminder of that time , but now that i got them i didn ' t remember how comfortable they were ! ! i just love them ! !",
             "pred": [
                 [
@@ -7792,7 +7792,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.92,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.784,
+            "avg partial local IoU": 0.784,
             "review": "the shoe fits a bit small and is pretty stiff for having such a large wedge bottom . i love the colors but honestly it looks and feels a little cheap .",
             "pred": [
                 [
@@ -7870,7 +7870,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.5217391304347826,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.7543478260869565,
+            "avg partial local IoU": 0.7543478260869565,
             "review": "i love the look and style of this shoe but i think they can do a little better with the quality of it . i also had to buy a half size larger they run small .",
             "pred": [
                 [
@@ -7934,7 +7934,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.8125,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.9225,
+            "avg partial local IoU": 0.9225,
             "review": "great looking shoes , but if you have wider feet do not buy . they burned my toes the entire time walking in them . i had to send back for a refund after wearing . they were unbearable .",
             "pred": [
                 [
@@ -8019,7 +8019,7 @@
             "sentiment local IoU": 0.0,
             "opinion local IoU": 0.7586206896551724,
             "implicit indicator local IoU": 0.0,
-            "partial avg local IoU": 0.5517241379310345,
+            "avg partial local IoU": 0.5517241379310345,
             "review": "the size is a half size smaller then what i wear . next time i will need to order a 6 1 / 2 instead of my normal size 6\u2026",
             "pred": [
                 [
@@ -8069,7 +8069,7 @@
             "sentiment local IoU": 0.3333333333333333,
             "opinion local IoU": 0.3333333333333333,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.3419047619047619,
+            "avg partial local IoU": 0.3419047619047619,
             "review": "i purchased these shoes bacon they were exactly like my last pair of reebok classics i bought but they are slightly different the stitching is different that sound feel is different and they just didn ' t feel like the classic running shoes that i had before so i sent them back and order me a pair a reebok classic running instead of these reeboks",
             "pred": [
                 [
@@ -8147,7 +8147,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.35294117647058826,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.7105882352941177,
+            "avg partial local IoU": 0.7105882352941177,
             "review": "this is a classic sneaker a must have for the collection . there is a wide array of colors to pick from .",
             "pred": [
                 [
@@ -8204,7 +8204,7 @@
             "sentiment local IoU": 0.5,
             "opinion local IoU": 0.7619047619047619,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.5523809523809524,
+            "avg partial local IoU": 0.5523809523809524,
             "review": "only 1 pair of wide width shoe in the entire store . i returned my mail order to closest finish line store . i will never order again .",
             "pred": [
                 [
@@ -8261,7 +8261,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.7142857142857143,
             "implicit indicator local IoU": 1.0,
-            "partial avg local IoU": 0.8428571428571429,
+            "avg partial local IoU": 0.8428571428571429,
             "review": "love this shoe . it ' s one of my all - time favorite classic shoes .",
             "pred": [
                 [
@@ -8304,7 +8304,7 @@
             "sentiment local IoU": 0.6666666666666666,
             "opinion local IoU": 0.8571428571428571,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.7547619047619047,
+            "avg partial local IoU": 0.7547619047619047,
             "review": "it ' s a great shoes but need different size . i recommend it",
             "pred": [
                 [
@@ -8368,7 +8368,7 @@
             "sentiment local IoU": 0.5,
             "opinion local IoU": 0.7619047619047619,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.5523809523809524,
+            "avg partial local IoU": 0.5523809523809524,
             "review": "only 1 pair of wide width shoe in the entire store . i returned my mail order to closest finish line store . i will never order again .",
             "pred": [
                 [
@@ -8425,7 +8425,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 0.2903225806451613,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.4666359447004608,
+            "avg partial local IoU": 0.4666359447004608,
             "review": "i bought a pair of the red - all leather variety and they are my favs to date . still wear them all the time after over a year of almost daily use .",
             "pred": [
                 [
@@ -8496,7 +8496,7 @@
             "sentiment local IoU": 0.6666666666666666,
             "opinion local IoU": 0.9090909090909091,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.7151515151515151,
+            "avg partial local IoU": 0.7151515151515151,
             "review": "comfy sneaker . would order a half size bigger . already purchased another pair !",
             "pred": [
                 [
@@ -8560,7 +8560,7 @@
             "sentiment local IoU": 1.0,
             "opinion local IoU": 1.0,
             "implicit indicator local IoU": 0.5,
-            "partial avg local IoU": 0.85,
+            "avg partial local IoU": 0.85,
             "review": "these kicks are extremely comfortable and can be worn with a variety of styles . these are my new favorites .",
             "pred": [
                 [

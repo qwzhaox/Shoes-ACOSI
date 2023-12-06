@@ -15,6 +15,10 @@ def indexify(review, span):
 def indexify_spans(annotation, review, idx):
     indexified_list = []
     for quad in annotation:
-        quad[idx] = indexify(review, quad[idx])
-        indexified_list.extend(quad[idx])
+        indexified_span = indexify(review, quad[idx])
+        indexified_list.extend(indexified_span)
+        try:
+            quad[idx] = indexified_span
+        except TypeError:
+            continue
     return indexified_list

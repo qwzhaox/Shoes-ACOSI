@@ -2,7 +2,7 @@ import argparse
 import json
 from itertools import combinations
 from copy import deepcopy
-from utils.metrics_util import indexify, indexify_spanss
+from utils.metrics_util import indexify, indexify_spans
 
 ASPECT = 0
 CATEGORY = 1

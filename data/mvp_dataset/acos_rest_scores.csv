@@ -1,7 +1,7 @@
-,precision,recall,f1-score,global IoU,avg local IoU
-exact,60.156,58.843,59.492,42.341,56.01
-aspect,86.26,84.565,85.404,74.526,85.045
-category,83.721,83.379,83.549,71.747,81.718
-sentiment,90.127,90.705,90.415,82.507,89.737
-opinion,78.936,83.187,81.006,68.076,81.038
-avg partial,84.761,85.459,85.094,74.214,84.385
+	precision	recall	f1-score
+exact	60.156	58.843	59.492
+aspect	86.26	84.565	85.404
+category	83.721	83.379	83.549
+sentiment	90.127	90.705	90.415
+opinion	78.936	83.187	81.006
+avg partial	84.761	85.459	85.094

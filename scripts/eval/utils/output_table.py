@@ -18,12 +18,13 @@ with open(args.input_file, "r") as f:
 
 # Create a DataFrame from the JSON data
 df = pd.DataFrame(json_data).T * 100
+df = df.drop(columns=["global IoU", "avg local IoU"])
 
 # Truncate values to 3-4 significant figures
 df = df.round(3)
 
 # Save the DataFrame to a CSV file
 print(df)
-df.to_csv(args.output_file)
+df.to_csv(args.output_file, sep="\t")
 
 print(f"Data saved to {args.output_file}")

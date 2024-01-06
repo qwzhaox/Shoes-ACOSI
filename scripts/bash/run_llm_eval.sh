@@ -1,12 +1,19 @@
 #!/bin/bash
 
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <model_dir>"
+    exit 1
+fi
+
+model_dir="$1"
+
 # Define paths
-pkl_path="../EECS595Project/data/model_output/meta-llama/"
+pkl_path="../EECS595Project/data/model_output/$model_dir/"
 dataset_path="../EECS595Project/data/"
-output_base_path="../EECS595Project/data/eval_output/meta-llama/"
+output_base_path="../EECS595Project/data/eval_output/$model_dir/"
 
 # Find all .pkl files
-pkl_files=$(find "$pkl_path" -name "*.pkl")
+pkl_files=$(find "$pkl_path" -wholename "*/$model_dir/*.pkl")
 
 # Loop through each .pkl file
 for pkl_file in $pkl_files; do

@@ -172,4 +172,5 @@ elif args.t5_output:
     scores = evaluate_t5_outputs.get_scores()
 
 with open(args.output_file, "w") as file:
+    print(scores)
     json.dump(scores, file, indent=4)

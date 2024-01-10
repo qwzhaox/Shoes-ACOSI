@@ -4,6 +4,7 @@ from json import load
 ASPECT_IDX = 0
 CATEGORY_IDX = 1
 OPINION_IDX = 3
+IMPLICIT_INDICATOR_IDX = 4
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-i", "--input_file", help="input json file", required=True)
@@ -30,6 +31,11 @@ parser.add_argument(
     "--is_mvp",
     action="store_true",
 )
+parser.add_argument(
+    "-acos",
+    "--make_acos",
+    action="store_true",
+)
 
 args = parser.parse_args()
 
@@ -48,6 +54,12 @@ def get_str_list(reviews):
             for i, a in enumerate(annot):
                 annot[i] = a.lower()
 
+            if args.make_acos:
+                if annot[IMPLICIT_INDICATOR_IDX].lower() == "indirect":
+                    annot[OPINION_IDX] = "NULL"
+
+                del annot[IMPLICIT_INDICATOR_IDX]
+
             if args.is_mvp:
                 annot[CATEGORY_IDX] = (
                     annot[CATEGORY_IDX]
@@ -55,7 +67,8 @@ def get_str_list(reviews):
                     .replace("/", "_")
                     .replace("\\_", "_")
                 )
-            if annot[ASPECT_IDX] == "implicit":
+
+            if annot[ASPECT_IDX].lower() == "implicit":
                 annot[ASPECT_IDX] = "NULL"
 
         review_str = rev["review"]

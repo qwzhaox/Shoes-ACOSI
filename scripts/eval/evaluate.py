@@ -46,11 +46,7 @@ class Evaluator:
             dataset = file.readlines()
 
         self.reviews = [x.split("####")[0] for x in dataset]
-
-        self.raw_true_outputs = [eval(x.split("####")[1]) for x in dataset]
-        self.true_outputs = []
-        for output in self.raw_true_outputs:
-            self.true_outputs.append([tuple(quint) for quint in output])
+        self.set_true_outputs(dataset)
 
         self.precision = 0
         self.recall = 0
@@ -73,6 +69,25 @@ class Evaluator:
         self.partial_global_IoU = [0] * self.tuple_len
         self.partial_local_IoU = [[]] * self.tuple_len
         self.partial_avg_local_IoU = [0] * self.tuple_len
+
+    def set_true_outputs(self, dataset):
+        raw_true_outputs = [eval(x.split("####")[1]) for x in dataset]
+        self.true_outputs = []
+        for output in raw_true_outputs:
+            list_of_tuples = []
+            for quint in output:
+                if (
+                    quint[ASPECT_IDX].lower() == "null"
+                    or quint[ASPECT_IDX].lower() == "implicit"
+                ):
+                    quint[ASPECT_IDX] = "NULL"
+                if (
+                    quint[OPINION_IDX] == "null"
+                    or quint[OPINION_IDX].lower() == "implicit"
+                ):
+                    quint[OPINION_IDX] = "NULL"
+                list_of_tuples.append(tuple(quint))
+            self.true_outputs.append(list_of_tuples)
 
     def calc_exact_scores(self):
         (
@@ -172,5 +187,4 @@ elif args.t5_output:
     scores = evaluate_t5_outputs.get_scores()
 
 with open(args.output_file, "w") as file:
-    print(scores)
     json.dump(scores, file, indent=4)

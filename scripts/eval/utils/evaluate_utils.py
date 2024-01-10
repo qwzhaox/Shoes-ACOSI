@@ -61,8 +61,11 @@ def extract_spans(seq, seq_type, output_type, sentiment_dict={}, category_dict={
                 sp = sentiment_dict[sp]
                 ac = category_dict[ac]
 
-            if ac == "null":
-                ac = "NULL"
+            if at.lower() == "null" or at.lower() == "implicit":
+                at = "NULL"
+            if ot.lower() == "null" or ot.lower() == "implicit":
+                ot = "NULL"
+
             at = clean_punctuation(at)
             ot = clean_punctuation(ot)
 

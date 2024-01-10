@@ -34,6 +34,9 @@ for pkl_file in $pkl_files; do
         dataset_file+="acos/"
     elif [ "$task" == "acosi-extract" ]; then
         dataset_file+="acosi/"
+    else
+        echo "Invalid task: $task"
+        continue
     fi
     dataset_file+="$dataset/toy.txt"
     echo "dataset file: $dataset_file"

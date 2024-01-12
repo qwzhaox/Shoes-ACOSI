@@ -23,7 +23,7 @@ def clean_punctuation(words):
     return words
 
 
-def extract_spans(seq, seq_type, output_type, sentiment_dict={}, category_dict={}):
+def extract_spans_para(seq, seq_type, output_type, sentiment_dict={}, category_dict={}):
     quints = []
     sents = [s.strip() for s in seq.split("[SSEP]")]
     for s in sents:
@@ -57,17 +57,17 @@ def extract_spans(seq, seq_type, output_type, sentiment_dict={}, category_dict={
 
             if output_type == "mvp":
                 if at.lower() == "it":
-                    at = "null"
+                    at = "NULL"
                 sp = sentiment_dict[sp]
                 ac = category_dict[ac]
+
+            at = clean_punctuation(at)
+            ot = clean_punctuation(ot)
 
             if at.lower() == "null" or at.lower() == "implicit":
                 at = "NULL"
             if ot.lower() == "null" or ot.lower() == "implicit":
                 ot = "NULL"
-
-            at = clean_punctuation(at)
-            ot = clean_punctuation(ot)
 
             quints.append((at, ac.lower(), sp, ot, ie))
 
@@ -98,8 +98,10 @@ def listify_outputs(outputs, idx):
 
 def get_precision_recall_fl_IoU(pred_outputs, true_outputs):
     n_tp, n_fp, n_fn, n_union = 0, 0, 0, 0
+    num_empty = 0
 
-    local_IoU = []
+    numerical_micro_IoU = []
+    micro_IoU = []
     for i in range(len(pred_outputs)):
         pred_set = set(pred_outputs[i])
         true_set = set(true_outputs[i])
@@ -113,11 +115,24 @@ def get_precision_recall_fl_IoU(pred_outputs, true_outputs):
         n_fp += len(pred_set - true_set)
         n_fn += len(true_set - pred_set)
 
-        local_IoU.append(float(num_intersection) / num_union if num_union != 0 else 0)
+        if len(pred_set) == 0 and len(true_set) == 0:
+            num_empty += 1
+
+            numerical_micro_IoU.append(0)
+            micro_IoU.append(None)
+        else:
+            assert num_union != 0
+
+            numerical_micro_IoU.append(float(num_intersection) / num_union)
+            micro_IoU.append(float(num_intersection) / num_union)
 
     precision = float(n_tp) / (n_tp + n_fp) if n_tp + n_fp != 0 else 0
     recall = float(n_tp) / (n_tp + n_fn) if n_tp + n_fn != 0 else 0
     f1 = 2 * precision * recall / (precision + recall) if precision + recall != 0 else 0
-    global_IoU = float(n_tp) / n_union if n_union != 0 else 0
-    avg_local_IoU = sum(local_IoU) / len(local_IoU)
-    return precision, recall, f1, global_IoU, local_IoU, avg_local_IoU
+    macro_IoU = float(n_tp) / n_union if n_union != 0 else 0
+    avg_micro_IoU = (
+        sum(numerical_micro_IoU) / (len(numerical_micro_IoU) - num_empty)
+        if len(numerical_micro_IoU) - num_empty != 0
+        else 0
+    )
+    return precision, recall, f1, macro_IoU, micro_IoU, avg_micro_IoU

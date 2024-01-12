@@ -1,7 +1,7 @@
 import pickle
 import json
 from collections import Counter
-from utils.evaluate_utils import extract_spans
+from utils.evaluate_utils import extract_spans_para
 
 sentiment_dict = {"great": "positive", "ok": "neutral", "bad": "negative"}
 
@@ -23,7 +23,7 @@ def get_mvp_output(pkl_file, category_file, num_path=5):
         all_quints = []
         for s in multi_outputs:
             all_quints.extend(
-                extract_spans(
+                extract_spans_para(
                     seq=s,
                     seq_type="pred",
                     output_type="mvp",

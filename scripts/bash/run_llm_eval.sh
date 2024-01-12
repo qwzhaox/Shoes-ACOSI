@@ -24,15 +24,16 @@ for pkl_file in $pkl_files; do
     dataset=${path_array[7]}
 
     # Skip if task is "acos-extend"
-    if [ "$task" == "acos-extend" ]; then
+    if [ "$task" == "acos-extend" ] && ( [ "$dataset" == "rest" ] || [ "$dataset" == "laptop" ] ); then
         continue
     fi
+
 
     # Construct dataset file path
     dataset_file="$dataset_path"
     if [ "$task" == "acos-extract" ]; then
         dataset_file+="acos/"
-    elif [ "$task" == "acosi-extract" ]; then
+    elif [[ "$task" == "acosi-extract"  || "$task" == "acos-extend" ]]; then
         dataset_file+="acosi/"
     else
         echo "Invalid task: $task"
@@ -50,5 +51,11 @@ for pkl_file in $pkl_files; do
     mkdir -p "$output_path" && touch "$output_file"
 
     # Run evaluation script
-    python3 scripts/eval/evaluate.py --dataset_file="$dataset_file" --pkl_file="$pkl_file" --output_file="$output_file" -llm
+    if [ "$task" == "acos-extend" ]; then
+        python3 scripts/eval/evaluate.py --dataset_file="$dataset_file" --pkl_file="$pkl_file" --output_file="$output_file" --task="acos-extend" -llm
+    elif [ "$task" == "acos-extract" ]; then
+        python3 scripts/eval/evaluate.py --dataset_file="$dataset_file" --pkl_file="$pkl_file" --output_file="$output_file" --task="acos-extract" -llm
+    else
+        python3 scripts/eval/evaluate.py --dataset_file="$dataset_file" --pkl_file="$pkl_file" --output_file="$output_file" --task="acosi-extract" -llm
+    fi
 done

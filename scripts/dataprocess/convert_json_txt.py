@@ -36,6 +36,11 @@ parser.add_argument(
     "--make_acos",
     action="store_true",
 )
+parser.add_argument(
+    "-acosi",
+    "--make_acosi",
+    action="store_true",
+)
 
 args = parser.parse_args()
 

@@ -32,6 +32,11 @@ parser.add_argument(
     action="store_true",
 )
 parser.add_argument(
+    "-gen_scl_nat",
+    "--is_gen_scl_nat",
+    action="store_true",
+)
+parser.add_argument(
     "-acos",
     "--make_acos",
     action="store_true",
@@ -72,6 +77,8 @@ def get_str_list(reviews):
                     .replace("/", "_")
                     .replace("\\_", "_")
                 )
+            if args.is_gen_scl_nat:
+                annot[CATEGORY_IDX] = annot[CATEGORY_IDX].upper()
 
             if annot[ASPECT_IDX].lower() == "implicit":
                 annot[ASPECT_IDX] = "NULL"

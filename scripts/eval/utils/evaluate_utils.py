@@ -1,5 +1,6 @@
 import re
 import numpy as np
+from itertools import combinations
 from string import punctuation
 from utils.metrics_util import indexify_spans
 
@@ -10,8 +11,14 @@ OPINION_IDX = 3
 IMPLICIT_IND_IDX = 4
 
 IDX_LIST = [ASPECT_IDX, CATEGORY_IDX, SENTIMENT_IDX, OPINION_IDX, IMPLICIT_IND_IDX]
-TERM_LIST = ["aspect", "category", "sentiment", "opinion", "implicit indicator"]
+TERM_LIST = ["aspect", "category", "sentiment", "opinion", "implicit_indicator"]
 
+NUM_SPANS = 2
+SPAN_IDX = {ASPECT_IDX: 0, OPINION_IDX: 1}
+
+COMBOS = []
+for i in range(2, len(IDX_LIST)):
+    COMBOS += list(combinations(IDX_LIST, i))
 
 def clean_punctuation(words):
     punc = re.compile(f"[{re.escape(punctuation)}]")
@@ -94,6 +101,19 @@ def indexify_outputs(reviews, outputs, idx):
 
 def listify_outputs(outputs, idx):
     return [[quint[idx] for quint in annotation] for annotation in outputs]
+
+
+def comboify_outputs(outputs, combo):
+    new_outputs = []
+    for annotation in outputs:
+        new_annotation = []
+        for quint in annotation:
+            new_tuple = []
+            for idx in combo:
+                new_tuple.append(quint[idx])
+            new_annotation.append(tuple(new_tuple))
+        new_outputs.append(new_annotation)              
+    return new_outputs
 
 
 def get_precision_recall_fl_IoU(pred_outputs, true_outputs):

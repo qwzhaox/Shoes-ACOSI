@@ -48,6 +48,11 @@ do
         fi
 
         # Process the file (e.g., copy to output directory)
-        python3 scripts/eval/evaluate.py --dataset_file=data/acos_dataset/$dataset/test.txt --pkl_file="$file" --output_file="${output_directory}${output_filename}" --task=acos-extract --category_file="data/mvp_dataset/${category_dict}" -mvp
+
+        if [[ $file == *"acosi"* ]]; then
+            python3 scripts/eval/evaluate.py --dataset_file=data/main_dataset/test.txt --pkl_file="$file" --output_file="${output_directory}${output_filename}" --task=acosi-extract --category_file="data/mvp_dataset/${category_dict}" -mvp
+        else
+            python3 scripts/eval/evaluate.py --dataset_file=data/acos_dataset/$dataset/test.txt --pkl_file="$file" --output_file="${output_directory}${output_filename}" --task=acos-extract --category_file="data/mvp_dataset/${category_dict}" -mvp
+        fi
     fi
 done

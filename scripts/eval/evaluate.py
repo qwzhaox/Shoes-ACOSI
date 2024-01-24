@@ -1,22 +1,24 @@
 import json
 import argparse
+from statistics import mean, median, stdev
 from utils.evaluate_utils import (
     ASPECT_IDX,
     OPINION_IDX,
     IMPLICIT_IND_IDX,
     IDX_LIST,
     TERM_LIST,
+    NUM_SPANS,
+    SPAN_IDX,
+    COMBOS,
     indexify_outputs,
     listify_outputs,
+    comboify_outputs,
     get_precision_recall_fl_IoU,
 )
 from utils.mvp_evaluate import get_mvp_output
 from utils.llm_evaluate import get_llm_output
 from utils.t5_evaluate import get_t5_output
 
-"""
-py evaluate.py -t5 -p '../data/t5_output/predictions.pickle' -o '../data/t5_output/scores.json'
-"""
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "-d", "--dataset_file", type=str, default="data/main_dataset/test.txt"
@@ -53,16 +55,35 @@ class Evaluator:
         with open(args.dataset_file, "r") as file:
             dataset = file.readlines()
 
+        self.__set_outputs(dataset)
+        self.__set_tuple_len_according_to_task()
+        self.__init_exact_scores()
+        self.__init_partial_scores()
+        self.__init_combo_scores()
+
+
+    def __set_outputs(self, dataset):
         self.reviews = [x.split("####")[0] for x in dataset]
-        self.__set_true_outputs(dataset)
 
-        self.precision = 0
-        self.recall = 0
-        self.f1 = 0
-        self.macro_IoU = 0
-        self.micro_IoU = []
-        self.avg_micro_IoU = 0
+        raw_true_outputs = [eval(x.split("####")[1]) for x in dataset]
+        self.true_outputs = []
+        for output in raw_true_outputs:
+            list_of_tuples = []
+            for quint in output:
+                if (
+                    quint[ASPECT_IDX].lower() == "null"
+                    or quint[ASPECT_IDX].lower() == "implicit"
+                ):
+                    quint[ASPECT_IDX] = "NULL"
+                if (
+                    quint[OPINION_IDX] == "null"
+                    or quint[OPINION_IDX].lower() == "implicit"
+                ):
+                    quint[OPINION_IDX] = "NULL"
+                list_of_tuples.append(tuple(quint))
+            self.true_outputs.append(list_of_tuples)
 
+    def __set_tuple_len_according_to_task(self):
         if args.task == "acos-extend" or args.task == "acosi-extract":
             self.tuple_len = len(TERM_LIST)
         elif args.task == "acos-extract":
@@ -75,12 +96,36 @@ class Evaluator:
                 new_pred_outputs.append(annotation)
             self.pred_outputs = new_pred_outputs
 
+    def __init_exact_scores(self):
+        self.precision = 0
+        self.recall = 0
+        self.f1 = 0
+        self.macro_IoU = 0
+        self.micro_IoU = []
+        self.avg_micro_IoU = 0
+
+    def __init_partial_scores(self):
         self.partial_precision = [0] * self.tuple_len
         self.partial_recall = [0] * self.tuple_len
         self.partial_f1 = [0] * self.tuple_len
         self.partial_macro_IoU = [0] * self.tuple_len
         self.partial_micro_IoU = [[]] * self.tuple_len
         self.partial_avg_micro_IoU = [0] * self.tuple_len
+
+        self.partial_span_precision = [0] * NUM_SPANS
+        self.partial_span_recall = [0] * NUM_SPANS
+        self.partial_span_f1 = [0] * NUM_SPANS
+        self.partial_span_macro_IoU = [0] * NUM_SPANS
+        self.partial_span_micro_IoU = [[]] * NUM_SPANS
+        self.partial_span_avg_micro_IoU = [0] * NUM_SPANS
+
+    def __init_combo_scores(self):
+        self.combo_precision = [0] * len(COMBOS)
+        self.combo_recall = [0] * len(COMBOS)
+        self.combo_f1 = [0] * len(COMBOS)
+        self.combo_macro_IoU = [0] * len(COMBOS)
+        self.combo_micro_IoU = [[]] * len(COMBOS)
+        self.combo_avg_micro_IoU = [0] * len(COMBOS)
 
     def __remove_direct_opinions(self):
         pred_outputs_remove_direct_opinion = []
@@ -101,24 +146,17 @@ class Evaluator:
         self.pred_outputs = pred_outputs_remove_direct_opinion
         self.true_outputs = true_outputs_remove_direct_opinion
 
-    def __set_true_outputs(self, dataset):
-        raw_true_outputs = [eval(x.split("####")[1]) for x in dataset]
-        self.true_outputs = []
-        for output in raw_true_outputs:
-            list_of_tuples = []
-            for quint in output:
-                if (
-                    quint[ASPECT_IDX].lower() == "null"
-                    or quint[ASPECT_IDX].lower() == "implicit"
-                ):
-                    quint[ASPECT_IDX] = "NULL"
-                if (
-                    quint[OPINION_IDX] == "null"
-                    or quint[OPINION_IDX].lower() == "implicit"
-                ):
-                    quint[OPINION_IDX] = "NULL"
-                list_of_tuples.append(tuple(quint))
-            self.true_outputs.append(list_of_tuples)
+    def calc_metadata(self):
+        print("Calculating metadata...")
+        self.review_len_list = []
+        self.num_predicted_list = []
+        self.num_true_list = []
+        self.aspect_span_len_list = []
+        self.opinion_span_len_list = []
+        for i, review in enumerate(self.reviews):
+            self.review_len_list.append(len(review.split()))
+            self.num_predicted_list.append(len(self.pred_outputs[i]))
+            self.num_true_list.append(len(self.true_outputs[i]))
 
     def calc_exact_scores(self):
         print("Calculating exact scores...")
@@ -134,12 +172,8 @@ class Evaluator:
     def calc_partial_scores(self):
         for idx in IDX_LIST[: self.tuple_len]:
             print(f"Calculating partial scores for {TERM_LIST[idx]}...")
-            if idx == ASPECT_IDX or idx == OPINION_IDX:
-                pred_outputs = indexify_outputs(self.reviews, self.pred_outputs, idx)
-                true_outputs = indexify_outputs(self.reviews, self.true_outputs, idx)
-            else:
-                pred_outputs = listify_outputs(self.pred_outputs, idx)
-                true_outputs = listify_outputs(self.true_outputs, idx)
+            pred_outputs = listify_outputs(self.pred_outputs, idx)
+            true_outputs = listify_outputs(self.true_outputs, idx)
             (
                 self.partial_precision[idx],
                 self.partial_recall[idx],
@@ -148,6 +182,56 @@ class Evaluator:
                 self.partial_micro_IoU[idx],
                 self.partial_avg_micro_IoU[idx],
             ) = get_precision_recall_fl_IoU(pred_outputs, true_outputs)
+
+            if idx == ASPECT_IDX or idx == OPINION_IDX:
+                pred_outputs = indexify_outputs(self.reviews, self.pred_outputs, idx)
+                true_outputs = indexify_outputs(self.reviews, self.true_outputs, idx)
+
+                (
+                    self.partial_span_precision[SPAN_IDX[idx]],
+                    self.partial_span_recall[SPAN_IDX[idx]],
+                    self.partial_span_f1[SPAN_IDX[idx]],
+                    self.partial_span_macro_IoU[SPAN_IDX[idx]],
+                    self.partial_span_micro_IoU[SPAN_IDX[idx]],
+                    self.partial_span_avg_micro_IoU[SPAN_IDX[idx]],
+                ) = get_precision_recall_fl_IoU(pred_outputs, true_outputs)
+
+    def calc_combo_scores(self):
+        for combo_idx, combo in enumerate(COMBOS):
+            combo_str = "-".join([TERM_LIST[idx] for idx in combo])
+            print(f"Calculating combo scores for {combo_str}...")
+            pred_outputs = comboify_outputs(self.pred_outputs, combo)
+            true_outputs = comboify_outputs(self.true_outputs, combo)
+
+            (
+                self.combo_precision[combo_idx],
+                self.combo_recall[combo_idx],
+                self.combo_f1[combo_idx],
+                self.combo_macro_IoU[combo_idx],
+                self.combo_micro_IoU[combo_idx],
+                self.combo_avg_micro_IoU[combo_idx],
+            ) = get_precision_recall_fl_IoU(pred_outputs, true_outputs)
+
+    def get_metadata(self):
+        metadata = {}
+
+        metadata["num tokens per review"] = {}
+        metadata["num tokens per review"]["mean"] = mean(self.review_len_list)
+        metadata["num tokens per review"]["median"] = median(self.review_len_list)
+        metadata["num tokens per review"]["stdev"] = stdev(self.review_len_list)
+
+        metadata["num tuples predicted"] = {}
+        metadata["num tuples predicted"]["mean"] = mean(self.num_predicted_list)
+        metadata["num tuples predicted"]["median"] = median(self.num_predicted_list)
+        metadata["num tuples predicted"]["stdev"] = stdev(self.num_predicted_list)
+
+        metadata["num tuples"] = {}
+        metadata["num tuples"]["mean"] = mean(self.num_true_list)
+        metadata["num tuples"]["median"] = median(self.num_true_list)
+        metadata["num tuples"]["stdev"] = stdev(self.num_true_list)
+
+        return metadata
+
 
     def get_exact_scores(self):
         scores = {}
@@ -165,6 +249,25 @@ class Evaluator:
         scores["f1-score"] = self.partial_f1[term_idx]
         scores["macro IoU"] = self.partial_macro_IoU[term_idx]
         scores["avg micro IoU"] = self.partial_avg_micro_IoU[term_idx]
+
+        if term_idx == ASPECT_IDX or term_idx == OPINION_IDX:
+            scores["span precision"] = self.partial_span_precision[SPAN_IDX[term_idx]]
+            scores["span recall"] = self.partial_span_recall[SPAN_IDX[term_idx]]
+            scores["span f1-score"] = self.partial_span_f1[SPAN_IDX[term_idx]]
+            scores["span macro IoU"] = self.partial_span_macro_IoU[SPAN_IDX[term_idx]]
+            scores["span avg micro IoU"] = self.partial_span_avg_micro_IoU[
+                SPAN_IDX[term_idx]
+            ]
+
+        return scores
+
+    def get_combo_scores(self, combo_idx):
+        scores = {}
+        scores["precision"] = self.combo_precision[combo_idx]
+        scores["recall"] = self.combo_recall[combo_idx]
+        scores["f1-score"] = self.combo_f1[combo_idx]
+        scores["macro IoU"] = self.combo_macro_IoU[combo_idx]
+        scores["avg micro IoU"] = self.combo_avg_micro_IoU[combo_idx]
         return scores
 
     def get_avg_partial_scores(self):
@@ -183,6 +286,14 @@ class Evaluator:
         for i in range(len(self.pred_outputs)):
             scores_for_rev_i = {}
             scores_for_rev_i["idx"] = i
+            scores_for_rev_i["review"] = self.reviews[i]
+            scores_for_rev_i["pred"] = self.pred_outputs[i]
+            scores_for_rev_i["true"] = self.true_outputs[i]
+
+            scores_for_rev_i["metadata"] = {}
+            scores_for_rev_i["metadata"]["review_length"] = self.review_len_list[i]
+            scores_for_rev_i["metadata"]["num_predicted"] = self.num_predicted_list[i]
+            scores_for_rev_i["metadata"]["num_true"] = self.num_true_list[i]
 
             if args.task == "acos-extend":
                 scores_for_rev_i[
@@ -196,23 +307,29 @@ class Evaluator:
                     scores_for_rev_i[f"{term} micro IoU"] = self.partial_micro_IoU[j][i]
                     sum_partial_micro_IoU += self.partial_micro_IoU[j][i]
 
-                scores_for_rev_i["avg partial micro IoU"] = sum_partial_micro_IoU / len(
-                    self.partial_micro_IoU
-                )
+                # scores_for_rev_i["avg partial micro IoU"] = sum_partial_micro_IoU / len(
+                #     self.partial_micro_IoU
+                # )
 
-            scores_for_rev_i["review"] = self.reviews[i]
-            scores_for_rev_i["pred"] = self.pred_outputs[i]
-            scores_for_rev_i["true"] = self.true_outputs[i]
+                for combo_idx, combo in enumerate(COMBOS):
+                    combo_str = "-".join([TERM_LIST[idx] for idx in combo])
+                    scores_for_rev_i[f"{combo_str} micro IoU"] = self.combo_micro_IoU[
+                        combo_idx
+                    ][i]
 
             scores.append(scores_for_rev_i)
 
         return scores
 
     def get_scores(self):
+        self.calc_metadata()
         self.calc_exact_scores()
         self.calc_partial_scores()
+        self.calc_combo_scores()
 
         scores = {}
+
+        scores["metadata"] = self.get_metadata()
 
         if args.task == "acos-extend":
             scores[f"total {TERM_LIST[OPINION_IDX]}"] = self.get_partial_scores(
@@ -224,6 +341,10 @@ class Evaluator:
             for i, term in enumerate(TERM_LIST[: self.tuple_len]):
                 scores[term] = self.get_partial_scores(i)
             # scores["avg partial"] = self.get_avg_partial_scores()
+
+            for combo_idx, combo in enumerate(COMBOS):
+                combo_str = "-".join([TERM_LIST[idx] for idx in combo])
+                scores[combo_str] = self.get_combo_scores(combo_idx)
 
         scores["reviews"] = self.get_scores_per_review()
 

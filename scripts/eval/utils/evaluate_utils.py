@@ -16,10 +16,6 @@ TERM_LIST = ["aspect", "category", "sentiment", "opinion", "implicit_indicator"]
 NUM_SPANS = 2
 SPAN_IDX = {ASPECT_IDX: 0, OPINION_IDX: 1}
 
-COMBOS = []
-for i in range(2, len(IDX_LIST)):
-    COMBOS += list(combinations(IDX_LIST, i))
-
 def clean_punctuation(words):
     punc = re.compile(f"[{re.escape(punctuation)}]")
     words = punc.sub(" \\g<0> ", words)

@@ -1,5 +1,6 @@
 import json
 import argparse
+from itertools import combinations
 from statistics import mean, median, stdev
 from utils.evaluate_utils import (
     ASPECT_IDX,
@@ -9,7 +10,6 @@ from utils.evaluate_utils import (
     TERM_LIST,
     NUM_SPANS,
     SPAN_IDX,
-    COMBOS,
     indexify_outputs,
     listify_outputs,
     comboify_outputs,
@@ -47,7 +47,6 @@ parser.add_argument("-llm", "--llm_output", action="store_true")
 parser.add_argument("-t5", "--t5_output", action="store_true")
 args = parser.parse_args()
 
-
 class Evaluator:
     def __init__(self, process_func, **kwargs):
         self.pred_outputs = process_func(pkl_file=args.pkl_file, **kwargs)
@@ -84,10 +83,15 @@ class Evaluator:
             self.true_outputs.append(list_of_tuples)
 
     def __set_tuple_len_according_to_task(self):
+        self.combos = []
         if args.task == "acos-extend" or args.task == "acosi-extract":
             self.tuple_len = len(TERM_LIST)
+            for i in range(2, self.tuple_len):
+                self.combos += list(combinations(IDX_LIST, i))
         elif args.task == "acos-extract":
             self.tuple_len = len(TERM_LIST) - 1
+            for i in range(2, self.tuple_len):
+                self.combos += list(combinations(IDX_LIST[:self.tuple_len], i))
 
         if len(self.pred_outputs[0][0]) > self.tuple_len:
             new_pred_outputs = []
@@ -120,12 +124,12 @@ class Evaluator:
         self.partial_span_avg_micro_IoU = [0] * NUM_SPANS
 
     def __init_combo_scores(self):
-        self.combo_precision = [0] * len(COMBOS)
-        self.combo_recall = [0] * len(COMBOS)
-        self.combo_f1 = [0] * len(COMBOS)
-        self.combo_macro_IoU = [0] * len(COMBOS)
-        self.combo_micro_IoU = [[]] * len(COMBOS)
-        self.combo_avg_micro_IoU = [0] * len(COMBOS)
+        self.combo_precision = [0] * len(self.combos)
+        self.combo_recall = [0] * len(self.combos)
+        self.combo_f1 = [0] * len(self.combos)
+        self.combo_macro_IoU = [0] * len(self.combos)
+        self.combo_micro_IoU = [[]] * len(self.combos)
+        self.combo_avg_micro_IoU = [0] * len(self.combos)
 
     def __remove_direct_opinions(self):
         pred_outputs_remove_direct_opinion = []
@@ -197,7 +201,7 @@ class Evaluator:
                 ) = get_precision_recall_fl_IoU(pred_outputs, true_outputs)
 
     def calc_combo_scores(self):
-        for combo_idx, combo in enumerate(COMBOS):
+        for combo_idx, combo in enumerate(self.combos):
             combo_str = "-".join([TERM_LIST[idx] for idx in combo])
             print(f"Calculating combo scores for {combo_str}...")
             pred_outputs = comboify_outputs(self.pred_outputs, combo)
@@ -311,7 +315,7 @@ class Evaluator:
                 #     self.partial_micro_IoU
                 # )
 
-                for combo_idx, combo in enumerate(COMBOS):
+                for combo_idx, combo in enumerate(self.combos):
                     combo_str = "-".join([TERM_LIST[idx] for idx in combo])
                     scores_for_rev_i[f"{combo_str} micro IoU"] = self.combo_micro_IoU[
                         combo_idx
@@ -342,7 +346,7 @@ class Evaluator:
                 scores[term] = self.get_partial_scores(i)
             # scores["avg partial"] = self.get_avg_partial_scores()
 
-            for combo_idx, combo in enumerate(COMBOS):
+            for combo_idx, combo in enumerate(self.combos):
                 combo_str = "-".join([TERM_LIST[idx] for idx in combo])
                 scores[combo_str] = self.get_combo_scores(combo_idx)
 

@@ -1,7 +1,7 @@
 import re
 import numpy as np
-from itertools import combinations
 from string import punctuation
+from itertools import combinations
 from utils.metrics_util import indexify_spans
 
 ASPECT_IDX = 0
@@ -86,6 +86,13 @@ def extract_spans_para(seq, seq_type, output_type, sentiment_dict={}, category_d
             ac, at, sp, ot, ie = "", "", "", "", ""
 
     return quints
+
+
+def get_combos(tuple_len):
+    combos = []
+    for i in range(2, tuple_len):
+        combos += list(combinations(IDX_LIST[:tuple_len], i))
+    return combos
 
 
 def indexify_outputs(reviews, outputs, idx):

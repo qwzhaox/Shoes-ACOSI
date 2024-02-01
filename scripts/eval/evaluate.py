@@ -1,6 +1,5 @@
 import json
 import argparse
-from itertools import combinations
 from statistics import mean, median, stdev
 from utils.evaluate_utils import (
     ASPECT_IDX,
@@ -10,6 +9,7 @@ from utils.evaluate_utils import (
     TERM_LIST,
     NUM_SPANS,
     SPAN_IDX,
+    get_combos,
     indexify_outputs,
     listify_outputs,
     comboify_outputs,
@@ -47,6 +47,7 @@ parser.add_argument("-llm", "--llm_output", action="store_true")
 parser.add_argument("-t5", "--t5_output", action="store_true")
 args = parser.parse_args()
 
+
 class Evaluator:
     def __init__(self, process_func, **kwargs):
         self.pred_outputs = process_func(pkl_file=args.pkl_file, **kwargs)
@@ -59,7 +60,6 @@ class Evaluator:
         self.__init_exact_scores()
         self.__init_partial_scores()
         self.__init_combo_scores()
-
 
     def __set_outputs(self, dataset):
         self.reviews = [x.split("####")[0] for x in dataset]
@@ -83,16 +83,12 @@ class Evaluator:
             self.true_outputs.append(list_of_tuples)
 
     def __set_tuple_len_according_to_task(self):
-        self.combos = []
         if args.task == "acos-extend" or args.task == "acosi-extract":
-            self.tuple_len = len(TERM_LIST)
-            for i in range(2, self.tuple_len):
-                self.combos += list(combinations(IDX_LIST, i))
+            self.combos = get_combos(len(TERM_LIST))
         elif args.task == "acos-extract":
-            self.tuple_len = len(TERM_LIST) - 1
-            for i in range(2, self.tuple_len):
-                self.combos += list(combinations(IDX_LIST[:self.tuple_len], i))
-
+            self.combos = get_combos(len(TERM_LIST) - 1)
+        else:
+            raise ValueError("Invalid task")
         if len(self.pred_outputs[0][0]) > self.tuple_len:
             new_pred_outputs = []
             for annotation in self.pred_outputs:
@@ -188,8 +184,10 @@ class Evaluator:
             ) = get_precision_recall_fl_IoU(pred_outputs, true_outputs)
 
             if idx == ASPECT_IDX or idx == OPINION_IDX:
-                pred_outputs = indexify_outputs(self.reviews, self.pred_outputs, idx)
-                true_outputs = indexify_outputs(self.reviews, self.true_outputs, idx)
+                pred_outputs = indexify_outputs(
+                    self.reviews, self.pred_outputs, idx)
+                true_outputs = indexify_outputs(
+                    self.reviews, self.true_outputs, idx)
 
                 (
                     self.partial_span_precision[SPAN_IDX[idx]],
@@ -221,13 +219,18 @@ class Evaluator:
 
         metadata["num tokens per review"] = {}
         metadata["num tokens per review"]["mean"] = mean(self.review_len_list)
-        metadata["num tokens per review"]["median"] = median(self.review_len_list)
-        metadata["num tokens per review"]["stdev"] = stdev(self.review_len_list)
+        metadata["num tokens per review"]["median"] = median(
+            self.review_len_list)
+        metadata["num tokens per review"]["stdev"] = stdev(
+            self.review_len_list)
 
         metadata["num tuples predicted"] = {}
-        metadata["num tuples predicted"]["mean"] = mean(self.num_predicted_list)
-        metadata["num tuples predicted"]["median"] = median(self.num_predicted_list)
-        metadata["num tuples predicted"]["stdev"] = stdev(self.num_predicted_list)
+        metadata["num tuples predicted"]["mean"] = mean(
+            self.num_predicted_list)
+        metadata["num tuples predicted"]["median"] = median(
+            self.num_predicted_list)
+        metadata["num tuples predicted"]["stdev"] = stdev(
+            self.num_predicted_list)
 
         metadata["num tuples"] = {}
         metadata["num tuples"]["mean"] = mean(self.num_true_list)
@@ -235,7 +238,6 @@ class Evaluator:
         metadata["num tuples"]["stdev"] = stdev(self.num_true_list)
 
         return metadata
-
 
     def get_exact_scores(self):
         scores = {}
@@ -276,10 +278,12 @@ class Evaluator:
 
     def get_avg_partial_scores(self):
         scores = {}
-        scores["precision"] = sum(self.partial_precision) / len(self.partial_precision)
+        scores["precision"] = sum(
+            self.partial_precision) / len(self.partial_precision)
         scores["recall"] = sum(self.partial_recall) / len(self.partial_recall)
         scores["f1-score"] = sum(self.partial_f1) / len(self.partial_f1)
-        scores["macro IoU"] = sum(self.partial_macro_IoU) / len(self.partial_macro_IoU)
+        scores["macro IoU"] = sum(
+            self.partial_macro_IoU) / len(self.partial_macro_IoU)
         scores["avg micro IoU"] = sum(self.partial_avg_micro_IoU) / len(
             self.partial_avg_micro_IoU
         )
@@ -303,7 +307,8 @@ class Evaluator:
                 scores_for_rev_i[
                     f"total {TERM_LIST[OPINION_IDX]} micro IoU"
                 ] = self.partial_micro_IoU[OPINION_IDX][i]
-                scores_for_rev_i[f"indirect {TERM_LIST[OPINION_IDX]} micro IoU"] = {}
+                scores_for_rev_i[f"indirect {TERM_LIST[OPINION_IDX]} micro IoU"] = {
+                }
             else:
                 scores_for_rev_i["exact micro IoU"] = self.micro_IoU[i]
                 sum_partial_micro_IoU = 0
@@ -369,7 +374,8 @@ class Evaluator:
 scores = {}
 
 if args.mvp_output:
-    evaluate_mvp_outputs = Evaluator(get_mvp_output, category_file=args.category_file)
+    evaluate_mvp_outputs = Evaluator(
+        get_mvp_output, category_file=args.category_file)
     scores = evaluate_mvp_outputs.get_scores()
 elif args.llm_output:
     evaluate_llm_outputs = Evaluator(get_llm_output)

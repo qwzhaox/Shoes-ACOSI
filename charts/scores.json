@@ -1,0 +1,229 @@
+{
+    "exact": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "aspect": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU",
+        "span precision",
+        "span recall",
+        "span f1-score",
+        "span macro IoU",
+        "span avg micro IoU"
+    ],
+    "category": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "sentiment": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "opinion": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU",
+        "span precision",
+        "span recall",
+        "span f1-score",
+        "span macro IoU",
+        "span avg micro IoU"
+    ],
+    "implicit_indicator": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "aspect-category": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "aspect-sentiment": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "aspect-opinion": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "aspect-implicit_indicator": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "category-sentiment": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "category-opinion": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "category-implicit_indicator": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "sentiment-opinion": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "sentiment-implicit_indicator": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "opinion-implicit_indicator": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "aspect-category-sentiment": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "aspect-category-opinion": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "aspect-category-implicit_indicator": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "aspect-sentiment-opinion": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "aspect-sentiment-implicit_indicator": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "aspect-opinion-implicit_indicator": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "category-sentiment-opinion": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "category-sentiment-implicit_indicator": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "category-opinion-implicit_indicator": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "sentiment-opinion-implicit_indicator": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "aspect-category-sentiment-opinion": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "aspect-category-sentiment-implicit_indicator": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "aspect-category-opinion-implicit_indicator": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "aspect-sentiment-opinion-implicit_indicator": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ],
+    "category-sentiment-opinion-implicit_indicator": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU"
+    ]
+}

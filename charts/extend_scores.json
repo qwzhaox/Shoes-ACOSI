@@ -1,0 +1,26 @@
+{
+    "total opinion": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU",
+        "span precision",
+        "span recall",
+        "span f1-score",
+        "span macro IoU",
+        "span avg micro IoU"
+    ],
+    "indirect opinion": [
+        "precision",
+        "recall",
+        "f1-score",
+        "macro IoU",
+        "avg micro IoU",
+        "span precision",
+        "span recall",
+        "span f1-score",
+        "span macro IoU",
+        "span avg micro IoU"
+    ]
+}

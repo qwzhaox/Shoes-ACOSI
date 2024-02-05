@@ -15,13 +15,17 @@ class EvaluationComparer:
         self.scores_by_task = {}
 
     def parse_filepath(self, filepath):
-        parts = filepath.parts
-        return {
-            'model': parts[-4],
-            'model_type': parts[-5],
-            'task': parts[-3],
-            'dataset': parts[-2]
-        }
+        try:
+            parts = filepath.parts
+            return {
+                'model': parts[-4],
+                'model_type': parts[-5],
+                'task': parts[-3],
+                'dataset': parts[-2]
+            }
+        except IndexError:
+            print(filepath)
+            exit(1)
 
     def read_and_extract_score(self, filepath):
         with open(filepath, 'r') as file:
@@ -60,7 +64,16 @@ class EvaluationComparer:
         plt.figure(figsize=(10, 6))
         self.plot_by_dataset(datasets, datasets_scores, models)
         self.format_plot(task, datasets)
-        plt.savefig(f"{self.output_dir}/{self.format_title(task)}.png")
+
+        if "-" in self.score_type:
+            chart_filepath = f"{self.output_dir}/combos/{self.score_type.count('-')+1}/{self.score_type}/{self.score}/{self.format_title(task)}.png"
+        else:
+            chart_filepath = f"{self.output_dir}/{self.score_type}/{self.score}/{self.format_title(task)}.png"
+
+
+        Path(chart_filepath).parent.mkdir(parents=True, exist_ok=True)
+
+        plt.savefig(chart_filepath)
         plt.show()
 
     def plot_by_dataset(self, datasets, datasets_scores, models):

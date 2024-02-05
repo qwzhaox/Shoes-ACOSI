@@ -1,0 +1,1108 @@
+[
+    [
+        [
+            "unit cost",
+            "laptop#price",
+            "negative",
+            "$ 275"
+        ],
+        [
+            "repairing",
+            "support#general",
+            "negative",
+            "not worth repairing"
+        ]
+    ],
+    [
+        [
+            "acer 11",
+            "laptop#general",
+            "negative",
+            "too small for me"
+        ]
+    ],
+    [
+        [
+            "ssd drive",
+            "hard_disc#general",
+            "negative",
+            "not a true ssd drive"
+        ],
+        [
+            "emmc",
+            "hard_disc#general",
+            "negative",
+            "makes a difference"
+        ]
+    ],
+    [
+        [
+            "computer",
+            "laptop#operation_performance",
+            "negative",
+            "has difficulty switching between tablet and computer"
+        ]
+    ],
+    [
+        [
+            "chrome os",
+            "os#general",
+            "neutral",
+            "updated"
+        ]
+    ],
+    [
+        [
+            "chrome",
+            "software#operation_performance",
+            "negative",
+            "doesn ' t work the same with a chromebook"
+        ],
+        [
+            "windows",
+            "os#operation_performance",
+            "positive",
+            "it does with windows"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "out_of_scope#general",
+            "negative",
+            "suck so badly"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "out_of_scope#general",
+            "neutral",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "keyboard",
+            "keyboard#general",
+            "neutral",
+            "i rarely use"
+        ]
+    ],
+    [
+        [
+            "touchscreen chromebook",
+            "laptop#price",
+            "positive",
+            "great price"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "laptop#usability",
+            "negative",
+            "glitchy"
+        ],
+        [
+            "NULL",
+            "laptop#usability",
+            "negative",
+            "barely usable"
+        ]
+    ],
+    [
+        [
+            "touch pad",
+            "mouse#operation_performance",
+            "negative",
+            "failed to work consistently"
+        ]
+    ],
+    [
+        [
+            "keys",
+            "keyboard#operation_performance",
+            "negative",
+            "wrong keys"
+        ],
+        [
+            "NULL",
+            "keyboard#operation_performance",
+            "negative",
+            "very unproductive"
+        ]
+    ],
+    [
+        [
+            "new device",
+            "hardware#quality",
+            "negative",
+            "should not be doing this"
+        ],
+        [
+            "new device",
+            "hardware#operation_performance",
+            "negative",
+            "it ' ll get worse in the future"
+        ]
+    ],
+    [
+        [
+            "trackpad",
+            "mouse#usability",
+            "negative",
+            "have to press the trackpad very hard for left click"
+        ],
+        [
+            "right click functionality",
+            "mouse#operation_performance",
+            "negative",
+            "lost right click functionality on the track pad 2 days into my voyage with this thing"
+        ]
+    ],
+    [
+        [
+            "os",
+            "os#operation_performance",
+            "negative",
+            "updated"
+        ],
+        [
+            "battery",
+            "battery#operation_performance",
+            "negative",
+            "drained 9 % over 8 hours"
+        ]
+    ],
+    [
+        [
+            "hdmi out",
+            "ports#operation_performance",
+            "negative",
+            "doesn ' t work right"
+        ]
+    ],
+    [
+        [
+            "they",
+            "shipping#general",
+            "negative",
+            "had it over a week"
+        ],
+        [
+            "NULL",
+            "shipping#quality",
+            "negative",
+            "then shipped back"
+        ]
+    ],
+    [
+        [
+            "chromebook",
+            "laptop#general",
+            "negative",
+            "excitement dissipate within mere hours"
+        ],
+        [
+            "touchscreen",
+            "hardware#operation_performance",
+            "negative",
+            "did n ' t work at all on tablet mode"
+        ]
+    ],
+    [
+        [
+            "major defect",
+            "laptop#quality",
+            "negative",
+            "acer has n ' t resolved"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "laptop#general",
+            "neutral",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "sound quality",
+            "multimedia_devices#quality",
+            "positive",
+            "decent"
+        ]
+    ],
+    [
+        [
+            "power adapter",
+            "power_supply#general",
+            "negative",
+            "flimsy"
+        ]
+    ],
+    [
+        [
+            "wi - fi",
+            "multimedia_devices#operation_performance",
+            "negative",
+            "slows down to crowl and speeds back up intermittently"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "laptop#general",
+            "negative",
+            "regret buying it at times"
+        ]
+    ],
+    [
+        [
+            "it",
+            "laptop#operation_performance",
+            "negative",
+            "just turned off and will not turn back on"
+        ]
+    ],
+    [
+        [
+            "product",
+            "laptop#general",
+            "positive",
+            "great"
+        ],
+        [
+            "customer support",
+            "support#general",
+            "negative",
+            "horrible"
+        ]
+    ],
+    [
+        [
+            "support",
+            "support#general",
+            "negative",
+            "called support a second time after 10 minutes of verifying some type of info they told me to call google without even trying to help"
+        ]
+    ],
+    [
+        [
+            "loading , storing , and editing pictures",
+            "multimedia_devices#operation_performance",
+            "negative",
+            "it ' s terrible"
+        ]
+    ],
+    [
+        [
+            "it",
+            "laptop#general",
+            "negative",
+            "sent it in twice already and waiting for it to come back"
+        ]
+    ],
+    [
+        [
+            "screen",
+            "display#general",
+            "positive",
+            "looked great"
+        ]
+    ],
+    [
+        [
+            "charging adapter",
+            "power_supply#operation_performance",
+            "negative",
+            "kept getting this message"
+        ]
+    ],
+    [
+        [
+            "computer",
+            "laptop#operation_performance",
+            "negative",
+            "had no option but to shut down"
+        ],
+        [
+            "computer",
+            "laptop#operation_performance",
+            "negative",
+            "unplug it , plug it back in , and then reboot"
+        ]
+    ],
+    [
+        [
+            "it",
+            "laptop#operation_performance",
+            "positive",
+            "has worked well"
+        ],
+        [
+            "initial hiccup",
+            "laptop#operation_performance",
+            "negative",
+            "on turning it on"
+        ]
+    ],
+    [
+        [
+            "screen",
+            "display#operation_performance",
+            "negative",
+            "flashes for a second every 30 seconds or so"
+        ]
+    ],
+    [
+        [
+            "battery",
+            "battery#operation_performance",
+            "negative",
+            "went down to 67 % for no reason"
+        ]
+    ],
+    [
+        [
+            "fan",
+            "fans&cooling#operation_performance",
+            "negative",
+            "kicks in pretty often"
+        ],
+        [
+            "laptop",
+            "laptop#operation_performance",
+            "positive",
+            "works good"
+        ],
+        [
+            "sound",
+            "laptop#operation_performance",
+            "negative",
+            "annoying"
+        ]
+    ],
+    [
+        [
+            "nano edge display",
+            "display#general",
+            "positive",
+            "nice"
+        ]
+    ],
+    [
+        [
+            "everything",
+            "out_of_scope#general",
+            "positive",
+            "fine"
+        ]
+    ],
+    [
+        [
+            "audio",
+            "multimedia_devices#operation_performance",
+            "negative",
+            "almost impossible to hear"
+        ]
+    ],
+    [
+        [
+            "it",
+            "laptop#operation_performance",
+            "negative",
+            "slow to do everything"
+        ]
+    ],
+    [
+        [
+            "it",
+            "laptop#operation_performance",
+            "negative",
+            "doing a terrible job running dragon age"
+        ]
+    ],
+    [
+        [
+            "backlit keyboard",
+            "keyboard#general",
+            "negative",
+            "doesn ' t has"
+        ],
+        [
+            "typing in low light",
+            "keyboard#operation_performance",
+            "negative",
+            "such a pain"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "laptop#operation_performance",
+            "negative",
+            "very disappointed"
+        ],
+        [
+            "NULL",
+            "laptop#operation_performance",
+            "negative",
+            "slow"
+        ]
+    ],
+    [
+        [
+            "keyboard",
+            "keyboard#general",
+            "positive",
+            "fine"
+        ],
+        [
+            "mouse pad",
+            "mouse#general",
+            "positive",
+            "fine"
+        ],
+        [
+            "NULL",
+            "laptop#operation_performance",
+            "negative",
+            "strangely slow"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "laptop#general",
+            "neutral",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "crazy keypad",
+            "keyboard#general",
+            "negative",
+            "this issue is even worse"
+        ]
+    ],
+    [
+        [
+            "laptop",
+            "laptop#general",
+            "positive",
+            "has a solid feel to it"
+        ]
+    ],
+    [
+        [
+            "product",
+            "out_of_scope#general",
+            "negative",
+            "refurbished one"
+        ]
+    ],
+    [
+        [
+            "laptop",
+            "laptop#general",
+            "negative",
+            "can not return"
+        ]
+    ],
+    [
+        [
+            "speed",
+            "cpu#operation_performance",
+            "positive",
+            "like"
+        ],
+        [
+            "processor",
+            "cpu#operation_performance",
+            "positive",
+            "like"
+        ],
+        [
+            "hybrid storage units ( 128ssd and 1tera )",
+            "hard_disc#general",
+            "positive",
+            "like"
+        ],
+        [
+            "web cam",
+            "multimedia_devices#quality",
+            "negative",
+            "sucks"
+        ],
+        [
+            "resolution",
+            "multimedia_devices#quality",
+            "negative",
+            "really poor"
+        ],
+        [
+            "keyboard",
+            "keyboard#general",
+            "negative",
+            "doesn ' t have the numerical part"
+        ],
+        [
+            "caps lock or num lock",
+            "keyboard#general",
+            "negative",
+            "don ' t have any light or guide to help you"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "laptop#portability",
+            "positive",
+            "lightweight"
+        ]
+    ],
+    [
+        [
+            "backlight",
+            "display#operation_performance",
+            "negative",
+            "went out"
+        ]
+    ],
+    [
+        [
+            "it",
+            "laptop#quality",
+            "positive",
+            "brand new out of the box"
+        ],
+        [
+            "it",
+            "laptop#operation_performance",
+            "positive",
+            "i ' ve never dropped it"
+        ]
+    ],
+    [
+        [
+            "warranty stuff",
+            "warranty#general",
+            "negative",
+            "have to deal with"
+        ],
+        [
+            "sending it back",
+            "shipping#general",
+            "negative",
+            "sending it back"
+        ]
+    ],
+    [
+        [
+            "ram upgrade",
+            "memory#general",
+            "positive",
+            "available"
+        ]
+    ],
+    [
+        [
+            "hard drive upgrade",
+            "hard_disc#general",
+            "positive",
+            "available"
+        ]
+    ],
+    [
+        [
+            "touchpad",
+            "mouse#operation_performance",
+            "negative",
+            "sticking or not responding to click correctly"
+        ]
+    ],
+    [
+        [
+            "computer",
+            "laptop#operation_performance",
+            "negative",
+            "not the greatest"
+        ]
+    ],
+    [
+        [
+            "computer",
+            "laptop#general",
+            "negative",
+            "gone for 3 weeks"
+        ],
+        [
+            "computer",
+            "laptop#operation_performance",
+            "negative",
+            "used it a total of less than 20 hours"
+        ]
+    ],
+    [
+        [
+            "asus warranty",
+            "warranty#general",
+            "negative",
+            "no problem was found"
+        ]
+    ],
+    [
+        [
+            "display",
+            "display#operation_performance",
+            "negative",
+            "stop working within 2 months"
+        ]
+    ],
+    [
+        [
+            "user manual",
+            "out_of_scope#general",
+            "negative",
+            "no user manual"
+        ],
+        [
+            "asus customer support",
+            "support#general",
+            "negative",
+            "knew all about windows 10 software but nothing about my asus notebook"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "out_of_scope#general",
+            "negative",
+            "bad reviews"
+        ],
+        [
+            "NULL",
+            "shipping#operation_performance",
+            "negative",
+            "sent it back for a refund"
+        ]
+    ],
+    [
+        [
+            "asus laptop",
+            "laptop#general",
+            "neutral",
+            "NULL"
+        ],
+        [
+            "touchpad",
+            "laptop#operation_performance",
+            "negative",
+            "non - functioning"
+        ]
+    ],
+    [
+        [
+            "screen",
+            "display#quality",
+            "negative",
+            "broke when just putting a textbook on it"
+        ]
+    ],
+    [
+        [
+            "customer support",
+            "support#general",
+            "negative",
+            "do you no good"
+        ]
+    ],
+    [
+        [
+            "keyboard",
+            "keyboard#design_features",
+            "negative",
+            "needs to be redesigned entirely"
+        ]
+    ],
+    [
+        [
+            "6 ` ` screen",
+            "display#general",
+            "positive",
+            "big enough to read with ease"
+        ],
+        [
+            "item itself",
+            "laptop#portability",
+            "positive",
+            "light enough to tote to meetings"
+        ]
+    ],
+    [
+        [
+            "work machine",
+            "laptop#general",
+            "positive",
+            "meets my needs"
+        ],
+        [
+            "work machine",
+            "laptop#quality",
+            "positive",
+            "good"
+        ]
+    ],
+    [
+        [
+            "computer",
+            "laptop#operation_performance",
+            "negative",
+            "completely stopped working"
+        ]
+    ],
+    [
+        [
+            "boots up",
+            "os#operation_performance",
+            "positive",
+            "in 10 seconds"
+        ],
+        [
+            "shuts down",
+            "os#operation_performance",
+            "positive",
+            "in 2 to 3 seconds"
+        ]
+    ],
+    [
+        [
+            "keyboard",
+            "keyboard#general",
+            "positive",
+            "lights up"
+        ],
+        [
+            "` ` time out ` ` feature",
+            "keyboard#operation_performance",
+            "positive",
+            "shut off"
+        ]
+    ],
+    [
+        [
+            "it",
+            "laptop#quality",
+            "positive",
+            "put together well"
+        ]
+    ],
+    [
+        [
+            "size",
+            "laptop#general",
+            "negative",
+            "lack"
+        ],
+        [
+            "raw speed",
+            "laptop#operation_performance",
+            "positive",
+            "make up for"
+        ],
+        [
+            "durability",
+            "laptop#quality",
+            "positive",
+            "make up for"
+        ],
+        [
+            "energy efficiency",
+            "laptop#operation_performance",
+            "positive",
+            "make up for"
+        ]
+    ],
+    [
+        [
+            "available ports",
+            "ports#general",
+            "positive",
+            "decent quantity"
+        ]
+    ],
+    [
+        [
+            "dvd drive",
+            "optical_drives#general",
+            "positive",
+            "it has a dvd drive"
+        ]
+    ],
+    [
+        [
+            "it",
+            "laptop#operation_performance",
+            "negative",
+            "runs hot"
+        ]
+    ],
+    [
+        [
+            "running grid benchmark",
+            "laptop#operation_performance",
+            "negative",
+            "it got to a high 92 / 93 degrees c"
+        ]
+    ],
+    [
+        [
+            "i5 mobile processor",
+            "cpu#general",
+            "positive",
+            "new"
+        ]
+    ],
+    [
+        [
+            "ddr4 ram",
+            "memory#general",
+            "positive",
+            "upgradable"
+        ]
+    ],
+    [
+        [
+            "battery life",
+            "battery#general",
+            "positive",
+            "very decent"
+        ]
+    ],
+    [
+        [
+            "unit",
+            "laptop#general",
+            "positive",
+            "pleasantly impressed"
+        ],
+        [
+            "NULL",
+            "laptop#operation_performance",
+            "neutral",
+            "not used it a long time or tested many applications to date"
+        ]
+    ],
+    [
+        [
+            "laptop",
+            "laptop#general",
+            "positive",
+            "best laptop i ' ve ever had"
+        ]
+    ],
+    [
+        [
+            "it",
+            "battery#operation_performance",
+            "positive",
+            "using it for at least 4 hours since last charged in that 23 % used up"
+        ]
+    ],
+    [
+        [
+            "keyboard backlight",
+            "keyboard#operation_performance",
+            "negative",
+            "turns off after just a few seconds of not typing"
+        ],
+        [
+            "keyboard backlight",
+            "keyboard#operation_performance",
+            "negative",
+            "can be annoying"
+        ],
+        [
+            "keyboard backlight",
+            "keyboard#operation_performance",
+            "negative",
+            "there doesn ' t seem to be a way to change this"
+        ]
+    ],
+    [
+        [
+            "ram",
+            "memory#general",
+            "positive",
+            "easily upgradeable"
+        ]
+    ],
+    [
+        [
+            "touchpad",
+            "keyboard#operation_performance",
+            "positive",
+            "ability to disable"
+        ],
+        [
+            "keyboard",
+            "keyboard#general",
+            "positive",
+            "love"
+        ]
+    ],
+    [
+        [
+            "it",
+            "laptop#general",
+            "negative",
+            "not fancy"
+        ],
+        [
+            "it",
+            "laptop#price",
+            "positive",
+            "good value"
+        ],
+        [
+            "it",
+            "laptop#operation_performance",
+            "positive",
+            "fast"
+        ],
+        [
+            "it",
+            "laptop#operation_performance",
+            "positive",
+            "trouble - free"
+        ]
+    ],
+    [
+        [
+            "feature",
+            "out_of_scope#general",
+            "positive",
+            "can really be useful"
+        ]
+    ],
+    [
+        [
+            "storage and ram",
+            "hardware#general",
+            "positive",
+            "easily upgrade"
+        ]
+    ],
+    [
+        [
+            "mx150",
+            "graphics#general",
+            "positive",
+            "enough for my needs"
+        ]
+    ],
+    [
+        [
+            "solid state drive",
+            "hard_disc#general",
+            "positive",
+            "love"
+        ],
+        [
+            "boot up and get onto internet in 10 to 15 seconds",
+            "hard_disc#operation_performance",
+            "positive",
+            "can boot up and get onto internet in 10 to 15 seconds"
+        ]
+    ],
+    [
+        [
+            "laptop",
+            "laptop#general",
+            "negative",
+            "not a ` ` gaming ` ` laptop"
+        ],
+        [
+            "laptop",
+            "laptop#operation_performance",
+            "positive",
+            "can do some more casual gaming"
+        ]
+    ],
+    [
+        [
+            "it",
+            "laptop#operation_performance",
+            "positive",
+            "super fast"
+        ],
+        [
+            "it",
+            "laptop#operation_performance",
+            "positive",
+            "boots up in seconds"
+        ]
+    ],
+    [
+        [
+            "system",
+            "laptop#general",
+            "positive",
+            "very impressed"
+        ]
+    ],
+    [
+        [
+            "mastercam",
+            "software#operation_performance",
+            "positive",
+            "runs pretty good"
+        ]
+    ],
+    [
+        [
+            "amazon",
+            "company#general",
+            "positive",
+            "great"
+        ],
+        [
+            "it",
+            "shipping#general",
+            "positive",
+            "returning"
+        ]
+    ],
+    [
+        [
+            "screen",
+            "display#general",
+            "neutral",
+            "decent"
+        ],
+        [
+            "screen",
+            "display#general",
+            "negative",
+            "not great"
+        ],
+        [
+            "screen",
+            "display#general",
+            "positive",
+            "matte finished"
+        ]
+    ],
+    [
+        [
+            "back lit keyboard",
+            "keyboard#general",
+            "positive",
+            "like"
+        ]
+    ]
+]

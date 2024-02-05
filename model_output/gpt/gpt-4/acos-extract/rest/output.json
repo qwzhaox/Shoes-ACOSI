@@ -1,0 +1,1300 @@
+[
+    [
+        [
+            "NULL",
+            "food#general",
+            "positive",
+            "yum"
+        ]
+    ],
+    [
+        [
+            "sushi",
+            "food#quality",
+            "positive",
+            "really good"
+        ]
+    ],
+    [
+        [
+            "not the biggest portions",
+            "food#general",
+            "negative",
+            "not the biggest"
+        ],
+        [
+            "adequate",
+            "food#general",
+            "positive",
+            "adequate"
+        ]
+    ],
+    [
+        [
+            "green tea creme brulee",
+            "food#general",
+            "positive",
+            "is a must"
+        ]
+    ],
+    [
+        [
+            "sushi",
+            "food#general",
+            "positive",
+            "great"
+        ],
+        [
+            "service",
+            "service#general",
+            "positive",
+            "even better"
+        ]
+    ],
+    [
+        [
+            "the entire staff",
+            "service#general",
+            "positive",
+            "extremely accomodating"
+        ],
+        [
+            "NULL",
+            "service#general",
+            "positive",
+            "tended to my every need"
+        ]
+    ],
+    [
+        [
+            "this restaurant",
+            "restaurant#general",
+            "positive",
+            "no complaints"
+        ]
+    ],
+    [
+        [
+            "the owner",
+            "service#general",
+            "negative",
+            "belligerent to guests that have a complaint"
+        ]
+    ],
+    [
+        [
+            "food",
+            "food#general",
+            "positive",
+            "good"
+        ]
+    ],
+    [
+        [
+            "place",
+            "location#general",
+            "positive",
+            "great"
+        ],
+        [
+            "meal",
+            "food#general",
+            "positive",
+            "delicious"
+        ]
+    ],
+    [
+        [
+            "staff",
+            "service#general",
+            "positive",
+            "pretty friendly"
+        ]
+    ],
+    [
+        [
+            "onion rings",
+            "food#general",
+            "positive",
+            "great"
+        ]
+    ],
+    [
+        [
+            "lemon chicken",
+            "food#quality",
+            "negative",
+            "tasted like sticky sweet donuts"
+        ],
+        [
+            "honey walnut prawns",
+            "food#quality",
+            "negative",
+            "were not good"
+        ],
+        [
+            "honey walnut prawns",
+            "food#general",
+            "negative",
+            "the few they actually give you"
+        ]
+    ],
+    [
+        [
+            "nice ambience",
+            "ambience#general",
+            "positive",
+            "NULL"
+        ],
+        [
+            "highly overrated place",
+            "restaurant#general",
+            "negative",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "service",
+            "service#general",
+            "negative",
+            "worst i ever had"
+        ]
+    ],
+    [
+        [
+            "service",
+            "service#general",
+            "negative",
+            "worst service we had ever received"
+        ]
+    ],
+    [
+        [
+            "waiter",
+            "service#general",
+            "negative",
+            "non - existent"
+        ],
+        [
+            "food",
+            "food#general",
+            "negative",
+            "finally arrived over an hour after we ordered"
+        ],
+        [
+            "NULL",
+            "service#general",
+            "negative",
+            "not given any water or utensils"
+        ]
+    ],
+    [
+        [
+            "manager",
+            "service#general",
+            "negative",
+            "not even apologetic"
+        ]
+    ],
+    [
+        [
+            "italian food",
+            "food#general",
+            "positive",
+            "fabulous"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "restaurant#general",
+            "positive",
+            "i highly recommend mioposto"
+        ]
+    ],
+    [
+        [
+            "wonderful italian restaurant",
+            "restaurant#general",
+            "positive",
+            "wonderful"
+        ],
+        [
+            "in my neighborhood",
+            "location#general",
+            "positive",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "wine list",
+            "drinks#style_options",
+            "positive",
+            "wonderful"
+        ],
+        [
+            "food",
+            "food#general",
+            "positive",
+            "reminds me of my recent trip to Italy"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "restaurant#general",
+            "positive",
+            "love"
+        ]
+    ],
+    [
+        [
+            "amazing meal",
+            "food#quality",
+            "positive",
+            "amazing"
+        ],
+        [
+            "service",
+            "service#general",
+            "positive",
+            "NULL"
+        ],
+        [
+            "ambiance",
+            "ambience#general",
+            "positive",
+            "NULL"
+        ],
+        [
+            "this restaurant",
+            "restaurant#general",
+            "positive",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "wine list",
+            "drinks#style_options",
+            "positive",
+            "incredible and extensive and diverse"
+        ],
+        [
+            "food",
+            "food#general",
+            "positive",
+            "incredible"
+        ],
+        [
+            "staff",
+            "service#general",
+            "positive",
+            "very nice"
+        ],
+        [
+            "staff",
+            "service#general",
+            "positive",
+            "good at their jobs"
+        ],
+        [
+            "staff",
+            "service#general",
+            "positive",
+            "cultured"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "restaurant#general",
+            "positive",
+            "not a bad thing to say"
+        ]
+    ],
+    [
+        [
+            "the food",
+            "food#general",
+            "positive",
+            "was great"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "food#prices",
+            "positive",
+            "very reasonably priced"
+        ],
+        [
+            "quality of the food",
+            "food#quality",
+            "positive",
+            "esp for the quality"
+        ]
+    ],
+    [
+        [
+            "kafta plate",
+            "food#general",
+            "positive",
+            "perfect"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "restaurant#general",
+            "positive",
+            "a place that bucks that trend"
+        ],
+        [
+            "high quality food",
+            "food#quality",
+            "positive",
+            "NULL"
+        ],
+        [
+            "good service",
+            "service#general",
+            "positive",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "place",
+            "location#general",
+            "positive",
+            "relax and enjoy"
+        ],
+        [
+            "finest quality food",
+            "food#quality",
+            "positive",
+            "the industry can offer"
+        ]
+    ],
+    [
+        [
+            "its real food",
+            "food#quality",
+            "positive",
+            "the best"
+        ]
+    ],
+    [
+        [
+            "atmosphere",
+            "ambience#general",
+            "positive",
+            "liked very much"
+        ],
+        [
+            "food",
+            "food#quality",
+            "negative",
+            "not worth the price"
+        ]
+    ],
+    [
+        [
+            "food",
+            "food#general",
+            "neutral",
+            "just okay"
+        ],
+        [
+            "NULL",
+            "restaurant#general",
+            "negative",
+            "not much else to it"
+        ]
+    ],
+    [
+        [
+            "rice",
+            "food#quality",
+            "negative",
+            "too dry"
+        ],
+        [
+            "tuna",
+            "food#quality",
+            "negative",
+            "n ' t so fresh"
+        ]
+    ],
+    [
+        [
+            "quality and variety of the fish",
+            "food#quality",
+            "positive",
+            "excellent"
+        ],
+        [
+            "NULL",
+            "restaurant#general",
+            "positive",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "value",
+            "restaurant#prices",
+            "negative",
+            "severely lacking"
+        ],
+        [
+            "service",
+            "service#general",
+            "negative",
+            "severely lacking"
+        ]
+    ],
+    [
+        [
+            "fish",
+            "food#quality",
+            "positive",
+            "unquestionably fresh"
+        ],
+        [
+            "rolls",
+            "food#quality",
+            "negative",
+            "inexplicably bland"
+        ]
+    ],
+    [
+        [
+            "service",
+            "service#general",
+            "negative",
+            "ranges from mediocre to offensive"
+        ]
+    ],
+    [
+        [
+            "waiter",
+            "service#general",
+            "negative",
+            "extremely dismissive"
+        ],
+        [
+            "three staff members",
+            "service#general",
+            "positive",
+            "waited hand - and - foot"
+        ],
+        [
+            "pair of japanese girls seated nearby",
+            "service#general",
+            "positive",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "freshest sushi",
+            "food#quality",
+            "positive",
+            "freshest"
+        ],
+        [
+            "NULL",
+            "restaurant#general",
+            "positive",
+            "love"
+        ]
+    ],
+    [
+        [
+            "detail",
+            "food#general",
+            "positive",
+            "NULL"
+        ],
+        [
+            "miso soup",
+            "food#general",
+            "positive",
+            "NULL"
+        ],
+        [
+            "complex rolls",
+            "food#general",
+            "positive",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "sashimi",
+            "food#quality",
+            "positive",
+            "freshest and most tender"
+        ]
+    ],
+    [
+        [
+            "their apps",
+            "food#general",
+            "positive",
+            "delicious"
+        ]
+    ],
+    [
+        [
+            "this place",
+            "restaurant#prices",
+            "negative",
+            "really expensive"
+        ],
+        [
+            "the portions",
+            "food#general",
+            "negative",
+            "on the small side"
+        ]
+    ],
+    [
+        [
+            "the space",
+            "location#general",
+            "negative",
+            "small"
+        ],
+        [
+            "the space",
+            "ambience#general",
+            "positive",
+            "lovely"
+        ],
+        [
+            "the service",
+            "service#general",
+            "positive",
+            "helpful"
+        ]
+    ],
+    [
+        [
+            "the food",
+            "food#quality",
+            "negative",
+            "was not great"
+        ],
+        [
+            "the waiters",
+            "service#general",
+            "negative",
+            "were rude"
+        ]
+    ],
+    [
+        [
+            "service",
+            "service#general",
+            "positive",
+            "great"
+        ]
+    ],
+    [
+        [
+            "service",
+            "service#general",
+            "positive",
+            "stellar"
+        ]
+    ],
+    [
+        [
+            "bus boy",
+            "service#general",
+            "positive",
+            "NULL"
+        ],
+        [
+            "table",
+            "ambience#general",
+            "positive",
+            "stabilized it for me"
+        ]
+    ],
+    [
+        [
+            "food",
+            "food#quality",
+            "neutral",
+            "fine"
+        ],
+        [
+            "salsa",
+            "food#general",
+            "positive",
+            "tastier - than - normal"
+        ]
+    ],
+    [
+        [
+            "the food",
+            "food#general",
+            "positive",
+            "was great"
+        ],
+        [
+            "the margaritas",
+            "drinks#quality",
+            "positive",
+            "too"
+        ],
+        [
+            "the waitress",
+            "service#general",
+            "negative",
+            "was too busy being nice to her other larger party than to take better care of my friend and me"
+        ]
+    ],
+    [
+        [
+            "mama mia",
+            "restaurant#general",
+            "positive",
+            "great pizza place"
+        ],
+        [
+            "NULL",
+            "location#general",
+            "positive",
+            "live in the neighborhood"
+        ]
+    ],
+    [
+        [
+            "warm up the pizza",
+            "food#quality",
+            "negative",
+            "have to warm up before it ' s edible"
+        ],
+        [
+            "order ahead",
+            "service#general",
+            "neutral",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "dough",
+            "food#general",
+            "positive",
+            "not too much"
+        ],
+        [
+            "cheese",
+            "food#general",
+            "positive",
+            "not too much"
+        ],
+        [
+            "sauce",
+            "food#general",
+            "positive",
+            "not too much"
+        ]
+    ],
+    [
+        [
+            "sushi",
+            "food#general",
+            "positive",
+            "best"
+        ]
+    ],
+    [
+        [
+            "calamari",
+            "food#quality",
+            "positive",
+            "the best"
+        ],
+        [
+            "seattle",
+            "location#general",
+            "positive",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "summertime deck experience",
+            "ambience#general",
+            "positive",
+            "the best"
+        ],
+        [
+            "bring you a blanket",
+            "service#general",
+            "positive",
+            "NULL"
+        ],
+        [
+            "seattle evening weather",
+            "location#general",
+            "neutral",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "a perfect place",
+            "location#general",
+            "positive",
+            "perfect"
+        ],
+        [
+            "take out of town guests any time of the year",
+            "restaurant#general",
+            "positive",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "ambience#general",
+            "positive",
+            "endless fun"
+        ],
+        [
+            "music",
+            "ambience#general",
+            "positive",
+            "awesome"
+        ],
+        [
+            "staff",
+            "service#general",
+            "positive",
+            "great"
+        ]
+    ],
+    [
+        [
+            "the best bar in the east village",
+            "location#general",
+            "positive",
+            "the best"
+        ]
+    ],
+    [
+        [
+            "draft and bottle selection",
+            "drinks#style_options",
+            "positive",
+            "great"
+        ],
+        [
+            "pizza",
+            "food#general",
+            "positive",
+            "rocks"
+        ]
+    ],
+    [
+        [
+            "jukebox",
+            "ambience#general",
+            "positive",
+            "one of the best"
+        ],
+        [
+            "NULL",
+            "restaurant#general",
+            "positive",
+            "seen in a long long time"
+        ]
+    ],
+    [
+        [
+            "the food",
+            "food#general",
+            "positive",
+            "is great"
+        ],
+        [
+            "the bartenders",
+            "service#general",
+            "positive",
+            "go that extra mile"
+        ]
+    ],
+    [
+        [
+            "owners",
+            "service#general",
+            "positive",
+            "great fun"
+        ],
+        [
+            "beer selection",
+            "drinks#style_options",
+            "positive",
+            "worth staying for"
+        ]
+    ],
+    [
+        [
+            "the upstairs",
+            "location#general",
+            "positive",
+            "a great place to hang out"
+        ]
+    ],
+    [
+        [
+            "smoking places",
+            "location#general",
+            "negative",
+            "not alot"
+        ],
+        [
+            "my favorite smoking balconey",
+            "location#general",
+            "positive",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "sushi",
+            "food#quality",
+            "positive",
+            "delicious"
+        ]
+    ],
+    [
+        [
+            "wide variety of fish",
+            "food#style_options",
+            "positive",
+            "NULL"
+        ],
+        [
+            "list which oceans they come from",
+            "food#general",
+            "positive",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "jellyfish",
+            "food#general",
+            "positive",
+            "good"
+        ],
+        [
+            "horse mackerel",
+            "food#general",
+            "positive",
+            "good"
+        ],
+        [
+            "blue fin tuna",
+            "food#general",
+            "positive",
+            "good"
+        ],
+        [
+            "sake ikura roll",
+            "food#general",
+            "positive",
+            "good"
+        ]
+    ],
+    [
+        [
+            "pieces",
+            "food#general",
+            "negative",
+            "wish the pieces were a little bigger"
+        ]
+    ],
+    [
+        [
+            "decor",
+            "ambience#general",
+            "positive",
+            "rustic , traditional japanese"
+        ]
+    ],
+    [
+        [
+            "the crowd",
+            "ambience#general",
+            "neutral",
+            "mixed yuppies , young and old"
+        ]
+    ],
+    [
+        [
+            "service",
+            "service#general",
+            "positive",
+            "courteous and attentive"
+        ]
+    ],
+    [
+        [
+            "food",
+            "food#general",
+            "negative",
+            "mediocre"
+        ]
+    ],
+    [
+        [
+            "outside patio area",
+            "location#general",
+            "neutral",
+            "NULL"
+        ],
+        [
+            "abbreviated menu",
+            "food#general",
+            "neutral",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "the food",
+            "food#quality",
+            "negative",
+            "very mediocre"
+        ],
+        [
+            "the price",
+            "food#prices",
+            "negative",
+            "considering the price"
+        ]
+    ],
+    [
+        [
+            "this place",
+            "restaurant#general",
+            "negative",
+            "survives with such average food"
+        ],
+        [
+            "food",
+            "food#quality",
+            "negative",
+            "average"
+        ],
+        [
+            "customers",
+            "service#general",
+            "negative",
+            "probably one - time customer tourists"
+        ]
+    ],
+    [
+        [
+            "service",
+            "service#general",
+            "positive",
+            "decent"
+        ]
+    ],
+    [
+        [
+            "drinks",
+            "drinks#quality",
+            "positive",
+            "good"
+        ]
+    ],
+    [
+        [
+            "food",
+            "food#general",
+            "positive",
+            "excellent"
+        ],
+        [
+            "ambience",
+            "ambience#general",
+            "positive",
+            "nice"
+        ],
+        [
+            "NULL",
+            "restaurant#prices",
+            "negative",
+            "fairly expensive"
+        ]
+    ],
+    [
+        [
+            "pumpkin ravioli",
+            "food#general",
+            "positive",
+            "loved"
+        ],
+        [
+            "goat cheese gnocchi",
+            "food#general",
+            "positive",
+            "loved"
+        ],
+        [
+            "filet mignon on top of spinach and mashed potatoes",
+            "food#general",
+            "positive",
+            "loved"
+        ]
+    ],
+    [
+        [
+            "ambiance",
+            "ambience#general",
+            "positive",
+            "peaceful and relaxing break"
+        ],
+        [
+            "all the kids running around in downtown disney",
+            "location#general",
+            "negative",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "indian food",
+            "food#general",
+            "positive",
+            "best"
+        ]
+    ],
+    [
+        [
+            "chicken curry",
+            "food#general",
+            "positive",
+            "my favorite meat dishes"
+        ],
+        [
+            "chicken tikka masala",
+            "food#general",
+            "positive",
+            "my favorite meat dishes"
+        ]
+    ],
+    [
+        [
+            "chana masala ( garbanzo beans )",
+            "food#quality",
+            "positive",
+            "excellent"
+        ]
+    ],
+    [
+        [
+            "it ' s located in a strip mall near the beverly center",
+            "location#general",
+            "neutral",
+            "NULL"
+        ],
+        [
+            "not the greatest location",
+            "location#general",
+            "negative",
+            "NULL"
+        ],
+        [
+            "the food",
+            "food#general",
+            "positive",
+            "keeps me coming back for more"
+        ]
+    ],
+    [
+        [
+            "never too crowded",
+            "ambience#general",
+            "positive",
+            "NULL"
+        ],
+        [
+            "service",
+            "service#general",
+            "positive",
+            "great"
+        ]
+    ],
+    [
+        [
+            "each item on their menu",
+            "food#general",
+            "positive",
+            "all excellent"
+        ]
+    ],
+    [
+        [
+            "various saag and paneer and korma",
+            "food#general",
+            "positive",
+            "highly recommend"
+        ]
+    ],
+    [
+        [
+            "their delivery",
+            "service#general",
+            "positive",
+            "appreciate"
+        ]
+    ],
+    [
+        [
+            "food",
+            "food#general",
+            "positive",
+            "nice"
+        ],
+        [
+            "spice",
+            "food#style_options",
+            "negative",
+            "no spice"
+        ]
+    ],
+    [
+        [
+            "my meal",
+            "food#general",
+            "positive",
+            "really enjoyed"
+        ]
+    ],
+    [
+        [
+            "lamb korma",
+            "food#general",
+            "positive",
+            "yummy"
+        ],
+        [
+            "saag paneer",
+            "food#general",
+            "positive",
+            "NULL"
+        ],
+        [
+            "samosas",
+            "food#general",
+            "positive",
+            "NULL"
+        ],
+        [
+            "naan",
+            "food#general",
+            "positive",
+            "NULL"
+        ]
+    ],
+    [
+        [
+            "the food",
+            "food#quality",
+            "positive",
+            "all good"
+        ],
+        [
+            "it",
+            "food#style_options",
+            "negative",
+            "way too mild"
+        ]
+    ],
+    [
+        [
+            "the naan",
+            "food#quality",
+            "positive",
+            "some of the best i ' ve had"
+        ],
+        [
+            "the bhartha",
+            "food#quality",
+            "positive",
+            "i really enjoyed"
+        ],
+        [
+            "the bhartha",
+            "food#style_options",
+            "positive",
+            "not too tomatoey"
+        ]
+    ],
+    [
+        [
+            "chickpeas",
+            "food#general",
+            "positive",
+            "were good"
+        ]
+    ],
+    [
+        [
+            "fajita salad",
+            "food#general",
+            "positive",
+            "delicious"
+        ],
+        [
+            "the colorado",
+            "food#general",
+            "positive",
+            "delicious"
+        ],
+        [
+            "the fajitas",
+            "food#general",
+            "positive",
+            "delicious"
+        ]
+    ],
+    [
+        [
+            "warm & cosy environment",
+            "ambience#general",
+            "positive",
+            "love"
+        ]
+    ],
+    [
+        [
+            "the place",
+            "location#general",
+            "positive",
+            "have the place to yourself on nights and weekends for a private party"
+        ],
+        [
+            "celebrate my next birthday there",
+            "restaurant#miscellaneous",
+            "positive",
+            "ca n ' t wait"
+        ]
+    ]
+]

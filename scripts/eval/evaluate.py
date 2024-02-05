@@ -84,11 +84,12 @@ class Evaluator:
 
     def __set_tuple_len_according_to_task(self):
         if args.task == "acos-extend" or args.task == "acosi-extract":
-            self.combos = get_combos(len(TERM_LIST))
+            self.tuple_len = len(TERM_LIST)
         elif args.task == "acos-extract":
-            self.combos = get_combos(len(TERM_LIST) - 1)
+            self.tuple_len = len(TERM_LIST) - 1
         else:
             raise ValueError("Invalid task")
+        self.combos = get_combos(self.tuple_len)
         if len(self.pred_outputs[0][0]) > self.tuple_len:
             new_pred_outputs = []
             for annotation in self.pred_outputs:

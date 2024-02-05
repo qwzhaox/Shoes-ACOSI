@@ -1,0 +1,2589 @@
+[
+    [
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "neutral",
+            "had to order a larger size than what i normally wear",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#purchase\\\\_context",
+            "negative",
+            "had to order a larger size than what i normally wear",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#form",
+            "neutral",
+            "would be better if offered as an adjustable shoe",
+            "direct"
+        ],
+        [
+            "shoe",
+            "cost/value",
+            "negative",
+            "overpriced for quality",
+            "direct"
+        ],
+        [
+            "slides",
+            "cost/value",
+            "negative",
+            "i bought cheaper slides in the past that were more comfortable",
+            "direct"
+        ],
+        [
+            "slides",
+            "performance#comfort",
+            "negative",
+            "i bought cheaper slides in the past that were more comfortable",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "neutral",
+            "usually wear size 10 on pr1 . 11 on pr2",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#purchase\\\\_context",
+            "negative",
+            "should get 1 size bigger for comfort",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#form",
+            "neutral",
+            "1 size bigger for comfort",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "very comfortable",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#sizing_fit",
+            "positive",
+            "true to size",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "negative",
+            "i couldn ' t get my foot into it !",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#purchase\\\\_context",
+            "negative",
+            "why can ' t you make a golf shoe from the same last as your sneakers ? !",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#form",
+            "positive",
+            "looks well constructed",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#comfort",
+            "neutral",
+            "would love a pair that fits like my sneakers !",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "negative",
+            "i usually wear a 9 in sneakers and due to reviews ordered an 8 . 5 but seriously could have worn a 7 . 5 in these",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#purchase\\\\_context",
+            "negative",
+            "ultimately sent these back",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#form",
+            "positive",
+            "cute though",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#fit",
+            "neutral",
+            "this shoe is just roomier all around",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#purchase\\\\_context",
+            "negative",
+            "not sure if i ' ll keep yet",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#sizing_fit",
+            "negative",
+            "slips off a little when i walk",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#comfort",
+            "negative",
+            "feel so bit",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#form",
+            "positive",
+            "love the style of it in person",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#fit",
+            "positive",
+            "i like the fit",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#form",
+            "negative",
+            "not 100 % satisfied with the style",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#material",
+            "negative",
+            "fabric sits loose across the top of the foot",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "really comfortable and lightweight",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#durability",
+            "negative",
+            "not durable at all",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "appearance#form",
+            "positive",
+            "amazing shoes",
+            "direct"
+        ],
+        [
+            "NULL",
+            "cost/value",
+            "positive",
+            "great price",
+            "direct"
+        ],
+        [
+            "adidas",
+            "brand",
+            "positive",
+            "perfect as usual",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "appearance#form",
+            "positive",
+            "beautiful kicks and will never need laces again",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#sizing_fit",
+            "negative",
+            "not true to size , oddly wide and misshapped",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "comfortable",
+            "direct"
+        ],
+        [
+            "shoes",
+            "appearance#form",
+            "negative",
+            "huge - like boats",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "negative",
+            "didn ' t fit us",
+            "direct"
+        ],
+        [
+            "NULL",
+            "appearance#form",
+            "negative",
+            "opening to the show is too narrow for a foot to go in",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#comfort",
+            "negative",
+            "very disappointing",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "appearance#color",
+            "positive",
+            "the color is great",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "these shoes are very comfortable",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#durability",
+            "positive",
+            "they are perfect for walking",
+            "direct"
+        ],
+        [
+            "shoes",
+            "cost/value",
+            "positive",
+            "they are a bit pricey but worth it",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#comfort",
+            "positive",
+            "i love them",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "so comfortable",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#usage frequency",
+            "positive",
+            "im on my feet all day",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#use case",
+            "positive",
+            "as a caregiver",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "appearance#form",
+            "positive",
+            "i like adidas products",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#comfort",
+            "neutral",
+            "comfortable",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#sizing_fit",
+            "negative",
+            "takes more time and effort than i would like to get in to",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#sizing_fit",
+            "negative",
+            "a little more snug than i would like",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#form",
+            "positive",
+            "a sharp functional sneaker",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#comfort",
+            "positive",
+            "the shoes are very comfortable",
+            "direct"
+        ],
+        [
+            "NULL",
+            "cost/value",
+            "negative",
+            "not worth the price",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "shoes is comfortable",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#purchase\\\\_context",
+            "positive",
+            "glad i purchased one",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "contextofuse#place",
+            "positive",
+            "good for around the house",
+            "direct"
+        ],
+        [
+            "NULL",
+            "performance#support/stability",
+            "negative",
+            "not too supportive",
+            "direct"
+        ],
+        [
+            "sole",
+            "performance#comfort",
+            "negative",
+            "thin and flat",
+            "direct"
+        ],
+        [
+            "arch",
+            "performance#comfort",
+            "negative",
+            "not much of an arch either",
+            "direct"
+        ],
+        [
+            "heel",
+            "performance#fit",
+            "negative",
+            "have to have strong fingers to wrangle on the heel",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "appearance#form",
+            "positive",
+            "i recommend these shoes",
+            "direct"
+        ],
+        [
+            "NULL",
+            "appearance#misc",
+            "negative",
+            "position of the velcro on the left and right shoes is different",
+            "direct"
+        ],
+        [
+            "velcro",
+            "appearance#misc",
+            "negative",
+            "position of the velcro on the left and right shoes is different",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "contextofuse#usage frequency",
+            "positive",
+            "i love these shoes",
+            "direct"
+        ],
+        [
+            "shoes",
+            "appearance#color",
+            "positive",
+            "the color is beautiful",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "comfortable",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#support/stability",
+            "positive",
+            "received many compliments",
+            "indirect"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "appearance#form",
+            "negative",
+            "look and feel cheap",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#sizing_fit",
+            "negative",
+            "sizing is off",
+            "direct"
+        ],
+        [
+            "NULL",
+            "cost/value",
+            "negative",
+            "nothing like the originals",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#quality",
+            "negative",
+            "feel cheap",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoe",
+            "performance#comfort",
+            "positive",
+            "very comfortable",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#cushioning",
+            "positive",
+            "excellent",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#support/stability",
+            "positive",
+            "very supportive",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#sizing/fit",
+            "negative",
+            "a bit too narrow for my foot",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "performance#support/stability",
+            "positive",
+            "gives me the support i was looking for",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#usage frequency",
+            "positive",
+            "i have been wearing them for 30 years",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "contextofuse#purchase_context",
+            "positive",
+            "received my order earlier than expected",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#review_temporality",
+            "positive",
+            "will definitely order online again",
+            "direct"
+        ],
+        [
+            "NULL",
+            "performance#durability",
+            "positive",
+            "every thing about my order went accordingly",
+            "indirect"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "appearance#misc",
+            "negative",
+            "have glue all over",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "shoes are comfortable",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#sizing/fit",
+            "negative",
+            "the lie about the sizes",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#comfort",
+            "negative",
+            "so tight",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#purchase_context",
+            "negative",
+            "i well never never never buy them",
+            "direct"
+        ],
+        [
+            "shoes",
+            "cost/value",
+            "negative",
+            "not worth the money",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "appearance#form",
+            "positive",
+            "i love the style of these shoes",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "they are so comfortable",
+            "direct"
+        ],
+        [
+            "shoes",
+            "contextofuse#use case",
+            "positive",
+            "perfect for both work and play",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "contextofuse#purchase_context",
+            "negative",
+            "i gave this rating due to receiving my order almost a month later",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#review_temporality",
+            "negative",
+            "it was a christmas gift , so it was a late gift",
+            "direct"
+        ],
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "negative",
+            "initially they sent me two different sizes",
+            "direct"
+        ],
+        [
+            "NULL",
+            "communication#customer_service",
+            "negative",
+            "i was not contacted in regards of the situation",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "slides",
+            "appearance#form",
+            "positive",
+            "comfortable and stylish",
+            "direct"
+        ],
+        [
+            "NULL",
+            "appearance#form",
+            "negative",
+            "narrower than other adidas pairs that i own",
+            "direct"
+        ],
+        [
+            "adidas",
+            "brand#reputation",
+            "positive",
+            "i own",
+            "indirect"
+        ]
+    ],
+    [
+        [
+            "slides",
+            "appearance#form",
+            "positive",
+            "very attractive",
+            "direct"
+        ],
+        [
+            "slides",
+            "performance#comfort",
+            "negative",
+            "rather stiff",
+            "direct"
+        ],
+        [
+            "slides",
+            "performance#support/stability",
+            "negative",
+            "does not have enough suppleness to conform to your foot",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#fit",
+            "negative",
+            "they are a little short and very very narrow",
+            "direct"
+        ],
+        [
+            "NULL",
+            "performance#fit",
+            "negative",
+            "didn ' t want to return them because that ' s a pain",
+            "direct"
+        ],
+        [
+            "shoes",
+            "brand#adidas",
+            "positive",
+            "love adidas",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#quality",
+            "negative",
+            "not sure these are winners though",
+            "indirect"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "appearance#form",
+            "positive",
+            "nice looking slides",
+            "direct"
+        ],
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "negative",
+            "they ' re too narrow",
+            "direct"
+        ],
+        [
+            "slides",
+            "contextofuse#purchase_context",
+            "neutral",
+            "go up 1 / 2 size",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "good for walking",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#comfort",
+            "negative",
+            "not easy to get on",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#sizing/fit",
+            "negative",
+            "not easy to get on",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "somewhat comfortable for walking",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "appearance#form",
+            "positive",
+            "super cute shoes and comfortable too",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#durability",
+            "negative",
+            "there are holes near the toe already",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "comfortable too",
+            "direct"
+        ],
+        [
+            "shoes",
+            "cost/value",
+            "negative",
+            "disappointed that they are falling apart with such little use",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoe",
+            "performance#comfort",
+            "positive",
+            "the shoe is comfortable",
+            "direct"
+        ],
+        [
+            "shoe",
+            "cost/value",
+            "negative",
+            "it is a bit too expensive",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#fit",
+            "negative",
+            "this shoe fits completely different than the last pair of adidas running sneakers i purchased",
+            "direct"
+        ],
+        [
+            "shoes",
+            "appearance#form",
+            "positive",
+            "i do love the color scheme and style though",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#sizing_fit",
+            "negative",
+            "they are very long and a bit too narrow",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoe",
+            "performance#comfort",
+            "positive",
+            "comfortable",
+            "direct"
+        ],
+        [
+            "shoe",
+            "cost/value",
+            "negative",
+            "not worth the price",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#quality",
+            "negative",
+            "not good",
+            "direct"
+        ],
+        [
+            "shoe",
+            "contextofuse#recommendation",
+            "negative",
+            "would not recommend this product to anyone",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoe",
+            "performance#comfort",
+            "positive",
+            "they are so comfortable",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#form",
+            "positive",
+            "look good with every athletic outfit",
+            "direct"
+        ],
+        [
+            "shoe",
+            "versatility",
+            "positive",
+            "love pairing them with leggings and a tank top or even a sweatshirt and a tennis skirt",
+            "direct"
+        ],
+        [
+            "shoe",
+            "contextofuse#place",
+            "positive",
+            "perfect white athletic shoe",
+            "indirect"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "appearance#form",
+            "positive",
+            "they are very stylish",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "they are comfortable",
+            "direct"
+        ],
+        [
+            "shoes",
+            "versatility",
+            "positive",
+            "i get tons of compliments",
+            "direct"
+        ],
+        [
+            "black and gold pair",
+            "performance#comfort",
+            "positive",
+            "they are comfortable",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoe",
+            "performance#comfort",
+            "positive",
+            "this shoe is very comfortable",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#style",
+            "positive",
+            "i love the style",
+            "direct"
+        ],
+        [
+            "sole",
+            "performance#durability",
+            "negative",
+            "the sole is already starting to separate from the shoe",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoe",
+            "performance#comfort",
+            "positive",
+            "lightweight and comfortable for work",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#support/stability",
+            "positive",
+            "great arch support",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#sizing/fit",
+            "neutral",
+            "after 16 hours in them my feet doesn ' t hurt at all",
+            "indirect"
+        ],
+        [
+            "work",
+            "contextofuse#use case",
+            "positive",
+            "these babies does the job ! ! !",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "appearance#color",
+            "positive",
+            "color was nice",
+            "direct"
+        ],
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "neutral",
+            "size little loose but ok",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#form",
+            "negative",
+            "too wide from the front",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#comfort",
+            "negative",
+            "worst was the it came with the security tag",
+            "direct"
+        ],
+        [
+            "online shopping",
+            "contextofuse#purchase_context",
+            "negative",
+            "my last purchase before this one was like a size smaller so i had to give them away",
+            "indirect"
+        ],
+        [
+            "online shopping",
+            "contextofuse#purchase_context",
+            "negative",
+            "i will not buy online again to much issues",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#comfort",
+            "negative",
+            "the shoe is very uncomfortable",
+            "direct"
+        ],
+        [
+            "NULL",
+            "cost/value",
+            "negative",
+            "the quality is not worth the price",
+            "direct"
+        ],
+        [
+            "NULL",
+            "versatility",
+            "negative",
+            "i would not recommend this product to anyone",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "brand",
+            "cost/value",
+            "negative",
+            "subpar",
+            "direct"
+        ],
+        [
+            "brand",
+            "customer service",
+            "negative",
+            "non existent",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#quality",
+            "negative",
+            "subpar",
+            "direct"
+        ],
+        [
+            "brand",
+            "versatility",
+            "negative",
+            "taking my business elsewhere",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "i race with the nb fuel cell prism and love the shoe",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "would like to purchase the rc elite",
+            "direct"
+        ],
+        [
+            "shoes",
+            "appearance#form",
+            "neutral",
+            "do not come in wide",
+            "indirect"
+        ],
+        [
+            "NULL",
+            "contextofuse#purchase_context",
+            "negative",
+            "do not come in wide",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#review_temporality",
+            "negative",
+            "would like to purchase the rc elite",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "negative",
+            "it is a very cute boot but i have wide feet and it is not very comfortable for me",
+            "direct"
+        ],
+        [
+            "NULL",
+            "performance#comfort",
+            "negative",
+            "not very comfortable for me",
+            "direct"
+        ],
+        [
+            "boot",
+            "appearance#form",
+            "positive",
+            "very cute boot",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "the shoes are comfortable",
+            "direct"
+        ],
+        [
+            "shoes",
+            "cost/value",
+            "positive",
+            "the price is good",
+            "direct"
+        ],
+        [
+            "material",
+            "appearance#material",
+            "negative",
+            "the quality of the material used is not good",
+            "direct"
+        ],
+        [
+            "soles",
+            "performance#durability",
+            "negative",
+            "the shoes are not durable",
+            "direct"
+        ],
+        [
+            "soles",
+            "performance#support/stability",
+            "negative",
+            "the soles are thin",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "cost/value",
+            "negative",
+            "not worth the price",
+            "direct"
+        ],
+        [
+            "NULL",
+            "general",
+            "negative",
+            "i would not recommend this product to anyone",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#sizing/fit",
+            "negative",
+            "these are too tight on me",
+            "direct"
+        ],
+        [
+            "NULL",
+            "performance#comfort",
+            "negative",
+            "my feet feel like they ' re being strangled",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#form",
+            "negative",
+            "i don ' t understand why you ' d make these almost unwearable for the correct size",
+            "indirect"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "appearance#color",
+            "positive",
+            "i love the color and the design",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#comfort",
+            "positive",
+            "the shoe is comfortable",
+            "direct"
+        ],
+        [
+            "shoe",
+            "cost/value",
+            "positive",
+            "the price is reasonable",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "neutral",
+            "had to order a larger size than what i normally wear",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "negative",
+            "really small",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#form",
+            "positive",
+            "good material for the top strap",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoe",
+            "performance#comfort",
+            "positive",
+            "comfortable",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#sizing_fit",
+            "positive",
+            "not to big or small",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "slides",
+            "appearance#form",
+            "negative",
+            "sides of both slides appear to be lifting : / poorly glued together",
+            "direct"
+        ],
+        [
+            "NULL",
+            "performance#durability",
+            "negative",
+            "poorly glued together",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#purchase_context",
+            "negative",
+            "want to return but worried about the hassle of trying to get a better pair reordered",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "performance#durability",
+            "positive",
+            "the waterproofing is top notch",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "great for hiking and outdoor activities",
+            "direct"
+        ],
+        [
+            "shoes",
+            "cost/value",
+            "neutral",
+            "the shoe is a bit heavy but worth it for the quality",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoe",
+            "performance#durability",
+            "positive",
+            "very durable",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#comfort",
+            "positive",
+            "comfy",
+            "direct"
+        ],
+        [
+            "shoe",
+            "contextofuse#use case",
+            "positive",
+            "i wear them all day for work",
+            "direct"
+        ],
+        [
+            "shoe",
+            "versatility",
+            "positive",
+            "would recommend",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#comfort",
+            "positive",
+            "comfortable for short walks",
+            "direct"
+        ],
+        [
+            "shoes",
+            "appearance#form",
+            "positive",
+            "stylish and versatile",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#durability",
+            "negative",
+            "not suitable for long walks or running",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#use case applicability",
+            "negative",
+            "not suitable for long walks or running",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoe",
+            "appearance#form",
+            "positive",
+            "this is a really nice shoe",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#purchase\\\\_context",
+            "positive",
+            "i bought this product for my husband and he really likes the shoe",
+            "direct"
+        ],
+        [
+            "NULL",
+            "general",
+            "positive",
+            "glad i stay on this website daily\ud83d\ude0a",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "appearance#color",
+            "negative",
+            "the color on the site has neutral beige / brown tones",
+            "direct"
+        ],
+        [
+            "NULL",
+            "appearance#color",
+            "negative",
+            "unfortunately",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#comfort",
+            "negative",
+            "don ' t buy if you ' re expecting anything other than bland gray",
+            "direct"
+        ],
+        [
+            "shoe",
+            "cost/value",
+            "negative",
+            "will be returning immediately",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "laces",
+            "appearance#misc",
+            "negative",
+            "dirt spots on the laces and thread coming out from a lace",
+            "direct"
+        ],
+        [
+            "laces",
+            "appearance#misc",
+            "negative",
+            "not his fault it ' s reebok and their manufacturer",
+            "indirect"
+        ],
+        [
+            "shoe",
+            "performance#durability",
+            "negative",
+            "shoe hasn ' t even been worn yet",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#comfort",
+            "negative",
+            "disappointed they ruined this shoe for me",
+            "direct"
+        ],
+        [
+            "shoe",
+            "contextofuse#purchase_context",
+            "negative",
+            "thought i ' d give reebok a try again because of nast and they threw that out the window",
+            "indirect"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "appearance#form",
+            "negative",
+            "fabric over the toes needs to be reinforced with leather or something",
+            "direct"
+        ],
+        [
+            "shoes",
+            "appearance#material",
+            "negative",
+            "my toes immediately have made a hole",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#durability",
+            "negative",
+            "my toes immediately have made a hole",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "appearance#color",
+            "negative",
+            "i was disappointed in the color",
+            "direct"
+        ],
+        [
+            "shoes",
+            "appearance#color",
+            "negative",
+            "from the pictures the top looks white but it ' s actually blue",
+            "indirect"
+        ],
+        [
+            "shoes",
+            "appearance#color",
+            "negative",
+            "which made a difference when i received them",
+            "direct"
+        ],
+        [
+            "shoes",
+            "cost/value",
+            "negative",
+            "i wasn ' t wanting that color scheme",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "they are comfortable and easy to walk in",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#support/stability",
+            "positive",
+            "keeps the heel of the shoe snug to my feet - no slipping off",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "neutral",
+            "the quality of the shoe is good but the fit is a bit off",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#comfort",
+            "negative",
+            "the fit is a bit off",
+            "direct"
+        ],
+        [
+            "shoe",
+            "cost/value",
+            "neutral",
+            "the quality of the shoe is good",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoe",
+            "performance#comfort",
+            "positive",
+            "very comfortable",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#color",
+            "positive",
+            "i own every color they sale",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#recommendation",
+            "positive",
+            "highly recommend them",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#comfort",
+            "neutral",
+            "i need an orthopedic lift in one shoe",
+            "direct"
+        ],
+        [
+            "shoes",
+            "appearance#form",
+            "positive",
+            "reebox still manufactures a fine shoe which can still be modified",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "appearance#form",
+            "negative",
+            "these look awful in the larger sizes",
+            "direct"
+        ],
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "negative",
+            "they are undersized",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#sizing_fit",
+            "negative",
+            "order 1 / 2 size up or go easy on yourself and don ' t order",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "contextofuse#purchase_context",
+            "negative",
+            "shipping took too long",
+            "direct"
+        ],
+        [
+            "product",
+            "performance#general",
+            "positive",
+            "great product",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "appearance#color",
+            "negative",
+            "the color on the site has neutral beige / brown tones",
+            "direct"
+        ],
+        [
+            "NULL",
+            "appearance#color",
+            "negative",
+            "unfortunately",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#form",
+            "negative",
+            "don ' t buy if you ' re expecting anything other than bland gray",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#comfort",
+            "negative",
+            "will be returning immediately",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoe",
+            "performance#comfort",
+            "positive",
+            "i really like how comfortable these shoes are ! ! !",
+            "direct"
+        ],
+        [
+            "NULL",
+            "appearance#color",
+            "positive",
+            "i would get them in all colors",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "appearance#form",
+            "positive",
+            "still look cool",
+            "direct"
+        ],
+        [
+            "NULL",
+            "quality",
+            "negative",
+            "quality has lowered significantly\u2014bummer",
+            "direct"
+        ],
+        [
+            "sizing",
+            "performance#sizing/fit",
+            "negative",
+            "sizing has changed",
+            "direct"
+        ],
+        [
+            "7 . 5",
+            "performance#sizing/fit",
+            "negative",
+            "7 . 5 is too small",
+            "direct"
+        ],
+        [
+            "8",
+            "performance#sizing/fit",
+            "negative",
+            "8 is too big",
+            "direct"
+        ],
+        [
+            "these",
+            "performance#general",
+            "negative",
+            "these are just built differently now",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "sneakers",
+            "appearance#form",
+            "positive",
+            "look great",
+            "direct"
+        ],
+        [
+            "sneakers",
+            "performance#comfort",
+            "positive",
+            "feel so comfy",
+            "direct"
+        ],
+        [
+            "sneakers",
+            "performance#fit",
+            "positive",
+            "fit perfect",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "appearance#color",
+            "negative",
+            "the color on the site has neutral beige / brown tones",
+            "direct"
+        ],
+        [
+            "NULL",
+            "appearance#color",
+            "negative",
+            "unfortunately",
+            "direct"
+        ],
+        [
+            "shoes",
+            "appearance#form",
+            "negative",
+            "don ' t buy if you ' re expecting anything other than bland gray",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#comfort",
+            "negative",
+            "will be returning immediately",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#comfort",
+            "positive",
+            "comfortable",
+            "direct"
+        ],
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "positive",
+            "true to size",
+            "direct"
+        ],
+        [
+            "shoes",
+            "appearance#color",
+            "positive",
+            "perfect fall colors",
+            "direct"
+        ],
+        [
+            "shoes",
+            "contextofuse#place",
+            "positive",
+            "worn these shoes so many times",
+            "direct"
+        ],
+        [
+            "top",
+            "appearance#form",
+            "negative",
+            "top was a bit uncomfortable without socks",
+            "direct"
+        ],
+        [
+            "top",
+            "contextofuse#usage_frequency",
+            "positive",
+            "jist wear socks",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#durability",
+            "negative",
+            "sure don ' t make them like you use to ! ! ! !",
+            "direct"
+        ],
+        [
+            "shoes",
+            "cost/value",
+            "negative",
+            "these cheap shoes",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#quality",
+            "negative",
+            "sure don ' t make them like you use to ! ! ! !",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#purchase\\\\_context",
+            "negative",
+            "am returning them",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#review\\_temporality",
+            "negative",
+            "will not be buying these cheap shoes anymore",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "appearance#material",
+            "positive",
+            "i ' d rather have the classic in leather",
+            "direct"
+        ],
+        [
+            "shoes",
+            "appearance#form",
+            "positive",
+            "i would buy many pairs",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#comfort",
+            "positive",
+            "i feel like i can run a marathon",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#sizing_fit",
+            "positive",
+            "true to size",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "appearance#form",
+            "positive",
+            "they ' re pretty comfortable to wear all day",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "comfortable to wear all day",
+            "direct"
+        ],
+        [
+            "shoes",
+            "appearance#style",
+            "positive",
+            "classic style",
+            "direct"
+        ],
+        [
+            "shoes",
+            "general",
+            "positive",
+            "would recommend",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#comfort",
+            "negative",
+            "They are uncomfortable",
+            "direct"
+        ],
+        [
+            "NULL",
+            "performance#quality",
+            "negative",
+            "the quality is poor",
+            "direct"
+        ],
+        [
+            "brand",
+            "cost/value",
+            "negative",
+            "I will never buy from this brand again",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "negative",
+            "the size is a half size smaller then what i wear",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#purchase\\\\_context",
+            "negative",
+            "next time i will need to order a 6 1 / 2 instead of my normal size 6",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "appearance#form",
+            "positive",
+            "has a great design",
+            "direct"
+        ],
+        [
+            "NULL",
+            "appearance#color",
+            "negative",
+            "gets dirty easily",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "comfortable",
+            "direct"
+        ],
+        [
+            "shoes",
+            "quality",
+            "positive",
+            "quality is good",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#comfort",
+            "positive",
+            "comfortable",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#form",
+            "positive",
+            "timeless",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#comfort",
+            "positive",
+            "super comfortable pairs of kicks",
+            "direct"
+        ],
+        [
+            "classic",
+            "appearance#form",
+            "positive",
+            "the classic is the way to go",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "appearance#form",
+            "positive",
+            "this is my 5th pair of classics",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#purchase_context",
+            "positive",
+            "i ' ll be buying another pair soon",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "negative",
+            "i ordered my size but for me they run small",
+            "direct"
+        ],
+        [
+            "NULL",
+            "performance#comfort",
+            "negative",
+            "i wouldn ' t advise that",
+            "direct"
+        ],
+        [
+            "shoe",
+            "contextofuse#purchase_context",
+            "negative",
+            "i wore them just to see if i could break them in",
+            "indirect"
+        ],
+        [
+            "shoe",
+            "performance#sizing_fit",
+            "positive",
+            "give yourself some wiggle room and order the 1 / 2",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "negative",
+            "way too narrow by the toes",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#purchase_context",
+            "negative",
+            "i ' m reliably a size six and these didn ' t fit me",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#form",
+            "negative",
+            "way too narrow by the toes",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoe",
+            "performance#sizing/fit",
+            "negative",
+            "it is too small",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#purchase\\\\_context",
+            "negative",
+            "can ' t find my order number to exchange it",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#form",
+            "positive",
+            "i like the shoe itself",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "appearance#form",
+            "positive",
+            "look amazing",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#durability",
+            "negative",
+            "the durability just isn ' t there",
+            "direct"
+        ],
+        [
+            "material",
+            "appearance#material",
+            "negative",
+            "cheap material",
+            "direct"
+        ],
+        [
+            "toe",
+            "performance#comfort",
+            "negative",
+            "if you have long toe nails they will poke right through",
+            "indirect"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#comfort",
+            "negative",
+            "it just didn ' t feel comfortable",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#form",
+            "negative",
+            "too narrow",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#fit",
+            "negative",
+            "my foot falling off on the sides",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoe",
+            "appearance#color",
+            "negative",
+            "the color i received is not what i expected",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#comfort",
+            "positive",
+            "the shoe is comfortable",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "neutral",
+            "i have been wearing these for years",
+            "direct"
+        ],
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "negative",
+            "i got a 9 this time and they were really tight on my feet",
+            "direct"
+        ],
+        [
+            "shoes",
+            "contextofuse#purchase_context",
+            "positive",
+            "i use to always get an 8 1 / 2 ( women ' s )",
+            "indirect"
+        ],
+        [
+            "shoes",
+            "performance#comfort",
+            "negative",
+            "they were really tight on my feet",
+            "direct"
+        ],
+        [
+            "shoes",
+            "cost/value",
+            "positive",
+            "i ' d recommend going up at least a half size",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "appearance#color",
+            "positive",
+            "the color is amazing",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#sizing_fit",
+            "negative",
+            "i ordered the size according to the length in the sizes and are 1 cm larger than the description",
+            "direct"
+        ],
+        [
+            "shoes",
+            "quality",
+            "positive",
+            "the quality is good",
+            "direct"
+        ],
+        [
+            "shoes",
+            "contextofuse#purchase_context",
+            "negative",
+            "i did not return them , because i worn them before realizing that they were that big and i put the box in the garbage",
+            "indirect"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "appearance#form",
+            "positive",
+            "i love the look and style of this shoe",
+            "direct"
+        ],
+        [
+            "NULL",
+            "performance#quality",
+            "negative",
+            "i think they can do a little better with the quality of it",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#sizing_fit",
+            "neutral",
+            "had to buy a half size larger they run small",
+            "direct"
+        ],
+        [
+            "shoe",
+            "cost/value",
+            "negative",
+            "i think they can do a little better with the quality of it",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "negative",
+            "this shoe is extremely narrow",
+            "direct"
+        ],
+        [
+            "NULL",
+            "appearance#form",
+            "negative",
+            "making it unwearable for me",
+            "direct"
+        ],
+        [
+            "shoe",
+            "cost/value",
+            "positive",
+            "i believe the quality is very good",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#comfort",
+            "negative",
+            "unwearable for me",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "negative",
+            "shoe is shorter & narrower than stated size",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#purchase\\\\_context",
+            "negative",
+            "order at least half size larger than usual",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#form",
+            "negative",
+            "shorter & narrower than stated size",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "shoes are comfortable and very versatile",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#sizing_fit",
+            "negative",
+            "the sizing runs small so i had to exchange for a half size up",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#durability",
+            "negative",
+            "the upper leather ripped",
+            "direct"
+        ],
+        [
+            "shoes",
+            "cost/value",
+            "negative",
+            "disappointed in the quality and had high expectations",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#sizing_fit",
+            "negative",
+            "shoe is shorter & narrower than stated size",
+            "direct"
+        ],
+        [
+            "NULL",
+            "contextofuse#purchase\\\\_context",
+            "negative",
+            "order at least half size larger than usual",
+            "direct"
+        ],
+        [
+            "shoe",
+            "appearance#form",
+            "negative",
+            "shorter & narrower than stated size",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#fit",
+            "negative",
+            "if you have even the slightest bit of width to your foot , do not buy these",
+            "direct"
+        ],
+        [
+            "NULL",
+            "appearance#form",
+            "negative",
+            "completely bulged out of the side of the sole on these shoes",
+            "direct"
+        ],
+        [
+            "shoe",
+            "cost/value",
+            "negative",
+            "most narrow shoes i have ever tried on in my life",
+            "direct"
+        ],
+        [
+            "return site",
+            "contextofuse#purchase_context",
+            "negative",
+            "your \" print label \" button on your return site doesn ' t work",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "shoes",
+            "performance#comfort",
+            "positive",
+            "shoes are comfortable and very versatile",
+            "direct"
+        ],
+        [
+            "NULL",
+            "performance#sizing/fit",
+            "negative",
+            "the sizing runs small so i had to exchange for a half size up",
+            "direct"
+        ],
+        [
+            "shoes",
+            "performance#durability",
+            "negative",
+            "the upper leather ripped",
+            "direct"
+        ],
+        [
+            "shoes",
+            "cost/value",
+            "negative",
+            "disappointed in the quality and had high expectations",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#comfort",
+            "negative",
+            "too tight and uncomfortable",
+            "direct"
+        ],
+        [
+            "cushions",
+            "performance#comfort",
+            "negative",
+            "still not so good",
+            "indirect"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#comfort",
+            "positive",
+            "the shoes are really comfortable and have good arch support",
+            "direct"
+        ],
+        [
+            "NULL",
+            "cost/value",
+            "negative",
+            "they are a bit pricey",
+            "direct"
+        ]
+    ],
+    [
+        [
+            "NULL",
+            "performance#sizing/fit",
+            "negative",
+            "this shoe is a lot narrower than reebok ' s other offerings",
+            "direct"
+        ],
+        [
+            "NULL",
+            "appearance#form",
+            "positive",
+            "i love the look",
+            "direct"
+        ],
+        [
+            "shoe",
+            "contextofuse#purchase_context",
+            "positive",
+            "reebok is a go - to brand for me because their shoes often fit my wide feet well in a way other brands don ' t",
+            "direct"
+        ],
+        [
+            "shoe",
+            "cost/value",
+            "positive",
+            "it is a very cute shoe",
+            "direct"
+        ],
+        [
+            "shoe",
+            "performance#comfort",
+            "negative",
+            "wouldn ' t recommend it if you have wide feet",
+            "direct"
+        ]
+    ]
+]

@@ -1,0 +1,5114 @@
+{
+    "metadata": {
+        "num tokens per review": {
+            "mean": 15.34,
+            "median": 14.0,
+            "stdev": 9.634974170838616
+        },
+        "num tuples predicted": {
+            "mean": 2.35,
+            "median": 2.0,
+            "stdev": 1.4451241601965688
+        },
+        "num tuples": {
+            "mean": 1.28,
+            "median": 1.0,
+            "stdev": 0.7795362516758074
+        }
+    },
+    "exact": {
+        "precision": 0.008771929824561403,
+        "recall": 0.015625,
+        "f1-score": 0.011235955056179775,
+        "macro IoU": 0.005649717514124294,
+        "avg micro IoU": 0.01
+    },
+    "aspect": {
+        "precision": 0.3575757575757576,
+        "recall": 0.5175438596491229,
+        "f1-score": 0.4229390681003584,
+        "macro IoU": 0.2681818181818182,
+        "avg micro IoU": 0.4016666666666667,
+        "span precision": 0.5898876404494382,
+        "span recall": 0.6774193548387096,
+        "span f1-score": 0.6306306306306305,
+        "span macro IoU": 0.4605263157894737,
+        "span avg micro IoU": 0.5908333333333333
+    },
+    "category": {
+        "precision": 0.0625,
+        "recall": 0.06422018348623854,
+        "f1-score": 0.06334841628959276,
+        "macro IoU": 0.03271028037383177,
+        "avg micro IoU": 0.065
+    },
+    "sentiment": {
+        "precision": 0.7454545454545455,
+        "recall": 0.7735849056603774,
+        "f1-score": 0.7592592592592593,
+        "macro IoU": 0.6119402985074627,
+        "avg micro IoU": 0.7483333333333334
+    },
+    "opinion": {
+        "precision": 0.2409090909090909,
+        "recall": 0.44537815126050423,
+        "f1-score": 0.3126843657817109,
+        "macro IoU": 0.1853146853146853,
+        "avg micro IoU": 0.28642857142857137,
+        "span precision": 0.2809917355371901,
+        "span recall": 0.5230769230769231,
+        "span f1-score": 0.3655913978494624,
+        "span macro IoU": 0.2236842105263158,
+        "span avg micro IoU": 0.31775396825396823
+    },
+    "aspect-category": {
+        "precision": 0.024242424242424242,
+        "recall": 0.034482758620689655,
+        "f1-score": 0.028469750889679714,
+        "macro IoU": 0.01444043321299639,
+        "avg micro IoU": 0.035
+    },
+    "aspect-sentiment": {
+        "precision": 0.2909090909090909,
+        "recall": 0.41379310344827586,
+        "f1-score": 0.34163701067615654,
+        "macro IoU": 0.20600858369098712,
+        "avg micro IoU": 0.3233333333333333
+    },
+    "aspect-opinion": {
+        "precision": 0.11403508771929824,
+        "recall": 0.2047244094488189,
+        "f1-score": 0.14647887323943662,
+        "macro IoU": 0.0790273556231003,
+        "avg micro IoU": 0.11949999999999998
+    },
+    "category-sentiment": {
+        "precision": 0.0423728813559322,
+        "recall": 0.045454545454545456,
+        "f1-score": 0.043859649122807015,
+        "macro IoU": 0.02242152466367713,
+        "avg micro IoU": 0.04333333333333334
+    },
+    "category-opinion": {
+        "precision": 0.013574660633484163,
+        "recall": 0.024793388429752067,
+        "f1-score": 0.017543859649122806,
+        "macro IoU": 0.008849557522123894,
+        "avg micro IoU": 0.02
+    },
+    "sentiment-opinion": {
+        "precision": 0.22727272727272727,
+        "recall": 0.4132231404958678,
+        "f1-score": 0.2932551319648094,
+        "macro IoU": 0.1718213058419244,
+        "avg micro IoU": 0.2714285714285714
+    },
+    "aspect-category-sentiment": {
+        "precision": 0.01818181818181818,
+        "recall": 0.02586206896551724,
+        "f1-score": 0.021352313167259784,
+        "macro IoU": 0.01079136690647482,
+        "avg micro IoU": 0.025
+    },
+    "aspect-category-opinion": {
+        "precision": 0.008771929824561403,
+        "recall": 0.015625,
+        "f1-score": 0.011235955056179775,
+        "macro IoU": 0.005649717514124294,
+        "avg micro IoU": 0.01
+    },
+    "aspect-sentiment-opinion": {
+        "precision": 0.10087719298245613,
+        "recall": 0.1796875,
+        "f1-score": 0.1292134831460674,
+        "macro IoU": 0.06906906906906907,
+        "avg micro IoU": 0.10916666666666666
+    },
+    "category-sentiment-opinion": {
+        "precision": 0.013574660633484163,
+        "recall": 0.02459016393442623,
+        "f1-score": 0.01749271137026239,
+        "macro IoU": 0.008823529411764706,
+        "avg micro IoU": 0.02
+    },
+    "reviews": [
+        {
+            "idx": 0,
+            "review": "the unit cost $ 275 to start with , so it is not worth repairing .",
+            "pred": [
+                [
+                    "unit",
+                    "unit#quality",
+                    "negative",
+                    "worth"
+                ],
+                [
+                    "repairing",
+                    "repairing#quality",
+                    "negative",
+                    "repairing"
+                ]
+            ],
+            "true": [
+                [
+                    "unit",
+                    "laptop#price",
+                    "negative",
+                    "not worth"
+                ]
+            ],
+            "metadata": {
+                "review_length": 16,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.5,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.5,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 1,
+            "review": "going from acer 15 to acer 11 was difficult , 11 inches seems too small for me .",
+            "pred": [
+                [
+                    "acer 11",
+                    "screen#size",
+                    "negative",
+                    "small"
+                ],
+                [
+                    "acer 15",
+                    "screen#size",
+                    "negative",
+                    "big"
+                ]
+            ],
+            "true": [
+                [
+                    "acer 11",
+                    "laptop#design_features",
+                    "negative",
+                    "difficult"
+                ],
+                [
+                    "acer 11",
+                    "laptop#design_features",
+                    "negative",
+                    "small"
+                ]
+            ],
+            "metadata": {
+                "review_length": 18,
+                "num_predicted": 2,
+                "num_true": 2
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.5,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.3333333333333333,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.5,
+            "aspect-opinion micro IoU": 0.3333333333333333,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.3333333333333333,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.3333333333333333,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 2,
+            "review": "also it ' s not a true ssd drive in there but emmc , which makes a difference .",
+            "pred": [
+                [
+                    "drive",
+                    "drive#general",
+                    "positive",
+                    "true"
+                ],
+                [
+                    "drive",
+                    "drive#general",
+                    "positive",
+                    "emmc"
+                ]
+            ],
+            "true": [
+                [
+                    "ssd drive",
+                    "hard_disc#operation_performance",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 19,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 3,
+            "review": "the computer has difficulty switching between tablet and computer .",
+            "pred": [
+                [
+                    "computer",
+                    "usability#general",
+                    "negative",
+                    "tablet"
+                ],
+                [
+                    "computer",
+                    "usability#general",
+                    "negative",
+                    "computer"
+                ]
+            ],
+            "true": [
+                [
+                    "computer",
+                    "laptop#usability",
+                    "negative",
+                    "difficulty"
+                ]
+            ],
+            "metadata": {
+                "review_length": 10,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 4,
+            "review": "2 / 28 / 18 - a couple days ago i updated the chrome os .",
+            "pred": [
+                [
+                    "chrome _ os",
+                    "chrome_os#quality",
+                    "positive",
+                    "chrome _ os"
+                ],
+                [
+                    "chrome _ os",
+                    "chrome_os#quality",
+                    "positive",
+                    "chrome _ os"
+                ]
+            ],
+            "true": [
+                [
+                    "chrome os",
+                    "os#general",
+                    "neutral",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 16,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 5,
+            "review": "it ' s just that chrome doesn ' t work the same with a chromebook as it does with windows .",
+            "pred": [
+                [
+                    "chromebook",
+                    "software#usability",
+                    "negative",
+                    "windows"
+                ],
+                [
+                    "chrome",
+                    "software#usability",
+                    "negative",
+                    "windows"
+                ]
+            ],
+            "true": [
+                [
+                    "chrome",
+                    "os#operation_performance",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 21,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.5,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.5,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 6,
+            "review": "hopefully in 10 years they ' ll have this figured out and it won ' t suck so badly .",
+            "pred": [
+                [
+                    "place",
+                    "ambience#general",
+                    "negative",
+                    "sleek"
+                ],
+                [
+                    "place",
+                    "ambience#general",
+                    "negative",
+                    "modern"
+                ],
+                [
+                    "vent",
+                    "ambience#general",
+                    "negative",
+                    "un - appetizing"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#general",
+                    "negative",
+                    "suck"
+                ],
+                [
+                    "NULL",
+                    "laptop#general",
+                    "negative",
+                    "badly"
+                ]
+            ],
+            "metadata": {
+                "review_length": 20,
+                "num_predicted": 3,
+                "num_true": 2
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 7,
+            "review": "bought this last year on july .",
+            "pred": [
+                [
+                    "last _ year",
+                    "time_span_of_review",
+                    "positive",
+                    "july"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#general",
+                    "neutral",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 7,
+                "num_predicted": 1,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 8,
+            "review": "i rarely use the keyboard .",
+            "pred": [
+                [
+                    "keyboard",
+                    "keyboard#usability",
+                    "positive",
+                    "rarely"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#usability",
+                    "positive",
+                    "use"
+                ]
+            ],
+            "true": [
+                [
+                    "keyboard",
+                    "keyboard#general",
+                    "negative",
+                    "rarely"
+                ]
+            ],
+            "metadata": {
+                "review_length": 6,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.5,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.5,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 9,
+            "review": "- great price for a touchscreen chromebook",
+            "pred": [
+                [
+                    "chromebook",
+                    "chromebook#quality",
+                    "positive",
+                    "touchscreen"
+                ],
+                [
+                    "price",
+                    "chromebook#price",
+                    "positive",
+                    "great"
+                ]
+            ],
+            "true": [
+                [
+                    "touchscreen chromebook",
+                    "laptop#price",
+                    "positive",
+                    "great"
+                ]
+            ],
+            "metadata": {
+                "review_length": 7,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.5,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.5,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 10,
+            "review": "it is glitchy , and barely usable .",
+            "pred": [
+                [
+                    "product",
+                    "usability#general",
+                    "negative",
+                    "barely"
+                ],
+                [
+                    "product",
+                    "usability#general",
+                    "negative",
+                    "usable"
+                ],
+                [
+                    "product",
+                    "usability#general",
+                    "negative",
+                    "glitchy"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "hardware#operation_performance",
+                    "negative",
+                    "glitchy"
+                ],
+                [
+                    "NULL",
+                    "hardware#operation_performance",
+                    "negative",
+                    "barely usable"
+                ]
+            ],
+            "metadata": {
+                "review_length": 8,
+                "num_predicted": 3,
+                "num_true": 2
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.25,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.25,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 11,
+            "review": "i ordered one , the touch pad failed to work consistently .",
+            "pred": [
+                [
+                    "touch pad",
+                    "hardware#general",
+                    "negative",
+                    "consistently"
+                ],
+                [
+                    "touch pad",
+                    "hardware#general",
+                    "negative",
+                    "work"
+                ]
+            ],
+            "true": [
+                [
+                    "touch pad",
+                    "hardware#operation_performance",
+                    "negative",
+                    "failed"
+                ]
+            ],
+            "metadata": {
+                "review_length": 12,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 12,
+            "review": "i often find i ' ve typed an entire sentence ( or more ) with my fingers on the wrong keys , which is very unproductive when trying to take real - time notes in a meeting !",
+            "pred": [
+                [
+                    "keys",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "wrong"
+                ],
+                [
+                    "keys",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "wrong"
+                ]
+            ],
+            "true": [
+                [
+                    "keys",
+                    "keyboard#general",
+                    "negative",
+                    "unproductive"
+                ]
+            ],
+            "metadata": {
+                "review_length": 38,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 13,
+            "review": "i know it only takes a few seconds , but a new device should not be doing this and makes me question if it ' ll get worse in the future .",
+            "pred": [
+                [
+                    "device",
+                    "reliability#general",
+                    "negative",
+                    "question"
+                ],
+                [
+                    "device",
+                    "reliability#general",
+                    "negative",
+                    "worse"
+                ]
+            ],
+            "true": [
+                [
+                    "device",
+                    "laptop#general",
+                    "negative",
+                    "worse"
+                ]
+            ],
+            "metadata": {
+                "review_length": 32,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.5,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 0.5,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.5,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.5,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 14,
+            "review": "i also have to press the trackpad very hard for left click ( not as badly as the first unit , though ) , and i lost right click functionality on the track pad 2 days into my voyage with this thing .",
+            "pred": [
+                [
+                    "voyage",
+                    "operation_performance#general",
+                    "positive",
+                    "hard"
+                ],
+                [
+                    "trackpad",
+                    "operation_performance#general",
+                    "negative",
+                    "left"
+                ],
+                [
+                    "right",
+                    "operation_performance#general",
+                    "negative",
+                    "click"
+                ]
+            ],
+            "true": [
+                [
+                    "track pad",
+                    "keyboard#usability",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 43,
+                "num_predicted": 3,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.5,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 15,
+            "review": "i tried factory resetting after i updated the os , and it still drained 9 % over 8 hours .",
+            "pred": [
+                [
+                    "battery",
+                    "battery#operation_performance",
+                    "positive",
+                    "drained"
+                ],
+                [
+                    "battery",
+                    "battery#operation_performance",
+                    "positive",
+                    "9"
+                ]
+            ],
+            "true": [
+                [
+                    "os",
+                    "os#general",
+                    "neutral",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 20,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 16,
+            "review": "hdmi out doesn ' t work right .",
+            "pred": [
+                [
+                    "hdmi",
+                    "hdmi#general",
+                    "negative",
+                    "right"
+                ],
+                [
+                    "hdmi",
+                    "hdmi#general",
+                    "negative",
+                    "work"
+                ]
+            ],
+            "true": [
+                [
+                    "hdmi",
+                    "ports#quality",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 8,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 17,
+            "review": "they had it over a week and then shipped back .",
+            "pred": [
+                [
+                    "NULL",
+                    "service#general",
+                    "negative",
+                    "week"
+                ],
+                [
+                    "had",
+                    "service#general",
+                    "negative",
+                    "shipped"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "support#general",
+                    "neutral",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 11,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.5,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 18,
+            "review": "i was excited to receive this chromebook , only to watch that excitement dissipate within mere hours as i noticed the touchscreen did n ' t work at all on tablet mode .",
+            "pred": [
+                [
+                    "chromebook",
+                    "laptop#operation_performance",
+                    "negative",
+                    "tablet"
+                ],
+                [
+                    "touchscreen",
+                    "laptop#operation_performance",
+                    "negative",
+                    "work"
+                ]
+            ],
+            "true": [
+                [
+                    "touchscreen",
+                    "hardware#operation_performance",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 33,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.5,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.5,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 19,
+            "review": "clearly there is some kind of major defect here that acer has n ' t resolved .",
+            "pred": [
+                [
+                    "laptop",
+                    "laptop#general",
+                    "negative",
+                    "defect"
+                ],
+                [
+                    "laptop",
+                    "laptop#general",
+                    "negative",
+                    "defect"
+                ]
+            ],
+            "true": [
+                [
+                    "acer",
+                    "company#general",
+                    "negative",
+                    "defect"
+                ]
+            ],
+            "metadata": {
+                "review_length": 17,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 1.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 1.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 20,
+            "review": "i bought this for my daughter to use to take online classes while she ' s overseas in europe for a year .",
+            "pred": [
+                [
+                    "laptop",
+                    "laptop#quality",
+                    "positive",
+                    "online"
+                ],
+                [
+                    "daughter",
+                    "laptop#quality",
+                    "positive",
+                    "classes"
+                ],
+                [
+                    "year",
+                    "laptop#quality",
+                    "positive",
+                    "europe"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#general",
+                    "neutral",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 23,
+                "num_predicted": 3,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 21,
+            "review": "decent sound quality .",
+            "pred": [
+                [
+                    "sound",
+                    "audio_quality",
+                    "positive",
+                    "decent"
+                ],
+                [
+                    "sound",
+                    "audio_quality",
+                    "positive",
+                    "quality"
+                ]
+            ],
+            "true": [
+                [
+                    "sound",
+                    "multimedia_devices#quality",
+                    "positive",
+                    "decent"
+                ]
+            ],
+            "metadata": {
+                "review_length": 4,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.5,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 0.5,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.5,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.5,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 22,
+            "review": "flimsy power adapter .",
+            "pred": [
+                [
+                    "adapter",
+                    "accessories#general",
+                    "negative",
+                    "flimsy"
+                ]
+            ],
+            "true": [
+                [
+                    "power adapter",
+                    "power_supply#general",
+                    "negative",
+                    "flimsy"
+                ]
+            ],
+            "metadata": {
+                "review_length": 4,
+                "num_predicted": 1,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 1.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 1.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 23,
+            "review": "wi - fi slows down to crowl and speeds back up intermittently .",
+            "pred": [
+                [
+                    "wi - fi",
+                    "wi_fi#quality",
+                    "positive",
+                    "slow"
+                ],
+                [
+                    "wi - fi",
+                    "wi_fi#quality",
+                    "positive",
+                    "crowl"
+                ],
+                [
+                    "wi - fi",
+                    "wi_fi#quality",
+                    "positive",
+                    "speed"
+                ]
+            ],
+            "true": [
+                [
+                    "wi - fi",
+                    "ports#quality",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 13,
+                "num_predicted": 3,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 24,
+            "review": "regret buying it at times .",
+            "pred": [
+                [
+                    "product",
+                    "product#quality",
+                    "negative",
+                    "regret"
+                ],
+                [
+                    "times",
+                    "product#quality",
+                    "negative",
+                    "buying"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#general",
+                    "negative",
+                    "regret"
+                ]
+            ],
+            "metadata": {
+                "review_length": 6,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.5,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.5,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 25,
+            "review": "it just turned off and will not turn back on .",
+            "pred": [
+                [
+                    "NULL",
+                    "hardware#general",
+                    "negative",
+                    "back"
+                ],
+                [
+                    "on",
+                    "hardware#general",
+                    "negative",
+                    "turn"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#quality",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 11,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.5,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.5,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 26,
+            "review": "the product is great , but the customer support is horrible .",
+            "pred": [
+                [
+                    "product",
+                    "product#quality",
+                    "positive",
+                    "great"
+                ],
+                [
+                    "customer support",
+                    "customer_service#quality",
+                    "negative",
+                    "horrible"
+                ]
+            ],
+            "true": [
+                [
+                    "product",
+                    "laptop#general",
+                    "positive",
+                    "great"
+                ],
+                [
+                    "customer support",
+                    "support#general",
+                    "negative",
+                    "horrible"
+                ]
+            ],
+            "metadata": {
+                "review_length": 12,
+                "num_predicted": 2,
+                "num_true": 2
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 1.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 1.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 1.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 1.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 27,
+            "review": "called support a second time after 10 minutes of verifying some type of info they told me to call google without even trying to help .",
+            "pred": [
+                [
+                    "support",
+                    "support#general",
+                    "negative",
+                    "google"
+                ],
+                [
+                    "info",
+                    "support#general",
+                    "negative",
+                    "verifying"
+                ]
+            ],
+            "true": [
+                [
+                    "support",
+                    "support#general",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 26,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.5,
+            "category micro IoU": 1.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.5,
+            "aspect-sentiment micro IoU": 0.5,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 1.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.5,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 28,
+            "review": "but i ' m getting into photography now , and it ' s terrible for loading , storing , and editing pictures .",
+            "pred": [
+                [
+                    "photography",
+                    "photography#general",
+                    "negative",
+                    "terrible"
+                ],
+                [
+                    "pictures",
+                    "photography#general",
+                    "negative",
+                    "loading"
+                ],
+                [
+                    "pictures",
+                    "photography#general",
+                    "negative",
+                    "storing"
+                ],
+                [
+                    "pictures",
+                    "photography#general",
+                    "negative",
+                    "editing"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#operation_performance",
+                    "negative",
+                    "terrible"
+                ]
+            ],
+            "metadata": {
+                "review_length": 23,
+                "num_predicted": 4,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.25,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.25,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 29,
+            "review": "i have sent it in twice already and waiting for it to come back .",
+            "pred": [
+                [
+                    "device",
+                    "service#general",
+                    "negative",
+                    "back"
+                ],
+                [
+                    "NULL",
+                    "service#general",
+                    "negative",
+                    "come"
+                ],
+                [
+                    "twice",
+                    "service#general",
+                    "negative",
+                    "already"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#general",
+                    "neutral",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 15,
+                "num_predicted": 3,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.3333333333333333,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 30,
+            "review": "the screen looked great .",
+            "pred": [
+                [
+                    "screen",
+                    "display_quality#general",
+                    "positive",
+                    "great"
+                ]
+            ],
+            "true": [
+                [
+                    "screen",
+                    "display#general",
+                    "positive",
+                    "great"
+                ]
+            ],
+            "metadata": {
+                "review_length": 5,
+                "num_predicted": 1,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 1.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 1.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 1.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 1.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 31,
+            "review": "no matter how many times i reinserted the charging adapter , i kept getting this message .",
+            "pred": [
+                [
+                    "adapter",
+                    "charging#general",
+                    "negative",
+                    "charging"
+                ],
+                [
+                    "adapter",
+                    "charging#general",
+                    "negative",
+                    "adapter"
+                ]
+            ],
+            "true": [
+                [
+                    "charging adapter",
+                    "power_supply#operation_performance",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 17,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 32,
+            "review": "i had no option but to shut down the computer , unplug it , plug it back in , and then reboot .",
+            "pred": [
+                [
+                    "computer",
+                    "reliability#general",
+                    "negative",
+                    "shut down"
+                ],
+                [
+                    "computer",
+                    "reliability#general",
+                    "negative",
+                    "unplug"
+                ],
+                [
+                    "computer",
+                    "reliability#general",
+                    "negative",
+                    "plug in"
+                ],
+                [
+                    "computer",
+                    "reliability#general",
+                    "negative",
+                    "reboot"
+                ]
+            ],
+            "true": [
+                [
+                    "computer",
+                    "laptop#operation_performance",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 23,
+                "num_predicted": 4,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 33,
+            "review": "it has worked well except for an initial hiccup on turning it on .",
+            "pred": [
+                [
+                    "NULL",
+                    "hardware#general",
+                    "positive",
+                    "well"
+                ],
+                [
+                    "hiccup",
+                    "hardware#general",
+                    "negative",
+                    "initial"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#operation_performance",
+                    "positive",
+                    "well"
+                ]
+            ],
+            "metadata": {
+                "review_length": 14,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.5,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.5,
+            "opinion micro IoU": 0.5,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.5,
+            "aspect-opinion micro IoU": 0.5,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.5,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.5,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 34,
+            "review": "the screen flashes for a second every 30 seconds or so .",
+            "pred": [
+                [
+                    "screen",
+                    "hardware#quality",
+                    "negative",
+                    "flashes"
+                ],
+                [
+                    "screen",
+                    "hardware#quality",
+                    "negative",
+                    "second"
+                ],
+                [
+                    "every",
+                    "hardware#quality",
+                    "negative",
+                    "30"
+                ],
+                [
+                    "second",
+                    "hardware#quality",
+                    "negative",
+                    "so"
+                ]
+            ],
+            "true": [
+                [
+                    "screen",
+                    "display#operation_performance",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 12,
+                "num_predicted": 4,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.3333333333333333,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.3333333333333333,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 35,
+            "review": "i noticed the battery went down to 67 % for no reason .",
+            "pred": [
+                [
+                    "battery",
+                    "battery#quality",
+                    "negative",
+                    "67"
+                ],
+                [
+                    "battery",
+                    "battery#quality",
+                    "negative",
+                    "%"
+                ]
+            ],
+            "true": [
+                [
+                    "battery",
+                    "battery#operation_performance",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 13,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 36,
+            "review": "works good but the fan kicks in pretty often , which is to keep the laptop cool but the sound is annoying .",
+            "pred": [
+                [
+                    "laptop",
+                    "cooling#general",
+                    "positive",
+                    "good"
+                ],
+                [
+                    "fan",
+                    "cooling#general",
+                    "negative",
+                    "annoying"
+                ]
+            ],
+            "true": [
+                [
+                    "fan",
+                    "fans&cooling#operation_performance",
+                    "negative",
+                    "annoying"
+                ],
+                [
+                    "sound",
+                    "fans&cooling#operation_performance",
+                    "negative",
+                    "annoying"
+                ]
+            ],
+            "metadata": {
+                "review_length": 23,
+                "num_predicted": 2,
+                "num_true": 2
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.3333333333333333,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.5,
+            "opinion micro IoU": 0.5,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.3333333333333333,
+            "aspect-opinion micro IoU": 0.3333333333333333,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.5,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.3333333333333333,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 37,
+            "review": "nano edge display is nice .",
+            "pred": [
+                [
+                    "display",
+                    "display#general",
+                    "positive",
+                    "nice"
+                ]
+            ],
+            "true": [
+                [
+                    "nano edge display",
+                    "display#operation_performance",
+                    "positive",
+                    "nice"
+                ]
+            ],
+            "metadata": {
+                "review_length": 6,
+                "num_predicted": 1,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 1.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 1.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 38,
+            "review": "everything was fine and i went out for an hour .",
+            "pred": [
+                [
+                    "everything",
+                    "everything#general",
+                    "positive",
+                    "fine"
+                ],
+                [
+                    "out",
+                    "everything#general",
+                    "positive",
+                    "hour"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#general",
+                    "positive",
+                    "fine"
+                ]
+            ],
+            "metadata": {
+                "review_length": 11,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.5,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.5,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 39,
+            "review": "the audio is almost impossible to hear .",
+            "pred": [
+                [
+                    "audio",
+                    "audio#quality",
+                    "negative",
+                    "impossible"
+                ],
+                [
+                    "audio",
+                    "audio#quality",
+                    "negative",
+                    "almost"
+                ]
+            ],
+            "true": [
+                [
+                    "audio",
+                    "multimedia_devices#operation_performance",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 8,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 40,
+            "review": "it is slow to do everything .",
+            "pred": [
+                [
+                    "everything",
+                    "operation_performance#speed",
+                    "negative",
+                    "slow"
+                ],
+                [
+                    "everything",
+                    "operation_performance#speed",
+                    "negative",
+                    "slow"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#operation_performance",
+                    "negative",
+                    "slow"
+                ]
+            ],
+            "metadata": {
+                "review_length": 7,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 1.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 1.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 41,
+            "review": "here ' s the kicker : it is doing a terrible job running dragon age .",
+            "pred": [
+                [
+                    "game",
+                    "game#performance",
+                    "negative",
+                    "terrible"
+                ],
+                [
+                    "kicker",
+                    "game#performance",
+                    "negative",
+                    "terrible"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#operation_performance",
+                    "negative",
+                    "terrible"
+                ]
+            ],
+            "metadata": {
+                "review_length": 16,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 1.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 1.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 42,
+            "review": "it doesn ' t has backlit keyboard : ( typing in low light is such a pain .",
+            "pred": [
+                [
+                    "keyboard",
+                    "keyboard#general",
+                    "negative",
+                    "typing"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#general",
+                    "negative",
+                    "low - light"
+                ]
+            ],
+            "true": [
+                [
+                    "backlit keyboard",
+                    "keyboard#design_features",
+                    "negative",
+                    "pain"
+                ]
+            ],
+            "metadata": {
+                "review_length": 18,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 43,
+            "review": "very disappointed in how slow it seems .",
+            "pred": [
+                [
+                    "NULL",
+                    "performance#general",
+                    "negative",
+                    "slow"
+                ],
+                [
+                    "NULL",
+                    "performance#general",
+                    "negative",
+                    "seems"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#operation_performance",
+                    "negative",
+                    "disappointed"
+                ],
+                [
+                    "NULL",
+                    "laptop#operation_performance",
+                    "negative",
+                    "slow"
+                ]
+            ],
+            "metadata": {
+                "review_length": 8,
+                "num_predicted": 2,
+                "num_true": 2
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.3333333333333333,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 0.3333333333333333,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.3333333333333333,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.3333333333333333,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 44,
+            "review": "keyboard and mouse pad seem fine , but overall it seems strangely slow .",
+            "pred": [
+                [
+                    "keyboard",
+                    "hardware#performance",
+                    "negative",
+                    "fine"
+                ],
+                [
+                    "mouse",
+                    "hardware#performance",
+                    "negative",
+                    "fine"
+                ],
+                [
+                    "keyboard",
+                    "hardware#performance",
+                    "negative",
+                    "slow"
+                ]
+            ],
+            "true": [
+                [
+                    "keyboard",
+                    "keyboard#design_features",
+                    "positive",
+                    "fine"
+                ],
+                [
+                    "mouse pad",
+                    "keyboard#design_features",
+                    "positive",
+                    "fine"
+                ],
+                [
+                    "NULL",
+                    "laptop#general",
+                    "negative",
+                    "slow"
+                ]
+            ],
+            "metadata": {
+                "review_length": 14,
+                "num_predicted": 3,
+                "num_true": 3
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.25,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.5,
+            "opinion micro IoU": 1.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.2,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.3333333333333333,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 45,
+            "review": "i have been using this for just 3 months .",
+            "pred": [
+                [
+                    "laptop",
+                    "quality#general",
+                    "positive",
+                    "3"
+                ],
+                [
+                    "laptop",
+                    "quality#general",
+                    "positive",
+                    "months"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#general",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 10,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 46,
+            "review": "crazy keypad : this issue is even worse .",
+            "pred": [
+                [
+                    "keypad",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "crazy"
+                ],
+                [
+                    "issue",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "worse"
+                ]
+            ],
+            "true": [
+                [
+                    "keypad",
+                    "keyboard#general",
+                    "negative",
+                    "crazy"
+                ],
+                [
+                    "keypad",
+                    "keyboard#general",
+                    "negative",
+                    "worse"
+                ]
+            ],
+            "metadata": {
+                "review_length": 9,
+                "num_predicted": 2,
+                "num_true": 2
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.5,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 1.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.5,
+            "aspect-opinion micro IoU": 0.3333333333333333,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 1.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.3333333333333333,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 47,
+            "review": "overall , the laptop has a solid feel to it .",
+            "pred": [
+                [
+                    "laptop",
+                    "laptop#general",
+                    "positive",
+                    "solid"
+                ],
+                [
+                    "laptop",
+                    "laptop#general",
+                    "positive",
+                    "feel"
+                ]
+            ],
+            "true": [
+                [
+                    "laptop",
+                    "laptop#general",
+                    "positive",
+                    "solid"
+                ]
+            ],
+            "metadata": {
+                "review_length": 11,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.5,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 1.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.5,
+            "aspect-category micro IoU": 1.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 0.5,
+            "category-sentiment micro IoU": 1.0,
+            "category-opinion micro IoU": 0.5,
+            "sentiment-opinion micro IoU": 0.5,
+            "aspect-category-sentiment micro IoU": 1.0,
+            "aspect-category-opinion micro IoU": 0.5,
+            "aspect-sentiment-opinion micro IoU": 0.5,
+            "category-sentiment-opinion micro IoU": 0.5
+        },
+        {
+            "idx": 48,
+            "review": "this lead me to believe that although i purchased a \u201c new \u201d product , they sent me a refurbished one instead .",
+            "pred": [
+                [
+                    "product",
+                    "product#quality",
+                    "negative",
+                    "new"
+                ],
+                [
+                    "product",
+                    "product#quality",
+                    "negative",
+                    "refurbished"
+                ]
+            ],
+            "true": [
+                [
+                    "product",
+                    "laptop#quality",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 23,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 49,
+            "review": "i ' m out from us , i live in colombia , and maybe i can not return these laptop .",
+            "pred": [
+                [
+                    "laptop",
+                    "warranty#general",
+                    "positive",
+                    "us"
+                ],
+                [
+                    "laptop",
+                    "warranty#general",
+                    "positive",
+                    "colombia"
+                ]
+            ],
+            "true": [
+                [
+                    "laptop",
+                    "laptop#general",
+                    "neutral",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 21,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 50,
+            "review": "i like the speed , the processor the hybrid storage units ( 128ssd and 1tera ) , but the web cam sucks , really poor resolution and the keyboard doesn ' t have the numerical part and the caps lock or num lock don ' t have any light or guide to help you .",
+            "pred": [
+                [
+                    "keyboard",
+                    "keyboard#general",
+                    "negative",
+                    "light"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#general",
+                    "negative",
+                    "guide"
+                ],
+                [
+                    "web _ cam",
+                    "keyboard#general",
+                    "negative",
+                    "resolution"
+                ],
+                [
+                    "web _ cam",
+                    "keyboard#general",
+                    "negative",
+                    "sucks"
+                ],
+                [
+                    "web _ cam",
+                    "keyboard#general",
+                    "negative",
+                    "poor"
+                ],
+                [
+                    "processor",
+                    "processor#quality",
+                    "positive",
+                    "hybrid"
+                ],
+                [
+                    "storage",
+                    "processor#quality",
+                    "positive",
+                    "128ssd"
+                ],
+                [
+                    "storage",
+                    "processor#quality",
+                    "positive",
+                    "1tera"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#general",
+                    "negative",
+                    "caps _ lock"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#general",
+                    "negative",
+                    "num _ lock"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#general",
+                    "negative",
+                    "help"
+                ],
+                [
+                    "processor",
+                    "processor#quality",
+                    "positive",
+                    "speed"
+                ],
+                [
+                    "processor",
+                    "processor#quality",
+                    "positive",
+                    "hybrid"
+                ],
+                [
+                    "processor",
+                    "processor#quality",
+                    "positive",
+                    "128ssd"
+                ],
+                [
+                    "processor",
+                    "processor#quality",
+                    "positive",
+                    "1tera"
+                ]
+            ],
+            "true": [
+                [
+                    "processor",
+                    "cpu#operation_performance",
+                    "positive",
+                    "like"
+                ],
+                [
+                    "hybrid storage units",
+                    "memory#general",
+                    "positive",
+                    "like"
+                ],
+                [
+                    "web cam",
+                    "hardware#operation_performance",
+                    "negative",
+                    "sucks"
+                ],
+                [
+                    "web cam",
+                    "hardware#operation_performance",
+                    "negative",
+                    "poor"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#design_features",
+                    "negative",
+                    "NULL"
+                ],
+                [
+                    "caps lock",
+                    "keyboard#design_features",
+                    "negative",
+                    "NULL"
+                ],
+                [
+                    "num lock",
+                    "keyboard#design_features",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 55,
+                "num_predicted": 15,
+                "num_true": 7
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.25,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.14285714285714285,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.25,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.14285714285714285,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 51,
+            "review": "lightweight .",
+            "pred": [
+                [
+                    "laptop",
+                    "battery#operation_performance",
+                    "positive",
+                    "lightweight"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#design_features",
+                    "positive",
+                    "lightweight"
+                ]
+            ],
+            "metadata": {
+                "review_length": 2,
+                "num_predicted": 1,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 1.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 1.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 52,
+            "review": "yesterday the backlight went out .",
+            "pred": [
+                [
+                    "backlight",
+                    "laptop#hardware_failures",
+                    "negative",
+                    "yesterday"
+                ],
+                [
+                    "backlight",
+                    "laptop#hardware_failures",
+                    "negative",
+                    "went"
+                ]
+            ],
+            "true": [
+                [
+                    "backlight",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 6,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 53,
+            "review": "it was brand new out of the box , i ' ve never dropped it .",
+            "pred": [
+                [
+                    "laptop",
+                    "laptop#quality",
+                    "positive",
+                    "new"
+                ],
+                [
+                    "laptop",
+                    "laptop#quality",
+                    "positive",
+                    "box"
+                ],
+                [
+                    "box",
+                    "laptop#quality",
+                    "positive",
+                    "out"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#general",
+                    "neutral",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 16,
+                "num_predicted": 3,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 54,
+            "review": "now i have to deal with warranty stuff and sending it back etc .",
+            "pred": [
+                [
+                    "stuff",
+                    "warranty#general",
+                    "negative",
+                    "deal"
+                ],
+                [
+                    "warranty",
+                    "warranty#general",
+                    "negative",
+                    "back"
+                ]
+            ],
+            "true": [
+                [
+                    "warranty stuff",
+                    "warranty#general",
+                    "neutral",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 14,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 1.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 55,
+            "review": "ram upgrade available",
+            "pred": [
+                [
+                    "ram",
+                    "hardware#general",
+                    "positive",
+                    "upgrade"
+                ],
+                [
+                    "ram",
+                    "hardware#general",
+                    "positive",
+                    "available"
+                ]
+            ],
+            "true": [
+                [
+                    "ram",
+                    "hardware#general",
+                    "positive",
+                    "available"
+                ]
+            ],
+            "metadata": {
+                "review_length": 3,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.5,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 1.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.5,
+            "aspect-category micro IoU": 1.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 0.5,
+            "category-sentiment micro IoU": 1.0,
+            "category-opinion micro IoU": 0.5,
+            "sentiment-opinion micro IoU": 0.5,
+            "aspect-category-sentiment micro IoU": 1.0,
+            "aspect-category-opinion micro IoU": 0.5,
+            "aspect-sentiment-opinion micro IoU": 0.5,
+            "category-sentiment-opinion micro IoU": 0.5
+        },
+        {
+            "idx": 56,
+            "review": "hard drive upgrade available",
+            "pred": [
+                [
+                    "hard _ drive",
+                    "hard_drive#general",
+                    "positive",
+                    "upgrade"
+                ],
+                [
+                    "upgrade",
+                    "hard_drive#general",
+                    "positive",
+                    "available"
+                ]
+            ],
+            "true": [
+                [
+                    "hard drive",
+                    "memory#operation_performance",
+                    "positive",
+                    "available"
+                ]
+            ],
+            "metadata": {
+                "review_length": 4,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.5,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.5,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 57,
+            "review": "i had issues with the touchpad sticking or not responding to click correctly from the start .",
+            "pred": [
+                [
+                    "touchpad",
+                    "touchpad#general",
+                    "negative",
+                    "click"
+                ],
+                [
+                    "touchpad",
+                    "touchpad#general",
+                    "negative",
+                    "respond"
+                ],
+                [
+                    "issues",
+                    "touchpad#general",
+                    "positive",
+                    "start"
+                ]
+            ],
+            "true": [
+                [
+                    "touchpad",
+                    "hardware#operation_performance",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 17,
+                "num_predicted": 3,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.5,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.5,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.5,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 58,
+            "review": "it ' s still a mainly functional computer , but using it is just not the greatest .",
+            "pred": [
+                [
+                    "computer",
+                    "usability#general",
+                    "negative",
+                    "not the greatest"
+                ],
+                [
+                    "using",
+                    "usability#general",
+                    "negative",
+                    "just"
+                ]
+            ],
+            "true": [
+                [
+                    "computer",
+                    "laptop#general",
+                    "neutral",
+                    "functional"
+                ],
+                [
+                    "computer",
+                    "laptop#general",
+                    "neutral",
+                    "not the greatest"
+                ]
+            ],
+            "metadata": {
+                "review_length": 18,
+                "num_predicted": 2,
+                "num_true": 2
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.5,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.3333333333333333,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.3333333333333333,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 59,
+            "review": "we ' ve had the computer for 5 weeks , used it a total of less than 20 hours , and now it will be gone for 3 weeks .",
+            "pred": [
+                [
+                    "computer",
+                    "durability#general",
+                    "negative",
+                    "gone"
+                ],
+                [
+                    "computer",
+                    "durability#general",
+                    "negative",
+                    "3"
+                ],
+                [
+                    "weeks",
+                    "time_interval#general",
+                    "positive",
+                    "5"
+                ],
+                [
+                    "hours",
+                    "time_interval#general",
+                    "positive",
+                    "20"
+                ]
+            ],
+            "true": [
+                [
+                    "computer",
+                    "laptop#general",
+                    "neutral",
+                    "NULL"
+                ],
+                [
+                    "NULL",
+                    "laptop#general",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 30,
+                "num_predicted": 4,
+                "num_true": 2
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.25,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.3333333333333333,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 60,
+            "review": "i send it to asus warranty and now after a week they ' re sending it back stating the no problem was found .",
+            "pred": [
+                [
+                    "laptop",
+                    "warranty#general",
+                    "negative",
+                    "no problem"
+                ],
+                [
+                    "laptop",
+                    "warranty#general",
+                    "negative",
+                    "found"
+                ]
+            ],
+            "true": [
+                [
+                    "asus warranty",
+                    "support#general",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 24,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 61,
+            "review": "display stop working within 2 months .",
+            "pred": [
+                [
+                    "display",
+                    "display#quality",
+                    "negative",
+                    "working"
+                ],
+                [
+                    "display",
+                    "display#quality",
+                    "negative",
+                    "stop"
+                ]
+            ],
+            "true": [
+                [
+                    "display",
+                    "display#general",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 7,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 62,
+            "review": "since it came with no user manual , i had to call asus customer support and got someone who knew all about windows 10 software but nothing about my asus notebook .",
+            "pred": [
+                [
+                    "asus",
+                    "company#general",
+                    "positive",
+                    "windows 10"
+                ],
+                [
+                    "notebook",
+                    "hardware#general",
+                    "negative",
+                    "software"
+                ]
+            ],
+            "true": [
+                [
+                    "asus customer support",
+                    "support#operation_performance",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 32,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.5,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 63,
+            "review": "after reading all the bad reviews , just sent it back for a refund .",
+            "pred": [
+                [
+                    "reviews",
+                    "reviews#quality",
+                    "negative",
+                    "bad"
+                ],
+                [
+                    "reviews",
+                    "reviews#quality",
+                    "negative",
+                    "bad"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#quality",
+                    "negative",
+                    "bad"
+                ]
+            ],
+            "metadata": {
+                "review_length": 15,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 1.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 1.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 64,
+            "review": "all over this asus laptop which has a non - functioning touchpad .",
+            "pred": [
+                [
+                    "laptop",
+                    "laptop#quality",
+                    "negative",
+                    "asus"
+                ],
+                [
+                    "touchpad",
+                    "laptop#usability",
+                    "negative",
+                    "non - functioning"
+                ]
+            ],
+            "true": [
+                [
+                    "asus laptop",
+                    "laptop#general",
+                    "negative",
+                    "NULL"
+                ],
+                [
+                    "touchpad",
+                    "hardware#quality",
+                    "negative",
+                    "non - functioning"
+                ]
+            ],
+            "metadata": {
+                "review_length": 13,
+                "num_predicted": 2,
+                "num_true": 2
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.3333333333333333,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.3333333333333333,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.3333333333333333,
+            "aspect-opinion micro IoU": 0.3333333333333333,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.3333333333333333,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.3333333333333333,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 65,
+            "review": "my screen broke when just putting a textbook on it .",
+            "pred": [
+                [
+                    "screen",
+                    "quality#general",
+                    "negative",
+                    "broke"
+                ],
+                [
+                    "textbook",
+                    "quality#general",
+                    "negative",
+                    "putting"
+                ]
+            ],
+            "true": [
+                [
+                    "screen",
+                    "display#general",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 11,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.5,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.5,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 66,
+            "review": "don ' t even bother calling customer support , in my experience , they do you no good .",
+            "pred": [
+                [
+                    "customer _ support",
+                    "customer_support#quality",
+                    "negative",
+                    "no _ good"
+                ],
+                [
+                    "customer _ support",
+                    "customer_support#quality",
+                    "negative",
+                    "good"
+                ],
+                [
+                    "experience",
+                    "customer_support#quality",
+                    "negative",
+                    "bad"
+                ]
+            ],
+            "true": [
+                [
+                    "customer support",
+                    "support#general",
+                    "negative",
+                    "no good"
+                ]
+            ],
+            "metadata": {
+                "review_length": 19,
+                "num_predicted": 3,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 67,
+            "review": "keyboard needs to be redesigned entirely .",
+            "pred": [
+                [
+                    "keyboard",
+                    "keyboard#design_features",
+                    "positive",
+                    "entirely"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#design_features",
+                    "positive",
+                    "redesigned"
+                ]
+            ],
+            "true": [
+                [
+                    "keyboard",
+                    "keyboard#design_features",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 7,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 1.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 1.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 68,
+            "review": "6 ` ` screen is big enough to read with ease , yet the item itself is light enough to tote to meetings .",
+            "pred": [
+                [
+                    "item",
+                    "size#general",
+                    "positive",
+                    "big"
+                ],
+                [
+                    "screen",
+                    "size#general",
+                    "positive",
+                    "big"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "display#design_features",
+                    "positive",
+                    "big"
+                ],
+                [
+                    "NULL",
+                    "display#design_features",
+                    "positive",
+                    "ease"
+                ],
+                [
+                    "item",
+                    "laptop#portability",
+                    "positive",
+                    "light"
+                ]
+            ],
+            "metadata": {
+                "review_length": 24,
+                "num_predicted": 2,
+                "num_true": 3
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.3333333333333333,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.3333333333333333,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.3333333333333333,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.3333333333333333,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 69,
+            "review": "so far , this looks as if it meets my needs as a good ` ` work machine . ` `",
+            "pred": [
+                [
+                    "work machine",
+                    "performance#general",
+                    "positive",
+                    "good"
+                ],
+                [
+                    "needs",
+                    "performance#general",
+                    "positive",
+                    "meets"
+                ],
+                [
+                    "looks",
+                    "performance#general",
+                    "positive",
+                    "as if"
+                ]
+            ],
+            "true": [
+                [
+                    "work machine",
+                    "laptop#general",
+                    "positive",
+                    "good"
+                ]
+            ],
+            "metadata": {
+                "review_length": 21,
+                "num_predicted": 3,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.3333333333333333,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.3333333333333333,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.3333333333333333,
+            "aspect-opinion micro IoU": 0.3333333333333333,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.3333333333333333,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.3333333333333333,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 70,
+            "review": "after exactly one year of useage this computer completely stopped working .",
+            "pred": [
+                [
+                    "computer",
+                    "reliability#general",
+                    "negative",
+                    "working"
+                ],
+                [
+                    "computer",
+                    "reliability#general",
+                    "negative",
+                    "completely"
+                ]
+            ],
+            "true": [
+                [
+                    "computer",
+                    "laptop#operation_performance",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 12,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 71,
+            "review": "it boots up in 10 seconds and shuts down in 2 to 3 seconds .",
+            "pred": [
+                [
+                    "boot _ time",
+                    "boot_time#boot_time",
+                    "positive",
+                    "10"
+                ],
+                [
+                    "shutdown _ time",
+                    "boot_time#shutdown_time",
+                    "positive",
+                    "2"
+                ],
+                [
+                    "seconds",
+                    "boot_time#seconds",
+                    "positive",
+                    "3"
+                ]
+            ],
+            "true": [
+                [
+                    "boots up",
+                    "laptop#operation_performance",
+                    "positive",
+                    "NULL"
+                ],
+                [
+                    "shuts down",
+                    "laptop#operation_performance",
+                    "positive",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 15,
+                "num_predicted": 3,
+                "num_true": 2
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 72,
+            "review": "i like the idea that the keyboard lights up and has a ` ` time out ` ` feature to shut off .",
+            "pred": [
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "positive",
+                    "shut off"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "positive",
+                    "lights up"
+                ]
+            ],
+            "true": [
+                [
+                    "keyboard",
+                    "keyboard#design_features",
+                    "positive",
+                    "like"
+                ]
+            ],
+            "metadata": {
+                "review_length": 23,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 73,
+            "review": "it seems put together well .",
+            "pred": [
+                [
+                    "product",
+                    "product#quality",
+                    "positive",
+                    "put together"
+                ],
+                [
+                    "well",
+                    "product#quality",
+                    "positive",
+                    "well"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#general",
+                    "positive",
+                    "well"
+                ]
+            ],
+            "metadata": {
+                "review_length": 6,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.5,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.5,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 74,
+            "review": "what they lack in size , they make up for in raw speed , durability , and energy efficiency .",
+            "pred": [
+                [
+                    "laptop",
+                    "laptop#general",
+                    "positive",
+                    "raw"
+                ],
+                [
+                    "speed",
+                    "laptop#performance",
+                    "positive",
+                    "speed"
+                ],
+                [
+                    "durability",
+                    "laptop#general",
+                    "positive",
+                    "durability"
+                ],
+                [
+                    "energy",
+                    "laptop#general",
+                    "positive",
+                    "energy"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#design_features",
+                    "negative",
+                    "NULL"
+                ],
+                [
+                    "NULL",
+                    "laptop#operation_performance",
+                    "positive",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 20,
+                "num_predicted": 4,
+                "num_true": 2
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.5,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 75,
+            "review": "+ decent quantity of available ports",
+            "pred": [
+                [
+                    "ports",
+                    "ports#general",
+                    "positive",
+                    "available"
+                ],
+                [
+                    "quantity",
+                    "ports#general",
+                    "positive",
+                    "decent"
+                ]
+            ],
+            "true": [
+                [
+                    "ports",
+                    "ports#quality",
+                    "positive",
+                    "decent"
+                ],
+                [
+                    "ports",
+                    "ports#quality",
+                    "positive",
+                    "available"
+                ]
+            ],
+            "metadata": {
+                "review_length": 6,
+                "num_predicted": 2,
+                "num_true": 2
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.5,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 1.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.5,
+            "aspect-opinion micro IoU": 0.3333333333333333,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 1.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.3333333333333333,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 76,
+            "review": "+ it has a dvd drive : o",
+            "pred": [
+                [
+                    "dvd _ drive",
+                    "features#general",
+                    "positive",
+                    "has"
+                ],
+                [
+                    "NULL",
+                    "features#general",
+                    "negative",
+                    "o"
+                ]
+            ],
+            "true": [
+                [
+                    "dvd drive",
+                    "optical_drives#general",
+                    "neutral",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 8,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 77,
+            "review": "- it runs hot !",
+            "pred": [
+                [
+                    "laptop",
+                    "hardware#usability",
+                    "negative",
+                    "hot"
+                ],
+                [
+                    "laptop",
+                    "hardware#usability",
+                    "negative",
+                    "runs"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#quality",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 5,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 78,
+            "review": "running grid benchmark , it got to a high 92 / 93 degrees c !",
+            "pred": [
+                [
+                    "grid",
+                    "hardware#operation_performance",
+                    "positive",
+                    "high"
+                ],
+                [
+                    "grid",
+                    "hardware#operation_performance",
+                    "positive",
+                    "92"
+                ],
+                [
+                    "degrees",
+                    "hardware#operation_performance",
+                    "positive",
+                    "93"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#quality",
+                    "negative",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 15,
+                "num_predicted": 3,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 79,
+            "review": "- new i5 mobile processor .",
+            "pred": [
+                [
+                    "processor",
+                    "processor#speed",
+                    "positive",
+                    "new"
+                ],
+                [
+                    "i5",
+                    "processor#speed",
+                    "positive",
+                    "mobile"
+                ]
+            ],
+            "true": [
+                [
+                    "i5 mobile processor",
+                    "cpu#general",
+                    "neutral",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 6,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 80,
+            "review": "- ddr4 ram that is upgradable .",
+            "pred": [
+                [
+                    "ram",
+                    "hardware#general",
+                    "positive",
+                    "ddr4"
+                ],
+                [
+                    "ram",
+                    "hardware#general",
+                    "positive",
+                    "upgradable"
+                ]
+            ],
+            "true": [
+                [
+                    "ddr4 ram",
+                    "memory#general",
+                    "positive",
+                    "upgradable"
+                ]
+            ],
+            "metadata": {
+                "review_length": 7,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.5,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.5,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 81,
+            "review": "- very decent battery life .",
+            "pred": [
+                [
+                    "battery",
+                    "battery#general",
+                    "positive",
+                    "very"
+                ],
+                [
+                    "battery",
+                    "battery#general",
+                    "positive",
+                    "decent"
+                ]
+            ],
+            "true": [
+                [
+                    "battery life",
+                    "battery#operation_performance",
+                    "positive",
+                    "decent"
+                ]
+            ],
+            "metadata": {
+                "review_length": 6,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.5,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.5,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 82,
+            "review": "so far i am pleasantly impressed with this unit , however i have not used it a long time or tested many applications to date .",
+            "pred": [
+                [
+                    "unit",
+                    "usability#general",
+                    "positive",
+                    "impressed"
+                ],
+                [
+                    "time",
+                    "usability#general",
+                    "positive",
+                    "long"
+                ],
+                [
+                    "application",
+                    "usability#general",
+                    "positive",
+                    "tested"
+                ],
+                [
+                    "applications",
+                    "usability#general",
+                    "positive",
+                    "many"
+                ]
+            ],
+            "true": [
+                [
+                    "unit",
+                    "laptop#general",
+                    "positive",
+                    "pleasantly"
+                ]
+            ],
+            "metadata": {
+                "review_length": 26,
+                "num_predicted": 4,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.25,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.25,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 83,
+            "review": "i can certainly say this is the best laptop i ' ve ever had ( but then again i ' ve only had 3 , and you would expect these things to improve over time , right ) .",
+            "pred": [
+                [
+                    "laptop",
+                    "laptop#quality",
+                    "positive",
+                    "best"
+                ],
+                [
+                    "laptop",
+                    "laptop#quality",
+                    "positive",
+                    "ever"
+                ],
+                [
+                    "had",
+                    "laptop#general",
+                    "negative",
+                    "3"
+                ],
+                [
+                    "time",
+                    "laptop#general",
+                    "positive",
+                    "time"
+                ]
+            ],
+            "true": [
+                [
+                    "laptop",
+                    "laptop#general",
+                    "positive",
+                    "best"
+                ]
+            ],
+            "metadata": {
+                "review_length": 39,
+                "num_predicted": 4,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.3333333333333333,
+            "category micro IoU": 0.5,
+            "sentiment micro IoU": 0.5,
+            "opinion micro IoU": 0.25,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.3333333333333333,
+            "aspect-opinion micro IoU": 0.25,
+            "category-sentiment micro IoU": 0.3333333333333333,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.25,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.25,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 84,
+            "review": "i ' ve been using it for at least 4 hours since last charged in that 23 % used up .",
+            "pred": [
+                [
+                    "battery",
+                    "battery#usability",
+                    "positive",
+                    "used up"
+                ],
+                [
+                    "battery",
+                    "battery#usability",
+                    "positive",
+                    "charged"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#operation_performance",
+                    "positive",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 21,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 85,
+            "review": "- as others have mentioned , the keyboard backlight turns off after just a few seconds of not typing , which can be annoying and there doesn ' t seem to be a way to change this .",
+            "pred": [
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "annoying"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "annoying"
+                ]
+            ],
+            "true": [
+                [
+                    "keyboard backlight",
+                    "keyboard#operation_performance",
+                    "negative",
+                    "annoying"
+                ]
+            ],
+            "metadata": {
+                "review_length": 38,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 1.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 1.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 1.0,
+            "category-opinion micro IoU": 1.0,
+            "sentiment-opinion micro IoU": 1.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 1.0
+        },
+        {
+            "idx": 86,
+            "review": "- easily upgradeable ram",
+            "pred": [
+                [
+                    "ram",
+                    "hardware#general",
+                    "positive",
+                    "upgradeable"
+                ],
+                [
+                    "easily",
+                    "hardware#general",
+                    "positive",
+                    "upgradeable"
+                ]
+            ],
+            "true": [
+                [
+                    "ram",
+                    "memory#usability",
+                    "positive",
+                    "upgradeable"
+                ]
+            ],
+            "metadata": {
+                "review_length": 4,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.5,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 1.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.5,
+            "aspect-opinion micro IoU": 0.5,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 1.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.5,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 87,
+            "review": "one feature that i love is the ability to disable the touchpad from the keyboard .",
+            "pred": [
+                [
+                    "keyboard",
+                    "keyboard#usability",
+                    "positive",
+                    "change"
+                ]
+            ],
+            "true": [
+                [
+                    "touchpad",
+                    "keyboard#design_features",
+                    "positive",
+                    "love"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#design_features",
+                    "positive",
+                    "love"
+                ]
+            ],
+            "metadata": {
+                "review_length": 16,
+                "num_predicted": 1,
+                "num_true": 2
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.5,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.5,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 88,
+            "review": "it ' s not fancy , but it ' s good value and fast and trouble - free .",
+            "pred": [
+                [
+                    "place",
+                    "value_for_money",
+                    "positive",
+                    "good"
+                ],
+                [
+                    "value",
+                    "value_for_money",
+                    "positive",
+                    "fast"
+                ],
+                [
+                    "trouble",
+                    "value_for_money",
+                    "positive",
+                    "trouble - free"
+                ]
+            ],
+            "true": [
+                [
+                    "NULL",
+                    "laptop#design_features",
+                    "neutral",
+                    "not fancy"
+                ],
+                [
+                    "NULL",
+                    "laptop#operation_performance",
+                    "positive",
+                    "good"
+                ],
+                [
+                    "NULL",
+                    "laptop#operation_performance",
+                    "positive",
+                    "fast"
+                ],
+                [
+                    "NULL",
+                    "laptop#operation_performance",
+                    "positive",
+                    "trouble - free"
+                ]
+            ],
+            "metadata": {
+                "review_length": 19,
+                "num_predicted": 3,
+                "num_true": 4
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.5,
+            "opinion micro IoU": 0.75,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.75,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 89,
+            "review": "after spending some time with it , the feature can really be useful .",
+            "pred": [
+                [
+                    "feature",
+                    "usability#general",
+                    "positive",
+                    "useful"
+                ]
+            ],
+            "true": [
+                [
+                    "feature",
+                    "keyboard#design_features",
+                    "positive",
+                    "useful"
+                ]
+            ],
+            "metadata": {
+                "review_length": 14,
+                "num_predicted": 1,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 1.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 1.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 1.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 1.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 90,
+            "review": "easily upgrade to storage and ram .",
+            "pred": [
+                [
+                    "laptop",
+                    "laptop#usability",
+                    "positive",
+                    "upgrade"
+                ],
+                [
+                    "ram",
+                    "laptop#usability",
+                    "positive",
+                    "storage"
+                ]
+            ],
+            "true": [
+                [
+                    "ram",
+                    "memory#usability",
+                    "positive",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 7,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.5,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.5,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 91,
+            "review": "this does not really matter to me because the mx150 is enough for my needs .",
+            "pred": [
+                [
+                    "mx150",
+                    "graphics_card#performance",
+                    "positive",
+                    "enough"
+                ],
+                [
+                    "mx150",
+                    "graphics_card#performance",
+                    "positive",
+                    "needs"
+                ]
+            ],
+            "true": [
+                [
+                    "mx150",
+                    "graphics#design_features",
+                    "neutral",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 16,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 92,
+            "review": "i love the solid state drive , as reviews or ads say you can boot up and get onto internet in 10 to 15 seconds .",
+            "pred": [
+                [
+                    "reviews",
+                    "product_features#boot_time",
+                    "positive",
+                    "10"
+                ],
+                [
+                    "reviews",
+                    "product_features#boot_time",
+                    "positive",
+                    "15"
+                ]
+            ],
+            "true": [
+                [
+                    "solid state drive",
+                    "hard_disc#general",
+                    "positive",
+                    "love"
+                ]
+            ],
+            "metadata": {
+                "review_length": 26,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 93,
+            "review": "it ' s not a ` ` gaming ` ` laptop even it can do some more casual gaming .",
+            "pred": [
+                [
+                    "laptop",
+                    "gaming_performance#general",
+                    "negative",
+                    "casual"
+                ],
+                [
+                    "laptop",
+                    "gaming_performance#general",
+                    "negative",
+                    "gaming"
+                ]
+            ],
+            "true": [
+                [
+                    "laptop",
+                    "laptop#general",
+                    "positive",
+                    "NULL"
+                ]
+            ],
+            "metadata": {
+                "review_length": 20,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 0.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 94,
+            "review": "it ' s super fast , boots up in seconds .",
+            "pred": [
+                [
+                    "laptop",
+                    "performance#speed",
+                    "positive",
+                    "super"
+                ],
+                [
+                    "laptop",
+                    "performance#speed",
+                    "positive",
+                    "fast"
+                ]
+            ],
+            "true": [
+                [
+                    "boots up",
+                    "laptop#operation_performance",
+                    "positive",
+                    "fast"
+                ]
+            ],
+            "metadata": {
+                "review_length": 11,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.5,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.5,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 95,
+            "review": "i am very impressed with this system .",
+            "pred": [
+                [
+                    "system",
+                    "usability#general",
+                    "positive",
+                    "impressed"
+                ],
+                [
+                    "system",
+                    "usability#general",
+                    "positive",
+                    "very"
+                ]
+            ],
+            "true": [
+                [
+                    "system",
+                    "os#operation_performance",
+                    "positive",
+                    "impressed"
+                ]
+            ],
+            "metadata": {
+                "review_length": 8,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.5,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 0.5,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.5,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.5,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 96,
+            "review": "mastercam itself runs pretty good .",
+            "pred": [
+                [
+                    "mastercam",
+                    "software#quality",
+                    "positive",
+                    "good"
+                ],
+                [
+                    "itself",
+                    "software#general",
+                    "positive",
+                    "runs"
+                ],
+                [
+                    "pretty",
+                    "software#general",
+                    "positive",
+                    "good"
+                ]
+            ],
+            "true": [
+                [
+                    "mastercam",
+                    "multimedia_devices#operation_performance",
+                    "positive",
+                    "good"
+                ]
+            ],
+            "metadata": {
+                "review_length": 6,
+                "num_predicted": 3,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.3333333333333333,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.5,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.3333333333333333,
+            "aspect-opinion micro IoU": 0.3333333333333333,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.5,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.3333333333333333,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 97,
+            "review": "as usual amazon was great about returning it .",
+            "pred": [
+                [
+                    "amazon",
+                    "company#general",
+                    "positive",
+                    "great"
+                ],
+                [
+                    "return",
+                    "company#general",
+                    "positive",
+                    "about"
+                ]
+            ],
+            "true": [
+                [
+                    "amazon",
+                    "support#quality",
+                    "positive",
+                    "great"
+                ]
+            ],
+            "metadata": {
+                "review_length": 9,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.5,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.5,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.5,
+            "aspect-opinion micro IoU": 0.5,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.5,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.5,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 98,
+            "review": "screen is decent , not great , it is matte finished .",
+            "pred": [
+                [
+                    "screen",
+                    "screen#quality",
+                    "positive",
+                    "decent"
+                ],
+                [
+                    "screen",
+                    "screen#quality",
+                    "positive",
+                    "not great"
+                ]
+            ],
+            "true": [
+                [
+                    "screen",
+                    "display#design_features",
+                    "positive",
+                    "decent"
+                ],
+                [
+                    "screen",
+                    "display#design_features",
+                    "positive",
+                    "not great"
+                ]
+            ],
+            "metadata": {
+                "review_length": 12,
+                "num_predicted": 2,
+                "num_true": 2
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 1.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 1.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 1.0,
+            "aspect-opinion micro IoU": 1.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 1.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 1.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        },
+        {
+            "idx": 99,
+            "review": "i like the back lit keyboard .",
+            "pred": [
+                [
+                    "keyboard",
+                    "keyboard#usability",
+                    "positive",
+                    "backlit"
+                ],
+                [
+                    "keyboard",
+                    "keyboard#usability",
+                    "positive",
+                    "lit"
+                ]
+            ],
+            "true": [
+                [
+                    "back lit keyboard",
+                    "keyboard#design_features",
+                    "positive",
+                    "like"
+                ]
+            ],
+            "metadata": {
+                "review_length": 7,
+                "num_predicted": 2,
+                "num_true": 1
+            },
+            "exact micro IoU": 0.0,
+            "aspect micro IoU": 0.0,
+            "category micro IoU": 0.0,
+            "sentiment micro IoU": 1.0,
+            "opinion micro IoU": 0.0,
+            "aspect-category micro IoU": 0.0,
+            "aspect-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.0,
+            "category-sentiment micro IoU": 0.0,
+            "category-opinion micro IoU": 0.0,
+            "sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-sentiment-opinion micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.0
+        }
+    ]
+}

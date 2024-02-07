@@ -21,7 +21,7 @@ from utils.t5_evaluate import get_t5_output
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
-    "-d", "--dataset_file", type=str, default="data/main_dataset/test.txt"
+    "-d", "--dataset_file", type=str, default="data/acosi_dataset/shoes/test.txt"
 )
 parser.add_argument(
     "-p",

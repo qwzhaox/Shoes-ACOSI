@@ -38,7 +38,7 @@ find "$input_directory" -type f | while read filepath; do
     fi
 
     if [[ $filepath == *"acosi"* ]]; then
-        dataset_file="data/main_dataset/test.txt"
+        dataset_file="data/acosi_dataset/shoes/test.txt"
         task="acosi-extract"
     elif [[ $filepath == *"acos"* ]]; then
         task="acos-extract"

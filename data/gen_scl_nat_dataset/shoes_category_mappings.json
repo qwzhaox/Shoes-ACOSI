@@ -1,0 +1,122 @@
+{
+    "shoes_parent_mapping": [
+        [
+            "the performance",
+            "PERFORMANCE"
+        ],
+        [
+            "the versatility",
+            "VERSATILITY"
+        ],
+        [
+            "the appearance",
+            "APPEARANCE"
+        ],
+        [
+            "the miscellaneous overall",
+            "MISC"
+        ],
+        [
+            "the context of use",
+            "CONTEXTOFUSE"
+        ],
+        [
+            "the cost/value",
+            "COST/VALUE"
+        ],
+        [
+            "the shoes overall",
+            "GENERAL"
+        ]
+    ],
+    "shoes_full_mapping": [
+        [
+            "the use case",
+            "CONTEXTOFUSE#USE CASE"
+        ],
+        [
+            "the versatility",
+            "VERSATILITY"
+        ],
+        [
+            "the appearance overall",
+            "APPEARANCE#GENERAL"
+        ],
+        [
+            "the color",
+            "APPEARANCE#COLOR"
+        ],
+        [
+            "the use case applicability",
+            "PERFORMANCE#USE CASE APPLICABILITY"
+        ],
+        [
+            "the usage frequency",
+            "CONTEXTOFUSE#USAGE FREQUENCY"
+        ],
+        [
+            "the miscellaneous appearance",
+            "APPEARANCE#MISC"
+        ],
+        [
+            "the user's time of use",
+            "CONTEXTOFUSE#REVIEW\\_TEMPORALITY"
+        ],
+        [
+            "the miscellaneous performance",
+            "PERFORMANCE#MISC"
+        ],
+        [
+            "the sizing/fit",
+            "PERFORMANCE#SIZING/FIT"
+        ],
+        [
+            "the miscellaneous overall",
+            "MISC"
+        ],
+        [
+            "one of the parts that form the shoe",
+            "APPEARANCE#SHOE COMPONENT"
+        ],
+        [
+            "the context of the purchase",
+            "CONTEXTOFUSE#PURCHASE\\_CONTEXT"
+        ],
+        [
+            "the material",
+            "APPEARANCE#MATERIAL"
+        ],
+        [
+            "the performance overall",
+            "PERFORMANCE#GENERAL"
+        ],
+        [
+            "the shoes overall",
+            "GENERAL"
+        ],
+        [
+            "the user's environment",
+            "CONTEXTOFUSE#PLACE"
+        ],
+        [
+            "the comfort",
+            "PERFORMANCE#COMFORT"
+        ],
+        [
+            "the support/stability",
+            "PERFORMANCE#SUPPORT/STABILITY"
+        ],
+        [
+            "the form",
+            "APPEARANCE#FORM"
+        ],
+        [
+            "the durability",
+            "PERFORMANCE#DURABILITY"
+        ],
+        [
+            "the cost/value",
+            "COST/VALUE"
+        ]
+    ]
+}

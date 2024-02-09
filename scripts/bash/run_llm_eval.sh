@@ -11,7 +11,7 @@ model_dir="$1"
 pkl_path="../EECS595Project/data/model_output/$model_dir/"
 dataset_path="../EECS595Project/data/"
 #output_base_path="../EECS595Project/data/eval_output/$model_dir/"
-output_base_path="data/llm_output/$model_dir/"
+output_base_path="eval_output/$model_dir/"
 
 # Find all .pkl files
 pkl_files=$(find "$pkl_path" -wholename "*/$model_dir/*.pkl")

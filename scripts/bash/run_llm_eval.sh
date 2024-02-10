@@ -8,9 +8,9 @@ fi
 model_dir="$1"
 
 # Define paths
-pkl_path="../EECS595Project/data/model_output/$model_dir/"
-dataset_path="../EECS595Project/data/"
-#output_base_path="../EECS595Project/data/eval_output/$model_dir/"
+pkl_path="../LLM-acosi/model_output/$model_dir/"
+dataset_path="../LLM-acosi/data/"
+#output_base_path="../LLM-acosi/eval_output/$model_dir/"
 output_base_path="eval_output/$model_dir/"
 
 # Find all .pkl files

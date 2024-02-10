@@ -28,7 +28,7 @@ parser.add_argument(
     "-c",
     "--curated_folder",
     type=str,
-    default="curated_shoe_reviews",
+    default="curated",
     help="Path to the folder containing curated annotation files.",
 )
 parser.add_argument(
@@ -72,6 +72,7 @@ OUTPUT_DIR = Path(args.output_path)
 
 ANNOTATION_FOLDER_PATH = DATA_DIR / Path(args.annotation_folder)
 CURATED_FOLDER_PATH = DATA_DIR / Path(args.curated_folder)
+OLD_CURATED_FOLDER_PATH = DATA_DIR / Path(args.curated_folder + "_old")
 
 TRACKING_FILE_PATH = DATA_DIR / Path(args.tracking_file)
 PRODUCT_NAMES_FILE_PATH = DATA_DIR / Path(args.product_names)
@@ -106,6 +107,7 @@ FIRST_REVIEW_IDX = 5
 REVIEW_TEXT_INDICATOR = "#Text="
 IMPLICT = "IMPLICIT"
 
+LINE_LENGTH = 7
 ANNOT_ID_IDX = 0
 ANNOT_WORD_IDX = 2
 ANNOT_MENTION_TYPE_IDX = 3
@@ -155,8 +157,11 @@ def get_annotation_filepath(folder_path, filename, search_pattern=False):
     return annotation_file_path
 
 
-def get_annotation_tsv(folder_path, batch_name_or_annotator, search_pattern=False):
-    filename = Path(f"{batch_name_or_annotator}.tsv")
+def get_annotation_tsv(folder_path, batch_name_or_annotator, search_pattern=False, is_curated=False):
+    if is_curated:
+        filename = Path(f"{batch_name_or_annotator}.txt/CURATION_USER.tsv")
+    else:
+        filename = Path(f"{batch_name_or_annotator}.tsv")
     annotation_file = get_annotation_filepath(folder_path, filename, search_pattern)
     annotation_tsv = []
 
@@ -212,7 +217,7 @@ def process_annot_filedir_err(error, curated_tsv_exists):
 
 def get_curated_tsv(batch_name):
     try:
-        curated_tsv = get_annotation_tsv(CURATED_FOLDER_PATH, batch_name)
+        curated_tsv = get_annotation_tsv(CURATED_FOLDER_PATH, batch_name, is_curated=True)
     except FileNotFoundError as error:
         if args.only_curated:
             raise error
@@ -300,7 +305,6 @@ def clean_mention_type(raw_mention_type):
     # def __clean_mention_type(self, raw_mention_type, rel_id):
     raw_mention_type = raw_mention_type.split(" ")
     direct_indirect = raw_mention_type[DIRECT_INDIRECT_IDX].lower()
-
     if ASPECT in raw_mention_type[MENTION_TYPE_IDX].lower():
         # if ASPECT in raw_mention_type[MENTION_TYPE_IDX].lower() or rel_id == 0:
         mention_type = ASPECT
@@ -490,6 +494,7 @@ class AnnotationProcessor:
             self.review_id_batch = self.LAST_REVIEW_ID
             self.cur_annots_dict = {}
             self.is_first_annot_line = True
+            self.skip_review = False
 
             is_first_tsv = tsv_idx == 0
             annotator_idx = tsv_idx - self.first_annotator_tsv_idx
@@ -501,8 +506,18 @@ class AnnotationProcessor:
                     continue
 
                 if self.is_first_annot_line:
+                    self.skip_review = False
                     self.__init_new_annot(annotator_idx)
-                self.__process_annot_line(line)
+
+                if not self.skip_review:
+                    try:
+                        self.__process_annot_line(line)
+                    except IndexError:
+                        print(f"SKIPPED: {line}")
+                        print(f"Batch: {self.batch_id}\nReview: {self.review_id}\n")
+                        self.skip_review = True
+                        exit(1)
+                        break
 
         return self.review_id
 
@@ -515,6 +530,10 @@ class AnnotationProcessor:
             if REVIEW_TEXT_INDICATOR in line[0]:
                 self.__process_review(line[0], is_first_tsv)
             return False
+        if len(line) < LINE_LENGTH:
+            line.extend([EMPTY] * (LINE_LENGTH - len(line)))
+        elif len(line) > LINE_LENGTH:
+            new_line = new_line[:LINE_LENGTH]
         if line[ANNOT_MENTION_TYPE_IDX] == EMPTY:
             # print(f"SKIPPED: {line}")
             return False
@@ -665,10 +684,17 @@ class AnnotationProcessor:
             process_product_review
         )
 
-        name, p_name = PRODUCT_NAMES_DF.loc[
+        names = PRODUCT_NAMES_DF.loc[
             PRODUCT_NAMES_DF["text"] == product_review,
             ["name", "p_name"],
         ].values.flatten()
+
+        if len(names) == 0:
+            name, p_name = "unknown", "unknown"
+        elif len(names) == 1:
+            name, p_name = names[0], names[0]
+        else:
+            name, p_name = names[0], names[1]
 
         processed_annotations["review"] = review
         processed_annotations["name"] = name
@@ -688,6 +714,9 @@ class AnnotationProcessor:
 def process_batch(filedir, review_id, proc_annots_list):
     batch_name = filedir.stem
     batch_id = int(batch_name.split("init_shoes_")[1])
+
+    if not Path(OLD_CURATED_FOLDER_PATH / f"{batch_name}.tsv").is_file():
+        return 0, False
 
     curated_tsv = get_curated_tsv(batch_name)
     curated_tsv_exists = curated_tsv is not None
@@ -709,7 +738,7 @@ def process_batch(filedir, review_id, proc_annots_list):
 
     review_id = annotation_processor.process_annotations()
 
-    return review_id
+    return review_id, True
 
 
 def main(processed_annotations_list):
@@ -723,12 +752,19 @@ def main(processed_annotations_list):
 
     for filedir in filedir_names:
         try:
-            review_id = process_batch(filedir, review_id, processed_annotations_list)
+            old_review_id = review_id
+            review_id, is_valid_batch = process_batch(filedir, review_id, processed_annotations_list)
+            if not is_valid_batch:
+                review_id = old_review_id
+                raise Exception
         except FileNotFoundError:
             print(f"Skipping {filedir}, could not find curated annotation file.")
             continue
         except NotADirectoryError:
             print(f"Skipping {filedir}, could not find annotation batch folder.")
+            continue
+        except:
+            print(f"Skipping {filedir}, invalid batch name.")
             continue
 
 

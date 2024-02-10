@@ -19,8 +19,11 @@ with open(args.input_file) as f:
 
 products_dict = {}
 
+num_reviews = len(review_data)
+
 for r in review_data:
-    if not r["annotations"][CURATOR_IDX]["annotation"]:
+    if not r["annotations"] or not r["annotations"][CURATOR_IDX]["annotation"]:
+        num_reviews -= 1
         continue
 
     review_metrics = {}
@@ -31,15 +34,13 @@ for r in review_data:
 
     products_dict.setdefault(r["p_name"], []).append(review_metrics)
 
-num_reviews = len(review_data)
-
 TRAIN = "train"
 VALIDATION = "validation"
 TEST = "test"
 
-TRAIN_PERCENT = 0.87
-VALIDATION_PERCENT = 0.06
-TEST_PERCENT = 0.07
+TRAIN_PERCENT = 0.83
+VALIDATION_PERCENT = 0.08
+TEST_PERCENT = 0.09
 
 GOAL = "goal"
 ACTUAL = "actual"
@@ -49,6 +50,7 @@ ttv = [TRAIN, VALIDATION, TEST]
 split_dict = {TRAIN: [], VALIDATION: [], TEST: []}
 
 totals = {
+    "num_reviews": num_reviews,
     TRAIN: {
         GOAL: num_reviews * TRAIN_PERCENT,
         ACTUAL: 0,

@@ -1,0 +1,1257 @@
+#FORMAT=WebAnno TSV 3.3
+#T_SP=webanno.custom.Aspect|MentionType
+#T_RL=webanno.custom.Sentiment|Category|Polarity|BT_webanno.custom.Aspect
+
+
+#Text=Use for running .  IMPLICIT First time buying 940 series .  IMPLICIT Have used 880 series for a good while but comments on current 880v10 regarding changes to toe box coupled with my dislike of "fresh foam" feel prompted me to try 940 .  IMPLICIT As others have commented the 940 does run wide &amp; tends to slip on heel .  IMPLICIT I eliminated this problem using a thicker sock .  IMPLICIT Otherwise the 940 is a comfortable shoe for me .  IMPLICIT
+1-1	0-3	Use	Direct Opinion[1]	_	_	_	
+1-2	4-7	for	Direct Opinion[1]	_	_	_	
+1-3	8-15	running	Direct Opinion[1]	_	_	_	
+1-4	16-17	.	_	_	_	_	
+1-5	19-27	IMPLICIT	Direct Aspect	ContextOfUse#Use case	Neutral	1-1[1_0]	
+1-6	28-33	First	Direct Opinion[2]	ContextOfUse#Purchase\_Context	Positive	1-9[3_2]	
+1-7	34-38	time	Direct Opinion[2]	_	_	_	
+1-8	39-45	buying	Direct Opinion[2]	_	_	_	
+1-9	46-49	940	Direct Opinion[2]|Direct Aspect[3]	_	_	_	
+1-10	50-56	series	Direct Opinion[2]|Direct Aspect[3]	_	_	_	
+1-11	57-58	.	_	_	_	_	
+1-12	60-68	IMPLICIT	_	_	_	_	
+1-13	69-73	Have	_	_	_	_	
+1-14	74-78	used	_	_	_	_	
+1-15	79-82	880	_	_	_	_	
+1-16	83-89	series	_	_	_	_	
+1-17	90-93	for	_	_	_	_	
+1-18	94-95	a	_	_	_	_	
+1-19	96-100	good	_	_	_	_	
+1-20	101-106	while	_	_	_	_	
+1-21	107-110	but	_	_	_	_	
+1-22	111-119	comments	_	_	_	_	
+1-23	120-122	on	_	_	_	_	
+1-24	123-130	current	Direct Opinion[4]	_	_	_	
+1-25	131-137	880v10	Direct Opinion[4]	_	_	_	
+1-26	138-147	regarding	Direct Opinion[4]	_	_	_	
+1-27	148-155	changes	Direct Opinion[4]	_	_	_	
+1-28	156-158	to	Direct Opinion[4]	_	_	_	
+1-29	159-162	toe	Direct Opinion[4]	_	_	_	
+1-30	163-166	box	Direct Opinion[4]	_	_	_	
+1-31	167-174	coupled	Direct Opinion[4]	_	_	_	
+1-32	175-179	with	Direct Opinion[4]	_	_	_	
+1-33	180-182	my	Direct Opinion[4]	_	_	_	
+1-34	183-190	dislike	Direct Opinion[4]	_	_	_	
+1-35	191-193	of	Direct Opinion[4]	_	_	_	
+1-36	194-195	"	Direct Opinion[4]	_	_	_	
+1-37	195-200	fresh	Direct Opinion[4]	_	_	_	
+1-38	201-205	foam	Direct Opinion[4]	_	_	_	
+1-39	205-206	"	Direct Opinion[4]	_	_	_	
+1-40	207-211	feel	Direct Opinion[4]	_	_	_	
+1-41	212-220	prompted	Direct Opinion[4]	_	_	_	
+1-42	221-223	me	Direct Opinion[4]	_	_	_	
+1-43	224-226	to	Direct Opinion[4]	_	_	_	
+1-44	227-230	try	Direct Opinion[4]	_	_	_	
+1-45	231-234	940	Direct Opinion[4]|Direct Aspect[5]	ContextOfUse#Purchase\_Context	Neutral	1-24[4_5]	
+1-46	235-236	.	_	_	_	_	
+1-47	238-246	IMPLICIT	_	_	_	_	
+1-48	247-249	As	_	_	_	_	
+1-49	250-256	others	_	_	_	_	
+1-50	257-261	have	_	_	_	_	
+1-51	262-271	commented	_	_	_	_	
+1-52	272-275	the	Direct Opinion[6]	Performance#Sizing/Fit	Negative	1-53[7_6]	
+1-53	276-279	940	Direct Opinion[6]|Direct Aspect[7]	Performance#Support/Stability	Negative	1-60[8_7]	
+1-54	280-284	does	Direct Opinion[6]	_	_	_	
+1-55	285-288	run	Direct Opinion[6]	_	_	_	
+1-56	289-293	wide	Direct Opinion[6]	_	_	_	
+1-57	294-295	&	_	_	_	_	
+1-58	295-298	amp	_	_	_	_	
+1-59	298-299	;	_	_	_	_	
+1-60	300-305	tends	Direct Opinion[8]	_	_	_	
+1-61	306-308	to	Direct Opinion[8]	_	_	_	
+1-62	309-313	slip	Direct Opinion[8]	_	_	_	
+1-63	314-316	on	Direct Opinion[8]	_	_	_	
+1-64	317-321	heel	Direct Opinion[8]	_	_	_	
+1-65	322-323	.	_	_	_	_	
+1-66	325-333	IMPLICIT	_	_	_	_	
+1-67	334-335	I	Indirect Opinion[9]	_	_	_	
+1-68	336-346	eliminated	Indirect Opinion[9]	_	_	_	
+1-69	347-351	this	Indirect Opinion[9]	_	_	_	
+1-70	352-359	problem	Indirect Opinion[9]	_	_	_	
+1-71	360-365	using	Indirect Opinion[9]	_	_	_	
+1-72	366-367	a	Indirect Opinion[9]	_	_	_	
+1-73	368-375	thicker	Indirect Opinion[9]	_	_	_	
+1-74	376-380	sock	Indirect Opinion[9]	_	_	_	
+1-75	381-382	.	_	_	_	_	
+1-76	384-392	IMPLICIT	Direct Opinion	ContextOfUse#Use case	Neutral	1-67[9_0]	
+1-77	393-402	Otherwise	_	_	_	_	
+1-78	403-406	the	_	_	_	_	
+1-79	407-410	940	Direct Aspect	_	_	_	
+1-80	411-413	is	Direct Opinion[10]	Performance#Comfort	Positive	1-79[0_10]	
+1-81	414-415	a	Direct Opinion[10]	_	_	_	
+1-82	416-427	comfortable	Direct Opinion[10]	_	_	_	
+1-83	428-432	shoe	Direct Opinion[10]	_	_	_	
+1-84	433-436	for	_	_	_	_	
+1-85	437-439	me	_	_	_	_	
+1-86	440-441	.	_	_	_	_	
+1-87	443-451	IMPLICIT	_	_	_	_	
+
+#Text=I was replacing my running shoes every 2 to 3 months .  IMPLICIT I can't afford that any more, now I make a pair last 6 months IMPLICIT
+2-1	453-454	I	Direct Opinion[11]	ContextOfUse#Review\_Temporality	Neutral	2-5[12_11]	
+2-2	455-458	was	Direct Opinion[11]	_	_	_	
+2-3	459-468	replacing	Direct Opinion[11]	_	_	_	
+2-4	469-471	my	Direct Opinion[11]	_	_	_	
+2-5	472-479	running	Direct Opinion[11]|Direct Aspect[12]	_	_	_	
+2-6	480-485	shoes	Direct Opinion[11]|Direct Aspect[12]	_	_	_	
+2-7	486-491	every	Direct Opinion[11]	_	_	_	
+2-8	492-493	2	Direct Opinion[11]	_	_	_	
+2-9	494-496	to	Direct Opinion[11]	_	_	_	
+2-10	497-498	3	Direct Opinion[11]	_	_	_	
+2-11	499-505	months	Direct Opinion[11]	_	_	_	
+2-12	506-507	.	_	_	_	_	
+2-13	509-517	IMPLICIT	_	_	_	_	
+2-14	518-519	I	_	_	_	_	
+2-15	520-525	can't	_	_	_	_	
+2-16	526-532	afford	_	_	_	_	
+2-17	533-537	that	_	_	_	_	
+2-18	538-541	any	_	_	_	_	
+2-19	542-546	more	_	_	_	_	
+2-20	546-547	,	_	_	_	_	
+2-21	548-551	now	Indirect Opinion[13]	ContextOfUse#Usage frequency	Neutral	2-25[14_13]	
+2-22	552-553	I	Indirect Opinion[13]	_	_	_	
+2-23	554-558	make	Indirect Opinion[13]	_	_	_	
+2-24	559-560	a	Indirect Opinion[13]	_	_	_	
+2-25	561-565	pair	Indirect Opinion[13]|Direct Aspect[14]	_	_	_	
+2-26	566-570	last	Indirect Opinion[13]	_	_	_	
+2-27	571-572	6	Indirect Opinion[13]	_	_	_	
+2-28	573-579	months	Indirect Opinion[13]	_	_	_	
+2-29	580-588	IMPLICIT	Direct Aspect	_	_	_	
+
+#Text=I am an ICU nurse and bought these shoes for work .  IMPLICIT When trying them on, I was disappointed to find zero arch support and the sole was very firm .  IMPLICIT My previous shies were New Balance so I was excited to try these and was unhappy with the result .  IMPLICIT Returned immediately .  IMPLICIT
+3-1	590-591	I	Direct Opinion[15]	ContextOfUse#Use case	Neutral	3-13[0_15]	
+3-2	592-594	am	Direct Opinion[15]	_	_	_	
+3-3	595-597	an	Direct Opinion[15]	_	_	_	
+3-4	598-601	ICU	Direct Opinion[15]	_	_	_	
+3-5	602-607	nurse	Direct Opinion[15]	_	_	_	
+3-6	608-611	and	Direct Opinion[15]	_	_	_	
+3-7	612-618	bought	Direct Opinion[15]	_	_	_	
+3-8	619-624	these	Direct Opinion[15]	_	_	_	
+3-9	625-630	shoes	Direct Opinion[15]	_	_	_	
+3-10	631-634	for	Direct Opinion[15]	_	_	_	
+3-11	635-639	work	Direct Opinion[15]	_	_	_	
+3-12	640-641	.	_	_	_	_	
+3-13	643-651	IMPLICIT	Direct Aspect	Performance#Support/Stability	Negative	3-21[16_0]	
+3-14	652-656	When	_	_	_	_	
+3-15	657-663	trying	_	_	_	_	
+3-16	664-668	them	_	_	_	_	
+3-17	669-671	on	_	_	_	_	
+3-18	671-672	,	_	_	_	_	
+3-19	673-674	I	_	_	_	_	
+3-20	675-678	was	_	_	_	_	
+3-21	679-691	disappointed	Direct Opinion[16]	_	_	_	
+3-22	692-694	to	Direct Opinion[16]	_	_	_	
+3-23	695-699	find	Direct Opinion[16]	_	_	_	
+3-24	700-704	zero	Direct Opinion[16]	_	_	_	
+3-25	705-709	arch	Direct Opinion[16]	_	_	_	
+3-26	710-717	support	Direct Opinion[16]	_	_	_	
+3-27	718-721	and	_	_	_	_	
+3-28	722-725	the	_	_	_	_	
+3-29	726-730	sole	Direct Aspect	_	_	_	
+3-30	731-734	was	Direct Opinion[17]	Appearance#Shoe Component	Negative	3-29[0_17]	
+3-31	735-739	very	Direct Opinion[17]	_	_	_	
+3-32	740-744	firm	Direct Opinion[17]	_	_	_	
+3-33	745-746	.	_	_	_	_	
+3-34	748-756	IMPLICIT	_	_	_	_	
+3-35	757-759	My	_	_	_	_	
+3-36	760-768	previous	_	_	_	_	
+3-37	769-774	shies	_	_	_	_	
+3-38	775-779	were	_	_	_	_	
+3-39	780-783	New	Direct Aspect[18]	_	_	_	
+3-40	784-791	Balance	Direct Aspect[18]	_	_	_	
+3-41	792-794	so	_	_	_	_	
+3-42	795-796	I	Indirect Opinion[19]	General	Negative	3-39[18_19]	
+3-43	797-800	was	Indirect Opinion[19]	_	_	_	
+3-44	801-808	excited	Indirect Opinion[19]	_	_	_	
+3-45	809-811	to	Indirect Opinion[19]	_	_	_	
+3-46	812-815	try	Indirect Opinion[19]	_	_	_	
+3-47	816-821	these	Indirect Opinion[19]	_	_	_	
+3-48	822-825	and	Indirect Opinion[19]	_	_	_	
+3-49	826-829	was	Indirect Opinion[19]	_	_	_	
+3-50	830-837	unhappy	Indirect Opinion[19]	_	_	_	
+3-51	838-842	with	Indirect Opinion[19]	_	_	_	
+3-52	843-846	the	Indirect Opinion[19]	_	_	_	
+3-53	847-853	result	Indirect Opinion[19]	_	_	_	
+3-54	854-855	.	_	_	_	_	
+3-55	857-865	IMPLICIT	_	_	_	_	
+3-56	866-874	Returned	Direct Opinion[20]	_	_	_	
+3-57	875-886	immediately	Direct Opinion[20]	_	_	_	
+3-58	887-888	.	Direct Opinion[20]	_	_	_	
+3-59	890-898	IMPLICIT	Direct Aspect	Cost/Value	Negative	3-56[20_0]	
+
+#Text=Very soft bouncy midsole for a smooth comfortable ride .  IMPLICIT Upper is simple, lightweight, and very breathable with good foot lockdown .  IMPLICIT One of my favorite shoes to run in !  IMPLICIT Highly recommended .  IMPLICIT
+4-1	900-904	Very	Direct Opinion[21]	_	_	_	
+4-2	905-909	soft	Direct Opinion[21]	_	_	_	
+4-3	910-916	bouncy	Direct Opinion[21]	_	_	_	
+4-4	917-924	midsole	Direct Opinion[21]	_	_	_	
+4-5	925-928	for	Direct Opinion[21]	_	_	_	
+4-6	929-930	a	Direct Opinion[21]	_	_	_	
+4-7	931-937	smooth	Direct Opinion[21]	_	_	_	
+4-8	938-949	comfortable	Direct Opinion[21]	_	_	_	
+4-9	950-954	ride	_	_	_	_	
+4-10	955-956	.	_	_	_	_	
+4-11	958-966	IMPLICIT	Direct Aspect	Performance#Use Case Applicability|Appearance#Material	Positive|Positive	4-1[21_0]|4-1[21_0]	
+4-12	967-972	Upper	Direct Opinion[22]	_	_	_	
+4-13	973-975	is	Direct Opinion[22]	_	_	_	
+4-14	976-982	simple	Direct Opinion[22]	_	_	_	
+4-15	982-983	,	Direct Opinion[22]	_	_	_	
+4-16	984-995	lightweight	Direct Opinion[22]	_	_	_	
+4-17	995-996	,	Direct Opinion[22]	_	_	_	
+4-18	997-1000	and	Direct Opinion[22]	_	_	_	
+4-19	1001-1005	very	Direct Opinion[22]	_	_	_	
+4-20	1006-1016	breathable	Direct Opinion[22]	_	_	_	
+4-21	1017-1021	with	Direct Opinion[23]	_	_	_	
+4-22	1022-1026	good	Direct Opinion[23]	_	_	_	
+4-23	1027-1031	foot	Direct Opinion[23]	_	_	_	
+4-24	1032-1040	lockdown	Direct Opinion[23]	_	_	_	
+4-25	1041-1042	.	_	_	_	_	
+4-26	1044-1052	IMPLICIT	Direct Aspect	Appearance#Material|Performance#Support/Stability	Positive|Positive	4-12[22_0]|4-21[23_0]	
+4-27	1053-1056	One	Direct Opinion[24]	Performance#Use Case Applicability	Positive	4-31[25_24]	
+4-28	1057-1059	of	Direct Opinion[24]	_	_	_	
+4-29	1060-1062	my	Direct Opinion[24]	_	_	_	
+4-30	1063-1071	favorite	Direct Opinion[24]	_	_	_	
+4-31	1072-1077	shoes	Direct Opinion[24]|Direct Aspect[25]	_	_	_	
+4-32	1078-1080	to	Direct Opinion[24]	_	_	_	
+4-33	1081-1084	run	Direct Opinion[24]	_	_	_	
+4-34	1085-1087	in	Direct Opinion[24]	_	_	_	
+4-35	1088-1089	!	_	_	_	_	
+4-36	1091-1099	IMPLICIT	Direct Aspect	_	_	_	
+4-37	1100-1106	Highly	Direct Opinion[26]	General	Positive	4-36[0_26]	
+4-38	1107-1118	recommended	Direct Opinion[26]	_	_	_	
+4-39	1119-1120	.	_	_	_	_	
+4-40	1122-1130	IMPLICIT	_	_	_	_	
+
+#Text=I was very excited, overall, being that I've always wanted a pair .  IMPLICIT What perfect timing than to come across this awesome deal .  IMPLICIT That is, until I received my package, opened it, & noticed how small my shoes were .  IMPLICIT I am a size 9 &, clearly, the shoes looked like they were a size 6 in kids or something .  IMPLICIT OMG !  IMPLICIT I'm so sad that they didn't fit me !  IMPLICIT
+5-1	1132-1133	I	Direct Opinion[27]	_	_	_	
+5-2	1134-1137	was	Direct Opinion[27]	_	_	_	
+5-3	1138-1142	very	Direct Opinion[27]	_	_	_	
+5-4	1143-1150	excited	Direct Opinion[27]	_	_	_	
+5-5	1150-1151	,	Direct Opinion[27]	_	_	_	
+5-6	1152-1159	overall	Direct Opinion[27]	_	_	_	
+5-7	1159-1160	,	Direct Opinion[27]	_	_	_	
+5-8	1161-1166	being	Direct Opinion[27]	_	_	_	
+5-9	1167-1171	that	Direct Opinion[27]	_	_	_	
+5-10	1172-1176	I've	Direct Opinion[27]	_	_	_	
+5-11	1177-1183	always	Direct Opinion[27]	_	_	_	
+5-12	1184-1190	wanted	Direct Opinion[27]	_	_	_	
+5-13	1191-1192	a	Direct Opinion[27]	_	_	_	
+5-14	1193-1197	pair	Direct Opinion[27]|Direct Aspect[28]	ContextOfUse#Purchase\_Context	Neutral	5-1[27_28]	
+5-15	1198-1199	.	_	_	_	_	
+5-16	1201-1209	IMPLICIT	_	_	_	_	
+5-17	1210-1214	What	Direct Opinion[29]	_	_	_	
+5-18	1215-1222	perfect	Direct Opinion[29]	_	_	_	
+5-19	1223-1229	timing	Direct Opinion[29]	_	_	_	
+5-20	1230-1234	than	Direct Opinion[29]	_	_	_	
+5-21	1235-1237	to	Direct Opinion[29]	_	_	_	
+5-22	1238-1242	come	Direct Opinion[29]	_	_	_	
+5-23	1243-1249	across	Direct Opinion[29]	_	_	_	
+5-24	1250-1254	this	Direct Opinion[29]	_	_	_	
+5-25	1255-1262	awesome	Direct Opinion[29]	_	_	_	
+5-26	1263-1267	deal	Direct Opinion[29]	_	_	_	
+5-27	1268-1269	.	_	_	_	_	
+5-28	1271-1279	IMPLICIT	Direct Aspect	Cost/Value	Positive	5-17[29_0]	
+5-29	1280-1284	That	_	_	_	_	
+5-30	1285-1287	is	_	_	_	_	
+5-31	1287-1288	,	_	_	_	_	
+5-32	1289-1294	until	_	_	_	_	
+5-33	1295-1296	I	_	_	_	_	
+5-34	1297-1305	received	_	_	_	_	
+5-35	1306-1308	my	_	_	_	_	
+5-36	1309-1316	package	_	_	_	_	
+5-37	1316-1317	,	_	_	_	_	
+5-38	1318-1324	opened	_	_	_	_	
+5-39	1325-1327	it	_	_	_	_	
+5-40	1327-1328	,	_	_	_	_	
+5-41	1329-1330	&	_	_	_	_	
+5-42	1331-1338	noticed	Direct Opinion[30]	Performance#Sizing/Fit	Negative	5-46[31_30]	
+5-43	1339-1342	how	Direct Opinion[30]	_	_	_	
+5-44	1343-1348	small	Direct Opinion[30]	_	_	_	
+5-45	1349-1351	my	Direct Opinion[30]	_	_	_	
+5-46	1352-1357	shoes	Direct Opinion[30]|Direct Aspect[31]	_	_	_	
+5-47	1358-1362	were	Direct Opinion[30]	_	_	_	
+5-48	1363-1364	.	_	_	_	_	
+5-49	1366-1374	IMPLICIT	_	_	_	_	
+5-50	1375-1376	I	_	_	_	_	
+5-51	1377-1379	am	_	_	_	_	
+5-52	1380-1381	a	_	_	_	_	
+5-53	1382-1386	size	_	_	_	_	
+5-54	1387-1388	9	_	_	_	_	
+5-55	1389-1390	&	_	_	_	_	
+5-56	1390-1391	,	_	_	_	_	
+5-57	1392-1399	clearly	_	_	_	_	
+5-58	1399-1400	,	_	_	_	_	
+5-59	1401-1404	the	_	_	_	_	
+5-60	1405-1410	shoes	Direct Aspect	_	_	_	
+5-61	1411-1417	looked	Indirect Opinion[32]	Performance#Sizing/Fit	Negative	5-60[0_32]	
+5-62	1418-1422	like	Indirect Opinion[32]	_	_	_	
+5-63	1423-1427	they	Indirect Opinion[32]	_	_	_	
+5-64	1428-1432	were	Indirect Opinion[32]	_	_	_	
+5-65	1433-1434	a	Indirect Opinion[32]	_	_	_	
+5-66	1435-1439	size	Indirect Opinion[32]	_	_	_	
+5-67	1440-1441	6	Indirect Opinion[32]	_	_	_	
+5-68	1442-1444	in	Indirect Opinion[32]	_	_	_	
+5-69	1445-1449	kids	Indirect Opinion[32]	_	_	_	
+5-70	1450-1452	or	Indirect Opinion[32]	_	_	_	
+5-71	1453-1462	something	Indirect Opinion[32]	_	_	_	
+5-72	1463-1464	.	_	_	_	_	
+5-73	1466-1474	IMPLICIT	_	_	_	_	
+5-74	1475-1478	OMG	_	_	_	_	
+5-75	1479-1480	!	_	_	_	_	
+5-76	1482-1490	IMPLICIT	Direct Aspect	_	_	_	
+5-77	1491-1494	I'm	Direct Opinion[33]	Performance#Sizing/Fit	Negative	5-76[0_33]	
+5-78	1495-1497	so	Direct Opinion[33]	_	_	_	
+5-79	1498-1501	sad	Direct Opinion[33]	_	_	_	
+5-80	1502-1506	that	Direct Opinion[33]	_	_	_	
+5-81	1507-1511	they	Direct Opinion[33]	_	_	_	
+5-82	1512-1518	didn't	Direct Opinion[33]	_	_	_	
+5-83	1519-1522	fit	Direct Opinion[33]	_	_	_	
+5-84	1523-1525	me	Direct Opinion[33]	_	_	_	
+5-85	1526-1527	!	_	_	_	_	
+5-86	1529-1537	IMPLICIT	_	_	_	_	
+
+#Text=These are much more narrow than my old classic slides and they run small .  IMPLICIT I have several pairs of different styles of Crocs in a size 9 that fit but these in a 9 are too small .  IMPLICIT Returning them .  IMPLICIT
+6-1	1539-1544	These	_	_	_	_	
+6-2	1545-1548	are	_	_	_	_	
+6-3	1549-1553	much	Direct Opinion[34]	_	_	_	
+6-4	1554-1558	more	Direct Opinion[34]	_	_	_	
+6-5	1559-1565	narrow	Direct Opinion[34]	_	_	_	
+6-6	1566-1570	than	Direct Opinion[34]	_	_	_	
+6-7	1571-1573	my	Direct Opinion[34]	_	_	_	
+6-8	1574-1577	old	Direct Opinion[34]	_	_	_	
+6-9	1578-1585	classic	Direct Opinion[34]	_	_	_	
+6-10	1586-1592	slides	Direct Aspect	Appearance#Form	Negative	6-3[34_0]	
+6-11	1593-1596	and	_	_	_	_	
+6-12	1597-1601	they	Direct Opinion[35]	Performance#Sizing/Fit	Negative	6-10[0_35]	
+6-13	1602-1605	run	Direct Opinion[35]	_	_	_	
+6-14	1606-1611	small	Direct Opinion[35]	_	_	_	
+6-15	1612-1613	.	_	_	_	_	
+6-16	1615-1623	IMPLICIT	_	_	_	_	
+6-17	1624-1625	I	Direct Opinion[36]	ContextOfUse#Usage frequency	Positive	6-25[0_36]	
+6-18	1626-1630	have	Direct Opinion[36]	_	_	_	
+6-19	1631-1638	several	Direct Opinion[36]	_	_	_	
+6-20	1639-1644	pairs	Direct Opinion[36]	_	_	_	
+6-21	1645-1647	of	Direct Opinion[36]	_	_	_	
+6-22	1648-1657	different	Direct Opinion[36]	_	_	_	
+6-23	1658-1664	styles	Direct Opinion[36]	_	_	_	
+6-24	1665-1667	of	_	_	_	_	
+6-25	1668-1673	Crocs	Direct Aspect	_	_	_	
+6-26	1674-1676	in	Direct Opinion[37]	Performance#Sizing/Fit	Negative	6-25[0_37]	
+6-27	1677-1678	a	Direct Opinion[37]	_	_	_	
+6-28	1679-1683	size	Direct Opinion[37]	_	_	_	
+6-29	1684-1685	9	Direct Opinion[37]	_	_	_	
+6-30	1686-1690	that	Direct Opinion[37]	_	_	_	
+6-31	1691-1694	fit	Direct Opinion[37]	_	_	_	
+6-32	1695-1698	but	Direct Opinion[37]	_	_	_	
+6-33	1699-1704	these	Direct Opinion[37]	_	_	_	
+6-34	1705-1707	in	Direct Opinion[37]	_	_	_	
+6-35	1708-1709	a	Direct Opinion[37]	_	_	_	
+6-36	1710-1711	9	Direct Opinion[37]	_	_	_	
+6-37	1712-1715	are	Direct Opinion[37]	_	_	_	
+6-38	1716-1719	too	Direct Opinion[37]	_	_	_	
+6-39	1720-1725	small	Direct Opinion[37]	_	_	_	
+6-40	1726-1727	.	_	_	_	_	
+6-41	1729-1737	IMPLICIT	Direct Aspect	_	_	_	
+6-42	1738-1747	Returning	Direct Opinion	Cost/Value	Negative	6-41	
+6-43	1748-1752	them	_	_	_	_	
+6-44	1753-1754	.	_	_	_	_	
+6-45	1756-1764	IMPLICIT	_	_	_	_	
+
+#Text=Toe box is wide for a shoe that's a narrow width .  IMPLICIT Accustomed to better fit from NB .  IMPLICIT Unfortunately, this was the only walking shoe in women's 12 1/2 narrow .  IMPLICIT Disappointing .  IMPLICIT
+7-1	1766-1769	Toe	Direct Aspect[38]	_	_	_	
+7-2	1770-1773	box	Direct Aspect[38]	_	_	_	
+7-3	1774-1776	is	_	_	_	_	
+7-4	1777-1781	wide	Direct Opinion[39]	Appearance#Shoe Component|Appearance#Form	Negative|Negative	7-1[38_39]|7-7[40_39]	
+7-5	1782-1785	for	Direct Opinion[39]	_	_	_	
+7-6	1786-1787	a	Direct Opinion[39]	_	_	_	
+7-7	1788-1792	shoe	Direct Opinion[39]|Direct Aspect[40]	_	_	_	
+7-8	1793-1799	that's	Direct Opinion[39]	_	_	_	
+7-9	1800-1801	a	Direct Opinion[39]	_	_	_	
+7-10	1802-1808	narrow	Direct Opinion[39]	_	_	_	
+7-11	1809-1814	width	Direct Opinion[39]	_	_	_	
+7-12	1815-1816	.	_	_	_	_	
+7-13	1818-1826	IMPLICIT	_	_	_	_	
+7-14	1827-1837	Accustomed	Direct Opinion[41]	_	_	_	
+7-15	1838-1840	to	Direct Opinion[41]	_	_	_	
+7-16	1841-1847	better	Direct Opinion[41]	_	_	_	
+7-17	1848-1851	fit	Direct Opinion[41]	_	_	_	
+7-18	1852-1856	from	Direct Opinion[41]	_	_	_	
+7-19	1857-1859	NB	Direct Opinion[41]|Direct Aspect[42]	Performance#Sizing/Fit	Negative	7-14[41_42]	
+7-20	1860-1861	.	_	_	_	_	
+7-21	1863-1871	IMPLICIT	_	_	_	_	
+7-22	1872-1885	Unfortunately	Indirect Opinion[43]	_	_	_	
+7-23	1885-1886	,	Indirect Opinion[43]	_	_	_	
+7-24	1887-1891	this	Indirect Opinion[43]	_	_	_	
+7-25	1892-1895	was	Indirect Opinion[43]	_	_	_	
+7-26	1896-1899	the	Indirect Opinion[43]	_	_	_	
+7-27	1900-1904	only	Indirect Opinion[43]	_	_	_	
+7-28	1905-1912	walking	Indirect Opinion[43]|Direct Aspect[44]	Performance#Use Case Applicability	Negative	7-22[43_44]	
+7-29	1913-1917	shoe	Indirect Opinion[43]|Direct Aspect[44]	_	_	_	
+7-30	1918-1920	in	_	_	_	_	
+7-31	1921-1928	women's	_	_	_	_	
+7-32	1929-1931	12	_	_	_	_	
+7-33	1932-1933	1	_	_	_	_	
+7-34	1933-1934	/	_	_	_	_	
+7-35	1934-1935	2	_	_	_	_	
+7-36	1936-1942	narrow	_	_	_	_	
+7-37	1943-1944	.	_	_	_	_	
+7-38	1946-1954	IMPLICIT	Direct Aspect	_	_	_	
+7-39	1955-1968	Disappointing	Direct Opinion	General	Negative	7-38	
+7-40	1969-1970	.	_	_	_	_	
+7-41	1972-1980	IMPLICIT	_	_	_	_	
+
+#Text=Delivery was so fast .  IMPLICIT Shoes are so comfortable and nice looking .  IMPLICIT Good choice for me .  IMPLICIT
+8-1	1982-1990	Delivery	Direct Opinion[45]	ContextOfUse#Purchase\_Context	Positive	8-6[0_45]	
+8-2	1991-1994	was	Direct Opinion[45]	_	_	_	
+8-3	1995-1997	so	Direct Opinion[45]	_	_	_	
+8-4	1998-2002	fast	Direct Opinion[45]	_	_	_	
+8-5	2003-2004	.	Direct Opinion[45]	_	_	_	
+8-6	2006-2014	IMPLICIT	Direct Aspect	_	_	_	
+8-7	2015-2020	Shoes	Direct Aspect	_	_	_	
+8-8	2021-2024	are	_	_	_	_	
+8-9	2025-2027	so	Direct Opinion[46]	Performance#Comfort	Positive	8-7[0_46]	
+8-10	2028-2039	comfortable	Direct Opinion[46]	_	_	_	
+8-11	2040-2043	and	_	_	_	_	
+8-12	2044-2048	nice	Direct Opinion[47]	Appearance#General	Positive	8-7[0_47]	
+8-13	2049-2056	looking	Direct Opinion[47]	_	_	_	
+8-14	2057-2058	.	_	_	_	_	
+8-15	2060-2068	IMPLICIT	_	_	_	_	
+8-16	2069-2073	Good	Direct Opinion[48]	Cost/Value	Positive	8-21[0_48]	
+8-17	2074-2080	choice	Direct Opinion[48]	_	_	_	
+8-18	2081-2084	for	Direct Opinion[48]	_	_	_	
+8-19	2085-2087	me	Direct Opinion[48]	_	_	_	
+8-20	2088-2089	.	_	_	_	_	
+8-21	2091-2099	IMPLICIT	Direct Aspect	_	_	_	
+
+#Text=Shoe runs way short compared to the Pursuit and Solas .  IMPLICIT Could have used a half size or maybe a full size larger !  IMPLICIT
+9-1	2101-2105	Shoe	Direct Aspect	_	_	_	
+9-2	2106-2110	runs	Direct Opinion[49]	Performance#Sizing/Fit	Negative	9-1[0_49]	
+9-3	2111-2114	way	Direct Opinion[49]	_	_	_	
+9-4	2115-2120	short	Direct Opinion[49]	_	_	_	
+9-5	2121-2129	compared	_	_	_	_	
+9-6	2130-2132	to	_	_	_	_	
+9-7	2133-2136	the	_	_	_	_	
+9-8	2137-2144	Pursuit	_	_	_	_	
+9-9	2145-2148	and	_	_	_	_	
+9-10	2149-2154	Solas	_	_	_	_	
+9-11	2155-2156	.	_	_	_	_	
+9-12	2158-2166	IMPLICIT	_	_	_	_	
+9-13	2167-2172	Could	Indirect Opinion[50]	_	_	_	
+9-14	2173-2177	have	Indirect Opinion[50]	_	_	_	
+9-15	2178-2182	used	Indirect Opinion[50]	_	_	_	
+9-16	2183-2184	a	Indirect Opinion[50]	_	_	_	
+9-17	2185-2189	half	Indirect Opinion[50]	_	_	_	
+9-18	2190-2194	size	Indirect Opinion[50]	_	_	_	
+9-19	2195-2197	or	Indirect Opinion[50]	_	_	_	
+9-20	2198-2203	maybe	Indirect Opinion[50]	_	_	_	
+9-21	2204-2205	a	Indirect Opinion[50]	_	_	_	
+9-22	2206-2210	full	Indirect Opinion[50]	_	_	_	
+9-23	2211-2215	size	Indirect Opinion[50]	_	_	_	
+9-24	2216-2222	larger	Indirect Opinion[50]	_	_	_	
+9-25	2223-2224	!	_	_	_	_	
+9-26	2226-2234	IMPLICIT	Direct Aspect	Performance#Sizing/Fit	Negative	9-13[50_0]	
+
+#Text=This shoe is just roomier all around .  IMPLICIT Not sure if I'll keep yet .  .  . It slips off a little when I walk .  IMPLICIT I have a wider foot than many and this just feel so bit .  IMPLICIT I got a half size smaller than usual and length-wise it fits good .  IMPLICIT I love the style of it in person !  IMPLICIT
+10-1	2236-2240	This	_	_	_	_	
+10-2	2241-2245	shoe	Direct Aspect	_	_	_	
+10-3	2246-2248	is	Indirect Opinion[51]	Performance#Sizing/Fit	Neutral	10-2[0_51]	
+10-4	2249-2253	just	Indirect Opinion[51]	_	_	_	
+10-5	2254-2261	roomier	Indirect Opinion[51]	_	_	_	
+10-6	2262-2265	all	Indirect Opinion[51]	_	_	_	
+10-7	2266-2272	around	Indirect Opinion[51]	_	_	_	
+10-8	2273-2274	.	_	_	_	_	
+10-9	2276-2284	IMPLICIT	_	_	_	_	
+10-10	2285-2288	Not	_	_	_	_	
+10-11	2289-2293	sure	_	_	_	_	
+10-12	2294-2296	if	_	_	_	_	
+10-13	2297-2301	I'll	_	_	_	_	
+10-14	2302-2306	keep	_	_	_	_	
+10-15	2307-2310	yet	_	_	_	_	
+10-16	2311-2312	.	_	_	_	_	
+10-17	2314-2315	.	_	_	_	_	
+10-18	2317-2318	.	_	_	_	_	
+10-19	2319-2321	It	Direct Opinion[52]	_	_	_	
+10-20	2322-2327	slips	Direct Opinion[52]	_	_	_	
+10-21	2328-2331	off	Direct Opinion[52]	_	_	_	
+10-22	2332-2333	a	Direct Opinion[52]	_	_	_	
+10-23	2334-2340	little	Direct Opinion[52]	_	_	_	
+10-24	2341-2345	when	Direct Opinion[52]	_	_	_	
+10-25	2346-2347	I	Direct Opinion[52]	_	_	_	
+10-26	2348-2352	walk	Direct Opinion[52]	_	_	_	
+10-27	2353-2354	.	_	_	_	_	
+10-28	2356-2364	IMPLICIT	Direct Aspect	Performance#Support/Stability	Negative	10-19[52_0]	
+10-29	2365-2366	I	_	_	_	_	
+10-30	2367-2371	have	Direct Opinion[53]	Performance#Sizing/Fit	Negative	10-43[0_53]	
+10-31	2372-2373	a	Direct Opinion[53]	_	_	_	
+10-32	2374-2379	wider	Direct Opinion[53]	_	_	_	
+10-33	2380-2384	foot	Direct Opinion[53]	_	_	_	
+10-34	2385-2389	than	Direct Opinion[53]	_	_	_	
+10-35	2390-2394	many	Direct Opinion[53]	_	_	_	
+10-36	2395-2398	and	Direct Opinion[53]	_	_	_	
+10-37	2399-2403	this	Direct Opinion[53]	_	_	_	
+10-38	2404-2408	just	Direct Opinion[53]	_	_	_	
+10-39	2409-2413	feel	Direct Opinion[53]	_	_	_	
+10-40	2414-2416	so	Direct Opinion[53]	_	_	_	
+10-41	2417-2420	bit	Direct Opinion[53]	_	_	_	
+10-42	2421-2422	.	_	_	_	_	
+10-43	2424-2432	IMPLICIT	Direct Aspect	_	_	_	
+10-44	2433-2434	I	Direct Opinion[54]	Performance#Sizing/Fit	Positive	10-43[0_54]	
+10-45	2435-2438	got	Direct Opinion[54]	_	_	_	
+10-46	2439-2440	a	Direct Opinion[54]	_	_	_	
+10-47	2441-2445	half	Direct Opinion[54]	_	_	_	
+10-48	2446-2450	size	Direct Opinion[54]	_	_	_	
+10-49	2451-2458	smaller	Direct Opinion[54]	_	_	_	
+10-50	2459-2463	than	Direct Opinion[54]	_	_	_	
+10-51	2464-2469	usual	Direct Opinion[54]	_	_	_	
+10-52	2470-2473	and	Direct Opinion[54]	_	_	_	
+10-53	2474-2485	length-wise	Direct Opinion[54]	_	_	_	
+10-54	2486-2488	it	Direct Opinion[54]	_	_	_	
+10-55	2489-2493	fits	Direct Opinion[54]	_	_	_	
+10-56	2494-2498	good	Direct Opinion[54]	_	_	_	
+10-57	2499-2500	.	Direct Opinion[54]	_	_	_	
+10-58	2502-2510	IMPLICIT	Direct Aspect	_	_	_	
+10-59	2511-2512	I	Direct Opinion[55]	Appearance#Form	Positive	10-58[0_55]	
+10-60	2513-2517	love	Direct Opinion[55]	_	_	_	
+10-61	2518-2521	the	Direct Opinion[55]	_	_	_	
+10-62	2522-2527	style	Direct Opinion[55]	_	_	_	
+10-63	2528-2530	of	Direct Opinion[55]	_	_	_	
+10-64	2531-2533	it	Direct Opinion[55]	_	_	_	
+10-65	2534-2536	in	Direct Opinion[55]	_	_	_	
+10-66	2537-2543	person	Direct Opinion[55]	_	_	_	
+10-67	2544-2545	!	_	_	_	_	
+10-68	2547-2555	IMPLICIT	_	_	_	_	
+
+#Text=I think they are cute and light weight .  IMPLICIT They were too narrow for me .  IMPLICIT I did order a wide but still too narrow .  IMPLICIT
+11-1	2557-2558	I	Direct Opinion[56]	_	_	_	
+11-2	2559-2564	think	Direct Opinion[56]	_	_	_	
+11-3	2565-2569	they	Direct Opinion[56]	_	_	_	
+11-4	2570-2573	are	Direct Opinion[56]	_	_	_	
+11-5	2574-2578	cute	Direct Opinion[56]	_	_	_	
+11-6	2579-2582	and	_	_	_	_	
+11-7	2583-2588	light	Direct Opinion[57]	_	_	_	
+11-8	2589-2595	weight	Direct Opinion[57]	_	_	_	
+11-9	2596-2597	.	_	_	_	_	
+11-10	2599-2607	IMPLICIT	Direct Aspect	Appearance#Material|Appearance#Form	Positive|Positive	11-7[57_0]|11-1[56_0]	
+11-11	2608-2612	They	_	_	_	_	
+11-12	2613-2617	were	_	_	_	_	
+11-13	2618-2621	too	Direct Opinion[58]	Performance#Sizing/Fit	Negative	11-10[0_58]	
+11-14	2622-2628	narrow	Direct Opinion[58]	_	_	_	
+11-15	2629-2632	for	Direct Opinion[58]	_	_	_	
+11-16	2633-2635	me	Direct Opinion[58]	_	_	_	
+11-17	2636-2637	.	_	_	_	_	
+11-18	2639-2647	IMPLICIT	Direct Aspect	_	_	_	
+11-19	2648-2649	I	Direct Opinion[59]	Performance#Sizing/Fit	Negative	11-18[0_59]	
+11-20	2650-2653	did	Direct Opinion[59]	_	_	_	
+11-21	2654-2659	order	Direct Opinion[59]	_	_	_	
+11-22	2660-2661	a	Direct Opinion[59]	_	_	_	
+11-23	2662-2666	wide	Direct Opinion[59]	_	_	_	
+11-24	2667-2670	but	Direct Opinion[59]	_	_	_	
+11-25	2671-2676	still	Direct Opinion[59]	_	_	_	
+11-26	2677-2680	too	Direct Opinion[59]	_	_	_	
+11-27	2681-2687	narrow	Direct Opinion[59]	_	_	_	
+11-28	2688-2689	.	_	_	_	_	
+11-29	2691-2699	IMPLICIT	_	_	_	_	
+
+#Text=The shoe was nice but they were dirty like they were worn before and had scuffs on the side and front and there was glue on the front .  IMPLICIT Not satisfied when I was buying them "new" and as a gift for someone .  IMPLICIT The delivery time was A1 but the product itself was a 4/10 .  IMPLICIT And they're the white ones too so you can see any type of mark .  IMPLICIT
+12-1	2701-2704	The	_	_	_	_	
+12-2	2705-2709	shoe	Direct Aspect	Appearance#Material	Negative	12-15[62_0]	
+12-3	2710-2713	was	Direct Opinion[60]	General	Positive	12-2[0_60]	
+12-4	2714-2718	nice	Direct Opinion[60]	_	_	_	
+12-5	2719-2722	but	_	_	_	_	
+12-6	2723-2727	they	Direct Opinion[61]	Appearance#Material	Negative	12-2[0_61]	
+12-7	2728-2732	were	Direct Opinion[61]	_	_	_	
+12-8	2733-2738	dirty	Direct Opinion[61]	_	_	_	
+12-9	2739-2743	like	Direct Opinion[61]	_	_	_	
+12-10	2744-2748	they	Direct Opinion[61]	_	_	_	
+12-11	2749-2753	were	Direct Opinion[61]	_	_	_	
+12-12	2754-2758	worn	Direct Opinion[61]	_	_	_	
+12-13	2759-2765	before	Direct Opinion[61]	_	_	_	
+12-14	2766-2769	and	_	_	_	_	
+12-15	2770-2773	had	Direct Opinion[62]	_	_	_	
+12-16	2774-2780	scuffs	Direct Opinion[62]	_	_	_	
+12-17	2781-2783	on	Direct Opinion[62]	_	_	_	
+12-18	2784-2787	the	Direct Opinion[62]	_	_	_	
+12-19	2788-2792	side	Direct Opinion[62]	_	_	_	
+12-20	2793-2796	and	Direct Opinion[62]	_	_	_	
+12-21	2797-2802	front	Direct Opinion[62]	_	_	_	
+12-22	2803-2806	and	Direct Opinion[62]	_	_	_	
+12-23	2807-2812	there	Direct Opinion[62]	_	_	_	
+12-24	2813-2816	was	Direct Opinion[62]	_	_	_	
+12-25	2817-2821	glue	Direct Opinion[62]	_	_	_	
+12-26	2822-2824	on	Direct Opinion[62]	_	_	_	
+12-27	2825-2828	the	Direct Opinion[62]	_	_	_	
+12-28	2829-2834	front	Direct Opinion[62]	_	_	_	
+12-29	2835-2836	.	_	_	_	_	
+12-30	2838-2846	IMPLICIT	Direct Aspect	ContextOfUse#Purchase\_Context	Negative	12-31[63_0]	
+12-31	2847-2850	Not	Direct Opinion[63]	Cost/Value	Negative	12-30[0_63]	
+12-32	2851-2860	satisfied	Direct Opinion[63]	_	_	_	
+12-33	2861-2865	when	Direct Opinion[63]	_	_	_	
+12-34	2866-2867	I	Direct Opinion[63]	_	_	_	
+12-35	2868-2871	was	Direct Opinion[63]	_	_	_	
+12-36	2872-2878	buying	Direct Opinion[63]	_	_	_	
+12-37	2879-2883	them	Direct Opinion[63]	_	_	_	
+12-38	2884-2885	"	Direct Opinion[63]	_	_	_	
+12-39	2885-2888	new	Direct Opinion[63]	_	_	_	
+12-40	2888-2889	"	Direct Opinion[63]	_	_	_	
+12-41	2890-2893	and	Direct Opinion[63]	_	_	_	
+12-42	2894-2896	as	Direct Opinion[63]	_	_	_	
+12-43	2897-2898	a	Direct Opinion[63]	_	_	_	
+12-44	2899-2903	gift	Direct Opinion[63]	_	_	_	
+12-45	2904-2907	for	Direct Opinion[63]	_	_	_	
+12-46	2908-2915	someone	Direct Opinion[63]	_	_	_	
+12-47	2916-2917	.	_	_	_	_	
+12-48	2919-2927	IMPLICIT	_	_	_	_	
+12-49	2928-2931	The	_	_	_	_	
+12-50	2932-2940	delivery	_	_	_	_	
+12-51	2941-2945	time	_	_	_	_	
+12-52	2946-2949	was	_	_	_	_	
+12-53	2950-2952	A1	_	_	_	_	
+12-54	2953-2956	but	_	_	_	_	
+12-55	2957-2960	the	_	_	_	_	
+12-56	2961-2968	product	Direct Aspect	_	_	_	
+12-57	2969-2975	itself	_	_	_	_	
+12-58	2976-2979	was	Direct Opinion[64]	General	Negative	12-56[0_64]	
+12-59	2980-2981	a	Direct Opinion[64]	_	_	_	
+12-60	2982-2983	4	Direct Opinion[64]	_	_	_	
+12-61	2983-2984	/	Direct Opinion[64]	_	_	_	
+12-62	2984-2986	10	Direct Opinion[64]	_	_	_	
+12-63	2987-2988	.	_	_	_	_	
+12-64	2990-2998	IMPLICIT	_	_	_	_	
+12-65	2999-3002	And	_	_	_	_	
+12-66	3003-3010	they're	Direct Opinion[65]	_	_	_	
+12-67	3011-3014	the	Direct Opinion[65]	_	_	_	
+12-68	3015-3020	white	Direct Opinion[65]	_	_	_	
+12-69	3021-3025	ones	Direct Opinion[65]	_	_	_	
+12-70	3026-3029	too	Direct Opinion[65]	_	_	_	
+12-71	3030-3032	so	Direct Opinion[65]	_	_	_	
+12-72	3033-3036	you	Direct Opinion[65]	_	_	_	
+12-73	3037-3040	can	Direct Opinion[65]	_	_	_	
+12-74	3041-3044	see	Direct Opinion[65]	_	_	_	
+12-75	3045-3048	any	Direct Opinion[65]	_	_	_	
+12-76	3049-3053	type	Direct Opinion[65]	_	_	_	
+12-77	3054-3056	of	Direct Opinion[65]	_	_	_	
+12-78	3057-3061	mark	Direct Opinion[65]	_	_	_	
+12-79	3062-3063	.	_	_	_	_	
+12-80	3065-3073	IMPLICIT	Direct Aspect	Appearance#Material	Negative	12-66[65_0]	
+
+#Text=The product is too small .  IMPLICIT I tried is a half bigger and it was too small .  IMPLICIT It's the width .  IMPLICIT With other new balance's, I never had this issue .  IMPLICIT
+13-1	3075-3078	The	_	_	_	_	
+13-2	3079-3086	product	Direct Aspect	_	_	_	
+13-3	3087-3089	is	_	_	_	_	
+13-4	3090-3093	too	Direct Opinion[66]	Performance#Sizing/Fit	Negative	13-2[0_66]	
+13-5	3094-3099	small	Direct Opinion[66]	_	_	_	
+13-6	3100-3101	.	_	_	_	_	
+13-7	3103-3111	IMPLICIT	Direct Aspect	_	_	_	
+13-8	3112-3113	I	_	_	_	_	
+13-9	3114-3119	tried	_	_	_	_	
+13-10	3120-3122	is	_	_	_	_	
+13-11	3123-3124	a	_	_	_	_	
+13-12	3125-3129	half	Direct Opinion[67]	Performance#Sizing/Fit	Negative	13-7[0_67]	
+13-13	3130-3136	bigger	Direct Opinion[67]	_	_	_	
+13-14	3137-3140	and	Direct Opinion[67]	_	_	_	
+13-15	3141-3143	it	Direct Opinion[67]	_	_	_	
+13-16	3144-3147	was	Direct Opinion[67]	_	_	_	
+13-17	3148-3151	too	Direct Opinion[67]	_	_	_	
+13-18	3152-3157	small	Direct Opinion[67]	_	_	_	
+13-19	3158-3159	.	_	_	_	_	
+13-20	3161-3169	IMPLICIT	_	_	_	_	
+13-21	3170-3174	It's	_	_	_	_	
+13-22	3175-3178	the	_	_	_	_	
+13-23	3179-3184	width	_	_	_	_	
+13-24	3185-3186	.	_	_	_	_	
+13-25	3188-3196	IMPLICIT	_	_	_	_	
+13-26	3197-3201	With	Indirect Opinion[68]	ContextOfUse#Purchase\_Context	Positive	13-28[69_68]	
+13-27	3202-3207	other	Indirect Opinion[68]	_	_	_	
+13-28	3208-3211	new	Indirect Opinion[68]|Direct Aspect[69]	_	_	_	
+13-29	3212-3221	balance's	Indirect Opinion[68]|Direct Aspect[69]	_	_	_	
+13-30	3221-3222	,	Indirect Opinion[68]	_	_	_	
+13-31	3223-3224	I	Indirect Opinion[68]	_	_	_	
+13-32	3225-3230	never	Indirect Opinion[68]	_	_	_	
+13-33	3231-3234	had	Indirect Opinion[68]	_	_	_	
+13-34	3235-3239	this	Indirect Opinion[68]	_	_	_	
+13-35	3240-3245	issue	Indirect Opinion[68]	_	_	_	
+13-36	3246-3247	.	_	_	_	_	
+13-37	3249-3257	IMPLICIT	_	_	_	_	
+
+#Text=I keep losing all my favorite jibbits because the holes on these are looser or something .  IMPLICIT I'm not even that active .  IMPLICIT
+14-1	3259-3260	I	Direct Opinion[70]	Appearance#Form|Appearance#Shoe Component	Negative|Negative	14-18[0_70]|14-10[71_70]	
+14-2	3261-3265	keep	Direct Opinion[70]	_	_	_	
+14-3	3266-3272	losing	Direct Opinion[70]	_	_	_	
+14-4	3273-3276	all	Direct Opinion[70]	_	_	_	
+14-5	3277-3279	my	Direct Opinion[70]	_	_	_	
+14-6	3280-3288	favorite	Direct Opinion[70]	_	_	_	
+14-7	3289-3296	jibbits	Direct Opinion[70]	_	_	_	
+14-8	3297-3304	because	Direct Opinion[70]	_	_	_	
+14-9	3305-3308	the	Direct Opinion[70]	_	_	_	
+14-10	3309-3314	holes	Direct Opinion[70]|Direct Aspect[71]	_	_	_	
+14-11	3315-3317	on	Direct Opinion[70]	_	_	_	
+14-12	3318-3323	these	Direct Opinion[70]	_	_	_	
+14-13	3324-3327	are	Direct Opinion[70]	_	_	_	
+14-14	3328-3334	looser	Direct Opinion[70]	_	_	_	
+14-15	3335-3337	or	Direct Opinion[70]	_	_	_	
+14-16	3338-3347	something	Direct Opinion[70]	_	_	_	
+14-17	3348-3349	.	_	_	_	_	
+14-18	3351-3359	IMPLICIT	Direct Aspect	_	_	_	
+14-19	3360-3363	I'm	Indirect Opinion[72]	_	_	_	
+14-20	3364-3367	not	Indirect Opinion[72]	_	_	_	
+14-21	3368-3372	even	Indirect Opinion[72]	_	_	_	
+14-22	3373-3377	that	Indirect Opinion[72]	_	_	_	
+14-23	3378-3384	active	Indirect Opinion[72]	_	_	_	
+14-24	3385-3386	.	_	_	_	_	
+14-25	3388-3396	IMPLICIT	Direct Aspect	ContextOfUse#Use case	Neutral	14-19[72_0]	
+
+#Text=I don't like the support .  IMPLICIT not a lot to choose from when your width is B .  IMPLICIT
+15-1	3398-3399	I	Direct Opinion[73]	Performance#Support/Stability	Negative	15-7[0_73]	
+15-2	3400-3405	don't	Direct Opinion[73]	_	_	_	
+15-3	3406-3410	like	Direct Opinion[73]	_	_	_	
+15-4	3411-3414	the	Direct Opinion[73]	_	_	_	
+15-5	3415-3422	support	Direct Opinion[73]	_	_	_	
+15-6	3423-3424	.	_	_	_	_	
+15-7	3426-3434	IMPLICIT	Direct Aspect	_	_	_	
+15-8	3435-3438	not	Direct Opinion[74]	_	_	_	
+15-9	3439-3440	a	Direct Opinion[74]	_	_	_	
+15-10	3441-3444	lot	Direct Opinion[74]	_	_	_	
+15-11	3445-3447	to	Direct Opinion[74]	_	_	_	
+15-12	3448-3454	choose	Direct Opinion[74]	_	_	_	
+15-13	3455-3459	from	Direct Opinion[74]	_	_	_	
+15-14	3460-3464	when	Direct Opinion[74]	_	_	_	
+15-15	3465-3469	your	Direct Opinion[74]	_	_	_	
+15-16	3470-3475	width	Direct Opinion[74]	_	_	_	
+15-17	3476-3478	is	Direct Opinion[74]	_	_	_	
+15-18	3479-3480	B	Direct Opinion[74]	_	_	_	
+15-19	3481-3482	.	_	_	_	_	
+15-20	3484-3492	IMPLICIT	Direct Aspect	Performance#Sizing/Fit	Negative	15-8[74_0]	
+
+#Text=Love these shoes but received 2 pairs that were defective before I finally got a good pair .  IMPLICIT Giving these 4 stars because I like the shoe itself but there's small spot of glue or something on the front of the shoe .  IMPLICIT Not trying to exchange them again because it's been too much of a hassle .  IMPLICIT I'm usually a size 8 but had to get a half size smaller .  IMPLICIT
+16-1	3494-3498	Love	Direct Opinion[75]	_	_	_	
+16-2	3499-3504	these	Direct Opinion[75]	_	_	_	
+16-3	3505-3510	shoes	Direct Aspect	General	Positive	16-1[75_0]	
+16-4	3511-3514	but	_	_	_	_	
+16-5	3515-3523	received	Direct Opinion[76]	ContextOfUse#Purchase\_Context	Negative	16-3[0_76]	
+16-6	3524-3525	2	Direct Opinion[76]	_	_	_	
+16-7	3526-3531	pairs	Direct Opinion[76]	_	_	_	
+16-8	3532-3536	that	Direct Opinion[76]	_	_	_	
+16-9	3537-3541	were	Direct Opinion[76]	_	_	_	
+16-10	3542-3551	defective	Direct Opinion[76]	_	_	_	
+16-11	3552-3558	before	Direct Opinion[76]	_	_	_	
+16-12	3559-3560	I	Direct Opinion[76]	_	_	_	
+16-13	3561-3568	finally	Direct Opinion[76]	_	_	_	
+16-14	3569-3572	got	Direct Opinion[76]	_	_	_	
+16-15	3573-3574	a	Direct Opinion[76]	_	_	_	
+16-16	3575-3579	good	Direct Opinion[76]	_	_	_	
+16-17	3580-3584	pair	Direct Opinion[76]	_	_	_	
+16-18	3585-3586	.	_	_	_	_	
+16-19	3588-3596	IMPLICIT	_	_	_	_	
+16-20	3597-3603	Giving	_	_	_	_	
+16-21	3604-3609	these	_	_	_	_	
+16-22	3610-3611	4	Direct Opinion[77]	_	_	_	
+16-23	3612-3617	stars	Direct Opinion[77]	_	_	_	
+16-24	3618-3625	because	Direct Opinion[77]	_	_	_	
+16-25	3626-3627	I	Direct Opinion[77]	_	_	_	
+16-26	3628-3632	like	Direct Opinion[77]	_	_	_	
+16-27	3633-3636	the	_	_	_	_	
+16-28	3637-3641	shoe	Direct Aspect	General|Appearance#Material	Positive|Negative	16-22[77_0]|16-32[78_0]	
+16-29	3642-3648	itself	_	_	_	_	
+16-30	3649-3652	but	_	_	_	_	
+16-31	3653-3660	there's	_	_	_	_	
+16-32	3661-3666	small	Direct Opinion[78]	_	_	_	
+16-33	3667-3671	spot	Direct Opinion[78]	_	_	_	
+16-34	3672-3674	of	Direct Opinion[78]	_	_	_	
+16-35	3675-3679	glue	Direct Opinion[78]	_	_	_	
+16-36	3680-3682	or	Direct Opinion[78]	_	_	_	
+16-37	3683-3692	something	Direct Opinion[78]	_	_	_	
+16-38	3693-3695	on	Direct Opinion[78]	_	_	_	
+16-39	3696-3699	the	Direct Opinion[78]	_	_	_	
+16-40	3700-3705	front	Direct Opinion[78]	_	_	_	
+16-41	3706-3708	of	Direct Opinion[78]	_	_	_	
+16-42	3709-3712	the	Direct Opinion[78]	_	_	_	
+16-43	3713-3717	shoe	Direct Opinion[78]	_	_	_	
+16-44	3718-3719	.	_	_	_	_	
+16-45	3721-3729	IMPLICIT	_	_	_	_	
+16-46	3730-3733	Not	Direct Opinion[79]	_	_	_	
+16-47	3734-3740	trying	Direct Opinion[79]	_	_	_	
+16-48	3741-3743	to	Direct Opinion[79]	_	_	_	
+16-49	3744-3752	exchange	Direct Opinion[79]	_	_	_	
+16-50	3753-3757	them	Direct Opinion[79]	_	_	_	
+16-51	3758-3763	again	Direct Opinion[79]	_	_	_	
+16-52	3764-3771	because	Direct Opinion[79]	_	_	_	
+16-53	3772-3776	it's	Direct Opinion[79]	_	_	_	
+16-54	3777-3781	been	Direct Opinion[79]	_	_	_	
+16-55	3782-3785	too	Direct Opinion[79]	_	_	_	
+16-56	3786-3790	much	Direct Opinion[79]	_	_	_	
+16-57	3791-3793	of	Direct Opinion[79]	_	_	_	
+16-58	3794-3795	a	Direct Opinion[79]	_	_	_	
+16-59	3796-3802	hassle	Direct Opinion[79]	_	_	_	
+16-60	3803-3804	.	_	_	_	_	
+16-61	3806-3814	IMPLICIT	Direct Aspect	ContextOfUse#Purchase\_Context	Negative	16-46[79_0]	
+16-62	3815-3818	I'm	Direct Opinion[80]	Performance#Sizing/Fit	Negative	16-61[0_80]	
+16-63	3819-3826	usually	Direct Opinion[80]	_	_	_	
+16-64	3827-3828	a	Direct Opinion[80]	_	_	_	
+16-65	3829-3833	size	Direct Opinion[80]	_	_	_	
+16-66	3834-3835	8	Direct Opinion[80]	_	_	_	
+16-67	3836-3839	but	Direct Opinion[80]	_	_	_	
+16-68	3840-3843	had	Direct Opinion[80]	_	_	_	
+16-69	3844-3846	to	Direct Opinion[80]	_	_	_	
+16-70	3847-3850	get	Direct Opinion[80]	_	_	_	
+16-71	3851-3852	a	Direct Opinion[80]	_	_	_	
+16-72	3853-3857	half	Direct Opinion[80]	_	_	_	
+16-73	3858-3862	size	Direct Opinion[80]	_	_	_	
+16-74	3863-3870	smaller	Direct Opinion[80]	_	_	_	
+16-75	3871-3872	.	_	_	_	_	
+16-76	3874-3882	IMPLICIT	_	_	_	_	
+
+#Text=I like the look of the sneaker .  IMPLICIT The only problem I had was they were wide .  IMPLICIT I liked them and I am keeping them  .  IMPLICIT I have to put another inside sole in the shoes and wear thicker socks .  IMPLICIT
+17-1	3884-3885	I	Direct Opinion[81]	Appearance#General	Positive	17-7[82_81]	
+17-2	3886-3890	like	Direct Opinion[81]	_	_	_	
+17-3	3891-3894	the	Direct Opinion[81]	_	_	_	
+17-4	3895-3899	look	Direct Opinion[81]	_	_	_	
+17-5	3900-3902	of	Direct Opinion[81]	_	_	_	
+17-6	3903-3906	the	Direct Opinion[81]	_	_	_	
+17-7	3907-3914	sneaker	Direct Opinion[81]|Direct Aspect[82]	_	_	_	
+17-8	3915-3916	.	_	_	_	_	
+17-9	3918-3926	IMPLICIT	Direct Aspect	_	_	_	
+17-10	3927-3930	The	Direct Opinion[83]	Performance#Sizing/Fit	Negative	17-9[0_83]	
+17-11	3931-3935	only	Direct Opinion[83]	_	_	_	
+17-12	3936-3943	problem	Direct Opinion[83]	_	_	_	
+17-13	3944-3945	I	Direct Opinion[83]	_	_	_	
+17-14	3946-3949	had	Direct Opinion[83]	_	_	_	
+17-15	3950-3953	was	Direct Opinion[83]	_	_	_	
+17-16	3954-3958	they	Direct Opinion[83]	_	_	_	
+17-17	3959-3963	were	Direct Opinion[83]	_	_	_	
+17-18	3964-3968	wide	Direct Opinion[83]	_	_	_	
+17-19	3969-3970	.	Direct Opinion[83]	_	_	_	
+17-20	3972-3980	IMPLICIT	Direct Aspect	_	_	_	
+17-21	3981-3982	I	Direct Opinion[84]	General	Positive	17-20[0_84]	
+17-22	3983-3988	liked	Direct Opinion[84]	_	_	_	
+17-23	3989-3993	them	Direct Opinion[84]	_	_	_	
+17-24	3994-3997	and	Direct Opinion[84]	_	_	_	
+17-25	3998-3999	I	Direct Opinion[84]	_	_	_	
+17-26	4000-4002	am	Direct Opinion[84]	_	_	_	
+17-27	4003-4010	keeping	Direct Opinion[84]	_	_	_	
+17-28	4011-4015	them	Direct Opinion[84]	_	_	_	
+17-29	4017-4018	.	_	_	_	_	
+17-30	4020-4028	IMPLICIT	_	_	_	_	
+17-31	4029-4030	I	Direct Opinion[85]	Appearance#Shoe Component	Negative	17-36[86_85]	
+17-32	4031-4035	have	Direct Opinion[85]	_	_	_	
+17-33	4036-4038	to	Direct Opinion[85]	_	_	_	
+17-34	4039-4042	put	Direct Opinion[85]	_	_	_	
+17-35	4043-4050	another	Direct Opinion[85]	_	_	_	
+17-36	4051-4057	inside	Direct Opinion[85]|Direct Aspect[86]	_	_	_	
+17-37	4058-4062	sole	Direct Opinion[85]|Direct Aspect[86]	_	_	_	
+17-38	4063-4065	in	Direct Opinion[85]	_	_	_	
+17-39	4066-4069	the	Direct Opinion[85]	_	_	_	
+17-40	4070-4075	shoes	Direct Opinion[85]	_	_	_	
+17-41	4076-4079	and	Direct Opinion[85]	_	_	_	
+17-42	4080-4084	wear	Direct Opinion[85]	_	_	_	
+17-43	4085-4092	thicker	Direct Opinion[85]	_	_	_	
+17-44	4093-4098	socks	Direct Opinion[85]	_	_	_	
+17-45	4099-4100	.	_	_	_	_	
+17-46	4102-4110	IMPLICIT	_	_	_	_	
+
+#Text=Loved the shoes, but they were too small and had to return .  IMPLICIT Sadly there was no longer a larger size to replace with .  IMPLICIT
+18-1	4112-4117	Loved	Direct Opinion	_	_	_	
+18-2	4118-4121	the	_	_	_	_	
+18-3	4122-4127	shoes	Direct Aspect	General|Cost/Value	Positive|Negative	18-1|18-11[88_0]	
+18-4	4127-4128	,	_	_	_	_	
+18-5	4129-4132	but	_	_	_	_	
+18-6	4133-4137	they	Direct Opinion[87]	Performance#Sizing/Fit	Negative	18-3[0_87]	
+18-7	4138-4142	were	Direct Opinion[87]	_	_	_	
+18-8	4143-4146	too	Direct Opinion[87]	_	_	_	
+18-9	4147-4152	small	Direct Opinion[87]	_	_	_	
+18-10	4153-4156	and	_	_	_	_	
+18-11	4157-4160	had	Direct Opinion[88]	_	_	_	
+18-12	4161-4163	to	Direct Opinion[88]	_	_	_	
+18-13	4164-4170	return	Direct Opinion[88]	_	_	_	
+18-14	4171-4172	.	_	_	_	_	
+18-15	4174-4182	IMPLICIT	_	_	_	_	
+18-16	4183-4188	Sadly	Direct Opinion[89]	_	_	_	
+18-17	4189-4194	there	Direct Opinion[89]	_	_	_	
+18-18	4195-4198	was	Direct Opinion[89]	_	_	_	
+18-19	4199-4201	no	Direct Opinion[89]	_	_	_	
+18-20	4202-4208	longer	Direct Opinion[89]	_	_	_	
+18-21	4209-4210	a	Direct Opinion[89]	_	_	_	
+18-22	4211-4217	larger	Direct Opinion[89]	_	_	_	
+18-23	4218-4222	size	Direct Opinion[89]	_	_	_	
+18-24	4223-4225	to	Direct Opinion[89]	_	_	_	
+18-25	4226-4233	replace	Direct Opinion[89]	_	_	_	
+18-26	4234-4238	with	Direct Opinion[89]	_	_	_	
+18-27	4239-4240	.	_	_	_	_	
+18-28	4242-4250	IMPLICIT	Direct Aspect	ContextOfUse#Purchase\_Context	Negative	18-16[89_0]	
+
+#Text=While cute, these sneakers were too big and seemed to have a wide width .  IMPLICIT They had more arch support than I was expecting which isn't a bad think .  IMPLICIT
+19-1	4252-4257	While	Direct Opinion[90]	_	_	_	
+19-2	4258-4262	cute	Direct Opinion[90]	_	_	_	
+19-3	4262-4263	,	Direct Opinion[90]	_	_	_	
+19-4	4264-4269	these	_	_	_	_	
+19-5	4270-4278	sneakers	Direct Aspect	Appearance#General	Positive	19-1[90_0]	
+19-6	4279-4283	were	_	_	_	_	
+19-7	4284-4287	too	Direct Opinion[91]	Performance#Sizing/Fit	Negative	19-5[0_91]	
+19-8	4288-4291	big	Direct Opinion[91]	_	_	_	
+19-9	4292-4295	and	Direct Opinion[91]	_	_	_	
+19-10	4296-4302	seemed	Direct Opinion[91]	_	_	_	
+19-11	4303-4305	to	Direct Opinion[91]	_	_	_	
+19-12	4306-4310	have	Direct Opinion[91]	_	_	_	
+19-13	4311-4312	a	Direct Opinion[91]	_	_	_	
+19-14	4313-4317	wide	Direct Opinion[91]	_	_	_	
+19-15	4318-4323	width	Direct Opinion[91]	_	_	_	
+19-16	4324-4325	.	_	_	_	_	
+19-17	4327-4335	IMPLICIT	_	_	_	_	
+19-18	4336-4340	They	_	_	_	_	
+19-19	4341-4344	had	Direct Opinion[92]	Appearance#Shoe Component	Positive	19-21[93_92]	
+19-20	4345-4349	more	Direct Opinion[92]	_	_	_	
+19-21	4350-4354	arch	Direct Opinion[92]|Direct Aspect[93]	_	_	_	
+19-22	4355-4362	support	Direct Opinion[92]	_	_	_	
+19-23	4363-4367	than	Direct Opinion[92]	_	_	_	
+19-24	4368-4369	I	Direct Opinion[92]	_	_	_	
+19-25	4370-4373	was	Direct Opinion[92]	_	_	_	
+19-26	4374-4383	expecting	Direct Opinion[92]	_	_	_	
+19-27	4384-4389	which	Direct Opinion[92]	_	_	_	
+19-28	4390-4395	isn't	Direct Opinion[92]	_	_	_	
+19-29	4396-4397	a	Direct Opinion[92]	_	_	_	
+19-30	4398-4401	bad	Direct Opinion[92]	_	_	_	
+19-31	4402-4407	think	_	_	_	_	
+19-32	4408-4409	.	_	_	_	_	
+19-33	4411-4419	IMPLICIT	Direct Aspect	Performance#Support/Stability	Positive	19-19[92_0]	
+
+#Text=Not true to size order a larger size .  IMPLICIT I normally wear a size 6 . 5 in adidas however I order a size 7 just to be safe and it's still too small .  IMPLICIT
+20-1	4421-4424	Not	Direct Opinion[94]	Performance#Sizing/Fit	Negative	20-10[0_94]	
+20-2	4425-4429	true	Direct Opinion[94]	_	_	_	
+20-3	4430-4432	to	Direct Opinion[94]	_	_	_	
+20-4	4433-4437	size	Direct Opinion[94]	_	_	_	
+20-5	4438-4443	order	Direct Opinion[94]	_	_	_	
+20-6	4444-4445	a	Direct Opinion[94]	_	_	_	
+20-7	4446-4452	larger	Direct Opinion[94]	_	_	_	
+20-8	4453-4457	size	Direct Opinion[94]	_	_	_	
+20-9	4458-4459	.	_	_	_	_	
+20-10	4461-4469	IMPLICIT	Direct Aspect	_	_	_	
+20-11	4470-4471	I	Direct Opinion[95]	Performance#Sizing/Fit	Negative	20-37[0_95]	
+20-12	4472-4480	normally	Direct Opinion[95]	_	_	_	
+20-13	4481-4485	wear	Direct Opinion[95]	_	_	_	
+20-14	4486-4487	a	Direct Opinion[95]	_	_	_	
+20-15	4488-4492	size	Direct Opinion[95]	_	_	_	
+20-16	4493-4494	6	Direct Opinion[95]	_	_	_	
+20-17	4495-4496	.	Direct Opinion[95]	_	_	_	
+20-18	4497-4498	5	Direct Opinion[95]	_	_	_	
+20-19	4499-4501	in	Direct Opinion[95]	_	_	_	
+20-20	4502-4508	adidas	Direct Opinion[95]	_	_	_	
+20-21	4509-4516	however	Direct Opinion[95]	_	_	_	
+20-22	4517-4518	I	Direct Opinion[95]	_	_	_	
+20-23	4519-4524	order	Direct Opinion[95]	_	_	_	
+20-24	4525-4526	a	Direct Opinion[95]	_	_	_	
+20-25	4527-4531	size	Direct Opinion[95]	_	_	_	
+20-26	4532-4533	7	Direct Opinion[95]	_	_	_	
+20-27	4534-4538	just	Direct Opinion[95]	_	_	_	
+20-28	4539-4541	to	Direct Opinion[95]	_	_	_	
+20-29	4542-4544	be	Direct Opinion[95]	_	_	_	
+20-30	4545-4549	safe	Direct Opinion[95]	_	_	_	
+20-31	4550-4553	and	Direct Opinion[95]	_	_	_	
+20-32	4554-4558	it's	Direct Opinion[95]	_	_	_	
+20-33	4559-4564	still	Direct Opinion[95]	_	_	_	
+20-34	4565-4568	too	Direct Opinion[95]	_	_	_	
+20-35	4569-4574	small	Direct Opinion[95]	_	_	_	
+20-36	4575-4576	.	Direct Opinion[95]	_	_	_	
+20-37	4578-4586	IMPLICIT	Direct Aspect	_	_	_	
+
+#Text=They're much smaller, squeak like crazy while walking and cheaply made .  IMPLICIT To say I'm disappointed is an understatement !  IMPLICIT I've been wearing New Balance sneakers for over 25 years and have seen and felt the steady decline in quality over the years .  IMPLICIT Shame on you for compromising your usual high quality sneakers !  IMPLICIT
+21-1	4588-4595	They're	_	_	_	_	
+21-2	4596-4600	much	Direct Opinion[96]	_	_	_	
+21-3	4601-4608	smaller	Direct Opinion[96]	_	_	_	
+21-4	4608-4609	,	_	_	_	_	
+21-5	4610-4616	squeak	Direct Opinion[97]	_	_	_	
+21-6	4617-4621	like	Direct Opinion[97]	_	_	_	
+21-7	4622-4627	crazy	Direct Opinion[97]	_	_	_	
+21-8	4628-4633	while	Direct Opinion[97]	_	_	_	
+21-9	4634-4641	walking	Direct Opinion[97]	_	_	_	
+21-10	4642-4645	and	_	_	_	_	
+21-11	4646-4653	cheaply	Direct Opinion[98]	_	_	_	
+21-12	4654-4658	made	Direct Opinion[98]	_	_	_	
+21-13	4659-4660	.	_	_	_	_	
+21-14	4662-4670	IMPLICIT	Direct Aspect	Appearance#Misc|Performance#Use Case Applicability|Performance#Sizing/Fit	Negative|Negative|Negative	21-11[98_0]|21-5[97_0]|21-2[96_0]	
+21-15	4671-4673	To	Direct Opinion[99]	_	_	_	
+21-16	4674-4677	say	Direct Opinion[99]	_	_	_	
+21-17	4678-4681	I'm	Direct Opinion[99]	_	_	_	
+21-18	4682-4694	disappointed	Direct Opinion[99]	_	_	_	
+21-19	4695-4697	is	Direct Opinion[99]	_	_	_	
+21-20	4698-4700	an	Direct Opinion[99]	_	_	_	
+21-21	4701-4715	understatement	Direct Opinion[99]	_	_	_	
+21-22	4716-4717	!	_	_	_	_	
+21-23	4719-4727	IMPLICIT	Direct Aspect	General	Positive	21-15[99_0]	
+21-24	4728-4732	I've	Direct Opinion[100]	ContextOfUse#Review\_Temporality	Neutral	21-27[101_100]	
+21-25	4733-4737	been	Direct Opinion[100]	_	_	_	
+21-26	4738-4745	wearing	Direct Opinion[100]	_	_	_	
+21-27	4746-4749	New	Direct Opinion[100]|Direct Aspect[101]	Cost/Value	Negative	21-35[102_101]	
+21-28	4750-4757	Balance	Direct Opinion[100]|Direct Aspect[101]	_	_	_	
+21-29	4758-4766	sneakers	Direct Opinion[100]|Direct Aspect[101]	_	_	_	
+21-30	4767-4770	for	Direct Opinion[100]	_	_	_	
+21-31	4771-4775	over	Direct Opinion[100]	_	_	_	
+21-32	4776-4778	25	Direct Opinion[100]	_	_	_	
+21-33	4779-4784	years	Direct Opinion[100]	_	_	_	
+21-34	4785-4788	and	_	_	_	_	
+21-35	4789-4793	have	Direct Opinion[102]	_	_	_	
+21-36	4794-4798	seen	Direct Opinion[102]	_	_	_	
+21-37	4799-4802	and	Direct Opinion[102]	_	_	_	
+21-38	4803-4807	felt	Direct Opinion[102]	_	_	_	
+21-39	4808-4811	the	Direct Opinion[102]	_	_	_	
+21-40	4812-4818	steady	Direct Opinion[102]	_	_	_	
+21-41	4819-4826	decline	Direct Opinion[102]	_	_	_	
+21-42	4827-4829	in	Direct Opinion[102]	_	_	_	
+21-43	4830-4837	quality	Direct Opinion[102]	_	_	_	
+21-44	4838-4842	over	Direct Opinion[102]	_	_	_	
+21-45	4843-4846	the	Direct Opinion[102]	_	_	_	
+21-46	4847-4852	years	Direct Opinion[102]	_	_	_	
+21-47	4853-4854	.	_	_	_	_	
+21-48	4856-4864	IMPLICIT	_	_	_	_	
+21-49	4865-4870	Shame	Direct Opinion[103]	_	_	_	
+21-50	4871-4873	on	Direct Opinion[103]	_	_	_	
+21-51	4874-4877	you	Direct Opinion[103]	_	_	_	
+21-52	4878-4881	for	Direct Opinion[103]	_	_	_	
+21-53	4882-4894	compromising	Direct Opinion[103]	_	_	_	
+21-54	4895-4899	your	Direct Opinion[103]	_	_	_	
+21-55	4900-4905	usual	Direct Opinion[103]	_	_	_	
+21-56	4906-4910	high	Direct Opinion[103]	_	_	_	
+21-57	4911-4918	quality	Direct Opinion[103]	_	_	_	
+21-58	4919-4927	sneakers	Direct Aspect	Cost/Value	Negative	21-49[103_0]	
+21-59	4928-4929	!	_	_	_	_	
+21-60	4931-4939	IMPLICIT	_	_	_	_	
+
+#Text=You cant tell by the picture that these shoes aren't just brown, they are more like a crushed velvet the other color coming up as gold .  IMPLICIT People are always asking where I got them .  IMPLICIT The gold adidas charm at the bottom of the laces is a nice touch .  IMPLICIT
+22-1	4941-4944	You	_	_	_	_	
+22-2	4945-4949	cant	_	_	_	_	
+22-3	4950-4954	tell	_	_	_	_	
+22-4	4955-4957	by	_	_	_	_	
+22-5	4958-4961	the	_	_	_	_	
+22-6	4962-4969	picture	_	_	_	_	
+22-7	4970-4974	that	_	_	_	_	
+22-8	4975-4980	these	_	_	_	_	
+22-9	4981-4986	shoes	Direct Aspect	Appearance#Color	Neutral	22-10[104_0]	
+22-10	4987-4993	aren't	Indirect Opinion[104]	_	_	_	
+22-11	4994-4998	just	Indirect Opinion[104]	_	_	_	
+22-12	4999-5004	brown	Indirect Opinion[104]	_	_	_	
+22-13	5004-5005	,	Indirect Opinion[104]	_	_	_	
+22-14	5006-5010	they	Indirect Opinion[104]	_	_	_	
+22-15	5011-5014	are	Indirect Opinion[104]	_	_	_	
+22-16	5015-5019	more	Indirect Opinion[104]	_	_	_	
+22-17	5020-5024	like	Indirect Opinion[104]	_	_	_	
+22-18	5025-5026	a	Indirect Opinion[104]	_	_	_	
+22-19	5027-5034	crushed	Indirect Opinion[104]	_	_	_	
+22-20	5035-5041	velvet	Indirect Opinion[104]	_	_	_	
+22-21	5042-5045	the	Indirect Opinion[104]	_	_	_	
+22-22	5046-5051	other	Indirect Opinion[104]	_	_	_	
+22-23	5052-5057	color	Indirect Opinion[104]	_	_	_	
+22-24	5058-5064	coming	Indirect Opinion[104]	_	_	_	
+22-25	5065-5067	up	Indirect Opinion[104]	_	_	_	
+22-26	5068-5070	as	Indirect Opinion[104]	_	_	_	
+22-27	5071-5075	gold	Indirect Opinion[104]	_	_	_	
+22-28	5076-5077	.	_	_	_	_	
+22-29	5079-5087	IMPLICIT	_	_	_	_	
+22-30	5088-5094	People	Direct Opinion[105]	_	_	_	
+22-31	5095-5098	are	Direct Opinion[105]	_	_	_	
+22-32	5099-5105	always	Direct Opinion[105]	_	_	_	
+22-33	5106-5112	asking	Direct Opinion[105]	_	_	_	
+22-34	5113-5118	where	Direct Opinion[105]	_	_	_	
+22-35	5119-5120	I	Direct Opinion[105]	_	_	_	
+22-36	5121-5124	got	Direct Opinion[105]	_	_	_	
+22-37	5125-5129	them	Direct Opinion[105]	_	_	_	
+22-38	5130-5131	.	_	_	_	_	
+22-39	5133-5141	IMPLICIT	Direct Aspect	ContextOfUse#Use case	Neutral	22-30[105_0]	
+22-40	5142-5145	The	Direct Opinion[106]	Appearance#Shoe Component	Positive	22-42[107_106]	
+22-41	5146-5150	gold	Direct Opinion[106]	_	_	_	
+22-42	5151-5157	adidas	Direct Opinion[106]|Direct Aspect[107]	_	_	_	
+22-43	5158-5163	charm	Direct Opinion[106]|Direct Aspect[107]	_	_	_	
+22-44	5164-5166	at	Direct Opinion[106]	_	_	_	
+22-45	5167-5170	the	Direct Opinion[106]	_	_	_	
+22-46	5171-5177	bottom	Direct Opinion[106]	_	_	_	
+22-47	5178-5180	of	Direct Opinion[106]	_	_	_	
+22-48	5181-5184	the	Direct Opinion[106]	_	_	_	
+22-49	5185-5190	laces	Direct Opinion[106]	_	_	_	
+22-50	5191-5193	is	Direct Opinion[106]	_	_	_	
+22-51	5194-5195	a	Direct Opinion[106]	_	_	_	
+22-52	5196-5200	nice	Direct Opinion[106]	_	_	_	
+22-53	5201-5206	touch	Direct Opinion[106]	_	_	_	
+22-54	5207-5208	.	_	_	_	_	
+22-55	5210-5218	IMPLICIT	_	_	_	_	
+
+#Text=Order my usual size and they were way to big .  IMPLICIT Went to return them for a smaller size and they were sold out .  IMPLICIT It's unfortunate because they are super cute !  IMPLICIT
+23-1	5220-5225	Order	Direct Opinion[108]	Performance#Sizing/Fit	Negative	23-12[0_108]	
+23-2	5226-5228	my	Direct Opinion[108]	_	_	_	
+23-3	5229-5234	usual	Direct Opinion[108]	_	_	_	
+23-4	5235-5239	size	Direct Opinion[108]	_	_	_	
+23-5	5240-5243	and	Direct Opinion[108]	_	_	_	
+23-6	5244-5248	they	Direct Opinion[108]	_	_	_	
+23-7	5249-5253	were	Direct Opinion[108]	_	_	_	
+23-8	5254-5257	way	Direct Opinion[108]	_	_	_	
+23-9	5258-5260	to	Direct Opinion[108]	_	_	_	
+23-10	5261-5264	big	Direct Opinion[108]	_	_	_	
+23-11	5265-5266	.	_	_	_	_	
+23-12	5268-5276	IMPLICIT	Direct Aspect	_	_	_	
+23-13	5277-5281	Went	Direct Opinion[109]	ContextOfUse#Purchase\_Context	Negative	23-12[0_109]	
+23-14	5282-5284	to	Direct Opinion[109]	_	_	_	
+23-15	5285-5291	return	Direct Opinion[109]	_	_	_	
+23-16	5292-5296	them	Direct Opinion[109]	_	_	_	
+23-17	5297-5300	for	Direct Opinion[109]	_	_	_	
+23-18	5301-5302	a	Direct Opinion[109]	_	_	_	
+23-19	5303-5310	smaller	Direct Opinion[109]	_	_	_	
+23-20	5311-5315	size	Direct Opinion[109]	_	_	_	
+23-21	5316-5319	and	Direct Opinion[109]	_	_	_	
+23-22	5320-5324	they	Direct Opinion[109]	_	_	_	
+23-23	5325-5329	were	Direct Opinion[109]	_	_	_	
+23-24	5330-5334	sold	Direct Opinion[109]	_	_	_	
+23-25	5335-5338	out	Direct Opinion[109]	_	_	_	
+23-26	5339-5340	.	_	_	_	_	
+23-27	5342-5350	IMPLICIT	Direct Aspect	_	_	_	
+23-28	5351-5355	It's	_	_	_	_	
+23-29	5356-5367	unfortunate	_	_	_	_	
+23-30	5368-5375	because	_	_	_	_	
+23-31	5376-5380	they	_	_	_	_	
+23-32	5381-5384	are	Direct Opinion[110]	Appearance#General	Positive	23-27[0_110]	
+23-33	5385-5390	super	Direct Opinion[110]	_	_	_	
+23-34	5391-5395	cute	Direct Opinion[110]	_	_	_	
+23-35	5396-5397	!	_	_	_	_	
+23-36	5399-5407	IMPLICIT	_	_	_	_	
+
+#Text=I had to return these shoes .  IMPLICIT The tread looked very cheap so I just walked around the block once .  IMPLICIT Part of the tread had already worn off after about 7 minutes .  IMPLICIT I am very disappointed as the comfort and look of these shoes was fantastic .  IMPLICIT
+24-1	5409-5410	I	Direct Opinion[111]	ContextOfUse#Purchase\_Context	Negative	24-8[0_111]	
+24-2	5411-5414	had	Direct Opinion[111]	_	_	_	
+24-3	5415-5417	to	Direct Opinion[111]	_	_	_	
+24-4	5418-5424	return	Direct Opinion[111]	_	_	_	
+24-5	5425-5430	these	Direct Opinion[111]	_	_	_	
+24-6	5431-5436	shoes	Direct Opinion[111]	_	_	_	
+24-7	5437-5438	.	_	_	_	_	
+24-8	5440-5448	IMPLICIT	Direct Aspect	_	_	_	
+24-9	5449-5452	The	_	_	_	_	
+24-10	5453-5458	tread	Direct Aspect	_	_	_	
+24-11	5459-5465	looked	Direct Opinion[112]	Appearance#Shoe Component|ContextOfUse#Use case	Negative|Negative	24-10[0_112]|24-10[0_112]	
+24-12	5466-5470	very	Direct Opinion[112]	_	_	_	
+24-13	5471-5476	cheap	Direct Opinion[112]	_	_	_	
+24-14	5477-5479	so	Direct Opinion[112]	_	_	_	
+24-15	5480-5481	I	Direct Opinion[112]	_	_	_	
+24-16	5482-5486	just	Direct Opinion[112]	_	_	_	
+24-17	5487-5493	walked	Direct Opinion[112]	_	_	_	
+24-18	5494-5500	around	Direct Opinion[112]	_	_	_	
+24-19	5501-5504	the	Direct Opinion[112]	_	_	_	
+24-20	5505-5510	block	Direct Opinion[112]	_	_	_	
+24-21	5511-5515	once	Direct Opinion[112]	_	_	_	
+24-22	5516-5517	.	_	_	_	_	
+24-23	5519-5527	IMPLICIT	Direct Aspect	_	_	_	
+24-24	5528-5532	Part	Direct Opinion[113]	Performance#Durability|Appearance#Shoe Component	Negative|Negative	24-23[0_113]|24-27[114_113]	
+24-25	5533-5535	of	Direct Opinion[113]	_	_	_	
+24-26	5536-5539	the	Direct Opinion[113]	_	_	_	
+24-27	5540-5545	tread	Direct Opinion[113]|Direct Aspect[114]	_	_	_	
+24-28	5546-5549	had	Direct Opinion[113]	_	_	_	
+24-29	5550-5557	already	Direct Opinion[113]	_	_	_	
+24-30	5558-5562	worn	Direct Opinion[113]	_	_	_	
+24-31	5563-5566	off	Direct Opinion[113]	_	_	_	
+24-32	5567-5572	after	Direct Opinion[113]	_	_	_	
+24-33	5573-5578	about	Direct Opinion[113]	_	_	_	
+24-34	5579-5580	7	Direct Opinion[113]	_	_	_	
+24-35	5581-5588	minutes	Direct Opinion[113]	_	_	_	
+24-36	5589-5590	.	_	_	_	_	
+24-37	5592-5600	IMPLICIT	_	_	_	_	
+24-38	5601-5602	I	_	_	_	_	
+24-39	5603-5605	am	_	_	_	_	
+24-40	5606-5610	very	_	_	_	_	
+24-41	5611-5623	disappointed	_	_	_	_	
+24-42	5624-5626	as	_	_	_	_	
+24-43	5627-5630	the	_	_	_	_	
+24-44	5631-5638	comfort	Direct Opinion[115]	Performance#Comfort|Appearance#Form	Positive|Positive	24-49[116_115]|24-49[116_115]	
+24-45	5639-5642	and	Direct Opinion[115]	_	_	_	
+24-46	5643-5647	look	Direct Opinion[115]	_	_	_	
+24-47	5648-5650	of	Direct Opinion[115]	_	_	_	
+24-48	5651-5656	these	Direct Opinion[115]	_	_	_	
+24-49	5657-5662	shoes	Direct Opinion[115]|Direct Aspect[116]	_	_	_	
+24-50	5663-5666	was	Direct Opinion[115]	_	_	_	
+24-51	5667-5676	fantastic	Direct Opinion[115]	_	_	_	
+24-52	5677-5678	.	_	_	_	_	
+24-53	5680-5688	IMPLICIT	_	_	_	_	
+
+#Text=These were kinda disappointing, I've been a runner for 11 years and I've gone through many shoes .  IMPLICIT I wasn't impressed with any aspect of these shoes .  IMPLICIT The foam in them is hard/thin, the shoe itself just looks cheaply made .  IMPLICIT The grip on the bottom isn't there .  IMPLICIT I was looking for a light weight, cushioned and nice runners tread .  IMPLICIT If you are looking for a reliable running shoe keep looking !  IMPLICIT
+25-1	5690-5695	These	_	_	_	_	
+25-2	5696-5700	were	_	_	_	_	
+25-3	5701-5706	kinda	Direct Opinion[117]	_	_	_	
+25-4	5707-5720	disappointing	Direct Opinion[117]	_	_	_	
+25-5	5720-5721	,	Direct Opinion[117]	_	_	_	
+25-6	5722-5726	I've	Direct Opinion[117]	_	_	_	
+25-7	5727-5731	been	Direct Opinion[117]	_	_	_	
+25-8	5732-5733	a	Direct Opinion[117]	_	_	_	
+25-9	5734-5740	runner	Direct Opinion[117]	_	_	_	
+25-10	5741-5744	for	Direct Opinion[117]	_	_	_	
+25-11	5745-5747	11	Direct Opinion[117]	_	_	_	
+25-12	5748-5753	years	Direct Opinion[117]	_	_	_	
+25-13	5754-5757	and	_	_	_	_	
+25-14	5758-5762	I've	_	_	_	_	
+25-15	5763-5767	gone	_	_	_	_	
+25-16	5768-5775	through	_	_	_	_	
+25-17	5776-5780	many	_	_	_	_	
+25-18	5781-5786	shoes	Direct Aspect	Performance#Use Case Applicability	Negative	25-3[117_0]	
+25-19	5787-5788	.	_	_	_	_	
+25-20	5790-5798	IMPLICIT	_	_	_	_	
+25-21	5799-5800	I	_	_	_	_	
+25-22	5801-5807	wasn't	Direct Opinion[118]	_	_	_	
+25-23	5808-5817	impressed	Direct Opinion[118]	_	_	_	
+25-24	5818-5822	with	Direct Opinion[118]	_	_	_	
+25-25	5823-5826	any	Direct Opinion[118]	_	_	_	
+25-26	5827-5833	aspect	Direct Opinion[118]	_	_	_	
+25-27	5834-5836	of	_	_	_	_	
+25-28	5837-5842	these	_	_	_	_	
+25-29	5843-5848	shoes	Direct Aspect	General	Negative	25-22[118_0]	
+25-30	5849-5850	.	_	_	_	_	
+25-31	5852-5860	IMPLICIT	_	_	_	_	
+25-32	5861-5864	The	_	_	_	_	
+25-33	5865-5869	foam	Direct Aspect	_	_	_	
+25-34	5870-5872	in	Direct Opinion[119]	Appearance#Material	Negative	25-33[0_119]	
+25-35	5873-5877	them	Direct Opinion[119]	_	_	_	
+25-36	5878-5880	is	Direct Opinion[119]	_	_	_	
+25-37	5881-5885	hard	Direct Opinion[119]	_	_	_	
+25-38	5885-5886	/	Direct Opinion[119]	_	_	_	
+25-39	5886-5890	thin	Direct Opinion[119]	_	_	_	
+25-40	5890-5891	,	_	_	_	_	
+25-41	5892-5895	the	_	_	_	_	
+25-42	5896-5900	shoe	Direct Aspect	_	_	_	
+25-43	5901-5907	itself	Direct Opinion[120]	Appearance#Misc	Negative	25-42[0_120]	
+25-44	5908-5912	just	Direct Opinion[120]	_	_	_	
+25-45	5913-5918	looks	Direct Opinion[120]	_	_	_	
+25-46	5919-5926	cheaply	Direct Opinion[120]	_	_	_	
+25-47	5927-5931	made	Direct Opinion[120]	_	_	_	
+25-48	5932-5933	.	_	_	_	_	
+25-49	5935-5943	IMPLICIT	_	_	_	_	
+25-50	5944-5947	The	Direct Opinion[121]	Appearance#Shoe Component	Negative	25-51[122_121]	
+25-51	5948-5952	grip	Direct Opinion[121]|Direct Opinion[122]	_	_	_	
+25-52	5953-5955	on	Direct Opinion[121]|Direct Opinion[122]	_	_	_	
+25-53	5956-5959	the	Direct Opinion[121]|Direct Opinion[122]	_	_	_	
+25-54	5960-5966	bottom	Direct Opinion[121]|Direct Opinion[122]	_	_	_	
+25-55	5967-5972	isn't	Direct Opinion[121]	_	_	_	
+25-56	5973-5978	there	Direct Opinion[121]	_	_	_	
+25-57	5979-5980	.	_	_	_	_	
+25-58	5982-5990	IMPLICIT	Direct Aspect	Performance#Support/Stability	Negative	25-50[121_0]	
+25-59	5991-5992	I	Direct Opinion[123]	_	_	_	
+25-60	5993-5996	was	Direct Opinion[123]	_	_	_	
+25-61	5997-6004	looking	Direct Opinion[123]	_	_	_	
+25-62	6005-6008	for	Direct Opinion[123]	_	_	_	
+25-63	6009-6010	a	Direct Opinion[123]	_	_	_	
+25-64	6011-6016	light	Direct Opinion[123]	_	_	_	
+25-65	6017-6023	weight	Direct Opinion[123]	_	_	_	
+25-66	6023-6024	,	Direct Opinion[123]	_	_	_	
+25-67	6025-6034	cushioned	Direct Opinion[123]	_	_	_	
+25-68	6035-6038	and	Direct Opinion[123]	_	_	_	
+25-69	6039-6043	nice	Direct Opinion[123]	_	_	_	
+25-70	6044-6051	runners	Direct Opinion[123]	_	_	_	
+25-71	6052-6057	tread	Direct Opinion[123]	_	_	_	
+25-72	6058-6059	.	_	_	_	_	
+25-73	6061-6069	IMPLICIT	Direct Aspect	ContextOfUse#Purchase\_Context	Neutral	25-59[123_0]	
+25-74	6070-6072	If	Direct Opinion[124]	Performance#General	Negative	25-82[125_124]	
+25-75	6073-6076	you	Direct Opinion[124]	_	_	_	
+25-76	6077-6080	are	Direct Opinion[124]	_	_	_	
+25-77	6081-6088	looking	Direct Opinion[124]	_	_	_	
+25-78	6089-6092	for	Direct Opinion[124]	_	_	_	
+25-79	6093-6094	a	Direct Opinion[124]	_	_	_	
+25-80	6095-6103	reliable	Direct Opinion[124]	_	_	_	
+25-81	6104-6111	running	Direct Opinion[124]	_	_	_	
+25-82	6112-6116	shoe	Direct Opinion[124]|Direct Aspect[125]	_	_	_	
+25-83	6117-6121	keep	Direct Opinion[124]	_	_	_	
+25-84	6122-6129	looking	Direct Opinion[124]	_	_	_	
+25-85	6130-6131	!	_	_	_	_	
+25-86	6133-6141	IMPLICIT	_	_	_	_	

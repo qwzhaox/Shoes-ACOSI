@@ -1,0 +1,3307 @@
+{
+  "name" : "shoe_annotations",
+  "slug" : null,
+  "description" : null,
+  "mode" : "ANNOTATION",
+  "version" : 1,
+  "source_documents" : [ {
+    "name" : "init_shoes_0.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1699032449067,
+    "created" : 1651840673201,
+    "updated" : 1699032449068
+  }, {
+    "name" : "init_shoes_1.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1659033151083,
+    "created" : 1651840673212,
+    "updated" : 1699032482966
+  }, {
+    "name" : "init_shoes_10.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1660594946333,
+    "created" : 1651848679062,
+    "updated" : 1699032486554
+  }, {
+    "name" : "init_shoes_11.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1663223753593,
+    "created" : 1651848679091,
+    "updated" : 1699032487436
+  }, {
+    "name" : "init_shoes_12.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1660439667465,
+    "created" : 1651848679103,
+    "updated" : 1699032488850
+  }, {
+    "name" : "init_shoes_13.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : null,
+    "created" : 1651848679118,
+    "updated" : 1657518492185
+  }, {
+    "name" : "init_shoes_14.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : null,
+    "created" : 1651848679132,
+    "updated" : 1657518567512
+  }, {
+    "name" : "init_shoes_15.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : null,
+    "created" : 1651848679145,
+    "updated" : 1657518601359
+  }, {
+    "name" : "init_shoes_16.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : null,
+    "created" : 1651848679157,
+    "updated" : 1657518633000
+  }, {
+    "name" : "init_shoes_17.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1657518687661,
+    "created" : 1651848679171,
+    "updated" : 1657518687661
+  }, {
+    "name" : "init_shoes_18.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : null,
+    "created" : 1651848679182,
+    "updated" : 1657518731654
+  }, {
+    "name" : "init_shoes_19.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : null,
+    "created" : 1651848679193,
+    "updated" : 1657518134670
+  }, {
+    "name" : "init_shoes_2.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1657519475978,
+    "created" : 1651840673223,
+    "updated" : 1657519475978
+  }, {
+    "name" : "init_shoes_20.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1657525188868,
+    "created" : 1651848679207,
+    "updated" : 1657525188869
+  }, {
+    "name" : "init_shoes_21.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : null,
+    "created" : 1651848679219,
+    "updated" : 1657518808884
+  }, {
+    "name" : "init_shoes_22.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : null,
+    "created" : 1651848679232,
+    "updated" : 1657518971027
+  }, {
+    "name" : "init_shoes_23.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : null,
+    "created" : 1651848679243,
+    "updated" : 1657518994349
+  }, {
+    "name" : "init_shoes_24.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : null,
+    "created" : 1651848679254,
+    "updated" : 1657519001908
+  }, {
+    "name" : "init_shoes_25.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1658128746955,
+    "created" : 1651848679263,
+    "updated" : 1658128746955
+  }, {
+    "name" : "init_shoes_26.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1707336545058,
+    "created" : 1651848679281,
+    "updated" : 1707336545059
+  }, {
+    "name" : "init_shoes_27.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1707336343298,
+    "created" : 1651848679305,
+    "updated" : 1707336343298
+  }, {
+    "name" : "init_shoes_28.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1662408288149,
+    "created" : 1651848679322,
+    "updated" : 1699032496083
+  }, {
+    "name" : "init_shoes_29.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1662412669619,
+    "created" : 1651848679337,
+    "updated" : 1699032496670
+  }, {
+    "name" : "init_shoes_3.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1660421656919,
+    "created" : 1651840673233,
+    "updated" : 1699032497513
+  }, {
+    "name" : "init_shoes_30.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1662414489243,
+    "created" : 1651848679351,
+    "updated" : 1699032498053
+  }, {
+    "name" : "init_shoes_31.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1662509690495,
+    "created" : 1651848679364,
+    "updated" : 1699032498679
+  }, {
+    "name" : "init_shoes_32.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1662514183040,
+    "created" : 1651848679404,
+    "updated" : 1699032499521
+  }, {
+    "name" : "init_shoes_33.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1707335752223,
+    "created" : 1651848679418,
+    "updated" : 1707335752224
+  }, {
+    "name" : "init_shoes_34.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1662561369184,
+    "created" : 1651848679431,
+    "updated" : 1699032502910
+  }, {
+    "name" : "init_shoes_35.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1663009942698,
+    "created" : 1651848679442,
+    "updated" : 1663009942698
+  }, {
+    "name" : "init_shoes_36.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1662563100780,
+    "created" : 1651848679453,
+    "updated" : 1699032505053
+  }, {
+    "name" : "init_shoes_37.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1707333851308,
+    "created" : 1651848679466,
+    "updated" : 1707333851318
+  }, {
+    "name" : "init_shoes_38.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1662597906880,
+    "created" : 1651848679476,
+    "updated" : 1699032506513
+  }, {
+    "name" : "init_shoes_39.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1707336746304,
+    "created" : 1651848679489,
+    "updated" : 1707336746304
+  }, {
+    "name" : "init_shoes_4.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1663225193029,
+    "created" : 1651840673245,
+    "updated" : 1699032507685
+  }, {
+    "name" : "init_shoes_40.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1662730459577,
+    "created" : 1651848679502,
+    "updated" : 1699032508483
+  }, {
+    "name" : "init_shoes_41.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1662731705086,
+    "created" : 1651848679513,
+    "updated" : 1699032509026
+  }, {
+    "name" : "init_shoes_42.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1662733467498,
+    "created" : 1651848679523,
+    "updated" : 1699032509643
+  }, {
+    "name" : "init_shoes_43.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1662686346779,
+    "created" : 1651848679533,
+    "updated" : 1699032513073
+  }, {
+    "name" : "init_shoes_44.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1707335710488,
+    "created" : 1651848679543,
+    "updated" : 1707335710489
+  }, {
+    "name" : "init_shoes_45.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1662661496461,
+    "created" : 1651848679554,
+    "updated" : 1699032514576
+  }, {
+    "name" : "init_shoes_46.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1662667458028,
+    "created" : 1651848679565,
+    "updated" : 1699032515271
+  }, {
+    "name" : "init_shoes_47.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1707336810015,
+    "created" : 1651848679575,
+    "updated" : 1707336810016
+  }, {
+    "name" : "init_shoes_48.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1707334179016,
+    "created" : 1651848679587,
+    "updated" : 1707334179017
+  }, {
+    "name" : "init_shoes_49.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1662671695219,
+    "created" : 1651848679616,
+    "updated" : 1699032516782
+  }, {
+    "name" : "init_shoes_5.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1660753489283,
+    "created" : 1651840673263,
+    "updated" : 1699032525176
+  }, {
+    "name" : "init_shoes_50.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1707334312665,
+    "created" : 1651848679639,
+    "updated" : 1707334312666
+  }, {
+    "name" : "init_shoes_51.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1662675736004,
+    "created" : 1651848679652,
+    "updated" : 1699032524167
+  }, {
+    "name" : "init_shoes_52.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1662677758400,
+    "created" : 1651848679667,
+    "updated" : 1699032521998
+  }, {
+    "name" : "init_shoes_53.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1707334358626,
+    "created" : 1651848679684,
+    "updated" : 1707334358627
+  }, {
+    "name" : "init_shoes_54.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1662656779229,
+    "created" : 1651848679697,
+    "updated" : 1699032555416
+  }, {
+    "name" : "init_shoes_55.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1658195853076,
+    "created" : 1651848679711,
+    "updated" : 1699032555967
+  }, {
+    "name" : "init_shoes_56.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1658263107022,
+    "created" : 1651848679740,
+    "updated" : 1699032553241
+  }, {
+    "name" : "init_shoes_57.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1707335907069,
+    "created" : 1651848679752,
+    "updated" : 1707335907069
+  }, {
+    "name" : "init_shoes_58.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1658358988566,
+    "created" : 1651848679765,
+    "updated" : 1699032552237
+  }, {
+    "name" : "init_shoes_59.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1658510332735,
+    "created" : 1651848679779,
+    "updated" : 1699032551702
+  }, {
+    "name" : "init_shoes_6.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1660599583392,
+    "created" : 1651840673274,
+    "updated" : 1699032551000
+  }, {
+    "name" : "init_shoes_60.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1658286473121,
+    "created" : 1651848679792,
+    "updated" : 1699032550285
+  }, {
+    "name" : "init_shoes_61.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1658278986083,
+    "created" : 1651848679805,
+    "updated" : 1699032549585
+  }, {
+    "name" : "init_shoes_62.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1658274953298,
+    "created" : 1651848679816,
+    "updated" : 1699032547311
+  }, {
+    "name" : "init_shoes_63.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1658510260012,
+    "created" : 1651848679826,
+    "updated" : 1699032546497
+  }, {
+    "name" : "init_shoes_64.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1658189214729,
+    "created" : 1651848679835,
+    "updated" : 1699032545954
+  }, {
+    "name" : "init_shoes_65.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1707336391968,
+    "created" : 1651848679844,
+    "updated" : 1707336391969
+  }, {
+    "name" : "init_shoes_66.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1658424465496,
+    "created" : 1651848679854,
+    "updated" : 1658424465496
+  }, {
+    "name" : "init_shoes_67.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : null,
+    "created" : 1651848679863,
+    "updated" : 1657523010466
+  }, {
+    "name" : "init_shoes_68.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1657522948410,
+    "created" : 1651848679874,
+    "updated" : 1657522948410
+  }, {
+    "name" : "init_shoes_69.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1657904309652,
+    "created" : 1651848679884,
+    "updated" : 1657904309653
+  }, {
+    "name" : "init_shoes_7.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1707334102979,
+    "created" : 1651840673296,
+    "updated" : 1707334102980
+  }, {
+    "name" : "init_shoes_70.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1657522858481,
+    "created" : 1651848679896,
+    "updated" : 1657522858481
+  }, {
+    "name" : "init_shoes_71.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1657522829426,
+    "created" : 1651848679909,
+    "updated" : 1657522829426
+  }, {
+    "name" : "init_shoes_72.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : null,
+    "created" : 1651848679919,
+    "updated" : 1657522739301
+  }, {
+    "name" : "init_shoes_73.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : null,
+    "created" : 1651848679947,
+    "updated" : 1657522604879
+  }, {
+    "name" : "init_shoes_74.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1657522525970,
+    "created" : 1651848679972,
+    "updated" : 1657522525970
+  }, {
+    "name" : "init_shoes_75.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : null,
+    "created" : 1651848679985,
+    "updated" : 1657522229021
+  }, {
+    "name" : "init_shoes_76.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : null,
+    "created" : 1651848679998,
+    "updated" : 1657522198829
+  }, {
+    "name" : "init_shoes_77.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : null,
+    "created" : 1651848680011,
+    "updated" : 1657522134049
+  }, {
+    "name" : "init_shoes_78.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1658130802495,
+    "created" : 1651848680027,
+    "updated" : 1658130802496
+  }, {
+    "name" : "init_shoes_79.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1657522413072,
+    "created" : 1651848680039,
+    "updated" : 1657522413072
+  }, {
+    "name" : "init_shoes_8.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1660689498171,
+    "created" : 1651840673311,
+    "updated" : 1699032541046
+  }, {
+    "name" : "init_shoes_9.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1660430008082,
+    "created" : 1651840673323,
+    "updated" : 1699032540262
+  }, {
+    "name" : "shoes_onboarding.txt",
+    "format" : "textlines",
+    "state" : "CURATION_IN_PROGRESS",
+    "timestamp" : 1655231111907,
+    "created" : 1651840542446,
+    "updated" : 1655231111908
+  } ],
+  "annotation_documents" : [ {
+    "name" : "shoes_onboarding.txt",
+    "user" : "joe_test",
+    "state" : "NEW",
+    "timestamp" : null,
+    "annotatorState" : null,
+    "sentence_accessed" : 0,
+    "created" : 1651840553211,
+    "updated" : 1651840553211
+  }, {
+    "name" : "init_shoes_9.txt",
+    "user" : "admin",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1651841802267,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1651841802238,
+    "updated" : 1651841802267
+  }, {
+    "name" : "init_shoes_0.txt",
+    "user" : "admin",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1651841916563,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1651840695762,
+    "updated" : 1651841916563
+  }, {
+    "name" : "init_shoes_1.txt",
+    "user" : "admin",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1652190995819,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1652190995787,
+    "updated" : 1652190995820
+  }, {
+    "name" : "shoes_onboarding.txt",
+    "user" : "matthew",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1652212093606,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1652212093590,
+    "updated" : 1652212093606
+  }, {
+    "name" : "init_shoes_5.txt",
+    "user" : "matthew",
+    "state" : "FINISHED",
+    "timestamp" : 1652215168271,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1652212218311,
+    "updated" : 1652215172135
+  }, {
+    "name" : "init_shoes_0.txt",
+    "user" : "matthew",
+    "state" : "FINISHED",
+    "timestamp" : 1652301971112,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1652211943348,
+    "updated" : 1652301991129
+  }, {
+    "name" : "init_shoes_0.txt",
+    "user" : "sophia",
+    "state" : "FINISHED",
+    "timestamp" : 1652323199443,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1651857937195,
+    "updated" : 1652323223913
+  }, {
+    "name" : "init_shoes_1.txt",
+    "user" : "sophia",
+    "state" : "FINISHED",
+    "timestamp" : 1652328134412,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1652323492954,
+    "updated" : 1652328137820
+  }, {
+    "name" : "init_shoes_3.txt",
+    "user" : "matthew",
+    "state" : "FINISHED",
+    "timestamp" : 1652381107346,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1652302027737,
+    "updated" : 1652381113446
+  }, {
+    "name" : "init_shoes_0.txt",
+    "user" : "yuwei",
+    "state" : "NEW",
+    "timestamp" : null,
+    "annotatorState" : null,
+    "sentence_accessed" : 0,
+    "created" : 1652793721328,
+    "updated" : 1652793721328
+  }, {
+    "name" : "init_shoes_0.txt",
+    "user" : "rui",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1652994514450,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1652994514306,
+    "updated" : 1652994514452
+  }, {
+    "name" : "init_shoes_5.txt",
+    "user" : "sophia",
+    "state" : "FINISHED",
+    "timestamp" : 1653190745263,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653188505563,
+    "updated" : 1653190751009
+  }, {
+    "name" : "init_shoes_0.txt",
+    "user" : "aditi",
+    "state" : "FINISHED",
+    "timestamp" : 1653444773903,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653333625978,
+    "updated" : 1653444813817
+  }, {
+    "name" : "shoes_onboarding.txt",
+    "user" : "aditi",
+    "state" : "FINISHED",
+    "timestamp" : 1653445068886,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653444919929,
+    "updated" : 1653445072306
+  }, {
+    "name" : "init_shoes_1.txt",
+    "user" : "aditi",
+    "state" : "FINISHED",
+    "timestamp" : 1653445253807,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653445091912,
+    "updated" : 1653445254690
+  }, {
+    "name" : "init_shoes_10.txt",
+    "user" : "aditi",
+    "state" : "FINISHED",
+    "timestamp" : 1653445326715,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653445260904,
+    "updated" : 1653445330034
+  }, {
+    "name" : "init_shoes_74.txt",
+    "user" : "aditi",
+    "state" : "FINISHED",
+    "timestamp" : 1653445477787,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653445398137,
+    "updated" : 1653445478741
+  }, {
+    "name" : "init_shoes_3.txt",
+    "user" : "aditi",
+    "state" : "FINISHED",
+    "timestamp" : 1653445604471,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653445485751,
+    "updated" : 1653445605592
+  }, {
+    "name" : "init_shoes_30.txt",
+    "user" : "aditi",
+    "state" : "FINISHED",
+    "timestamp" : 1653445700653,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653445613570,
+    "updated" : 1653445704745
+  }, {
+    "name" : "init_shoes_7.txt",
+    "user" : "aditi",
+    "state" : "FINISHED",
+    "timestamp" : 1653446016006,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653445713549,
+    "updated" : 1653446017047
+  }, {
+    "name" : "init_shoes_8.txt",
+    "user" : "aditi",
+    "state" : "FINISHED",
+    "timestamp" : 1653446221291,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653446028373,
+    "updated" : 1653446225478
+  }, {
+    "name" : "init_shoes_9.txt",
+    "user" : "aditi",
+    "state" : "FINISHED",
+    "timestamp" : 1653446559078,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653446237183,
+    "updated" : 1653446563819
+  }, {
+    "name" : "init_shoes_11.txt",
+    "user" : "aditi",
+    "state" : "FINISHED",
+    "timestamp" : 1653446665337,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653446577164,
+    "updated" : 1653446667251
+  }, {
+    "name" : "init_shoes_12.txt",
+    "user" : "aditi",
+    "state" : "FINISHED",
+    "timestamp" : 1653446836582,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653446693757,
+    "updated" : 1653446838947
+  }, {
+    "name" : "init_shoes_13.txt",
+    "user" : "aditi",
+    "state" : "FINISHED",
+    "timestamp" : 1653447581937,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653446846888,
+    "updated" : 1653447584097
+  }, {
+    "name" : "init_shoes_14.txt",
+    "user" : "aditi",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1653447604801,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1653447604780,
+    "updated" : 1653447604801
+  }, {
+    "name" : "init_shoes_15.txt",
+    "user" : "aditi",
+    "state" : "FINISHED",
+    "timestamp" : 1653447794104,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653447615556,
+    "updated" : 1653447795377
+  }, {
+    "name" : "init_shoes_16.txt",
+    "user" : "aditi",
+    "state" : "FINISHED",
+    "timestamp" : 1653447880936,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653447803365,
+    "updated" : 1653447885411
+  }, {
+    "name" : "shoes_onboarding.txt",
+    "user" : "chang",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1653453904748,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1653452307405,
+    "updated" : 1653453904749
+  }, {
+    "name" : "shoes_onboarding.txt",
+    "user" : "yuwei",
+    "state" : "FINISHED",
+    "timestamp" : 1653500295194,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653500094816,
+    "updated" : 1653500304595
+  }, {
+    "name" : "init_shoes_10.txt",
+    "user" : "admin",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1653505212436,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1653504359090,
+    "updated" : 1653505212436
+  }, {
+    "name" : "init_shoes_0.txt",
+    "user" : "divya",
+    "state" : "FINISHED",
+    "timestamp" : 1653443890772,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653408098797,
+    "updated" : 1653505640651
+  }, {
+    "name" : "shoes_onboarding.txt",
+    "user" : "fengbo",
+    "state" : "FINISHED",
+    "timestamp" : 1653506103362,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1652808551233,
+    "updated" : 1653506106781
+  }, {
+    "name" : "init_shoes_22.txt",
+    "user" : "admin",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1653506109524,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1653506109504,
+    "updated" : 1653506109524
+  }, {
+    "name" : "init_shoes_19.txt",
+    "user" : "admin",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1653506142389,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1653506142360,
+    "updated" : 1653506142389
+  }, {
+    "name" : "init_shoes_13.txt",
+    "user" : "admin",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1653507086554,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1653507016537,
+    "updated" : 1653507086554
+  }, {
+    "name" : "init_shoes_0.txt",
+    "user" : "arvind",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1653547111600,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1653546811033,
+    "updated" : 1653547111600
+  }, {
+    "name" : "init_shoes_0.txt",
+    "user" : "yash",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1653567734441,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1652793696477,
+    "updated" : 1653567734441
+  }, {
+    "name" : "init_shoes_17.txt",
+    "user" : "admin",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1653573869862,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1653573327851,
+    "updated" : 1653573869862
+  }, {
+    "name" : "shoes_onboarding.txt",
+    "user" : "alice",
+    "state" : "FINISHED",
+    "timestamp" : 1653574733928,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653497638397,
+    "updated" : 1653574738177
+  }, {
+    "name" : "init_shoes_75.txt",
+    "user" : "admin",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1653575885433,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1653575885414,
+    "updated" : 1653575885434
+  }, {
+    "name" : "init_shoes_69.txt",
+    "user" : "divya",
+    "state" : "FINISHED",
+    "timestamp" : 1653795955628,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653791656947,
+    "updated" : 1653796160847
+  }, {
+    "name" : "init_shoes_68.txt",
+    "user" : "fengbo",
+    "state" : "FINISHED",
+    "timestamp" : 1653878255618,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653861768840,
+    "updated" : 1653878289898
+  }, {
+    "name" : "init_shoes_8.txt",
+    "user" : "viraj",
+    "state" : "FINISHED",
+    "timestamp" : 1653935952453,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653896872130,
+    "updated" : 1653936028399
+  }, {
+    "name" : "init_shoes_7.txt",
+    "user" : "viraj",
+    "state" : "FINISHED",
+    "timestamp" : 1653936549702,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653897115922,
+    "updated" : 1653936733481
+  }, {
+    "name" : "init_shoes_79.txt",
+    "user" : "chang",
+    "state" : "FINISHED",
+    "timestamp" : 1653959935745,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653938238829,
+    "updated" : 1653959950644
+  }, {
+    "name" : "init_shoes_75.txt",
+    "user" : "fengbo",
+    "state" : "FINISHED",
+    "timestamp" : 1653974202212,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653961612909,
+    "updated" : 1653974272238
+  }, {
+    "name" : "init_shoes_79.txt",
+    "user" : "alice",
+    "state" : "FINISHED",
+    "timestamp" : 1654011987968,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654006712893,
+    "updated" : 1654012004555
+  }, {
+    "name" : "init_shoes_71.txt",
+    "user" : "alice",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1654015120615,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1654013834260,
+    "updated" : 1654015120615
+  }, {
+    "name" : "init_shoes_77.txt",
+    "user" : "divya",
+    "state" : "FINISHED",
+    "timestamp" : 1654049076858,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654012598877,
+    "updated" : 1654049096339
+  }, {
+    "name" : "init_shoes_72.txt",
+    "user" : "yash",
+    "state" : "FINISHED",
+    "timestamp" : 1654050530518,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654004056102,
+    "updated" : 1654050548497
+  }, {
+    "name" : "init_shoes_6.txt",
+    "user" : "matthew",
+    "state" : "FINISHED",
+    "timestamp" : 1654050838127,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654041670391,
+    "updated" : 1654050842095
+  }, {
+    "name" : "init_shoes_76.txt",
+    "user" : "divya",
+    "state" : "FINISHED",
+    "timestamp" : 1654051726466,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654049134976,
+    "updated" : 1654051757450
+  }, {
+    "name" : "init_shoes_70.txt",
+    "user" : "chang",
+    "state" : "FINISHED",
+    "timestamp" : 1654055407416,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653773136588,
+    "updated" : 1654055423554
+  }, {
+    "name" : "init_shoes_76.txt",
+    "user" : "fengbo",
+    "state" : "FINISHED",
+    "timestamp" : 1654057212133,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654050086156,
+    "updated" : 1654057219428
+  }, {
+    "name" : "init_shoes_8.txt",
+    "user" : "matthew",
+    "state" : "FINISHED",
+    "timestamp" : 1654081867352,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654079237554,
+    "updated" : 1654081878707
+  }, {
+    "name" : "init_shoes_73.txt",
+    "user" : "yash",
+    "state" : "FINISHED",
+    "timestamp" : 1654098045219,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654050610951,
+    "updated" : 1654098071495
+  }, {
+    "name" : "init_shoes_78.txt",
+    "user" : "chang",
+    "state" : "FINISHED",
+    "timestamp" : 1654098167944,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653774156673,
+    "updated" : 1654098210601
+  }, {
+    "name" : "init_shoes_70.txt",
+    "user" : "yash",
+    "state" : "FINISHED",
+    "timestamp" : 1654142674001,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653918254678,
+    "updated" : 1654142695547
+  }, {
+    "name" : "init_shoes_7.txt",
+    "user" : "peng",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1654265501916,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1654265501872,
+    "updated" : 1654265501916
+  }, {
+    "name" : "init_shoes_9.txt",
+    "user" : "peng",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1654265931751,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1654265931727,
+    "updated" : 1654265931751
+  }, {
+    "name" : "init_shoes_9.txt",
+    "user" : "matthew",
+    "state" : "FINISHED",
+    "timestamp" : 1654454462954,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654435883629,
+    "updated" : 1654454467525
+  }, {
+    "name" : "init_shoes_61.txt",
+    "user" : "fengbo",
+    "state" : "FINISHED",
+    "timestamp" : 1654487409877,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654483439905,
+    "updated" : 1654487412629
+  }, {
+    "name" : "init_shoes_63.txt",
+    "user" : "fengbo",
+    "state" : "FINISHED",
+    "timestamp" : 1654526217258,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654487509505,
+    "updated" : 1654526234191
+  }, {
+    "name" : "init_shoes_11.txt",
+    "user" : "matthew",
+    "state" : "FINISHED",
+    "timestamp" : 1654616754473,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654609776719,
+    "updated" : 1654616766406
+  }, {
+    "name" : "init_shoes_1.txt",
+    "user" : "viraj",
+    "state" : "NEW",
+    "timestamp" : null,
+    "annotatorState" : null,
+    "sentence_accessed" : 0,
+    "created" : 1654623357840,
+    "updated" : 1654623357840
+  }, {
+    "name" : "init_shoes_0.txt",
+    "user" : "qian",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1652212750583,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1652209665733,
+    "updated" : 1654636892018
+  }, {
+    "name" : "init_shoes_10.txt",
+    "user" : "viraj",
+    "state" : "FINISHED",
+    "timestamp" : 1654696727194,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654653316304,
+    "updated" : 1654696730800
+  }, {
+    "name" : "init_shoes_11.txt",
+    "user" : "viraj",
+    "state" : "FINISHED",
+    "timestamp" : 1654700720347,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654696743373,
+    "updated" : 1654700729634
+  }, {
+    "name" : "shoes_onboarding.txt",
+    "user" : "peng",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1654706893767,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1654265919497,
+    "updated" : 1654706893767
+  }, {
+    "name" : "init_shoes_61.txt",
+    "user" : "divya",
+    "state" : "FINISHED",
+    "timestamp" : 1654708876561,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654703943968,
+    "updated" : 1654708884337
+  }, {
+    "name" : "init_shoes_0.txt",
+    "user" : "peng",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1654711351337,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1653501460737,
+    "updated" : 1654711351337
+  }, {
+    "name" : "init_shoes_1.txt",
+    "user" : "peng",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1654711591479,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1654711591458,
+    "updated" : 1654711591479
+  }, {
+    "name" : "init_shoes_1.txt",
+    "user" : "qian",
+    "state" : "FINISHED",
+    "timestamp" : 1654718388440,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1652213303489,
+    "updated" : 1654718421117
+  }, {
+    "name" : "init_shoes_6.txt",
+    "user" : "qian",
+    "state" : "FINISHED",
+    "timestamp" : 1654722321065,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653784980984,
+    "updated" : 1654722333504
+  }, {
+    "name" : "init_shoes_2.txt",
+    "user" : "qian",
+    "state" : "FINISHED",
+    "timestamp" : 1654724756840,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1652385466844,
+    "updated" : 1654724770016
+  }, {
+    "name" : "init_shoes_66.txt",
+    "user" : "chang",
+    "state" : "FINISHED",
+    "timestamp" : 1654726370497,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654633202143,
+    "updated" : 1654726388365
+  }, {
+    "name" : "init_shoes_7.txt",
+    "user" : "qian",
+    "state" : "FINISHED",
+    "timestamp" : 1654727447553,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1653785334592,
+    "updated" : 1654727468089
+  }, {
+    "name" : "init_shoes_9.txt",
+    "user" : "qian",
+    "state" : "FINISHED",
+    "timestamp" : 1654636006175,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654631661815,
+    "updated" : 1654727496849
+  }, {
+    "name" : "init_shoes_10.txt",
+    "user" : "qian",
+    "state" : "FINISHED",
+    "timestamp" : 1654729622132,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654727504933,
+    "updated" : 1654729640224
+  }, {
+    "name" : "init_shoes_62.txt",
+    "user" : "divya",
+    "state" : "FINISHED",
+    "timestamp" : 1654740167278,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654708899124,
+    "updated" : 1654740172630
+  }, {
+    "name" : "init_shoes_67.txt",
+    "user" : "chang",
+    "state" : "FINISHED",
+    "timestamp" : 1654741541854,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654726527796,
+    "updated" : 1654741554122
+  }, {
+    "name" : "init_shoes_12.txt",
+    "user" : "admin",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1654787893148,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1654787893126,
+    "updated" : 1654787893149
+  }, {
+    "name" : "init_shoes_66.txt",
+    "user" : "peng",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1654814209144,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1654711709437,
+    "updated" : 1654814209144
+  }, {
+    "name" : "init_shoes_64.txt",
+    "user" : "yash",
+    "state" : "FINISHED",
+    "timestamp" : 1654816981181,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654623181838,
+    "updated" : 1654817004709
+  }, {
+    "name" : "init_shoes_65.txt",
+    "user" : "yash",
+    "state" : "FINISHED",
+    "timestamp" : 1654824673429,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1654817660335,
+    "updated" : 1654824696633
+  }, {
+    "name" : "init_shoes_4.txt",
+    "user" : "sophia",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655139962594,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1652323416020,
+    "updated" : 1655139962594
+  }, {
+    "name" : "init_shoes_0.txt",
+    "user" : "nikita",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655224308256,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655224308219,
+    "updated" : 1655224308256
+  }, {
+    "name" : "shoes_onboarding.txt",
+    "user" : "yoga",
+    "state" : "FINISHED",
+    "timestamp" : 1655227319369,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1652793750319,
+    "updated" : 1655227352285
+  }, {
+    "name" : "shoes_onboarding.txt",
+    "user" : "arvind",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655227495064,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655227223018,
+    "updated" : 1655227495064
+  }, {
+    "name" : "init_shoes_14.txt",
+    "user" : "qian",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655229196254,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655229196231,
+    "updated" : 1655229196254
+  }, {
+    "name" : "init_shoes_11.txt",
+    "user" : "yoga",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655230844827,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655230822293,
+    "updated" : 1655230844827
+  }, {
+    "name" : "init_shoes_12.txt",
+    "user" : "qian",
+    "state" : "FINISHED",
+    "timestamp" : 1655232764073,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655229223543,
+    "updated" : 1655233058417
+  }, {
+    "name" : "init_shoes_13.txt",
+    "user" : "qian",
+    "state" : "FINISHED",
+    "timestamp" : 1655237438840,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655233069489,
+    "updated" : 1655237472180
+  }, {
+    "name" : "init_shoes_68.txt",
+    "user" : "yuwei",
+    "state" : "FINISHED",
+    "timestamp" : 1655249923078,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655244662652,
+    "updated" : 1655249932186
+  }, {
+    "name" : "init_shoes_58.txt",
+    "user" : "fengbo",
+    "state" : "FINISHED",
+    "timestamp" : 1655263338084,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655258581147,
+    "updated" : 1655263343865
+  }, {
+    "name" : "shoes_onboarding.txt",
+    "user" : "AnishaAgarwal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655271451586,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655271451207,
+    "updated" : 1655271451597
+  }, {
+    "name" : "shoes_onboarding.txt",
+    "user" : "admin",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655321193385,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1651840567997,
+    "updated" : 1655321193385
+  }, {
+    "name" : "init_shoes_18.txt",
+    "user" : "admin",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655321243507,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655321243461,
+    "updated" : 1655321243507
+  }, {
+    "name" : "init_shoes_74.txt",
+    "user" : "admin",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655321347436,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655321347389,
+    "updated" : 1655321347436
+  }, {
+    "name" : "init_shoes_60.txt",
+    "user" : "fengbo",
+    "state" : "FINISHED",
+    "timestamp" : 1655398494210,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655390881928,
+    "updated" : 1655398497453
+  }, {
+    "name" : "init_shoes_78.txt",
+    "user" : "yuwei",
+    "state" : "FINISHED",
+    "timestamp" : 1655423995373,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655238194299,
+    "updated" : 1655423999179
+  }, {
+    "name" : "init_shoes_57.txt",
+    "user" : "chang",
+    "state" : "FINISHED",
+    "timestamp" : 1655433682554,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655162112981,
+    "updated" : 1655433712474
+  }, {
+    "name" : "init_shoes_12.txt",
+    "user" : "matthew",
+    "state" : "FINISHED",
+    "timestamp" : 1655575963253,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655572147384,
+    "updated" : 1655575964585
+  }, {
+    "name" : "init_shoes_58.txt",
+    "user" : "chang",
+    "state" : "FINISHED",
+    "timestamp" : 1655601867655,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655433908231,
+    "updated" : 1655601903623
+  }, {
+    "name" : "init_shoes_13.txt",
+    "user" : "viraj",
+    "state" : "FINISHED",
+    "timestamp" : 1655601888161,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655595562904,
+    "updated" : 1655601895803
+  }, {
+    "name" : "init_shoes_14.txt",
+    "user" : "viraj",
+    "state" : "FINISHED",
+    "timestamp" : 1655661185592,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655601917379,
+    "updated" : 1655661191169
+  }, {
+    "name" : "init_shoes_0.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655663628486,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655663628465,
+    "updated" : 1655663628486
+  }, {
+    "name" : "init_shoes_0.txt",
+    "user" : "jane",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655671006796,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655671006775,
+    "updated" : 1655671006796
+  }, {
+    "name" : "init_shoes_1.txt",
+    "user" : "jane",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655671132047,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655671132026,
+    "updated" : 1655671132047
+  }, {
+    "name" : "init_shoes_4.txt",
+    "user" : "AnishaAgarwal",
+    "state" : "FINISHED",
+    "timestamp" : 1655673007506,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655581462202,
+    "updated" : 1655673033562
+  }, {
+    "name" : "init_shoes_1.txt",
+    "user" : "yashsharma",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655736636249,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655736636229,
+    "updated" : 1655736636249
+  }, {
+    "name" : "init_shoes_10.txt",
+    "user" : "yashsharma",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655736640179,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655736640159,
+    "updated" : 1655736640179
+  }, {
+    "name" : "init_shoes_11.txt",
+    "user" : "yashsharma",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655736918716,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655736918697,
+    "updated" : 1655736918716
+  }, {
+    "name" : "init_shoes_19.txt",
+    "user" : "yashsharma",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655737042447,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655737042427,
+    "updated" : 1655737042447
+  }, {
+    "name" : "init_shoes_72.txt",
+    "user" : "rafal",
+    "state" : "FINISHED",
+    "timestamp" : 1655743532567,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655740493777,
+    "updated" : 1655743536018
+  }, {
+    "name" : "init_shoes_71.txt",
+    "user" : "rafal",
+    "state" : "FINISHED",
+    "timestamp" : 1655747417568,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655740110993,
+    "updated" : 1655747420230
+  }, {
+    "name" : "init_shoes_0.txt",
+    "user" : "yashsharma",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655782936922,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655736618148,
+    "updated" : 1655782936922
+  }, {
+    "name" : "init_shoes_68.txt",
+    "user" : "admin",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655829178373,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655829178351,
+    "updated" : 1655829178373
+  }, {
+    "name" : "init_shoes_5.txt",
+    "user" : "AnishaAgarwal",
+    "state" : "FINISHED",
+    "timestamp" : 1655842449272,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655673074317,
+    "updated" : 1655842452804
+  }, {
+    "name" : "init_shoes_15.txt",
+    "user" : "qian",
+    "state" : "FINISHED",
+    "timestamp" : 1655842971829,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655839651367,
+    "updated" : 1655842982890
+  }, {
+    "name" : "init_shoes_71.txt",
+    "user" : "admin",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655843668602,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655843668581,
+    "updated" : 1655843668602
+  }, {
+    "name" : "init_shoes_70.txt",
+    "user" : "yashsharma",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655852681231,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655852681208,
+    "updated" : 1655852681232
+  }, {
+    "name" : "init_shoes_72.txt",
+    "user" : "yashsharma",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655852684903,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655852684884,
+    "updated" : 1655852684903
+  }, {
+    "name" : "init_shoes_18.txt",
+    "user" : "viraj",
+    "state" : "FINISHED",
+    "timestamp" : 1655934040907,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655756084820,
+    "updated" : 1655934052250
+  }, {
+    "name" : "init_shoes_16.txt",
+    "user" : "viraj",
+    "state" : "FINISHED",
+    "timestamp" : 1655944259305,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655755991422,
+    "updated" : 1655944268054
+  }, {
+    "name" : "init_shoes_71.txt",
+    "user" : "yashsharma",
+    "state" : "FINISHED",
+    "timestamp" : 1655966567958,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655843573201,
+    "updated" : 1655966700777
+  }, {
+    "name" : "shoes_onboarding.txt",
+    "user" : "jane",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1655991772728,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1655991772707,
+    "updated" : 1655991772728
+  }, {
+    "name" : "init_shoes_78.txt",
+    "user" : "yashsharma",
+    "state" : "FINISHED",
+    "timestamp" : 1656008783923,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655991915042,
+    "updated" : 1656008883624
+  }, {
+    "name" : "init_shoes_16.txt",
+    "user" : "qian",
+    "state" : "FINISHED",
+    "timestamp" : 1656014699763,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656011965507,
+    "updated" : 1656014719485
+  }, {
+    "name" : "init_shoes_74.txt",
+    "user" : "chang",
+    "state" : "FINISHED",
+    "timestamp" : 1656043828235,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656006163189,
+    "updated" : 1656043911546
+  }, {
+    "name" : "init_shoes_57.txt",
+    "user" : "yash",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1656088274103,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1656087121171,
+    "updated" : 1656088274103
+  }, {
+    "name" : "init_shoes_75.txt",
+    "user" : "jane",
+    "state" : "FINISHED",
+    "timestamp" : 1656107304225,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656083998875,
+    "updated" : 1656107325442
+  }, {
+    "name" : "init_shoes_73.txt",
+    "user" : "jane",
+    "state" : "FINISHED",
+    "timestamp" : 1656083447529,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655802765789,
+    "updated" : 1656107371539
+  }, {
+    "name" : "init_shoes_17.txt",
+    "user" : "AnishaAgarwal",
+    "state" : "FINISHED",
+    "timestamp" : 1656231017644,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656168446265,
+    "updated" : 1656231019840
+  }, {
+    "name" : "init_shoes_18.txt",
+    "user" : "AnishaAgarwal",
+    "state" : "FINISHED",
+    "timestamp" : 1656274762231,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656231037018,
+    "updated" : 1656274763552
+  }, {
+    "name" : "init_shoes_24.txt",
+    "user" : "viraj",
+    "state" : "FINISHED",
+    "timestamp" : 1656630062138,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656627660016,
+    "updated" : 1656630066791
+  }, {
+    "name" : "init_shoes_23.txt",
+    "user" : "viraj",
+    "state" : "FINISHED",
+    "timestamp" : 1656647701766,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656627629598,
+    "updated" : 1656647706847
+  }, {
+    "name" : "init_shoes_69.txt",
+    "user" : "fengbo",
+    "state" : "FINISHED",
+    "timestamp" : 1656696319810,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656619512545,
+    "updated" : 1656696324979
+  }, {
+    "name" : "init_shoes_59.txt",
+    "user" : "divya",
+    "state" : "FINISHED",
+    "timestamp" : 1656703938539,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655995346327,
+    "updated" : 1656703957314
+  }, {
+    "name" : "init_shoes_67.txt",
+    "user" : "fengbo",
+    "state" : "FINISHED",
+    "timestamp" : 1656707140818,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656696372104,
+    "updated" : 1656707144361
+  }, {
+    "name" : "init_shoes_19.txt",
+    "user" : "viraj",
+    "state" : "FINISHED",
+    "timestamp" : 1656719827967,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656627414433,
+    "updated" : 1656719833695
+  }, {
+    "name" : "init_shoes_25.txt",
+    "user" : "viraj",
+    "state" : "FINISHED",
+    "timestamp" : 1656723269663,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656720063964,
+    "updated" : 1656723271909
+  }, {
+    "name" : "init_shoes_60.txt",
+    "user" : "divya",
+    "state" : "FINISHED",
+    "timestamp" : 1656759213949,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656703968570,
+    "updated" : 1656759221263
+  }, {
+    "name" : "init_shoes_55.txt",
+    "user" : "yuwei",
+    "state" : "FINISHED",
+    "timestamp" : 1656807751651,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656709327773,
+    "updated" : 1656807755267
+  }, {
+    "name" : "init_shoes_62.txt",
+    "user" : "chang",
+    "state" : "FINISHED",
+    "timestamp" : 1656859936548,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656801257463,
+    "updated" : 1656859948926
+  }, {
+    "name" : "init_shoes_14.txt",
+    "user" : "matthew",
+    "state" : "FINISHED",
+    "timestamp" : 1655741329241,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1655735777062,
+    "updated" : 1656945805840
+  }, {
+    "name" : "init_shoes_15.txt",
+    "user" : "matthew",
+    "state" : "FINISHED",
+    "timestamp" : 1656948348278,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656945816657,
+    "updated" : 1656948357397
+  }, {
+    "name" : "init_shoes_17.txt",
+    "user" : "matthew",
+    "state" : "FINISHED",
+    "timestamp" : 1656952678461,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656948638455,
+    "updated" : 1656952679739
+  }, {
+    "name" : "init_shoes_65.txt",
+    "user" : "yashsharma",
+    "state" : "FINISHED",
+    "timestamp" : 1656979281520,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656964033764,
+    "updated" : 1656979372327
+  }, {
+    "name" : "init_shoes_21.txt",
+    "user" : "matthew",
+    "state" : "FINISHED",
+    "timestamp" : 1657046628468,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1657037395989,
+    "updated" : 1657046631645
+  }, {
+    "name" : "init_shoes_22.txt",
+    "user" : "matthew",
+    "state" : "FINISHED",
+    "timestamp" : 1657048245548,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1657046671001,
+    "updated" : 1657048246635
+  }, {
+    "name" : "init_shoes_56.txt",
+    "user" : "yuwei",
+    "state" : "FINISHED",
+    "timestamp" : 1657064862401,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656807813794,
+    "updated" : 1657064866534
+  }, {
+    "name" : "init_shoes_25.txt",
+    "user" : "matthew",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1657137874504,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1657137874486,
+    "updated" : 1657137874504
+  }, {
+    "name" : "init_shoes_24.txt",
+    "user" : "matthew",
+    "state" : "FINISHED",
+    "timestamp" : 1657139644291,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1657048446389,
+    "updated" : 1657139646872
+  }, {
+    "name" : "init_shoes_3.txt",
+    "user" : "viraj",
+    "state" : "FINISHED",
+    "timestamp" : 1657151713837,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1652203303667,
+    "updated" : 1657151719233
+  }, {
+    "name" : "init_shoes_4.txt",
+    "user" : "viraj",
+    "state" : "FINISHED",
+    "timestamp" : 1657153354287,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1652234980317,
+    "updated" : 1657153357573
+  }, {
+    "name" : "init_shoes_63.txt",
+    "user" : "rafal",
+    "state" : "FINISHED",
+    "timestamp" : 1657159257161,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1657156513175,
+    "updated" : 1657159305482
+  }, {
+    "name" : "init_shoes_19.txt",
+    "user" : "qian",
+    "state" : "FINISHED",
+    "timestamp" : 1657223356963,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1657217296605,
+    "updated" : 1657223361677
+  }, {
+    "name" : "init_shoes_20.txt",
+    "user" : "qian",
+    "state" : "FINISHED",
+    "timestamp" : 1657227185448,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1657223378990,
+    "updated" : 1657227193697
+  }, {
+    "name" : "init_shoes_55.txt",
+    "user" : "jane",
+    "state" : "FINISHED",
+    "timestamp" : 1657279758652,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656604257575,
+    "updated" : 1657279806041
+  }, {
+    "name" : "init_shoes_21.txt",
+    "user" : "qian",
+    "state" : "FINISHED",
+    "timestamp" : 1657311441960,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1657308198898,
+    "updated" : 1657311453155
+  }, {
+    "name" : "init_shoes_66.txt",
+    "user" : "yashsharma",
+    "state" : "FINISHED",
+    "timestamp" : 1657313375606,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1657170069306,
+    "updated" : 1657313431865
+  }, {
+    "name" : "init_shoes_56.txt",
+    "user" : "jane",
+    "state" : "FINISHED",
+    "timestamp" : 1657319035856,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1657279947179,
+    "updated" : 1657319111919
+  }, {
+    "name" : "init_shoes_20.txt",
+    "user" : "AnishaAgarwal",
+    "state" : "FINISHED",
+    "timestamp" : 1657521121007,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1657130575430,
+    "updated" : 1657521125681
+  }, {
+    "name" : "init_shoes_22.txt",
+    "user" : "AnishaAgarwal",
+    "state" : "FINISHED",
+    "timestamp" : 1657525826133,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1657521190094,
+    "updated" : 1657525827341
+  }, {
+    "name" : "init_shoes_23.txt",
+    "user" : "AnishaAgarwal",
+    "state" : "FINISHED",
+    "timestamp" : 1657551503816,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1657525879236,
+    "updated" : 1657551505087
+  }, {
+    "name" : "init_shoes_74.txt",
+    "user" : "fengbo",
+    "state" : "FINISHED",
+    "timestamp" : 1657575608856,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656619493366,
+    "updated" : 1657575611815
+  }, {
+    "name" : "init_shoes_79.txt",
+    "user" : "fengbo",
+    "state" : "FINISHED",
+    "timestamp" : 1657596884886,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1656619452456,
+    "updated" : 1657596888126
+  }, {
+    "name" : "init_shoes_25.txt",
+    "user" : "AnishaAgarwal",
+    "state" : "FINISHED",
+    "timestamp" : 1657642697775,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1657551522824,
+    "updated" : 1657642701823
+  }, {
+    "name" : "init_shoes_64.txt",
+    "user" : "rafal",
+    "state" : "FINISHED",
+    "timestamp" : 1657718484608,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1657159325498,
+    "updated" : 1657718491391
+  }, {
+    "name" : "init_shoes_16.txt",
+    "user" : "nikita",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1657815965309,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1657815965197,
+    "updated" : 1657815965311
+  }, {
+    "name" : "init_shoes_2.txt",
+    "user" : "viraj",
+    "state" : "FINISHED",
+    "timestamp" : 1657942362405,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1652208067484,
+    "updated" : 1657942369772
+  }, {
+    "name" : "init_shoes_40.txt",
+    "user" : "fengbo",
+    "state" : "FINISHED",
+    "timestamp" : 1658185656967,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658181366163,
+    "updated" : 1658185660125
+  }, {
+    "name" : "init_shoes_46.txt",
+    "user" : "fengbo",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1658283272782,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1658283272762,
+    "updated" : 1658283272782
+  }, {
+    "name" : "init_shoes_47.txt",
+    "user" : "fengbo",
+    "state" : "FINISHED",
+    "timestamp" : 1658288364075,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658283283582,
+    "updated" : 1658288369402
+  }, {
+    "name" : "init_shoes_57.txt",
+    "user" : "yashsharma",
+    "state" : "FINISHED",
+    "timestamp" : 1658350276946,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658271347047,
+    "updated" : 1658350772394
+  }, {
+    "name" : "init_shoes_28.txt",
+    "user" : "rafal",
+    "state" : "FINISHED",
+    "timestamp" : 1658411243096,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658409707389,
+    "updated" : 1658411246631
+  }, {
+    "name" : "init_shoes_29.txt",
+    "user" : "rafal",
+    "state" : "FINISHED",
+    "timestamp" : 1658413804200,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658411293916,
+    "updated" : 1658413816243
+  }, {
+    "name" : "init_shoes_26.txt",
+    "user" : "AnishaAgarwal",
+    "state" : "FINISHED",
+    "timestamp" : 1658420004730,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658415158033,
+    "updated" : 1658420011524
+  }, {
+    "name" : "init_shoes_59.txt",
+    "user" : "yashsharma",
+    "state" : "FINISHED",
+    "timestamp" : 1658447167338,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658359201714,
+    "updated" : 1658447191308
+  }, {
+    "name" : "init_shoes_48.txt",
+    "user" : "fengbo",
+    "state" : "FINISHED",
+    "timestamp" : 1658465676296,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658449028595,
+    "updated" : 1658465680304
+  }, {
+    "name" : "init_shoes_31.txt",
+    "user" : "chang",
+    "state" : "FINISHED",
+    "timestamp" : 1658549034027,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658281510630,
+    "updated" : 1658549045769
+  }, {
+    "name" : "init_shoes_27.txt",
+    "user" : "AnishaAgarwal",
+    "state" : "FINISHED",
+    "timestamp" : 1658598789647,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658420050484,
+    "updated" : 1658598791101
+  }, {
+    "name" : "init_shoes_26.txt",
+    "user" : "yashsharma",
+    "state" : "FINISHED",
+    "timestamp" : 1658610467062,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658539501224,
+    "updated" : 1658610487334
+  }, {
+    "name" : "init_shoes_32.txt",
+    "user" : "divya",
+    "state" : "FINISHED",
+    "timestamp" : 1658627705818,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658623465256,
+    "updated" : 1658627729441
+  }, {
+    "name" : "init_shoes_49.txt",
+    "user" : "yuwei",
+    "state" : "FINISHED",
+    "timestamp" : 1658674287708,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658606439144,
+    "updated" : 1658674289051
+  }, {
+    "name" : "init_shoes_33.txt",
+    "user" : "yashsharma",
+    "state" : "FINISHED",
+    "timestamp" : 1658695236699,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658636617445,
+    "updated" : 1658695254002
+  }, {
+    "name" : "init_shoes_34.txt",
+    "user" : "yashsharma",
+    "state" : "FINISHED",
+    "timestamp" : 1658812697414,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658775971081,
+    "updated" : 1658812719162
+  }, {
+    "name" : "init_shoes_35.txt",
+    "user" : "yashsharma",
+    "state" : "FINISHED",
+    "timestamp" : 1658893188440,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658849519783,
+    "updated" : 1658893199391
+  }, {
+    "name" : "init_shoes_36.txt",
+    "user" : "chang",
+    "state" : "FINISHED",
+    "timestamp" : 1658893594309,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658549183272,
+    "updated" : 1658893620119
+  }, {
+    "name" : "init_shoes_4.txt",
+    "user" : "yashsharma",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1658953375290,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1658953375256,
+    "updated" : 1658953375290
+  }, {
+    "name" : "init_shoes_36.txt",
+    "user" : "yashsharma",
+    "state" : "FINISHED",
+    "timestamp" : 1658960230392,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658953411815,
+    "updated" : 1658960247078
+  }, {
+    "name" : "init_shoes_37.txt",
+    "user" : "yashsharma",
+    "state" : "FINISHED",
+    "timestamp" : 1658968965318,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658960388965,
+    "updated" : 1658969191573
+  }, {
+    "name" : "init_shoes_28.txt",
+    "user" : "AnishaAgarwal",
+    "state" : "FINISHED",
+    "timestamp" : 1658988829304,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658598859547,
+    "updated" : 1658988830221
+  }, {
+    "name" : "init_shoes_38.txt",
+    "user" : "yashsharma",
+    "state" : "FINISHED",
+    "timestamp" : 1659055442643,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659030512372,
+    "updated" : 1659055488073
+  }, {
+    "name" : "init_shoes_29.txt",
+    "user" : "AnishaAgarwal",
+    "state" : "FINISHED",
+    "timestamp" : 1659090449359,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658988841513,
+    "updated" : 1659090450738
+  }, {
+    "name" : "init_shoes_30.txt",
+    "user" : "AnishaAgarwal",
+    "state" : "FINISHED",
+    "timestamp" : 1659191649114,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659090465141,
+    "updated" : 1659191650610
+  }, {
+    "name" : "init_shoes_54.txt",
+    "user" : "yuwei",
+    "state" : "FINISHED",
+    "timestamp" : 1659211779280,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658675709339,
+    "updated" : 1659211789437
+  }, {
+    "name" : "init_shoes_39.txt",
+    "user" : "yashsharma",
+    "state" : "FINISHED",
+    "timestamp" : 1659211829196,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659055633098,
+    "updated" : 1659211862238
+  }, {
+    "name" : "init_shoes_40.txt",
+    "user" : "yashsharma",
+    "state" : "FINISHED",
+    "timestamp" : 1659215678674,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659211957351,
+    "updated" : 1659215725141
+  }, {
+    "name" : "init_shoes_31.txt",
+    "user" : "AnishaAgarwal",
+    "state" : "FINISHED",
+    "timestamp" : 1659281851207,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659191665470,
+    "updated" : 1659281853217
+  }, {
+    "name" : "init_shoes_3.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659318904499,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1658413834291,
+    "updated" : 1659318904499
+  }, {
+    "name" : "init_shoes_30.txt",
+    "user" : "rafal",
+    "state" : "FINISHED",
+    "timestamp" : 1659320298540,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658413837671,
+    "updated" : 1659320301914
+  }, {
+    "name" : "init_shoes_31.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659320333778,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1659320333758,
+    "updated" : 1659320333778
+  }, {
+    "name" : "init_shoes_32.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659320334456,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1659320334438,
+    "updated" : 1659320334457
+  }, {
+    "name" : "init_shoes_33.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659320334928,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1659320334910,
+    "updated" : 1659320334928
+  }, {
+    "name" : "init_shoes_34.txt",
+    "user" : "rafal",
+    "state" : "FINISHED",
+    "timestamp" : 1659323364796,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659320335304,
+    "updated" : 1659323367608
+  }, {
+    "name" : "init_shoes_35.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659323376573,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1659323376553,
+    "updated" : 1659323376573
+  }, {
+    "name" : "init_shoes_36.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659323377421,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1659323377402,
+    "updated" : 1659323377421
+  }, {
+    "name" : "init_shoes_32.txt",
+    "user" : "AnishaAgarwal",
+    "state" : "FINISHED",
+    "timestamp" : 1659344255273,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659281866714,
+    "updated" : 1659344259286
+  }, {
+    "name" : "init_shoes_37.txt",
+    "user" : "rafal",
+    "state" : "FINISHED",
+    "timestamp" : 1659449675632,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659323378237,
+    "updated" : 1659449676671
+  }, {
+    "name" : "init_shoes_38.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659450055389,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1659450055361,
+    "updated" : 1659450055389
+  }, {
+    "name" : "init_shoes_39.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659450056098,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1659450056080,
+    "updated" : 1659450056098
+  }, {
+    "name" : "init_shoes_4.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659450056675,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1659450056656,
+    "updated" : 1659450056675
+  }, {
+    "name" : "init_shoes_40.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659450057199,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1659450057179,
+    "updated" : 1659450057200
+  }, {
+    "name" : "init_shoes_27.txt",
+    "user" : "jane",
+    "state" : "FINISHED",
+    "timestamp" : 1659467653842,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658919347976,
+    "updated" : 1659518032664
+  }, {
+    "name" : "init_shoes_41.txt",
+    "user" : "rafal",
+    "state" : "FINISHED",
+    "timestamp" : 1659534584994,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659450057806,
+    "updated" : 1659534589791
+  }, {
+    "name" : "init_shoes_42.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659534627437,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1659534627418,
+    "updated" : 1659534627437
+  }, {
+    "name" : "init_shoes_43.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659534627916,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1659534627895,
+    "updated" : 1659534627916
+  }, {
+    "name" : "init_shoes_44.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659534628584,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1659534628565,
+    "updated" : 1659534628584
+  }, {
+    "name" : "init_shoes_45.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659534629127,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1659534629108,
+    "updated" : 1659534629127
+  }, {
+    "name" : "init_shoes_46.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659534629572,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1659534629550,
+    "updated" : 1659534629573
+  }, {
+    "name" : "init_shoes_47.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659534630026,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1659534630008,
+    "updated" : 1659534630026
+  }, {
+    "name" : "init_shoes_48.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659534630521,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1659534630494,
+    "updated" : 1659534630521
+  }, {
+    "name" : "init_shoes_49.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659534630961,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1659534630941,
+    "updated" : 1659534630961
+  }, {
+    "name" : "init_shoes_5.txt",
+    "user" : "rafal",
+    "state" : "IN_PROGRESS",
+    "timestamp" : 1659534631433,
+    "annotatorState" : "IN_PROGRESS",
+    "sentence_accessed" : 0,
+    "created" : 1659534631410,
+    "updated" : 1659534631433
+  }, {
+    "name" : "init_shoes_50.txt",
+    "user" : "rafal",
+    "state" : "FINISHED",
+    "timestamp" : 1659538480392,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659534631901,
+    "updated" : 1659538481877
+  }, {
+    "name" : "init_shoes_38.txt",
+    "user" : "chang",
+    "state" : "FINISHED",
+    "timestamp" : 1659665291644,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658893813488,
+    "updated" : 1659665321763
+  }, {
+    "name" : "init_shoes_39.txt",
+    "user" : "chang",
+    "state" : "FINISHED",
+    "timestamp" : 1659755121602,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659665462444,
+    "updated" : 1659755142791
+  }, {
+    "name" : "init_shoes_33.txt",
+    "user" : "jane",
+    "state" : "FINISHED",
+    "timestamp" : 1659806753167,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659518207153,
+    "updated" : 1659806779996
+  }, {
+    "name" : "init_shoes_45.txt",
+    "user" : "chang",
+    "state" : "FINISHED",
+    "timestamp" : 1659887251295,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659755264605,
+    "updated" : 1659887257604
+  }, {
+    "name" : "init_shoes_41.txt",
+    "user" : "jane",
+    "state" : "FINISHED",
+    "timestamp" : 1659894413726,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659806987046,
+    "updated" : 1659894494308
+  }, {
+    "name" : "init_shoes_46.txt",
+    "user" : "chang",
+    "state" : "FINISHED",
+    "timestamp" : 1659904566390,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659887412004,
+    "updated" : 1659904641945
+  }, {
+    "name" : "init_shoes_53.txt",
+    "user" : "chang",
+    "state" : "FINISHED",
+    "timestamp" : 1659911656208,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659904715459,
+    "updated" : 1659911674834
+  }, {
+    "name" : "init_shoes_44.txt",
+    "user" : "divya",
+    "state" : "FINISHED",
+    "timestamp" : 1659995050451,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659993332559,
+    "updated" : 1659995051704
+  }, {
+    "name" : "init_shoes_51.txt",
+    "user" : "rafal",
+    "state" : "FINISHED",
+    "timestamp" : 1660004692225,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1660001579017,
+    "updated" : 1660004693959
+  }, {
+    "name" : "init_shoes_52.txt",
+    "user" : "rafal",
+    "state" : "FINISHED",
+    "timestamp" : 1660006433410,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1660004715787,
+    "updated" : 1660006435567
+  }, {
+    "name" : "init_shoes_53.txt",
+    "user" : "rafal",
+    "state" : "FINISHED",
+    "timestamp" : 1660009245419,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1660007174227,
+    "updated" : 1660009247795
+  }, {
+    "name" : "init_shoes_54.txt",
+    "user" : "rafal",
+    "state" : "FINISHED",
+    "timestamp" : 1660010686689,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1660009314399,
+    "updated" : 1660010689279
+  }, {
+    "name" : "init_shoes_42.txt",
+    "user" : "divya",
+    "state" : "FINISHED",
+    "timestamp" : 1660143839175,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659995104630,
+    "updated" : 1660143848253
+  }, {
+    "name" : "init_shoes_50.txt",
+    "user" : "divya",
+    "state" : "FINISHED",
+    "timestamp" : 1660153630187,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1660143887905,
+    "updated" : 1660153680665
+  }, {
+    "name" : "init_shoes_43.txt",
+    "user" : "divya",
+    "state" : "FINISHED",
+    "timestamp" : 1660157340520,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1660153713927,
+    "updated" : 1660157350383
+  }, {
+    "name" : "init_shoes_51.txt",
+    "user" : "divya",
+    "state" : "FINISHED",
+    "timestamp" : 1660159618900,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1660157378820,
+    "updated" : 1660159630000
+  }, {
+    "name" : "init_shoes_52.txt",
+    "user" : "divya",
+    "state" : "FINISHED",
+    "timestamp" : 1660161441829,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1660159670203,
+    "updated" : 1660161462960
+  }, {
+    "name" : "init_shoes_42.txt",
+    "user" : "jane",
+    "state" : "FINISHED",
+    "timestamp" : 1660165812120,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1659894774656,
+    "updated" : 1660165839806
+  }, {
+    "name" : "init_shoes_43.txt",
+    "user" : "jane",
+    "state" : "FINISHED",
+    "timestamp" : 1660249755941,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1660166128859,
+    "updated" : 1660249804538
+  }, {
+    "name" : "init_shoes_49.txt",
+    "user" : "jane",
+    "state" : "FINISHED",
+    "timestamp" : 1660277730011,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1660249868943,
+    "updated" : 1660277788716
+  }, {
+    "name" : "init_shoes_44.txt",
+    "user" : "jane",
+    "state" : "FINISHED",
+    "timestamp" : 1660297732398,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1660277874487,
+    "updated" : 1660297739245
+  }, {
+    "name" : "init_shoes_45.txt",
+    "user" : "jane",
+    "state" : "FINISHED",
+    "timestamp" : 1660424250346,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1660297818217,
+    "updated" : 1660424266830
+  }, {
+    "name" : "init_shoes_46.txt",
+    "user" : "jane",
+    "state" : "FINISHED",
+    "timestamp" : 1660453490373,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1660424347134,
+    "updated" : 1660453538591
+  }, {
+    "name" : "init_shoes_47.txt",
+    "user" : "jane",
+    "state" : "FINISHED",
+    "timestamp" : 1660482236728,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1660453591604,
+    "updated" : 1660482263829
+  }, {
+    "name" : "init_shoes_48.txt",
+    "user" : "jane",
+    "state" : "FINISHED",
+    "timestamp" : 1660491811537,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1660482288114,
+    "updated" : 1660491838434
+  }, {
+    "name" : "init_shoes_35.txt",
+    "user" : "divya",
+    "state" : "FINISHED",
+    "timestamp" : 1663009830772,
+    "annotatorState" : "FINISHED",
+    "sentence_accessed" : 0,
+    "created" : 1658627801086,
+    "updated" : 1663009840167
+  } ],
+  "project_permissions" : [ {
+    "level" : "USER",
+    "user" : "AnishaAgarwal"
+  }, {
+    "level" : "USER",
+    "user" : "aditi"
+  }, {
+    "level" : "ADMIN",
+    "user" : "admin"
+  }, {
+    "level" : "CURATOR",
+    "user" : "admin"
+  }, {
+    "level" : "USER",
+    "user" : "admin"
+  }, {
+    "level" : "USER",
+    "user" : "alice"
+  }, {
+    "level" : "USER",
+    "user" : "arvind"
+  }, {
+    "level" : "USER",
+    "user" : "bri"
+  }, {
+    "level" : "USER",
+    "user" : "brianna"
+  }, {
+    "level" : "USER",
+    "user" : "chang"
+  }, {
+    "level" : "USER",
+    "user" : "daniel"
+  }, {
+    "level" : "USER",
+    "user" : "dave"
+  }, {
+    "level" : "USER",
+    "user" : "divya"
+  }, {
+    "level" : "USER",
+    "user" : "fengbo"
+  }, {
+    "level" : "USER",
+    "user" : "game_demo"
+  }, {
+    "level" : "USER",
+    "user" : "jane"
+  }, {
+    "level" : "USER",
+    "user" : "jason"
+  }, {
+    "level" : "USER",
+    "user" : "joe_test"
+  }, {
+    "level" : "USER",
+    "user" : "madisabe"
+  }, {
+    "level" : "USER",
+    "user" : "matthew"
+  }, {
+    "level" : "USER",
+    "user" : "nikita"
+  }, {
+    "level" : "USER",
+    "user" : "peng"
+  }, {
+    "level" : "USER",
+    "user" : "qian"
+  }, {
+    "level" : "USER",
+    "user" : "rafal"
+  }, {
+    "level" : "USER",
+    "user" : "rajesh"
+  }, {
+    "level" : "USER",
+    "user" : "rui"
+  }, {
+    "level" : "USER",
+    "user" : "shoe_demo"
+  }, {
+    "level" : "ADMIN",
+    "user" : "skarwal"
+  }, {
+    "level" : "CURATOR",
+    "user" : "skarwal"
+  }, {
+    "level" : "USER",
+    "user" : "skarwal"
+  }, {
+    "level" : "USER",
+    "user" : "soham"
+  }, {
+    "level" : "USER",
+    "user" : "sophia"
+  }, {
+    "level" : "USER",
+    "user" : "test"
+  }, {
+    "level" : "USER",
+    "user" : "viraj"
+  }, {
+    "level" : "USER",
+    "user" : "yash"
+  }, {
+    "level" : "USER",
+    "user" : "yashsharma"
+  }, {
+    "level" : "USER",
+    "user" : "yoga"
+  }, {
+    "level" : "USER",
+    "user" : "yushu"
+  }, {
+    "level" : "USER",
+    "user" : "yuwei"
+  } ],
+  "tag_sets" : [ {
+    "name" : "Category",
+    "description" : "e.g. \"great shoes\"",
+    "language" : "Appearance#General",
+    "tags" : [ {
+      "tag_name" : "Appearance#General",
+      "tag_description" : "Commentary on the general appearance of the shoe. E.g. \"it looked great\""
+    }, {
+      "tag_name" : "General",
+      "tag_description" : "General commentary on the shoe - \"I loved it\""
+    }, {
+      "tag_name" : "Appearance#Form",
+      "tag_description" : "relating to the structure"
+    }, {
+      "tag_name" : "Appearance#Color",
+      "tag_description" : "relating to the color / print / patterns"
+    }, {
+      "tag_name" : "Appearance#Material",
+      "tag_description" : "relating to the material / materiality"
+    }, {
+      "tag_name" : "Appearance#Shoe Component",
+      "tag_description" : "appearance relating to a specific shoe componenet"
+    }, {
+      "tag_name" : "Appearance#Misc",
+      "tag_description" : "specific, but doesn't fall into the above"
+    }, {
+      "tag_name" : "Performance#Sizing/Fit",
+      "tag_description" : "relating more to a mismatch"
+    }, {
+      "tag_name" : "Performance#General",
+      "tag_description" : "Performance#General"
+    }, {
+      "tag_name" : "Performance#Comfort",
+      "tag_description" : "assuming size is appropriate, are they comfortable?"
+    }, {
+      "tag_name" : "Performance#Durability",
+      "tag_description" : "Performance#Durability"
+    }, {
+      "tag_name" : "Performance#Support/Stability",
+      "tag_description" : "Performance#Support/Stability"
+    }, {
+      "tag_name" : "Performance#Use Case Applicability",
+      "tag_description" : "Performance#Use Case Applicability"
+    }, {
+      "tag_name" : "Performance#Misc",
+      "tag_description" : "Performance#Misc"
+    }, {
+      "tag_name" : "Cost/Value",
+      "tag_description" : "Was it worth the price?"
+    }, {
+      "tag_name" : "Versatility",
+      "tag_description" : "Applicability for many cases"
+    }, {
+      "tag_name" : "Style Choices",
+      "tag_description" : "Sufficient style options to choose from?"
+    }, {
+      "tag_name" : "ContextOfUse#Usage frequency",
+      "tag_description" : "\"I use them a couple times a week\""
+    }, {
+      "tag_name" : "ContextOfUse#Use case",
+      "tag_description" : "\"for the gym\""
+    }, {
+      "tag_name" : "ContextOfUse#Place",
+      "tag_description" : "ContextOfUse#Place"
+    }, {
+      "tag_name" : "ContextOfUse#Review_Temporality",
+      "tag_description" : "\"still working them in\", or \"had them for a few weeks\""
+    }, {
+      "tag_name" : "ContextOfUse#Purchase_Context",
+      "tag_description" : "Beyond the use case, other reasons that factored into them going with these shoes. e.g. \"dad bought me these for xmas\""
+    }, {
+      "tag_name" : "Misc",
+      "tag_description" : "Specific sentiment, but doesn't fall into the above categories"
+    } ],
+    "create_tag" : false
+  }, {
+    "name" : "Explicit Mention Types",
+    "description" : null,
+    "language" : null,
+    "tags" : [ {
+      "tag_name" : "Direct Aspect",
+      "tag_description" : "blah blah"
+    }, {
+      "tag_name" : "Direct Opinion",
+      "tag_description" : null
+    }, {
+      "tag_name" : "Indirect Opinion",
+      "tag_description" : null
+    } ],
+    "create_tag" : false
+  }, {
+    "name" : "Polarity Values",
+    "description" : null,
+    "language" : null,
+    "tags" : [ {
+      "tag_name" : "Negative",
+      "tag_description" : null
+    }, {
+      "tag_name" : "Neutral",
+      "tag_description" : null
+    }, {
+      "tag_name" : "Positive",
+      "tag_description" : null
+    } ],
+    "create_tag" : false
+  } ],
+  "layers" : [ {
+    "name" : "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence",
+    "features" : [ ],
+    "uiName" : "Sentence",
+    "type" : "span",
+    "description" : null,
+    "enabled" : true,
+    "built_in" : true,
+    "readonly" : true,
+    "attach_type" : null,
+    "attach_feature" : null,
+    "allow_stacking" : false,
+    "cross_sentence" : true,
+    "show_hover" : true,
+    "anchoring_mode" : "CHARACTERS",
+    "overlap_mode" : "NO_OVERLAP",
+    "validation_mode" : "NEVER",
+    "lock_to_token_offset" : false,
+    "multiple_tokens" : false,
+    "project_name" : "shoe_annotations",
+    "linked_list_behavior" : false,
+    "on_click_javascript_action" : null,
+    "traits" : null
+  }, {
+    "name" : "webanno.custom.Sentiment",
+    "features" : [ {
+      "name" : "Category",
+      "tag_set" : {
+        "name" : "Category",
+        "description" : null,
+        "language" : null,
+        "tags" : [ ],
+        "create_tag" : false
+      },
+      "uiName" : "Category",
+      "type" : "uima.cas.String",
+      "enabled" : true,
+      "visible" : true,
+      "include_in_hover" : false,
+      "required" : true,
+      "remember" : false,
+      "hideUnconstraintFeature" : false,
+      "description" : null,
+      "project_name" : "shoe_annotations",
+      "multi_value_mode" : "NONE",
+      "link_mode" : "NONE",
+      "link_type_name" : null,
+      "link_type_role_feature_name" : null,
+      "link_type_target_feature_name" : null,
+      "traits" : "{\"multipleRows\":false,\"dynamicSize\":false,\"collapsedRows\":1,\"expandedRows\":1,\"editorType\":\"AUTOCOMPLETE\",\"keyBindings\":[]}",
+      "curatable" : true
+    }, {
+      "name" : "Polarity",
+      "tag_set" : {
+        "name" : "Polarity Values",
+        "description" : null,
+        "language" : null,
+        "tags" : [ ],
+        "create_tag" : false
+      },
+      "uiName" : "Polarity",
+      "type" : "uima.cas.String",
+      "enabled" : true,
+      "visible" : true,
+      "include_in_hover" : false,
+      "required" : true,
+      "remember" : false,
+      "hideUnconstraintFeature" : false,
+      "description" : null,
+      "project_name" : "shoe_annotations",
+      "multi_value_mode" : "NONE",
+      "link_mode" : "NONE",
+      "link_type_name" : null,
+      "link_type_role_feature_name" : null,
+      "link_type_target_feature_name" : null,
+      "traits" : "{\"multipleRows\":false,\"dynamicSize\":false,\"collapsedRows\":1,\"expandedRows\":1,\"editorType\":\"AUTO\",\"keyBindings\":[{\"keyCombo\":\"1\",\"value\":\"Negative\"},{\"keyCombo\":\"2\",\"value\":\"Neutral\"},{\"keyCombo\":\"3\",\"value\":\"Positive\"}]}",
+      "curatable" : true
+    } ],
+    "uiName" : "Sentiment",
+    "type" : "relation",
+    "description" : null,
+    "enabled" : true,
+    "built_in" : false,
+    "readonly" : false,
+    "attach_type" : {
+      "name" : "webanno.custom.Aspect"
+    },
+    "attach_feature" : null,
+    "allow_stacking" : true,
+    "cross_sentence" : true,
+    "show_hover" : true,
+    "anchoring_mode" : "TOKENS",
+    "overlap_mode" : "ANY_OVERLAP",
+    "validation_mode" : "ALWAYS",
+    "lock_to_token_offset" : false,
+    "multiple_tokens" : true,
+    "project_name" : "shoe_annotations",
+    "linked_list_behavior" : false,
+    "on_click_javascript_action" : null,
+    "traits" : "{\"coloringRules\":{\"rules\":[]},\"renderArcs\":true}"
+  }, {
+    "name" : "webanno.custom.Aspect",
+    "features" : [ {
+      "name" : "MentionType",
+      "tag_set" : {
+        "name" : "Explicit Mention Types",
+        "description" : null,
+        "language" : null,
+        "tags" : [ ],
+        "create_tag" : false
+      },
+      "uiName" : "Mention Type",
+      "type" : "uima.cas.String",
+      "enabled" : true,
+      "visible" : true,
+      "include_in_hover" : false,
+      "required" : true,
+      "remember" : false,
+      "hideUnconstraintFeature" : false,
+      "description" : null,
+      "project_name" : "shoe_annotations",
+      "multi_value_mode" : "NONE",
+      "link_mode" : "NONE",
+      "link_type_name" : null,
+      "link_type_role_feature_name" : null,
+      "link_type_target_feature_name" : null,
+      "traits" : "{\"multipleRows\":false,\"dynamicSize\":false,\"collapsedRows\":1,\"expandedRows\":1,\"editorType\":\"AUTO\",\"keyBindings\":[{\"keyCombo\":\"a\",\"value\":\"Aspect\"},{\"keyCombo\":\"o\",\"value\":\"Opinion\"}]}",
+      "curatable" : true
+    } ],
+    "uiName" : "Term",
+    "type" : "span",
+    "description" : null,
+    "enabled" : true,
+    "built_in" : false,
+    "readonly" : false,
+    "attach_type" : null,
+    "attach_feature" : null,
+    "allow_stacking" : true,
+    "cross_sentence" : false,
+    "show_hover" : true,
+    "anchoring_mode" : "TOKENS",
+    "overlap_mode" : "ANY_OVERLAP",
+    "validation_mode" : "ALWAYS",
+    "lock_to_token_offset" : false,
+    "multiple_tokens" : true,
+    "project_name" : "shoe_annotations",
+    "linked_list_behavior" : false,
+    "on_click_javascript_action" : null,
+    "traits" : "{\"coloringRules\":{\"rules\":[]}}"
+  }, {
+    "name" : "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token",
+    "features" : [ ],
+    "uiName" : "Token",
+    "type" : "span",
+    "description" : null,
+    "enabled" : true,
+    "built_in" : true,
+    "readonly" : true,
+    "attach_type" : null,
+    "attach_feature" : null,
+    "allow_stacking" : false,
+    "cross_sentence" : false,
+    "show_hover" : true,
+    "anchoring_mode" : "CHARACTERS",
+    "overlap_mode" : "NO_OVERLAP",
+    "validation_mode" : "NEVER",
+    "lock_to_token_offset" : false,
+    "multiple_tokens" : false,
+    "project_name" : "shoe_annotations",
+    "linked_list_behavior" : false,
+    "on_click_javascript_action" : null,
+    "traits" : null
+  } ],
+  "disableExport" : false,
+  "script_direction" : "LTR",
+  "created" : 1643231472197,
+  "updated" : 1662732001664,
+  "anonymous_curation" : false,
+  "default-preferences" : [ {
+    "name" : "annotation/editor",
+    "traits" : "{\"defaultEditor\":null}"
+  }, {
+    "name" : "annotation/editor/brat/manager",
+    "traits" : "{\"changingScriptDirectionAllowed\":false,\"defaultPageSize\":1}"
+  }, {
+    "name" : "annotation/left-sidebar",
+    "traits" : "{\"selectedTab\":null,\"expanded\":false}"
+  } ],
+  "knowledge_bases" : [ ],
+  "external_search" : [ ],
+  "curation_workflow" : {
+    "id" : 3,
+    "project" : {
+      "id" : 3,
+      "name" : "shoe_annotations",
+      "slug" : "shoe-annotations",
+      "description" : null,
+      "mode" : "annotation",
+      "version" : 1,
+      "disableExport" : false,
+      "scriptDirection" : "LTR",
+      "created" : 1643231472197,
+      "updated" : 1662732001664,
+      "state" : "CURATION_IN_PROGRESS",
+      "anonymousCuration" : false
+    },
+    "mergeStrategy" : "completeAgreementNonStacked",
+    "mergeStrategyTraits" : null
+  },
+  "project_users" : [ ],
+  "recommenders" : [ ],
+  "gazeteers" : [ ]
+}

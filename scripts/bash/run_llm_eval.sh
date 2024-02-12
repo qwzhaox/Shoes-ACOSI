@@ -20,9 +20,9 @@ pkl_files=$(find "$pkl_path" -wholename "*/$model_dir/*.pkl")
 for pkl_file in $pkl_files; do
     # Extract model, task, and dataset from the file path
     IFS='/' read -r -a path_array <<< "$pkl_file"
-    model=${path_array[5]}
-    task=${path_array[6]}
-    dataset=${path_array[7]}
+    model=${path_array[4]}
+    task=${path_array[5]}
+    dataset=${path_array[6]}
 
     # Skip if task is "acos-extend"
     if [ "$task" == "acos-extend" ] && ( [ "$dataset" == "rest" ] || [ "$dataset" == "laptop" ] ); then
@@ -33,14 +33,15 @@ for pkl_file in $pkl_files; do
     # Construct dataset file path
     dataset_file="$dataset_path"
     if [ "$task" == "acos-extract" ]; then
-        dataset_file+="acos/"
+        dataset_file+="acos_dataset/"
     elif [[ "$task" == "acosi-extract"  || "$task" == "acos-extend" ]]; then
-        dataset_file+="acosi/"
+        dataset_file+="acosi_dataset/"
     else
         echo "Invalid task: $task"
         continue
     fi
-    dataset_file+="$dataset/toy.txt"
+    dataset_file+="$dataset/test.txt"
+    category_dict="data/llm_dataset/${dataset}_category_dict.json"
     echo "dataset file: $dataset_file"
 
     # Construct output file path
@@ -53,10 +54,10 @@ for pkl_file in $pkl_files; do
 
     # Run evaluation script
     if [ "$task" == "acos-extend" ]; then
-        python3 scripts/eval/evaluate.py --dataset_file="$dataset_file" --pkl_file="$pkl_file" --output_file="$output_file" --task="acos-extend" -llm
+        python3 scripts/eval/evaluate.py --dataset_file="$dataset_file" --pkl_file="$pkl_file" --category_file="$category_dict" --output_file="$output_file" --task="acos-extend" -llm
     elif [ "$task" == "acos-extract" ]; then
-        python3 scripts/eval/evaluate.py --dataset_file="$dataset_file" --pkl_file="$pkl_file" --output_file="$output_file" --task="acos-extract" -llm
+        python3 scripts/eval/evaluate.py --dataset_file="$dataset_file" --pkl_file="$pkl_file" --category_file="$category_dict" --output_file="$output_file" --task="acos-extract" -llm
     else
-        python3 scripts/eval/evaluate.py --dataset_file="$dataset_file" --pkl_file="$pkl_file" --output_file="$output_file" --task="acosi-extract" -llm
+        python3 scripts/eval/evaluate.py --dataset_file="$dataset_file" --pkl_file="$pkl_file" --category_file="$category_dict" --output_file="$output_file" --task="acosi-extract" -llm
     fi
 done

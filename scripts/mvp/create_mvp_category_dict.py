@@ -2,8 +2,8 @@ import json
 import argparse
 from pathlib import Path
 from sys import path
-path.insert(1, '.')
-from dataprocess.get_categories import get_categories
+path.insert(1, './scripts/dataprocess/')
+from get_categories import get_categories
 
 parser = argparse.ArgumentParser()
 parser.add_argument(

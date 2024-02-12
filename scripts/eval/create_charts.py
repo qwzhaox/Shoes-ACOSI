@@ -24,7 +24,35 @@ class EvalChartGenerator:
         self.is_inline_legend = False
         self.legend_orientation = None
 
-    def parse_filepath(self, filepath):
+    def collect_data(self):
+        for filepath in Path(self.eval_output_dir).rglob('*.json'):
+            if self.ignore_llama and 'llama' in str(filepath):
+                continue
+
+            score_metadata = self.__parse_filepath(filepath)
+            model = f"{score_metadata['model_type'].upper()}: {score_metadata['model'].upper()}"
+            self.models.add(model)
+            dataset = f"{score_metadata['dataset'].title()}-{score_metadata['task'].split('-')[0].upper()}"
+            if "Rest" in dataset:
+                dataset = dataset.replace("Rest", "Restaurant")
+            task = score_metadata['task']
+            metric_score, is_valid = self.__read_and_extract_score(filepath)
+
+            if not is_valid:
+                continue
+
+            self.scores_by_task.setdefault(task, {}).setdefault(dataset, {})[model] = metric_score
+            
+        self.colors = COLORS[:len(self.models)]
+        self.patterns = PATTERNS[:len(self.models)]
+
+    def generate_plots(self):
+        Path(self.output_dir).mkdir(parents=True, exist_ok=True)
+
+        for task, datasets_scores in self.scores_by_task.items():
+            self.__plot_scores(task, datasets_scores)
+
+    def __parse_filepath(self, filepath):
         try:
             parts = filepath.parts
             return {
@@ -37,52 +65,25 @@ class EvalChartGenerator:
             print(filepath)
             exit(1)
 
-    def read_and_extract_score(self, filepath):
+    def __read_and_extract_score(self, filepath):
         with open(filepath, 'r') as file:
             data = json.load(file)
             if self.score_type not in data or self.score not in data[self.score_type]:
                 return 0, False
             return data[self.score_type][self.score] * 100, True
 
-    def collect_data(self):
-        for filepath in Path(self.eval_output_dir).rglob('*.json'):
-            if self.ignore_llama and 'llama' in str(filepath):
-                continue
-
-            score_metadata = self.parse_filepath(filepath)
-            model = f"{score_metadata['model_type'].upper()}: {score_metadata['model'].upper()}"
-            self.models.add(model)
-            dataset = f"{score_metadata['dataset'].title()}-{score_metadata['task'].split('-')[0].upper()}"
-            if "Rest" in dataset:
-                dataset = dataset.replace("Rest", "Restaurant")
-            task = score_metadata['task']
-            metric_score, is_valid = self.read_and_extract_score(filepath)
-
-            if not is_valid:
-                continue
-
-            self.scores_by_task.setdefault(task, {}).setdefault(dataset, {})[model] = metric_score
-        self.colors = COLORS[:len(self.models)]
-        self.patterns = PATTERNS[:len(self.models)]
-
-    def generate_plots(self):
-        Path(self.output_dir).mkdir(parents=True, exist_ok=True)
-
-        for task, datasets_scores in self.scores_by_task.items():
-            self.plot_scores(task, datasets_scores)
-
-    def plot_scores(self, task, datasets_scores):
+    def __plot_scores(self, task, datasets_scores):
         datasets = sorted(datasets_scores.keys())
         models = sorted(set(model for scores in datasets_scores.values() for model in scores))
         plt.figure(figsize=(10, 6))
-        self.plot_by_dataset(datasets, datasets_scores, models)
-        self.is_inline_legend, self.legend_orientation = self.get_is_inline_legend(datasets, datasets_scores)
-        self.format_plot(task, datasets)
+        self.__plot_by_dataset(datasets, datasets_scores, models)
+        self.is_inline_legend, self.legend_orientation = self.__get_is_inline_legend(datasets, datasets_scores)
+        self.__format_plot(task, datasets)
 
         if "-" in self.score_type:
-            chart_filepath = f"{self.output_dir}/combos/{self.score_type.count('-')+1}/{self.score_type}/{self.score}/{self.format_title(task)}.png"
+            chart_filepath = f"{self.output_dir}/combos/{self.score_type.count('-')+1}/{self.score_type}/{self.score}/{self.__format_title(task)}.png"
         else:
-            chart_filepath = f"{self.output_dir}/{self.score_type}/{self.score}/{self.format_title(task)}.png"
+            chart_filepath = f"{self.output_dir}/{self.score_type}/{self.score}/{self.__format_title(task)}.png"
 
 
         Path(chart_filepath).parent.mkdir(parents=True, exist_ok=True)
@@ -90,7 +91,7 @@ class EvalChartGenerator:
         plt.savefig(chart_filepath)
         plt.show()
 
-    def get_is_inline_legend(self, datasets, datasets_scores):
+    def __get_is_inline_legend(self, datasets, datasets_scores):
         legend_lower_bound = 65
         if len(datasets) > 1:
             last_dataset_scores = datasets_scores[datasets[-1]]
@@ -102,7 +103,7 @@ class EvalChartGenerator:
                 return True, 'l'
         return False, None
 
-    def plot_by_dataset(self, datasets, datasets_scores, models):
+    def __plot_by_dataset(self, datasets, datasets_scores, models):
         if len(datasets) > 1:
             width = 0.8 / len(models)  # Adjust width based on number of models
             for i, model in enumerate(models):
@@ -115,8 +116,8 @@ class EvalChartGenerator:
             for i, model in enumerate(models):
                 plt.bar(models[i], scores[i], label=model, color=self.colors[i], hatch=self.patterns[i])
 
-    def format_plot(self, task, datasets):
-        title_task, title_score_type, title_score = self.format_title_components(task)
+    def __format_plot(self, task, datasets):
+        title_task, title_score_type, title_score = self.__format_title_components(task)
         plt.title(f"{title_task}: {title_score_type} {title_score}", fontsize=16)
         plt.ylabel(title_score, fontsize=16)
         plt.ylim(0, 100)
@@ -131,11 +132,11 @@ class EvalChartGenerator:
             plt.xlabel(f"Models [Dataset: {datasets[0]}]", fontsize=16)
         plt.tight_layout()
 
-    def format_title(self, task):
-        title_task, title_score_type, title_score = self.format_title_components(task)
+    def __format_title(self, task):
+        title_task, title_score_type, title_score = self.__format_title_components(task)
         return f"{title_task}: {title_score_type} {title_score}".replace(' ', '_')
 
-    def format_title_components(self, task):
+    def __format_title_components(self, task):
         parts = task.split('-')
         title_task = f"{parts[0].upper()}-{parts[1].title()}" if len(parts) > 1 else task.upper()
         title_score_type = self.score_type.title()

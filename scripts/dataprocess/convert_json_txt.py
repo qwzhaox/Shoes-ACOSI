@@ -37,6 +37,11 @@ parser.add_argument(
     action="store_true",
 )
 parser.add_argument(
+    "-llm",
+    "--is_llm",
+    action="store_true",
+)
+parser.add_argument(
     "-acos",
     "--make_acos",
     action="store_true",
@@ -77,11 +82,16 @@ def get_str_list(reviews):
                     .replace("/", "_")
                     .replace("\\_", "_")
                 )
-            if args.is_gen_scl_nat and not args.make_acos:
+                
+            if args.is_gen_scl_nat:
                 annot[CATEGORY_IDX] = annot[CATEGORY_IDX].upper()
-                annot[OPINION_IDX] = f"{annot[OPINION_IDX]} {annot[IMPLICIT_INDICATOR_IDX].upper()}"
+                if not args.make_acos:
+                    annot[OPINION_IDX] = f"{annot[OPINION_IDX]} {annot[IMPLICIT_INDICATOR_IDX].upper()}"
 
-                del annot[IMPLICIT_INDICATOR_IDX]
+                    del annot[IMPLICIT_INDICATOR_IDX]
+
+            if args.is_llm:
+                annot[CATEGORY_IDX] = annot[CATEGORY_IDX].replace("#", " ").replace("\\_", "_").lower()
 
             if annot[ASPECT_IDX].lower() == "implicit":
                 annot[ASPECT_IDX] = "NULL"

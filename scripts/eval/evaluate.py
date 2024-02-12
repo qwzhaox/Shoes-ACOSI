@@ -379,7 +379,7 @@ if args.mvp_output:
         get_mvp_output, category_file=args.category_file)
     scores = evaluate_mvp_outputs.get_scores()
 elif args.llm_output:
-    evaluate_llm_outputs = Evaluator(get_llm_output)
+    evaluate_llm_outputs = Evaluator(get_llm_output, category_file=args.category_file)
     scores = evaluate_llm_outputs.get_scores()
 elif args.t5_output:
     evaluate_t5_outputs = Evaluator(get_t5_output)

@@ -1,0 +1,2 @@
+yum !####[['null', 'food#quality', 'positive', 'yum']]
+serves really good sushi .####[['sushi', 'food#quality', 'positive', 'good']]

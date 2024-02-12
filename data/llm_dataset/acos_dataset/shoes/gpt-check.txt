@@ -1,0 +1,2 @@
+the design is great poor color choices too bland . color choices from previous shoes was much better .####[['NULL', 'appearance#form', 'positive', 'design is great'], ['NULL', 'appearance#color', 'negative', 'poor color choices'], ['shoes', 'appearance#color', 'negative', 'NULL']]
+usually wear size 10 on pr1 . 11 on pr2 . should get 1 size bigger for comfort####[['pr1', 'performance#sizing/fit', 'neutral', 'usually wear size 10'], ['NULL', 'performance#sizing/fit', 'neutral', 'should get 1 size bigger for comfort']]

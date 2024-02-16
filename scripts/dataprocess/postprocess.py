@@ -1,6 +1,5 @@
 import pandas as pd
 import argparse
-import csv
 import re
 import json
 from copy import deepcopy

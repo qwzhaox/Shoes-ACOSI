@@ -3,8 +3,8 @@ import json
 from utils.evaluate_utils import ASPECT_IDX, CATEGORY_IDX, OPINION_IDX
 
 
-def get_llm_output(pkl_file, category_file=None):
-    with open(pkl_file, "rb") as file:
+def get_llm_output(model_output_file, category_file=None):
+    with open(model_output_file, "rb") as file:
         llm_outputs = pickle.load(file)
     
     with open(category_file, "r") as file:

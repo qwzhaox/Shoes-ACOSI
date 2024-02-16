@@ -14,31 +14,49 @@
             "mean": 4.144,
             "median": 4,
             "stdev": 1.6593041681923917
+        },
+        "num e/i": {
+            "ea eo": 265,
+            "ea io": 0,
+            "ia eo": 253,
+            "ia io": 0,
+            "pred ea eo": 209,
+            "pred ea io": 56,
+            "pred ia eo": 204,
+            "pred ia io": 49
+        },
+        "num sentiment": {
+            "positive": 194,
+            "negative": 272,
+            "neutral": 52,
+            "pred positive": 194,
+            "pred negative": 272,
+            "pred neutral": 52
         }
     },
     "total opinion": {
-        "precision": 0.827930174563591,
-        "recall": 0.7377777777777778,
-        "f1-score": 0.7802585193889542,
-        "macro IoU": 0.6396917148362236,
-        "avg micro IoU": 0.6947650793650793,
-        "span precision": 0.9631870902672718,
-        "span recall": 0.7455113192818111,
-        "span f1-score": 0.8404840484048405,
-        "span macro IoU": 0.7248576850094877,
-        "span avg micro IoU": 0.7515126309961042
+        "precision": 0.8365853658536585,
+        "recall": 0.7622222222222222,
+        "f1-score": 0.7976744186046512,
+        "macro IoU": 0.6634429400386848,
+        "avg micro IoU": 0.7278126984126982,
+        "span precision": 0.9505882352941176,
+        "span recall": 0.7884465261514442,
+        "span f1-score": 0.8619586089182846,
+        "span macro IoU": 0.7574053243344582,
+        "span avg micro IoU": 0.7885217003259058
     },
     "indirect opinion": {
-        "precision": 0.07894736842105263,
-        "recall": 0.048,
-        "f1-score": 0.059701492537313425,
-        "macro IoU": 0.03076923076923077,
-        "avg micro IoU": 0.07305936073059362,
-        "span precision": 0.4305555555555556,
-        "span recall": 0.07451923076923077,
-        "span f1-score": 0.12704918032786888,
-        "span macro IoU": 0.06783369803063458,
-        "span avg micro IoU": 0.11170234114744937
+        "precision": 0.2,
+        "recall": 0.136,
+        "f1-score": 0.1619047619047619,
+        "macro IoU": 0.08808290155440414,
+        "avg micro IoU": 0.1815068493150685,
+        "span precision": 0.6211180124223602,
+        "span recall": 0.2403846153846154,
+        "span f1-score": 0.3466204506065858,
+        "span macro IoU": 0.20964360587002095,
+        "span avg micro IoU": 0.29289812606453286
     },
     "reviews": [
         {
@@ -63,7 +81,7 @@
                     "shoes",
                     "appearance#color",
                     "negative",
-                    "NULL",
+                    "color choices from previous shoes was much better",
                     "indirect"
                 ]
             ],
@@ -95,8 +113,8 @@
                 "num_predicted": 3,
                 "num_true": 3
             },
-            "total opinion micro IoU": 0.5,
-            "indirect opinion micro IoU": 0.0
+            "total opinion micro IoU": 1.0,
+            "indirect opinion micro IoU": 1.0
         },
         {
             "idx": 1,
@@ -319,7 +337,7 @@
                     "NULL",
                     "appearance#general",
                     "positive",
-                    "NULL",
+                    "cute though",
                     "indirect"
                 ]
             ],
@@ -351,8 +369,8 @@
                 "num_predicted": 3,
                 "num_true": 3
             },
-            "total opinion micro IoU": 0.5,
-            "indirect opinion micro IoU": 0.0
+            "total opinion micro IoU": 1.0,
+            "indirect opinion micro IoU": 1.0
         },
         {
             "idx": 5,
@@ -362,7 +380,7 @@
                     "shoe",
                     "performance#sizing/fit",
                     "neutral",
-                    "NULL",
+                    "roomier all around",
                     "indirect"
                 ],
                 [
@@ -546,7 +564,7 @@
                     "NULL",
                     "performance#general",
                     "positive",
-                    "NULL",
+                    "the shoes were very light",
                     "indirect"
                 ]
             ],
@@ -578,8 +596,8 @@
                 "num_predicted": 3,
                 "num_true": 3
             },
-            "total opinion micro IoU": 0.5,
-            "indirect opinion micro IoU": 0.0
+            "total opinion micro IoU": 1.0,
+            "indirect opinion micro IoU": 1.0
         },
         {
             "idx": 8,
@@ -653,7 +671,7 @@
                     "kicks",
                     "appearance#form",
                     "positive",
-                    "NULL",
+                    "never need laces again",
                     "indirect"
                 ],
                 [
@@ -734,8 +752,8 @@
                 "num_predicted": 6,
                 "num_true": 6
             },
-            "total opinion micro IoU": 0.7142857142857143,
-            "indirect opinion micro IoU": 0.0
+            "total opinion micro IoU": 1.0,
+            "indirect opinion micro IoU": 1.0
         },
         {
             "idx": 10,
@@ -1134,7 +1152,7 @@
                     "heel",
                     "appearance#shoe component",
                     "negative",
-                    "NULL",
+                    "seems the heel of the shoe is more trouble than shoestrings",
                     "indirect"
                 ]
             ],
@@ -1923,7 +1941,7 @@
                     "NULL",
                     "contextofuse#purchase\\_context",
                     "negative",
-                    "NULL",
+                    "receiving my order almost a month later",
                     "indirect"
                 ],
                 [
@@ -3283,14 +3301,14 @@
                     "NULL",
                     "contextofuse#purchase\\_context",
                     "positive",
-                    "NULL",
+                    "as an adidas lover",
                     "indirect"
                 ],
                 [
                     "running shoes",
                     "contextofuse#purchase\\_context",
                     "neutral",
-                    "NULL",
+                    "super excited to purchase these",
                     "indirect"
                 ],
                 [
@@ -3304,14 +3322,14 @@
                     "laces",
                     "performance#durability",
                     "negative",
-                    "NULL",
+                    "laces are held together by elastics",
                     "indirect"
                 ],
                 [
                     "laces",
                     "appearance#shoe component",
                     "negative",
-                    "NULL",
+                    "elastic snapped on one shoe making them unwearable",
                     "indirect"
                 ],
                 [
@@ -3325,7 +3343,7 @@
                     "sneaker",
                     "appearance#misc",
                     "negative",
-                    "NULL",
+                    "super disappointing quality",
                     "indirect"
                 ]
             ],
@@ -3385,8 +3403,8 @@
                 "num_predicted": 7,
                 "num_true": 7
             },
-            "total opinion micro IoU": 0.2857142857142857,
-            "indirect opinion micro IoU": 0.0
+            "total opinion micro IoU": 0.3,
+            "indirect opinion micro IoU": 0.125
         },
         {
             "idx": 43,
@@ -3453,7 +3471,7 @@
                     "10w",
                     "performance#sizing/fit",
                     "negative",
-                    "NULL",
+                    "i ordered a 10w and it was definitely not wider than normal",
                     "indirect"
                 ],
                 [
@@ -3702,7 +3720,7 @@
                     "NULL",
                     "appearance#form",
                     "negative",
-                    "NULL",
+                    "the form was too hard",
                     "indirect"
                 ],
                 [
@@ -4957,7 +4975,7 @@
                     "shoe",
                     "contextofuse#use case",
                     "neutral",
-                    "NULL",
+                    "reebox still manufactures a fine shoe which can still be modified",
                     "indirect"
                 ],
                 [
@@ -5003,7 +5021,7 @@
                 "num_predicted": 3,
                 "num_true": 3
             },
-            "total opinion micro IoU": 0.3333333333333333,
+            "total opinion micro IoU": 0.5,
             "indirect opinion micro IoU": 0.0
         },
         {
@@ -5709,7 +5727,7 @@
                     "leather",
                     "appearance#material",
                     "negative",
-                    "i ' d rather have the classic in leather",
+                    "NULL",
                     "indirect"
                 ],
                 [
@@ -5752,7 +5770,7 @@
                     "NULL",
                     "performance#use case applicability",
                     "positive",
-                    "feel like i can run a marathon",
+                    "every time i put them on i feel like i can run a marathon",
                     "indirect"
                 ],
                 [
@@ -5798,8 +5816,8 @@
                 "num_predicted": 3,
                 "num_true": 3
             },
-            "total opinion micro IoU": 1.0,
-            "indirect opinion micro IoU": 1.0
+            "total opinion micro IoU": 0.5,
+            "indirect opinion micro IoU": 0.0
         },
         {
             "idx": 76,
@@ -5923,7 +5941,7 @@
                     "the size",
                     "performance#sizing/fit",
                     "negative",
-                    "NULL",
+                    "the size",
                     "indirect"
                 ],
                 [
@@ -6072,7 +6090,7 @@
                     "classic",
                     "performance#general",
                     "positive",
-                    "NULL",
+                    "the classic is the way to go",
                     "indirect"
                 ]
             ],
@@ -6535,7 +6553,7 @@
                     "NULL",
                     "contextofuse#review\\_temporality",
                     "positive",
-                    "NULL",
+                    "i have been wearing these for years",
                     "indirect"
                 ],
                 [
@@ -6549,7 +6567,7 @@
                     "NULL",
                     "performance#sizing/fit",
                     "negative",
-                    "NULL",
+                    "i ' d recommend going up at least a half size",
                     "indirect"
                 ]
             ],
@@ -6581,8 +6599,8 @@
                 "num_predicted": 3,
                 "num_true": 3
             },
-            "total opinion micro IoU": 0.25,
-            "indirect opinion micro IoU": 0.0
+            "total opinion micro IoU": 0.5,
+            "indirect opinion micro IoU": 0.3333333333333333
         },
         {
             "idx": 89,
@@ -7010,7 +7028,7 @@
                     "NULL",
                     "performance#sizing/fit",
                     "negative",
-                    "NULL",
+                    "order at least half size larger than usual",
                     "indirect"
                 ]
             ],
@@ -7035,8 +7053,8 @@
                 "num_predicted": 2,
                 "num_true": 2
             },
-            "total opinion micro IoU": 0.3333333333333333,
-            "indirect opinion micro IoU": 0.0
+            "total opinion micro IoU": 1.0,
+            "indirect opinion micro IoU": 1.0
         },
         {
             "idx": 95,
@@ -7145,35 +7163,35 @@
                     "NULL",
                     "performance#sizing/fit",
                     "negative",
-                    "NULL",
+                    "sizing runs small",
                     "indirect"
                 ],
                 [
                     "shoes",
                     "contextofuse#usage frequency",
                     "negative",
-                    "NULL",
+                    "had to exchange for a half size up",
                     "indirect"
                 ],
                 [
                     "shoes",
                     "performance#durability",
                     "negative",
-                    "NULL",
+                    "after wearing these shoes twice , the upper leather ripped",
                     "indirect"
                 ],
                 [
                     "NULL",
                     "performance#general",
                     "negative",
-                    "NULL",
+                    "disappointed in the quality",
                     "indirect"
                 ],
                 [
                     "NULL",
                     "appearance#misc",
                     "negative",
-                    "NULL",
+                    "had high expectations",
                     "indirect"
                 ]
             ],
@@ -7233,8 +7251,8 @@
                 "num_predicted": 7,
                 "num_true": 7
             },
-            "total opinion micro IoU": 0.2857142857142857,
-            "indirect opinion micro IoU": 0.0
+            "total opinion micro IoU": 0.3,
+            "indirect opinion micro IoU": 0.125
         },
         {
             "idx": 97,
@@ -7967,14 +7985,14 @@
                     "NULL",
                     "appearance#general",
                     "positive",
-                    "NULL",
+                    "i have always liked this style",
                     "indirect"
                 ],
                 [
                     "NULL",
                     "appearance#material",
                     "negative",
-                    "NULL",
+                    "when you said they where leather , i think you should say they are leather and manmade",
                     "indirect"
                 ]
             ],
@@ -7999,8 +8017,8 @@
                 "num_predicted": 2,
                 "num_true": 2
             },
-            "total opinion micro IoU": 0.0,
-            "indirect opinion micro IoU": 0.0
+            "total opinion micro IoU": 0.3333333333333333,
+            "indirect opinion micro IoU": 0.3333333333333333
         },
         {
             "idx": 107,
@@ -8188,7 +8206,7 @@
                     "NULL",
                     "cost/value",
                     "positive",
-                    "NULL",
+                    "going to keep these and try a different model",
                     "indirect"
                 ]
             ],
@@ -8309,7 +8327,7 @@
                     "shoe",
                     "performance#sizing/fit",
                     "negative",
-                    "NULL",
+                    "fits a bit small",
                     "indirect"
                 ],
                 [
@@ -8383,8 +8401,8 @@
                 "num_predicted": 5,
                 "num_true": 5
             },
-            "total opinion micro IoU": 0.6,
-            "indirect opinion micro IoU": 0.0
+            "total opinion micro IoU": 1.0,
+            "indirect opinion micro IoU": 1.0
         },
         {
             "idx": 113,
@@ -8408,7 +8426,7 @@
                     "NULL",
                     "performance#sizing/fit",
                     "negative",
-                    "NULL",
+                    "i also had to buy a half size larger they run small",
                     "indirect"
                 ]
             ],
@@ -8440,8 +8458,8 @@
                 "num_predicted": 3,
                 "num_true": 3
             },
-            "total opinion micro IoU": 0.5,
-            "indirect opinion micro IoU": 0.0
+            "total opinion micro IoU": 1.0,
+            "indirect opinion micro IoU": 1.0
         },
         {
             "idx": 114,
@@ -8600,7 +8618,7 @@
                     "shoes",
                     "appearance#material",
                     "negative",
-                    "the stitching is different",
+                    "NULL",
                     "indirect"
                 ],
                 [
@@ -8621,7 +8639,7 @@
                     "reeboks",
                     "contextofuse#purchase\\_context",
                     "negative",
-                    "didn ' t feel like the classic running shoes",
+                    "NULL",
                     "indirect"
                 ]
             ],
@@ -8742,7 +8760,7 @@
                     "NULL",
                     "cost/value",
                     "negative",
-                    "NULL",
+                    "i returned my mail order to closest finish line store",
                     "indirect"
                 ],
                 [
@@ -8906,7 +8924,7 @@
                     "wide width shoe",
                     "contextofuse#purchase\\_context",
                     "negative",
-                    "NULL",
+                    "only 1 pair of wide width shoe in the entire store",
                     "indirect"
                 ],
                 [
@@ -8952,8 +8970,8 @@
                 "num_predicted": 3,
                 "num_true": 3
             },
-            "total opinion micro IoU": 0.5,
-            "indirect opinion micro IoU": 0.0
+            "total opinion micro IoU": 1.0,
+            "indirect opinion micro IoU": 1.0
         },
         {
             "idx": 122,

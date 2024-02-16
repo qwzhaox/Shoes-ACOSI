@@ -6,8 +6,8 @@ from utils.evaluate_utils import extract_spans_para
 sentiment_dict = {"great": "positive", "ok": "neutral", "bad": "negative"}
 
 
-def get_mvp_output(pkl_file, category_file, num_path=5):
-    with open(pkl_file, "rb") as f:
+def get_mvp_output(model_output_file, category_file, num_path=5):
+    with open(model_output_file, "rb") as f:
         (outputs, targets, _) = pickle.load(f)
     with open(category_file, "rb") as f:
         global category_dict

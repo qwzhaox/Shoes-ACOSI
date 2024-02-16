@@ -3,6 +3,7 @@ import argparse
 from statistics import mean, median, stdev
 from utils.evaluate_utils import (
     ASPECT_IDX,
+    SENTIMENT_IDX,
     OPINION_IDX,
     IMPLICIT_IND_IDX,
     IDX_LIST,
@@ -18,14 +19,15 @@ from utils.evaluate_utils import (
 from utils.mvp_evaluate import get_mvp_output
 from utils.llm_evaluate import get_llm_output
 from utils.t5_evaluate import get_t5_output
+from utils.gen_scl_nat_evaluate import get_gen_scl_nat_output
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "-d", "--dataset_file", type=str, default="data/acosi_dataset/shoes/test.txt"
 )
 parser.add_argument(
-    "-p",
-    "--pkl_file",
+    "-m",
+    "--model_output_file",
     type=str,
     default="data/mvp_dataset/result_cd_acosi_shoes_path5_beam1.pickle",
 )
@@ -45,12 +47,13 @@ parser.add_argument(
 parser.add_argument("-mvp", "--mvp_output", action="store_true")
 parser.add_argument("-llm", "--llm_output", action="store_true")
 parser.add_argument("-t5", "--t5_output", action="store_true")
+parser.add_argument("-gen-scl-nat", "--gen-scl-nat_output", action="store_true")
 args = parser.parse_args()
 
 
 class Evaluator:
     def __init__(self, process_func, **kwargs):
-        self.pred_outputs = process_func(pkl_file=args.pkl_file, **kwargs)
+        self.pred_outputs = process_func(model_output_file=args.model_output_file, **kwargs)
 
         with open(args.dataset_file, "r") as file:
             dataset = file.readlines()
@@ -159,6 +162,59 @@ class Evaluator:
             self.num_predicted_list.append(len(self.pred_outputs[i]))
             self.num_true_list.append(len(self.true_outputs[i]))
 
+        self.num_ea_eo = 0
+        self.num_ea_io = 0
+        self.num_ia_eo = 0
+        self.num_ia_io = 0
+
+        self.num_pred_ea_eo = 0
+        self.num_pred_ea_io = 0
+        self.num_pred_ia_eo = 0
+        self.num_pred_ia_io = 0
+
+        self.num_positive = 0
+        self.num_negative = 0
+        self.num_neutral = 0
+
+        self.num_pred_positive = 0
+        self.num_pred_negative = 0
+        self.num_pred_neutral = 0
+
+        for pred_output, true_output in zip(self.pred_outputs, self.true_outputs):
+            for quint in pred_output:
+                if quint[ASPECT_IDX] == "NULL" and quint[OPINION_IDX] == "NULL":
+                    self.num_pred_ia_io += 1
+                elif quint[ASPECT_IDX] == "NULL":
+                    self.num_pred_ia_eo += 1
+                elif quint[OPINION_IDX] == "NULL":
+                    self.num_pred_ea_io += 1
+                else:
+                    self.num_pred_ea_eo += 1
+
+                if quint[SENTIMENT_IDX] == "positive":
+                    self.num_pred_positive += 1
+                elif quint[SENTIMENT_IDX] == "negative":
+                    self.num_pred_negative += 1
+                else:
+                    self.num_pred_neutral += 1
+            
+            for quint in true_output:
+                if quint[ASPECT_IDX] == "NULL" and quint[OPINION_IDX] == "NULL":
+                    self.num_ia_io += 1
+                elif quint[ASPECT_IDX] == "NULL":
+                    self.num_ia_eo += 1
+                elif quint[OPINION_IDX] == "NULL":
+                    self.num_ea_io += 1
+                else:
+                    self.num_ea_eo += 1
+
+                if quint[SENTIMENT_IDX] == "positive":
+                    self.num_positive += 1
+                elif quint[SENTIMENT_IDX] == "negative":
+                    self.num_negative += 1
+                else:
+                    self.num_neutral += 1
+
     def calc_exact_scores(self):
         print("Calculating exact scores...")
         (
@@ -237,6 +293,26 @@ class Evaluator:
         metadata["num tuples"]["mean"] = mean(self.num_true_list)
         metadata["num tuples"]["median"] = median(self.num_true_list)
         metadata["num tuples"]["stdev"] = stdev(self.num_true_list)
+
+        metadata["num e/i"] = {}
+        metadata["num e/i"]["ea eo"] = self.num_ea_eo
+        metadata["num e/i"]["ea io"] = self.num_ea_io
+        metadata["num e/i"]["ia eo"] = self.num_ia_eo
+        metadata["num e/i"]["ia io"] = self.num_ia_io
+
+        metadata["num e/i"]["pred ea eo"] = self.num_pred_ea_eo
+        metadata["num e/i"]["pred ea io"] = self.num_pred_ea_io
+        metadata["num e/i"]["pred ia eo"] = self.num_pred_ia_eo
+        metadata["num e/i"]["pred ia io"] = self.num_pred_ia_io
+
+        metadata["num sentiment"] = {}
+        metadata["num sentiment"]["positive"] = self.num_positive
+        metadata["num sentiment"]["negative"] = self.num_negative
+        metadata["num sentiment"]["neutral"] = self.num_neutral
+
+        metadata["num sentiment"]["pred positive"] = self.num_pred_positive
+        metadata["num sentiment"]["pred negative"] = self.num_pred_negative
+        metadata["num sentiment"]["pred neutral"] = self.num_pred_neutral
 
         return metadata
 
@@ -384,6 +460,9 @@ elif args.llm_output:
 elif args.t5_output:
     evaluate_t5_outputs = Evaluator(get_t5_output)
     scores = evaluate_t5_outputs.get_scores()
+elif args.gen_scl_nat_output:
+    evaluate_gen_scl_nat_outputs = Evaluator(get_gen_scl_nat_output, category_file=args.category_file, task=args.task)
+    scores = evaluate_gen_scl_nat_outputs.get_scores()
 
 with open(args.output_file, "w") as file:
     json.dump(scores, file, indent=4)

@@ -14,12 +14,12 @@ dataset_path="../LLM-acosi/data/"
 output_base_path="eval_output/$model_dir/"
 
 # Find all .pkl files
-pkl_files=$(find "$pkl_path" -wholename "*/$model_dir/*.pkl")
+model_output_files=$(find "$pkl_path" -wholename "*/$model_dir/*.pkl")
 
 # Loop through each .pkl file
-for pkl_file in $pkl_files; do
+for model_output_file in $model_output_files; do
     # Extract model, task, and dataset from the file path
-    IFS='/' read -r -a path_array <<< "$pkl_file"
+    IFS='/' read -r -a path_array <<< "$model_output_file"
     model=${path_array[4]}
     task=${path_array[5]}
     dataset=${path_array[6]}
@@ -54,10 +54,10 @@ for pkl_file in $pkl_files; do
 
     # Run evaluation script
     if [ "$task" == "acos-extend" ]; then
-        python3 scripts/eval/evaluate.py --dataset_file="$dataset_file" --pkl_file="$pkl_file" --category_file="$category_dict" --output_file="$output_file" --task="acos-extend" -llm
+        python3 scripts/eval/evaluate.py --dataset_file="$dataset_file" --model_output_file="$model_output_file" --category_file="$category_dict" --output_file="$output_file" --task="acos-extend" -llm
     elif [ "$task" == "acos-extract" ]; then
-        python3 scripts/eval/evaluate.py --dataset_file="$dataset_file" --pkl_file="$pkl_file" --category_file="$category_dict" --output_file="$output_file" --task="acos-extract" -llm
+        python3 scripts/eval/evaluate.py --dataset_file="$dataset_file" --model_output_file="$model_output_file" --category_file="$category_dict" --output_file="$output_file" --task="acos-extract" -llm
     else
-        python3 scripts/eval/evaluate.py --dataset_file="$dataset_file" --pkl_file="$pkl_file" --category_file="$category_dict" --output_file="$output_file" --task="acosi-extract" -llm
+        python3 scripts/eval/evaluate.py --dataset_file="$dataset_file" --model_output_file="$model_output_file" --category_file="$category_dict" --output_file="$output_file" --task="acosi-extract" -llm
     fi
 done

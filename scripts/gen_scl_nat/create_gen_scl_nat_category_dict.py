@@ -1,7 +1,7 @@
 import json
 import argparse
-from sys import path
 from pathlib import Path
+from sys import path
 path.insert(1, '.')
 from scripts.dataprocess.get_categories import get_categories
 

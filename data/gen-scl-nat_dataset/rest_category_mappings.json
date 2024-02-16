@@ -1,0 +1,56 @@
+{
+    "restaurant_full_mapping": [
+        [
+            "the location",
+            "LOCATION#GENERAL"
+        ],
+        [
+            "the food prices",
+            "FOOD#PRICES"
+        ],
+        [
+            "the food quality",
+            "FOOD#QUALITY"
+        ],
+        [
+            "the food overall",
+            "FOOD#GENERAL"
+        ],
+        [
+            "the ambience",
+            "AMBIENCE#GENERAL"
+        ],
+        [
+            "the service",
+            "SERVICE#GENERAL"
+        ],
+        [
+            "the restaurant's prices",
+            "RESTAURANT#PRICES"
+        ],
+        [
+            "the drink prices",
+            "DRINKS#PRICES"
+        ],
+        [
+            "miscellaenous or anything else",
+            "RESTAURANT#MISCELLANEOUS"
+        ],
+        [
+            "the drink quality",
+            "DRINKS#QUALITY"
+        ],
+        [
+            "the drink styles and options",
+            "DRINKS#STYLE_OPTIONS"
+        ],
+        [
+            "the restaurant overall",
+            "RESTAURANT#GENERAL"
+        ],
+        [
+            "the food styles and options",
+            "FOOD#STYLE_OPTIONS"
+        ]
+    ]
+}

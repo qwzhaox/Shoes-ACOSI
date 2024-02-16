@@ -14,6 +14,24 @@
             "mean": 4.144,
             "median": 4,
             "stdev": 1.6593041681923917
+        },
+        "num e/i": {
+            "ea eo": 191,
+            "ea io": 74,
+            "ia eo": 179,
+            "ia io": 74,
+            "pred ea eo": 293,
+            "pred ea io": 19,
+            "pred ia eo": 113,
+            "pred ia io": 23
+        },
+        "num sentiment": {
+            "positive": 194,
+            "negative": 272,
+            "neutral": 52,
+            "pred positive": 197,
+            "pred negative": 202,
+            "pred neutral": 49
         }
     },
     "exact": {

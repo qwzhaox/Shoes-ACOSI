@@ -31,7 +31,7 @@ def get_gen_scl_nat_output(model_output_file, category_file, task):
             try:
                 ac = category_dict[ac].lower().strip()
             except:
-                print("Error: ", ac)
+                print("Category not found: ", ac)
                 ac = ac.lower().strip()
 
             at = clean_punctuation(at)

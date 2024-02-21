@@ -1,5 +1,6 @@
 import json
 import argparse
+from pathlib import Path
 from statistics import mean, median, stdev
 from utils.evaluate_utils import (
     ASPECT_IDX,
@@ -10,6 +11,8 @@ from utils.evaluate_utils import (
     TERM_LIST,
     NUM_SPANS,
     SPAN_IDX,
+    process_dataset,
+    accumulate_ea_eo_ia_io_sent,
     get_combos,
     indexify_outputs,
     listify_outputs,
@@ -58,32 +61,11 @@ class Evaluator:
         with open(args.dataset_file, "r") as file:
             dataset = file.readlines()
 
-        self.__set_outputs(dataset)
+        self.reviews, self.true_outputs = process_dataset(dataset)
         self.__set_tuple_len_according_to_task()
         self.__init_exact_scores()
         self.__init_partial_scores()
         self.__init_combo_scores()
-
-    def __set_outputs(self, dataset):
-        self.reviews = [x.split("####")[0] for x in dataset]
-
-        raw_true_outputs = [eval(x.split("####")[1]) for x in dataset]
-        self.true_outputs = []
-        for output in raw_true_outputs:
-            list_of_tuples = []
-            for quint in output:
-                if (
-                    quint[ASPECT_IDX].lower() == "null"
-                    or quint[ASPECT_IDX].lower() == "implicit"
-                ):
-                    quint[ASPECT_IDX] = "NULL"
-                if (
-                    quint[OPINION_IDX] == "null"
-                    or quint[OPINION_IDX].lower() == "implicit"
-                ):
-                    quint[OPINION_IDX] = "NULL"
-                list_of_tuples.append(tuple(quint))
-            self.true_outputs.append(list_of_tuples)
 
     def __set_tuple_len_according_to_task(self):
         if args.task == "acos-extend" or args.task == "acosi-extract":
@@ -93,7 +75,7 @@ class Evaluator:
         else:
             raise ValueError("Invalid task")
         self.combos = get_combos(self.tuple_len)
-        if len(self.pred_outputs[0][0]) > self.tuple_len:
+        if self.pred_outputs[0] and len(self.pred_outputs[0][0]) > self.tuple_len:
             new_pred_outputs = []
             for annotation in self.pred_outputs:
                 annotation = [quint[: self.tuple_len] for quint in annotation]
@@ -152,69 +134,143 @@ class Evaluator:
 
     def calc_metadata(self):
         print("Calculating metadata...")
+        train_dataset = Path(args.dataset_file).parent / "train.txt"
+        dev_dataset = Path(args.dataset_file).parent / "dev.txt"
+
+        with open(train_dataset, "r") as file:
+            train_dataset = file.readlines()
+        
+        with open(dev_dataset, "r") as file:
+            dev_dataset = file.readlines()
+
+        train_reviews, train_outputs = process_dataset(train_dataset)
+        dev_reviews, dev_outputs = process_dataset(dev_dataset)
+
+        self.test_split = len(self.reviews)
+        self.train_split = len(train_reviews)
+        self.dev_split = len(dev_reviews)
+
+        self.total_dataset = self.test_split + self.train_split + self.dev_split
+
         self.review_len_list = []
-        self.num_predicted_list = []
+        self.total_true_list = []
+
         self.num_true_list = []
+        self.num_predicted_list = []
+
         self.aspect_span_len_list = []
         self.opinion_span_len_list = []
+
         for i, review in enumerate(self.reviews):
             self.review_len_list.append(len(review.split()))
-            self.num_predicted_list.append(len(self.pred_outputs[i]))
-            self.num_true_list.append(len(self.true_outputs[i]))
+            self.total_true_list.append(len(self.true_outputs[i]))
 
+            self.num_true_list.append(len(self.true_outputs[i]))
+            self.num_predicted_list.append(len(self.pred_outputs[i]))
+
+        for i, review in enumerate(train_reviews):
+            self.review_len_list.append(len(review.split()))
+            self.total_true_list.append(len(train_outputs[i]))
+        
+        for i, review in enumerate(dev_reviews):
+            self.review_len_list.append(len(review.split()))
+            self.total_true_list.append(len(dev_outputs[i]))
+
+        self.__init_ea_eo_ia_io()
+        self.__init_sentiment()
+
+        for pred_output, true_output in zip(self.pred_outputs, self.true_outputs):
+            self.__accumulate_true(true_output)
+            self.__accumulate_pred(pred_output)
+
+        self.__set_test_ea_eo_ia_io()
+        self.__set_test_sentiment()
+
+        for output in train_outputs + dev_outputs:
+            self.__accumulate_true(output)
+
+    def __init_ea_eo_ia_io(self):
         self.num_ea_eo = 0
         self.num_ea_io = 0
         self.num_ia_eo = 0
         self.num_ia_io = 0
+
+        self.num_test_ea_eo = 0
+        self.num_test_ea_io = 0
+        self.num_test_ia_eo = 0
+        self.num_test_ia_io = 0
 
         self.num_pred_ea_eo = 0
         self.num_pred_ea_io = 0
         self.num_pred_ia_eo = 0
         self.num_pred_ia_io = 0
 
+    def __init_sentiment(self):
         self.num_positive = 0
         self.num_negative = 0
         self.num_neutral = 0
+
+        self.num_test_positive = 0
+        self.num_test_negative = 0
+        self.num_test_neutral = 0
 
         self.num_pred_positive = 0
         self.num_pred_negative = 0
         self.num_pred_neutral = 0
 
-        for pred_output, true_output in zip(self.pred_outputs, self.true_outputs):
-            for quint in pred_output:
-                if quint[ASPECT_IDX] == "NULL" and quint[OPINION_IDX] == "NULL":
-                    self.num_pred_ia_io += 1
-                elif quint[ASPECT_IDX] == "NULL":
-                    self.num_pred_ia_eo += 1
-                elif quint[OPINION_IDX] == "NULL":
-                    self.num_pred_ea_io += 1
-                else:
-                    self.num_pred_ea_eo += 1
+    def __set_test_ea_eo_ia_io(self):
+        self.num_test_ea_eo = self.num_ea_eo
+        self.num_test_ea_io = self.num_ea_io
+        self.num_test_ia_eo = self.num_ia_eo
+        self.num_test_ia_io = self.num_ia_io
+    
+    def __set_test_sentiment(self):
+        self.num_test_positive = self.num_positive
+        self.num_test_negative = self.num_negative
+        self.num_test_neutral = self.num_neutral
 
-                if quint[SENTIMENT_IDX] == "positive":
-                    self.num_pred_positive += 1
-                elif quint[SENTIMENT_IDX] == "negative":
-                    self.num_pred_negative += 1
-                else:
-                    self.num_pred_neutral += 1
-            
-            for quint in true_output:
-                if quint[ASPECT_IDX] == "NULL" and quint[OPINION_IDX] == "NULL":
-                    self.num_ia_io += 1
-                elif quint[ASPECT_IDX] == "NULL":
-                    self.num_ia_eo += 1
-                elif quint[OPINION_IDX] == "NULL":
-                    self.num_ea_io += 1
-                else:
-                    self.num_ea_eo += 1
+    def __accumulate_true(self, output):
+        self.num_ea_eo, \
+        self.num_ea_io, \
+        self.num_ia_eo, \
+        self.num_ia_io, \
+        self.num_positive, \
+        self.num_negative, \
+        self.num_neutral = accumulate_ea_eo_ia_io_sent(
+            output, 
+            (
+                self.num_ea_eo, 
+                self.num_ea_io, 
+                self.num_ia_eo, 
+                self.num_ia_io, 
+                self.num_positive, 
+                self.num_negative, 
+                self.num_neutral
+            ),
+            self.tuple_len
+        )
 
-                if quint[SENTIMENT_IDX] == "positive":
-                    self.num_positive += 1
-                elif quint[SENTIMENT_IDX] == "negative":
-                    self.num_negative += 1
-                else:
-                    self.num_neutral += 1
-
+    def __accumulate_pred(self, output):
+        self.num_pred_ea_eo, \
+        self.num_pred_ea_io, \
+        self.num_pred_ia_eo, \
+        self.num_pred_ia_io, \
+        self.num_pred_positive, \
+        self.num_pred_negative, \
+        self.num_pred_neutral = accumulate_ea_eo_ia_io_sent(
+            output,
+            (
+                self.num_pred_ea_eo,
+                self.num_pred_ea_io,
+                self.num_pred_ia_eo,
+                self.num_pred_ia_io,
+                self.num_pred_positive,
+                self.num_pred_negative,
+                self.num_pred_neutral
+            ),
+            self.tuple_len
+        )
+        
     def calc_exact_scores(self):
         print("Calculating exact scores...")
         (
@@ -274,45 +330,77 @@ class Evaluator:
     def get_metadata(self):
         metadata = {}
 
-        metadata["num tokens per review"] = {}
-        metadata["num tokens per review"]["mean"] = mean(self.review_len_list)
-        metadata["num tokens per review"]["median"] = median(
+        metadata["splits"] = {}
+        metadata["splits"]["test"] = self.test_split
+        metadata["splits"]["train"] = self.train_split
+        metadata["splits"]["dev"] = self.dev_split
+        metadata["splits"]["total"] = self.total_dataset
+
+        metadata["tokens/review"] = {}
+        metadata["tokens/review"]["mean"] = mean(self.review_len_list)
+        metadata["tokens/review"]["median"] = median(
             self.review_len_list)
-        metadata["num tokens per review"]["stdev"] = stdev(
+        metadata["tokens/review"]["stdev"] = stdev(
             self.review_len_list)
+        metadata["tokens/review"]["min"] = min(self.review_len_list)
+        metadata["tokens/review"]["max"] = max(self.review_len_list)
+        metadata["tokens/review"]["count"] = sum(self.review_len_list)
 
-        metadata["num tuples predicted"] = {}
-        metadata["num tuples predicted"]["mean"] = mean(
+        metadata["tuples predicted"] = {}
+        metadata["tuples predicted"]["mean"] = mean(
             self.num_predicted_list)
-        metadata["num tuples predicted"]["median"] = median(
+        metadata["tuples predicted"]["median"] = median(
             self.num_predicted_list)
-        metadata["num tuples predicted"]["stdev"] = stdev(
+        metadata["tuples predicted"]["stdev"] = stdev(
             self.num_predicted_list)
+        metadata["tuples predicted"]["min"] = min(self.num_predicted_list)
+        metadata["tuples predicted"]["max"] = max(self.num_predicted_list)
+        metadata["tuples predicted"]["count"] = sum(self.num_predicted_list)
 
-        metadata["num tuples"] = {}
-        metadata["num tuples"]["mean"] = mean(self.num_true_list)
-        metadata["num tuples"]["median"] = median(self.num_true_list)
-        metadata["num tuples"]["stdev"] = stdev(self.num_true_list)
+        metadata["tuples test"] = {}
+        metadata["tuples test"]["mean"] = mean(self.num_true_list)
+        metadata["tuples test"]["median"] = median(self.num_true_list)
+        metadata["tuples test"]["stdev"] = stdev(self.num_true_list)
+        metadata["tuples test"]["min"] = min(self.num_true_list)
+        metadata["tuples test"]["max"] = max(self.num_true_list)
+        metadata["tuples test"]["count"] = sum(self.num_true_list)
 
-        metadata["num e/i"] = {}
-        metadata["num e/i"]["ea eo"] = self.num_ea_eo
-        metadata["num e/i"]["ea io"] = self.num_ea_io
-        metadata["num e/i"]["ia eo"] = self.num_ia_eo
-        metadata["num e/i"]["ia io"] = self.num_ia_io
+        metadata["tuples"] = {}
+        metadata["tuples"]["mean"] = mean(self.total_true_list)
+        metadata["tuples"]["median"] = median(self.total_true_list)
+        metadata["tuples"]["stdev"] = stdev(self.total_true_list)
+        metadata["tuples"]["min"] = min(self.total_true_list)
+        metadata["tuples"]["max"] = max(self.total_true_list)
+        metadata["tuples"]["count"] = sum(self.total_true_list)
 
-        metadata["num e/i"]["pred ea eo"] = self.num_pred_ea_eo
-        metadata["num e/i"]["pred ea io"] = self.num_pred_ea_io
-        metadata["num e/i"]["pred ia eo"] = self.num_pred_ia_eo
-        metadata["num e/i"]["pred ia io"] = self.num_pred_ia_io
+        metadata["ea/eo/ia/io"] = {}
+        metadata["ea/eo/ia/io"]["ea/eo"] = self.num_ea_eo
+        metadata["ea/eo/ia/io"]["ea/io"] = self.num_ea_io
+        metadata["ea/eo/ia/io"]["ia/eo"] = self.num_ia_eo
+        metadata["ea/eo/ia/io"]["ia/io"] = self.num_ia_io
 
-        metadata["num sentiment"] = {}
-        metadata["num sentiment"]["positive"] = self.num_positive
-        metadata["num sentiment"]["negative"] = self.num_negative
-        metadata["num sentiment"]["neutral"] = self.num_neutral
+        metadata["ea/eo/ia/io"]["test ea/eo"] = self.num_test_ea_eo
+        metadata["ea/eo/ia/io"]["test ea/io"] = self.num_test_ea_io
+        metadata["ea/eo/ia/io"]["test ia/eo"] = self.num_test_ia_eo
+        metadata["ea/eo/ia/io"]["test ia/io"] = self.num_test_ia_io
 
-        metadata["num sentiment"]["pred positive"] = self.num_pred_positive
-        metadata["num sentiment"]["pred negative"] = self.num_pred_negative
-        metadata["num sentiment"]["pred neutral"] = self.num_pred_neutral
+        metadata["ea/eo/ia/io"]["pred ea/eo"] = self.num_pred_ea_eo
+        metadata["ea/eo/ia/io"]["pred ea/io"] = self.num_pred_ea_io
+        metadata["ea/eo/ia/io"]["pred ia/eo"] = self.num_pred_ia_eo
+        metadata["ea/eo/ia/io"]["pred ia/io"] = self.num_pred_ia_io
+
+        metadata["sentiment"] = {}
+        metadata["sentiment"]["positive"] = self.num_positive
+        metadata["sentiment"]["negative"] = self.num_negative
+        metadata["sentiment"]["neutral"] = self.num_neutral
+
+        metadata["sentiment"]["test positive"] = self.num_test_positive
+        metadata["sentiment"]["test negative"] = self.num_test_negative
+        metadata["sentiment"]["test neutral"] = self.num_test_neutral
+
+        metadata["sentiment"]["pred positive"] = self.num_pred_positive
+        metadata["sentiment"]["pred negative"] = self.num_pred_negative
+        metadata["sentiment"]["pred neutral"] = self.num_pred_neutral
 
         return metadata
 

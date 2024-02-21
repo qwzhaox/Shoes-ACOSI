@@ -52,10 +52,34 @@ def init_data():
     data['score'] = []
     return data
 
-def init_meta_data():
+def init_metadata():
     metadata = {}
-    metadata['num_tokens_per_review'] = []
-    metadata['num_tuples'] = []
+    metadata['dataset'] = []
+    metadata['stat'] = []
+    metadata['stat_type'] = []
+    metadata['stat_desc'] = []
+    metadata['value'] = []
+    return metadata
+
+def key_is_stat(key):
+    return key in ['mean', 'median', 'stdev', 'min', 'max', 'count']
+
+def parse_metadata(metadata, metadata_dict, dataset):
+    for key, value in metadata_dict.items():
+        for k, v in value.items():
+            metadata['dataset'].append(dataset.split('-')[0])
+            metadata['stat'].append(key.title() if key != 'ea/eo/ia/io' else key.upper())
+            if key_is_stat(k):
+                metadata['stat_type'].append(k.upper())
+                metadata['stat_desc'].append('-')
+            elif key == 'Splits':
+                metadata['stat_type'].append("COUNT")
+                metadata['stat_desc'].append(k.upper())
+            else:
+                metadata['stat_type'].append("COUNT")
+                metadata['stat_desc'].append(k.upper())
+            metadata['value'].append(v)
+    return metadata
 
 def init_mdtt_dict(df):
     mdtt_dict = {}
@@ -109,7 +133,7 @@ def do_reorder_columns(df, ordering, key):
     header_parts = [item for item in df.columns.get_level_values(key).unique() if item not in ordering]
     ordering = header_parts + ordering
     new_columns = df.columns[df.columns.get_level_values(key).isin(ordering)]
-    ordered_new_columns = [col for item in ordering for col in new_columns if col[0] == item]
+    ordered_new_columns = [col for item in ordering for col in new_columns if col == item or col[0] == item]
     df = df[ordered_new_columns]
     return df
 
@@ -138,6 +162,38 @@ def reorder_columns_and_rows(df, param1, param2, selected_terms):
         df = do_reorder_rows(df, DATASET_ORDERING, "dataset")
     elif param2 == "model":
         df = do_reorder_rows(df, MODEL_ORDERING, "model_type")
+
+    return df
+
+def reorganize_metadata(df):
+    print(df)
+    df = do_reorder_columns(df, ["Restaurant", "Laptop", "Shoes"], "dataset")
+    df = do_reorder_rows(df, ["Splits", "Tokens/Review", "Tuples", "EA/EO/IA/IO", "Sentiment"], "stat")
+
+    order = ['COUNT', 'MEAN', 'MEDIAN', 'STDEV', 'MIN', 'MAX']
+    sorting_key = {stat_type: order.index(stat_type) for stat_type in order if stat_type in df['stat_type'].unique()}
+    
+    tokens_review = df[df['stat'] == 'Tokens/Review'].sort_values(by='stat_type', key=lambda x: x.map(sorting_key))
+    tuples = df[df['stat'] == 'Tuples'].sort_values(by='stat_type', key=lambda x: x.map(sorting_key))
+    rest = df[~df['stat'].isin(['Tokens/Review', 'Tuples', 'TOTAL', 'TRAIN', 'TEST', 'DEV'])]
+    
+    df = pd.concat([tokens_review, tuples, rest], ignore_index=True)
+
+    top_stats_order = ['TOTAL', 'TRAIN', 'DEV', 'TEST']
+    sorting_key = {stat_desc: top_stats_order.index(stat_desc) for stat_desc in top_stats_order if stat_desc in df['stat_desc'].unique()}
+
+    splits = df[df['stat'] == 'Splits'].sort_values(by='stat_desc', key=lambda x: x.map(sorting_key))
+    rest = df[~df['stat'].isin(['Splits', 'TOTAL', 'TRAIN',  'DEV', 'TEST'])]
+
+    df = pd.concat([splits, rest], ignore_index=True)
+
+    new_categories = df['stat_desc'].unique()
+    df['stat'] = df['stat'].cat.add_categories(new_categories)
+    
+    df.loc[df['stat'] == 'Sentiment', 'stat'] = df['stat_desc']
+    df.loc[df['stat'] == 'EA/EO/IA/IO', 'stat'] = df['stat_desc']
+    df.loc[df['stat'] == 'Splits', 'stat'] = df['stat_desc']
+    df = df.drop(columns=['stat_desc'])
 
     return df
 
@@ -183,8 +239,7 @@ class EvalVisualizer:
 
     def collect_data(self, skip_dirs=[]):
         data = init_data()
-
-        meta_data = init_meta_data()
+        dataset_stat = init_metadata()
         
         for filepath in self.eval_output_dir.rglob('*.json'):
             print("Collecting data from", filepath)
@@ -198,7 +253,8 @@ class EvalVisualizer:
             dataset = get_formatted_dataset(metadata['dataset'], metadata['task'])
             task = get_formatted_task(metadata['task'])
 
-            score_dict = self.__read_and_extract_scores(filepath)
+            score_dict, dataset_stat_dict = self.__read_and_extract_scores(filepath)
+            dataset_stat = parse_metadata(dataset_stat, dataset_stat_dict, dataset)
 
             for term in score_dict.keys():
                 for metric, score in score_dict[term].items():
@@ -212,6 +268,11 @@ class EvalVisualizer:
 
         self.df = pd.DataFrame(data)
         self.df = clean_model_names(self.df)
+
+        self.df_metadata = pd.DataFrame(dataset_stat)
+        self.df_metadata = self.df_metadata.drop_duplicates()
+
+        self.__metadata_to_csv()
 
     def generate_visuals(self, create_charts=True, create_tables=True, terms_file=None):
 
@@ -241,10 +302,33 @@ class EvalVisualizer:
                 if term not in score_json:
                     continue
                 score_dict[term] = score_json[term]
+
+            dataset_stat_dict = score_json['metadata']
                     
-            return score_dict
+            return score_dict, dataset_stat_dict
 
     ### TABLE FUNCTIONS ###
+        
+    def __metadata_to_csv(self):
+        df = self.df_metadata
+        pd.set_option('display.max_rows', None)  # Show all rows
+        pd.set_option('display.max_columns', None)  # Show all columns
+        print(df)
+
+        df = df[~df['stat_desc'].str.contains('PRED ')]
+        df = df[~df['stat_desc'].str.contains('TEST ')]
+        df = df[~df['stat'].str.contains('Predicted')]
+
+        print(df)
+
+        df = df.pivot_table(index=['stat', 'stat_type', 'stat_desc'], columns='dataset', values='value').reset_index()
+        df = reorganize_metadata(df)
+
+        self.df_metadata = df
+
+        Path(self.output_dir).mkdir(parents=True, exist_ok=True)
+        self.df_metadata.to_csv(f"{self.output_dir}/metadata.csv", index=False)
+        
 
     def __scores_to_csv(self, df, const_val_1, const_val_2, terms_file):
         df = df.drop(columns=[self.constant1, self.constant2])
@@ -300,10 +384,6 @@ class EvalVisualizer:
             if len(scores) == 0:
                 continue
             param1_vals = np.delete(param1_vals, remove_idx)
-
-        print(all_scores)
-        print(param1_vals)
-        print(param2_vals)
 
         if len(param1_vals) > 1:
             width = 0.8 / len(param2_vals)  # Adjust width based on number of models

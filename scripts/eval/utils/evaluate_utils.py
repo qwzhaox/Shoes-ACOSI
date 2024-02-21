@@ -88,6 +88,53 @@ def extract_spans_para(seq, seq_type, output_type, sentiment_dict={}, category_d
     return quints
 
 
+def process_dataset(dataset):
+    reviews = [x.split("####")[0] for x in dataset]
+
+    raw_true_outputs = [eval(x.split("####")[1]) for x in dataset]
+    true_outputs = []
+    for output in raw_true_outputs:
+        list_of_tuples = []
+        for quint in output:
+            if (
+                quint[ASPECT_IDX].lower() == "null"
+                or quint[ASPECT_IDX].lower() == "implicit"
+            ):
+                quint[ASPECT_IDX] = "NULL"
+            if (
+                quint[OPINION_IDX] == "null"
+                or quint[OPINION_IDX].lower() == "implicit"
+            ):
+                quint[OPINION_IDX] = "NULL"
+            list_of_tuples.append(tuple(quint))
+        true_outputs.append(list_of_tuples)
+    return reviews, true_outputs
+
+
+def accumulate_ea_eo_ia_io_sent(output, nums, tuple_len):
+    num_ea_eo, num_ea_io, num_ia_eo, num_ia_io, pos, neg, neu = nums
+    for quint in output:
+        if (quint[ASPECT_IDX] == "NULL" and quint[OPINION_IDX] == "NULL") or \
+            (tuple_len == len(TERM_LIST) and quint[ASPECT_IDX] == "NULL" and quint[IMPLICIT_IND_IDX] == "indirect"):
+            num_ia_io += 1
+        elif quint[ASPECT_IDX] == "NULL":
+            num_ia_eo += 1
+        elif (quint[OPINION_IDX] == "NULL") or \
+                (tuple_len == len(TERM_LIST) and quint[IMPLICIT_IND_IDX] == "indirect"):
+            num_ea_io += 1
+        else:
+            num_ea_eo += 1
+
+        if quint[SENTIMENT_IDX] == "positive":
+            pos += 1
+        elif quint[SENTIMENT_IDX] == "negative":
+            neg += 1
+        else:
+            neu += 1
+
+    return num_ea_eo, num_ea_io, num_ia_eo, num_ia_io, pos, neg, neu
+
+
 def get_combos(tuple_len):
     combos = []
     for i in range(2, tuple_len):

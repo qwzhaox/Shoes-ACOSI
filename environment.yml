@@ -179,6 +179,7 @@ dependencies:
       - pattern==3.6
       - pdfminer-six==20231228
       - portend==3.2.0
+      - pyarrow==15.0.0
       - pycparser==2.21
       - pydantic==2.6.1
       - pydantic-core==2.16.2

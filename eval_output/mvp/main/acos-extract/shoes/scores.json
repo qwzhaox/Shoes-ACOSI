@@ -1,34 +1,64 @@
 {
     "metadata": {
-        "num tokens per review": {
-            "mean": 35.216,
-            "median": 31,
-            "stdev": 18.516594127012564
+        "splits": {
+            "test": 125,
+            "train": 906,
+            "dev": 116,
+            "total": 1147
         },
-        "num tuples predicted": {
+        "tokens/review": {
+            "mean": 37.40453356582389,
+            "median": 33,
+            "stdev": 19.44245315448769,
+            "min": 10,
+            "max": 103,
+            "count": 42903
+        },
+        "tuples predicted": {
             "mean": 3.672,
             "median": 3,
-            "stdev": 1.2937567204126528
+            "stdev": 1.2937567204126528,
+            "min": 1,
+            "max": 7,
+            "count": 459
         },
-        "num tuples": {
+        "tuples test": {
             "mean": 4.144,
             "median": 4,
-            "stdev": 1.6593041681923917
+            "stdev": 1.6593041681923917,
+            "min": 1,
+            "max": 8,
+            "count": 518
         },
-        "num e/i": {
-            "ea eo": 191,
-            "ea io": 74,
-            "ia eo": 179,
-            "ia io": 74,
-            "pred ea eo": 144,
-            "pred ea io": 64,
-            "pred ia eo": 194,
-            "pred ia io": 57
+        "tuples": {
+            "mean": 4.251961639058413,
+            "median": 4,
+            "stdev": 1.7753850911598992,
+            "min": 1,
+            "max": 11,
+            "count": 4877
         },
-        "num sentiment": {
-            "positive": 194,
-            "negative": 272,
-            "neutral": 52,
+        "ea/eo/ia/io": {
+            "ea/eo": 1759,
+            "ea/io": 661,
+            "ia/eo": 1644,
+            "ia/io": 813,
+            "test ea/eo": 191,
+            "test ea/io": 74,
+            "test ia/eo": 179,
+            "test ia/io": 74,
+            "pred ea/eo": 144,
+            "pred ea/io": 64,
+            "pred ia/eo": 194,
+            "pred ia/io": 57
+        },
+        "sentiment": {
+            "positive": 1830,
+            "negative": 2505,
+            "neutral": 542,
+            "test positive": 194,
+            "test negative": 272,
+            "test neutral": 52,
             "pred positive": 186,
             "pred negative": 246,
             "pred neutral": 27

@@ -8,7 +8,7 @@ from pattern.en import pluralize, singularize
 from pathlib import Path
 
 COLORS = ["#332288", "#117733", "#44AA99", "#88CCEE", "#DDCC77", "#CC6677", "#AA4499", "#882255"]
-PATTERNS = ["/", "\\", "|", "-", "+", "x", "o", "*"]
+PATTERNS = ["/", "-", "\\", "o", "+", "x", "*", "|"]
 
 PARAM_1 = 2
 PARAM_2 = 3
@@ -17,29 +17,39 @@ CONSTANT_2 = 1
 
 TASK_ORDERING = ["ACOS-Extract", "ACOSI-Extract", "ACOS-Extend"]
 DATASET_ORDERING = ["Restaurant-ACOS", "Laptop-ACOS", "Shoes-ACOS", "Shoes-ACOSI"]
-MODEL_ORDERING = ["MvP", "GEN_SCL_NAT", "GPT", "LLaMA"]
+MODEL_ORDERING = ["MvP", "GEN-SCL-NAT", "GPT", "LLaMA"]
 
 FONTSIZE = 16
+
 
 ### HELPER FUNCTIONS ###
 
 def is_skip_dir(s, substrings):
     return any(substring in s for substring in substrings)
 
+
 def parse_eval_filepath(filepath, eval_dir):
 
     try:
         parts = filepath.parts
         model_type = parts[-5] if len(parts) > 5 and parts[-5] != eval_dir else parts[-4]
+        model = parts[-4]
+        if "llama" in model_type:
+            model_type = "llama" + model_type[model_type.find("llama") + 5:]
+        if "tf-idf" in model_type or "random" in model_type:
+            print(model_type)
+            model = model + "-" + model_type[model_type.find("-") + 1:]
+            model_type = model_type[:model_type.find("-")]
         return {
             'model_type': model_type,
-            'model': parts[-4],
+            'model': model,
             'task': parts[-3],
             'dataset': parts[-2]
         }
     except IndexError:
         print(filepath)
         exit(1)
+
 
 def init_data():
     data = {}
@@ -52,6 +62,7 @@ def init_data():
     data['score'] = []
     return data
 
+
 def init_metadata():
     metadata = {}
     metadata['dataset'] = []
@@ -61,8 +72,10 @@ def init_metadata():
     metadata['value'] = []
     return metadata
 
+
 def key_is_stat(key):
     return key in ['mean', 'median', 'stdev', 'min', 'max', 'count']
+
 
 def parse_metadata(metadata, metadata_dict, dataset):
     for key, value in metadata_dict.items():
@@ -81,6 +94,7 @@ def parse_metadata(metadata, metadata_dict, dataset):
             metadata['value'].append(v)
     return metadata
 
+
 def init_mdtt_dict(df):
     mdtt_dict = {}
     mdtt_dict["model"] = sort_models_by_heading_order(df['model'].unique())
@@ -89,14 +103,18 @@ def init_mdtt_dict(df):
     mdtt_dict["term"] = df['term'].unique()
     return mdtt_dict
 
-def get_fixed_mdtt_dict(mdtt_dict, df, col):
-    mdtt_dict[col] = sort_models_by_heading_order(df[col].unique())
+
+def get_fixed_mdtt_model(mdtt_dict, df):
+    mdtt_dict["model"] = sort_models_by_heading_order(df["model"].unique())
     return mdtt_dict
+
 
 def sort_models_by_heading_order(elements):
     priority_map = {heading: priority for priority, heading in enumerate(MODEL_ORDERING)}
     def get_heading(element):
-        return element.split('-')[0]
+        if element != "GEN-SCL-NAT":
+            return element.split('-')[0]
+        return element
     sorted_elements = sorted(elements, key=lambda x: priority_map.get(get_heading(x), float('inf')))
 
     return sorted_elements
@@ -108,25 +126,33 @@ def clean_model_names(df):
     df['model'] = df['model'].str.replace("-LONG", "")
     df['model'] = df['model'].str.replace("GPT-", "")
     df['model'] = df['model'].str.replace("35", "3.5")
-    df['model_type'] = df['model_type'].replace("META-LLAMA", "LLaMA")
+    df['model'] = df['model'].str.replace("-10", "")
+    df['model'] = df['model'].str.replace("-5", "")
+    df['model'] = df['model'].str.replace("-RANDOM", "-RAND")
+    df['model'] = df['model'].str.replace("-TF-IDF", "-KNN")
+    df['model_type'] = df['model_type'].replace("LLAMA", "LLaMA")
     df['model_type'] = df['model_type'].replace("MVP", "MvP")
     return df
+
 
 def get_filtered_df(df, column, val):
     filtered_df = df.query(f"{column} == '{val}'")
     return filtered_df
+
 
 def get_double_filtered_df(df, col1, col2, val1, val2):
     filtered_df = get_filtered_df(df, col1, val1)
     filtered_df = get_filtered_df(filtered_df, col2, val2)
     return filtered_df
 
+
 def combine_model_type_and_model(df, mdtt_dict):
     if df.empty:
         return df, mdtt_dict
     df["model"] = df.apply(lambda row: row["model_type"] + "-" + row["model"] if row["model_type"] not in row["model"] else row["model"], axis=1)
     df = df.drop(columns=["model_type"])
-    return df, get_fixed_mdtt_dict(mdtt_dict, df, "model")
+    return df, get_fixed_mdtt_model(mdtt_dict, df)
+
 
 def do_reorder_columns(df, ordering, key):
     ordering = [item for item in ordering if item in df.columns.get_level_values(key).unique()]
@@ -137,10 +163,12 @@ def do_reorder_columns(df, ordering, key):
     df = df[ordered_new_columns]
     return df
 
+
 def do_reorder_rows(df, ordering, key):
     df[key] = pd.Categorical(df[key], categories=ordering, ordered=True)
     df = df.sort_values(key)
     return df
+
 
 def reorder_columns_and_rows(df, param1, param2, selected_terms):
     formatted_terms = [get_formatted_term(term) for term in selected_terms]
@@ -165,8 +193,8 @@ def reorder_columns_and_rows(df, param1, param2, selected_terms):
 
     return df
 
+
 def reorganize_metadata(df):
-    print(df)
     df = do_reorder_columns(df, ["Restaurant", "Laptop", "Shoes"], "dataset")
     df = do_reorder_rows(df, ["Splits", "Tokens/Review", "Tuples", "EA/EO/IA/IO", "Sentiment"], "stat")
 
@@ -197,10 +225,12 @@ def reorganize_metadata(df):
 
     return df
 
+
 ### FORMATTING FUNCTIONS ###
 
 def get_formatted_model(model_type, model):
     return model_type.upper(), model.upper()
+
 
 def get_formatted_dataset(dataset, task):
     dataset = f"{dataset.title()}-{task.split('-')[0].upper()}"
@@ -210,18 +240,23 @@ def get_formatted_dataset(dataset, task):
 
     return dataset
 
+
 def get_formatted_task(task):
     return f"{task.split('-')[0].upper()}-{task.split('-')[1].title()}" if len(task.split('-')) > 1 else task.upper()
 
+
 def get_formatted_term(term):
     return term.replace("_", " ").title()
+
 
 def get_formatted_metric(metric):
     metric = metric.title().replace("Avg", "Average").replace("Iou", "IoU")
     return metric
 
+
 def get_formatted_title(constant_val1, constant_val2, metric):
     return f"{constant_val1}: {constant_val2} {metric}".replace("_", " ")
+
 
 class EvalVisualizer:
     def __init__(self, terms, eval_output_dir, output_dir, ordering):
@@ -313,13 +348,10 @@ class EvalVisualizer:
         df = self.df_metadata
         pd.set_option('display.max_rows', None)  # Show all rows
         pd.set_option('display.max_columns', None)  # Show all columns
-        print(df)
 
         df = df[~df['stat_desc'].str.contains('PRED ')]
         df = df[~df['stat_desc'].str.contains('TEST ')]
         df = df[~df['stat'].str.contains('Predicted')]
-
-        print(df)
 
         df = df.pivot_table(index=['stat', 'stat_type', 'stat_desc'], columns='dataset', values='value').reset_index()
         df = reorganize_metadata(df)
@@ -347,6 +379,9 @@ class EvalVisualizer:
         if df.empty:
             return
 
+        nan_indices = df['model_type'].isna()
+        df.loc[nan_indices, 'model_type'] = df.loc[nan_indices, 'model'].values
+
         df = reorder_columns_and_rows(df, self.param1, self.param2, self.selected_terms)
 
         table_filepath = self.__get_table_filepath(const_val_1, const_val_2, terms_file)
@@ -373,8 +408,11 @@ class EvalVisualizer:
             Path(chart_filepath).parent.mkdir(parents=True, exist_ok=True)
 
             plt.savefig(chart_filepath)
-            plt.show()
+            # plt.show()
             plt.clf()
+
+        plt.close()
+    
 
     def __plot_by_param1(self, df, param1_vals, param2_vals):
         all_scores = []
@@ -401,7 +439,8 @@ class EvalVisualizer:
                 score = all_scores[i][0]
                 if score is not None:
                     plt.bar(param2_vals[i], score, label=param2_val, color=COLORS[i], hatch=PATTERNS[i])
-            plt.xticks(fontsize=FONTSIZE-1)
+            # plt.xticks(fontsize=FONTSIZE-5)
+            plt.gca().set_xticks([])
 
         return param1_vals
 
@@ -483,16 +522,26 @@ class EvalVisualizer:
         if len(param1_vals) == 1:
             xlabel = f"{legend_label} [{singularize(xlabel)}: {param1_vals[0]}]"
 
-        plt.legend(
-                title=legend_label, 
-                loc=loc, 
-                bbox_to_anchor=bbox_to_anchor, 
-                framealpha=framealpha, 
-                fontsize=FONTSIZE-2,
-                title_fontsize=FONTSIZE
-            )
+        # if len(param1_vals) > 1:
+        #     plt.legend(
+        #         title=legend_label, 
+        #         loc=loc, 
+        #         bbox_to_anchor=bbox_to_anchor, 
+        #         framealpha=framealpha, 
+        #         fontsize=FONTSIZE-2,
+        #         title_fontsize=FONTSIZE
+        #     )
 
-        # plt.xlabel(xlabel, fontsize=FONTSIZE)
+        plt.legend(
+            title=legend_label, 
+            loc=loc, 
+            bbox_to_anchor=bbox_to_anchor, 
+            framealpha=framealpha, 
+            fontsize=FONTSIZE-2,
+            title_fontsize=FONTSIZE
+        )
+
+        plt.xlabel(xlabel, fontsize=FONTSIZE)
         plt.tight_layout()
 
     ### FILEPATH FUNCTIONS ###
@@ -502,7 +551,7 @@ class EvalVisualizer:
         return chart_filepath
 
     def __get_table_filepath(self, const_val1, const_val2, terms_file):
-        filename = Path(terms_file).name
+        filename = Path(terms_file).stem
         table_filepath = f"{self.output_dir}/tables/{self.__get_filepath(filename, const_val1, const_val2)}.csv"
         return table_filepath
 
@@ -523,13 +572,13 @@ class EvalVisualizer:
 
 def main():
     parser = argparse.ArgumentParser(description='Compare performance metrics of multiple models across several datasets.')
-    parser.add_argument('-f', '--terms_file', type=str, default="eval_visualize/terms/default_chart_terms", help='File containing selected terms to compare.')
+    parser.add_argument('-f', '--terms_file', type=str, default="eval_visualize/terms/default_chart_terms.txt", help='File containing selected terms to compare.')
     parser.add_argument('-e', "--eval_output_dir", type=str, default='eval_output', help='The directory containing the evaluation output files. Default: eval_output')
     parser.add_argument("-o", "--output_dir", type=str, default='eval_visualize', help='The directory to save the charts. Default: charts')
     parser.add_argument('-c', '--create_charts', action='store_true', help='Create the charts.')
     parser.add_argument('-t', '--create_tables', action='store_true', help='Create the tables.')
-    parser.add_argument('-s', '--skip_file', action='store_true', default="eval_visualize/skip_list", help='Skip the dir if in this file.')
-    parser.add_argument('-l', '--ordering', type=list, default=["task", "term", "dataset", "model"], help='The parameters and constants of the chart: [PARAM_1, PARAM_2, CONSTANT_1, CONSTANT2].')
+    parser.add_argument('-s', '--skip_file', action='store_true', default="eval_visualize/skip_list.txt", help='Skip the dir if in this file.')
+    parser.add_argument('-l', '--ordering', type=list, default=["task", "dataset", "term", "model"], help='The parameters and constants of the chart: [PARAM_1, PARAM_2, CONSTANT_1, CONSTANT2].')
 
     args = parser.parse_args()
 

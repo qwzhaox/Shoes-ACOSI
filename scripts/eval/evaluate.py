@@ -67,71 +67,6 @@ class Evaluator:
         self.__init_partial_scores()
         self.__init_combo_scores()
 
-    def __set_tuple_len_according_to_task(self):
-        if args.task == "acos-extend" or args.task == "acosi-extract":
-            self.tuple_len = len(TERM_LIST)
-        elif args.task == "acos-extract":
-            self.tuple_len = len(TERM_LIST) - 1
-        else:
-            raise ValueError("Invalid task")
-        self.combos = get_combos(self.tuple_len)
-        if self.pred_outputs[0] and len(self.pred_outputs[0][0]) > self.tuple_len:
-            new_pred_outputs = []
-            for annotation in self.pred_outputs:
-                annotation = [quint[: self.tuple_len] for quint in annotation]
-                new_pred_outputs.append(annotation)
-            self.pred_outputs = new_pred_outputs
-
-    def __init_exact_scores(self):
-        self.precision = 0
-        self.recall = 0
-        self.f1 = 0
-        self.macro_IoU = 0
-        self.micro_IoU = []
-        self.avg_micro_IoU = 0
-
-    def __init_partial_scores(self):
-        self.partial_precision = [0] * self.tuple_len
-        self.partial_recall = [0] * self.tuple_len
-        self.partial_f1 = [0] * self.tuple_len
-        self.partial_macro_IoU = [0] * self.tuple_len
-        self.partial_micro_IoU = [[]] * self.tuple_len
-        self.partial_avg_micro_IoU = [0] * self.tuple_len
-
-        self.partial_span_precision = [0] * NUM_SPANS
-        self.partial_span_recall = [0] * NUM_SPANS
-        self.partial_span_f1 = [0] * NUM_SPANS
-        self.partial_span_macro_IoU = [0] * NUM_SPANS
-        self.partial_span_micro_IoU = [[]] * NUM_SPANS
-        self.partial_span_avg_micro_IoU = [0] * NUM_SPANS
-
-    def __init_combo_scores(self):
-        self.combo_precision = [0] * len(self.combos)
-        self.combo_recall = [0] * len(self.combos)
-        self.combo_f1 = [0] * len(self.combos)
-        self.combo_macro_IoU = [0] * len(self.combos)
-        self.combo_micro_IoU = [[]] * len(self.combos)
-        self.combo_avg_micro_IoU = [0] * len(self.combos)
-
-    def __remove_direct_opinions(self):
-        pred_outputs_remove_direct_opinion = []
-        true_outputs_remove_direct_opinion = []
-        for true_output, pred_output in zip(self.true_outputs, self.pred_outputs):
-            list_of_tuples_true = []
-            list_of_tuples_pred = []
-            for true_quint, pred_quint in zip(true_output, pred_output):
-                assert true_quint[IMPLICIT_IND_IDX] == pred_quint[IMPLICIT_IND_IDX]
-                if true_quint[IMPLICIT_IND_IDX] == "indirect":
-                    list_of_tuples_true.append(true_quint)
-                    list_of_tuples_pred.append(pred_quint)
-            assert len(list_of_tuples_true) == len(list_of_tuples_pred)
-
-            true_outputs_remove_direct_opinion.append(list_of_tuples_true)
-            pred_outputs_remove_direct_opinion.append(list_of_tuples_pred)
-
-        self.pred_outputs = pred_outputs_remove_direct_opinion
-        self.true_outputs = true_outputs_remove_direct_opinion
-
     def calc_metadata(self):
         print("Calculating metadata...")
         train_dataset = Path(args.dataset_file).parent / "train.txt"
@@ -189,88 +124,6 @@ class Evaluator:
         for output in train_outputs + dev_outputs:
             self.__accumulate_true(output)
 
-    def __init_ea_eo_ia_io(self):
-        self.num_ea_eo = 0
-        self.num_ea_io = 0
-        self.num_ia_eo = 0
-        self.num_ia_io = 0
-
-        self.num_test_ea_eo = 0
-        self.num_test_ea_io = 0
-        self.num_test_ia_eo = 0
-        self.num_test_ia_io = 0
-
-        self.num_pred_ea_eo = 0
-        self.num_pred_ea_io = 0
-        self.num_pred_ia_eo = 0
-        self.num_pred_ia_io = 0
-
-    def __init_sentiment(self):
-        self.num_positive = 0
-        self.num_negative = 0
-        self.num_neutral = 0
-
-        self.num_test_positive = 0
-        self.num_test_negative = 0
-        self.num_test_neutral = 0
-
-        self.num_pred_positive = 0
-        self.num_pred_negative = 0
-        self.num_pred_neutral = 0
-
-    def __set_test_ea_eo_ia_io(self):
-        self.num_test_ea_eo = self.num_ea_eo
-        self.num_test_ea_io = self.num_ea_io
-        self.num_test_ia_eo = self.num_ia_eo
-        self.num_test_ia_io = self.num_ia_io
-    
-    def __set_test_sentiment(self):
-        self.num_test_positive = self.num_positive
-        self.num_test_negative = self.num_negative
-        self.num_test_neutral = self.num_neutral
-
-    def __accumulate_true(self, output):
-        self.num_ea_eo, \
-        self.num_ea_io, \
-        self.num_ia_eo, \
-        self.num_ia_io, \
-        self.num_positive, \
-        self.num_negative, \
-        self.num_neutral = accumulate_ea_eo_ia_io_sent(
-            output, 
-            (
-                self.num_ea_eo, 
-                self.num_ea_io, 
-                self.num_ia_eo, 
-                self.num_ia_io, 
-                self.num_positive, 
-                self.num_negative, 
-                self.num_neutral
-            ),
-            self.tuple_len
-        )
-
-    def __accumulate_pred(self, output):
-        self.num_pred_ea_eo, \
-        self.num_pred_ea_io, \
-        self.num_pred_ia_eo, \
-        self.num_pred_ia_io, \
-        self.num_pred_positive, \
-        self.num_pred_negative, \
-        self.num_pred_neutral = accumulate_ea_eo_ia_io_sent(
-            output,
-            (
-                self.num_pred_ea_eo,
-                self.num_pred_ea_io,
-                self.num_pred_ia_eo,
-                self.num_pred_ia_io,
-                self.num_pred_positive,
-                self.num_pred_negative,
-                self.num_pred_neutral
-            ),
-            self.tuple_len
-        )
-        
     def calc_exact_scores(self):
         print("Calculating exact scores...")
         (
@@ -413,7 +266,7 @@ class Evaluator:
         scores["avg micro IoU"] = self.avg_micro_IoU
         return scores
 
-    def get_partial_scores(self, term_idx):
+    def get_partial_scores(self, term_idx, span=True):
         scores = {}
         scores["precision"] = self.partial_precision[term_idx]
         scores["recall"] = self.partial_recall[term_idx]
@@ -421,7 +274,7 @@ class Evaluator:
         scores["macro IoU"] = self.partial_macro_IoU[term_idx]
         scores["avg micro IoU"] = self.partial_avg_micro_IoU[term_idx]
 
-        if term_idx == ASPECT_IDX or term_idx == OPINION_IDX:
+        if span and (term_idx == ASPECT_IDX or term_idx == OPINION_IDX):
             scores["span precision"] = self.partial_span_precision[SPAN_IDX[term_idx]]
             scores["span recall"] = self.partial_span_recall[SPAN_IDX[term_idx]]
             scores["span f1-score"] = self.partial_span_f1[SPAN_IDX[term_idx]]
@@ -509,7 +362,6 @@ class Evaluator:
             scores[f"total {TERM_LIST[OPINION_IDX]}"] = self.get_partial_scores(
                 OPINION_IDX
             )
-            scores[f"indirect {TERM_LIST[OPINION_IDX]}"] = {}
         else:
             scores["exact"] = self.get_exact_scores()
             for i, term in enumerate(TERM_LIST[: self.tuple_len]):
@@ -520,20 +372,218 @@ class Evaluator:
                 combo_str = "-".join([TERM_LIST[idx] for idx in combo])
                 scores[combo_str] = self.get_combo_scores(combo_idx)
 
+        scores[f"exact (only indirect {TERM_LIST[OPINION_IDX]})"] = {}
+        scores[f"indirect {TERM_LIST[OPINION_IDX]}"] = {}
+        if args.task == "acos-extract" or args.task == "acosi-extract":
+            scores[f"exact (only direct {TERM_LIST[OPINION_IDX]})"] = {}
+            scores[f"direct {TERM_LIST[OPINION_IDX]}"] = {}
         scores["reviews"] = self.get_scores_per_review()
 
-        if args.task == "acos-extend":
-            self.__remove_direct_opinions()
-            self.calc_partial_scores()
+        full_true_outputs = self.true_outputs
+        full_pred_outputs = self.pred_outputs
+
+        self.__remove_opinions(keep_opinion_type="indirect")
+        self.calc_exact_scores()
+        self.calc_partial_scores()
+        scores[f"exact (only indirect {TERM_LIST[OPINION_IDX]})"] = self.get_exact_scores()
+        if args.task == "acos-extract":
             scores[f"indirect {TERM_LIST[OPINION_IDX]}"] = self.get_partial_scores(
+                OPINION_IDX,
+                span=False
+            )
+        else:
+            scores[f"indirect {TERM_LIST[OPINION_IDX]}"] = self.get_partial_scores(
+                OPINION_IDX
+            )
+        for i, review in enumerate(scores["reviews"]):
+            review[
+                f"indirect {TERM_LIST[OPINION_IDX]} micro IoU"
+            ] = self.partial_micro_IoU[OPINION_IDX][i]
+
+        if args.task == "acos-extract" or args.task == "acosi-extract":
+            self.true_outputs = full_true_outputs
+            self.pred_outputs = full_pred_outputs
+
+            self.__remove_opinions(keep_opinion_type="direct")
+            self.calc_exact_scores()
+            self.calc_partial_scores()
+            scores[f"exact (only direct {TERM_LIST[OPINION_IDX]})"] = self.get_exact_scores()
+            scores[f"direct {TERM_LIST[OPINION_IDX]}"] = self.get_partial_scores(
                 OPINION_IDX
             )
             for i, review in enumerate(scores["reviews"]):
                 review[
-                    f"indirect {TERM_LIST[OPINION_IDX]} micro IoU"
+                    f"direct {TERM_LIST[OPINION_IDX]} micro IoU"
                 ] = self.partial_micro_IoU[OPINION_IDX][i]
 
         return scores
+
+######################## HELPER FUNCTIONS ########################
+    def __set_tuple_len_according_to_task(self):
+        if args.task == "acos-extend" or args.task == "acosi-extract":
+            self.tuple_len = len(TERM_LIST)
+        elif args.task == "acos-extract":
+            self.tuple_len = len(TERM_LIST) - 1
+        else:
+            raise ValueError("Invalid task")
+        self.combos = get_combos(self.tuple_len)
+        if self.pred_outputs[0] and len(self.pred_outputs[0][0]) > self.tuple_len:
+            new_pred_outputs = []
+            for annotation in self.pred_outputs:
+                annotation = [quint[: self.tuple_len] for quint in annotation]
+                new_pred_outputs.append(annotation)
+            self.pred_outputs = new_pred_outputs
+
+    def __remove_opinions(self, keep_opinion_type="indirect"):
+        true_outputs_remove_direct_opinion = []
+        pred_outputs_remove_direct_opinion = []
+        for true_output, pred_output in zip(self.true_outputs, self.pred_outputs):
+            list_of_tuples_true = []
+            for true_quint in true_output:
+                if args.task == "acos-extend" or args.task == "acosi-extract":
+                    if keep_opinion_type == "indirect" and true_quint[IMPLICIT_IND_IDX] == "indirect":
+                        list_of_tuples_true.append(true_quint)
+                    elif keep_opinion_type == "direct" and true_quint[IMPLICIT_IND_IDX] == "direct":
+                        list_of_tuples_true.append(true_quint)
+                else:
+                    if keep_opinion_type == "indirect" and true_quint[OPINION_IDX] == "NULL":
+                        list_of_tuples_true.append(true_quint)
+                    elif keep_opinion_type == "direct" and true_quint[OPINION_IDX] != "NULL":
+                        list_of_tuples_true.append(true_quint)
+
+            list_of_tuples_pred = []
+            for pred_quint in pred_output:
+                if args.task == "acos-extend" or args.task == "acosi-extract":
+                    if keep_opinion_type == "indirect" and pred_quint[IMPLICIT_IND_IDX] == "indirect":
+                        list_of_tuples_pred.append(pred_quint)
+                    elif keep_opinion_type == "direct" and pred_quint[IMPLICIT_IND_IDX] == "direct":
+                        list_of_tuples_pred.append(pred_quint)
+                else:
+                    if keep_opinion_type == "indirect" and pred_quint[OPINION_IDX] == "NULL":
+                        list_of_tuples_pred.append(pred_quint)
+                    elif keep_opinion_type == "direct" and pred_quint[OPINION_IDX] != "NULL":
+                        list_of_tuples_pred.append(pred_quint)
+
+            true_outputs_remove_direct_opinion.append(list_of_tuples_true)
+            pred_outputs_remove_direct_opinion.append(list_of_tuples_pred)
+
+        self.pred_outputs = pred_outputs_remove_direct_opinion
+        self.true_outputs = true_outputs_remove_direct_opinion
+
+######################## METADATA FUNCTIONS ########################
+    def __set_test_ea_eo_ia_io(self):
+        self.num_test_ea_eo = self.num_ea_eo
+        self.num_test_ea_io = self.num_ea_io
+        self.num_test_ia_eo = self.num_ia_eo
+        self.num_test_ia_io = self.num_ia_io
+    
+    def __set_test_sentiment(self):
+        self.num_test_positive = self.num_positive
+        self.num_test_negative = self.num_negative
+        self.num_test_neutral = self.num_neutral
+
+    def __accumulate_true(self, output):
+        self.num_ea_eo, \
+        self.num_ea_io, \
+        self.num_ia_eo, \
+        self.num_ia_io, \
+        self.num_positive, \
+        self.num_negative, \
+        self.num_neutral = accumulate_ea_eo_ia_io_sent(
+            output, 
+            (
+                self.num_ea_eo, 
+                self.num_ea_io, 
+                self.num_ia_eo, 
+                self.num_ia_io, 
+                self.num_positive, 
+                self.num_negative, 
+                self.num_neutral
+            ),
+            self.tuple_len
+        )
+
+    def __accumulate_pred(self, output):
+        self.num_pred_ea_eo, \
+        self.num_pred_ea_io, \
+        self.num_pred_ia_eo, \
+        self.num_pred_ia_io, \
+        self.num_pred_positive, \
+        self.num_pred_negative, \
+        self.num_pred_neutral = accumulate_ea_eo_ia_io_sent(
+            output,
+            (
+                self.num_pred_ea_eo,
+                self.num_pred_ea_io,
+                self.num_pred_ia_eo,
+                self.num_pred_ia_io,
+                self.num_pred_positive,
+                self.num_pred_negative,
+                self.num_pred_neutral
+            ),
+            self.tuple_len
+        )
+        
+######################## INITIALIZATION FUNCTIONS ########################
+    def __init_exact_scores(self):
+        self.precision = 0
+        self.recall = 0
+        self.f1 = 0
+        self.macro_IoU = 0
+        self.micro_IoU = []
+        self.avg_micro_IoU = 0
+
+    def __init_partial_scores(self):
+        self.partial_precision = [0] * self.tuple_len
+        self.partial_recall = [0] * self.tuple_len
+        self.partial_f1 = [0] * self.tuple_len
+        self.partial_macro_IoU = [0] * self.tuple_len
+        self.partial_micro_IoU = [[]] * self.tuple_len
+        self.partial_avg_micro_IoU = [0] * self.tuple_len
+
+        self.partial_span_precision = [0] * NUM_SPANS
+        self.partial_span_recall = [0] * NUM_SPANS
+        self.partial_span_f1 = [0] * NUM_SPANS
+        self.partial_span_macro_IoU = [0] * NUM_SPANS
+        self.partial_span_micro_IoU = [[]] * NUM_SPANS
+        self.partial_span_avg_micro_IoU = [0] * NUM_SPANS
+
+    def __init_combo_scores(self):
+        self.combo_precision = [0] * len(self.combos)
+        self.combo_recall = [0] * len(self.combos)
+        self.combo_f1 = [0] * len(self.combos)
+        self.combo_macro_IoU = [0] * len(self.combos)
+        self.combo_micro_IoU = [[]] * len(self.combos)
+        self.combo_avg_micro_IoU = [0] * len(self.combos)
+
+    def __init_ea_eo_ia_io(self):
+        self.num_ea_eo = 0
+        self.num_ea_io = 0
+        self.num_ia_eo = 0
+        self.num_ia_io = 0
+
+        self.num_test_ea_eo = 0
+        self.num_test_ea_io = 0
+        self.num_test_ia_eo = 0
+        self.num_test_ia_io = 0
+
+        self.num_pred_ea_eo = 0
+        self.num_pred_ea_io = 0
+        self.num_pred_ia_eo = 0
+        self.num_pred_ia_io = 0
+
+    def __init_sentiment(self):
+        self.num_positive = 0
+        self.num_negative = 0
+        self.num_neutral = 0
+
+        self.num_test_positive = 0
+        self.num_test_negative = 0
+        self.num_test_neutral = 0
+
+        self.num_pred_positive = 0
+        self.num_pred_negative = 0
+        self.num_pred_neutral = 0
 
 
 scores = {}

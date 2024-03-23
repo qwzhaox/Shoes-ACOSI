@@ -65,16 +65,16 @@
         }
     },
     "total opinion": {
-        "precision": 0.8170426065162907,
+        "precision": 0.8129675810473815,
         "recall": 0.7244444444444444,
-        "f1-score": 0.7679623085983509,
-        "macro IoU": 0.6233269598470363,
-        "avg micro IoU": 0.6691460317460317,
-        "span precision": 0.9626168224299065,
-        "span recall": 0.7236533957845434,
-        "span f1-score": 0.8262032085561497,
-        "span macro IoU": 0.7038724373576309,
-        "span avg micro IoU": 0.7162542858689208
+        "f1-score": 0.7661574618096357,
+        "macro IoU": 0.6209523809523809,
+        "avg micro IoU": 0.6682126984126983,
+        "span precision": 0.9577537351880474,
+        "span recall": 0.7256049960967994,
+        "span f1-score": 0.8256717743726405,
+        "span macro IoU": 0.7031013615733737,
+        "span avg micro IoU": 0.7158693809187984
     },
     "indirect opinion": {
         "precision": 0.0,
@@ -82,11 +82,11 @@
         "f1-score": 0,
         "macro IoU": 0.0,
         "avg micro IoU": 0.0,
-        "span precision": 0.0,
-        "span recall": 0.0,
-        "span f1-score": 0,
-        "span macro IoU": 0.0,
-        "span avg micro IoU": 0.0
+        "span precision": 0.05555555555555555,
+        "span recall": 0.006009615384615385,
+        "span f1-score": 0.01084598698481562,
+        "span macro IoU": 0.0054525627044711015,
+        "span avg micro IoU": 0.002853881278538813
     },
     "reviews": [
         {
@@ -594,7 +594,7 @@
                     "NULL",
                     "performance#general",
                     "positive",
-                    "NULL",
+                    "",
                     "indirect"
                 ]
             ],
@@ -1779,7 +1779,7 @@
                     "shoes",
                     "appearance#material",
                     "negative",
-                    "they are comfortable",
+                    "NULL",
                     "indirect"
                 ],
                 [
@@ -2340,21 +2340,21 @@
                     "shoes",
                     "contextofuse#purchase\\_context",
                     "neutral",
-                    "NULL",
+                    "these shoes are very comfortable and easy to walk in",
                     "indirect"
                 ],
                 [
                     "shoes",
                     "performance#sizing/fit",
                     "negative",
-                    "NULL",
+                    "these shoes are very comfortable and easy to walk in",
                     "indirect"
                 ],
                 [
                     "shoes",
                     "appearance#form",
                     "negative",
-                    "NULL",
+                    "these shoes are very comfortable and easy to walk in",
                     "indirect"
                 ],
                 [
@@ -3260,14 +3260,14 @@
                     "shoes",
                     "appearance#form",
                     "negative",
-                    "NULL",
+                    "i love the way they look",
                     "indirect"
                 ],
                 [
                     "shoes",
                     "performance#sizing/fit",
                     "negative",
-                    "NULL",
+                    "they ' re comfortable but they ' re a little too narrow",
                     "indirect"
                 ],
                 [
@@ -3320,7 +3320,7 @@
                 "num_predicted": 4,
                 "num_true": 4
             },
-            "total opinion micro IoU": 0.4,
+            "total opinion micro IoU": 0.3333333333333333,
             "indirect opinion micro IoU": 0.0
         },
         {
@@ -5069,7 +5069,7 @@
                     "NULL",
                     "performance#sizing/fit",
                     "negative",
-                    "NULL",
+                    "bought these for my 14 year old daughter",
                     "indirect"
                 ],
                 [
@@ -5108,7 +5108,7 @@
                 "num_predicted": 3,
                 "num_true": 3
             },
-            "total opinion micro IoU": 0.25,
+            "total opinion micro IoU": 0.2,
             "indirect opinion micro IoU": 0.0
         },
         {
@@ -8456,7 +8456,7 @@
                     "NULL",
                     "performance#sizing/fit",
                     "negative",
-                    "they are a little tight but i",
+                    "null",
                     "indirect"
                 ]
             ],

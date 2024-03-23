@@ -54,8 +54,10 @@ find "$input_directory" -type f | while read filepath; do
     fi
     
     output_filepath="${task}/${output_filepath}"
+    model=$model_dir
 
-    if [[ $model_dir == "mvp" ]]; then
+    if [[ $model_dir == *"mvp"* ]]; then
+        model="mvp"
         if [[ $filename == *"unified"* ]]; then
             output_filepath="unified/${output_filepath}"
         else
@@ -67,5 +69,5 @@ find "$input_directory" -type f | while read filepath; do
     # Create output directory
     mkdir -p "$(dirname "$output_filepath")"
 
-    python3 scripts/eval/evaluate.py --dataset_file="$dataset_file" --model_output_file="$filepath" --output_file="$output_filepath" --task="$task" --category_file="data/${model_dir}_dataset/${category_dict}" -${model_dir}
+    python3 scripts/eval/evaluate.py --dataset_file="$dataset_file" --model_output_file="$filepath" --output_file="$output_filepath" --task="$task" --category_file="data/${model}_dataset/${category_dict}" -${model}
 done

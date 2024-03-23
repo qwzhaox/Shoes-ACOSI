@@ -65,16 +65,16 @@
         }
     },
     "total opinion": {
-        "precision": 0.8129675810473815,
+        "precision": 0.815,
         "recall": 0.7244444444444444,
-        "f1-score": 0.7661574618096357,
-        "macro IoU": 0.6209523809523809,
-        "avg micro IoU": 0.6683460317460317,
-        "span precision": 0.9557613168724279,
-        "span recall": 0.7252146760343482,
-        "span f1-score": 0.8246782068353308,
-        "span macro IoU": 0.7016616314199395,
-        "span avg micro IoU": 0.7167351817845993
+        "f1-score": 0.7670588235294118,
+        "macro IoU": 0.6221374045801527,
+        "avg micro IoU": 0.6687174603174602,
+        "span precision": 0.9616182572614108,
+        "span recall": 0.7236533957845434,
+        "span f1-score": 0.8258351893095769,
+        "span macro IoU": 0.7033383915022762,
+        "span avg micro IoU": 0.715940112447157
     },
     "indirect opinion": {
         "precision": 0.0,
@@ -82,11 +82,11 @@
         "f1-score": 0,
         "macro IoU": 0.0,
         "avg micro IoU": 0.0,
-        "span precision": 0.0425531914893617,
-        "span recall": 0.004807692307692308,
-        "span f1-score": 0.008639308855291577,
-        "span macro IoU": 0.004338394793926247,
-        "span avg micro IoU": 0.00228310502283105
+        "span precision": 0.0,
+        "span recall": 0.0,
+        "span f1-score": 0,
+        "span macro IoU": 0.0,
+        "span avg micro IoU": 0.0
     },
     "reviews": [
         {
@@ -594,7 +594,7 @@
                     "NULL",
                     "performance#general",
                     "positive",
-                    "i would buy them",
+                    "NULL",
                     "indirect"
                 ]
             ],
@@ -2340,7 +2340,7 @@
                     "shoes",
                     "contextofuse#purchase\\_context",
                     "neutral",
-                    "i bought these shoes for my husband , they were very comfortable and easy to put on .",
+                    "NULL",
                     "indirect"
                 ],
                 [
@@ -2414,7 +2414,7 @@
                 "num_predicted": 5,
                 "num_true": 5
             },
-            "total opinion micro IoU": 0.2,
+            "total opinion micro IoU": 0.25,
             "indirect opinion micro IoU": 0.0
         },
         {
@@ -4523,14 +4523,14 @@
                     "reebok",
                     "cost/value",
                     "negative",
-                    "NULL",
+                    "reebok",
                     "indirect"
                 ],
                 [
                     "reebok",
                     "appearance#misc",
                     "negative",
-                    "NULL",
+                    "reebok",
                     "indirect"
                 ],
                 [
@@ -4597,7 +4597,7 @@
                 "num_predicted": 7,
                 "num_true": 7
             },
-            "total opinion micro IoU": 0.42857142857142855,
+            "total opinion micro IoU": 0.375,
             "indirect opinion micro IoU": 0.0
         },
         {
@@ -4877,7 +4877,7 @@
                     "NULL",
                     "performance#sizing/fit",
                     "negative",
-                    "comfortable but runs small",
+                    "NULL",
                     "indirect"
                 ],
                 [
@@ -4891,7 +4891,7 @@
                     "NULL",
                     "performance#comfort",
                     "negative",
-                    "comfortable",
+                    "NULL",
                     "indirect"
                 ]
             ],
@@ -4923,7 +4923,7 @@
                 "num_predicted": 3,
                 "num_true": 3
             },
-            "total opinion micro IoU": 0.2,
+            "total opinion micro IoU": 0.25,
             "indirect opinion micro IoU": 0.0
         },
         {
@@ -8058,7 +8058,7 @@
                     "NULL",
                     "cost/value",
                     "positive",
-                    "i was so excited to receive my new sneakers and when i tried them on , they were huge ! i ordered my normal size , womans 7 . too big on toe , too big on sides . i definitely have to return . very unhappy .",
+                    "NULL",
                     "indirect"
                 ]
             ],

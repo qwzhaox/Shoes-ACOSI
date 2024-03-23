@@ -76,6 +76,13 @@
         "span macro IoU": 0.8231020704685797,
         "span avg micro IoU": 0.8609134619134511
     },
+    "exact (only indirect opinion)": {
+        "precision": 0.30405405405405406,
+        "recall": 0.30405405405405406,
+        "f1-score": 0.30405405405405406,
+        "macro IoU": 0.17928286852589642,
+        "avg micro IoU": 0.33731838937318387
+    },
     "indirect opinion": {
         "precision": 0.38181818181818183,
         "recall": 0.336,

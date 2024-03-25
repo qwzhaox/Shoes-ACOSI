@@ -99,6 +99,12 @@ class Evaluator:
 
         # self.aspect_span_len_list = []
         # self.opinion_span_len_list = []
+        self.pos_tuples_per_review = []
+        self.neg_tuples_per_review = []
+        self.neu_tuples_per_rev = []
+
+        # self.aspect_span_len_list = []
+        # self.opinion_span_len_list = []
 
         for i, review in enumerate(self.reviews):
             self.review_len_list.append(len(review.split()))
@@ -121,14 +127,8 @@ class Evaluator:
         for pred_output, true_output in zip(self.pred_outputs, self.true_outputs):
             pos, neg, neu = self.num_positive, self.num_negative, self.num_neutral
 
-            pos, neg, neu = self.num_positive, self.num_negative, self.num_neutral
-
             self.__accumulate_true(true_output)
             self.__accumulate_pred(pred_output)
-
-            self.pos_neg_neu_tuples_per_review.append(self.num_positive - pos)
-            self.pos_neg_neu_tuples_per_review.append(self.num_negative - neg)
-            self.pos_neg_neu_tuples_per_review.append(self.num_neutral - neu)
 
             self.pos_neg_neu_tuples_per_review.append(self.num_positive - pos)
             self.pos_neg_neu_tuples_per_review.append(self.num_negative - neg)
@@ -138,8 +138,6 @@ class Evaluator:
         self.__set_test_sentiment()
 
         for output in train_outputs + dev_outputs:
-            pos, neg, neu = self.num_positive, self.num_negative, self.num_neutral
-
             pos, neg, neu = self.num_positive, self.num_negative, self.num_neutral
 
             self.__accumulate_true(output)

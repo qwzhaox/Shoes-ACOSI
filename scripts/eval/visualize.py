@@ -131,7 +131,7 @@ def clean_model_names(df):
     df['model'] = df['model'].str.replace("-RANDOM", "-RAND")
     df['model'] = df['model'].str.replace("-TF-IDF", "-KNN")
     df['model_type'] = df['model_type'].replace("LLAMA", "LLaMA")
-    df['model_type'] = df['model_type'].str.replace(r'^MvP-seed-.*$', 'MvP', regex=True)
+    df['model_type'] = df['model_type'].str.replace(r'^MVP-SEED-.*$', 'MvP', regex=True)
     return df
 
 
@@ -229,7 +229,7 @@ def reorganize_metadata(df):
 def merge_mvp_seeds(df):
     condition = (df['model_type'] == 'MvP') 
     df_filtered = df[condition]
-    df_merged = df_filtered.groupby('model_type', as_index=False)['value'].mean()
+    df_merged = df_filtered.groupby(['model_type', 'model', 'dataset', 'task', 'term', 'metric'], as_index=False)['score'].mean()
 
     # Append the averaged rows back to the original DataFrame, excluding the rows that were averaged
     df_result = pd.concat([df[~condition], df_merged]).reset_index(drop=True)
@@ -363,6 +363,7 @@ class EvalVisualizer:
         df = df[~df['stat_desc'].str.contains('PRED ')]
         df = df[~df['stat_desc'].str.contains('TEST ')]
         df = df[~df['stat'].str.contains('Predicted')]
+        df = df[~df['stat'].str.contains('Test')]
 
         df = df.pivot_table(index=['stat', 'stat_type', 'stat_desc'], columns='dataset', values='value').reset_index()
         df = reorganize_metadata(df)

@@ -131,7 +131,7 @@ def clean_model_names(df):
     df['model'] = df['model'].str.replace("-RANDOM", "-RAND")
     df['model'] = df['model'].str.replace("-TF-IDF", "-KNN")
     df['model_type'] = df['model_type'].replace("LLAMA", "LLaMA")
-    df['model_type'] = df['model_type'].replace("MVP", "MvP")
+    df['model_type'] = df['model_type'].str.replace(r'^MvP-seed-.*$', 'MvP', regex=True)
     return df
 
 
@@ -226,6 +226,16 @@ def reorganize_metadata(df):
     return df
 
 
+def merge_mvp_seeds(df):
+    condition = (df['model_type'] == 'MvP') 
+    df_filtered = df[condition]
+    df_merged = df_filtered.groupby('model_type', as_index=False)['value'].mean()
+
+    # Append the averaged rows back to the original DataFrame, excluding the rows that were averaged
+    df_result = pd.concat([df[~condition], df_merged]).reset_index(drop=True)
+    return df_result
+
+
 ### FORMATTING FUNCTIONS ###
 
 def get_formatted_model(model_type, model):
@@ -303,6 +313,7 @@ class EvalVisualizer:
 
         self.df = pd.DataFrame(data)
         self.df = clean_model_names(self.df)
+        self.df = merge_mvp_seeds(self.df)
 
         self.df_metadata = pd.DataFrame(dataset_stat)
         self.df_metadata = self.df_metadata.drop_duplicates()
@@ -343,7 +354,7 @@ class EvalVisualizer:
             return score_dict, dataset_stat_dict
 
     ### TABLE FUNCTIONS ###
-        
+
     def __metadata_to_csv(self):
         df = self.df_metadata
         pd.set_option('display.max_rows', None)  # Show all rows

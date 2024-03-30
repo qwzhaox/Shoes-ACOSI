@@ -60,6 +60,10 @@ find "$input_directory" -type f | while read filepath; do
         model="mvp"
         if [[ $filename == *"unified"* ]]; then
             output_filepath="unified/${output_filepath}"
+            # if [ $filepath == *"shoes_acos"* ]; then
+            if [ $filepath == *"original_shoes"* ]; then
+                continue
+            fi
         else
             output_filepath="main/${output_filepath}"
         fi

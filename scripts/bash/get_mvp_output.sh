@@ -37,6 +37,10 @@ copy_files() {
         dataset=$(echo $file | sed -E "s/.*unified\/top5_seed([0-9]+)\/result_cd_${task}_(.*)_path5_beam1.pickle/\2/")
         seed=$(echo $file | sed -E "s/.*top5_seed([0-9]+)\/result_cd_${task}.*_path5_beam1.pickle/\1/")
 
+        if [ $shoes_dataset = "original_shoes" ] && [ $task = "acos" ] && [ $dataset = "shoes" ]; then
+            continue
+        fi
+
         # Construct the destination directory and ensure it exists
         dest_dir="model_output/mvp-seed-${seed}/${task}-extract/${shoes_dataset}"
         mkdir -p "$dest_dir"

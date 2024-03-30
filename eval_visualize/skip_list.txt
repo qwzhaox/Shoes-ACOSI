@@ -1,4 +1,8 @@
 random-5
 tf-idf-5
+random-5-906
+tf-idf-5-906
 han
 meta-llama
+mvp
+gen-scl-nat

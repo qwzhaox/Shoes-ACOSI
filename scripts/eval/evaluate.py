@@ -92,16 +92,8 @@ class Evaluator:
 
         self.num_true_list = []
         self.num_predicted_list = []
-
-        self.pos_tuples_per_review = []
-        self.neg_tuples_per_review = []
-        self.neu_tuples_per_rev = []
-
         # self.aspect_span_len_list = []
         # self.opinion_span_len_list = []
-        self.pos_tuples_per_review = []
-        self.neg_tuples_per_review = []
-        self.neu_tuples_per_rev = []
 
         # self.aspect_span_len_list = []
         # self.opinion_span_len_list = []
@@ -125,26 +117,14 @@ class Evaluator:
         self.__init_sentiment()
 
         for pred_output, true_output in zip(self.pred_outputs, self.true_outputs):
-            pos, neg, neu = self.num_positive, self.num_negative, self.num_neutral
-
             self.__accumulate_true(true_output)
             self.__accumulate_pred(pred_output)
-
-            self.pos_neg_neu_tuples_per_review.append(self.num_positive - pos)
-            self.pos_neg_neu_tuples_per_review.append(self.num_negative - neg)
-            self.pos_neg_neu_tuples_per_review.append(self.num_neutral - neu)
 
         self.__set_test_ea_eo_ia_io()
         self.__set_test_sentiment()
 
         for output in train_outputs + dev_outputs:
-            pos, neg, neu = self.num_positive, self.num_negative, self.num_neutral
-
             self.__accumulate_true(output)
-
-            self.pos_neg_neu_tuples_per_review.append(self.num_positive - pos)
-            self.pos_neg_neu_tuples_per_review.append(self.num_negative - neg)
-            self.pos_neg_neu_tuples_per_review.append(self.num_neutral - neu)
         
     def calc_exact_scores(self):
         print("Calculating exact scores...")

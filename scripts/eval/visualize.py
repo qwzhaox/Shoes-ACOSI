@@ -337,6 +337,9 @@ class EvalVisualizer:
 
                     self.__plot_scores(filtered_df, const_val1, const_val2, mdtt_dict)
 
+    def generate_additional_visuals(self, create_charts=True, create_tables=True, terms_file=None):
+        max_tokens = self.metadata['Tokens/Review']['MAX'].max()
+
     ### DATA COLLECTION FUNCTIONS ###
 
     def __read_and_extract_scores(self, filepath):

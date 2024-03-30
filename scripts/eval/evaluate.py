@@ -2,6 +2,7 @@ import json
 import argparse
 from pathlib import Path
 from statistics import mean, median, stdev
+from math import inf
 from utils.evaluate_utils import (
     ASPECT_IDX,
     SENTIMENT_IDX,
@@ -350,7 +351,10 @@ class Evaluator:
 
         return scores
 
-    def get_scores(self):
+    def get_scores(self, token_limit=inf, tuple_limit=inf):
+        if token_limit != inf or tuple_limit != inf:
+            self.__remove_examples(self.reviews, token_limit, tuple_limit)
+
         self.calc_metadata()
         self.calc_exact_scores()
         self.calc_partial_scores()
@@ -379,6 +383,7 @@ class Evaluator:
         if args.task == "acos-extract" or args.task == "acosi-extract":
             scores[f"exact (only direct {TERM_LIST[OPINION_IDX]})"] = {}
             scores[f"direct {TERM_LIST[OPINION_IDX]}"] = {}
+
         scores["reviews"] = self.get_scores_per_review()
 
         full_true_outputs = self.true_outputs
@@ -435,6 +440,16 @@ class Evaluator:
                 annotation = [quint[: self.tuple_len] for quint in annotation]
                 new_pred_outputs.append(annotation)
             self.pred_outputs = new_pred_outputs
+
+    def __remove_examples(self, reviews, token_limit=inf, tuple_limit=inf):
+        true_outputs_remove_over_limit = []
+        pred_outputs_remove_over_limit = []
+        for review, true_output, pred_output in zip(reviews, self.true_outputs, self.pred_outputs):
+            if len(review.split()) <= token_limit and len(true_output) <= tuple_limit:
+                true_outputs_remove_over_limit.append(true_output)
+                pred_outputs_remove_over_limit.append(pred_output)
+        self.pred_outputs = pred_outputs_remove_over_limit
+        self.true_outputs = true_outputs_remove_over_limit
 
     def __remove_opinions(self, keep_opinion_type="indirect"):
         true_outputs_remove_direct_opinion = []

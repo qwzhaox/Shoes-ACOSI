@@ -324,28 +324,44 @@ class Evaluator:
             scores_for_rev_i["metadata"]["num_predicted"] = self.num_predicted_list[i]
             scores_for_rev_i["metadata"]["num_true"] = self.num_true_list[i]
 
-            if args.task == "acos-extend":
-                scores_for_rev_i[
-                    f"total {TERM_LIST[OPINION_IDX]} micro IoU"
-                ] = self.partial_micro_IoU[OPINION_IDX][i]
-                scores_for_rev_i[f"indirect {TERM_LIST[OPINION_IDX]} micro IoU"] = {
-                }
-            else:
-                scores_for_rev_i["exact micro IoU"] = self.micro_IoU[i]
-                sum_partial_micro_IoU = 0
-                for j, term in enumerate(TERM_LIST[: self.tuple_len]):
-                    scores_for_rev_i[f"{term} micro IoU"] = self.partial_micro_IoU[j][i]
-                    sum_partial_micro_IoU += self.partial_micro_IoU[j][i]
+            # if args.task == "acos-extend":
+            #     scores_for_rev_i[
+            #         f"total {TERM_LIST[OPINION_IDX]} micro IoU"
+            #     ] = self.partial_micro_IoU[OPINION_IDX][i]
+            #     scores_for_rev_i[f"indirect {TERM_LIST[OPINION_IDX]} micro IoU"] = {
+            #     }
+            # else:
+            #     scores_for_rev_i["exact micro IoU"] = self.micro_IoU[i]
+            #     sum_partial_micro_IoU = 0
+            #     for j, term in enumerate(TERM_LIST[: self.tuple_len]):
+            #         scores_for_rev_i[f"{term} micro IoU"] = self.partial_micro_IoU[j][i]
+            #         sum_partial_micro_IoU += self.partial_micro_IoU[j][i]
 
-                # scores_for_rev_i["avg partial micro IoU"] = sum_partial_micro_IoU / len(
-                #     self.partial_micro_IoU
-                # )
+            #     # scores_for_rev_i["avg partial micro IoU"] = sum_partial_micro_IoU / len(
+            #     #     self.partial_micro_IoU
+            #     # )
 
-                for combo_idx, combo in enumerate(self.combos):
-                    combo_str = "-".join([TERM_LIST[idx] for idx in combo])
-                    scores_for_rev_i[f"{combo_str} micro IoU"] = self.combo_micro_IoU[
-                        combo_idx
-                    ][i]
+            #     for combo_idx, combo in enumerate(self.combos):
+            #         combo_str = "-".join([TERM_LIST[idx] for idx in combo])
+            #         scores_for_rev_i[f"{combo_str} micro IoU"] = self.combo_micro_IoU[
+            #             combo_idx
+            #         ][i]
+
+            scores_for_rev_i["exact micro IoU"] = self.micro_IoU[i]
+            sum_partial_micro_IoU = 0
+            for j, term in enumerate(TERM_LIST[: self.tuple_len]):
+                scores_for_rev_i[f"{term} micro IoU"] = self.partial_micro_IoU[j][i]
+                sum_partial_micro_IoU += self.partial_micro_IoU[j][i]
+
+            # scores_for_rev_i["avg partial micro IoU"] = sum_partial_micro_IoU / len(
+            #     self.partial_micro_IoU
+            # )
+
+            for combo_idx, combo in enumerate(self.combos):
+                combo_str = "-".join([TERM_LIST[idx] for idx in combo])
+                scores_for_rev_i[f"{combo_str} micro IoU"] = self.combo_micro_IoU[
+                    combo_idx
+                ][i]
 
             scores.append(scores_for_rev_i)
 
@@ -364,19 +380,28 @@ class Evaluator:
 
         scores["metadata"] = self.get_metadata()
 
-        if args.task == "acos-extend":
-            scores[f"total {TERM_LIST[OPINION_IDX]}"] = self.get_partial_scores(
-                OPINION_IDX
-            )
-        else:
-            scores["exact"] = self.get_exact_scores()
-            for i, term in enumerate(TERM_LIST[: self.tuple_len]):
-                scores[term] = self.get_partial_scores(i)
-            # scores["avg partial"] = self.get_avg_partial_scores()
+        # if args.task == "acos-extend":
+        #     scores[f"total {TERM_LIST[OPINION_IDX]}"] = self.get_partial_scores(
+        #         OPINION_IDX
+        #     )
+        # else:
+        #     scores["exact"] = self.get_exact_scores()
+        #     for i, term in enumerate(TERM_LIST[: self.tuple_len]):
+        #         scores[term] = self.get_partial_scores(i)
+        #     # scores["avg partial"] = self.get_avg_partial_scores()
 
-            for combo_idx, combo in enumerate(self.combos):
-                combo_str = "-".join([TERM_LIST[idx] for idx in combo])
-                scores[combo_str] = self.get_combo_scores(combo_idx)
+        #     for combo_idx, combo in enumerate(self.combos):
+        #         combo_str = "-".join([TERM_LIST[idx] for idx in combo])
+        #         scores[combo_str] = self.get_combo_scores(combo_idx)
+
+        scores["exact"] = self.get_exact_scores()
+        for i, term in enumerate(TERM_LIST[: self.tuple_len]):
+            scores[term] = self.get_partial_scores(i)
+        # scores["avg partial"] = self.get_avg_partial_scores()
+
+        for combo_idx, combo in enumerate(self.combos):
+            combo_str = "-".join([TERM_LIST[idx] for idx in combo])
+            scores[combo_str] = self.get_combo_scores(combo_idx)
 
         scores[f"exact (only indirect {TERM_LIST[OPINION_IDX]})"] = {}
         scores[f"indirect {TERM_LIST[OPINION_IDX]}"] = {}

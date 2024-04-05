@@ -102,7 +102,7 @@ def process_dataset(dataset):
             ):
                 quint[ASPECT_IDX] = "NULL"
             if (
-                quint[OPINION_IDX] == "null"
+                quint[OPINION_IDX].lower() == "null"
                 or quint[OPINION_IDX].lower() == "implicit"
             ):
                 quint[OPINION_IDX] = "NULL"

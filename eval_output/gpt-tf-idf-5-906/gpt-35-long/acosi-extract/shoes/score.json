@@ -15,12 +15,12 @@
             "count": 42903
         },
         "tuples predicted": {
-            "mean": 4.128,
+            "mean": 4.104,
             "median": 4,
-            "stdev": 1.6990319824592341,
+            "stdev": 1.674399266371616,
             "min": 2,
-            "max": 10,
-            "count": 516
+            "max": 9,
+            "count": 513
         },
         "tuples test": {
             "mean": 4.144,
@@ -47,10 +47,10 @@
             "test ea/io": 74,
             "test ia/eo": 179,
             "test ia/io": 74,
-            "pred ea/eo": 175,
+            "pred ea/eo": 176,
             "pred ea/io": 20,
-            "pred ia/eo": 253,
-            "pred ia/io": 68
+            "pred ia/eo": 243,
+            "pred ia/io": 74
         },
         "sentiment": {
             "positive": 1830,
@@ -60,16 +60,16 @@
             "test negative": 272,
             "test neutral": 52,
             "pred positive": 210,
-            "pred negative": 253,
-            "pred neutral": 53
+            "pred negative": 251,
+            "pred neutral": 52
         }
     },
     "exact": {
-        "precision": 0.09689922480620156,
-        "recall": 0.09652509652509653,
-        "f1-score": 0.09671179883945842,
-        "macro IoU": 0.0508130081300813,
-        "avg micro IoU": 0.06007957597957598
+        "precision": 0.09551656920077972,
+        "recall": 0.0945945945945946,
+        "f1-score": 0.0950533462657614,
+        "macro IoU": 0.04989816700610998,
+        "avg micro IoU": 0.05957351537351537
     },
     "aspect": {
         "precision": 0.694980694980695,
@@ -84,250 +84,250 @@
         "span avg micro IoU": 0.6186126984126985
     },
     "category": {
-        "precision": 0.7404371584699454,
+        "precision": 0.7384196185286104,
         "recall": 0.6483253588516746,
-        "f1-score": 0.6913265306122449,
-        "macro IoU": 0.5282651072124757,
+        "f1-score": 0.6904458598726115,
+        "macro IoU": 0.5272373540856031,
         "avg micro IoU": 0.5767460317460319
     },
     "sentiment": {
-        "precision": 0.8737864077669902,
+        "precision": 0.8780487804878049,
         "recall": 0.8333333333333334,
-        "f1-score": 0.8530805687203792,
-        "macro IoU": 0.743801652892562,
-        "avg micro IoU": 0.8066666666666666
+        "f1-score": 0.8551068883610451,
+        "macro IoU": 0.7468879668049793,
+        "avg micro IoU": 0.8093333333333332
     },
     "opinion": {
-        "precision": 0.32783505154639175,
-        "recall": 0.35333333333333333,
-        "f1-score": 0.3401069518716578,
-        "macro IoU": 0.20489690721649484,
-        "avg micro IoU": 0.23186810966810958,
-        "span precision": 0.7427325581395349,
-        "span recall": 0.7978142076502732,
-        "span f1-score": 0.7692886714339481,
-        "span macro IoU": 0.6250764525993884,
-        "span avg micro IoU": 0.6532920211199649
+        "precision": 0.3257261410788382,
+        "recall": 0.3488888888888889,
+        "f1-score": 0.3369098712446352,
+        "macro IoU": 0.20258064516129032,
+        "avg micro IoU": 0.23313708513708503,
+        "span precision": 0.7400511135450895,
+        "span recall": 0.7911787665886026,
+        "span f1-score": 0.7647613657800415,
+        "span macro IoU": 0.6191203420891875,
+        "span avg micro IoU": 0.6499351382120364
     },
     "implicit_indicator": {
-        "precision": 0.8620689655172413,
-        "recall": 0.78125,
-        "f1-score": 0.8196721311475409,
-        "macro IoU": 0.6944444444444444,
-        "avg micro IoU": 0.736
+        "precision": 0.8636363636363636,
+        "recall": 0.7916666666666666,
+        "f1-score": 0.8260869565217391,
+        "macro IoU": 0.7037037037037037,
+        "avg micro IoU": 0.744
     },
     "aspect-category": {
-        "precision": 0.4522144522144522,
+        "precision": 0.45011600928074247,
         "recall": 0.40756302521008403,
-        "f1-score": 0.4287292817679558,
-        "macro IoU": 0.27285513361462727,
-        "avg micro IoU": 0.32229350649350647
+        "f1-score": 0.4277839029768467,
+        "macro IoU": 0.2720897615708275,
+        "avg micro IoU": 0.32211024531024524
     },
     "aspect-sentiment": {
-        "precision": 0.61875,
-        "recall": 0.5755813953488372,
-        "f1-score": 0.5963855421686748,
-        "macro IoU": 0.4248927038626609,
-        "avg micro IoU": 0.5040603174603175
+        "precision": 0.621875,
+        "recall": 0.5784883720930233,
+        "f1-score": 0.5993975903614457,
+        "macro IoU": 0.42795698924731185,
+        "avg micro IoU": 0.5080603174603175
     },
     "aspect-opinion": {
-        "precision": 0.20925553319919518,
-        "recall": 0.22510822510822512,
-        "f1-score": 0.21689259645464026,
-        "macro IoU": 0.1216374269005848,
-        "avg micro IoU": 0.14446808746808745
+        "precision": 0.20606060606060606,
+        "recall": 0.22077922077922077,
+        "f1-score": 0.21316614420062696,
+        "macro IoU": 0.11929824561403508,
+        "avg micro IoU": 0.1428074814074814
     },
     "aspect-implicit_indicator": {
-        "precision": 0.5581395348837209,
-        "recall": 0.5233644859813084,
-        "f1-score": 0.540192926045016,
-        "macro IoU": 0.3700440528634361,
-        "avg micro IoU": 0.44398095238095237
+        "precision": 0.5596026490066225,
+        "recall": 0.5264797507788161,
+        "f1-score": 0.5425361155698233,
+        "macro IoU": 0.3722466960352423,
+        "avg micro IoU": 0.4479809523809523
     },
     "category-sentiment": {
-        "precision": 0.6317135549872123,
+        "precision": 0.628498727735369,
         "recall": 0.5600907029478458,
-        "f1-score": 0.59375,
-        "macro IoU": 0.4222222222222222,
-        "avg micro IoU": 0.4635460317460318
+        "f1-score": 0.592326139088729,
+        "macro IoU": 0.42078364565587734,
+        "avg micro IoU": 0.46302539682539673
     },
     "category-opinion": {
-        "precision": 0.22440944881889763,
-        "recall": 0.22007722007722008,
-        "f1-score": 0.22222222222222224,
-        "macro IoU": 0.125,
-        "avg micro IoU": 0.14125007215007213
+        "precision": 0.22420634920634921,
+        "recall": 0.21814671814671815,
+        "f1-score": 0.22113502935420748,
+        "macro IoU": 0.12431243124312431,
+        "avg micro IoU": 0.1438262626262626
     },
     "category-implicit_indicator": {
-        "precision": 0.5363408521303258,
-        "recall": 0.4745011086474501,
-        "f1-score": 0.5035294117647059,
-        "macro IoU": 0.33647798742138363,
-        "avg micro IoU": 0.3850937950937951
+        "precision": 0.5396039603960396,
+        "recall": 0.48337028824833705,
+        "f1-score": 0.5099415204678364,
+        "macro IoU": 0.34222919937205654,
+        "avg micro IoU": 0.39032236652236646
     },
     "sentiment-opinion": {
-        "precision": 0.2845360824742268,
+        "precision": 0.2863070539419087,
         "recall": 0.3026315789473684,
-        "f1-score": 0.2933049946865037,
-        "macro IoU": 0.1718555417185554,
-        "avg micro IoU": 0.1949987345987345
+        "f1-score": 0.2942430703624733,
+        "macro IoU": 0.1725,
+        "avg micro IoU": 0.1989566877566877
     },
     "sentiment-implicit_indicator": {
-        "precision": 0.6963562753036437,
-        "recall": 0.6323529411764706,
-        "f1-score": 0.6628131021194605,
-        "macro IoU": 0.4956772334293948,
-        "avg micro IoU": 0.5873333333333334
+        "precision": 0.7016129032258065,
+        "recall": 0.6397058823529411,
+        "f1-score": 0.6692307692307692,
+        "macro IoU": 0.5028901734104047,
+        "avg micro IoU": 0.5940000000000001
     },
     "opinion-implicit_indicator": {
-        "precision": 0.23505154639175257,
-        "recall": 0.25277161862527714,
-        "f1-score": 0.24358974358974358,
-        "macro IoU": 0.1386861313868613,
-        "avg micro IoU": 0.16005714285714276
+        "precision": 0.23236514522821577,
+        "recall": 0.24833702882483372,
+        "f1-score": 0.24008574490889603,
+        "macro IoU": 0.1364190012180268,
+        "avg micro IoU": 0.15850715950715946
     },
     "aspect-category-sentiment": {
-        "precision": 0.3927765237020316,
+        "precision": 0.39101123595505616,
         "recall": 0.35876288659793815,
-        "f1-score": 0.375,
-        "macro IoU": 0.23076923076923078,
-        "avg micro IoU": 0.27290331890331887
+        "f1-score": 0.37419354838709673,
+        "macro IoU": 0.23015873015873015,
+        "avg micro IoU": 0.27264271284271274
     },
     "aspect-category-opinion": {
-        "precision": 0.12790697674418605,
-        "recall": 0.1274131274131274,
-        "f1-score": 0.12765957446808512,
-        "macro IoU": 0.06818181818181818,
-        "avg micro IoU": 0.08133798423798422
+        "precision": 0.1267056530214425,
+        "recall": 0.12548262548262548,
+        "f1-score": 0.12609117361784672,
+        "macro IoU": 0.06728778467908902,
+        "avg micro IoU": 0.08083192363192361
     },
     "aspect-category-implicit_indicator": {
-        "precision": 0.3325842696629214,
-        "recall": 0.3020408163265306,
-        "f1-score": 0.3165775401069519,
-        "macro IoU": 0.1880559085133418,
-        "avg micro IoU": 0.22070984570984556
+        "precision": 0.33407572383073497,
+        "recall": 0.30612244897959184,
+        "f1-score": 0.31948881789137384,
+        "macro IoU": 0.19011406844106463,
+        "avg micro IoU": 0.22362153402153384
     },
     "aspect-sentiment-opinion": {
-        "precision": 0.1851106639839034,
+        "precision": 0.18585858585858586,
         "recall": 0.19700214132762311,
-        "f1-score": 0.19087136929460582,
-        "macro IoU": 0.10550458715596331,
-        "avg micro IoU": 0.12536592296592292
+        "f1-score": 0.19126819126819122,
+        "macro IoU": 0.10574712643678161,
+        "avg micro IoU": 0.12639429459429455
     },
     "aspect-sentiment-implicit_indicator": {
-        "precision": 0.47109826589595377,
-        "recall": 0.43351063829787234,
-        "f1-score": 0.4515235457063712,
-        "macro IoU": 0.29159212880143115,
-        "avg micro IoU": 0.35477777777777775
+        "precision": 0.4755043227665706,
+        "recall": 0.43882978723404253,
+        "f1-score": 0.45643153526970953,
+        "macro IoU": 0.2956989247311828,
+        "avg micro IoU": 0.36037777777777774
     },
     "aspect-opinion-implicit_indicator": {
-        "precision": 0.15694164989939638,
-        "recall": 0.16883116883116883,
-        "f1-score": 0.16266944734098018,
-        "macro IoU": 0.08853575482406356,
-        "avg micro IoU": 0.10384539904539904
+        "precision": 0.15353535353535352,
+        "recall": 0.1645021645021645,
+        "f1-score": 0.1588296760710554,
+        "macro IoU": 0.08626560726447219,
+        "avg micro IoU": 0.10225472305472307
     },
     "category-sentiment-opinion": {
-        "precision": 0.20078740157480315,
-        "recall": 0.1969111969111969,
-        "f1-score": 0.1988304093567251,
-        "macro IoU": 0.11038961038961038,
-        "avg micro IoU": 0.12467102897102894
+        "precision": 0.2003968253968254,
+        "recall": 0.19498069498069498,
+        "f1-score": 0.19765166340508808,
+        "macro IoU": 0.10966340933767643,
+        "avg micro IoU": 0.12724721944721942
     },
     "category-sentiment-implicit_indicator": {
-        "precision": 0.47002398081534774,
-        "recall": 0.417910447761194,
-        "f1-score": 0.4424379232505643,
-        "macro IoU": 0.28405797101449276,
-        "avg micro IoU": 0.3309174603174602
+        "precision": 0.4714285714285714,
+        "recall": 0.42217484008528783,
+        "f1-score": 0.44544431946006746,
+        "macro IoU": 0.2865412445730825,
+        "avg micro IoU": 0.33458326118326104
     },
     "category-opinion-implicit_indicator": {
-        "precision": 0.16535433070866143,
-        "recall": 0.16216216216216217,
-        "f1-score": 0.16374269005847952,
-        "macro IoU": 0.08917197452229299,
-        "avg micro IoU": 0.10275383505383502
+        "precision": 0.16468253968253968,
+        "recall": 0.16023166023166024,
+        "f1-score": 0.16242661448140902,
+        "macro IoU": 0.08839190628328009,
+        "avg micro IoU": 0.1022189144189144
     },
     "sentiment-opinion-implicit_indicator": {
-        "precision": 0.21030927835051547,
+        "precision": 0.21161825726141079,
         "recall": 0.22319474835886213,
-        "f1-score": 0.2165605095541401,
-        "macro IoU": 0.12142857142857143,
-        "avg micro IoU": 0.13991302031302028
+        "f1-score": 0.21725239616613418,
+        "macro IoU": 0.12186379928315412,
+        "avg micro IoU": 0.1410333666333666
     },
     "aspect-category-sentiment-opinion": {
-        "precision": 0.12015503875968993,
-        "recall": 0.11969111969111969,
-        "f1-score": 0.11992263056092844,
-        "macro IoU": 0.06378600823045268,
-        "avg micro IoU": 0.07609007659007656
+        "precision": 0.1189083820662768,
+        "recall": 0.11776061776061776,
+        "f1-score": 0.11833171677982542,
+        "macro IoU": 0.06288659793814433,
+        "avg micro IoU": 0.07558401598401594
     },
     "aspect-category-sentiment-implicit_indicator": {
-        "precision": 0.29385964912280704,
-        "recall": 0.26961770623742454,
-        "f1-score": 0.2812172088142707,
-        "macro IoU": 0.16361416361416362,
-        "avg micro IoU": 0.1928975246975247
+        "precision": 0.29475982532751094,
+        "recall": 0.2716297786720322,
+        "f1-score": 0.28272251308900526,
+        "macro IoU": 0.16463414634146342,
+        "avg micro IoU": 0.195198223998224
     },
     "aspect-category-opinion-implicit_indicator": {
-        "precision": 0.10077519379844961,
-        "recall": 0.10038610038610038,
-        "f1-score": 0.10058027079303676,
-        "macro IoU": 0.05295315682281059,
-        "avg micro IoU": 0.062022433122433114
+        "precision": 0.09941520467836257,
+        "recall": 0.09845559845559845,
+        "f1-score": 0.09893307468477205,
+        "macro IoU": 0.05204081632653061,
+        "avg micro IoU": 0.06151637251637251
     },
     "aspect-sentiment-opinion-implicit_indicator": {
-        "precision": 0.13682092555331993,
+        "precision": 0.13737373737373737,
         "recall": 0.145610278372591,
-        "f1-score": 0.14107883817427386,
-        "macro IoU": 0.07589285714285714,
-        "avg micro IoU": 0.08875651015651015
+        "f1-score": 0.14137214137214135,
+        "macro IoU": 0.07606263982102908,
+        "avg micro IoU": 0.08983616383616384
     },
     "category-sentiment-opinion-implicit_indicator": {
-        "precision": 0.15551181102362205,
-        "recall": 0.1525096525096525,
-        "f1-score": 0.15399610136452244,
-        "macro IoU": 0.08342133051742344,
-        "avg micro IoU": 0.09601097791097789
+        "precision": 0.15476190476190477,
+        "recall": 0.15057915057915058,
+        "f1-score": 0.15264187866927592,
+        "macro IoU": 0.0826271186440678,
+        "avg micro IoU": 0.09547605727605726
     },
     "exact (only indirect opinion)": {
-        "precision": 0.03409090909090909,
+        "precision": 0.031914893617021274,
         "recall": 0.02027027027027027,
-        "f1-score": 0.02542372881355932,
-        "macro IoU": 0.012875536480686695,
+        "f1-score": 0.024793388429752067,
+        "macro IoU": 0.012552301255230125,
         "avg micro IoU": 0.014390371533228676
     },
     "indirect opinion": {
-        "precision": 0.07142857142857142,
+        "precision": 0.06741573033707865,
         "recall": 0.048,
-        "f1-score": 0.05741626794258373,
-        "macro IoU": 0.029556650246305417,
+        "f1-score": 0.056074766355140186,
+        "macro IoU": 0.028846153846153848,
         "avg micro IoU": 0.04065934065934067,
-        "span precision": 0.26151315789473684,
-        "span recall": 0.19110576923076922,
-        "span f1-score": 0.22083333333333333,
-        "span macro IoU": 0.12412177985948478,
-        "span avg micro IoU": 0.11965912660038132
+        "span precision": 0.2551181102362205,
+        "span recall": 0.19471153846153846,
+        "span f1-score": 0.22085889570552147,
+        "span macro IoU": 0.12413793103448276,
+        "span avg micro IoU": 0.12478733172858644
     },
     "exact (only direct opinion)": {
-        "precision": 0.10981308411214953,
-        "recall": 0.12702702702702703,
-        "f1-score": 0.11779448621553884,
-        "macro IoU": 0.06258322237017311,
-        "avg micro IoU": 0.07108233988233986
+        "precision": 0.10978520286396182,
+        "recall": 0.12432432432432433,
+        "f1-score": 0.11660329531051965,
+        "macro IoU": 0.06191117092866756,
+        "avg micro IoU": 0.0708987012987013
     },
     "direct opinion": {
-        "precision": 0.26932668329177056,
-        "recall": 0.3312883435582822,
-        "f1-score": 0.297111416781293,
-        "macro IoU": 0.17447495961227788,
-        "avg micro IoU": 0.18528282828282816,
-        "span precision": 0.567591763652641,
-        "span recall": 0.6839266450916937,
-        "span f1-score": 0.6203522504892367,
-        "span macro IoU": 0.44964539007092197,
-        "span avg micro IoU": 0.4657076749119505
+        "precision": 0.2697201017811705,
+        "recall": 0.32515337423312884,
+        "f1-score": 0.29485396383866486,
+        "macro IoU": 0.1729200652528548,
+        "avg micro IoU": 0.18536190476190462,
+        "span precision": 0.5728551974580118,
+        "span recall": 0.6806903991370011,
+        "span f1-score": 0.6221345822035989,
+        "span macro IoU": 0.451520572450805,
+        "span avg micro IoU": 0.46370980158587033
     },
     "reviews": [
         {
@@ -1861,13 +1861,6 @@
                     "direct"
                 ],
                 [
-                    "NULL",
-                    "contextofuse#use case",
-                    "negative",
-                    "looking for something easy to slip on",
-                    "direct"
-                ],
-                [
                     "heel of the shoe",
                     "appearance#shoe component",
                     "negative",
@@ -1907,28 +1900,28 @@
             ],
             "metadata": {
                 "review_length": 34,
-                "num_predicted": 4,
+                "num_predicted": 3,
                 "num_true": 4
             },
             "exact micro IoU": 0.0,
             "aspect micro IoU": 0.25,
-            "category micro IoU": 0.3333333333333333,
+            "category micro IoU": 0.4,
             "sentiment micro IoU": 0.6666666666666666,
             "opinion micro IoU": 0.0,
             "implicit_indicator micro IoU": 0.5,
-            "aspect-category micro IoU": 0.14285714285714285,
+            "aspect-category micro IoU": 0.16666666666666666,
             "aspect-sentiment micro IoU": 0.16666666666666666,
             "aspect-opinion micro IoU": 0.0,
             "aspect-implicit_indicator micro IoU": 0.25,
-            "category-sentiment micro IoU": 0.14285714285714285,
+            "category-sentiment micro IoU": 0.16666666666666666,
             "category-opinion micro IoU": 0.0,
-            "category-implicit_indicator micro IoU": 0.14285714285714285,
+            "category-implicit_indicator micro IoU": 0.16666666666666666,
             "sentiment-opinion micro IoU": 0.0,
             "sentiment-implicit_indicator micro IoU": 0.5,
             "opinion-implicit_indicator micro IoU": 0.0,
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
-            "aspect-category-implicit_indicator micro IoU": 0.14285714285714285,
+            "aspect-category-implicit_indicator micro IoU": 0.16666666666666666,
             "aspect-sentiment-opinion micro IoU": 0.0,
             "aspect-sentiment-implicit_indicator micro IoU": 0.16666666666666666,
             "aspect-opinion-implicit_indicator micro IoU": 0.0,
@@ -5131,7 +5124,7 @@
                     "NULL",
                     "contextofuse#purchase\\_context",
                     "neutral",
-                    "i had to exchange my first order",
+                    "i had to exchange my first order and ordered a size up",
                     "direct"
                 ],
                 [
@@ -5145,21 +5138,21 @@
                     "NULL",
                     "performance#sizing/fit",
                     "negative",
-                    "ordered a size up",
-                    "direct"
+                    "i am a size 5 women",
+                    "indirect"
                 ],
                 [
                     "NULL",
-                    "performance#sizing/fit",
+                    "cost/value",
                     "negative",
-                    "cut into my foot",
+                    "won ' t return them because i already exchanged for a bigger size",
                     "direct"
                 ],
                 [
                     "NULL",
-                    "contextofuse#purchase\\_context",
-                    "neutral",
-                    "i won ' t return them because i already exchanged for a bigger size",
+                    "performance#comfort",
+                    "negative",
+                    "it cut into my foot",
                     "direct"
                 ]
             ],
@@ -5200,37 +5193,37 @@
             },
             "exact micro IoU": 0.0,
             "aspect micro IoU": 0.6666666666666666,
-            "category micro IoU": 0.2,
+            "category micro IoU": 0.3333333333333333,
             "sentiment micro IoU": 0.5,
-            "opinion micro IoU": 0.2857142857142857,
-            "implicit_indicator micro IoU": 0.5,
-            "aspect-category micro IoU": 0.0,
+            "opinion micro IoU": 0.125,
+            "implicit_indicator micro IoU": 1.0,
+            "aspect-category micro IoU": 0.125,
             "aspect-sentiment micro IoU": 0.5,
-            "aspect-opinion micro IoU": 0.2857142857142857,
-            "aspect-implicit_indicator micro IoU": 0.6666666666666666,
-            "category-sentiment micro IoU": 0.0,
+            "aspect-opinion micro IoU": 0.125,
+            "aspect-implicit_indicator micro IoU": 0.5,
+            "category-sentiment micro IoU": 0.14285714285714285,
             "category-opinion micro IoU": 0.0,
-            "category-implicit_indicator micro IoU": 0.0,
+            "category-implicit_indicator micro IoU": 0.125,
             "sentiment-opinion micro IoU": 0.125,
-            "sentiment-implicit_indicator micro IoU": 0.3333333333333333,
-            "opinion-implicit_indicator micro IoU": 0.2857142857142857,
-            "aspect-category-sentiment micro IoU": 0.0,
+            "sentiment-implicit_indicator micro IoU": 0.6666666666666666,
+            "opinion-implicit_indicator micro IoU": 0.125,
+            "aspect-category-sentiment micro IoU": 0.125,
             "aspect-category-opinion micro IoU": 0.0,
-            "aspect-category-implicit_indicator micro IoU": 0.0,
+            "aspect-category-implicit_indicator micro IoU": 0.125,
             "aspect-sentiment-opinion micro IoU": 0.125,
-            "aspect-sentiment-implicit_indicator micro IoU": 0.5,
-            "aspect-opinion-implicit_indicator micro IoU": 0.2857142857142857,
+            "aspect-sentiment-implicit_indicator micro IoU": 0.4,
+            "aspect-opinion-implicit_indicator micro IoU": 0.125,
             "category-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-implicit_indicator micro IoU": 0.0,
+            "category-sentiment-implicit_indicator micro IoU": 0.125,
             "category-opinion-implicit_indicator micro IoU": 0.0,
             "sentiment-opinion-implicit_indicator micro IoU": 0.125,
             "aspect-category-sentiment-opinion micro IoU": 0.0,
-            "aspect-category-sentiment-implicit_indicator micro IoU": 0.0,
+            "aspect-category-sentiment-implicit_indicator micro IoU": 0.125,
             "aspect-category-opinion-implicit_indicator micro IoU": 0.0,
             "aspect-sentiment-opinion-implicit_indicator micro IoU": 0.125,
             "category-sentiment-opinion-implicit_indicator micro IoU": 0.0,
             "indirect opinion micro IoU": 0.0,
-            "direct opinion micro IoU": 0.3333333333333333
+            "direct opinion micro IoU": 0.16666666666666666
         },
         {
             "idx": 46,
@@ -8018,7 +8011,7 @@
                     "shoes",
                     "performance#sizing/fit",
                     "positive",
-                    "true to size",
+                    "they ' re true to size",
                     "direct"
                 ],
                 [
@@ -8026,13 +8019,6 @@
                     "performance#comfort",
                     "positive",
                     "comfortable",
-                    "direct"
-                ],
-                [
-                    "NULL",
-                    "appearance#general",
-                    "positive",
-                    "fly",
                     "direct"
                 ],
                 [
@@ -8046,7 +8032,7 @@
                     "top",
                     "performance#comfort",
                     "negative",
-                    "bit uncomfortable without socks",
+                    "the top was a bit uncomfortable without socks",
                     "direct"
                 ],
                 [
@@ -8103,42 +8089,42 @@
             ],
             "metadata": {
                 "review_length": 41,
-                "num_predicted": 7,
+                "num_predicted": 6,
                 "num_true": 6
             },
-            "exact micro IoU": 0.08333333333333333,
+            "exact micro IoU": 0.0,
             "aspect micro IoU": 0.6,
-            "category micro IoU": 0.6666666666666666,
+            "category micro IoU": 0.5,
             "sentiment micro IoU": 1.0,
-            "opinion micro IoU": 0.18181818181818182,
+            "opinion micro IoU": 0.09090909090909091,
             "implicit_indicator micro IoU": 0.5,
-            "aspect-category micro IoU": 0.3,
+            "aspect-category micro IoU": 0.2,
             "aspect-sentiment micro IoU": 0.6,
-            "aspect-opinion micro IoU": 0.08333333333333333,
+            "aspect-opinion micro IoU": 0.0,
             "aspect-implicit_indicator micro IoU": 0.5,
-            "category-sentiment micro IoU": 0.7142857142857143,
-            "category-opinion micro IoU": 0.18181818181818182,
-            "category-implicit_indicator micro IoU": 0.5714285714285714,
-            "sentiment-opinion micro IoU": 0.18181818181818182,
+            "category-sentiment micro IoU": 0.5714285714285714,
+            "category-opinion micro IoU": 0.09090909090909091,
+            "category-implicit_indicator micro IoU": 0.42857142857142855,
+            "sentiment-opinion micro IoU": 0.09090909090909091,
             "sentiment-implicit_indicator micro IoU": 0.6666666666666666,
-            "opinion-implicit_indicator micro IoU": 0.18181818181818182,
-            "aspect-category-sentiment micro IoU": 0.3,
-            "aspect-category-opinion micro IoU": 0.08333333333333333,
-            "aspect-category-implicit_indicator micro IoU": 0.18181818181818182,
-            "aspect-sentiment-opinion micro IoU": 0.08333333333333333,
+            "opinion-implicit_indicator micro IoU": 0.09090909090909091,
+            "aspect-category-sentiment micro IoU": 0.2,
+            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-category-implicit_indicator micro IoU": 0.09090909090909091,
+            "aspect-sentiment-opinion micro IoU": 0.0,
             "aspect-sentiment-implicit_indicator micro IoU": 0.5,
-            "aspect-opinion-implicit_indicator micro IoU": 0.08333333333333333,
-            "category-sentiment-opinion micro IoU": 0.18181818181818182,
-            "category-sentiment-implicit_indicator micro IoU": 0.625,
-            "category-opinion-implicit_indicator micro IoU": 0.18181818181818182,
-            "sentiment-opinion-implicit_indicator micro IoU": 0.18181818181818182,
-            "aspect-category-sentiment-opinion micro IoU": 0.08333333333333333,
-            "aspect-category-sentiment-implicit_indicator micro IoU": 0.18181818181818182,
-            "aspect-category-opinion-implicit_indicator micro IoU": 0.08333333333333333,
-            "aspect-sentiment-opinion-implicit_indicator micro IoU": 0.08333333333333333,
-            "category-sentiment-opinion-implicit_indicator micro IoU": 0.18181818181818182,
+            "aspect-opinion-implicit_indicator micro IoU": 0.0,
+            "category-sentiment-opinion micro IoU": 0.09090909090909091,
+            "category-sentiment-implicit_indicator micro IoU": 0.5,
+            "category-opinion-implicit_indicator micro IoU": 0.09090909090909091,
+            "sentiment-opinion-implicit_indicator micro IoU": 0.09090909090909091,
+            "aspect-category-sentiment-opinion micro IoU": 0.0,
+            "aspect-category-sentiment-implicit_indicator micro IoU": 0.09090909090909091,
+            "aspect-category-opinion-implicit_indicator micro IoU": 0.0,
+            "aspect-sentiment-opinion-implicit_indicator micro IoU": 0.0,
+            "category-sentiment-opinion-implicit_indicator micro IoU": 0.09090909090909091,
             "indirect opinion micro IoU": 0.0,
-            "direct opinion micro IoU": 0.2
+            "direct opinion micro IoU": 0.1
         },
         {
             "idx": 73,
@@ -8514,7 +8500,7 @@
                     "NULL",
                     "contextofuse#purchase\\_context",
                     "negative",
-                    "the website didn ' t let me",
+                    "website didn ' t let me",
                     "direct"
                 ]
             ],
@@ -8870,7 +8856,7 @@
                     "indirect"
                 ],
                 [
-                    "NULL",
+                    "pair",
                     "contextofuse#purchase\\_context",
                     "positive",
                     "i ' ll be buying another pair soon",
@@ -9144,7 +9130,7 @@
                     "order number",
                     "contextofuse#purchase\\_context",
                     "negative",
-                    "can ' t find my order number to exchange it",
+                    "i can ' t find my order number to exchange it",
                     "direct"
                 ]
             ],
@@ -9180,16 +9166,16 @@
             "aspect micro IoU": 0.6666666666666666,
             "category micro IoU": 1.0,
             "sentiment micro IoU": 1.0,
-            "opinion micro IoU": 0.5,
+            "opinion micro IoU": 1.0,
             "implicit_indicator micro IoU": 0.0,
             "aspect-category micro IoU": 0.5,
             "aspect-sentiment micro IoU": 0.6666666666666666,
             "aspect-opinion micro IoU": 0.5,
             "aspect-implicit_indicator micro IoU": 0.0,
             "category-sentiment micro IoU": 1.0,
-            "category-opinion micro IoU": 0.5,
+            "category-opinion micro IoU": 1.0,
             "category-implicit_indicator micro IoU": 0.0,
-            "sentiment-opinion micro IoU": 0.5,
+            "sentiment-opinion micro IoU": 1.0,
             "sentiment-implicit_indicator micro IoU": 0.0,
             "opinion-implicit_indicator micro IoU": 0.0,
             "aspect-category-sentiment micro IoU": 0.5,
@@ -9198,7 +9184,7 @@
             "aspect-sentiment-opinion micro IoU": 0.5,
             "aspect-sentiment-implicit_indicator micro IoU": 0.0,
             "aspect-opinion-implicit_indicator micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.5,
+            "category-sentiment-opinion micro IoU": 1.0,
             "category-sentiment-implicit_indicator micro IoU": 0.0,
             "category-opinion-implicit_indicator micro IoU": 0.0,
             "sentiment-opinion-implicit_indicator micro IoU": 0.0,
@@ -9626,29 +9612,22 @@
                     "NULL",
                     "performance#sizing/fit",
                     "neutral",
-                    "did not return them , because i worn them before realizing that they were that big",
-                    "direct"
+                    "worn them before realizing that they were that big",
+                    "indirect"
                 ],
                 [
                     "NULL",
                     "contextofuse#purchase\\_context",
                     "neutral",
-                    "did not return them , because i worn them before realizing that they were that big",
-                    "direct"
+                    "worn them before realizing that they were that big",
+                    "indirect"
                 ],
                 [
                     "NULL",
-                    "performance#sizing/fit",
-                    "negative",
+                    "performance#durability",
+                    "neutral",
                     "put the box in the garbage",
-                    "direct"
-                ],
-                [
-                    "NULL",
-                    "contextofuse#purchase\\_context",
-                    "negative",
-                    "put the box in the garbage",
-                    "direct"
+                    "indirect"
                 ]
             ],
             "true": [
@@ -9704,42 +9683,42 @@
             ],
             "metadata": {
                 "review_length": 66,
-                "num_predicted": 10,
+                "num_predicted": 9,
                 "num_true": 7
             },
-            "exact micro IoU": 0.0625,
+            "exact micro IoU": 0.06666666666666667,
             "aspect micro IoU": 1.0,
             "category micro IoU": 0.7142857142857143,
             "sentiment micro IoU": 0.6666666666666666,
             "opinion micro IoU": 0.18181818181818182,
-            "implicit_indicator micro IoU": 0.5,
-            "aspect-category micro IoU": 0.4444444444444444,
+            "implicit_indicator micro IoU": 1.0,
+            "aspect-category micro IoU": 0.4,
             "aspect-sentiment micro IoU": 0.5,
             "aspect-opinion micro IoU": 0.18181818181818182,
-            "aspect-implicit_indicator micro IoU": 0.25,
-            "category-sentiment micro IoU": 0.5555555555555556,
-            "category-opinion micro IoU": 0.0625,
-            "category-implicit_indicator micro IoU": 0.3333333333333333,
+            "aspect-implicit_indicator micro IoU": 0.5,
+            "category-sentiment micro IoU": 0.5,
+            "category-opinion micro IoU": 0.06666666666666667,
+            "category-implicit_indicator micro IoU": 0.5,
             "sentiment-opinion micro IoU": 0.18181818181818182,
             "sentiment-implicit_indicator micro IoU": 0.25,
             "opinion-implicit_indicator micro IoU": 0.18181818181818182,
-            "aspect-category-sentiment micro IoU": 0.36363636363636365,
-            "aspect-category-opinion micro IoU": 0.0625,
-            "aspect-category-implicit_indicator micro IoU": 0.3,
+            "aspect-category-sentiment micro IoU": 0.3333333333333333,
+            "aspect-category-opinion micro IoU": 0.06666666666666667,
+            "aspect-category-implicit_indicator micro IoU": 0.3333333333333333,
             "aspect-sentiment-opinion micro IoU": 0.18181818181818182,
             "aspect-sentiment-implicit_indicator micro IoU": 0.2,
             "aspect-opinion-implicit_indicator micro IoU": 0.18181818181818182,
-            "category-sentiment-opinion micro IoU": 0.0625,
-            "category-sentiment-implicit_indicator micro IoU": 0.2727272727272727,
-            "category-opinion-implicit_indicator micro IoU": 0.0625,
+            "category-sentiment-opinion micro IoU": 0.06666666666666667,
+            "category-sentiment-implicit_indicator micro IoU": 0.25,
+            "category-opinion-implicit_indicator micro IoU": 0.06666666666666667,
             "sentiment-opinion-implicit_indicator micro IoU": 0.18181818181818182,
-            "aspect-category-sentiment-opinion micro IoU": 0.0625,
-            "aspect-category-sentiment-implicit_indicator micro IoU": 0.25,
-            "aspect-category-opinion-implicit_indicator micro IoU": 0.0625,
+            "aspect-category-sentiment-opinion micro IoU": 0.06666666666666667,
+            "aspect-category-sentiment-implicit_indicator micro IoU": 0.23076923076923078,
+            "aspect-category-opinion-implicit_indicator micro IoU": 0.06666666666666667,
             "aspect-sentiment-opinion-implicit_indicator micro IoU": 0.18181818181818182,
-            "category-sentiment-opinion-implicit_indicator micro IoU": 0.0625,
+            "category-sentiment-opinion-implicit_indicator micro IoU": 0.06666666666666667,
             "indirect opinion micro IoU": 0.0,
-            "direct opinion micro IoU": 0.2222222222222222
+            "direct opinion micro IoU": 0.2857142857142857
         },
         {
             "idx": 90,
@@ -9858,7 +9837,7 @@
                     "shoe",
                     "performance#sizing/fit",
                     "negative",
-                    "making it unwearable for me",
+                    "extremely narrow",
                     "direct"
                 ],
                 [
@@ -9918,39 +9897,39 @@
                 "num_predicted": 4,
                 "num_true": 5
             },
-            "exact micro IoU": 0.0,
+            "exact micro IoU": 0.125,
             "aspect micro IoU": 1.0,
             "category micro IoU": 0.2,
             "sentiment micro IoU": 0.6666666666666666,
-            "opinion micro IoU": 0.2857142857142857,
+            "opinion micro IoU": 0.3333333333333333,
             "implicit_indicator micro IoU": 0.5,
             "aspect-category micro IoU": 0.3333333333333333,
             "aspect-sentiment micro IoU": 0.75,
-            "aspect-opinion micro IoU": 0.125,
+            "aspect-opinion micro IoU": 0.2857142857142857,
             "aspect-implicit_indicator micro IoU": 0.6666666666666666,
             "category-sentiment micro IoU": 0.2,
-            "category-opinion micro IoU": 0.125,
+            "category-opinion micro IoU": 0.14285714285714285,
             "category-implicit_indicator micro IoU": 0.2,
-            "sentiment-opinion micro IoU": 0.2857142857142857,
+            "sentiment-opinion micro IoU": 0.3333333333333333,
             "sentiment-implicit_indicator micro IoU": 0.6666666666666666,
-            "opinion-implicit_indicator micro IoU": 0.2857142857142857,
+            "opinion-implicit_indicator micro IoU": 0.3333333333333333,
             "aspect-category-sentiment micro IoU": 0.3333333333333333,
-            "aspect-category-opinion micro IoU": 0.0,
+            "aspect-category-opinion micro IoU": 0.125,
             "aspect-category-implicit_indicator micro IoU": 0.3333333333333333,
-            "aspect-sentiment-opinion micro IoU": 0.125,
+            "aspect-sentiment-opinion micro IoU": 0.2857142857142857,
             "aspect-sentiment-implicit_indicator micro IoU": 0.75,
-            "aspect-opinion-implicit_indicator micro IoU": 0.125,
-            "category-sentiment-opinion micro IoU": 0.125,
+            "aspect-opinion-implicit_indicator micro IoU": 0.2857142857142857,
+            "category-sentiment-opinion micro IoU": 0.14285714285714285,
             "category-sentiment-implicit_indicator micro IoU": 0.2,
-            "category-opinion-implicit_indicator micro IoU": 0.125,
-            "sentiment-opinion-implicit_indicator micro IoU": 0.2857142857142857,
-            "aspect-category-sentiment-opinion micro IoU": 0.0,
+            "category-opinion-implicit_indicator micro IoU": 0.14285714285714285,
+            "sentiment-opinion-implicit_indicator micro IoU": 0.3333333333333333,
+            "aspect-category-sentiment-opinion micro IoU": 0.125,
             "aspect-category-sentiment-implicit_indicator micro IoU": 0.3333333333333333,
-            "aspect-category-opinion-implicit_indicator micro IoU": 0.0,
-            "aspect-sentiment-opinion-implicit_indicator micro IoU": 0.125,
-            "category-sentiment-opinion-implicit_indicator micro IoU": 0.125,
+            "aspect-category-opinion-implicit_indicator micro IoU": 0.125,
+            "aspect-sentiment-opinion-implicit_indicator micro IoU": 0.2857142857142857,
+            "category-sentiment-opinion-implicit_indicator micro IoU": 0.14285714285714285,
             "indirect opinion micro IoU": 0.0,
-            "direct opinion micro IoU": 0.3333333333333333
+            "direct opinion micro IoU": 0.4
         },
         {
             "idx": 92,
@@ -10055,7 +10034,7 @@
                     "NULL",
                     "performance#sizing/fit",
                     "negative",
-                    "sizing runs small",
+                    "runs small",
                     "direct"
                 ],
                 [
@@ -10129,39 +10108,39 @@
                 "num_predicted": 7,
                 "num_true": 5
             },
-            "exact micro IoU": 0.2,
+            "exact micro IoU": 0.09090909090909091,
             "aspect micro IoU": 0.5,
             "category micro IoU": 0.5714285714285714,
             "sentiment micro IoU": 1.0,
-            "opinion micro IoU": 0.2222222222222222,
+            "opinion micro IoU": 0.1,
             "implicit_indicator micro IoU": 1.0,
             "aspect-category micro IoU": 0.375,
             "aspect-sentiment micro IoU": 0.4,
-            "aspect-opinion micro IoU": 0.2,
+            "aspect-opinion micro IoU": 0.09090909090909091,
             "aspect-implicit_indicator micro IoU": 0.5,
             "category-sentiment micro IoU": 0.5714285714285714,
-            "category-opinion micro IoU": 0.2,
+            "category-opinion micro IoU": 0.09090909090909091,
             "category-implicit_indicator micro IoU": 0.5714285714285714,
-            "sentiment-opinion micro IoU": 0.2222222222222222,
+            "sentiment-opinion micro IoU": 0.1,
             "sentiment-implicit_indicator micro IoU": 1.0,
-            "opinion-implicit_indicator micro IoU": 0.2222222222222222,
+            "opinion-implicit_indicator micro IoU": 0.1,
             "aspect-category-sentiment micro IoU": 0.375,
-            "aspect-category-opinion micro IoU": 0.2,
+            "aspect-category-opinion micro IoU": 0.09090909090909091,
             "aspect-category-implicit_indicator micro IoU": 0.375,
-            "aspect-sentiment-opinion micro IoU": 0.2,
+            "aspect-sentiment-opinion micro IoU": 0.09090909090909091,
             "aspect-sentiment-implicit_indicator micro IoU": 0.4,
-            "aspect-opinion-implicit_indicator micro IoU": 0.2,
-            "category-sentiment-opinion micro IoU": 0.2,
+            "aspect-opinion-implicit_indicator micro IoU": 0.09090909090909091,
+            "category-sentiment-opinion micro IoU": 0.09090909090909091,
             "category-sentiment-implicit_indicator micro IoU": 0.5714285714285714,
-            "category-opinion-implicit_indicator micro IoU": 0.2,
-            "sentiment-opinion-implicit_indicator micro IoU": 0.2222222222222222,
-            "aspect-category-sentiment-opinion micro IoU": 0.2,
+            "category-opinion-implicit_indicator micro IoU": 0.09090909090909091,
+            "sentiment-opinion-implicit_indicator micro IoU": 0.1,
+            "aspect-category-sentiment-opinion micro IoU": 0.09090909090909091,
             "aspect-category-sentiment-implicit_indicator micro IoU": 0.375,
-            "aspect-category-opinion-implicit_indicator micro IoU": 0.2,
-            "aspect-sentiment-opinion-implicit_indicator micro IoU": 0.2,
-            "category-sentiment-opinion-implicit_indicator micro IoU": 0.2,
+            "aspect-category-opinion-implicit_indicator micro IoU": 0.09090909090909091,
+            "aspect-sentiment-opinion-implicit_indicator micro IoU": 0.09090909090909091,
+            "category-sentiment-opinion-implicit_indicator micro IoU": 0.09090909090909091,
             "indirect opinion micro IoU": null,
-            "direct opinion micro IoU": 0.2222222222222222
+            "direct opinion micro IoU": 0.1
         },
         {
             "idx": 94,
@@ -10981,7 +10960,7 @@
                 ],
                 [
                     "NULL",
-                    "performance#comfort",
+                    "performance#durability",
                     "positive",
                     "said there is a bit of break - in period",
                     "direct"
@@ -10999,6 +10978,13 @@
                     "positive",
                     "she wants more now",
                     "indirect"
+                ],
+                [
+                    "NULL",
+                    "general",
+                    "positive",
+                    "of course she does",
+                    "direct"
                 ]
             ],
             "true": [
@@ -11047,42 +11033,42 @@
             ],
             "metadata": {
                 "review_length": 66,
-                "num_predicted": 7,
+                "num_predicted": 8,
                 "num_true": 6
             },
             "exact micro IoU": 0.0,
             "aspect micro IoU": 0.5,
-            "category micro IoU": 0.3333333333333333,
+            "category micro IoU": 0.3,
             "sentiment micro IoU": 0.6666666666666666,
-            "opinion micro IoU": 0.18181818181818182,
+            "opinion micro IoU": 0.16666666666666666,
             "implicit_indicator micro IoU": 0.5,
-            "aspect-category micro IoU": 0.3,
+            "aspect-category micro IoU": 0.2727272727272727,
             "aspect-sentiment micro IoU": 0.5,
-            "aspect-opinion micro IoU": 0.18181818181818182,
+            "aspect-opinion micro IoU": 0.16666666666666666,
             "aspect-implicit_indicator micro IoU": 0.3333333333333333,
-            "category-sentiment micro IoU": 0.3333333333333333,
+            "category-sentiment micro IoU": 0.3,
             "category-opinion micro IoU": 0.0,
-            "category-implicit_indicator micro IoU": 0.3333333333333333,
-            "sentiment-opinion micro IoU": 0.08333333333333333,
+            "category-implicit_indicator micro IoU": 0.3,
+            "sentiment-opinion micro IoU": 0.07692307692307693,
             "sentiment-implicit_indicator micro IoU": 0.5,
-            "opinion-implicit_indicator micro IoU": 0.08333333333333333,
-            "aspect-category-sentiment micro IoU": 0.3,
+            "opinion-implicit_indicator micro IoU": 0.07692307692307693,
+            "aspect-category-sentiment micro IoU": 0.2727272727272727,
             "aspect-category-opinion micro IoU": 0.0,
-            "aspect-category-implicit_indicator micro IoU": 0.3,
-            "aspect-sentiment-opinion micro IoU": 0.08333333333333333,
+            "aspect-category-implicit_indicator micro IoU": 0.2727272727272727,
+            "aspect-sentiment-opinion micro IoU": 0.07692307692307693,
             "aspect-sentiment-implicit_indicator micro IoU": 0.4,
-            "aspect-opinion-implicit_indicator micro IoU": 0.08333333333333333,
+            "aspect-opinion-implicit_indicator micro IoU": 0.07692307692307693,
             "category-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-implicit_indicator micro IoU": 0.3333333333333333,
+            "category-sentiment-implicit_indicator micro IoU": 0.3,
             "category-opinion-implicit_indicator micro IoU": 0.0,
             "sentiment-opinion-implicit_indicator micro IoU": 0.0,
             "aspect-category-sentiment-opinion micro IoU": 0.0,
-            "aspect-category-sentiment-implicit_indicator micro IoU": 0.3,
+            "aspect-category-sentiment-implicit_indicator micro IoU": 0.2727272727272727,
             "aspect-category-opinion-implicit_indicator micro IoU": 0.0,
             "aspect-sentiment-opinion-implicit_indicator micro IoU": 0.0,
             "category-sentiment-opinion-implicit_indicator micro IoU": 0.0,
             "indirect opinion micro IoU": 0.0,
-            "direct opinion micro IoU": 0.09090909090909091
+            "direct opinion micro IoU": 0.08333333333333333
         },
         {
             "idx": 102,
@@ -12192,7 +12178,7 @@
                 [
                     "shoe",
                     "appearance#material",
-                    "neutral",
+                    "negative",
                     "they can do a little better with the quality of it",
                     "direct"
                 ],
@@ -12201,14 +12187,14 @@
                     "performance#sizing/fit",
                     "negative",
                     "had to buy a half size larger",
-                    "direct"
+                    "indirect"
                 ],
                 [
                     "NULL",
                     "performance#sizing/fit",
                     "negative",
                     "they run small",
-                    "direct"
+                    "indirect"
                 ]
             ],
             "true": [
@@ -12242,36 +12228,36 @@
             "exact micro IoU": 0.0,
             "aspect micro IoU": 1.0,
             "category micro IoU": 0.5,
-            "sentiment micro IoU": 0.6666666666666666,
+            "sentiment micro IoU": 1.0,
             "opinion micro IoU": 0.16666666666666666,
-            "implicit_indicator micro IoU": 0.5,
+            "implicit_indicator micro IoU": 1.0,
             "aspect-category micro IoU": 0.5,
-            "aspect-sentiment micro IoU": 0.5,
+            "aspect-sentiment micro IoU": 1.0,
             "aspect-opinion micro IoU": 0.16666666666666666,
-            "aspect-implicit_indicator micro IoU": 0.3333333333333333,
+            "aspect-implicit_indicator micro IoU": 1.0,
             "category-sentiment micro IoU": 0.5,
             "category-opinion micro IoU": 0.0,
-            "category-implicit_indicator micro IoU": 0.2,
-            "sentiment-opinion micro IoU": 0.0,
-            "sentiment-implicit_indicator micro IoU": 0.5,
+            "category-implicit_indicator micro IoU": 0.5,
+            "sentiment-opinion micro IoU": 0.16666666666666666,
+            "sentiment-implicit_indicator micro IoU": 1.0,
             "opinion-implicit_indicator micro IoU": 0.16666666666666666,
             "aspect-category-sentiment micro IoU": 0.5,
             "aspect-category-opinion micro IoU": 0.0,
-            "aspect-category-implicit_indicator micro IoU": 0.2,
-            "aspect-sentiment-opinion micro IoU": 0.0,
-            "aspect-sentiment-implicit_indicator micro IoU": 0.2,
+            "aspect-category-implicit_indicator micro IoU": 0.5,
+            "aspect-sentiment-opinion micro IoU": 0.16666666666666666,
+            "aspect-sentiment-implicit_indicator micro IoU": 1.0,
             "aspect-opinion-implicit_indicator micro IoU": 0.16666666666666666,
             "category-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-implicit_indicator micro IoU": 0.2,
+            "category-sentiment-implicit_indicator micro IoU": 0.5,
             "category-opinion-implicit_indicator micro IoU": 0.0,
-            "sentiment-opinion-implicit_indicator micro IoU": 0.0,
+            "sentiment-opinion-implicit_indicator micro IoU": 0.16666666666666666,
             "aspect-category-sentiment-opinion micro IoU": 0.0,
-            "aspect-category-sentiment-implicit_indicator micro IoU": 0.2,
+            "aspect-category-sentiment-implicit_indicator micro IoU": 0.5,
             "aspect-category-opinion-implicit_indicator micro IoU": 0.0,
-            "aspect-sentiment-opinion-implicit_indicator micro IoU": 0.0,
+            "aspect-sentiment-opinion-implicit_indicator micro IoU": 0.16666666666666666,
             "category-sentiment-opinion-implicit_indicator micro IoU": 0.0,
             "indirect opinion micro IoU": 0.0,
-            "direct opinion micro IoU": 0.2
+            "direct opinion micro IoU": 0.3333333333333333
         },
         {
             "idx": 114,
@@ -12289,7 +12275,7 @@
                     "performance#sizing/fit",
                     "negative",
                     "if you have wider feet do not buy",
-                    "indirect"
+                    "direct"
                 ],
                 [
                     "NULL",
@@ -12367,10 +12353,10 @@
             "aspect-implicit_indicator micro IoU": 0.6666666666666666,
             "category-sentiment micro IoU": 0.8,
             "category-opinion micro IoU": 0.1111111111111111,
-            "category-implicit_indicator micro IoU": 0.2857142857142857,
+            "category-implicit_indicator micro IoU": 0.5,
             "sentiment-opinion micro IoU": 0.25,
             "sentiment-implicit_indicator micro IoU": 0.6666666666666666,
-            "opinion-implicit_indicator micro IoU": 0.1111111111111111,
+            "opinion-implicit_indicator micro IoU": 0.25,
             "aspect-category-sentiment micro IoU": 0.5,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-category-implicit_indicator micro IoU": 0.2857142857142857,
@@ -12378,16 +12364,16 @@
             "aspect-sentiment-implicit_indicator micro IoU": 0.5,
             "aspect-opinion-implicit_indicator micro IoU": 0.1111111111111111,
             "category-sentiment-opinion micro IoU": 0.1111111111111111,
-            "category-sentiment-implicit_indicator micro IoU": 0.2857142857142857,
-            "category-opinion-implicit_indicator micro IoU": 0.0,
-            "sentiment-opinion-implicit_indicator micro IoU": 0.1111111111111111,
+            "category-sentiment-implicit_indicator micro IoU": 0.5,
+            "category-opinion-implicit_indicator micro IoU": 0.1111111111111111,
+            "sentiment-opinion-implicit_indicator micro IoU": 0.25,
             "aspect-category-sentiment-opinion micro IoU": 0.0,
             "aspect-category-sentiment-implicit_indicator micro IoU": 0.2857142857142857,
             "aspect-category-opinion-implicit_indicator micro IoU": 0.0,
             "aspect-sentiment-opinion-implicit_indicator micro IoU": 0.1111111111111111,
-            "category-sentiment-opinion-implicit_indicator micro IoU": 0.0,
+            "category-sentiment-opinion-implicit_indicator micro IoU": 0.1111111111111111,
             "indirect opinion micro IoU": 0.0,
-            "direct opinion micro IoU": 0.14285714285714285
+            "direct opinion micro IoU": 0.2857142857142857
         },
         {
             "idx": 115,
@@ -12478,21 +12464,14 @@
                     "shoes",
                     "contextofuse#purchase\\_context",
                     "neutral",
-                    "purchased these shoes bacon",
+                    "i purchased these shoes bacon they were exactly like my last pair of reebok classics i bought",
                     "direct"
                 ],
                 [
                     "NULL",
                     "appearance#general",
                     "negative",
-                    "they are slightly different",
-                    "direct"
-                ],
-                [
-                    "NULL",
-                    "appearance#general",
-                    "negative",
-                    "the stitching is different",
+                    "they are slightly different the stitching is different",
                     "direct"
                 ],
                 [
@@ -12513,7 +12492,7 @@
                     "NULL",
                     "contextofuse#purchase\\_context",
                     "negative",
-                    "sent them back and order me a pair a reebok classic running instead of these reeboks",
+                    "so i sent them back and order me a pair a reebok classic running instead of these reeboks",
                     "direct"
                 ]
             ],
@@ -12556,7 +12535,7 @@
             ],
             "metadata": {
                 "review_length": 65,
-                "num_predicted": 6,
+                "num_predicted": 5,
                 "num_true": 5
             },
             "exact micro IoU": 0.0,
@@ -12697,7 +12676,7 @@
                     "cost/value",
                     "negative",
                     "will never order again",
-                    "direct"
+                    "indirect"
                 ]
             ],
             "true": [
@@ -12733,11 +12712,11 @@
             "category micro IoU": 0.6666666666666666,
             "sentiment micro IoU": 0.5,
             "opinion micro IoU": 0.2,
-            "implicit_indicator micro IoU": 1.0,
+            "implicit_indicator micro IoU": 0.5,
             "aspect-category micro IoU": 0.25,
             "aspect-sentiment micro IoU": 0.25,
             "aspect-opinion micro IoU": 0.0,
-            "aspect-implicit_indicator micro IoU": 0.5,
+            "aspect-implicit_indicator micro IoU": 0.25,
             "category-sentiment micro IoU": 0.25,
             "category-opinion micro IoU": 0.0,
             "category-implicit_indicator micro IoU": 0.2,

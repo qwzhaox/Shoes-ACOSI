@@ -1,0 +1,4 @@
+exact (only indirect opinion)
+indirect opinion
+exact (only direct opinion)
+direct opinion

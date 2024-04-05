@@ -179,6 +179,39 @@
         "macro IoU": 0.07528089887640449,
         "avg micro IoU": 0.0953429459429459
     },
+    "exact (only indirect opinion)": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0,
+        "macro IoU": 0.0,
+        "avg micro IoU": 0.0
+    },
+    "indirect opinion": {
+        "precision": 1.0,
+        "recall": 0.0410958904109589,
+        "f1-score": 0.07894736842105263,
+        "macro IoU": 0.0410958904109589,
+        "avg micro IoU": 0.0410958904109589
+    },
+    "exact (only direct opinion)": {
+        "precision": 0.0945945945945946,
+        "recall": 0.11351351351351352,
+        "f1-score": 0.1031941031941032,
+        "macro IoU": 0.054404145077720206,
+        "avg micro IoU": 0.06944155844155843
+    },
+    "direct opinion": {
+        "precision": 0.2511415525114155,
+        "recall": 0.3374233128834356,
+        "f1-score": 0.2879581151832461,
+        "macro IoU": 0.16819571865443425,
+        "avg micro IoU": 0.1947307359307358,
+        "span precision": 0.5757722007722008,
+        "span recall": 0.6434735706580367,
+        "span f1-score": 0.6077432501273562,
+        "span macro IoU": 0.43651664837175264,
+        "span avg micro IoU": 0.46381067976973905
+    },
     "reviews": [
         {
             "idx": 0,
@@ -248,7 +281,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 1,
@@ -306,7 +341,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.25
         },
         {
             "idx": 2,
@@ -370,7 +407,9 @@
             "aspect-category-sentiment micro IoU": 0.2,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.5
+            "category-sentiment-opinion micro IoU": 0.5,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.5
         },
         {
             "idx": 3,
@@ -458,7 +497,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.14285714285714285
         },
         {
             "idx": 4,
@@ -516,7 +557,9 @@
             "aspect-category-sentiment micro IoU": 0.25,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 5,
@@ -604,7 +647,9 @@
             "aspect-category-sentiment micro IoU": 0.125,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.2857142857142857
         },
         {
             "idx": 6,
@@ -686,7 +731,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.125
+            "category-sentiment-opinion micro IoU": 0.125,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.16666666666666666
         },
         {
             "idx": 7,
@@ -750,7 +797,9 @@
             "aspect-category-sentiment micro IoU": 0.2,
             "aspect-category-opinion micro IoU": 0.2,
             "aspect-sentiment-opinion micro IoU": 0.2,
-            "category-sentiment-opinion micro IoU": 0.5
+            "category-sentiment-opinion micro IoU": 0.5,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.6666666666666666
         },
         {
             "idx": 8,
@@ -820,7 +869,9 @@
             "aspect-category-sentiment micro IoU": 0.16666666666666666,
             "aspect-category-opinion micro IoU": 0.16666666666666666,
             "aspect-sentiment-opinion micro IoU": 0.16666666666666666,
-            "category-sentiment-opinion micro IoU": 0.75
+            "category-sentiment-opinion micro IoU": 0.75,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.75
         },
         {
             "idx": 9,
@@ -920,7 +971,9 @@
             "aspect-category-sentiment micro IoU": 0.42857142857142855,
             "aspect-category-opinion micro IoU": 0.2,
             "aspect-sentiment-opinion micro IoU": 0.3333333333333333,
-            "category-sentiment-opinion micro IoU": 0.2
+            "category-sentiment-opinion micro IoU": 0.2,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.375
         },
         {
             "idx": 10,
@@ -990,7 +1043,9 @@
             "aspect-category-sentiment micro IoU": 0.16666666666666666,
             "aspect-category-opinion micro IoU": 0.16666666666666666,
             "aspect-sentiment-opinion micro IoU": 0.2,
-            "category-sentiment-opinion micro IoU": 0.4
+            "category-sentiment-opinion micro IoU": 0.4,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.5
         },
         {
             "idx": 11,
@@ -1108,7 +1163,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.09090909090909091
         },
         {
             "idx": 12,
@@ -1166,7 +1223,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 13,
@@ -1266,7 +1325,9 @@
             "aspect-category-sentiment micro IoU": 0.2,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.1,
-            "category-sentiment-opinion micro IoU": 0.09090909090909091
+            "category-sentiment-opinion micro IoU": 0.09090909090909091,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.2222222222222222
         },
         {
             "idx": 14,
@@ -1342,7 +1403,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.4
         },
         {
             "idx": 15,
@@ -1406,7 +1469,9 @@
             "aspect-category-sentiment micro IoU": 0.5,
             "aspect-category-opinion micro IoU": 0.5,
             "aspect-sentiment-opinion micro IoU": 0.5,
-            "category-sentiment-opinion micro IoU": 0.5
+            "category-sentiment-opinion micro IoU": 0.5,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.5
         },
         {
             "idx": 16,
@@ -1518,7 +1583,9 @@
             "aspect-category-sentiment micro IoU": 0.08333333333333333,
             "aspect-category-opinion micro IoU": 0.07692307692307693,
             "aspect-sentiment-opinion micro IoU": 0.09090909090909091,
-            "category-sentiment-opinion micro IoU": 0.16666666666666666
+            "category-sentiment-opinion micro IoU": 0.16666666666666666,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.2857142857142857
         },
         {
             "idx": 17,
@@ -1570,7 +1637,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.3333333333333333
         },
         {
             "idx": 18,
@@ -1634,7 +1703,9 @@
             "aspect-category-sentiment micro IoU": 0.2,
             "aspect-category-opinion micro IoU": 0.2,
             "aspect-sentiment-opinion micro IoU": 0.2,
-            "category-sentiment-opinion micro IoU": 0.2
+            "category-sentiment-opinion micro IoU": 0.2,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.2
         },
         {
             "idx": 19,
@@ -1716,7 +1787,9 @@
             "aspect-category-sentiment micro IoU": 0.125,
             "aspect-category-opinion micro IoU": 0.125,
             "aspect-sentiment-opinion micro IoU": 0.16666666666666666,
-            "category-sentiment-opinion micro IoU": 0.125
+            "category-sentiment-opinion micro IoU": 0.125,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.6666666666666666
         },
         {
             "idx": 20,
@@ -1780,7 +1853,9 @@
             "aspect-category-sentiment micro IoU": 0.2,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 21,
@@ -1832,7 +1907,9 @@
             "aspect-category-sentiment micro IoU": 1.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 22,
@@ -1890,7 +1967,9 @@
             "aspect-category-sentiment micro IoU": 0.3333333333333333,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 23,
@@ -1954,7 +2033,9 @@
             "aspect-category-sentiment micro IoU": 0.5,
             "aspect-category-opinion micro IoU": 0.5,
             "aspect-sentiment-opinion micro IoU": 0.5,
-            "category-sentiment-opinion micro IoU": 0.5
+            "category-sentiment-opinion micro IoU": 0.5,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.6666666666666666
         },
         {
             "idx": 24,
@@ -2024,7 +2105,9 @@
             "aspect-category-sentiment micro IoU": 0.2,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.2,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.3333333333333333
         },
         {
             "idx": 25,
@@ -2100,7 +2183,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 26,
@@ -2176,7 +2261,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.14285714285714285,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.16666666666666666
         },
         {
             "idx": 27,
@@ -2240,7 +2327,9 @@
             "aspect-category-sentiment micro IoU": 0.5,
             "aspect-category-opinion micro IoU": 0.5,
             "aspect-sentiment-opinion micro IoU": 0.5,
-            "category-sentiment-opinion micro IoU": 0.5
+            "category-sentiment-opinion micro IoU": 0.5,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.5
         },
         {
             "idx": 28,
@@ -2322,7 +2411,9 @@
             "aspect-category-sentiment micro IoU": 0.5,
             "aspect-category-opinion micro IoU": 0.2857142857142857,
             "aspect-sentiment-opinion micro IoU": 0.5,
-            "category-sentiment-opinion micro IoU": 0.2857142857142857
+            "category-sentiment-opinion micro IoU": 0.2857142857142857,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.6666666666666666
         },
         {
             "idx": 29,
@@ -2404,7 +2495,9 @@
             "aspect-category-sentiment micro IoU": 0.3333333333333333,
             "aspect-category-opinion micro IoU": 0.125,
             "aspect-sentiment-opinion micro IoU": 0.2857142857142857,
-            "category-sentiment-opinion micro IoU": 0.125
+            "category-sentiment-opinion micro IoU": 0.125,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.3333333333333333
         },
         {
             "idx": 30,
@@ -2468,7 +2561,9 @@
             "aspect-category-sentiment micro IoU": 0.25,
             "aspect-category-opinion micro IoU": 0.2,
             "aspect-sentiment-opinion micro IoU": 0.2,
-            "category-sentiment-opinion micro IoU": 0.2
+            "category-sentiment-opinion micro IoU": 0.2,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.25
         },
         {
             "idx": 31,
@@ -2562,7 +2657,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.1,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.16666666666666666
         },
         {
             "idx": 32,
@@ -2656,7 +2753,9 @@
             "aspect-category-sentiment micro IoU": 0.25,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 33,
@@ -2720,7 +2819,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.2
         },
         {
             "idx": 34,
@@ -2790,7 +2891,9 @@
             "aspect-category-sentiment micro IoU": 0.16666666666666666,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.2
         },
         {
             "idx": 35,
@@ -2902,7 +3005,9 @@
             "aspect-category-sentiment micro IoU": 0.3333333333333333,
             "aspect-category-opinion micro IoU": 0.08333333333333333,
             "aspect-sentiment-opinion micro IoU": 0.08333333333333333,
-            "category-sentiment-opinion micro IoU": 0.08333333333333333
+            "category-sentiment-opinion micro IoU": 0.08333333333333333,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.14285714285714285
         },
         {
             "idx": 36,
@@ -2990,7 +3095,9 @@
             "aspect-category-sentiment micro IoU": 0.1111111111111111,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.2
         },
         {
             "idx": 37,
@@ -3078,7 +3185,9 @@
             "aspect-category-sentiment micro IoU": 0.42857142857142855,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.1111111111111111,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.14285714285714285
         },
         {
             "idx": 38,
@@ -3142,7 +3251,9 @@
             "aspect-category-sentiment micro IoU": 0.2,
             "aspect-category-opinion micro IoU": 0.2,
             "aspect-sentiment-opinion micro IoU": 0.2,
-            "category-sentiment-opinion micro IoU": 0.2
+            "category-sentiment-opinion micro IoU": 0.2,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.2
         },
         {
             "idx": 39,
@@ -3242,7 +3353,9 @@
             "aspect-category-sentiment micro IoU": 0.1,
             "aspect-category-opinion micro IoU": 0.09090909090909091,
             "aspect-sentiment-opinion micro IoU": 0.125,
-            "category-sentiment-opinion micro IoU": 0.2
+            "category-sentiment-opinion micro IoU": 0.2,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.2857142857142857
         },
         {
             "idx": 40,
@@ -3342,7 +3455,9 @@
             "aspect-category-sentiment micro IoU": 0.1111111111111111,
             "aspect-category-opinion micro IoU": 0.09090909090909091,
             "aspect-sentiment-opinion micro IoU": 0.09090909090909091,
-            "category-sentiment-opinion micro IoU": 0.2
+            "category-sentiment-opinion micro IoU": 0.2,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.375
         },
         {
             "idx": 41,
@@ -3418,7 +3533,9 @@
             "aspect-category-sentiment micro IoU": 0.14285714285714285,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.2
         },
         {
             "idx": 42,
@@ -3524,7 +3641,9 @@
             "aspect-category-sentiment micro IoU": 0.18181818181818182,
             "aspect-category-opinion micro IoU": 0.08333333333333333,
             "aspect-sentiment-opinion micro IoU": 0.09090909090909091,
-            "category-sentiment-opinion micro IoU": 0.08333333333333333
+            "category-sentiment-opinion micro IoU": 0.08333333333333333,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.14285714285714285
         },
         {
             "idx": 43,
@@ -3588,7 +3707,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.2,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.2
         },
         {
             "idx": 44,
@@ -3658,7 +3779,9 @@
             "aspect-category-sentiment micro IoU": 0.4,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 45,
@@ -3740,7 +3863,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 1.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 46,
@@ -3798,7 +3923,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 47,
@@ -3874,7 +4001,9 @@
             "aspect-category-sentiment micro IoU": 0.16666666666666666,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 48,
@@ -3944,7 +4073,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.16666666666666666
+            "category-sentiment-opinion micro IoU": 0.16666666666666666,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.25
         },
         {
             "idx": 49,
@@ -4032,7 +4163,9 @@
             "aspect-category-sentiment micro IoU": 0.25,
             "aspect-category-opinion micro IoU": 0.1111111111111111,
             "aspect-sentiment-opinion micro IoU": 0.125,
-            "category-sentiment-opinion micro IoU": 0.1111111111111111
+            "category-sentiment-opinion micro IoU": 0.1111111111111111,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.14285714285714285
         },
         {
             "idx": 50,
@@ -4090,7 +4223,9 @@
             "aspect-category-sentiment micro IoU": 0.25,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.25,
-            "category-sentiment-opinion micro IoU": 0.25
+            "category-sentiment-opinion micro IoU": 0.25,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.3333333333333333
         },
         {
             "idx": 51,
@@ -4148,7 +4283,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.25
+            "category-sentiment-opinion micro IoU": 0.25,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.25
         },
         {
             "idx": 52,
@@ -4230,7 +4367,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.125
         },
         {
             "idx": 53,
@@ -4294,7 +4433,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.5
+            "category-sentiment-opinion micro IoU": 0.5,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.5
         },
         {
             "idx": 54,
@@ -4394,7 +4535,9 @@
             "aspect-category-sentiment micro IoU": 0.2222222222222222,
             "aspect-category-opinion micro IoU": 0.09090909090909091,
             "aspect-sentiment-opinion micro IoU": 0.1111111111111111,
-            "category-sentiment-opinion micro IoU": 0.09090909090909091
+            "category-sentiment-opinion micro IoU": 0.09090909090909091,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.14285714285714285
         },
         {
             "idx": 55,
@@ -4488,7 +4631,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 56,
@@ -4558,7 +4703,9 @@
             "aspect-category-sentiment micro IoU": 0.2,
             "aspect-category-opinion micro IoU": 0.16666666666666666,
             "aspect-sentiment-opinion micro IoU": 0.16666666666666666,
-            "category-sentiment-opinion micro IoU": 0.16666666666666666
+            "category-sentiment-opinion micro IoU": 0.16666666666666666,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.16666666666666666
         },
         {
             "idx": 57,
@@ -4634,7 +4781,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 58,
@@ -4740,7 +4889,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.125
         },
         {
             "idx": 59,
@@ -4822,7 +4973,9 @@
             "aspect-category-sentiment micro IoU": 0.125,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 60,
@@ -4898,7 +5051,9 @@
             "aspect-category-sentiment micro IoU": 0.3333333333333333,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 61,
@@ -4998,7 +5153,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 62,
@@ -5056,7 +5213,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.25
+            "category-sentiment-opinion micro IoU": 0.25,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.5
         },
         {
             "idx": 63,
@@ -5126,7 +5285,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 64,
@@ -5202,7 +5363,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 1.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 65,
@@ -5266,7 +5429,9 @@
             "aspect-category-sentiment micro IoU": 0.5,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 66,
@@ -5330,7 +5495,9 @@
             "aspect-category-sentiment micro IoU": 0.2,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 67,
@@ -5412,7 +5579,9 @@
             "aspect-category-sentiment micro IoU": 0.25,
             "aspect-category-opinion micro IoU": 0.125,
             "aspect-sentiment-opinion micro IoU": 0.16666666666666666,
-            "category-sentiment-opinion micro IoU": 0.125
+            "category-sentiment-opinion micro IoU": 0.125,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.16666666666666666
         },
         {
             "idx": 68,
@@ -5464,7 +5633,9 @@
             "aspect-category-sentiment micro IoU": 0.3333333333333333,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 69,
@@ -5570,7 +5741,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 70,
@@ -5634,7 +5807,9 @@
             "aspect-category-sentiment micro IoU": 0.5,
             "aspect-category-opinion micro IoU": 0.5,
             "aspect-sentiment-opinion micro IoU": 0.5,
-            "category-sentiment-opinion micro IoU": 0.5
+            "category-sentiment-opinion micro IoU": 0.5,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.5
         },
         {
             "idx": 71,
@@ -5722,7 +5897,9 @@
             "aspect-category-sentiment micro IoU": 0.125,
             "aspect-category-opinion micro IoU": 0.1111111111111111,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.4
         },
         {
             "idx": 72,
@@ -5816,7 +5993,9 @@
             "aspect-category-sentiment micro IoU": 0.2222222222222222,
             "aspect-category-opinion micro IoU": 0.1,
             "aspect-sentiment-opinion micro IoU": 0.1,
-            "category-sentiment-opinion micro IoU": 0.375
+            "category-sentiment-opinion micro IoU": 0.375,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.375
         },
         {
             "idx": 73,
@@ -5880,7 +6059,9 @@
             "aspect-category-sentiment micro IoU": 0.2,
             "aspect-category-opinion micro IoU": 0.2,
             "aspect-sentiment-opinion micro IoU": 0.2,
-            "category-sentiment-opinion micro IoU": 0.2
+            "category-sentiment-opinion micro IoU": 0.2,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.5
         },
         {
             "idx": 74,
@@ -5932,7 +6113,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 75,
@@ -5990,7 +6173,9 @@
             "aspect-category-sentiment micro IoU": 0.3333333333333333,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 76,
@@ -6060,7 +6245,9 @@
             "aspect-category-sentiment micro IoU": 0.16666666666666666,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.16666666666666666
+            "category-sentiment-opinion micro IoU": 0.16666666666666666,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.4
         },
         {
             "idx": 77,
@@ -6112,7 +6299,9 @@
             "aspect-category-sentiment micro IoU": 0.3333333333333333,
             "aspect-category-opinion micro IoU": 0.3333333333333333,
             "aspect-sentiment-opinion micro IoU": 0.3333333333333333,
-            "category-sentiment-opinion micro IoU": 0.3333333333333333
+            "category-sentiment-opinion micro IoU": 0.3333333333333333,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.3333333333333333
         },
         {
             "idx": 78,
@@ -6170,7 +6359,9 @@
             "aspect-category-sentiment micro IoU": 0.25,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 79,
@@ -6246,7 +6437,9 @@
             "aspect-category-sentiment micro IoU": 0.14285714285714285,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.14285714285714285,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.14285714285714285
         },
         {
             "idx": 80,
@@ -6310,7 +6503,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 81,
@@ -6362,7 +6557,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.3333333333333333
         },
         {
             "idx": 82,
@@ -6444,7 +6641,9 @@
             "aspect-category-sentiment micro IoU": 0.14285714285714285,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 83,
@@ -6502,7 +6701,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.25
+            "category-sentiment-opinion micro IoU": 0.25,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.3333333333333333
         },
         {
             "idx": 84,
@@ -6566,7 +6767,9 @@
             "aspect-category-sentiment micro IoU": 0.2,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 85,
@@ -6636,7 +6839,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.16666666666666666,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.2
         },
         {
             "idx": 86,
@@ -6706,7 +6911,9 @@
             "aspect-category-sentiment micro IoU": 0.25,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.16666666666666666
+            "category-sentiment-opinion micro IoU": 0.16666666666666666,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.25
         },
         {
             "idx": 87,
@@ -6758,7 +6965,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 88,
@@ -6828,7 +7037,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 89,
@@ -6940,7 +7151,9 @@
             "aspect-category-sentiment micro IoU": 0.08333333333333333,
             "aspect-category-opinion micro IoU": 0.07692307692307693,
             "aspect-sentiment-opinion micro IoU": 0.08333333333333333,
-            "category-sentiment-opinion micro IoU": 0.08333333333333333
+            "category-sentiment-opinion micro IoU": 0.08333333333333333,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.1
         },
         {
             "idx": 90,
@@ -7010,7 +7223,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 91,
@@ -7086,7 +7301,9 @@
             "aspect-category-sentiment micro IoU": 0.14285714285714285,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 92,
@@ -7144,7 +7361,9 @@
             "aspect-category-sentiment micro IoU": 0.25,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 93,
@@ -7238,7 +7457,9 @@
             "aspect-category-sentiment micro IoU": 0.1,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 94,
@@ -7290,7 +7511,9 @@
             "aspect-category-sentiment micro IoU": 0.3333333333333333,
             "aspect-category-opinion micro IoU": 0.3333333333333333,
             "aspect-sentiment-opinion micro IoU": 0.3333333333333333,
-            "category-sentiment-opinion micro IoU": 0.3333333333333333
+            "category-sentiment-opinion micro IoU": 0.3333333333333333,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.5
         },
         {
             "idx": 95,
@@ -7372,7 +7595,9 @@
             "aspect-category-sentiment micro IoU": 0.16666666666666666,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 96,
@@ -7484,7 +7709,9 @@
             "aspect-category-sentiment micro IoU": 0.2727272727272727,
             "aspect-category-opinion micro IoU": 0.07692307692307693,
             "aspect-sentiment-opinion micro IoU": 0.1,
-            "category-sentiment-opinion micro IoU": 0.07692307692307693
+            "category-sentiment-opinion micro IoU": 0.07692307692307693,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.125
         },
         {
             "idx": 97,
@@ -7548,7 +7775,9 @@
             "aspect-category-sentiment micro IoU": 0.6666666666666666,
             "aspect-category-opinion micro IoU": 0.2,
             "aspect-sentiment-opinion micro IoU": 0.25,
-            "category-sentiment-opinion micro IoU": 0.2
+            "category-sentiment-opinion micro IoU": 0.2,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.3333333333333333
         },
         {
             "idx": 98,
@@ -7606,7 +7835,9 @@
             "aspect-category-sentiment micro IoU": 0.25,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 99,
@@ -7706,7 +7937,9 @@
             "aspect-category-sentiment micro IoU": 0.2857142857142857,
             "aspect-category-opinion micro IoU": 0.09090909090909091,
             "aspect-sentiment-opinion micro IoU": 0.09090909090909091,
-            "category-sentiment-opinion micro IoU": 0.2
+            "category-sentiment-opinion micro IoU": 0.2,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.2857142857142857
         },
         {
             "idx": 100,
@@ -7794,7 +8027,9 @@
             "aspect-category-sentiment micro IoU": 0.16666666666666666,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.1111111111111111,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.16666666666666666
         },
         {
             "idx": 101,
@@ -7900,7 +8135,9 @@
             "aspect-category-sentiment micro IoU": 0.3,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.09090909090909091,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.09090909090909091
         },
         {
             "idx": 102,
@@ -7970,7 +8207,9 @@
             "aspect-category-sentiment micro IoU": 0.16666666666666666,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.2
         },
         {
             "idx": 103,
@@ -8046,7 +8285,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 104,
@@ -8110,7 +8351,9 @@
             "aspect-category-sentiment micro IoU": 0.2,
             "aspect-category-opinion micro IoU": 0.2,
             "aspect-sentiment-opinion micro IoU": 0.3333333333333333,
-            "category-sentiment-opinion micro IoU": 0.2
+            "category-sentiment-opinion micro IoU": 0.2,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.5
         },
         {
             "idx": 105,
@@ -8198,7 +8441,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 106,
@@ -8250,7 +8495,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 107,
@@ -8296,7 +8543,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 108,
@@ -8390,7 +8639,9 @@
             "aspect-category-sentiment micro IoU": 0.125,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.1
         },
         {
             "idx": 109,
@@ -8442,7 +8693,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.3333333333333333
         },
         {
             "idx": 110,
@@ -8500,7 +8753,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 111,
@@ -8570,7 +8825,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.16666666666666666
+            "category-sentiment-opinion micro IoU": 0.16666666666666666,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.5
         },
         {
             "idx": 112,
@@ -8658,7 +8915,9 @@
             "aspect-category-sentiment micro IoU": 0.25,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 113,
@@ -8722,7 +8981,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 114,
@@ -8810,7 +9071,9 @@
             "aspect-category-sentiment micro IoU": 0.125,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.1111111111111111
         },
         {
             "idx": 115,
@@ -8868,7 +9131,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 116,
@@ -8956,7 +9221,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.1111111111111111
+            "category-sentiment-opinion micro IoU": 0.1111111111111111,
+            "indirect opinion micro IoU": 1.0,
+            "direct opinion micro IoU": 0.25
         },
         {
             "idx": 117,
@@ -9014,7 +9281,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 118,
@@ -9078,7 +9347,9 @@
             "aspect-category-sentiment micro IoU": 0.0,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.6666666666666666
         },
         {
             "idx": 119,
@@ -9130,7 +9401,9 @@
             "aspect-category-sentiment micro IoU": 0.3333333333333333,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.3333333333333333
         },
         {
             "idx": 120,
@@ -9200,7 +9473,9 @@
             "aspect-category-sentiment micro IoU": 0.16666666666666666,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.0
         },
         {
             "idx": 121,
@@ -9264,7 +9539,9 @@
             "aspect-category-sentiment micro IoU": 0.2,
             "aspect-category-opinion micro IoU": 0.0,
             "aspect-sentiment-opinion micro IoU": 0.0,
-            "category-sentiment-opinion micro IoU": 0.0
+            "category-sentiment-opinion micro IoU": 0.0,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.25
         },
         {
             "idx": 122,
@@ -9340,7 +9617,9 @@
             "aspect-category-sentiment micro IoU": 0.3333333333333333,
             "aspect-category-opinion micro IoU": 0.14285714285714285,
             "aspect-sentiment-opinion micro IoU": 0.25,
-            "category-sentiment-opinion micro IoU": 0.14285714285714285
+            "category-sentiment-opinion micro IoU": 0.14285714285714285,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.25
         },
         {
             "idx": 123,
@@ -9410,7 +9689,9 @@
             "aspect-category-sentiment micro IoU": 0.4,
             "aspect-category-opinion micro IoU": 0.16666666666666666,
             "aspect-sentiment-opinion micro IoU": 0.16666666666666666,
-            "category-sentiment-opinion micro IoU": 0.16666666666666666
+            "category-sentiment-opinion micro IoU": 0.16666666666666666,
+            "indirect opinion micro IoU": null,
+            "direct opinion micro IoU": 0.4
         },
         {
             "idx": 124,
@@ -9480,7 +9761,9 @@
             "aspect-category-sentiment micro IoU": 0.4,
             "aspect-category-opinion micro IoU": 0.4,
             "aspect-sentiment-opinion micro IoU": 0.5,
-            "category-sentiment-opinion micro IoU": 0.4
+            "category-sentiment-opinion micro IoU": 0.4,
+            "indirect opinion micro IoU": 0.0,
+            "direct opinion micro IoU": 0.6666666666666666
         }
     ]
 }

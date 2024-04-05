@@ -24,8 +24,10 @@ FONTSIZE = 16
 
 ### HELPER FUNCTIONS ###
 
-def is_skip_dir(s, substrings):
-    return any(substring in s for substring in substrings)
+def found_dir(cur_dir, dirs, is_substr=False):
+    if is_substr:
+        return any(dir in cur_dir for dir in dirs)
+    return any(dir == cur_dir for dir in dirs)
 
 
 def parse_eval_filepath(filepath, eval_dir):
@@ -37,7 +39,6 @@ def parse_eval_filepath(filepath, eval_dir):
         if "llama" in model_type:
             model_type = "llama" + model_type[model_type.find("llama") + 5:]
         if "tf-idf" in model_type or "random" in model_type:
-            print(model_type)
             model = model + "-" + model_type[model_type.find("-") + 1:]
             model_type = model_type[:model_type.find("-")]
         return {
@@ -282,16 +283,18 @@ class EvalVisualizer:
         self.df = None
         self.df_metadata = None
 
-    def collect_data(self, skip_dirs=[]):
+    def collect_data(self, skip_dirs=[], include_dirs=[]):
         data = init_data()
         dataset_stat = init_metadata()
         
         for filepath in self.eval_output_dir.rglob('*.json'):
-            print("Collecting data from", filepath)
-
-            if is_skip_dir(str(filepath), skip_dirs):
+            if found_dir(str(filepath), skip_dirs, is_substr=True):
                 continue
 
+            if not found_dir(str(filepath), include_dirs):
+                continue
+
+            print("Collecting data from", filepath)
             metadata = parse_eval_filepath(filepath, self.eval_output_dir.name)
 
             model_type, model = get_formatted_model(metadata['model_type'], metadata['model'])
@@ -310,6 +313,7 @@ class EvalVisualizer:
                     data['term'].append(get_formatted_term(term))
                     data['metric'].append(metric)
                     data['score'].append(score * 100)
+            
 
         self.df = pd.DataFrame(data)
         self.df = clean_model_names(self.df)
@@ -593,6 +597,7 @@ def main():
     parser.add_argument('-c', '--create_charts', action='store_true', help='Create the charts.')
     parser.add_argument('-t', '--create_tables', action='store_true', help='Create the tables.')
     parser.add_argument('-s', '--skip_file', action='store_true', default="eval_visualize/skip_list.txt", help='Skip the dir if in this file.')
+    parser.add_argument('-i', '--include_file', action='store_true', default=None, help='Skip the dir if in this file.')
     parser.add_argument('-l', '--ordering', type=list, default=["task", "dataset", "term", "model"], help='The parameters and constants of the chart: [PARAM_1, PARAM_2, CONSTANT_1, CONSTANT2].')
 
     args = parser.parse_args()
@@ -602,10 +607,17 @@ def main():
 
     visualizer = EvalVisualizer(terms, args.eval_output_dir, args.output_dir, args.ordering)
 
-    with open(args.skip_file, 'r') as file:
-        skip_dirs = file.read().splitlines()
+    skip_dirs = []
+    include_dirs = []
 
-    visualizer.collect_data(skip_dirs=skip_dirs)
+    if not args.include_file:
+        with open(args.skip_file, 'r') as file:
+            skip_dirs = file.read().splitlines()
+    else:
+        with open(args.include_file, 'i') as file:
+            include_dirs = file.read().splitlines()
+
+    visualizer.collect_data(skip_dirs=skip_dirs, include_dirs=include_dirs)
     visualizer.generate_visuals(args.create_charts, args.create_tables, terms_file=args.terms_file)
 
 

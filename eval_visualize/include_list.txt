@@ -1,0 +1,7 @@
+mvp-seed-5
+mvp-seed-10
+mvp-seed-15
+mvp-seed-20
+mvp-seed-25
+gen-scl-nat
+gpt-tf-idf-10-906

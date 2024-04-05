@@ -18,6 +18,8 @@ model_output_files=$(find "$pkl_path" -wholename "*/$model_dir/*.pkl")
 
 # Loop through each .pkl file
 for model_output_file in $model_output_files; do
+    echo "model output file: $model_output_file"
+
     # Extract model, task, and dataset from the file path
     IFS='/' read -r -a path_array <<< "$model_output_file"
     model=${path_array[4]}
@@ -49,7 +51,17 @@ for model_output_file in $model_output_files; do
     output_file="$output_path/score.json"
     echo "output file: $output_file"
 
+    most_recent_old=""
+
     # Create directories and empty score.json file
+    if [ -f "$output_file" ]; then
+        back_int=0
+        while [ -f "$output_file.$back_int.bak" ]; do
+            back_int=$((back_int + 1))
+        done
+        mv "$output_file" "$output_file.$back_int.bak"
+        most_recent_old="$output_file.$back_int.bak"
+    fi
     mkdir -p "$output_path" && touch "$output_file"
 
     # Run evaluation script

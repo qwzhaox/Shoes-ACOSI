@@ -14,13 +14,13 @@
             "max": 107,
             "count": 63879
         },
-        "tuples predicted": {
-            "mean": 1.3860294117647058,
+        "tuples": {
+            "mean": 1.4163395485770363,
             "median": 1.0,
-            "stdev": 0.7139286755237625,
+            "stdev": 0.8185685225002023,
             "min": 1,
-            "max": 7,
-            "count": 1131
+            "max": 10,
+            "count": 5773
         },
         "tuples test": {
             "mean": 1.4227941176470589,
@@ -30,38 +30,58 @@
             "max": 7,
             "count": 1161
         },
-        "tuples": {
-            "mean": 1.4163395485770363,
+        "tuples predicted": {
+            "mean": 1.3860294117647058,
             "median": 1.0,
-            "stdev": 0.8185685225002023,
+            "stdev": 0.7139286755237625,
             "min": 1,
-            "max": 10,
-            "count": 5773
+            "max": 7,
+            "count": 1131
         },
         "ea/eo/ia/io": {
-            "ea/eo": 3278,
-            "ea/io": 1241,
-            "ia/eo": 912,
-            "ia/io": 342,
-            "test ea/eo": 673,
-            "test ea/io": 253,
-            "test ia/eo": 169,
-            "test ia/io": 66,
-            "pred ea/eo": 685,
-            "pred ea/io": 237,
-            "pred ia/eo": 153,
-            "pred ia/io": 56
+            "ea/eo": 0.5678156937467521,
+            "ea/io": 0.21496622206824875,
+            "ia/eo": 0.1579767884981812,
+            "ia/io": 0.05924129568681794,
+            "test ea/eo": 0.5796726959517657,
+            "test ea/io": 0.21791559000861327,
+            "test ia/eo": 0.14556416881998277,
+            "test ia/io": 0.056847545219638244,
+            "pred ea/eo": 0.6056587091069849,
+            "pred ea/io": 0.20954907161803712,
+            "pred ia/eo": 0.13527851458885942,
+            "pred ia/io": 0.04951370468611848
+        },
+        "span len": {
+            "valid aspect": 1.4005310909493252,
+            "expl opinion": 1.1031116534472238,
+            "test valid aspect": 1.3974082073434124,
+            "test expl opinion": 1.1084695393759287,
+            "pred valid aspect": 1.4045553145336225,
+            "pred expl opinion": 1.1094890510948905
         },
         "sentiment": {
-            "positive": 3578,
-            "negative": 1879,
-            "neutral": 316,
-            "test positive": 716,
-            "test negative": 380,
-            "test neutral": 65,
-            "pred positive": 710,
-            "pred negative": 362,
-            "pred neutral": 59
+            "positive": 0.6197817425948381,
+            "negative": 0.3254806859518448,
+            "neutral": 0.05473757145331717,
+            "test positive": 0.6167097329888027,
+            "test negative": 0.3273040482342808,
+            "test neutral": 0.05598621877691645,
+            "pred positive": 0.627763041556145,
+            "pred negative": 0.32007073386383733,
+            "pred neutral": 0.052166224580017684,
+            "polarities/example": {
+                "mean": 1.050785083415113,
+                "stdev": 0.2207002173690956
+            },
+            "test polarities/example": {
+                "mean": 1.0441176470588236,
+                "stdev": 0.20548241817488122
+            },
+            "pred polarities/example": {
+                "mean": 1.0575980392156863,
+                "stdev": 0.23832980231393058
+            }
         }
     },
     "exact": {

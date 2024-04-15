@@ -288,10 +288,11 @@ class EvalVisualizer:
         dataset_stat = init_metadata()
         
         for filepath in self.eval_output_dir.rglob('*.json'):
-            if found_dir(str(filepath), skip_dirs, is_substr=True):
+            model_run = filepath.parts[1]
+            if found_dir(str(model_run), skip_dirs, is_substr=True):
                 continue
 
-            if not found_dir(str(filepath), include_dirs):
+            if not found_dir(str(model_run), include_dirs):
                 continue
 
             print("Collecting data from", filepath)
@@ -597,7 +598,7 @@ def main():
     parser.add_argument('-c', '--create_charts', action='store_true', help='Create the charts.')
     parser.add_argument('-t', '--create_tables', action='store_true', help='Create the tables.')
     parser.add_argument('-s', '--skip_file', action='store_true', default="eval_visualize/skip_list.txt", help='Skip the dir if in this file.')
-    parser.add_argument('-i', '--include_file', action='store_true', default=None, help='Skip the dir if in this file.')
+    parser.add_argument('-i', '--include_file', type=str, default=None, help='Skip the dir if in this file.')
     parser.add_argument('-l', '--ordering', type=list, default=["task", "dataset", "term", "model"], help='The parameters and constants of the chart: [PARAM_1, PARAM_2, CONSTANT_1, CONSTANT2].')
 
     args = parser.parse_args()
@@ -614,7 +615,7 @@ def main():
         with open(args.skip_file, 'r') as file:
             skip_dirs = file.read().splitlines()
     else:
-        with open(args.include_file, 'i') as file:
+        with open(args.include_file, 'r') as file:
             include_dirs = file.read().splitlines()
 
     visualizer.collect_data(skip_dirs=skip_dirs, include_dirs=include_dirs)

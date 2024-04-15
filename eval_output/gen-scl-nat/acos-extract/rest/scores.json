@@ -14,13 +14,13 @@
             "max": 84,
             "count": 34417
         },
-        "tuples predicted": {
-            "mean": 1.523156089193825,
-            "median": 1,
-            "stdev": 0.9132824685423884,
-            "min": 0,
-            "max": 9,
-            "count": 888
+        "tuples": {
+            "mean": 1.6028896672504378,
+            "median": 1.0,
+            "stdev": 1.0432648911110887,
+            "min": 1,
+            "max": 26,
+            "count": 3661
         },
         "tuples test": {
             "mean": 1.5711835334476845,
@@ -30,38 +30,58 @@
             "max": 26,
             "count": 916
         },
-        "tuples": {
-            "mean": 1.6028896672504378,
-            "median": 1.0,
-            "stdev": 1.0432648911110887,
-            "min": 1,
-            "max": 26,
-            "count": 3661
+        "tuples predicted": {
+            "mean": 1.523156089193825,
+            "median": 1,
+            "stdev": 0.9132824685423884,
+            "min": 0,
+            "max": 9,
+            "count": 888
         },
         "ea/eo/ia/io": {
-            "ea/eo": 2431,
-            "ea/io": 350,
-            "ia/eo": 530,
-            "ia/io": 350,
-            "test ea/eo": 596,
-            "test ea/io": 107,
-            "test ia/eo": 122,
-            "test ia/io": 91,
-            "pred ea/eo": 633,
-            "pred ea/io": 59,
-            "pred ia/eo": 120,
-            "pred ia/io": 76
+            "ea/eo": 0.664026222343622,
+            "ea/io": 0.09560229445506692,
+            "ia/eo": 0.1447691887462442,
+            "ia/io": 0.09560229445506692,
+            "test ea/eo": 0.6506550218340611,
+            "test ea/io": 0.1168122270742358,
+            "test ia/eo": 0.1331877729257642,
+            "test ia/io": 0.09934497816593886,
+            "pred ea/eo": 0.7128378378378378,
+            "pred ea/io": 0.06644144144144144,
+            "pred ia/eo": 0.13513513513513514,
+            "pred ia/io": 0.08558558558558559
+        },
+        "span len": {
+            "valid aspect": 1.4642215030564545,
+            "expl opinion": 1.1962155491567257,
+            "test valid aspect": 1.4352773826458036,
+            "test expl opinion": 1.139261744966443,
+            "pred valid aspect": 1.3973988439306357,
+            "pred expl opinion": 1.180094786729858
         },
         "sentiment": {
-            "positive": 2503,
-            "negative": 1007,
-            "neutral": 151,
-            "test positive": 667,
-            "test negative": 205,
-            "test neutral": 44,
-            "pred positive": 638,
-            "pred negative": 217,
-            "pred neutral": 33
+            "positive": 0.6836929800600928,
+            "negative": 0.27506145861786396,
+            "neutral": 0.041245561322043156,
+            "test positive": 0.7281659388646288,
+            "test negative": 0.22379912663755458,
+            "test neutral": 0.048034934497816595,
+            "pred positive": 0.7184684684684685,
+            "pred negative": 0.24436936936936937,
+            "pred neutral": 0.037162162162162164,
+            "polarities/example": {
+                "mean": 1.0779334500875657,
+                "stdev": 0.2713731454898242
+            },
+            "test polarities/example": {
+                "mean": 1.0703259005145798,
+                "stdev": 0.26254319912549345
+            },
+            "pred polarities/example": {
+                "mean": 1.0737564322469983,
+                "stdev": 0.27442058113313694
+            }
         }
     },
     "exact": {

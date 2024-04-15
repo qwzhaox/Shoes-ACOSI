@@ -111,29 +111,28 @@ def process_dataset(dataset):
     return reviews, true_outputs
 
 
-def accumulate_ea_eo_ia_io_sent(output, nums, tuple_len):
-    num_ea_eo, num_ea_io, num_ia_eo, num_ia_io, pos, neg, neu = nums
-    for quint in output:
-        if (quint[ASPECT_IDX] == "NULL" and quint[OPINION_IDX] == "NULL") or \
-            (tuple_len == len(TERM_LIST) and quint[ASPECT_IDX] == "NULL" and quint[IMPLICIT_IND_IDX] == "indirect"):
-            num_ia_io += 1
-        elif quint[ASPECT_IDX] == "NULL":
-            num_ia_eo += 1
-        elif (quint[OPINION_IDX] == "NULL") or \
-                (tuple_len == len(TERM_LIST) and quint[IMPLICIT_IND_IDX] == "indirect"):
-            num_ea_io += 1
-        else:
-            num_ea_eo += 1
+def accum_ea_eo_ia_io_sent(true_list, pred_list, accum_true=False, accum_pred=False):
+    if accum_true:
+        true_list[-1] += 1
+    if accum_pred:
+        pred_list[-1] += 1
 
-        if quint[SENTIMENT_IDX] == "positive":
-            pos += 1
-        elif quint[SENTIMENT_IDX] == "negative":
-            neg += 1
-        else:
-            neu += 1
+def accum_span_len(span, true_list, pred_list, accum_true=False, accum_pred=False):
+    length = len(span.split(" "))
+    if accum_true:
+        true_list.append(length)
+    if accum_pred:
+        pred_list.append(length)
 
-    return num_ea_eo, num_ea_io, num_ia_eo, num_ia_io, pos, neg, neu
-
+def accum_polarities(polarities, pos, neg, neu):
+    for pos_val, neg_val, neu_val in zip(pos, neg, neu):
+        polarities.append(0)
+        if pos_val > 0:
+            polarities[-1] += 1
+        if neg_val > 0:
+            polarities[-1] += 1
+        if neu_val > 0:
+            polarities[-1] += 1
 
 def get_combos(tuple_len):
     combos = []

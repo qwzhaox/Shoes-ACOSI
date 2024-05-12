@@ -23,8 +23,8 @@ NUM_QUAD_ELTS = 5
 SIMILARITY_THRESHOLD = 0.50
 
 
-def set_tuplify(list):
-    new_set = set([tuple(sub_list) for sub_list in list])
+def set_tuplify(list_in):
+    new_set = set([tuple(sub_list) for sub_list in list_in])
     return new_set
 
 
@@ -41,9 +41,24 @@ def process_metric(metric, inter, union):
         return round(0, 4)  # Rounded--can remove if needed
 
 
+def stringify_span_tuples(annot):
+    for quad in annot:
+        for idx, elt in enumerate(quad):
+            if isinstance(elt, tuple):
+                quad[idx] = " ".join([str(i) for i in elt])
+            elif isinstance(elt, list):
+                quad[idx] = " ".join([str(i) for i in elt])
+
+
 def get_exact_inter_union(annot1, annot2):
-    set_annot1 = set_tuplify(annot1)
-    set_annot2 = set_tuplify(annot2)
+    annot1_cp = deepcopy(annot1)
+    stringify_span_tuples(annot1_cp)
+
+    annot2_cp = deepcopy(annot2)
+    stringify_span_tuples(annot2_cp)
+
+    set_annot1 = set_tuplify(annot1_cp)
+    set_annot2 = set_tuplify(annot2_cp)
     inter, union = get_inter_union(set_annot1, set_annot2)
     return inter, union, set_annot1, set_annot2
 
@@ -165,9 +180,9 @@ def flatten_annot(annot):
 
 # ...
 parser = argparse.ArgumentParser()
-parser.add_argument("--input_file", help="input json file", required=True)
+parser.add_argument("-i", "--input_file", help="input json file", required=True)
 parser.add_argument(
-    "--output_file",
+    "-o", "--output_file",
     help="output json file",
     required=True,
 )
@@ -192,6 +207,10 @@ opinion_total = 0
 sentiment_total = 0
 impl_expl_total = 0
 exact_total = 0
+cat_quad_avg_total = 0
+span_quad_avg_total = 0
+
+excluded = 0
 
 for idx in range(len(review_data)):
     review_metrics = {}
@@ -203,14 +222,28 @@ for idx in range(len(review_data)):
         f"######################################## REVIEW {idx} ###########################################\n"
     )
 
-    name1 = review_data[idx]["annotations"][0]["metadata"]["name"]
-    name2 = review_data[idx]["annotations"][1]["metadata"]["name"]
-    review_metrics["annotator_ids"] = [name1, name2]
+    try:
+        name1 = review_data[idx]["annotations"][1]["metadata"]["name"]
+        name2 = review_data[idx]["annotations"][2]["metadata"]["name"]
+        review_metrics["annotator_ids"] = [name1, name2]
 
-    annot1 = review_data[idx]["annotations"][0]["annotation"]
-    review_metrics["annot1"] = flatten_annot(annot1)
-    annot2 = review_data[idx]["annotations"][1]["annotation"]
-    review_metrics["annot2"] = flatten_annot(annot2)
+        annot1 = review_data[idx]["annotations"][1]["annotation"]
+        review_metrics["annot1"] = flatten_annot(annot1)
+        annot2 = review_data[idx]["annotations"][2]["annotation"]
+        review_metrics["annot2"] = flatten_annot(annot2)
+
+        if not annot1 or not annot2:
+            print("EMPTY:", annot1, annot2)
+            raise Exception("Empty annotation")
+
+        for at1, at2 in zip(annot1, annot2):
+            if len(at1) != 5 or len(at2) != 5:
+                print("ERROR:", at1, at2)
+                raise Exception("Invalid annotation")
+        
+        excluded += 1
+    except:
+        continue
 
     # indexify opinions and spans
     indexify_spans(annot1, review, OPINION)
@@ -229,44 +262,57 @@ for idx in range(len(review_data)):
     review_metrics[A[ASPECT]] = process_metric(
         ACOSI[ASPECT], aspect_inter, aspect_union
     )
-    aspect_total += aspect_inter / aspect_union
+    add_aspect = aspect_inter / aspect_union if aspect_union != 0 else 0
+    aspect_total += add_aspect
 
     # Category
     cat_inter, cat_union = get_elt_inter_union(CATEGORY, annot1, annot2)
     review_metrics[A[CATEGORY]] = process_metric(ACOSI[CATEGORY], cat_inter, cat_union)
-    category_total += cat_inter / cat_union
+    add_cat = cat_inter / cat_union if cat_union != 0 else 0
+    category_total += add_cat
 
     # Sentiment
     sent_inter, sent_union = get_elt_inter_union(SENTIMENT, annot1, annot2)
     review_metrics[A[SENTIMENT]] = process_metric(
         ACOSI[SENTIMENT], sent_inter, sent_union
     )
-    sentiment_total += sent_inter / sent_union
+    add_sent = sent_inter / sent_union if sent_union != 0 else 0
+    add_sent = (add_sent - 0.1667)/(1 - 0.1667)
+    sentiment_total += add_sent
 
     # Opinion
     op_inter, op_union = get_span_inter_union(OPINION, annot1, annot2)
     review_metrics[A[OPINION]] = process_metric(ACOSI[OPINION], op_inter, op_union)
-    opinion_total += op_inter / op_union
+    add_op = op_inter / op_union if op_union != 0 else 0
+    opinion_total += add_op
 
     # Implicit/Explicit
     ie_inter, ie_outer = get_elt_inter_union(IMPL_EXPL, annot1, annot2)
     review_metrics[A[IMPL_EXPL]] = process_metric(ACOSI[IMPL_EXPL], ie_inter, ie_outer)
-    impl_expl_total += ie_inter / ie_outer
+    add_impl_expl = ie_inter / ie_outer if ie_outer != 0 else 0
+    add_impl_expl = (add_impl_expl - 0.3333)/(1 - 0.3333)
+    impl_expl_total += add_impl_expl
 
-    review_metrics["quad_avg"] = (
-        review_metrics[A[ASPECT]]
-        + review_metrics[A[CATEGORY]]
+    review_metrics["cat_quad_avg"] = (
+        review_metrics[A[CATEGORY]]
         + review_metrics[A[SENTIMENT]]
-        + review_metrics[A[OPINION]]
         + review_metrics[A[IMPL_EXPL]]
-    ) / NUM_QUAD_ELTS
+    ) / (NUM_QUAD_ELTS - 2)
+    cat_quad_avg_total += review_metrics["cat_quad_avg"]
+
+    review_metrics["span_quad_avg"] = (
+        review_metrics[A[ASPECT]]
+        + review_metrics[A[OPINION]]
+    ) / (NUM_QUAD_ELTS - 3)
+    span_quad_avg_total += review_metrics["span_quad_avg"]
 
     # Exact Match
     exact_inter, exact_union, set_annot1, set_annot2 = get_exact_inter_union(
         annot1, annot2
     )
     review_metrics["exact"] = process_metric("\nExact", exact_inter, exact_union)
-    exact_total += exact_inter / exact_union
+    add_exact = exact_inter / exact_union if exact_union != 0 else 0
+    exact_total += add_exact
 
     # # Adjusted overall match (find a way to link annotations)
     # adj_inter, adj_union = get_adj_inter_union(
@@ -280,16 +326,25 @@ for idx in range(len(review_data)):
     metrics_list.append(review_metrics)
     output_list.append("\n")
 
-# review_metrics["delta_avg"] = delta_total/len(review_data)
-# review_metrics["aspect_avg"] = aspect_total/len(review_data)
-# review_metrics["category_avg"] = category_total/len(review_data)
-# review_metrics["opinion_avg"] = opinion_total/len(review_data)
-# review_metrics["sentiment_avg"] = sentiment_total/len(review_data)
-# review_metrics["impl_expl_avg"] = impl_expl_total/len(review_data)
-# review_metrics["exact_avg"] = exact_total/len(review_data)
+tot_reviews = len(review_data) - excluded
+print(tot_reviews)
+
+all_metrics = {}
+
+all_metrics["delta_avg"] = delta_total/tot_reviews
+all_metrics["aspect_avg"] = aspect_total/tot_reviews
+all_metrics["category_avg"] = category_total/tot_reviews
+all_metrics["opinion_avg"] = opinion_total/tot_reviews
+all_metrics["sentiment_avg"] = sentiment_total/tot_reviews
+all_metrics["impl_expl_avg"] = impl_expl_total/tot_reviews
+all_metrics["exact_avg"] = exact_total/tot_reviews
+all_metrics["avg_cat_quad_avg"] = cat_quad_avg_total/tot_reviews
+all_metrics["avg_span_quad_avg"] = span_quad_avg_total/tot_reviews
+
+all_metrics["metrics_list"] = metrics_list
 
 with open(args.output_file, "w") as f:
-    json.dump(metrics_list, f)
+    json.dump(all_metrics, f, indent=4)
 
 if verbose:
     print("\n".join(output_list))

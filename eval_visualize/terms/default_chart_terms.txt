@@ -3,6 +3,6 @@ aspect
 category
 sentiment
 opinion
-implicit_indicator
-total opinion
+direct opinion
 indirect opinion
+implicit_indicator

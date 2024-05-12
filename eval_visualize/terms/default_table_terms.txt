@@ -5,4 +5,4 @@ sentiment
 opinion
 implicit_indicator
 total opinion
-implicit opinion
+indirect opinion

@@ -7,7 +7,8 @@ from copy import deepcopy
 from pattern.en import pluralize, singularize
 from pathlib import Path
 
-COLORS = ["#332288", "#117733", "#44AA99", "#88CCEE", "#DDCC77", "#CC6677", "#AA4499", "#882255"]
+# ADD COLORS AS NEEDED
+COLORS = ["#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2"]
 PATTERNS = ["/", "-", "\\", "o", "+", "x", "*", "|"]
 
 PARAM_1 = 2
@@ -19,7 +20,7 @@ TASK_ORDERING = ["ACOS-Extract", "ACOSI-Extract", "ACOS-Extend"]
 DATASET_ORDERING = ["Restaurant-ACOS", "Laptop-ACOS", "Shoes-ACOS", "Shoes-ACOSI"]
 MODEL_ORDERING = ["MvP", "GEN-SCL-NAT", "GPT", "LLaMA"]
 
-FONTSIZE = 16
+FONTSIZE = 22
 
 
 ### HELPER FUNCTIONS ###
@@ -127,11 +128,17 @@ def clean_model_names(df):
     df['model'] = df['model'].str.replace("-LONG", "")
     df['model'] = df['model'].str.replace("GPT-", "")
     df['model'] = df['model'].str.replace("35", "3.5")
+
+    ### COMMENT AND UNCOMMENT THESE AS NEEDED (FOR DIFFERENTIATION)
     df['model'] = df['model'].str.replace("-10", "")
     df['model'] = df['model'].str.replace("-5", "")
-    df['model'] = df['model'].str.replace("-RANDOM", "-RAND")
-    df['model'] = df['model'].str.replace("-TF-IDF", "-KNN")
-    df['model_type'] = df['model_type'].replace("LLAMA", "LLaMA")
+    df['model'] = df['model'].str.replace("-906", "")
+    df['model'] = df['model'].str.replace("-RANDOM", "")
+    df['model'] = df['model'].str.replace("-TF-IDF", "")
+    # df['model'] = df['model'].str.replace("-RANDOM", "-RAND")
+    # df['model'] = df['model'].str.replace("-TF-IDF", "-KNN")
+    ###
+
     df['model_type'] = df['model_type'].str.replace(r'^MVP-SEED-.*$', 'MvP', regex=True)
     return df
 
@@ -320,10 +327,10 @@ class EvalVisualizer:
         self.df = clean_model_names(self.df)
         self.df = merge_mvp_seeds(self.df)
 
-        self.df_metadata = pd.DataFrame(dataset_stat)
-        self.df_metadata = self.df_metadata.drop_duplicates()
+        # self.df_metadata = pd.DataFrame(dataset_stat)
+        # self.df_metadata = self.df_metadata.drop_duplicates()
 
-        self.__metadata_to_csv()
+        # self.__metadata_to_csv()
 
     def generate_visuals(self, create_charts=True, create_tables=True, terms_file=None):
 
@@ -414,7 +421,7 @@ class EvalVisualizer:
     def __plot_scores(self, df, const_val1, const_val2, mdtt_dict):
         param1_vals, param2_vals = mdtt_dict[self.param1], mdtt_dict[self.param2]
 
-        plt.figure(figsize=(10, 6))
+        plt.figure(figsize=(11, 6))
 
         for metric in df['metric'].unique():
 
@@ -447,12 +454,47 @@ class EvalVisualizer:
             width = 0.8 / len(param2_vals)  # Adjust width based on number of models
             for i, param2_val in enumerate(param2_vals):
                 scores = all_scores[i]
+                if self.param1 == "term":
+                    temp1 = scores[-1]
+                    scores[-1] = scores[-2]
+                    scores[-2] = temp1
+            
+                if len(scores) == 8:
+                    temp2 = scores[-3]
+                    scores[-3] = scores[-2]
+                    scores[-2] = temp2
                 positions = np.arange(len(param1_vals)) + i * width
                 plt.bar(positions, scores, width=width, label=param2_val, color=COLORS[i], hatch=PATTERNS[i])
             
             x_labels = deepcopy(param1_vals)
-            if self.param1 == "term" and x_labels[-1] == "Implicit Indicator":
-                x_labels[-1] = "Implict Ind."
+            if self.param1 == "term":
+                for idx, label in enumerate(x_labels):
+                    if label == "Exact":
+                        x_labels[idx] = "EM"
+                    if label == "Aspect":
+                        x_labels[idx] = "Asp."
+                    if label == "Category":
+                        x_labels[idx] = "Cat."
+                    if label == "Sentiment":
+                        x_labels[idx] = "Sent."
+                    if label == "Opinion":
+                        x_labels[idx] = "Op." 
+                    if label == "Implicit Indicator":
+                        x_labels[idx] = "Impl. Ind."
+                    if label == "Direct Opinion":
+                        x_labels[idx] = "EO"
+                    if label == "Indirect Opinion":
+                        x_labels[idx] = "IO"
+                
+                temp1 = x_labels[-1]
+                x_labels[-1] = x_labels[-2]
+                x_labels[-2] = temp1
+
+                if len(x_labels) == 8:
+                    temp2 = x_labels[-3]
+                    x_labels[-3] = x_labels[-2]
+                    x_labels[-2] = temp2
+                
             plt.xticks(np.arange(len(param1_vals)) + width * (len(param2_vals) - 1) / 2, x_labels, fontsize=FONTSIZE-2)
         else:
             for i, param2_val in enumerate(param2_vals):
@@ -513,7 +555,7 @@ class EvalVisualizer:
 
     def __label_plot(self, metric, const_val1, const_val2, param1_vals, legend_loc):
         metric = get_formatted_metric(metric)
-        plt.title(get_formatted_title(const_val1, const_val2, metric), fontsize=16)
+        # plt.title(get_formatted_title(const_val1, const_val2, metric), fontsize=16)
         plt.ylabel(metric, fontsize=FONTSIZE)
         plt.ylim(0, 100)
 
@@ -521,23 +563,23 @@ class EvalVisualizer:
         xlabel = pluralize(self.param1.title())
         framealpha = 0.5
 
-        if legend_loc == 'r':
-            loc = 'upper right'
-            bbox_to_anchor = (1, 1)
-        elif legend_loc == 'l':
-            loc = 'upper left'
-            bbox_to_anchor = (0, 1)
-        elif legend_loc == 'rb':
-            loc = 'lower right'
-            bbox_to_anchor = (1, 0)
-            framealpha = 0.75
-        elif legend_loc == 'lb':
-            loc = 'lower left'
-            bbox_to_anchor = (0, 0)
-            framealpha = 0.75
-        else:
-            loc = 'upper left'
-            bbox_to_anchor = (1, 1)
+        # if legend_loc == 'r':
+        #     loc = 'upper right'
+        #     bbox_to_anchor = (1, 1)
+        # elif legend_loc == 'l':
+        #     loc = 'upper left'
+        #     bbox_to_anchor = (0, 1)
+        # elif legend_loc == 'rb':
+        #     loc = 'lower right'
+        #     bbox_to_anchor = (1, 0)
+        #     framealpha = 0.75
+        # elif legend_loc == 'lb':
+        #     loc = 'lower left'
+        #     bbox_to_anchor = (0, 0)
+        #     framealpha = 0.75
+        # else:
+        #     loc = 'upper left'
+        #     bbox_to_anchor = (1, 1)
         
         if len(param1_vals) == 1:
             xlabel = f"{legend_label} [{singularize(xlabel)}: {param1_vals[0]}]"
@@ -554,11 +596,12 @@ class EvalVisualizer:
 
         plt.legend(
             title=legend_label, 
-            loc=loc, 
-            bbox_to_anchor=bbox_to_anchor, 
+            loc='upper center', 
+            bbox_to_anchor=(0.5, -0.20), 
             framealpha=framealpha, 
-            fontsize=FONTSIZE-2,
-            title_fontsize=FONTSIZE
+            fontsize=FONTSIZE-7,
+            title_fontsize=FONTSIZE,
+            ncol=len(COLORS)
         )
 
         plt.xlabel(xlabel, fontsize=FONTSIZE)

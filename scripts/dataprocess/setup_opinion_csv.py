@@ -20,19 +20,22 @@ for example in dataset:
     for quint in annotation:
         opinion_span = quint[OPINION_IDX]
 
-        quint[IMPL_EXPL_IDX] = "1" if quint[IMPL_EXPL_IDX] == "direct" else "0"
-        implicit_indicator = int(quint[IMPL_EXPL_IDX])
-
-        formatted_quint = "\n".join(quint[:-1])
+        try:
+            quint[IMPL_EXPL_IDX] = "n" if quint[IMPL_EXPL_IDX] == "direct" else "y"
+            implicit_indicator = quint[IMPL_EXPL_IDX]
+            formatted_quint = "\n".join(quint[:-1])
+        except:
+            implicit_indicator = "n" if opinion_span.lower() != "null" else "y"
+            formatted_quint = "\n".join(quint)
 
         row = {
             "review": review,
             "annotation tuple": formatted_quint,
             "opinion span": opinion_span,
             # "implicit indicator": implicit_indicator,
-            "implicit?": "-",
+            # "implicit?": "-",
             "opinion rewrite": "-",
-            "tuple rewrrite": "-",
+            # "tuple rewrrite": "-",
             "additional notes": "-"
         }
 

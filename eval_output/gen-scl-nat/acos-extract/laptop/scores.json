@@ -81,7 +81,186 @@
             "pred polarities/example": {
                 "mean": 1.0575980392156863,
                 "stdev": 0.23832980231393058
-            }
+            },
+            "global": 0.19961826487219028,
+            "test global": 0.20895191409897293,
+            "pred global": 0.20560515873015872
+        }
+    },
+    "metadata (only indirect opinion)": {
+        "splits": {
+            "test": 816,
+            "train": 2934,
+            "dev": 326,
+            "total": 4076
+        },
+        "tokens/review": {
+            "mean": 15.67198233562316,
+            "median": 14.0,
+            "stdev": 9.904927699481599,
+            "min": 2,
+            "max": 107,
+            "count": 63879
+        },
+        "tuples": {
+            "mean": 0.38837095191364085,
+            "median": 0.0,
+            "stdev": 0.5696212891349447,
+            "min": 0,
+            "max": 4,
+            "count": 1583
+        },
+        "tuples test": {
+            "mean": 0.3909313725490196,
+            "median": 0.0,
+            "stdev": 0.582245380941792,
+            "min": 0,
+            "max": 4,
+            "count": 319
+        },
+        "tuples predicted": {
+            "mean": 0.3590686274509804,
+            "median": 0.0,
+            "stdev": 0.5378814294008579,
+            "min": 0,
+            "max": 4,
+            "count": 293
+        },
+        "ea/eo/ia/io": {
+            "ea/eo": 0.0,
+            "ea/io": 0.7839545167403664,
+            "ia/eo": 0.0,
+            "ia/io": 0.2160454832596336,
+            "test ea/eo": 0.0,
+            "test ea/io": 0.7931034482758621,
+            "test ia/eo": 0.0,
+            "test ia/io": 0.20689655172413793,
+            "pred ea/eo": 0.0,
+            "pred ea/io": 0.8088737201365188,
+            "pred ia/eo": 0.0,
+            "pred ia/io": 0.19112627986348124
+        },
+        "span len": {
+            "valid aspect": 1.4673650282030621,
+            "expl opinion": "null",
+            "test valid aspect": 1.5019762845849802,
+            "test expl opinion": "null",
+            "pred valid aspect": 1.5485232067510548,
+            "pred expl opinion": "null"
+        },
+        "sentiment": {
+            "positive": 0.29311433986102337,
+            "negative": 0.5685407454200885,
+            "neutral": 0.13834491471888818,
+            "test positive": 0.2852664576802508,
+            "test negative": 0.5862068965517241,
+            "test neutral": 0.12852664576802508,
+            "pred positive": 0.28668941979522183,
+            "pred negative": 0.6075085324232082,
+            "pred neutral": 0.10580204778156997,
+            "polarities/example": {
+                "mean": 0.3577036310107949,
+                "stdev": 0.49101575099653355
+            },
+            "test polarities/example": {
+                "mean": 0.3553921568627451,
+                "stdev": 0.48906606189293583
+            },
+            "pred polarities/example": {
+                "mean": 0.33700980392156865,
+                "stdev": 0.47813839401385194
+            },
+            "global": -0.0994643441282303,
+            "test global": -0.10508578431372549,
+            "pred global": -0.12040441176470588
+        }
+    },
+    "metadata (only direct opinion)": {
+        "splits": {
+            "test": 816,
+            "train": 2934,
+            "dev": 326,
+            "total": 4076
+        },
+        "tokens/review": {
+            "mean": 15.67198233562316,
+            "median": 14.0,
+            "stdev": 9.904927699481599,
+            "min": 2,
+            "max": 107,
+            "count": 63879
+        },
+        "tuples": {
+            "mean": 0.20657507360157018,
+            "median": 0.0,
+            "stdev": 0.5923984291863447,
+            "min": 0,
+            "max": 6,
+            "count": 842
+        },
+        "tuples test": {
+            "mean": 1.0318627450980393,
+            "median": 1.0,
+            "stdev": 0.949763657154168,
+            "min": 0,
+            "max": 6,
+            "count": 842
+        },
+        "tuples predicted": {
+            "mean": 1.0269607843137254,
+            "median": 1.0,
+            "stdev": 0.8829724358022868,
+            "min": 0,
+            "max": 5,
+            "count": 838
+        },
+        "ea/eo/ia/io": {
+            "ea/eo": 0.7992874109263658,
+            "ea/io": 0.0,
+            "ia/eo": 0.2007125890736342,
+            "ia/io": 0.0,
+            "test ea/eo": 0.7992874109263658,
+            "test ea/io": 0.0,
+            "test ia/eo": 0.2007125890736342,
+            "test ia/io": 0.0,
+            "pred ea/eo": 0.8174224343675418,
+            "pred ea/io": 0.0,
+            "pred ia/eo": 0.18257756563245822,
+            "pred ia/io": 0.0
+        },
+        "span len": {
+            "valid aspect": 1.3580980683506687,
+            "expl opinion": 1.1084695393759287,
+            "test valid aspect": 1.3580980683506687,
+            "test expl opinion": 1.1084695393759287,
+            "pred valid aspect": 1.3547445255474453,
+            "pred expl opinion": 1.1094890510948905
+        },
+        "sentiment": {
+            "positive": 0.7422802850356295,
+            "negative": 0.22921615201900236,
+            "neutral": 0.028503562945368172,
+            "test positive": 0.7422802850356295,
+            "test negative": 0.22921615201900236,
+            "test neutral": 0.028503562945368172,
+            "pred positive": 0.747016706443914,
+            "pred negative": 0.21957040572792363,
+            "pred neutral": 0.03341288782816229,
+            "polarities/example": {
+                "mean": 0.14450441609421,
+                "stdev": 0.36263754282362426
+            },
+            "test polarities/example": {
+                "mean": 0.7218137254901961,
+                "stdev": 0.4902130695960592
+            },
+            "pred polarities/example": {
+                "mean": 0.7512254901960784,
+                "stdev": 0.5033614302465794
+            },
+            "global": 0.06528050376185802,
+            "test global": 0.3260825163398693,
+            "pred global": 0.34042075163398694
         }
     },
     "exact": {

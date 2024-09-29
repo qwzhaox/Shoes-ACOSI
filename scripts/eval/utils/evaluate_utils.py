@@ -125,6 +125,9 @@ def accum_span_len(span, true_list, pred_list, accum_true=False, accum_pred=Fals
         pred_list.append(length)
 
 def accum_polarities(polarities, pos, neg, neu):
+    avg_polarities = []
+    overall_polarities = []
+
     for pos_val, neg_val, neu_val in zip(pos, neg, neu):
         polarities.append(0)
         if pos_val > 0:
@@ -133,6 +136,21 @@ def accum_polarities(polarities, pos, neg, neu):
             polarities[-1] += 1
         if neu_val > 0:
             polarities[-1] += 1
+
+        total = neg_val + neu_val + pos_val
+        avg_polarity = (neg_val * -1 + neu_val * 0 + pos_val * 1)/(total) if total != 0 else 0
+        if avg_polarity > 0.33:
+            overall_polarity = "pos"
+        elif avg_polarity < -0.33:
+            overall_polarity = "neg"
+        else:
+            overall_polarity = "neu"
+
+        avg_polarities.append(avg_polarity)
+        overall_polarities.append(overall_polarity)
+    
+    return avg_polarities, overall_polarities
+
 
 def get_combos(tuple_len):
     combos = []

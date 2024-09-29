@@ -68,28 +68,31 @@ class Evaluator:
             dataset = file.readlines()
 
         self.reviews, self.true_outputs = process_dataset(dataset)
+
+        train_dataset_path = Path(args.dataset_file).parent / "train.txt"
+        dev_dataset_path = Path(args.dataset_file).parent / "dev.txt"
+
+        with open(train_dataset_path, "r") as file:
+            train_dataset = file.readlines()
+
+        with open(dev_dataset_path, "r") as file:
+            dev_dataset = file.readlines()
+
+        self.train_reviews, self.train_outputs = process_dataset(train_dataset)
+        self.dev_reviews, self.dev_outputs = process_dataset(dev_dataset)
+
         self.__set_tuple_len_according_to_task()
         self.__init_exact_scores()
         self.__init_partial_scores()
         self.__init_combo_scores()
 
+
     def calc_metadata(self):
         print("Calculating metadata...")
-        train_dataset = Path(args.dataset_file).parent / "train.txt"
-        dev_dataset = Path(args.dataset_file).parent / "dev.txt"
-
-        with open(train_dataset, "r") as file:
-            train_dataset = file.readlines()
-
-        with open(dev_dataset, "r") as file:
-            dev_dataset = file.readlines()
-
-        train_reviews, train_outputs = process_dataset(train_dataset)
-        dev_reviews, dev_outputs = process_dataset(dev_dataset)
 
         self.test_split = len(self.reviews)
-        self.train_split = len(train_reviews)
-        self.dev_split = len(dev_reviews)
+        self.train_split = len(self.train_reviews)
+        self.dev_split = len(self.dev_reviews)
 
         self.total_dataset = self.test_split + self.train_split + self.dev_split
 
@@ -106,13 +109,13 @@ class Evaluator:
 
         self.test_tuples_list = deepcopy(self.tuples_list)
 
-        for i, review in enumerate(train_reviews):
+        for i, review in enumerate(self.train_reviews):
             self.review_len_list.append(len(review.split()))
-            self.tuples_list.append(len(train_outputs[i]))
+            self.tuples_list.append(len(self.train_outputs[i]))
 
-        for i, review in enumerate(dev_reviews):
+        for i, review in enumerate(self.dev_reviews):
             self.review_len_list.append(len(review.split()))
-            self.tuples_list.append(len(dev_outputs[i]))
+            self.tuples_list.append(len(self.dev_outputs[i]))
 
         self.__init_ea_eo_ia_io()
         self.__init_sentiment()
@@ -126,17 +129,17 @@ class Evaluator:
         self.__set_test_sentiment()
         self.__set_test_span_len()
 
-        accum_polarities(
+        self.avg_test_pols, self.overall_test_pols = accum_polarities(
             self.test_polarities, self.test_pos, self.test_neg, self.test_neu
         )
-        accum_polarities(
+        self.avg_pred_pols, self.overall_pred_pols = accum_polarities(
             self.pred_polarities, self.pred_pos, self.pred_neg, self.pred_neu
         )
 
-        for output in train_outputs + dev_outputs:
+        for output in self.train_outputs + self.dev_outputs:
             self.__accum_ea_eo_ia_io_span_len_sent(output, accum_true=True)
 
-        accum_polarities(self.polarities, self.pos, self.neg, self.neu)
+        self.avg_pols, self.overall_pols = accum_polarities(self.polarities, self.pos, self.neg, self.neu)
 
     def calc_exact_scores(self):
         print("Calculating exact scores...")
@@ -268,19 +271,19 @@ class Evaluator:
         metadata["span len"] = {}
 
         metadata["span len"]["valid aspect"] = mean(self.valid_aspect_span_len_list)
-        metadata["span len"]["expl opinion"] = mean(self.expl_opinion_span_len_list)
+        metadata["span len"]["expl opinion"] = mean(self.expl_opinion_span_len_list) if self.expl_opinion_span_len_list else "null"
         if self.tuple_len == len(TERM_LIST):
-            metadata["span len"]["impl opinion"] = mean(self.impl_opinion_span_len_list)
+            metadata["span len"]["impl opinion"] = mean(self.impl_opinion_span_len_list) if self.impl_opinion_span_len_list else "null"
 
         metadata["span len"]["test valid aspect"] = mean(self.test_valid_aspect_span_len_list)
-        metadata["span len"]["test expl opinion"] = mean(self.test_expl_opinion_span_len_list)
+        metadata["span len"]["test expl opinion"] = mean(self.test_expl_opinion_span_len_list) if self.test_expl_opinion_span_len_list else "null"
         if self.tuple_len == len(TERM_LIST):
-            metadata["span len"]["test impl opinion"] = mean(self.test_impl_opinion_span_len_list)
+            metadata["span len"]["test impl opinion"] = mean(self.test_impl_opinion_span_len_list) if self.test_impl_opinion_span_len_list else "null"
 
         metadata["span len"]["pred valid aspect"] = mean(self.pred_valid_aspect_span_len_list)
-        metadata["span len"]["pred expl opinion"] = mean(self.pred_expl_opinion_span_len_list)
+        metadata["span len"]["pred expl opinion"] = mean(self.pred_expl_opinion_span_len_list) if self.pred_expl_opinion_span_len_list else "null"
         if self.tuple_len == len(TERM_LIST):
-            metadata["span len"]["pred impl opinion"] = mean(self.pred_impl_opinion_span_len_list)
+            metadata["span len"]["pred impl opinion"] = mean(self.pred_impl_opinion_span_len_list) if self.pred_impl_opinion_span_len_list else "null"
 
         metadata["sentiment"] = {}
         metadata["sentiment"]["positive"] = sum(self.pos) / metadata["tuples"]["count"]
@@ -326,6 +329,10 @@ class Evaluator:
         metadata["sentiment"]["pred polarities/example"]["stdev"] = stdev(
             self.pred_polarities
         )
+
+        metadata["sentiment"]["global"] = mean(self.avg_pols)
+        metadata["sentiment"]["test global"] = mean(self.avg_test_pols)
+        metadata["sentiment"]["pred global"] = mean(self.avg_pred_pols)
 
         return metadata
 
@@ -446,6 +453,8 @@ class Evaluator:
         scores = {}
 
         scores["metadata"] = self.get_metadata()
+        scores[f"metadata (only indirect {TERM_LIST[OPINION_IDX]})"] = {}
+        scores[f"metadata (only direct {TERM_LIST[OPINION_IDX]})"] = {}
 
         # if args.task == "acos-extend":
         #     scores[f"total {TERM_LIST[OPINION_IDX]}"] = self.get_partial_scores(
@@ -482,8 +491,10 @@ class Evaluator:
         full_pred_outputs = self.pred_outputs
 
         self.__remove_opinions(keep_opinion_type="indirect")
+        self.calc_metadata()
         self.calc_exact_scores()
         self.calc_partial_scores()
+        scores[f"metadata (only indirect {TERM_LIST[OPINION_IDX]})"] = self.get_metadata()
         scores[f"exact (only indirect {TERM_LIST[OPINION_IDX]})"] = (
             self.get_exact_scores()
         )
@@ -505,8 +516,10 @@ class Evaluator:
             self.pred_outputs = full_pred_outputs
 
             self.__remove_opinions(keep_opinion_type="direct")
+            self.calc_metadata()
             self.calc_exact_scores()
             self.calc_partial_scores()
+            scores[f"metadata (only direct {TERM_LIST[OPINION_IDX]})"] = self.get_metadata()
             scores[f"exact (only direct {TERM_LIST[OPINION_IDX]})"] = (
                 self.get_exact_scores()
             )
@@ -549,8 +562,8 @@ class Evaluator:
         self.true_outputs = true_outputs_remove_over_limit
 
     def __remove_opinions(self, keep_opinion_type="indirect"):
-        true_outputs_remove_direct_opinion = []
-        pred_outputs_remove_direct_opinion = []
+        true_outputs_remove_opinion = []
+        pred_outputs_remove_opinion = []
         for true_output, pred_output in zip(self.true_outputs, self.pred_outputs):
             list_of_tuples_true = []
             for true_quint in true_output:
@@ -602,11 +615,71 @@ class Evaluator:
                     ):
                         list_of_tuples_pred.append(pred_quint)
 
-            true_outputs_remove_direct_opinion.append(list_of_tuples_true)
-            pred_outputs_remove_direct_opinion.append(list_of_tuples_pred)
+            true_outputs_remove_opinion.append(list_of_tuples_true)
+            pred_outputs_remove_opinion.append(list_of_tuples_pred)
 
-        self.pred_outputs = pred_outputs_remove_direct_opinion
-        self.true_outputs = true_outputs_remove_direct_opinion
+        self.pred_outputs = pred_outputs_remove_opinion
+        self.true_outputs = true_outputs_remove_opinion
+
+        train_remove_opinion = []
+        for train_output in self.train_outputs:
+            list_of_tuples = []
+            for train_quint in train_output:
+                if args.task == "acos-extend" or args.task == "acosi-extract":
+                    if (
+                        keep_opinion_type == "indirect"
+                        and train_quint[IMPLICIT_IND_IDX] == "indirect"
+                    ):
+                        list_of_tuples.append(train_quint)
+                    elif (
+                        keep_opinion_type == "direct"
+                        and train_quint[IMPLICIT_IND_IDX] == "direct"
+                    ):
+                        list_of_tuples.append(train_quint)
+                else:
+                    if (
+                        keep_opinion_type == "indirect"
+                        and train_quint[OPINION_IDX] == "NULL"
+                    ):
+                        list_of_tuples.append(train_quint)
+                    elif (
+                        keep_opinion_type == "direct"
+                        and train_quint[OPINION_IDX] != "NULL"
+                    ):
+                        list_of_tuples.append(train_quint)
+            train_remove_opinion.append(list_of_tuples)
+        
+        self.train_outputs = train_remove_opinion
+
+        dev_remove_opinion = []
+        for dev_output in self.dev_outputs:
+            list_of_tuples = []
+            for dev_quint in dev_output:
+                if args.task == "acos-extend" or args.task == "acosi-extract":
+                    if (
+                        keep_opinion_type == "indirect"
+                        and dev_quint[IMPLICIT_IND_IDX] == "indirect"
+                    ):
+                        list_of_tuples.append(dev_quint)
+                    elif (
+                        keep_opinion_type == "direct"
+                        and dev_quint[IMPLICIT_IND_IDX] == "direct"
+                    ):
+                        list_of_tuples.append(dev_quint)
+                else:
+                    if (
+                        keep_opinion_type == "indirect"
+                        and dev_quint[OPINION_IDX] == "NULL"
+                    ):
+                        list_of_tuples.append(dev_quint)
+                    elif (
+                        keep_opinion_type == "direct"
+                        and dev_quint[OPINION_IDX] != "NULL"
+                    ):
+                        list_of_tuples.append(dev_quint)
+            dev_remove_opinion.append(list_of_tuples)
+
+        self.dev_outputs = dev_remove_opinion
 
     ######################## METADATA FUNCTIONS ########################
     def __set_test_ea_eo_ia_io(self):
